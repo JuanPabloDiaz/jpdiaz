@@ -1,0 +1,51 @@
+---
+import Card from '@components/ui/Card.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects', ({ data }) => {
+	return !data.inProgress;
+});
+---
+
+<section
+	data-testid="projects"
+	id="projects"
+	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen"
+>
+	<h2 class="font-monospace text-2xl text-orange lg:text-4xl">Projects</h2>
+	<span class="mb-10 h-1 w-10 bg-orange"></span>
+	<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
+		{
+			projects.map((project) => (
+				<Card
+					url={project.data.link}
+					title={project.data.title}
+					alt={project.data.img_alt}
+					tags={project.data.tags}
+				/>
+			))
+		}
+	</div>
+	<a
+		href="https://github.com/"
+		target="_blank"
+		rel="noopener"
+		class="flex flex-row text-black hover:text-orange dark:text-white dark:hover:text-orange"
+		aria-label="link to repository"
+	>
+		View full private projects archive
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			fill="none"
+			viewBox="0 0 24 24"
+			stroke-width="1.5"
+			stroke="currentColor"
+			class="ml-1 h-6 w-6"
+		>
+			<path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+		</svg>
+	</a>
+</section>
