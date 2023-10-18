@@ -1,12 +1,12 @@
 <div class="theme-switch-wrapper md:flex md:items-center">
 	<label
 		data-testid="theme-switch"
-		class="theme-switch relative inline-block h-[34px] w-[60px]"
+		class="theme-switch relative inline-block h-[28px] w-[50px]"
 		for="checkbox"
 	>
 		<input type="checkbox" id="checkbox" class="hidden" />
 		<div
-			class="slider absolute bottom-0 left-0 right-0 top-0 cursor-pointer rounded-full bg-black before:absolute before:bottom-[4px] before:left-[4px] before:h-[26px] before:w-[26px] before:rounded-full before:bg-orange before:transition-[0.4s] dark:bg-white"
+			class="slider absolute bottom-0 left-0 right-0 top-0 cursor-pointer rounded-full bg-black before:absolute before:bottom-[4px] before:left-[4px] before:h-[20px] before:w-[20px] before:rounded-full before:bg-orange before:transition-[0.4s] dark:bg-white"
 		>
 			<circle cx="12" cy="12" r="5"></circle>
 			<line x1="12" y1="1" x2="12" y2="3"></line>
@@ -24,7 +24,7 @@
 
 <style>
 	input:checked + .slider:before {
-		transform: translateX(26px);
+		transform: translateX(20px);
 	}
 </style>
 
