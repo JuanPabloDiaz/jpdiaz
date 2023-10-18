@@ -1,8 +1,8 @@
 ---
 inProgress: false
-title: Juan Diaz Documentation Site
+title: site here
 img_alt: project image alt text
-link: https://docs.jpdiaz.dev/
-github_link: https://github.com/JuanPabloDiaz/doc
+link: demoHere
+github_link: https://github.com/JuanPabloDiaz/
 tags: ['Ruby', 'Jekyll', 'SASS']
 ---

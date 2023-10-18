@@ -1,8 +1,8 @@
 ---
 inProgress: false
-title: Project title 2
+title: Juan Diaz Documentation Site
 img_alt: project image alt text
-link: link2
+link: https://docs.jpdiaz.dev/
 github_link: https://github.com/JuanPabloDiaz/doc
-tags: ['React', 'CSS', 'Typescript']
+tags: ['Ruby', 'Jekyll', 'SASS']
 ---
