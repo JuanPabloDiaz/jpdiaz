@@ -2,6 +2,7 @@
 inProgress: false
 title: Project title 2
 img_alt: project image alt text
-link: https://github.com/veranikabarel?tab=repositories
+link: link2
+github_link: https://github.com/JuanPabloDiaz/doc
 tags: ['React', 'CSS', 'Typescript']
 ---
