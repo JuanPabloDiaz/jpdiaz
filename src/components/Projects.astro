@@ -23,11 +23,12 @@ const projects = await getCollection('projects', ({ data }) => {
 					alt={project.data.img_alt}
 					tags={project.data.tags}
 					github_url={project.data.github_link}
-
+					img_src={project.data.img_src}
 				/>
 			))
 		}
 	</div>
+
 	<!-- <a
 		href="https://github.com/JuanPabloDiaz"
 		target="_blank"
