@@ -20,14 +20,16 @@ import Button from '@components/ui/Button.astro';
 		</div>
 	</div>
 	<div data-testid="hero-img" class="mb-10 flex w-1/2 items-center justify-center">
-		<Image
+		<Image class="rounded-full shadow-orange/50 opacity-90 hover:opacity-50 hover:scale-105 hover:transform hover:shadow-2xl duration-75"
 		src={juanImage}
-		alt="Coding girl"
+		alt="Juan Diaz"
 			aspectRatio="4:4"
-			format="png"
-			width={600}
-			height={600}
+			format="jpg"
+			width={450}
+			height={450}
 			loading="eager"
+			quality={100}
 		/>
+
 	</div>
 </section>
