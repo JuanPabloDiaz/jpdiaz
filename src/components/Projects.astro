@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 const projects = await getCollection('projects', ({ data }) => {
 	return !data.inProgress;
 });
+console.log(projects);
 ---
 
 <section
@@ -20,6 +21,7 @@ const projects = await getCollection('projects', ({ data }) => {
 				<Card
 					url={project.data.link}
 					title={project.data.title}
+					description={project.data.description}
 					alt={project.data.img_alt}
 					tags={project.data.tags}
 					github_url={project.data.github_link}

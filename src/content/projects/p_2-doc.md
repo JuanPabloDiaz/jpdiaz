@@ -1,6 +1,7 @@
 ---
 inProgress: false # set to true to hide the file from the list
-title: Juan Diaz's Documentation
+title: Juan Diaz's Docs
+description: My documentation site for projects, tech notes, and career advancement.
 img_src: require(../../assets/images/project.png)
 img_alt: project image alt text
 link: https://docs.jpdiaz.dev/
