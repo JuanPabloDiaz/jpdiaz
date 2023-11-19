@@ -12,13 +12,19 @@ interface Props {
 	children?: HTMLElement | HTMLElement[];
 }
 
-const { github_url = '#', url = '#', alt = 'Project image', title = 'Project title', tags = ['Tags'] } = Astro.props;
+const {
+	github_url = '#',
+	url = '#',
+	alt = 'Project image',
+	title = 'Project title',
+	tags = ['Tags'],
+} = Astro.props;
 ---
 
 <section class="w-full p-4 md:w-1/2 lg:w-1/3">
 	<article
 		data-testId="card"
-		class="rounded-xl bg-white p-3 shadow-lg duration-100 hover:scale-105 hover:transform hover:shadow-xl"
+		class="rounded-xl bg-white p-3 shadow-lg duration-300 hover:scale-105 hover:transform hover:shadow-xl"
 	>
 		<a href={url} aria-label="link to project">
 			<div class="relative flex items-end overflow-hidden rounded-xl">
@@ -33,14 +39,21 @@ const { github_url = '#', url = '#', alt = 'Project image', title = 'Project tit
 				/>
 			</div>
 		</a>
-			<div class="mt-1 p-2">
-				<h3 class="text-xl text-orange lg:text-2xl">{title}</h3>
-				<Tags tags={tags} />
-				<div class="flex justify-between p-2">
-					<a href={github_url} class="text-gray-900 bg-orange hover:bg-opacity-60 p-1 rounded-xl">Github Repo</a>
-					<a href={url} class="text-gray-900 bg-orange hover:bg-opacity-60 p-1 rounded-xl border-2 border-black">Demo</a>
-
-							</div>
+		<div class="mt-1 p-2">
+			<h3 class="text-xl text-orange lg:text-2xl">{title}</h3>
+			<Tags tags={tags} />
+			<div class="flex justify-between p-2">
+				<a
+					href={github_url}
+					class="text-gray-900 rounded-xl bg-orange p-1 transition duration-300 hover:bg-opacity-60"
+					>Github Repo</a
+				>
+				<a
+					href={url}
+					class="text-gray-900 rounded-xl border-2 border-black bg-orange p-1 transition duration-300 hover:bg-opacity-60"
+					>Demo</a
+				>
 			</div>
+		</div>
 	</article>
 </section>
