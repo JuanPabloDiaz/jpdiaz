@@ -1,5 +1,5 @@
 ---
-inProgress: true #change to **false** when done to view
+inProgress: true # set to true to hide the file from the list
 title: Shopi
 img_alt: project image alt text
 link: https://shopi.jpdiaz.work/ # demoHere

@@ -1,5 +1,5 @@
 ---
-inProgress: false
+inProgress: false # set to true to hide the file from the list
 title: Landing Page
 img_alt: project image alt text
 link: https://landing-page-brothers.vercel.app/

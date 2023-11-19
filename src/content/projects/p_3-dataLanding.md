@@ -1,5 +1,5 @@
 ---
-inProgress: false
+inProgress: false # set to true to hide the file from the list
 title: Data Landing Page
 img_alt: project image alt text
 link: https://data-landing-page-react-tailwind.vercel.app/

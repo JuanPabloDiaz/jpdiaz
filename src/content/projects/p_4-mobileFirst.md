@@ -1,5 +1,5 @@
 ---
-inProgress: false
+inProgress: true # set to true to hide the file from the list
 title: Mobile First
 img_alt: project image alt text
 link: https://mobile-first-jpdiaz.vercel.app/
