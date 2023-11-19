@@ -1,5 +1,5 @@
 ---
-inProgress: true #change to false
+inProgress: true #change to **false** when done to view
 title: site here
 img_alt: project image alt text
 link: demoHere
