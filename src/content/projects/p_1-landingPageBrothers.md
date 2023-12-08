@@ -6,4 +6,5 @@ img_alt: Landing Page Brothers Project
 link: https://landing-page-brothers.vercel.app/
 github_link: https://github.com/JuanPabloDiaz/landingPage-Brothers
 tags: ['React', 'Tailwind CSS']
+image_path: /assets/images/projects/landing.png
 ---

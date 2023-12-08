@@ -1,8 +1,15 @@
 ---
-import projectImage from '@assets/images/project.png';
 import { Image } from '@astrojs/image/components';
 import Tags from '@components/ui/Tags.astro';
 import Button from '@components/ui/Button.astro';
+
+// dynamic images Workaround:
+import landing from '@assets/images/projects/landing.png';
+import docs from '@assets/images/projects/docs.png';
+import dataLanding from '@assets/images/projects/data-landing.png';
+import jpshop from '@assets/images/projects/jpshop-ipad.png';
+import mobilefirst from '@assets/images/projects/mobile-first.png';
+// import projectImage5 from '@assets/images/hero.png';
 
 interface Props {
 	github_url?: string;
@@ -12,6 +19,7 @@ interface Props {
 	description?: string;
 	tags: string[];
 	children?: HTMLElement | HTMLElement[];
+	images_path?: string;
 }
 
 const {
@@ -21,7 +29,23 @@ const {
 	title = 'Project title',
 	description = 'Project description',
 	tags = ['Tags'],
+	images_path,
 } = Astro.props;
+
+// dynamic images Workaround:
+const images = {
+	'landing.png': landing,
+	'docs.png': docs,
+	'data-landing.png': dataLanding,
+	'mobile-first.png': mobilefirst,
+	'jpshop-ipad.png': jpshop,
+};
+// const imagePath = images[images_path];
+const filename = images_path.split('/').pop();
+const imagePath = images[filename];
+
+// console.log('images_path:', images_path);
+// console.log('imagePath:', imagePath);
 ---
 
 <section class="w-full p-4 md:w-1/2 lg:w-1/3">
@@ -32,7 +56,7 @@ const {
 		<a href={url} aria-label="link to project">
 			<div class="relative flex items-end overflow-hidden rounded-xl">
 				<Image
-					src={projectImage}
+					src={imagePath}
 					alt={alt}
 					aspectRatio="4:4"
 					format="png"
