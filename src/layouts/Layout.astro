@@ -7,21 +7,21 @@ export interface LayoutProps {
 	title: string;
 }
 
-const { title = 'Juan Diaz | Web developer' } = Astro.props as LayoutProps;
+const { title = 'Juan Diaz | Portfolio' } = Astro.props as LayoutProps;
 ---
 
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth" data-testid="html">
 	<head>
 		<SEO
-			title="A Very Descriptive Title"
-			description="A heavily optimized description full of well-researched keywords."
+			title={title}
+			description="Juan Diaz is a web developer based in Asheville, NC. He specializes in building (and occasionally designing) exceptional websites."
 		/>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="../../public/favicon.svg" />
 
 		<title>{title}</title>
 	</head>

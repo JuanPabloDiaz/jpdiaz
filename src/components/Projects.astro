@@ -3,14 +3,37 @@ import Card from '@components/ui/Card.astro';
 import { getCollection } from 'astro:content';
 
 const projects = await getCollection('projects', ({ data }) => {
+	// console.log('data: ', data);
+	// console.log('data inProgress: ', data.inProgress);
 	return !data.inProgress;
 });
+// console.log('projects: ', projects);
+// console.log(
+// 	'title: ',
+// 	projects.map((project) => project.data.title)
+// );
+// console.log(
+// 	'id: ',
+// 	projects.map((project) => project.id)
+// );
+// console.log(
+// 	'Tags: ',
+// 	projects.map((project) => project.data.tags)
+// );
+// console.log(
+// 	'img Alt: ',
+// 	projects.map((project) => project.data.img_alt)
+// );
+// console.log(
+// 	'img path: ',
+// 	projects.map((project) => project.data.image_path)
+// );
 ---
 
 <section
 	data-testid="projects"
 	id="projects"
-	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen"
+	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto"
 >
 	<h2 class="font-monospace text-2xl text-orange lg:text-4xl">Projects</h2>
 	<span class="mb-10 h-1 w-10 bg-orange"></span>
@@ -20,14 +43,18 @@ const projects = await getCollection('projects', ({ data }) => {
 				<Card
 					url={project.data.link}
 					title={project.data.title}
+					description={project.data.description}
 					alt={project.data.img_alt}
 					tags={project.data.tags}
+					github_url={project.data.github_link}
+					images_path={project.data.image_path}
 				/>
 			))
 		}
 	</div>
-	<a
-		href="https://github.com/"
+	<!-- <p>{projects.map((project) => project.data.image_path)}</p> -->
+	<!-- <a
+		href="https://github.com/JuanPabloDiaz"
 		target="_blank"
 		rel="noopener"
 		class="flex flex-row text-black hover:text-orange dark:text-white dark:hover:text-orange"
@@ -47,5 +74,5 @@ const projects = await getCollection('projects', ({ data }) => {
 				stroke-linejoin="round"
 				d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
 		</svg>
-	</a>
+	</a> -->
 </section>
