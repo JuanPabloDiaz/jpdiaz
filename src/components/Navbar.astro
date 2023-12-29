@@ -23,7 +23,17 @@ const menuitems = [
 <header data-testId="header" class="my-5 flex flex-col items-center justify-between lg:flex-row">
 	<Astronav>
 		<div class="flex w-full items-center justify-between lg:w-auto">
-			<Button style="primary" size={'sm'} name="Download CV" onclick={download}>Download CV</Button>
+			<!-- <a href="../assets/pdf/2023-FrontEnd-CV.pdf" download="JuanDiaz"> -->
+			<a
+				href="https://resume.creddle.io/resume/9um4zrxd89s"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<Button style="primary" size={'sm'} name="Download CV" onclick={download}>
+					Download CV
+				</Button>
+			</a>
+
 			<div class="block lg:hidden">
 				<MenuIcon class="h-4 w-4 text-black dark:text-white" />
 			</div>
