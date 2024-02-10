@@ -1,8 +1,15 @@
 <div id="top"></div>
 
-# [JpDiaz.dev](https://jpdiaz.dev)
+ <a href="https://jpdiaz.dev">
+    <img align="right" src="./public/avatar.svg" width="200">
+  </a>
+
+# [JpDiaz](https://jpdiaz.dev)
 
 Welcome to my personal website! I'm Juan Pablo Díaz, a Front-End Developer and UI/UX Designer. I'm passionate about creating beautiful and intuitive user interfaces, and I'm always looking for new opportunities to learn and grow.
+<br>
+<br>
+<br>
 
 <div align="center">
   <!-- <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2F1diazdev%2F1diazdev&label=VISITORS&labelColor=%23000&countColor=%230A0209" /> -->
@@ -20,10 +27,6 @@ Welcome to my personal website! I'm Juan Pablo Díaz, a Front-End Developer and 
 [![repo](https://img.shields.io/badge/View%20Code-000?style=for-the-badge&logo=GitHub&logoColor=white)](https://stackblitz.com/github.com/JuanPabloDiaz/jpdiaz)
 
 </div>
-
- <a href="https://jpdiaz.dev">
-    <img align="center" src="./public/avatar.svg" width="300">
-  </a>
 
 ### Built With 🔑
 
@@ -47,15 +50,15 @@ To get started with [jpdiaz](https://jpdiaz.dev), simply clone the repository an
    ```
 4. Open [http://localhost:5173/](http://localhost:5173/) with your browser to see the result.
 
-## Contribution 🤝
+<!-- ## Contribution 🤝
 
-I welcome contributions to the jpdiaz collection repo! Feel free to fork the repository and submit pull requests with your improvements.
+I welcome contributions to the jpdiaz collection repo! Feel free to fork the repository and submit pull requests with your improvements. -->
 
-## License 📜
+<!--## License 📜
 
 [jpdiaz](https://jpdiaz.dev) is licensed under the MIT License.
 
-I hope you enjoy using the jpdiaz repo!
+I hope you enjoy using the jpdiaz repo! -->
 
 <!-- OTHER PROJECTS -->
 
