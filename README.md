@@ -1,112 +1,80 @@
-💫 This is a free template to make your portfolio website using **[Astro 2.0](https://astro.build/blog/astro-2/) + [Tailwind CSS](https://tailwindcss.com/)**.
+<div id="top"></div>
 
-### Dark mode
-![Dark mode](https://github.com/veranikabarel/astro-portfolio/assets/48052206/240ab82d-8896-412e-8f52-5cf10d42b1db)
-### Light mode
-![Light mode](https://github.com/veranikabarel/astro-portfolio/assets/48052206/bfa88b30-6dcf-4d5f-bf28-efc3caa27d0f)
-### Lighthouse report
-![Lighthouse report](https://github.com/veranikabarel/astro-portfolio/assets/48052206/e7ad23a4-1a9b-477e-a13e-a321ce6bd3d6)
+# [JpDiaz.dev](https://jpdiaz.dev)
 
-## Table of Contents
+Welcome to my personal website! I'm Juan Pablo Díaz, a Front-End Developer and UI/UX Designer. I'm passionate about creating beautiful and intuitive user interfaces, and I'm always looking for new opportunities to learn and grow.
 
-- [Demo](#demo)
-- [Features](#features)
-- [Project structure](#project-structure)
-- [Commands](#commands)
-- [Contributing](#contributing)
-- [Credits](#credits)
+<div align="center">
+  <!-- <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2F1diazdev%2F1diazdev&label=VISITORS&labelColor=%23000&countColor=%230A0209" /> -->
+  <br>
+  <a href="https://peerlist.io/1diazdev"><img src="https://img.shields.io/badge/peerlist-d5d5d5?style=for-the-badge&logo=peerlist&logoColor=0A0209" alt="profile of Peerlist with username 1diazdev" ></a>
+  <a href="https://www.linkedin.com/in/1diazdev/"><img src="https://img.shields.io/badge/LinkedIn-d5d5d5?style=for-the-badge&logo=linkedin&logoColor=0A0209" alt="profile of LinkedIn with username 1diazdev" /></a>
+  <a href="mailto:juan.diaz.rodriguez93@gmail.com"><img src="https://img.shields.io/badge/Gmail-d5d5d5?style=for-the-badge&logo=gmail&logoColor=0A0209" alt="Gmail of Juan Diaz i.e.   juan.diaz.rodriguez93@gmail.com" /></a>
+  <a href="https://twitter.com/1diazdev"><img src="https://img.shields.io/badge/Twitter-d5d5d5?style=for-the-badge&logo=x&logoColor=0A0209" alt="profile of Twitter with username 1diazdev" ></a>
+  <a href="https://dev.to/1diazdev"><img src="https://img.shields.io/badge/dev.to-d5d5d5?style=for-the-badge&logo=devdotto&logoColor=0A0209" alt="profile of Dev.to with username 1diazdev" /></a>
+</div>
 
-## Demo
+<div align="center">
 
-📌 [https://astro-fe-portfolio.netlify.app/](https://astro-fe-portfolio.netlify.app/)
+[![jpdiaz](https://img.shields.io/badge/View%20Demo-000?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://jpdiaz.dev/)
+[![repo](https://img.shields.io/badge/View%20Code-000?style=for-the-badge&logo=GitHub&logoColor=white)](https://stackblitz.com/github.com/JuanPabloDiaz/jpdiaz)
 
-## Features
+</div>
 
-✔️ Integration with **Tailwind CSS** ([@astrojs/tailwind](https://docs.astro.build/en/guides/integrations-guide/tailwind/)) supporting **Dark mode**.
+ <a href="https://jpdiaz.dev">
+    <img align="center" src="./public/avatar.svg" width="300">
+  </a>
 
-✔️ Uses the following integrations:
+### Built With 🔑
 
-- @astrojs/mdx
-- @astrojs/image
-- @astrojs/tailwind - with prettier class sorting plugin
-- @astro-icon
-- @astro-seo
-- @astro-navbar
+![Astro](https://img.shields.io/badge/Astro-000.svg?style=for-the-badge&logo=Astro&logoColor=white)
+![Tailwind-CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white)
 
-✔️([@Playwright](https://github.com/microsoft/playwright)) e2e tests are setted up.
+## Get started 🛠️
 
-🔜 Blog with frontmatter (title, description, author, date, image, tags) and RSS feed, sitemap and robots.txt
+To get started with [jpdiaz](https://jpdiaz.dev), simply clone the repository and follow the setup instructions. You'll be up and running in no time!
 
-🔜 404 error page
+### Setup 📋
 
-## Project Structure
+1. Clone the repo
+2. Install dependencies
+   ```sh
+   npm install
+   ```
+3. Start the development server
+   ```sh
+   npm run dev
+   ```
+4. Open [http://localhost:5173/](http://localhost:5173/) with your browser to see the result.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Contribution 🤝
 
-```
-/
-├── public/
-│   └── favicon.ico
-|   ├── hero.png
-|   └── ...
-├── src/
-|   ├── assets/
-|   |   ├── images/
-│   │   |   ├── hero.png
-|   |   |   └── ...
-│   ├── components/
-│   │   ├── ui/
-│   │   |   ├── BackToTop.astro
-|   |   |   └── ...
-│   │   ├── About.astro
-│   │   ├── Contact.astro
-|   |   └── ...
-│   ├── content/
-│   │   ├── projects/
-│   │   │   ├── project-1.md
-│   │   │   ├── project-1.md
-│   │   │   └── ...
-│   │   └-- config.ts
-│   ├── layouts/
-│   │   ├── Layout.astro
-│   ├── pages/
-│   │   ├── index.astro
-│   ├── tests/
-│   │   ├── index.spec.ts
-├── package.json
-├── astro.config.mjs
-└── ...
-```
+I welcome contributions to the jpdiaz collection repo! Feel free to fork the repository and submit pull requests with your improvements.
 
-Astro looks for `.astro`, `.md` or `.mdx` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## License 📜
 
-`src/components/` is where we put any Astro components and similarly `src/layouts/` for layouts.
+[jpdiaz](https://jpdiaz.dev) is licensed under the MIT License.
 
-Images can be placed in `src/images/`.
+I hope you enjoy using the jpdiaz repo!
 
-Blog and documentation content are created as collections of Markdown or MDX files in `src/content`.
+<!-- OTHER PROJECTS -->
 
-Any static assets, eg. images, can be placed in the `public/` directory.
+## Other Projects 🚀
 
-## Commands
+![](https://img.shields.io/badge/Platzi_Repos-121f3d?style=for-the-badge&logo=Platzi&logoColor=98CA3F)
+[![](https://img.shields.io/badge/2021-222?style=for-the-badge)](https://github.com/JuanPabloDiaz/platzi/tree/main/2021)
+[![](https://img.shields.io/badge/2022-222?style=for-the-badge)](https://github.com/JuanPabloDiaz/platzi/tree/main/2022)
+[![](https://img.shields.io/badge/2023-222?style=for-the-badge)](https://github.com/JuanPabloDiaz/platzi/tree/main/2023)
 
-All commands are run from the root of the project, from a terminal:
+<!-- ACKNOWLEDGMENTS -->
 
-| Command             | Action                                             |
-| :------------------ | :------------------------------------------------- |
-| `yarn`              | Installs dependencies                              |
-| `yarn dev`          | Starts local dev server at `localhost:3000`        |
-| `yarn build`        | Build your production site to `./dist/`            |
-| `yarn preview`      | Preview your build locally, before deploying       |
-| `yarn astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `yarn astro --help` | Get help using the Astro CLI                       |
-| `yarn test:e2e`     | Run Playwright tests                               |
+## Acknowledgments 📚
 
-## Contributing
+Resources list that I find helpful and would like to give credit to.
 
-If you have any idea, suggestions or find any bugs, feel free to open a discussion, an issue or create a pull request.
-That would be very useful for all of us and we would be happy to listen and take action.
+- [Astro](https://astro.build/)
+- [Astro Portfolio Template - Created by veranikabarel](https://astro.build/themes/details/astro-fe-portfolio/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vercel](https://vercel.com/)
 
-## Credits
-
-Assets designed by (Freepik)[www.freepik.com].
+<p align="right">(<a href="#top">👆 Top 👆</a>)</p>
