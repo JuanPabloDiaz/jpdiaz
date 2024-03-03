@@ -12,7 +12,7 @@
 	},
 	"dependencies": {
 		"@astrojs/image": "^0.16.7",
-		"@astrojs/mdx": "^0.19.1",
+		"@astrojs/mdx": "^0.19.7",
 		"@astrojs/tailwind": "^3.1.1",
 		"@astrojs/ts-plugin": "^0.4.4",
 		"astro": "^2.3.4",
