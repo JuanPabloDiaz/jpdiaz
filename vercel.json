@@ -9,6 +9,42 @@
 			"destination": "https://github.com/JuanPabloDiaz"
 		},
 		{
+			"source": "/megelon",
+			"destination": "https://github.com/megelon"
+		},
+		{
+			"source": "/mineni",
+			"destination": "https://megelon.github.io/"
+		},
+		{
+			"source": "/culinarycode",
+			"destination": "https://culinary-code.vercel.app"
+		},
+		{
+			"source": "/docus",
+			"destination": "docusaurus-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/figma",
+			"destination": "https://figma-landind-page.vercel.app/"
+		},
+		{
+			"source": "/bro",
+			"destination": "https://landing-page-brothers.vercel.app"
+		},
+		{
+			"source": "/nextjs-learn",
+			"destination": "https://https://nextjs-learn-jpdiaz.vercel.app/"
+		},
+		{
+			"source": "/astro-test",
+			"destination": "https://astro-test-eight-mu.vercel.app/"
+		},
+		{
+			"source": "/cpcc",
+			"destination": "https://cpcc.vercel.app/"
+		},
+		{
 			"source": "/colombia",
 			"destination": "https://colombia-jpdiaz.vercel.app"
 		},
@@ -35,6 +71,10 @@
 		{
 			"source": "/platzi-react",
 			"destination": "https://portfolio-react-template-xi.vercel.app"
+		},
+		{
+			"source": "/platzi-todo",
+			"destination": "https://todo-platzi-react.vercel.app"
 		},
 		{
 			"source": "/littleProjects",
@@ -125,8 +165,16 @@
 			"destination": "https://youtube-jpdiaz.vercel.app"
 		},
 		{
+			"source": "/pinterest",
+			"destination": "https://pinterest-jpdiaz.vercel.app"
+		},
+		{
 			"source": "/rps",
 			"destination": "https://rock-paper-scissors-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/navidad",
+			"destination": "https://feliz-navidad-jpdiaz.vercel.app"
 		}
 	]
 }
