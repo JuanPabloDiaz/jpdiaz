@@ -1,6 +1,10 @@
 {
 	"rewrites": [
 		{
+			"source": "/docs",
+			"destination": "https://doc-jpdiaz.vercel.app"
+		},
+		{
 			"source": "/chart",
 			"destination": "https://chartjs-jp.vercel.app"
 		},
@@ -9,8 +13,36 @@
 			"destination": "https://self-hosting-pi-server.vercel.app"
 		},
 		{
-			"source": "/docs",
-			"destination": "https://doc-jpdiaz.vercel.app"
+			"source": "/recharts",
+			"destination": "https://recharts-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/freecodecamp",
+			"destination": "https://freecodecamp-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/jpshop",
+			"destination": "https://shopi-clone.vercel.app"
+		},
+		{
+			"source": "/meme",
+			"destination": "https://meme-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/devmeme",
+			"destination": "https://memes-rapidapi.vercel.app"
+		},
+		{
+			"source": "/colombia",
+			"destination": "https://colombia-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/math",
+			"destination": "https://calculator-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/d3",
+			"destination": "https://d3-js-jpdiaz.vercel.app"
 		}
 	]
 }
