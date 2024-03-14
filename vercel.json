@@ -1,8 +1,16 @@
 {
-  "rewrites": [
-    {
-      "source": "/devkit",
-      "destination": "https://juanpablodiaz.github.io/devKit/#/",
-    }
-  ]
+	"rewrites": [
+		{
+			"source": "/devkit",
+			"destination": "https://juanpablodiaz.github.io/devKit/#/"
+		},
+		{
+			"source": "/docs",
+			"destination": "https://docs.jpdiaz.dev"
+		},
+		{
+			"source": "/github",
+			"destination": "https://juanpablodiaz.github.io"
+		}
+	]
 }
