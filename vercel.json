@@ -5,6 +5,18 @@
 			"destination": "https://doc-jpdiaz.vercel.app"
 		},
 		{
+			"source": "/peerlist",
+			"destination": "https://peerlist.io/1diazdev"
+		},
+		{
+			"source": "/poly",
+			"destination": "https://poly.jpdiaz.dev"
+		},
+		{
+			"source": "/showwcase",
+			"destination": "https://showwcase.jpdiaz.dev"
+		},
+		{
 			"source": "/github",
 			"destination": "https://github.com/JuanPabloDiaz"
 		},
