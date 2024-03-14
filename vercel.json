@@ -86,11 +86,11 @@
 		},
 		{
 			"source": "/wiki",
-			"destination": "https://"
+			"destination": "https://wiki-jpdiaz.vercel.app"
 		},
 		{
 			"source": "/markdown",
-			"destination": "https://"
+			"destination": "https://markdown.jpdiaz.dev"
 		},
 		{
 			"source": "/",
