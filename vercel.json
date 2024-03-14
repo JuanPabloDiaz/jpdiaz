@@ -1,6 +1,10 @@
 {
 	"rewrites": [
 		{
+			"source": "/github",
+			"destination": "https://github.com/JuanPabloDiaz"
+		},
+		{
 			"source": "/docs",
 			"destination": "https://doc-jpdiaz.vercel.app"
 		},
@@ -15,10 +19,6 @@
 		{
 			"source": "/recharts",
 			"destination": "https://recharts-jpdiaz.vercel.app"
-		},
-		{
-			"source": "/freecodecamp",
-			"destination": "https://freecodecamp-jpdiaz.vercel.app"
 		},
 		{
 			"source": "/jpshop",
@@ -37,12 +37,80 @@
 			"destination": "https://colombia-jpdiaz.vercel.app"
 		},
 		{
+			"source": "/d3",
+			"destination": "https://d3-js-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/youtube",
+			"destination": "https://youtube-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/platzi",
+			"destination": "https://platzi-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/freecodecamp",
+			"destination": "https://freecodecamp-jpdiaz.vercel.app"
+		},
+		{
 			"source": "/math",
 			"destination": "https://calculator-jpdiaz.vercel.app"
 		},
 		{
-			"source": "/d3",
-			"destination": "https://d3-js-jpdiaz.vercel.app"
+			"source": "/25",
+			"destination": "https://25-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/tic",
+			"destination": "https://tic-tac-toe-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/simon",
+			"destination": "https://simon-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/drum",
+			"destination": "https://drum-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/weather",
+			"destination": "https://weather-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/twitch",
+			"destination": "https://twitch-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/quote",
+			"destination": "https://random-quote-generator-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/wiki",
+			"destination": "https://"
+		},
+		{
+			"source": "/markdown",
+			"destination": "https://"
+		},
+		{
+			"source": "/",
+			"destination": "https://"
+		},
+		{
+			"source": "/",
+			"destination": "https://"
+		},
+		{
+			"source": "/",
+			"destination": "https://"
+		},
+		{
+			"source": "/",
+			"destination": "https://"
+		},
+		{
+			"source": "/",
+			"destination": "https://"
 		}
 	]
 }
