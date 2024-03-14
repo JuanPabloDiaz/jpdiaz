@@ -1,24 +1,56 @@
 {
 	"rewrites": [
 		{
+			"source": "/docs",
+			"destination": "https://doc-jpdiaz.vercel.app"
+		},
+		{
 			"source": "/github",
 			"destination": "https://github.com/JuanPabloDiaz"
 		},
 		{
-			"source": "/docs",
-			"destination": "https://doc-jpdiaz.vercel.app"
+			"source": "/colombia",
+			"destination": "https://colombia-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/academy",
+			"destination": "https://academicpages-github-io-fawn.vercel.app"
+		},
+		{
+			"source": "/todo",
+			"destination": "https://todo-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/astro-academic",
+			"destination": "https://portafolio2-astro.vercel.app"
+		},
+		{
+			"source": "/platzi",
+			"destination": "https://platzi-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/platziyard",
+			"destination": "https://platzi-yard-sale.vercel.app"
+		},
+		{
+			"source": "/platzi-react",
+			"destination": "https://portfolio-react-template-xi.vercel.app"
+		},
+		{
+			"source": "/littleProjects",
+			"destination": "https://youtube-tutorials-jpdiaz.vercel.app"
 		},
 		{
 			"source": "/chart",
 			"destination": "https://chartjs-jp.vercel.app"
 		},
 		{
-			"source": "/pi",
-			"destination": "https://self-hosting-pi-server.vercel.app"
-		},
-		{
 			"source": "/recharts",
 			"destination": "https://recharts-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/d3",
+			"destination": "https://d3-js-jpdiaz.vercel.app"
 		},
 		{
 			"source": "/jpshop",
@@ -31,22 +63,6 @@
 		{
 			"source": "/devmeme",
 			"destination": "https://memes-rapidapi.vercel.app"
-		},
-		{
-			"source": "/colombia",
-			"destination": "https://colombia-jpdiaz.vercel.app"
-		},
-		{
-			"source": "/d3",
-			"destination": "https://d3-js-jpdiaz.vercel.app"
-		},
-		{
-			"source": "/youtube",
-			"destination": "https://youtube-jpdiaz.vercel.app"
-		},
-		{
-			"source": "/platzi",
-			"destination": "https://platzi-jpdiaz.vercel.app"
 		},
 		{
 			"source": "/freecodecamp",
@@ -90,27 +106,27 @@
 		},
 		{
 			"source": "/markdown",
-			"destination": "https://markdown.jpdiaz.dev"
+			"destination": "markdown-jpdiaz.vercel.app"
 		},
 		{
-			"source": "/",
-			"destination": "https://"
+			"source": "/google",
+			"destination": "https://google-clone-jpdiaz-htmlcss.vercel.app"
 		},
 		{
-			"source": "/",
-			"destination": "https://"
+			"source": "/mf",
+			"destination": "https://mobile-first-jpdiaz.vercel.app"
 		},
 		{
-			"source": "/",
-			"destination": "https://"
+			"source": "/pi",
+			"destination": "https://self-hosting-pi-server.vercel.app"
 		},
 		{
-			"source": "/",
-			"destination": "https://"
+			"source": "/youtube",
+			"destination": "https://youtube-jpdiaz.vercel.app"
 		},
 		{
-			"source": "/",
-			"destination": "https://"
+			"source": "/rps",
+			"destination": "https://rock-paper-scissors-jpdiaz.vercel.app"
 		}
 	]
 }
