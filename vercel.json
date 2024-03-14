@@ -1,16 +1,20 @@
 {
 	"rewrites": [
 		{
-			"source": "/devkit",
-			"destination": "https://juanpablodiaz.github.io/devKit/#/"
+			"source": "/devKit",
+			"destination": "https://juanpablodiaz.github.io/devKit/"
 		},
 		{
 			"source": "/docs",
-			"destination": "https://docs.jpdiaz.dev"
+			"destination": "https://doc-jpdiaz.vercel.app"
 		},
 		{
-			"source": "/github",
-			"destination": "https://juanpablodiaz.github.io"
+			"source": "/charts",
+			"destination": "https://chartjs-jp.vercel.app"
+		},
+		{
+			"source": "/pi",
+			"destination": "https://pi.jpdiaz.dev"
 		}
 	]
 }
