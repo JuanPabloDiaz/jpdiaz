@@ -42,7 +42,7 @@ Welcome to my personal website! I'm Juan Pablo Díaz, a Front-End Developer and 
 
 ### Lighthouse Score 🚀
 
-<img src="./public/images/jpdiaz.dev-lighthouse.png"/>
+<img src="./public/images/lighthouse.png"/>
 
 ### Built With 🔑
 
