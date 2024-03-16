@@ -28,6 +28,13 @@ Welcome to my personal website! I'm Juan Pablo Díaz, a Front-End Developer and 
 
 </div>
 
+<center>
+
+![preview](./public/images/desktop.png)
+![lighthouse](./public/images/jpdiaz.dev-lighthouse.png)
+
+</center>
+
 ### Built With 🔑
 
 ![Astro](https://img.shields.io/badge/Astro-000.svg?style=for-the-badge&logo=Astro&logoColor=white)
