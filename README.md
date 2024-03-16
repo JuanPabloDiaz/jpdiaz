@@ -28,12 +28,21 @@ Welcome to my personal website! I'm Juan Pablo Díaz, a Front-End Developer and 
 
 </div>
 
-<center>
+### Desktop View 🖥️
 
-![preview](./public/images/desktop.png)
-![lighthouse](./public/images/jpdiaz.dev-lighthouse.png)
+<img src="./public/images/desktop.png" width="" />
 
-</center>
+### iPad view 📱
+
+<img src="./public/images//ipad.png" width="300" />
+
+### Mobile view 📱
+
+<img src="./public/images/phone.png" width="250" />
+
+### Lighthouse Score 🚀
+
+<img src="./public/images/jpdiaz.dev-lighthouse.png"/>
 
 ### Built With 🔑
 
