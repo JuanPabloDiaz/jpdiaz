@@ -21,14 +21,6 @@
 			"destination": "https://github.com/JuanPabloDiaz"
 		},
 		{
-			"source": "/megelon",
-			"destination": "https://github.com/megelon"
-		},
-		{
-			"source": "/mineni",
-			"destination": "https://megelon.github.io/"
-		},
-		{
 			"source": "/culinarycode",
 			"destination": "https://culinary-code.vercel.app"
 		},
@@ -46,7 +38,7 @@
 		},
 		{
 			"source": "/nextjs-learn",
-			"destination": "https://https://nextjs-learn-jpdiaz.vercel.app/"
+			"destination": "https://nextjs-learn-jpdiaz.vercel.app/"
 		},
 		{
 			"source": "/astro-test",
