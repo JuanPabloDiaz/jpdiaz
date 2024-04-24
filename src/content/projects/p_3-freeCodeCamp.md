@@ -5,6 +5,6 @@ description: Collection of projects. Including a Markdown Previewer, a Drum Mach
 img_alt: Jp·Shop Project
 link: https://freecodecamp.jpdiaz.dev/ # demoHere
 github_link: https://github.com/JuanPabloDiaz/freecodecamp
-tags: ['React', 'Tailwind CSS', 'Vite', 'API']
+tags: ['React', 'Tailwind CSS', 'API']
 image_path: /assets/images/projects/freecode-ipad.png
 ---
