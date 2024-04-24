@@ -1,0 +1,184 @@
+{
+	"rewrites": [
+		{
+			"source": "/docs",
+			"destination": "https://doc-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/peerlist",
+			"destination": "https://peerlist.io/1diazdev"
+		},
+		{
+			"source": "/poly",
+			"destination": "https://poly.jpdiaz.dev"
+		},
+		{
+			"source": "/showwcase",
+			"destination": "https://showwcase.jpdiaz.dev"
+		},
+		{
+			"source": "/github",
+			"destination": "https://github.com/JuanPabloDiaz"
+		},
+		{
+			"source": "/culinarycode",
+			"destination": "https://culinary-code.vercel.app"
+		},
+		{
+			"source": "/docus",
+			"destination": "docusaurus-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/figma",
+			"destination": "https://figma-landind-page.vercel.app/"
+		},
+		{
+			"source": "/bro",
+			"destination": "https://landing-page-brothers.vercel.app"
+		},
+		{
+			"source": "/nextjs-learn",
+			"destination": "https://nextjs-learn-jpdiaz.vercel.app/"
+		},
+		{
+			"source": "/astro-test",
+			"destination": "https://astro-test-eight-mu.vercel.app/"
+		},
+		{
+			"source": "/cpcc",
+			"destination": "https://cpcc.vercel.app/"
+		},
+		{
+			"source": "/colombia",
+			"destination": "https://colombia-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/academy",
+			"destination": "https://academicpages-github-io-fawn.vercel.app"
+		},
+		{
+			"source": "/todo",
+			"destination": "https://todo-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/astro-academic",
+			"destination": "https://portafolio2-astro.vercel.app"
+		},
+		{
+			"source": "/platzi",
+			"destination": "https://platzi-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/platziyard",
+			"destination": "https://platzi-yard-sale.vercel.app"
+		},
+		{
+			"source": "/platzi-react",
+			"destination": "https://portfolio-react-template-xi.vercel.app"
+		},
+		{
+			"source": "/platzi-todo",
+			"destination": "https://todo-platzi-react.vercel.app"
+		},
+		{
+			"source": "/littleProjects",
+			"destination": "https://youtube-tutorials-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/chart",
+			"destination": "https://chartjs-jp.vercel.app"
+		},
+		{
+			"source": "/recharts",
+			"destination": "https://recharts-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/d3",
+			"destination": "https://d3-js-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/jpshop",
+			"destination": "https://shopi-clone.vercel.app"
+		},
+		{
+			"source": "/meme",
+			"destination": "https://meme-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/devmeme",
+			"destination": "https://memes-rapidapi.vercel.app"
+		},
+		{
+			"source": "/freecodecamp",
+			"destination": "https://freecodecamp-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/math",
+			"destination": "https://calculator-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/25",
+			"destination": "https://25-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/tic",
+			"destination": "https://tic-tac-toe-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/simon",
+			"destination": "https://simon-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/drum",
+			"destination": "https://drum-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/weather",
+			"destination": "https://weather-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/twitch",
+			"destination": "https://twitch-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/quote",
+			"destination": "https://random-quote-generator-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/wiki",
+			"destination": "https://wiki-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/markdown",
+			"destination": "markdown-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/google",
+			"destination": "https://google-clone-jpdiaz-htmlcss.vercel.app"
+		},
+		{
+			"source": "/mf",
+			"destination": "https://mobile-first-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/pi",
+			"destination": "https://self-hosting-pi-server.vercel.app"
+		},
+		{
+			"source": "/youtube",
+			"destination": "https://youtube-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/pinterest",
+			"destination": "https://pinterest-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/rps",
+			"destination": "https://rock-paper-scissors-jpdiaz.vercel.app"
+		},
+		{
+			"source": "/navidad",
+			"destination": "https://feliz-navidad-jpdiaz.vercel.app"
+		}
+	]
+}

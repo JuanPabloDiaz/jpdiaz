@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: true # set to true to hide the file from the list
 title: Data Landing Page
 description: Responsive website designed for a Data enterprise
 img_alt: Data Landing Page Project

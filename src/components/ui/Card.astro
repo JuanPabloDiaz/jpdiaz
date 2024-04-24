@@ -8,9 +8,9 @@ import landing from '@assets/images/projects/landing.png';
 import docs from '@assets/images/projects/docs.png';
 import dataLanding from '@assets/images/projects/data-landing.png';
 import jpshop from '@assets/images/projects/jpshop-ipad.png';
-import mobilefirst from '@assets/images/projects/mobile-first.png';
 import freeCode from '@assets/images/projects/freecode-ipad.png';
-// import projectImage5 from '@assets/images/hero.png';
+import migueDiaz from '@assets/images/projects/migue-diaz.jpg';
+import freeForGeeks from '@assets/images/projects/free-for-geeks.jpg';
 
 interface Props {
 	github_url?: string;
@@ -38,9 +38,10 @@ const images = {
 	'landing.png': landing,
 	'docs.png': docs,
 	'data-landing.png': dataLanding,
-	'mobile-first.png': mobilefirst,
+	'migue-diaz.jpg': migueDiaz,
 	'jpshop-ipad.png': jpshop,
 	'freecode-ipad.png': freeCode,
+	'free-for-geeks.jpg': freeForGeeks,
 };
 // const imagePath = images[images_path];
 const filename = images_path.split('/').pop();
@@ -53,7 +54,7 @@ const imagePath = images[filename];
 <section class="w-full p-4 md:w-1/2 lg:w-1/3">
 	<article
 		data-testId="card"
-		class="rounded-xl bg-white p-3 shadow-lg duration-300 hover:scale-105 hover:transform hover:shadow-xl"
+		class="flex h-[620px] flex-col rounded-xl bg-white/90 p-3 shadow-lg duration-300 hover:scale-105 hover:transform hover:shadow-xl"
 	>
 		<a href={url} aria-label="link to project">
 			<div class="relative flex items-end overflow-hidden rounded-xl">
@@ -68,19 +69,19 @@ const imagePath = images[filename];
 				/>
 			</div>
 		</a>
-		<div class="mt-1 p-2">
-			<h3 class="text-xl text-orange lg:text-2xl">{title}</h3>
-			<p class="text-md h-auto text-black/70">{description}</p>
+		<div class="mt-1 flex flex-grow flex-col p-2">
+			<h3 class="text-xl text-black lg:text-2xl">{title}</h3>
+			<p class="text-md h-full text-black/70">{description}</p>
 			<Tags tags={tags} />
-			<div class="flex justify-between p-2">
+			<div class="flex h-full items-end justify-between p-2">
 				<a
 					href={github_url}
-					class="text-gray-900 rounded-xl bg-orange p-1 transition duration-300 hover:bg-opacity-60"
+					class="rounded-xl bg-orange p-1 px-2 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
 					>Github Repo</a
 				>
 				<a
 					href={url}
-					class="text-gray-900 rounded-xl border-2 border-black bg-orange p-1 transition duration-300 hover:bg-opacity-60"
+					class="rounded-xl bg-orange p-1 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
 					>Demo</a
 				>
 			</div>

@@ -28,6 +28,22 @@ Welcome to my personal website! I'm Juan Pablo Díaz, a Front-End Developer and 
 
 </div>
 
+### Desktop View 🖥️
+
+<img src="./public/images/desktop.png" width="" />
+
+### iPad view 📱
+
+<img src="./public/images//ipad.png" width="300" />
+
+### Mobile view 📱
+
+<img src="./public/images/phone.png" width="250" />
+
+### Lighthouse Score 🚀
+
+<img src="./public/images/lighthouse.png"/>
+
 ### Built With 🔑
 
 ![Astro](https://img.shields.io/badge/Astro-000.svg?style=for-the-badge&logo=Astro&logoColor=white)
