@@ -1,0 +1,50 @@
+---
+import Tags from '@components/ui/Tags.astro';
+import Button from '@components/ui/Button.astro';
+
+interface Props {
+	github_url?: string;
+	url?: string;
+	alt?: string;
+	title?: string;
+	description?: string;
+	tags: string[];
+	children?: HTMLElement | HTMLElement[];
+}
+
+const {
+	github_url = '#',
+	url = '#',
+	title = 'Project title',
+	description = 'Project description',
+	tags = ['Tags'],
+} = Astro.props;
+---
+
+<section class="w-full p-4 md:w-1/2 lg:w-1/3">
+	<article
+		data-testId="card"
+		class="flex h-[220px] flex-col rounded-xl bg-white/90 p-3 shadow-lg duration-300 hover:scale-105 hover:transform hover:shadow-xl"
+	>
+		<a href={url} aria-label="link to project">
+			<div class="relative flex items-end overflow-hidden rounded-xl"></div>
+		</a>
+		<div class="mt-1 flex flex-grow flex-col p-2">
+			<h3 class="text-md text-black lg:text-xl">{title}</h3>
+			<p class="h-full text-sm text-black/70">{description}</p>
+			<Tags tags={tags} />
+			<div class="flex h-full items-end justify-between p-2">
+				<a
+					href={github_url}
+					class="rounded-xl bg-orange p-1 px-2 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
+					>Github Repo</a
+				>
+				<a
+					href={url}
+					class="rounded-xl bg-orange p-1 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
+					>Demo</a
+				>
+			</div>
+		</div>
+	</article>
+</section>
