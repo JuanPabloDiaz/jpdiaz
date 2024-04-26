@@ -2,6 +2,8 @@
 import Tags from '@components/ui/Tags.astro';
 import Button from '@components/ui/Button.astro';
 
+import OpenOutline from '@components/icons/OpenOutline.astro';
+
 interface Props {
 	github_url?: string;
 	url?: string;
@@ -46,8 +48,9 @@ const {
 				<a
 					href={url}
 					class="rounded-xl bg-orange p-1 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
-					>Demo</a
 				>
+					<OpenOutline />
+				</a>
 			</div>
 		</div>
 	</article>
