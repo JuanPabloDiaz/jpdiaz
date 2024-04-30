@@ -14,16 +14,28 @@ const menuitems = [
 		path: '#projects',
 	},
 	{
+		title: 'Open Source',
+		path: '#oss',
+	},
+	{
 		title: 'Contact',
 		path: '#contact',
 	},
 ];
+
+const OtroMenu = [
+	{
+		title: 'Back to home',
+		path: '/',
+	},
+];
+
+let menu = Astro.props.isIndexPage ? menuitems : OtroMenu;
 ---
 
 <header data-testId="header" class="my-5 flex flex-col items-center justify-between lg:flex-row">
 	<Astronav>
 		<div class="flex w-full items-center justify-between lg:w-auto">
-			<!-- <a href="../assets/pdf/2023-FrontEnd-CV.pdf" download="JuanDiaz"> -->
 			<a
 				href="https://resume.creddle.io/resume/9um4zrxd89s"
 				target="_blank"
@@ -35,10 +47,10 @@ const menuitems = [
 				<MenuIcon class="h-4 w-4 text-black dark:text-white" />
 			</div>
 		</div>
-		<MenuItems class="mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto">
+		<div class="mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto">
 			<ul class="flex flex-col lg:flex-row lg:gap-3">
 				{
-					menuitems.map((item) => (
+					menu.map((item) => (
 						<>
 							<li>
 								<a
@@ -54,6 +66,6 @@ const menuitems = [
 				}
 				<li><ToggleTheme /></li>
 			</ul>
-		</MenuItems>
+		</div>
 	</Astronav>
 </header>

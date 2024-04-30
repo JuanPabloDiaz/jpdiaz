@@ -11,6 +11,8 @@ import jpshop from '@assets/images/projects/jpshop-ipad.png';
 import freeCode from '@assets/images/projects/freecode-ipad.png';
 import migueDiaz from '@assets/images/projects/migue-diaz.jpg';
 import freeForGeeks from '@assets/images/projects/free-for-geeks.jpg';
+import OpenOutline from '@components/icons/OpenOutline.astro';
+import GitHub from '@components/icons/GitHub.astro';
 
 interface Props {
 	github_url?: string;
@@ -56,7 +58,7 @@ const imagePath = images[filename];
 		data-testId="card"
 		class="flex h-[620px] flex-col rounded-xl bg-white/90 p-3 shadow-lg duration-300 hover:scale-105 hover:transform hover:shadow-xl"
 	>
-		<a href={url} aria-label="link to project">
+		<a href={url} target="_blank" aria-label="link to project">
 			<div class="relative flex items-end overflow-hidden rounded-xl">
 				<Image
 					src={imagePath}
@@ -76,14 +78,18 @@ const imagePath = images[filename];
 			<div class="flex h-full items-end justify-between p-2">
 				<a
 					href={github_url}
+					target="_blank"
 					class="rounded-xl bg-orange p-1 px-2 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
-					>Github Repo</a
 				>
+					<GitHub />
+				</a>
 				<a
 					href={url}
+					target="_blank"
 					class="rounded-xl bg-orange p-1 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
-					>Demo</a
 				>
+					<OpenOutline />
+				</a>
 			</div>
 		</div>
 	</article>

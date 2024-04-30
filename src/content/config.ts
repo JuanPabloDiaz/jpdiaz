@@ -13,6 +13,28 @@ const projectsCollection = defineCollection({
 	}),
 });
 
+const moreProjectsCollection = defineCollection({
+	schema: z.object({
+		inProgress: z.boolean(),
+		title: z.string(),
+		description: z.string(),
+		tags: z.array(z.string()),
+		link: z.string(),
+		github_link: z.string(),
+	}),
+});
+
+const openSourceCollection = defineCollection({
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		tags: z.array(z.string()),
+		link: z.string(),
+	}),
+});
+
 export const collections = {
 	projects: projectsCollection,
+	moreProjects: moreProjectsCollection,
+	openSource: openSourceCollection,
 };
