@@ -24,7 +24,17 @@ const moreProjectsCollection = defineCollection({
 	}),
 });
 
+const openSourceCollection = defineCollection({
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		tags: z.array(z.string()),
+		link: z.string(),
+	}),
+});
+
 export const collections = {
 	projects: projectsCollection,
 	moreProjects: moreProjectsCollection,
+	openSource: openSourceCollection,
 };

@@ -5,6 +5,10 @@
 			"destination": "https://doc-jpdiaz.vercel.app"
 		},
 		{
+			"source": "/links",
+			"destination": "https://linksta.cc/@juan"
+		},
+		{
 			"source": "/peerlist",
 			"destination": "https://peerlist.io/1diazdev"
 		},
