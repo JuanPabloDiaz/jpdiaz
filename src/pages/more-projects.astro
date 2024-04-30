@@ -1,0 +1,58 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import CardSmall from '@components/ui/CardSmall.astro';
+import BackToTop from '@components/ui/BackToTop.astro';
+
+const projects = await getCollection('more-projects', ({ data }) => {
+	// console.log('data: ', data);
+	// console.log('data inProgress: ', data.inProgress);
+	return !data.inProgress;
+});
+---
+
+<Layout isIndexPage={false}>
+	<>
+		<section class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto">
+			<h2 class="font-monospace text-2xl text-orange lg:text-4xl">More Projects</h2>
+			<span class="mb-10 h-1 w-10 bg-orange"></span>
+			<p>Here are some more projects that I have worked on.</p>
+			<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
+				{
+					projects.map((project) => (
+						<CardSmall
+							url={project.data.link}
+							title={project.data.title}
+							description={project.data.description}
+							tags={project.data.tags}
+							github_url={project.data.github_link}
+						/>
+					))
+				}
+			</div>
+			<a
+				href="https://github.com/JuanPabloDiaz?tab=repositories"
+				target="_blank"
+				rel="noopener"
+				class="flex flex-row text-black hover:text-orange dark:text-white dark:hover:text-orange"
+				aria-label="link to repository"
+			>
+				Repositories
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="ml-1 h-6 w-6"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+				</svg>
+			</a>
+		</section>
+	</>
+	<BackToTop />
+</Layout>

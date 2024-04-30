@@ -11,6 +11,8 @@ import jpshop from '@assets/images/projects/jpshop-ipad.png';
 import freeCode from '@assets/images/projects/freecode-ipad.png';
 import migueDiaz from '@assets/images/projects/migue-diaz.jpg';
 import freeForGeeks from '@assets/images/projects/free-for-geeks.jpg';
+import OpenOutline from '@components/icons/OpenOutline.astro';
+import GitHub from '@components/icons/GitHub.astro';
 
 interface Props {
 	github_url?: string;
@@ -77,13 +79,15 @@ const imagePath = images[filename];
 				<a
 					href={github_url}
 					class="rounded-xl bg-orange p-1 px-2 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
-					>Github Repo</a
 				>
+					<GitHub />
+				</a>
 				<a
 					href={url}
 					class="rounded-xl bg-orange p-1 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
-					>Demo</a
 				>
+					<OpenOutline />
+				</a>
 			</div>
 		</div>
 	</article>
