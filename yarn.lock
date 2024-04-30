@@ -41,11 +41,6 @@
   resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-1.3.1.tgz#76930733f6711af0242307da681ca9d278a33df7"
   integrity sha512-xV/3r+Hrfpr4ECfJjRjeaMkJvU73KiOADowHjhkqidfNPVAWPzbqw1KePXuMK1TjzMvoAVE7E163oqfH3lDwSw==
 
-"@astrojs/compiler@^1.8.0":
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-1.8.2.tgz#f305d5724c45a9932a8ef4e87b2e7227d15d1c2b"
-  integrity sha512-o/ObKgtMzl8SlpIdzaxFnt7SATKPxu4oIP/1NL+HDJRzxfJcAkOTAb/ZKMRyULbz4q+1t2/DAebs2Z1QairkZw==
-
 "@astrojs/compiler@^2.7.0":
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-2.7.1.tgz#a7ab59a1c87b9e6e9c6adb34bb2ca3aaa8b9d14c"
@@ -1173,10 +1168,10 @@ astro-icon@^0.8.0:
     resolve-pkg "^2.0.0"
     svgo "^2.8.0"
 
-astro-navbar@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/astro-navbar/-/astro-navbar-1.2.0.tgz#5f0ea2e72fd99c84ba66e552b5e42fb807823816"
-  integrity sha512-Pq9HTmCvEAUw1zEQlqDc0/wiXEYLjo2gpUDuiZtULDK8VeXpq7XsmRJXU9UjZ4OFJgm6X/QV+rVVbgUWaUeV0w==
+astro-navbar@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/astro-navbar/-/astro-navbar-1.2.3.tgz#cf3e3580b315f2eb8e134d7e2f8161a9ea00b87c"
+  integrity sha512-KHElww+WIIoGqB21EzDwtkgaBOEE63lGELxxnTZQFX+Ip5iB0XJxEhfJmMXUAUxf7Rw49QL1ZfJst8Wh9KDK4Q==
 
 astro-seo@^0.8.3:
   version "0.8.3"
