@@ -36,11 +36,10 @@
   resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-1.4.1.tgz#9cf6d011a1dbdc9ff81923ec02b45043c1c71924"
   integrity sha512-aXAxapNWZwGN41P+Am/ma/2kAzKOhMNaY6YuvLkUHFv+UZkmDHD6F0fE1sQA2Up0bLjgPQa1VQzoAaii5tZWaA==
 
-"@astrojs/compiler@^1.1.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-1.3.1.tgz#76930733f6711af0242307da681ca9d278a33df7"
-  integrity sha512-xV/3r+Hrfpr4ECfJjRjeaMkJvU73KiOADowHjhkqidfNPVAWPzbqw1KePXuMK1TjzMvoAVE7E163oqfH3lDwSw==
-
+"@astrojs/compiler@^1.3.2", "@astrojs/compiler@^1.8.0":
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-1.8.2.tgz#f305d5724c45a9932a8ef4e87b2e7227d15d1c2b"
+  integrity sha512-o/ObKgtMzl8SlpIdzaxFnt7SATKPxu4oIP/1NL+HDJRzxfJcAkOTAb/ZKMRyULbz4q+1t2/DAebs2Z1QairkZw==
 
 "@astrojs/compiler@^2.7.0":
   version "2.7.1"
@@ -179,12 +178,12 @@
     undici "^5.22.0"
     which-pm-runs "^1.1.0"
 
-"@astrojs/ts-plugin@^0.4.4":
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/@astrojs/ts-plugin/-/ts-plugin-0.4.4.tgz#6af171a15ddd4821b523cdb894321d4eec1da341"
-  integrity sha512-KlVNAc9K9FEFiRexq00g0kRH9PeS8O8fTlojeD32KCmSbHqZN1kzTc4PBv+OeHzyP866FJeJi7F7Zg0ye+byJQ==
+"@astrojs/ts-plugin@^0.4.5":
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/@astrojs/ts-plugin/-/ts-plugin-0.4.5.tgz#c6aecea37276a977a35f1d40350e2c8a283a11e8"
+  integrity sha512-zfRof1jlh2aB/rB6K+DnXQIrpzT+J3bcf7/8NewF+4oIkXXSrLl/R9OnjTJmElJmXtjmRmWrB1FxdenUqbzl5w==
   dependencies:
-    "@astrojs/compiler" "^1.1.1"
+    "@astrojs/compiler" "^1.3.2"
     "@jridgewell/trace-mapping" "^0.3.15"
     synckit "^0.8.4"
 
@@ -1937,13 +1936,6 @@ format@^0.2.0:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/format/-/format-0.2.2.tgz#d6170107e9efdc4ed30c9dc39016df942b5cb58b"
   integrity sha512-wzsgA6WOq+09wrU1tsJ09udeR/YZRaeArL9e1wPbFg3GG2yDnC2ldKpxs4xunpFF9DgqCqOIra3bc1HWrJ37Ww==
-
-formdata-polyfill@^4.0.10:
-  version "4.0.10"
-  resolved "https://registry.yarnpkg.com/formdata-polyfill/-/formdata-polyfill-4.0.10.tgz#24807c31c9d402e002ab3d8c720144ceb8848423"
-  integrity sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g==
-  dependencies:
-    fetch-blob "^3.1.2"
 
 fraction.js@^4.3.7:
   version "4.3.7"
