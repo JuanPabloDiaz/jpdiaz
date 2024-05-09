@@ -1,5 +1,6 @@
 {
 	"name": "astro-portfolio",
+	"author": "Juan Diaz",
 	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
