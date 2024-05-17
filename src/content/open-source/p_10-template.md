@@ -4,5 +4,5 @@ title: site here
 description: description here
 link: demoHere
 github_link: https://github.com/JuanPabloDiaz/
-tags: ['Ruby', 'Jekyll', 'SASS']
+tags: ['', '']
 ---
