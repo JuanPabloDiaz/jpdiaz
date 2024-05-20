@@ -18,7 +18,7 @@ module.exports = {
 			orange: '#E06330',
 		},
 		fontFamily: {
-			// Headings
+			// Headings si
 			sans: ['Inter', 'sans-serif'],
 			// Base text
 			monospace: ['Inconsolata', 'monospace'],
