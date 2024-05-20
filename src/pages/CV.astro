@@ -1,0 +1,150 @@
+---
+import Layout from '@layouts/Layout.astro';
+import TimeLineElement from '../components/cv/TimeLine.astro';
+import Icon from 'astro-icon';
+import Button from '@components/ui/Button.astro';
+const PDF = './files/2024-FrontEndCV.pdf';
+---
+
+<!-- Source code: https://github.com/manuelernestog/astrofy -->
+<Layout title="Juan Diaz | Resume" sideBarActiveItemID="cv">
+	<section>
+		<div class="mb-5">
+			<div class="w-full text-3xl font-bold">Profile</div>
+		</div>
+
+		<div class="mb-10 text-justify">
+			Bilingual IT professional with excellent customer service skills. I am seeking a front-end
+			position in a structured and nurturing company that allows for professional and personal
+			growth and development. I value discipline, loyalty, reliability, self-motivation, and
+			analytical thinking above all else.
+		</div>
+	</section>
+
+	<section>
+		<div class="mb-5">
+			<div class="w-full text-3xl font-bold">Skills</div>
+		</div>
+
+		<ul class="mx-6 mb-5 list-disc columns-2 md:columns-5">
+			<li>React</li>
+			<li>Next.js</li>
+			<li>JavaScript</li>
+			<li>TypeScript</li>
+			<li>Tailwind CSS</li>
+			<li>Git</li>
+			<li>HTML</li>
+			<li>CSS</li>
+		</ul>
+	</section>
+
+	<section>
+		<!-- <div class="mb-5">
+	<div class="w-full text-3xl font-bold">Posts</div>
+</div>
+
+<ul class="mx-6 mb-10 grid list-disc gap-2">
+	<li>
+		<a href="#" target="_blank"> Posts Name (with link)</a>
+	</li>
+	<li>
+		<a href="#" target="_blank"> Posts Name (with link)</a>
+	</li>
+</ul> -->
+	</section>
+
+	<section>
+		<div class="mb-5">
+			<div class="w-full text-3xl font-bold">Education</div>
+		</div>
+
+		<div class="time-line-container mb-10 grid gap-4">
+			<TimeLineElement
+				title="Web Technologies Associate"
+				subtitle="2017 to 2020 at Central Piedmont Community College, Charlotte, NC, USA"
+			/>
+			<!-- <TimeLineElement
+		title="Title Name"
+		subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
+	/> -->
+		</div>
+	</section>
+
+	<section>
+		<div class="mb-5">
+			<div class="w-full text-3xl font-bold">Experience</div>
+		</div>
+
+		<div class="time-line-container mb-10">
+			<TimeLineElement
+				title="Job Title at Project or Company Name"
+				subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
+			>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+				labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+				laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+				voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+				cupidatat non proident.
+			</TimeLineElement>
+			<TimeLineElement
+				title="Job Title at Project or Company Name"
+				subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
+			>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+				labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+				laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+				voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+				cupidatat non proident.
+			</TimeLineElement>
+			<!-- <TimeLineElement
+		title="Job Title at Project or Company Name"
+		subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
+	>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+		labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+		laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+		voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+		non proident.
+	</TimeLineElement> -->
+		</div>
+	</section>
+
+	<section>
+		<div class="mb-5">
+			<div class="w-full text-3xl font-bold">Certifications</div>
+		</div>
+
+		<ul class="mx-6 mb-10 grid list-disc gap-2">
+			<li>
+				<a href="#" target="_blank"> Certification Name (with link)</a>
+			</li>
+			<li>
+				<a href="#" target="_blank"> Certification Name (with link)</a>
+			</li>
+		</ul>
+	</section>
+
+	<section>
+		<div class="flex w-full justify-center">
+			<div
+				class="card card-compact card-bordered md:w-112 lg:w-128 w-96 border-[oklch(var(--s))] transition-all hover:shadow-lg"
+			>
+				<figure>
+					<object data={PDF} type="application/pdf" width="100%"></object>
+				</figure>
+				<div class="card-body">
+					<h2 class="card-title">Resume</h2>
+					<p>View and download my resume by clicking on the button below</p>
+					<div class="card-actions justify-end">
+						<a target="_blank" href={PDF}>
+							<Button class="flex">
+								<p>Download resume</p>
+								<Icon name="carbon:document-pdf" class="ml-1 h-6 w-6" />
+							</Button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
