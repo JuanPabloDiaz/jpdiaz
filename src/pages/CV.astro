@@ -126,6 +126,12 @@ let courses = [
 			</div>
 
 			<div class="time-line-container mb-10 grid gap-4">
+				<TimeLineElement title="FreeCodeCamp" subtitle="2022 to present, Online" />
+				<TimeLineElement title="Platzi" subtitle="2021 to present, Online">
+					Self-taught Front-end developer, still actively taking classes and embracing the <span
+						class="font-bold">Never Stop Learning</span
+					> philosophy.
+				</TimeLineElement>
 				<TimeLineElement
 					title="Web Technologies Associate (A.A.S. IT)"
 					subtitle="2017 to 2020 at Central Piedmont Community College, Charlotte, NC, USA"
@@ -148,7 +154,7 @@ let courses = [
 					certifications.map((cert) => (
 						<li class={cert.isWide ? 'col-span-3 hidden md:block' : ''}>
 							<a href={cert.url} class={`group ${basicLinkStyle}`} target="_blank">
-								<p class="underline underline-offset-4">{cert.title}</p>
+								<p class="underline-offset-4 hover:underline">{cert.title}</p>
 								<span class="ml-2 hidden text-xs opacity-50 group-hover:block">● {cert.year}</span>
 							</a>
 						</li>
