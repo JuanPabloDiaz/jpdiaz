@@ -11,12 +11,12 @@ const projects = await getCollection('more-projects', ({ data }) => {
 });
 ---
 
-<Layout isIndexPage={false}>
-	<>
+<Layout title="Juan Diaz | More Projects" isIndexPage={false}>
+	<main>
 		<section class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto">
 			<h2 class="font-monospace text-2xl text-orange lg:text-4xl">More Projects</h2>
 			<span class="mb-10 h-1 w-10 bg-orange"></span>
-			<p>Here are some more projects that I have worked on.</p>
+			<p class="text-black dark:text-white">Here are some more projects that I have worked on.</p>
 			<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
 				{
 					projects.map((project) => (
@@ -53,6 +53,6 @@ const projects = await getCollection('more-projects', ({ data }) => {
 				</svg>
 			</a>
 		</section>
-	</>
+	</main>
 	<BackToTop />
 </Layout>

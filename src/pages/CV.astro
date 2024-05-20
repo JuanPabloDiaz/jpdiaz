@@ -1,0 +1,241 @@
+---
+import Layout from '@layouts/Layout.astro';
+import TimeLineElement from '../components/cv/TimeLine.astro';
+import Icon from 'astro-icon';
+import Button from '@components/ui/Button.astro';
+import OpenOutline from '@components/icons/OpenOutline.astro';
+const PDF = './files/2024-FrontEndCV.pdf';
+const LinkStyle =
+	'hover:text-black dark:hover:text-white text-orange transition duration-300 dark:text-orange hover:underline hover:underline-offset-4';
+---
+
+<!-- Source code: https://github.com/manuelernestog/astrofy -->
+<Layout title="Juan Diaz | Resume" sideBarActiveItemID="cv">
+	<main class="text-black dark:text-white">
+		<section>
+			<div class="mb-5">
+				<div class="w-full text-3xl font-bold">Profile</div>
+			</div>
+
+			<div class="mb-10 text-justify">
+				Bilingual IT professional with excellent customer service skills. I am seeking a front-end
+				position in a structured and nurturing company that allows for professional and personal
+				growth and development. I value discipline, loyalty, reliability, self-motivation, and
+				analytical thinking above all else.
+			</div>
+		</section>
+
+		<section>
+			<div class="mb-5">
+				<div class="w-full text-3xl font-bold">Skills</div>
+			</div>
+
+			<ul class="mx-6 mb-5 list-disc columns-2 md:columns-5">
+				<li>React</li>
+				<li>Next.js</li>
+				<li>JavaScript</li>
+				<li>TypeScript</li>
+				<li>Tailwind CSS</li>
+				<li>Git</li>
+				<li>HTML</li>
+				<li>CSS</li>
+			</ul>
+		</section>
+
+		<section>
+			<!-- <div class="mb-5">
+	<div class="w-full text-3xl font-bold">Posts</div>
+</div>
+
+<ul class="mx-6 mb-10 grid list-disc gap-2">
+	<li>
+		<a href="#" target="_blank"> Posts Name (with link)</a>
+	</li>
+	<li>
+		<a href="#" target="_blank"> Posts Name (with link)</a>
+	</li>
+</ul> -->
+		</section>
+
+		<section>
+			<div class="mb-5">
+				<div class="w-full text-3xl font-bold">Education</div>
+			</div>
+
+			<div class="time-line-container mb-10 grid gap-4">
+				<TimeLineElement
+					title="Web Technologies Associate (A.A.S. IT)"
+					subtitle="2017 to 2020 at Central Piedmont Community College, Charlotte, NC, USA"
+				/>
+				<!-- <TimeLineElement
+		title="Title Name"
+		subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
+	/> -->
+			</div>
+		</section>
+
+		<section>
+			<div class="mb-5">
+				<div class="w-full text-3xl font-bold">Experience</div>
+			</div>
+
+			<div class="time-line-container mb-10">
+				<TimeLineElement
+					title="Freelance Web Developer"
+					subtitle="From Feb. 2023 to Present. ~ Asheville, NC, USA"
+				>
+					<ul class="ml-6 list-disc">
+						<li>
+							<a href="https://jpdiaz.dev" target="_blank" class={LinkStyle}>Jpdiaz.dev</a> is my portfolio
+							website with up-to-date projects.
+						</li>
+						<li>
+							<a href="https://freeforgeeks.com/" target="_blank" class={LinkStyle}
+								>FreeForGeeks.com</a
+							>
+							is a curated toolbox for building better software. Free resources for all your dev needs.
+						</li>
+						<li>
+							<a href="https://links.jpdiaz.dev" target="_blank" class={LinkStyle}
+								>Links.jpdiaz.dev</a
+							> is my own Linktree alternative. It is a simple and clean way to display links.
+						</li>
+						<li>
+							<a href="https://docs.jpdiaz.dev" target="_blank" class={LinkStyle}>Docs.jpdiaz.dev</a
+							> delves into the intricacies of my projects, detailing the technologies used, development
+							processes, and challenges tackled. It is a testament to continuous learning and skill development.
+						</li>
+					</ul>
+				</TimeLineElement>
+				<TimeLineElement
+					title="Service Desk Analyst at ePlus"
+					subtitle="From Jan. 2020 to Feb. 2023. ~ Remote"
+				>
+					<ul class="ml-6 list-disc">
+						<li>Closed 84.8% of trouble tickets on the first call without escalation in 2021.</li>
+						<li>
+							Handles technical troubleshooting within an enterprise environment. Navigates common
+							issues such as user administration, network outages, network printers, IP phones and
+							enterprise tools.
+						</li>
+						<li>Provides remote assistance with software deployment, and system configuration.</li>
+						<li>Effectively communicate with a variety of departments.</li>
+						<li>Proactively investigate and resolve end user problems/complications.</li>
+						<li>
+							Adaptability to multiple enterprise environments. Following a process oriented
+							approach.
+						</li>
+						<li>Utilizes problem solving skills to find solutions to unusual issues.</li>
+					</ul>
+				</TimeLineElement>
+				<TimeLineElement
+					title="Information Systems Technician at Central Piedmont Community College"
+					subtitle="From May 2018 to July 2019. ~ Charlotte, N.C."
+				>
+					<ul class="ml-6 list-disc">
+						<li>
+							Deployed first-level support to users by installing, configuring, troubleshooting and
+							maintaining user’s hardware and software.
+						</li>
+						<li>
+							Responded to inquiries and requests from users and provided assistance with the
+							college’s computer systems.
+						</li>
+						<li>Coordinated with other units within ITS to clear up problems as was necessary.</li>
+					</ul>
+				</TimeLineElement>
+				<TimeLineElement
+					title="Information Systems Technician Intern at Central Piedmont Community College"
+					subtitle="From May 2017 to May 2018. ~ Charlotte, N.C."
+				>
+					<ul class="ml-6 list-disc">
+						<li>
+							Arranged excellent customer service and technical assistance to students and staff
+							around campus.
+						</li>
+						<li>
+							Commended for quickly resolving complex issues including system crashes in Smart
+							classrooms, computer classrooms, and conference rooms.
+						</li>
+						<li>
+							Controlled client’s computer to fix, install or upgrade software related issues.
+						</li>
+					</ul>
+				</TimeLineElement>
+				<!-- <TimeLineElement
+		title="Job Title at Project or Company Name"
+		subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
+	>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+		labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+		laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+		voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+		non proident.
+	</TimeLineElement> -->
+			</div>
+		</section>
+
+		<section>
+			<div class="mb-5">
+				<div class="w-full text-3xl font-bold">Certifications</div>
+			</div>
+
+			<ul class="mx-6 mb-10 grid list-disc gap-2">
+				<li>
+					<a
+						href="https://www.freecodecamp.org/certification/1diazdev/legacy-front-end"
+						class={LinkStyle}
+						target="_blank">Legacy Front End</a
+					>
+				</li>
+				<li>
+					<a
+						href="https://freecodecamp.org/certification/1diazdev/front-end-development-libraries"
+						class={LinkStyle}
+						target="_blank">Front End Development Libraries</a
+					>
+				</li>
+				<li>
+					<a
+						href="https://freecodecamp.org/certification/1diazdev/responsive-web-design"
+						class={LinkStyle}
+						target="_blank">Responsive Web Design</a
+					>
+				</li>
+				<!-- <li>
+					<a href="#" target="_blank"> Certification Name (with link)</a>
+				</li> -->
+			</ul>
+		</section>
+
+		<section class="w-full">
+			<div class="flex w-full justify-center">
+				<div class="md:w-112 lg:w-128 w-96 rounded-lg border p-2 transition-all hover:shadow-lg">
+					<figure>
+						<object data={PDF} type="application/pdf" width="100%"></object>
+					</figure>
+					<div class="flex flex-col items-center gap-2">
+						<h2 class="mt-4 w-full text-xl font-bold">Resume</h2>
+						<p>View and download my resume by clicking on the button below</p>
+						<div class="justify-end">
+							<a target="_blank" href={PDF}>
+								<Button class="flex">
+									<p>Download resume</p>
+									<Icon name="carbon:document-pdf" class="ml-1 h-6 w-6" />
+								</Button>
+							</a>
+						</div>
+						<div class="justify-end">
+							<a target="_blank" href="https://resume.creddle.io/resume/9um4zrxd89s">
+								<Button class="flex">
+									<p>View CV Online</p>
+									<OpenOutline class="ml-1 h-6 w-6" />
+								</Button>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
