@@ -41,12 +41,11 @@ let menu = Astro.props.isIndexPage ? menuitems : backHomeMenu;
 			{
 				Astro.props.isIndexPage ? (
 					<a href="./CV" rel="noopener noreferrer">
-						<Button style="primary" size={'sm'} name="Download CV" onclick={download}>
+						<Button style="primary" size={'sm'} name="Download CV">
 							My Resume
 						</Button>
 					</a>
 				) : (
-					// href="https://resume.creddle.io/resume/9um4zrxd89s"
 					<a href={PDF} target="_blank" rel="noopener noreferrer">
 						<Button name="Download CV">Download CV</Button>
 					</a>
