@@ -2,7 +2,7 @@
 import Button from '@components/ui/Button.astro';
 import ToggleTheme from '@components/ui/ToggleTheme.astro';
 import { Astronav, MenuIcon, MenuItems } from 'astro-navbar';
-import { download } from '../downloadCV';
+const PDF = './files/2024-FrontEndCV.pdf';
 
 const menuitems = [
 	{
@@ -31,18 +31,27 @@ const backHomeMenu = [
 ];
 
 let menu = Astro.props.isIndexPage ? menuitems : backHomeMenu;
+
+// let CV = Astro.props.isIndexPage ? path : download;
 ---
 
 <header data-testId="header" class="my-5 flex flex-col items-center justify-between lg:flex-row">
 	<Astronav>
 		<div class="flex w-full items-center justify-between lg:w-auto">
-			<a
-				href="https://resume.creddle.io/resume/9um4zrxd89s"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<Button style="primary" size={'sm'} name="Download CV" onclick={download}>My Resume</Button>
-			</a>
+			{
+				Astro.props.isIndexPage ? (
+					<a href="./CV" rel="noopener noreferrer">
+						<Button style="primary" size={'sm'} name="Download CV" onclick={download}>
+							My Resume
+						</Button>
+					</a>
+				) : (
+					// href="https://resume.creddle.io/resume/9um4zrxd89s"
+					<a href={PDF} target="_blank" rel="noopener noreferrer">
+						<Button name="Download CV">Download CV</Button>
+					</a>
+				)
+			}
 			<div class="block lg:hidden">
 				<MenuIcon class="h-4 w-4 text-black dark:text-white" />
 			</div>
