@@ -12,17 +12,21 @@ import Button from '@components/ui/Button.astro';
 	<div class="mb-10 flex flex-col items-center lg:mb-0 lg:w-1/2">
 		<div>
 			<h1 class="mb-10 font-monospace text-3xl text-black dark:text-white lg:text-5xl">
-				Hi! My name is <span class="text-orange">Juan Diaz</span> and I am a Front End Developer based in Asheville, NC.
+				Hi! My name is <span class="text-orange">Juan Diaz</span> and I am a Front End Developer based
+				in Asheville, NC.
 			</h1>
 		</div>
 		<div class="mb-10">
-			<!-- <Button style={'primary'} size={'lg'} class={'flex'} name="learn more">Learn more</Button> -->
+			<a href="mailto:juan.diaz93@hotmail.com">
+				<Button size={'lg'} style={'primary'} name="Contact">Hire Me</Button>
+			</a>
 		</div>
 	</div>
 	<div data-testid="hero-img" class="mb-10 flex w-1/2 items-center justify-center">
-		<Image class="rounded-full shadow-orange/50 opacity-90 hover:opacity-50 hover:scale-105 hover:transform hover:shadow-2xl duration-75"
-		src={juanImage}
-		alt="Juan Diaz"
+		<Image
+			class="rounded-full opacity-90 shadow-orange/50 duration-75 hover:scale-105 hover:transform hover:opacity-50 hover:shadow-2xl"
+			src={juanImage}
+			alt="Juan Diaz"
 			aspectRatio="4:4"
 			format="jpg"
 			width={450}
@@ -30,6 +34,5 @@ import Button from '@components/ui/Button.astro';
 			loading="eager"
 			quality={100}
 		/>
-
 	</div>
 </section>
