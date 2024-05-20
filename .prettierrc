@@ -5,5 +5,7 @@
 	"tabWidth": 2,
 	"trailingComma": "es5",
 	"useTabs": true,
-	"plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"]
+	"plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+	"bracketSpacing": true,
+	"quoteProps": "as-needed"
 }
