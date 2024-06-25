@@ -1172,10 +1172,10 @@ astro-navbar@^1.2.3:
   resolved "https://registry.yarnpkg.com/astro-navbar/-/astro-navbar-1.2.3.tgz#cf3e3580b315f2eb8e134d7e2f8161a9ea00b87c"
   integrity sha512-KHElww+WIIoGqB21EzDwtkgaBOEE63lGELxxnTZQFX+Ip5iB0XJxEhfJmMXUAUxf7Rw49QL1ZfJst8Wh9KDK4Q==
 
-astro-seo@^0.8.3:
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/astro-seo/-/astro-seo-0.8.3.tgz#a9dd0169c7142a1ce47039156accfe055dc56870"
-  integrity sha512-gQeEh0U2yyVM0iyU8DTORK6hXMy5WH2wufrkUuNOKjI3LnYLniqgDxm1LZPQDuD6b4OHabVOi/5L88A9POCcCQ==
+astro-seo@^0.8.4:
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/astro-seo/-/astro-seo-0.8.4.tgz#b4e156dca08ac46037168479f133cedcbb8b884b"
+  integrity sha512-Ou1vzQSXAxa0K8rtNtXNvSpYqOGEgMhh0immMxJeXmbVZac3UKCNWAoXWyOQDFYsZvBugCRSg0N1phBqPMVgCw==
   dependencies:
     "@astrojs/check" "^0.5.4"
 
