@@ -9,7 +9,9 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"test": "playwright test"
+		"test": "playwright test",
+		"format": "npx prettier --write \"**/*.{astro,md,json}\"",
+		"lighthouse": "npx unlighthouse --site https://jpdiaz.dev"
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^0.19.7",
