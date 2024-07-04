@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   pull_request:
     branches:
-      - "main"
+      - 'main'
 
 jobs:
   lighthouse:
@@ -18,9 +18,9 @@ jobs:
         with:
           urls: |
             https://jpdiaz.dev/
-          budgetPath: ./budget.json # test performance budgets
-          uploadArtifacts: true # save results as an action artifacts
-          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+          budgetPath: ./budget.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
 
       - name: Add comment with Lighthouse action URL
         if: github.event_name == 'pull_request'
