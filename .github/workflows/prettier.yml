@@ -21,13 +21,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
+          cache: 'npm'
 
       - name: Install Prettier and plugins
-        run: |
-          npm install prettier prettier-plugin-astro
+        run: npm install prettier prettier-plugin-astro
 
       - name: Run Prettier
-        run: npx prettier --write "**/*.{astro,md,}"
+        run: npx prettier --write "**/*.{astro,md}"
 
       - name: Check for changes
         id: check_changes
