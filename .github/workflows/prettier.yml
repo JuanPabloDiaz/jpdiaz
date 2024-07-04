@@ -1,10 +1,11 @@
+# This workflow does not work at the moment. It is a work in progress.
 name: Format Code with Prettier
 
 on:
   workflow_dispatch:
-  pull_request:
-    branches:
-      - 'main'
+  # pull_request:
+  #   branches:
+  #     - 'main'
 
 jobs:
   format:
