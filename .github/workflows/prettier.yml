@@ -22,6 +22,10 @@ jobs:
         with:
           node-version-file: '.nvmrc'
 
+      - name: Install Prettier and plugins
+        run: |
+          npm install prettier prettier-plugin-astro
+
       - name: Run Prettier
         run: npx prettier --write "**/*.{astro,md,}"
 
