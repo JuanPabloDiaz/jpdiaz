@@ -1,3 +1,5 @@
+# test: npx prettier --check "**/*.{astro,md}"
+
 name: Format Code with Prettier
 
 on:
