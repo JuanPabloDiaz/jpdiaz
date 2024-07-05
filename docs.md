@@ -14,9 +14,10 @@
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Demo](#demo)
 - [Features](#features)
-- [Project structure](#project-structure)
+- [Project Structure](#project-structure)
 - [Commands](#commands)
 - [Contributing](#contributing)
 - [Credits](#credits)
@@ -38,7 +39,7 @@
 - @astro-seo
 - @astro-navbar
 
-✔️([@Playwright](https://github.com/microsoft/playwright)) e2e tests are setted up.
+✔️([@Playwright](https://github.com/microsoft/playwright)) e2e tests are settled up.
 
 🔜 Blog with frontmatter (title, description, author, date, image, tags) and RSS feed, sitemap and robots.txt
 

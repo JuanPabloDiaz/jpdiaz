@@ -49,7 +49,7 @@ Welcome to my personal website! I'm Juan Pablo Díaz, a Front-End Developer and 
 ![Astro](https://img.shields.io/badge/Astro-000.svg?style=for-the-badge&logo=Astro&logoColor=white)
 ![Tailwind-CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white)
 
-## Usefull Commands 🧰
+## Useful Commands 🧰
 
 - Run before Deploy: `$ npm run build`
 - Run Prettier: `$ npm run format`
