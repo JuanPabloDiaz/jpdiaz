@@ -1,0 +1,10 @@
+[default.extend-words]
+Warrent = "Warrent" # Name is spelled correctly.
+Daa = "Daa" # It's correct in our context.
+
+[type.po]
+extend-glob = ["*.po"]
+check-file = false
+
+[files]
+extend-exclude = ["*.md"]
