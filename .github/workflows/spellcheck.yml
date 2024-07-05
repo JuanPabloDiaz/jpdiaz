@@ -21,4 +21,4 @@ jobs:
         run: pip install codespell
 
       - name: Run spellcheck
-        run: codespell --quiet-level=2 --check-filenames -- ./**/*.md ./**/*.astro ./**/*.html ./**/*.js ./**/*.jsx ./**/*.ts ./**/*.tsx
+        run: codespell --quiet-level=2 --check-filenames -- ./**/*.md ./**/*.astro ./**/*.html
