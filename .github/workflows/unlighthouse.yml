@@ -1,4 +1,7 @@
-name: Assertions and static report
+# This workflow will run Unlighthouse CI and deploy the results to Netlify
+# https://github.com/JuanPabloDiaz/unlighthouse
+# Visit https://status.jpdiaz.dev to see the results (https://performance-jpdiaz.netlify.app/)
+name: Unlighthouse Report on Netlify
 
 on:
   push:
