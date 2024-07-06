@@ -3,7 +3,7 @@ import Layout from '@layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import CardSmall from '@components/ui/CardSmall.astro';
 import BackToTop from '@components/ui/BackToTop.astro';
-import GithubButtons from '@components/GithubButtons.astro';
+import GithubButtons from '@components/ui/GithubButtons.astro';
 
 const projects = await getCollection('more-projects', ({ data }) => {
 	// console.log('data: ', data);

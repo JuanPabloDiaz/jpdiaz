@@ -3,7 +3,7 @@ import Tags from '@components/ui/Tags.astro';
 
 import OpenOutline from '@components/icons/OpenOutline.astro';
 import GitHubIcon from '@components/icons/GitHubIcon.astro';
-
+import GitHubStars from './GitHubStars.astro';
 interface Props {
 	github_url?: string;
 	url?: string;
@@ -55,4 +55,7 @@ const {
 			</a>
 		</article>
 	</section>
+	<article class="relative m-2 w-1/12 p-1">
+		<GitHubStars github_url={github_url} />
+	</article>
 </main>
