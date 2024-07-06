@@ -44,6 +44,8 @@ Welcome to my personal website! I'm Juan Pablo Díaz, a Front-End Developer and 
 
 <img src="./public/images/lighthouse.png"/>
 
+Check out the [Lighthouse Report](https://performance-jpdiaz.netlify.app/) for more details.
+
 ### Built With 🔑
 
 ![Astro](https://img.shields.io/badge/Astro-000.svg?style=for-the-badge&logo=Astro&logoColor=white)

@@ -40,7 +40,6 @@ jobs:
             3. **Check the Report**:
                - Click on \`lighthouse\` > \`Audit URLs using Lighthouse\` > \`Uploading\` > \`open the report\` to see the full report.
             4. **Unlighthouse Report on Netlify**:
-               - [https://status.jpdiaz.dev](https://status.jpdiaz.dev)
                - [https://performance-jpdiaz.netlify.app/](https://performance-jpdiaz.netlify.app/)
             `;
 
