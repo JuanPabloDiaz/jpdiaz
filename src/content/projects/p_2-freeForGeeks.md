@@ -5,6 +5,6 @@ description: A curated list of free resources for developers and geeks.
 img_alt: Free For Geeks site
 link: https://freeforgeeks.com/
 github_link: https://github.com/JuanPabloDiaz/freeForGeeks
-tags: ['Docsify', 'OpenSource', 'Community']
+tags: ['Docsify', 'OpenSource']
 image_path: /assets/images/projects/free-for-geeks.jpg
 ---
