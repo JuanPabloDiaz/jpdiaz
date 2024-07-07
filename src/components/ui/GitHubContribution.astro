@@ -1,0 +1,55 @@
+---
+// GitHubContributionButton.astro
+// Props definition
+interface Props {
+	github_url: string;
+}
+
+const { github_url } = Astro.props;
+
+// Function to generate the URL for commits by a specific author
+const getContributionUrl = (url: string) => {
+	const commitsUrl = `${url}/commits?author=JuanPabloDiaz`;
+	return commitsUrl;
+};
+
+const contributionUrl = getContributionUrl(github_url);
+
+// Extract owner and repo name from github_url
+const urlParts = github_url.match(/github\.com\/([^\/]+)\/([^\/]+)/);
+const owner = urlParts ? urlParts[1] : null;
+const repo = urlParts ? urlParts[2] : null;
+
+// Fetch number of contributions
+let contributionsCount = 0;
+if (owner && repo) {
+	const apiUrl = `https://api.github.com/repos/${owner}/${repo}/commits?author=JuanPabloDiaz`;
+	contributionsCount = await fetch(apiUrl)
+		.then((res) => res.json())
+		.then((data) => data.length) // This assumes each item in the array represents a commit
+		.catch((error) => {
+			console.error('Error fetching contributions:', error);
+			return 0; // Return 0 contributions in case of an error
+		});
+}
+
+// Fetch number of repos
+const repoCount = await fetch(
+	'https://api.github.com/users/JuanPabloDiaz/repos?page=1&per_page=100'
+)
+	.then((res) => res.json())
+	.then((data) => data.length)
+	.catch((error) => {
+		console.error('Error fetching repositories:', error);
+		return 0; // Return 0 repos in case of an error
+	});
+---
+
+<a
+	href={contributionUrl}
+	target="_blank"
+	rel="noopener noreferrer"
+	class="rounded bg-black px-4 py-2 font-bold text-white"
+>
+	{contributionsCount} Contributions
+</a>

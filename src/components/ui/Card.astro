@@ -14,6 +14,7 @@ import freeForGeeks from '@assets/images/projects/free-for-geeks.jpg';
 import OpenOutline from '@components/icons/OpenOutline.astro';
 import GitHub from '@components/icons/GitHub.astro';
 import GitHubStars from '@components/ui/GitHubStars.astro';
+import GitHubContribution from '@components/ui/GitHubContribution.astro';
 
 interface Props {
 	github_url?: string;
@@ -61,7 +62,7 @@ const imagePath = images[filename];
 	>
 		<a href={url} target="_blank" aria-label="link to project">
 			<div class="relative flex items-end overflow-hidden rounded-xl">
-				<Image
+				<!-- <Image
 					src={imagePath}
 					alt={alt}
 					aspectRatio="4:4"
@@ -69,13 +70,19 @@ const imagePath = images[filename];
 					width={400}
 					height={400}
 					loading="eager"
-				/>
+				/> -->
 			</div>
 		</a>
 		<div class="mt-1 flex flex-grow flex-col p-2">
+			<GitHubContribution github_url={github_url} />
 			<h3 class="text-xl text-black lg:text-2xl">{title}</h3>
+
 			<p class="text-md h-full text-black/70">{description}</p>
 			<Tags tags={tags} />
+			<article class="relative m-2 w-1/12 p-1">
+				<GitHubStars github_url={github_url} />
+			</article>
+
 			<div class="flex h-full items-end justify-between p-2">
 				<a
 					href={github_url}
@@ -93,8 +100,5 @@ const imagePath = images[filename];
 				</a>
 			</div>
 		</div>
-	</article>
-	<article class="relative m-2 w-1/12 p-1">
-		<GitHubStars github_url={github_url} />
 	</article>
 </section>
