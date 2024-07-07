@@ -2,6 +2,8 @@
 import Button from '@components/ui/Button.astro';
 import ToggleTheme from '@components/ui/ToggleTheme.astro';
 import { Astronav, MenuIcon, MenuItems } from 'astro-navbar';
+import Link from '@components/ui/Link.astro';
+
 const PDF = './files/2024-FrontEndCV.pdf';
 
 const menuitems = [
@@ -61,17 +63,12 @@ let menu = Astro.props.isIndexPage ? menuitems : backHomeMenu;
 					menu.map((item) => (
 						<>
 							<li>
-								<a
-									aria-label="navigation link"
-									href={item.path}
-									class="flex py-2 text-black transition duration-300 hover:text-orange dark:text-white dark:hover:text-orange lg:px-3"
-								>
-									{item.title}
-								</a>
+								<Link text={item.title} ariaLabel="navigation link" href={item.path} />
 							</li>
 						</>
 					))
 				}
+
 				<li><ToggleTheme /></li>
 			</ul>
 		</MenuItems>

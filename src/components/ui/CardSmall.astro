@@ -3,6 +3,8 @@ import Tags from '@components/ui/Tags.astro';
 
 import OpenOutline from '@components/icons/OpenOutline.astro';
 import GitHubIcon from '@components/icons/GitHubIcon.astro';
+import GitHubStars from '@components/ui/GitHubStars.astro';
+import TypeScript from '@components/icons/TypeScript.astro';
 
 interface Props {
 	github_url?: string;
@@ -34,8 +36,14 @@ const {
 			>
 				{description}
 			</p>
-			<div class="h-full w-full group-hover:invisible group-hover:h-0">
-				<Tags tags={tags} />
+			<div class="flex w-full">
+				<div class="h-fit w-fit flex-grow group-hover:invisible group-hover:h-0">
+					<Tags tags={tags} />
+				</div>
+				<div class="h-fit w-fit flex-grow group-hover:invisible group-hover:h-0">
+					<GitHubStars github_url={github_url} />
+				</div>
+				<!-- <TypeScript class="h-8 w-8 group-hover:invisible group-hover:h-0" /> -->
 			</div>
 		</article>
 		<article class="relative m-2 w-1/12 p-1">

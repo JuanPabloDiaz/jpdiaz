@@ -13,6 +13,7 @@ import migueDiaz from '@assets/images/projects/migue-diaz.jpg';
 import freeForGeeks from '@assets/images/projects/free-for-geeks.jpg';
 import OpenOutline from '@components/icons/OpenOutline.astro';
 import GitHub from '@components/icons/GitHub.astro';
+import GitHubStars from '@components/ui/GitHubStars.astro';
 
 interface Props {
 	github_url?: string;
@@ -92,5 +93,8 @@ const imagePath = images[filename];
 				</a>
 			</div>
 		</div>
+	</article>
+	<article class="relative m-2 w-1/12 p-1">
+		<GitHubStars github_url={github_url} />
 	</article>
 </section>

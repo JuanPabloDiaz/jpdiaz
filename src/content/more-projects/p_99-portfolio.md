@@ -4,5 +4,5 @@ title: Portfolio React
 description: description here
 link: https://portfolio-react-template-xi.vercel.app/
 github_link: https://github.com/JuanPabloDiaz/portfolio-react-template
-tags: ['React', 'CSS', 'JavaScript']
+tags: ['React', 'CSS', 'JS']
 ---
