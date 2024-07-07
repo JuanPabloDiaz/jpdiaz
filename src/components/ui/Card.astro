@@ -84,13 +84,17 @@ const imagePath = images[filename];
 			</article>
 
 			<div class="flex h-full items-end justify-between p-2">
-				<a
-					href={github_url}
-					target="_blank"
-					class="rounded-xl bg-orange p-1 px-2 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
-				>
-					<GitHub />
-				</a>
+				{
+					github_url !== '#' && (
+						<a
+							href={github_url}
+							target="_blank"
+							class="rounded-xl bg-orange p-1 px-2 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
+						>
+							<GitHub />
+						</a>
+					)
+				}
 				<a
 					href={url}
 					target="_blank"

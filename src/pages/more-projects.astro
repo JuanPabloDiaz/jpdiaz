@@ -27,7 +27,7 @@ const projects = await getCollection('more-projects', ({ data }) => {
 							title={project.data.title}
 							description={project.data.description}
 							tags={project.data.tags}
-							github_url={project.data.github_link}
+							github_url={project.data?.github_link}
 						/>
 					))
 				}

@@ -20,12 +20,16 @@ const { url, github_url } = Astro.props;
 	>
 		<OpenOutline class="h-6 w-8" />
 	</a>
-	<a
-		href={github_url}
-		target="_blank"
-		class="absolute top-12 flex h-8 w-8 items-center justify-center rounded-xl bg-orange p-1 px-2 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
-	>
-		<GitHubIcon class="h-4 w-5" />
-		<div class="h-fit w-fit flex-grow group-hover:invisible group-hover:h-0"></div>
-	</a>
+	{
+		github_url !== '#' && (
+			<a
+				href={github_url}
+				target="_blank"
+				class="absolute top-12 flex h-8 w-8 items-center justify-center rounded-xl bg-orange p-1 px-2 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
+			>
+				<GitHubIcon class="h-4 w-5" />
+				<div class="h-fit w-fit flex-grow group-hover:invisible group-hover:h-0" />
+			</a>
+		)
+	}
 </article>
