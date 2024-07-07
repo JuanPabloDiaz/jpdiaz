@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import CardSmall from './ui/CardSmall.astro';
+import CardSmall from '@components/ui/CardSmall.astro';
 
 const projects = await getCollection('open-source', ({ data }) => {
 	// console.log('data: ', data);
