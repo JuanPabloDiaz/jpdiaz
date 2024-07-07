@@ -21,28 +21,17 @@ const owner = urlParts ? urlParts[1] : null;
 const repo = urlParts ? urlParts[2] : null;
 
 // Fetch number of contributions
-let contributionsCount = 0;
 if (owner && repo) {
 	const apiUrl = `https://api.github.com/repos/${owner}/${repo}/commits?author=JuanPabloDiaz`;
-	contributionsCount = await fetch(apiUrl)
+	fetch(apiUrl)
 		.then((res) => res.json())
-		.then((data) => data.length) // This assumes each item in the array represents a commit
-		.catch((error) => {
-			console.error('Error fetching contributions:', error);
-			return 0; // Return 0 contributions in case of an error
-		});
+		.then((data) => data.length)
+		.then((contributionsCount) => {
+			console.log('Contributions:', contributionsCount);
+			return contributionsCount;
+		})
+		.catch((err) => console.error('Error fetching contributions:', err));
 }
-
-// Fetch number of repos
-const repoCount = await fetch(
-	'https://api.github.com/users/JuanPabloDiaz/repos?page=1&per_page=100'
-)
-	.then((res) => res.json())
-	.then((data) => data.length)
-	.catch((error) => {
-		console.error('Error fetching repositories:', error);
-		return 0; // Return 0 repos in case of an error
-	});
 ---
 
 <a
@@ -51,5 +40,5 @@ const repoCount = await fetch(
 	rel="noopener noreferrer"
 	class="rounded bg-black px-4 py-2 font-bold text-white"
 >
-	{contributionsCount} Contributions
-</a>
+	Display number of commits here</a
+>
