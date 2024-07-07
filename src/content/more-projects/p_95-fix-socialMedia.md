@@ -5,5 +5,5 @@ description: work in progress
 link: https://social-media-jpdiaz.vercel.app/
 github_link: https://github.com/JuanPabloDiaz/socialMedia
 #https://github.com/JuanPabloDiaz/full-Stack-App-testing
-tags: ['react']
+tags: ['React']
 ---

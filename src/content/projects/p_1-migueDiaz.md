@@ -5,6 +5,6 @@ description: A personal site for a client. Displays the location of both the vis
 img_alt: Migue Diaz Project
 link: https://miguediaz.com/
 github_link: /
-tags: ['next', 'Tailwind', 'Leaflet', 'FastAPI']
+tags: ['Next', 'Tailwind', 'Leaflet', 'FastAPI']
 image_path: /assets/images/projects/migue-diaz.jpg
 ---

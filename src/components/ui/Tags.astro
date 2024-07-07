@@ -6,24 +6,19 @@ export interface Props {
 
 const { tags } = Astro.props;
 
-const iconURL = 'https://skillicons.dev/icons?i=';
-const iconGoURL = 'https://go-skill-icons.vercel.app/api/icons?i=';
-
-const tagsImg = tags?.map((tag) => {
-	const iconPath = tag.toLowerCase();
-	return tag === '' ? `${iconGoURL}${iconPath}` : `${iconURL}${iconPath}`;
-});
+const iconURL = 'https://go-skill-icons.vercel.app/api/icons?i=';
+const oldIconURL = 'https://skillicons.dev/icons?i=';
 ---
 
 {
 	tags && (
 		<div class="flex flex-row flex-wrap justify-start gap-2">
-			{/* {tags.map((tag) => (
+			{tags.map((tag) => (
 				<span class="inline-block rounded-lg px-2 py-1 text-xs text-black shadow-sm shadow-orange lg:py-1">
 					{tag}
 				</span>
-			))} */}
-			{tagsImg?.map((tag) => (
+			))}
+			{/* {tagsImg?.map((tag) => (
 				<img
 					class="opacity-100 duration-75 hover:scale-105 hover:transform hover:opacity-50"
 					src={tag}
@@ -33,7 +28,22 @@ const tagsImg = tags?.map((tag) => {
 					height="25"
 					title={tags[tagsImg.indexOf(tag)]}
 				/>
-			))}
+			))} */}
+
+			{tags?.map((tag) => {
+				const iconPath = tag.toLowerCase();
+				return (
+					<img
+						src={`${iconURL}${iconPath}`}
+						class="opacity-100 duration-75 hover:scale-105 hover:transform hover:opacity-50"
+						alt={`${tag} logo`}
+						loading="eager"
+						width="25"
+						height="25"
+						title={tags[tags.indexOf(tag)]}
+					/>
+				);
+			})}
 		</div>
 	)
 }
