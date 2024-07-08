@@ -1,0 +1,39 @@
+---
+// Props definition
+interface Props {
+	github_url: string;
+}
+
+const { github_url } = Astro.props;
+
+// Extract owner and repo name from github_url
+const urlParts = github_url.match(/github\.com\/([^\/]+)\/([^\/]+)/);
+const owner = urlParts ? urlParts[1] : null;
+const repo = urlParts ? urlParts[2] : null;
+
+let contributionsCount = 0;
+
+if (owner && repo) {
+	const apiUrl = `https://api.github.com/repos/${owner}/${repo}/commits?author=JuanPabloDiaz`;
+
+	try {
+		const res = await fetch(apiUrl);
+		const data = await res.json();
+		contributionsCount = data.length;
+	} catch (err) {
+		console.error('Error:', err);
+		contributionsCount = 0; // Handle error by setting contributions to 0 or any fallback value
+	}
+}
+
+const contributionUrl = `${github_url}/commits?author=JuanPabloDiaz`;
+---
+
+<a
+	href={contributionUrl}
+	target="_blank"
+	rel="noopener noreferrer"
+	class="rounded bg-black px-4 py-2 font-bold text-white"
+>
+	{contributionsCount} Contributions
+</a>

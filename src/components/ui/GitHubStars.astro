@@ -1,4 +1,7 @@
 ---
+import Star from '@components/icons/Star.astro';
+import StarHover from '@components/icons/StarHover.astro';
+
 // Define the component's props
 interface Props {
 	github_url: string;
@@ -55,8 +58,12 @@ const formattedStarsCount =
 		: starsCount.toString();
 ---
 
-<div class="flex flex-row flex-wrap justify-end gap-2">
-	<p class="inline-block rounded-lg px-2 py-1 text-xs text-black shadow-sm shadow-orange lg:py-1">
-		<span>{formattedStarsCount} stars</span>
-	</p>
+<div class="group flex flex-wrap justify-end gap-2">
+	<div
+		class="icon-container flex items-center rounded-lg px-2 py-1 text-xs text-black shadow-sm shadow-orange lg:py-1"
+	>
+		<StarHover class="mr-1 h-4 w-4 group-hover:hidden" />
+		<Star class="mr-1 hidden h-4 w-4 group-hover:block" />
+		<span>{formattedStarsCount}</span>
+	</div>
 </div>

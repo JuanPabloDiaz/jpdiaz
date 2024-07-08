@@ -4,5 +4,5 @@ title: Pinterest
 description: A Pinterest clone
 link: https://pinterest.jpdiaz.dev/
 github_link: https://github.com/JuanPabloDiaz/pinterest
-tags: ['React', 'CSS']
+tags: ['React', 'JS', 'CSS']
 ---

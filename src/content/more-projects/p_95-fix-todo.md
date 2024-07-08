@@ -4,5 +4,5 @@ title: To Do (fix)
 description: work in progress
 link: https://todo-platzi-react.vercel.app/
 github_link: https://github.com/JuanPabloDiaz/todo
-tags: ['react']
+tags: ['React', 'JS', 'CSS']
 ---
