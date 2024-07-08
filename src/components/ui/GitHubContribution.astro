@@ -34,7 +34,8 @@ const contributionUrl = `${github_url}/commits?author=JuanPabloDiaz`;
 	href={contributionUrl}
 	target="_blank"
 	rel="noopener noreferrer"
-	class="rounded bg-black px-4 py-2 font-bold text-white"
+	class="flex flex-col items-center justify-center rounded bg-orange text-white shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
 >
-	{contributionsCount || contribution} Contributions
+	{contributionsCount || contribution}
+	<span class="px-1 text-xs">contributions</span>
 </a>

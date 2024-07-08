@@ -11,7 +11,7 @@ interface Props {
 	github_url?: string;
 	alt?: string;
 	tags: string[];
-	contribution?: number;
+	contribution: number;
 	children?: HTMLElement | HTMLElement[];
 }
 
@@ -21,13 +21,13 @@ const {
 	url = '#',
 	github_url = '#',
 	tags = ['Tags'],
-	contribution = '',
+	contribution = 0,
 } = Astro.props;
 ---
 
 <main class="group w-full p-4 md:w-1/2 lg:w-1/3">
 	<section data-testId="card" class="flex h-28 rounded-xl bg-white/90 p-1 shadow-lg">
-		<article class="flex w-11/12 flex-grow flex-col p-2">
+		<article class="flex w-10/12 flex-grow flex-col p-2">
 			<h3 class="text-md h-full text-black group-hover:invisible group-hover:h-0 lg:text-xl">
 				{title}
 			</h3>
@@ -45,7 +45,6 @@ const {
 				</div>
 			</div>
 		</article>
-		<SmallCardButtons url={url} github_url={github_url} />
-		<GitHubContribution github_url={github_url} contribution={contribution} />
+		<SmallCardButtons url={url} github_url={github_url} contribution={contribution} />
 	</section>
 </main>

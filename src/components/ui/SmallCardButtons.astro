@@ -1,35 +1,60 @@
 ---
 import OpenOutline from '@components/icons/OpenOutline.astro';
 import GitHubIcon from '@components/icons/GitHubIcon.astro';
+import GitHubContribution from './GitHubContribution.astro';
 
 // Define the props interface
 interface Props {
 	url: string;
 	github_url: string;
+	contribution: number;
 }
 
 // Extract props
-const { url, github_url } = Astro.props;
+const { url, github_url, contribution } = Astro.props;
 ---
 
-<article class="relative m-2 w-1/12 p-1">
-	<a
-		href={url}
-		target="_blank"
-		class="absolute mx-auto flex h-8 w-8 items-center justify-center rounded-xl bg-orange p-1 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
-	>
-		<OpenOutline class="h-6 w-8" />
-	</a>
-	{
-		github_url !== '#' && (
-			<a
-				href={github_url}
-				target="_blank"
-				class="absolute top-12 flex h-8 w-8 items-center justify-center rounded-xl bg-orange p-1 px-2 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
-			>
-				<GitHubIcon class="h-4 w-5" />
-				<div class="h-fit w-fit flex-grow group-hover:invisible group-hover:h-0" />
-			</a>
-		)
-	}
+<!-- <article class="relative w-2/12 border border-black p-1">
+		<a
+			href={url}
+			target="_blank"
+			class="absolute mx-auto flex h-8 w-8 items-center justify-center rounded-xl bg-orange p-1 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
+		>
+			<OpenOutline class="h-6 w-8" />
+		</a>
+		{
+			github_url !== '#' && (
+				<a
+					href={github_url}
+					target="_blank"
+					class="absolute top-12 flex h-8 w-8 items-center justify-center rounded-xl bg-orange p-1 px-2 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
+				>
+					<GitHubIcon class="h-4 w-5" />
+				</a>
+			)
+		}
+	<GitHubContribution github_url={github_url} contribution={contribution} />
+</article> -->
+<article class="relative m-1 flex w-2/12 flex-col items-center gap-2">
+	<GitHubContribution github_url={github_url} contribution={contribution} />
+	<div class="flex justify-center space-x-2">
+		<a
+			href={url}
+			target="_blank"
+			class="flex h-8 w-8 items-center justify-center rounded-xl bg-orange p-1 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
+		>
+			<OpenOutline class="h-6 w-8" />
+		</a>
+		{
+			github_url !== '#' && (
+				<a
+					href={github_url}
+					target="_blank"
+					class="flex h-8 w-8 items-center justify-center rounded-xl bg-orange p-1 px-2 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
+				>
+					<GitHubIcon class="h-4 w-5" />
+				</a>
+			)
+		}
+	</div>
 </article>
