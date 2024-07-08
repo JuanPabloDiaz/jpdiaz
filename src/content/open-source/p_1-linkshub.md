@@ -5,4 +5,5 @@ description: LinksHub aims to provide people access to a wide range of free reso
 link: https://linkshub.dev/
 github_link: https://github.com/rupali-codes/LinksHub
 tags: ['Next', 'TS', 'Tailwind']
+contribution: 26
 ---

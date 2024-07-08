@@ -5,4 +5,5 @@ description: Projectshut is an open source web app that enables users to freely 
 link: https://www.projectshut.tech/
 github_link: https://github.com/priyankarpal/projectshut
 tags: ['TS', 'JS']
+contribution: 3
 ---

@@ -21,6 +21,7 @@ const moreProjectsCollection = defineCollection({
 		tags: z.array(z.string()),
 		link: z.string(),
 		github_link: z.string().optional(),
+		contribution: z.number().optional(),
 	}),
 });
 
@@ -30,6 +31,7 @@ const openSourceCollection = defineCollection({
 		description: z.string(),
 		tags: z.array(z.string()),
 		link: z.string(),
+		contribution: z.number().optional(),
 	}),
 });
 

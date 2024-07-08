@@ -5,4 +5,5 @@ description: DevProfiles is a platform for developers to easily share their prof
 link: https://devprofiles.is-an.app/
 github_link: https://github.com/oyepriyansh/DevProfiles
 tags: ['HTML', 'CSS', 'JS']
+contribution: 260
 ---

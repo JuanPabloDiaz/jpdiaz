@@ -5,4 +5,5 @@ description: Collection of free resources like icons, images, illustrations, com
 link: https://freesets.vercel.app/
 github_link: https://github.com/cosmoart/Freesets
 tags: ['Svelte', 'JS', 'CSS']
+contribution: 8
 ---

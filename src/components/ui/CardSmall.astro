@@ -2,25 +2,26 @@
 import Tags from '@components/ui/Tags.astro';
 import SmallCardButtons from '@components/ui/SmallCardButtons.astro';
 import GitHubStars from '@components/ui/GitHubStars.astro';
-import TypeScript from '@components/icons/TypeScript.astro';
 import GitHubContribution from './GitHubContribution.astro';
 
 interface Props {
-	github_url?: string;
-	url?: string;
-	alt?: string;
 	title?: string;
 	description?: string;
+	url?: string;
+	github_url?: string;
+	alt?: string;
 	tags: string[];
+	contribution?: number;
 	children?: HTMLElement | HTMLElement[];
 }
 
 const {
-	github_url = '#',
-	url = '#',
 	title = 'Project title',
 	description = 'Project description',
+	url = '#',
+	github_url = '#',
 	tags = ['Tags'],
+	contribution = '',
 } = Astro.props;
 ---
 
@@ -42,10 +43,9 @@ const {
 				<div class="h-fit w-fit flex-grow group-hover:invisible group-hover:h-0">
 					<GitHubStars github_url={github_url} />
 				</div>
-				<!-- <TypeScript class="h-8 w-8 group-hover:invisible group-hover:h-0" /> -->
 			</div>
 		</article>
 		<SmallCardButtons url={url} github_url={github_url} />
-		<GitHubContribution github_url={github_url} />
+		<GitHubContribution github_url={github_url} contribution={contribution} />
 	</section>
 </main>

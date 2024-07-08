@@ -22,11 +22,12 @@ const projects = await getCollection('open-source', ({ data }) => {
 		{
 			projects.map((project) => (
 				<CardSmall
-					url={project.data.link}
 					title={project.data.title}
 					description={project.data.description}
-					tags={project.data.tags}
 					github_url={project.data.github_link}
+					url={project.data.link}
+					tags={project.data.tags}
+					contribution={project.data.contribution}
 				/>
 			))
 		}

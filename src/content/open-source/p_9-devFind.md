@@ -5,4 +5,5 @@ description: DevFind is an open source project that aims to create a platform fo
 link: https://dev-find.vercel.app/
 github_link: https://github.com/shyamtawli/devFind
 tags: ['HTML', 'CSS', 'JS']
+contribution: 1
 ---

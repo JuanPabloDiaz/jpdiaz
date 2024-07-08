@@ -2,9 +2,10 @@
 // Props definition
 interface Props {
 	github_url: string;
+	contribution: number;
 }
 
-const { github_url } = Astro.props;
+const { github_url, contribution } = Astro.props;
 
 // Extract owner and repo name from github_url
 const urlParts = github_url.match(/github\.com\/([^\/]+)\/([^\/]+)/);
@@ -35,5 +36,5 @@ const contributionUrl = `${github_url}/commits?author=JuanPabloDiaz`;
 	rel="noopener noreferrer"
 	class="rounded bg-black px-4 py-2 font-bold text-white"
 >
-	{contributionsCount} Contributions
+	{contributionsCount || contribution} Contributions
 </a>
