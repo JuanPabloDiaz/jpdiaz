@@ -56,14 +56,24 @@ const formattedStarsCount =
 	starsCount > 1000
 		? `${(starsCount / 1000).toFixed(1).replace(/\.0$/, '')}K`
 		: starsCount.toString();
+
+let forkUrl = '';
+
+if (repoDetails) {
+	forkUrl = `https://github.com/${repoDetails.owner}/${repoDetails.repo}/fork`;
+	starsCount = await fetchStarsCount(repoDetails.owner, repoDetails.repo);
+}
 ---
 
 <div class="group flex flex-wrap justify-end gap-2">
-	<div
+	<a
+		href={forkUrl}
+		target="_blank"
+		rel="noopener noreferrer"
 		class="icon-container flex items-center rounded-lg px-2 py-1 text-xs text-black shadow-sm shadow-orange lg:py-1"
 	>
 		<StarHover class="mr-1 h-4 w-4 group-hover:hidden" />
 		<Star class="mr-1 hidden h-4 w-4 group-hover:block" />
 		<span>{formattedStarsCount}</span>
-	</div>
+	</a>
 </div>
