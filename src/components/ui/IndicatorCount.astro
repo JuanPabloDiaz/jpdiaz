@@ -10,15 +10,12 @@ const { button, count, href } = Astro.props;
 
 <a
 	href={href}
-	class="focus:ring-blue-300 dark:focus:ring-blue-800 bg-transparent relative inline-flex items-center rounded-lg px-5 py-2.5 text-center text-sm font-medium text-black hover:bg-white hover:text-orange focus:outline-none focus:ring-4 dark:text-white dark:hover:text-orange"
+	class="relative flex py-2 text-black transition duration-300 hover:text-orange dark:text-white dark:hover:text-orange lg:px-3"
 >
-	<!-- class="flex flex-row  " -->
-
 	{button}
-
 	{
 		count > 0 && (
-			<div class="bg-red-500 dark:border-gray-900 absolute -right-2 -top-2 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white text-xs font-bold text-white">
+			<div class="absolute -right-2 -top-2 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-orange text-xs font-bold text-white dark:border-white">
 				{count}
 			</div>
 		)
@@ -26,14 +23,15 @@ const { button, count, href } = Astro.props;
 
 	{
 		count > 10 && (
-			// <div class="bg-red-500 dark:border-gray-900 absolute -right-2 -top-2 inline-flex h-6 w-8 items-center justify-center rounded-full border-2 border-white text-xs font-bold text-white">
-			<div>{count}</div>
+			<div class="absolute -right-2 -top-2 inline-flex h-6 w-8 items-center justify-center rounded-full border-2 border-white bg-orange text-xs font-bold text-white dark:border-white">
+				{count}
+			</div>
 		)
 	}
 
 	{
 		count > 99 && (
-			<div class="bg-red-500 dark:border-gray-900 absolute -right-2 -top-2 inline-flex h-6 w-9 items-center justify-center rounded-full border-2 border-white text-xs font-bold text-white">
+			<div class="absolute -right-2 -top-2 inline-flex h-6 w-9 items-center justify-center rounded-full border-2 border-white bg-orange text-xs font-bold text-white dark:border-white">
 				99+
 			</div>
 		)
