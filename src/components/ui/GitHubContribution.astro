@@ -29,11 +29,11 @@ if (owner && repo) {
 			return res.json();
 		})
 		.then((data) => {
-			console.log('data:', data);
+			// console.log('data:', data);
 			return data.length;
 		})
 		.then((contributionsCount) => {
-			console.log('Contributions:', contributionsCount);
+			// console.log('Contributions:', contributionsCount);
 			return contributionsCount;
 		})
 		.catch((err) => {
@@ -48,5 +48,5 @@ if (owner && repo) {
 	rel="noopener noreferrer"
 	class="rounded bg-black px-4 py-2 font-bold text-white"
 >
-	Display number of commits here
+	Display number of contributions
 </a>
