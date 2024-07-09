@@ -37,7 +37,11 @@ let menu = Astro.props.isIndexPage ? menuitems : backHomeMenu;
 // let CV = Astro.props.isIndexPage ? path : download;
 ---
 
-<header data-testId="header" class="my-5 flex flex-col items-center justify-between lg:flex-row">
+<!-- class="fixed top-0 z-10 mx-auto mt-2 flex w-full items-center justify-center bg-orange" -->
+<header
+	data-testId="header"
+	class="container fixed z-10 my-5 flex flex-col items-center justify-around lg:flex-row"
+>
 	<Astronav>
 		<div class="flex w-full items-center justify-between lg:w-auto">
 			{
@@ -57,15 +61,17 @@ let menu = Astro.props.isIndexPage ? menuitems : backHomeMenu;
 				<MenuIcon class="h-4 w-4 text-black dark:text-white" />
 			</div>
 		</div>
-		<MenuItems class="mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto">
+		<MenuItems
+			class="mt-2 hidden w-full rounded-lg bg-orange/30 px-2 dark:bg-black lg:mt-0 lg:flex lg:w-auto"
+		>
 			<ul class="flex flex-col lg:flex-row lg:gap-3">
 				{
 					menu.map((item) => (
-						<>
+						<MenuItems>
 							<li>
 								<Link text={item.title} ariaLabel="navigation link" href={item.path} />
 							</li>
-						</>
+						</MenuItems>
 					))
 				}
 
