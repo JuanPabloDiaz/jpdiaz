@@ -10,6 +10,14 @@ const PDF = './files/2024-FrontEndCV.pdf';
 
 const homeMenu = [
 	{
+		title: 'Resume',
+		path: '/resume',
+	},
+	{
+		title: 'Home',
+		path: '/#top',
+	},
+	{
 		title: 'About',
 		path: '#about',
 	},
@@ -26,9 +34,12 @@ const homeMenu = [
 		// path: '#contact', // Contact form but it's not ready
 		path: 'mailto:juan.diaz.rodriguez93@gmail.com',
 	},
+];
+
+const backHomeMenu = [
 	{
-		title: 'Resume',
-		path: '/resume',
+		title: 'BackToHome',
+		path: '/',
 	},
 ];
 
@@ -51,7 +62,18 @@ const cvMenu = [
 	},
 ];
 
-let menu = Astro.props.isIndexPage ? homeMenu : cvMenu;
+// Determine the current path
+const path = new URL(Astro.request.url).pathname;
+
+// Logic to select the appropriate menu based on the current path
+let menu;
+if (path === '/') {
+	menu = homeMenu;
+} else if (path === '/resume') {
+	menu = cvMenu;
+} else {
+	menu = backHomeMenu;
+}
 ---
 
 <header data-testId="header" class="my-5 flex flex-col items-center justify-around lg:flex-row">
