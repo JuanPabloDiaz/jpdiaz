@@ -43,15 +43,26 @@ let menu = Astro.props.isIndexPage ? menuitems : backHomeMenu;
 			<!-- Resume/Download Button -->
 			{
 				Astro.props.isIndexPage ? (
-					<a href="./CV" rel="noopener noreferrer">
-						<Button style="primary" size={'sm'} name="Download CV">
-							My Resume
-						</Button>
-					</a>
+					<Button
+						style="primary"
+						size={'sm'}
+						name="My Resume Page"
+						href="./CV"
+						rel="noopener noreferrer"
+					>
+						My Resume
+					</Button>
 				) : (
-					<a href={PDF} target="_blank" rel="noopener noreferrer">
-						<Button name="Download CV">Download CV</Button>
-					</a>
+					<Button
+						style="primary"
+						size={'sm'}
+						name="Download CV"
+						href={PDF}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Download CV
+					</Button>
 				)
 			}
 			<!-- Hamburger Icon For Mobile -->
@@ -59,16 +70,14 @@ let menu = Astro.props.isIndexPage ? menuitems : backHomeMenu;
 				<MenuIcon class="h-4 w-4 text-black dark:text-white" />
 			</div>
 		</div>
-		<MenuItems
+		<!-- <MenuItems
 			class="mt-2 hidden w-full rounded-lg bg-orange/30 px-2 dark:bg-black lg:fixed lg:z-10 lg:mt-0 lg:flex lg:w-auto"
 		>
 			<ul class="flex flex-col lg:flex-row lg:gap-3">
 				<li class="flex items-center justify-center">
-					<a href="#top" rel="noopener noreferrer">
-						<Button style="secondary" size={'sm'} name="Home">
-							<Home />
-						</Button>
-					</a>
+					<Button style="secondary" size={'sm'} name="Home" href="#top" rel="noopener noreferrer">
+						<Home />
+					</Button>
 				</li>
 
 				{
@@ -83,6 +92,6 @@ let menu = Astro.props.isIndexPage ? menuitems : backHomeMenu;
 
 				<li><ToggleTheme /></li>
 			</ul>
-		</MenuItems>
+		</MenuItems> -->
 	</Astronav>
 </header>

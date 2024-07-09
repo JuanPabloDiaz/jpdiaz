@@ -297,21 +297,33 @@ let courses = [
 					<div class="flex flex-col items-center gap-2">
 						<h2 class="mt-4 w-full text-xl font-bold">Resume</h2>
 						<p>View and download my resume by clicking on the button below</p>
-						<div class="justify-end">
-							<a target="_blank" href={PDF}>
-								<Button class="flex">
-									<p>Download resume</p>
-									<Icon name="carbon:document-pdf" class="ml-1 h-6 w-6" />
-								</Button>
-							</a>
-						</div>
-						<div class="justify-end">
-							<a target="_blank" href="https://resume.creddle.io/resume/9um4zrxd89s">
-								<Button class="flex">
-									<p>View CV Online</p>
-									<OpenOutline class="ml-1 h-6 w-6" />
-								</Button>
-							</a>
+						<div class="flex w-full">
+							<Button
+								style="primary"
+								size={'sm'}
+								name="Download CV"
+								rel="noopener noreferrer"
+								class="flex w-1/2 items-center justify-center"
+								target="_blank"
+								href={PDF}
+							>
+								<p class="text-sm">Download resume</p>
+								<Icon name="carbon:document-pdf" class="ml-1 h-6 w-6" />
+							</Button>
+							<!-- </div> -->
+							<!-- <div class="justify-end"> -->
+							<Button
+								style="primary"
+								size={'sm'}
+								name="Download CV"
+								rel="noopener noreferrer"
+								class="flex w-1/2 items-center justify-center"
+								target="_blank"
+								href="https://resume.creddle.io/resume/9um4zrxd89s"
+							>
+								<p class="text-sm">View CV Online</p>
+								<OpenOutline class="ml-1 h-6 w-6" />
+							</Button>
 						</div>
 					</div>
 				</div>

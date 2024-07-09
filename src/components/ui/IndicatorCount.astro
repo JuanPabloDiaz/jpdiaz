@@ -1,18 +1,18 @@
 ---
 interface Props {
-	button: string;
+	text: string;
 	count: number;
 	href: string;
 }
 
-const { button, count, href } = Astro.props;
+const { text, count, href } = Astro.props;
 ---
 
 <a
 	href={href}
 	class="relative flex py-2 text-black transition duration-300 hover:text-orange dark:text-white dark:hover:text-orange lg:px-3"
 >
-	{button}
+	{text}
 	{
 		count > 0 && (
 			<div class="absolute -right-2 -top-2 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-orange text-xs font-bold text-white dark:border-white">
