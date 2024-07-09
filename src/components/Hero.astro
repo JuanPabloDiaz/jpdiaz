@@ -2,10 +2,12 @@
 import juanImage from '@assets/images/juan.jpg';
 import { Image } from '@astrojs/image/components';
 import Button from '@components/ui/Button.astro';
+import HireMe from './HireMe.astro';
 ---
 
 <section
 	data-testid="hero"
+	id="hero"
 	class="flex h-screen flex-col-reverse items-center justify-center text-center lg:flex-row"
 >
 	<div class="mb-10 flex flex-col items-center lg:mb-0 lg:w-1/2">
@@ -16,15 +18,10 @@ import Button from '@components/ui/Button.astro';
 			</h1>
 		</div>
 		<div class="mb-10">
-			<a href="mailto:juan.diaz93@hotmail.com">
+			<!-- <a href="mailto:juan.diaz93@hotmail.com">
 				<Button size={'lg'} style={'primary'} name="Contact">Hire Me</Button>
-				<img
-					class="opacity-100 duration-75 hover:scale-105 hover:transform hover:opacity-50"
-					src="https://skillicons.dev/icons?i=jekyll"
-					loading="eager"
-					alt="Jekyll"
-				/>
-			</a>
+			</a> -->
+			<HireMe />
 		</div>
 	</div>
 	<div data-testid="hero-img" class="mb-10 flex w-1/2 items-center justify-center">

@@ -3,6 +3,7 @@ import Button from '@components/ui/Button.astro';
 import ToggleTheme from '@components/ui/ToggleTheme.astro';
 import { Astronav, MenuIcon, MenuItems } from 'astro-navbar';
 import Link from '@components/ui/Link.astro';
+import Home from '@components/icons/Home.astro';
 
 const PDF = './files/2024-FrontEndCV.pdf';
 
@@ -33,17 +34,13 @@ const backHomeMenu = [
 ];
 
 let menu = Astro.props.isIndexPage ? menuitems : backHomeMenu;
-
-// let CV = Astro.props.isIndexPage ? path : download;
 ---
 
-<!-- class="fixed top-0 z-10 mx-auto mt-2 flex w-full items-center justify-center bg-orange" -->
-<header
-	data-testId="header"
-	class="container fixed z-10 my-5 flex flex-col items-center justify-around lg:flex-row"
->
+<!-- class="fixed top-0 z-10 mx-auto mt-2 flex w-full items-center justify-center bg-orange" --><!-- lg:container lg:fixed lg:z-10 -->
+<header data-testId="header" class="my-5 flex flex-col items-center justify-around lg:flex-row">
 	<Astronav>
 		<div class="flex w-full items-center justify-between lg:w-auto">
+			<!-- Resume/Download Button -->
 			{
 				Astro.props.isIndexPage ? (
 					<a href="./CV" rel="noopener noreferrer">
@@ -57,14 +54,23 @@ let menu = Astro.props.isIndexPage ? menuitems : backHomeMenu;
 					</a>
 				)
 			}
-			<div class="block lg:hidden">
+			<!-- Hamburger Icon For Mobile -->
+			<div class="fixed right-5 z-10 block lg:hidden">
 				<MenuIcon class="h-4 w-4 text-black dark:text-white" />
 			</div>
 		</div>
 		<MenuItems
-			class="mt-2 hidden w-full rounded-lg bg-orange/30 px-2 dark:bg-black lg:mt-0 lg:flex lg:w-auto"
+			class="mt-2 hidden w-full rounded-lg bg-orange/30 px-2 dark:bg-black lg:fixed lg:z-10 lg:mt-0 lg:flex lg:w-auto"
 		>
 			<ul class="flex flex-col lg:flex-row lg:gap-3">
+				<li class="flex items-center justify-center">
+					<a href="#top" rel="noopener noreferrer">
+						<Button style="secondary" size={'sm'} name="Home">
+							<Home />
+						</Button>
+					</a>
+				</li>
+
 				{
 					menu.map((item) => (
 						<MenuItems>
