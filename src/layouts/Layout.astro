@@ -3,6 +3,8 @@ import Footer from '@components/Footer.astro';
 import Navbar from '@components/Navbar.astro';
 import { SEO } from 'astro-seo';
 import GoogleAnalytics from '@components/GoogleAnalytics.astro';
+import Header from '@components/Header.astro';
+import BackToTop from '@components/ui/BackToTop.astro';
 
 export interface LayoutProps {
 	title: string;
@@ -30,7 +32,9 @@ const { title = 'Juan Diaz | Portfolio' } = Astro.props as LayoutProps;
 		class="mx-auto max-w-screen-xl bg-white px-5 font-sans text-white dark:bg-black xs:text-[16px] md:text-[18px]"
 	>
 		<Navbar isIndexPage={Astro.props.isIndexPage} />
+		<!-- <Header /> -->
 		<slot />
+		<BackToTop />
 		<Footer />
 		<style is:global>
 			/* Improve Page speed */
