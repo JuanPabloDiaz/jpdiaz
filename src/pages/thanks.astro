@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import avatar from '/avatar.svg';
+import avatar from '/public/avatar.svg';
 import { Image } from '@astrojs/image/components';
 import Link from '@components/ui/Link.astro';
 ---
@@ -18,7 +18,7 @@ import Link from '@components/ui/Link.astro';
 			<div class="my-10">
 				<Image
 					class="opacity-90 shadow-orange/50 duration-75 hover:scale-105 hover:transform hover:opacity-50 hover:shadow-2xl"
-					src="/public/avatar.svg"
+					src={avatar}
 					alt="Juan Diaz"
 					aspectRatio="4:4"
 					format="svg"
@@ -30,7 +30,7 @@ import Link from '@components/ui/Link.astro';
 			</div>
 
 			<p class="flex-1 rounded-full bg-orange px-6 py-1 text-black dark:text-white">
-				I will get back to you as soon as possible.
+				I will respond to you promptly
 			</p>
 		</div>
 
