@@ -3,6 +3,7 @@ import Layout from '@layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import CardSmall from '@components/ui/CardSmall.astro';
 import BackToTop from '@components/ui/BackToTop.astro';
+import SubTitle from '@components/ui/SubTitle.astro';
 import GithubButtons from '@components/ui/GithubButtons.astro';
 import Link from '@components/ui/Link.astro';
 
@@ -16,8 +17,7 @@ const projects = await getCollection('more-projects', ({ data }) => {
 <Layout title="Juan Diaz | More Projects">
 	<main>
 		<section class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto">
-			<h2 class="font-monospace text-2xl text-orange lg:text-4xl">More Projects</h2>
-			<span class="mb-10 h-1 w-10 bg-orange"></span>
+			<SubTitle text="More Projects" />
 			<p class="text-black dark:text-white">Here are some more projects that I have worked on.</p>
 			<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
 				{

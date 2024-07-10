@@ -54,19 +54,21 @@ Check out the [Lighthouse Report](https://performance-jpdiaz.netlify.app/) for m
 Features:
 
 - ✅ Dark and light color mode
-- ✅ Hero section with bio
-- ✅ Portfolio collection
-- ✅ Pagination support
-- ✅ Post tags support
-- ✅ Contact form
-- ✅ View transitions
-- ✅ Tailwind CSS
 - ✅ Mobile-first responsive layout
+- ✅ Hero section with bio
+- ✅ About section
+- ✅ Portfolio collection with GitHub API
+- ✅ Open Source projects section
+- ✅ [Contact form](https://web3forms.com/)
+- ✅ Professional resume page with download option
+- ✅ Additional projects page
+- ✅ [Tailwind CSS](https://tailwindcss.com/)
 - ✅ [Navbar with burger button](https://github.com/surjithctly/astro-navbar)
 - ✅ [Image Optimization](https://unpic.pics/)
 - ✅ SEO-friendly with canonical URLs and OpenGraph data
 - ✅ Sitemap support
-- ✅ Markdown & MDX support
+- ✅ Markdown support
+- ✅ Google Analytics metrics
 
 ## Useful Commands 🧰
 

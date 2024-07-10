@@ -2,6 +2,7 @@
 import Card from '@components/ui/Card.astro';
 import { getCollection } from 'astro:content';
 import Link from '@components/ui/Link.astro';
+import SubTitle from '@components/ui/SubTitle.astro';
 
 const projects = await getCollection('projects', ({ data }) => {
 	// console.log('data: ', data);
@@ -36,8 +37,7 @@ const projects = await getCollection('projects', ({ data }) => {
 	id="projects"
 	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto"
 >
-	<h2 class="font-monospace text-2xl text-orange lg:text-4xl">Projects</h2>
-	<span class="mb-10 h-1 w-10 bg-orange"></span>
+	<SubTitle text="Projects" />
 	<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
 		{
 			projects.map((project) => (

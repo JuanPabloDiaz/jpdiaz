@@ -1,9 +1,14 @@
 ---
 import Button from '@components/ui/Button.astro';
 import Social from '@components/ui/Social.astro';
+
+interface Props {
+	button?: boolean;
+}
+
+const { button } = Astro.props;
 ---
 
-<!-- class="flex flex-col flex-wrap items-center justify-center gap-8 text-black dark:text-white md:mb-20 lg:mb-0 lg:h-screen" -->
 <section
 	data-testid="hire-me"
 	id="hire-me"
@@ -14,7 +19,11 @@ import Social from '@components/ui/Social.astro';
 	</div>
 	<hr class="my-6 w-3/4" />
 
-	<Button size={'lg'} style={'primary'} name="hire-me" href="mailto:juan.diaz93@hotmail.com">
-		Hire Me
-	</Button>
+	{
+		button ? (
+			<Button size={'lg'} style={'primary'} name="hire-me" href="mailto:juan.diaz93@hotmail.com">
+				Hire Me
+			</Button>
+		) : null
+	}
 </section>
