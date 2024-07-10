@@ -6,17 +6,17 @@ const developer = ` Juan Diaz`;
 ---
 
 <footer data-testid="footer" class="p-6 text-center text-sm text-black dark:text-white">
-	<div class="flex items-center justify-center">
+	<div class="flex flex-col items-center justify-center md:flex-row">
 		{copyRight}
 
-		<span class="mx-1 text-orange dark:text-orange">•</span>
+		<span class="mx-1 hidden text-orange dark:text-orange md:block">•</span>
 		<p class="flex items-center justify-center">
 			Developed by
 			<Link
 				text={developer}
 				ariaLabel=`Website developed by ${developer}`
 				href="https://github.com/juanpablodiaz"
-				className="text-orange dark:text-orange hover:underline hover:underline-orange hover:underline-offset-4 font-bold"
+				className="text-orange dark:text-orange hover:underline hover:underline-orange hover:underline-offset-4 font-bold pl-1"
 			/>
 		</p>
 	</div>
