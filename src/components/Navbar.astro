@@ -81,16 +81,17 @@ if (path === '/') {
 	class="bg-background/80 sticky inset-x-0 top-0 z-50 w-full backdrop-blur-md transition-colors md:my-10"
 >
 	<Astronav>
-		<div
-			class="flex flex-col justify-between px-2 md:flex-row md:items-baseline md:space-x-16 lg:px-8 xl:px-20"
+		<nav
+			class="flex flex-col justify-between rounded-lg px-2 md:flex-row md:items-baseline md:space-x-16 lg:px-8 xl:px-20"
 		>
-			<div class="flex h-10 items-center justify-end bg-orange">
+			<div class="flex h-10 items-center justify-between">
+				<ToggleTheme />
 				<div class="block md:hidden">
 					<MenuIcon>
-						<OpenIcon>
+						<OpenIcon class="text-black dark:text-white">
 							<MenuOpen />
 						</OpenIcon>
-						<CloseIcon>
+						<CloseIcon class="text-black dark:text-white">
 							<MenuClose />
 						</CloseIcon>
 					</MenuIcon>
@@ -104,10 +105,11 @@ if (path === '/') {
 					<Link text="View more projects" ariaLabel="View more projects" href="./more-projects" />
 				</ul>
 			</MenuItems> -->
+
 			{
 				menu.map((item) => (
 					<MenuItems class="hidden flex-1 space-y-2 pb-2 pt-1 md:flex md:space-y-0 md:py-0">
-						<nav class="flex flex-1 flex-col gap-4 md:flex-row md:gap-6">
+						<ul class="flex flex-1 flex-col gap-4 md:w-max md:flex-row">
 							{item.title === 'Resume' || item.title === 'BackToHome' ? (
 								<Button
 									style={item.title === 'Resume' ? 'cv' : 'secondary'}
@@ -115,22 +117,25 @@ if (path === '/') {
 									name="Home"
 									href={item.path}
 									rel="noopener noreferrer"
+									class="flex items-center justify-center"
 								>
 									{item.title === 'BackToHome' ? <Home /> : item.title}
 								</Button>
 							) : (
-								<Link text={item.title} ariaLabel="navigation link" href={item.path} />
+								<div class="flex items-center justify-end">
+									<Link text={item.title} ariaLabel="navigation link" href={item.path} />
+								</div>
 							)}
-						</nav>
+						</ul>
 					</MenuItems>
 				))
 			}
-		</div>
+		</nav>
 	</Astronav>
 </header>
 
 <style>
-	ul {
+	nav {
 		animation: nav-shadown 1s linear both;
 		animation-timeline: scroll();
 		animation-range: 0 100px;
