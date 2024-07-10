@@ -1,0 +1,41 @@
+---
+import Layout from '@layouts/Layout.astro';
+import avatar from '/avatar.svg';
+import { Image } from '@astrojs/image/components';
+import Link from '@components/ui/Link.astro';
+---
+
+<Layout title="Thank you!" includeSidebar={false}>
+	<section class="flex h-[80vh] flex-col items-center justify-center">
+		<div class="flex flex-col items-center space-x-4">
+			<h1 class="text-3xl font-bold text-black dark:text-white lg:text-5xl">Thank you!</h1>
+
+			<p>
+				<span class="text-2xl font-semibold text-black dark:text-white lg:text-3xl"
+					>Form submitted successfully!</span
+				>
+			</p>
+			<div class="my-10">
+				<Image
+					class="opacity-90 shadow-orange/50 duration-75 hover:scale-105 hover:transform hover:opacity-50 hover:shadow-2xl"
+					src="/public/avatar.svg"
+					alt="Juan Diaz"
+					aspectRatio="4:4"
+					format="svg"
+					width={150}
+					height={150}
+					loading="eager"
+					quality={100}
+				/>
+			</div>
+
+			<p class="flex-1 rounded-full bg-orange px-6 py-1 text-black dark:text-white">
+				I will get back to you as soon as possible.
+			</p>
+		</div>
+
+		<div class="mt-10 flex items-center justify-center text-black dark:text-white">
+			&larr; <Link text="Go Back Home" ariaLabel="Go Back Home" href="/" />
+		</div>
+	</section>
+</Layout>

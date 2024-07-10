@@ -5,7 +5,8 @@
 <form action="https://api.web3forms.com/submit" method="POST" id="form">
 	<input type="hidden" name="access_key" value="d9fbcb2b-34f1-4e76-b64a-77046f862123" />
 	<input type="hidden" name="subject" value="New Submission from jpdiaz.dev" />
-	<input type="hidden" name="redirect" value="https://web3forms.com/success" />
+	<!-- <input type="hidden" name="redirect" value="https://web3forms.com/success" /> -->
+	<input type="hidden" name="redirect" value="https://jpdiaz.dev/thanks" />
 	<input type="checkbox" class="hidden" style="display:none" name="botcheck" />
 	<div class="mb-5">
 		<input
@@ -70,53 +71,3 @@
 		border-color: #dc3545;
 	}
 </style>
-
-<!-- <script is:inline>
-	const form = document.getElementById('form');
-	const result = document.getElementById('result');
-
-	form.addEventListener('submit', function (e) {
-		e.preventDefault();
-		form.classList.add('was-validated');
-		if (!form.checkValidity()) {
-			form.querySelectorAll(':invalid')[0].focus();
-			return;
-		}
-		const formData = new FormData(form);
-		const object = Object.fromEntries(formData);
-		const json = JSON.stringify(object);
-
-		result.innerHTML = 'Sending...';
-
-		fetch('https://api.web3forms.com/submit', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				Accept: 'application/json',
-			},
-			body: json,
-		})
-			.then(async (response) => {
-				let json = await response.json();
-				if (response.status == 200) {
-					result.classList.add('text-green-500');
-					result.innerHTML = json.message;
-				} else {
-					console.log(response);
-					result.classList.add('text-red-500');
-					result.innerHTML = json.message;
-				}
-			})
-			.catch((error) => {
-				console.log(error);
-				result.innerHTML = 'Something went wrong!';
-			})
-			.then(function () {
-				form.reset();
-				form.classList.remove('was-validated');
-				setTimeout(() => {
-					result.style.display = 'none';
-				}, 5000);
-			});
-	});
-</script> -->
