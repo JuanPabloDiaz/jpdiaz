@@ -51,6 +51,23 @@ Check out the [Lighthouse Report](https://performance-jpdiaz.netlify.app/) for m
 ![Astro](https://img.shields.io/badge/Astro-000.svg?style=for-the-badge&logo=Astro&logoColor=white)
 ![Tailwind-CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white)
 
+Features:
+
+- ✅ Dark and light color mode
+- ✅ Hero section with bio
+- ✅ Portfolio collection
+- ✅ Pagination support
+- ✅ Post tags support
+- ✅ Contact form
+- ✅ View transitions
+- ✅ Tailwind CSS
+- ✅ Mobile-first responsive layout
+- ✅ [Navbar with burger button](https://github.com/surjithctly/astro-navbar)
+- ✅ [Image Optimization](https://unpic.pics/)
+- ✅ SEO-friendly with canonical URLs and OpenGraph data
+- ✅ Sitemap support
+- ✅ Markdown & MDX support
+
 ## Useful Commands 🧰
 
 - Run before Deploy: `$ npm run build`
@@ -74,24 +91,15 @@ To get started with [jpdiaz](https://jpdiaz.dev), simply clone the repository an
    ```
 4. Open [http://localhost:5173/](http://localhost:5173/) with your browser to see the result.
 
-<!-- ## Contribution 🤝
+## Contribution 🤝
 
 I welcome contributions to the jpdiaz collection repo! Feel free to fork the repository and submit pull requests with your improvements. -->
 
-<!--## License 📜
+## License 📜
 
 [jpdiaz](https://jpdiaz.dev) is licensed under the MIT License.
 
-I hope you enjoy using the jpdiaz repo! -->
-
-<!-- OTHER PROJECTS -->
-
-## Other Projects 🚀
-
-![](https://img.shields.io/badge/Platzi_Repos-121f3d?style=for-the-badge&logo=Platzi&logoColor=98CA3F)
-[![](https://img.shields.io/badge/2021-222?style=for-the-badge)](https://github.com/JuanPabloDiaz/platzi/tree/main/2021)
-[![](https://img.shields.io/badge/2022-222?style=for-the-badge)](https://github.com/JuanPabloDiaz/platzi/tree/main/2022)
-[![](https://img.shields.io/badge/2023-222?style=for-the-badge)](https://github.com/JuanPabloDiaz/platzi/tree/main/2023)
+I hope you enjoy using the jpdiaz repo!
 
 <!-- ACKNOWLEDGMENTS -->
 
@@ -100,8 +108,10 @@ I hope you enjoy using the jpdiaz repo! -->
 Resources list that I find helpful and would like to give credit to.
 
 - [Astro](https://astro.build/)
-- [Astro Portfolio Template - Created by veranikabarel](https://astro.build/themes/details/astro-fe-portfolio/)
+- [AstroShip](https://astroship.web3templates.com/)
+- I used [Astro Portfolio Template - Created by veranikabarel](https://github.com/veranikabarel/astro-portfolio) as a starting point for this project.
 - [Tailwind CSS](https://tailwindcss.com/)
+- [GitHub API](https://docs.github.com/en/rest)
 - [Vercel](https://vercel.com/)
 
 <p align="right">(<a href="#top">👆 Top 👆</a>)</p>
