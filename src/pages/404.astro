@@ -3,10 +3,19 @@ import Layout from '@layouts/Layout.astro';
 import juanImage from '@assets/images/juan.jpg';
 import { Image } from '@astrojs/image/components';
 import Link from '@components/ui/Link.astro';
+import Navbar from '@components/Navbar.astro';
+
+const backHomeMenu = [
+	{
+		title: 'BackToHome',
+		path: '/',
+	},
+];
 ---
 
 <Layout title="404: Not Found" includeSidebar={false}>
-	<section class="flex h-[80vh] flex-col items-center justify-center">
+	<Navbar menu={backHomeMenu} />
+	<main class="flex h-[80vh] flex-col items-center justify-center">
 		<div class="flex flex-col items-center space-x-4">
 			<h1 class="text-3xl font-bold text-black dark:text-white lg:text-5xl">404</h1>
 
@@ -35,5 +44,5 @@ import Link from '@components/ui/Link.astro';
 		<div class="mt-10 flex items-center justify-center text-black dark:text-white">
 			&larr; <Link text="Go Back Home" ariaLabel="Go Back Home" href="/" />
 		</div>
-	</section>
+	</main>
 </Layout>

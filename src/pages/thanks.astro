@@ -3,9 +3,18 @@ import Layout from '@layouts/Layout.astro';
 import avatar from '/public/avatar.svg';
 import { Image } from '@astrojs/image/components';
 import Link from '@components/ui/Link.astro';
+import Navbar from '@components/Navbar.astro';
+
+const backHomeMenu = [
+	{
+		title: 'BackToHome',
+		path: '/',
+	},
+];
 ---
 
 <Layout title="Thank you!" includeSidebar={false}>
+	<Navbar menu={backHomeMenu} />
 	<section class="flex h-[80vh] flex-col items-center justify-center">
 		<div class="flex flex-col items-center space-x-4">
 			<h1 class="text-3xl font-bold text-black dark:text-white lg:text-5xl">Thank you!</h1>

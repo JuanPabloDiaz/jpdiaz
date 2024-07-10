@@ -1,10 +1,8 @@
 ---
 import Footer from '@components/Footer.astro';
-import Navbar from '@components/Navbar.astro';
 import { SEO } from 'astro-seo';
 import GoogleAnalytics from '@components/GoogleAnalytics.astro';
 import BackToTop from '@components/ui/BackToTop.astro';
-import OldNav from '@components/OldNav.astro';
 
 export interface LayoutProps {
 	title: string;
@@ -31,8 +29,6 @@ const { title = 'Juan Diaz | Portfolio' } = Astro.props as LayoutProps;
 	<body
 		class="mx-auto max-w-screen-xl bg-white px-5 font-sans text-white dark:bg-black xs:text-[16px] md:text-[18px]"
 	>
-		<Navbar />
-		<!-- <OldNav /> -->
 		<slot />
 		<BackToTop />
 		<Footer />

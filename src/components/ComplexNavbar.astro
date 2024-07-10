@@ -7,7 +7,34 @@ import Home from '@components/icons/Home.astro';
 import MenuOpen from '@components/icons/MenuOpen.astro';
 import MenuClose from '@components/icons/MenuClose.astro';
 
-const { menu } = Astro.props;
+const PDF = './files/2024-FrontEndCV.pdf';
+
+const homeMenu = [
+	{
+		title: 'Resume',
+		path: '/resume',
+	},
+	{
+		title: 'Home',
+		path: '/#top',
+	},
+	{
+		title: 'About',
+		path: '#about',
+	},
+	{
+		title: 'Projects',
+		path: '#projects',
+	},
+	{
+		title: 'Open Source',
+		path: '#oss',
+	},
+	{
+		title: 'Contact',
+		path: '#contact',
+	},
+];
 ---
 
 <header
@@ -44,7 +71,7 @@ const { menu } = Astro.props;
 				</Button>
 				{
 					menu.map((item) => (
-						<ul class="flex flex-1 flex-col gap-4 md:w-max md:flex-row" key={item.path}>
+						<ul class="flex flex-1 flex-col gap-4 md:w-max md:flex-row">
 							<li class="flex items-center justify-end">
 								<Link text={item.title} ariaLabel="navigation link" href={item.path} />
 							</li>

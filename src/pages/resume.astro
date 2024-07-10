@@ -4,6 +4,7 @@ import TimeLineElement from '../components/ui/TimeLine.astro';
 import Icon from 'astro-icon';
 import Button from '@components/ui/Button.astro';
 import OpenOutline from '@components/icons/OpenOutline.astro';
+import Navbar from '@components/Navbar.astro';
 const PDF = './files/2024-FrontEndCV.pdf';
 const LinkStyle =
 	'hover:text-black dark:hover:text-white text-orange transition duration-300 dark:text-orange hover:underline hover:underline-offset-4';
@@ -67,11 +68,26 @@ let courses = [
 		title: 'Learn Observability: Fundamentals!',
 	},
 ];
+const resumeMenu = [
+	{
+		title: 'Profile',
+		path: '#top',
+	},
+	{
+		title: 'Education',
+		path: '#education',
+	},
+	{
+		title: 'Experience',
+		path: '#experience',
+	},
+];
 ---
 
 <!-- Source code: https://github.com/manuelernestog/astrofy -->
 <Layout title="Juan Diaz | Resume" sideBarActiveItemID="cv">
 	<main class="text-black dark:text-white">
+		<Navbar menu={resumeMenu} />
 		<section id="profile">
 			<div class="mb-5 flex items-center justify-between">
 				<div class="flex w-1/5">
