@@ -20,6 +20,7 @@ const { url, github_url, contribution } = Astro.props;
 		<a
 			href={url}
 			target="_blank"
+			aria-label="link to project"
 			class="flex h-8 w-8 items-center justify-center rounded-xl bg-orange p-1 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
 		>
 			<OpenOutline class="h-6 w-8" />
@@ -29,6 +30,7 @@ const { url, github_url, contribution } = Astro.props;
 				<a
 					href={github_url}
 					target="_blank"
+					aria-label="link to github repository"
 					class="flex h-8 w-8 items-center justify-center rounded-xl bg-orange p-1 px-2 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
 				>
 					<GitHubIcon class="h-4 w-5" />
