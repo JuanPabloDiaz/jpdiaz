@@ -6,17 +6,17 @@ import BackToTop from '@components/ui/BackToTop.astro';
 import ToggleTheme from '@components/ui/ToggleTheme.astro';
 
 export interface LayoutProps {
-	title: string;
+	metaTitle: string;
 }
 
-const { title = 'Juan Diaz | Portfolio' } = Astro.props as LayoutProps;
+const { metaTitle = 'Juan Diaz | Portfolio' } = Astro.props as LayoutProps;
 ---
 
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth" data-testid="html">
 	<head>
 		<SEO
-			title={title}
+			title={metaTitle}
 			description="Juan Diaz is a web developer based in Asheville, NC. He specializes in building (and occasionally designing) exceptional websites."
 		/>
 		<meta charset="UTF-8" />
@@ -25,7 +25,7 @@ const { title = 'Juan Diaz | Portfolio' } = Astro.props as LayoutProps;
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-		<title>{title}</title>
+		<title>{metaTitle}</title>
 	</head>
 	<body
 		class="mx-auto max-w-screen-xl bg-white px-5 font-sans text-white dark:bg-black xs:text-[16px] md:text-[18px]"
