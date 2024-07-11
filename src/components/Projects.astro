@@ -5,36 +5,15 @@ import Link from '@components/ui/Link.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
 
 const projects = await getCollection('projects', ({ data }) => {
-	// console.log('data: ', data);
-	// console.log('data inProgress: ', data.inProgress);
 	return !data.inProgress;
 });
-// console.log('projects: ', projects);
-// console.log(
-// 	'title: ',
-// 	projects.map((project) => project.data.title)
-// );
-// console.log(
-// 	'id: ',
-// 	projects.map((project) => project.id)
-// );
-// console.log(
-// 	'Tags: ',
-// 	projects.map((project) => project.data.tags)
-// );
-// console.log(
-// 	'img Alt: ',
-// 	projects.map((project) => project.data.img_alt)
-// );
-// console.log(
-// 	'img path: ',
-// 	projects.map((project) => project.data.image_path)
-// );
 ---
+
+<!-- the div below is used to scroll to this section and place the navbar in this h-10 div otherwise the navbar will overlap the section -->
+<div class="h-10" id="projects"></div>
 
 <section
 	data-testid="projects"
-	id="projects"
 	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto"
 >
 	<SubTitle text="Projects" />
@@ -53,6 +32,5 @@ const projects = await getCollection('projects', ({ data }) => {
 			))
 		}
 	</div>
-	<!-- <p>{projects.map((project) => project.data.image_path)}</p> -->
 	<Link text="View more projects" ariaLabel="View more projects" href="./more-projects" arrow />
 </section>

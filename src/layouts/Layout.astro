@@ -3,6 +3,7 @@ import Footer from '@components/Footer.astro';
 import { SEO } from 'astro-seo';
 import GoogleAnalytics from '@components/GoogleAnalytics.astro';
 import BackToTop from '@components/ui/BackToTop.astro';
+import ToggleTheme from '@components/ui/ToggleTheme.astro';
 
 export interface LayoutProps {
 	title: string;
@@ -29,6 +30,12 @@ const { title = 'Juan Diaz | Portfolio' } = Astro.props as LayoutProps;
 	<body
 		class="mx-auto max-w-screen-xl bg-white px-5 font-sans text-white dark:bg-black xs:text-[16px] md:text-[18px]"
 	>
+		<div
+			class="fixed left-5 top-5 hidden rounded-full p-2 leading-tight ring-1 ring-white/10 backdrop-blur md:block"
+		>
+			<ToggleTheme />
+		</div>
+
 		<slot />
 		<BackToTop />
 		<Footer />

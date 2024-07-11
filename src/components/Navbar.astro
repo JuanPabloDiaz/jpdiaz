@@ -8,26 +8,17 @@ import MenuOpen from '@components/icons/MenuOpen.astro';
 import MenuClose from '@components/icons/MenuClose.astro';
 
 const { menu, button } = Astro.props;
-
-// Determine the current path
-const path = new URL(Astro.request.url).pathname;
-
-// Logic to select the appropriate menu based on the current path
-// let menu;
-// if (path === '/') {
-// 	menu = cvMenu;
-// } else {
-// 	menu = homeMenu;
-// }
 ---
 
-<header class="backdro p-blur-md sticky inset-x-0 top-0 z-50 w-full transition-colors md:my-10">
+<header class="sticky inset-x-0 top-0 z-50 w-full transition-colors md:my-5">
 	<Astronav>
 		<nav
 			class="flex flex-col justify-between rounded-lg px-2 dark:text-black md:flex-row md:items-baseline md:space-x-16 lg:px-8 xl:px-20"
 		>
 			<div class="flex h-10 items-center justify-between">
-				<ToggleTheme />
+				<div class="block md:hidden">
+					<ToggleTheme />
+				</div>
 				<div class="block md:hidden">
 					<MenuIcon>
 						<OpenIcon class="text-black dark:text-white">
@@ -40,7 +31,7 @@ const path = new URL(Astro.request.url).pathname;
 				</div>
 			</div>
 
-			<MenuItems class="hidden space-y-2 pb-2 pt-1 md:flex md:flex-1 md:space-y-0 md:py-0">
+			<MenuItems class="scrollMenu hidden space-y-2 pb-2 pt-1 md:flex md:space-y-0 md:py-0">
 				<Button
 					style="secondary"
 					size="sm"
@@ -49,7 +40,7 @@ const path = new URL(Astro.request.url).pathname;
 					rel="noopener noreferrer"
 					class="flex w-20 items-center justify-center"
 				>
-					{button || 'Resume'}
+					{button === 'Home' ? <Home class="h-6 w-6" /> : button || 'Resume'}
 				</Button>
 				<!-- <Home class="h-6 w-6" /> -->
 				{
@@ -75,7 +66,19 @@ const path = new URL(Astro.request.url).pathname;
 
 	@keyframes nav-shadown {
 		to {
-			@apply rounded-lg bg-black shadow-lg ring-1 ring-white/10 backdrop-blur;
+			@apply justify-center rounded-lg text-sm shadow-lg;
+		}
+	}
+
+	.scrollMenu {
+		animation: menu-effect 1s linear both;
+		animation-timeline: scroll();
+		animation-range: 0 100px;
+	}
+
+	@keyframes menu-effect {
+		to {
+			@apply ring-1 ring-white/10 backdrop-blur;
 		}
 	}
 </style>

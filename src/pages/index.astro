@@ -9,10 +9,9 @@ import Navbar from '@components/Navbar.astro';
 
 const homeMenu = [
 	// { title: 'Resume', path: '/resume' },
-	{ title: 'Hi', path: '/#top' },
-	{ title: 'About', path: '#about' },
+	{ title: 'About', path: '#top' },
 	{ title: 'Projects', path: '#projects' },
-	{ title: 'Open Source', path: '#oss' },
+	{ title: 'OpenˑSource', path: '#oss' },
 	{ title: 'Contact', path: '#contact' },
 ];
 ---
@@ -21,7 +20,7 @@ const homeMenu = [
 	<main>
 		<Navbar menu={homeMenu} button="Resume" />
 		<Hero />
-		<About />
+		<!-- <About /> -->
 		<Projects />
 		<OpenSource />
 		<Contact />

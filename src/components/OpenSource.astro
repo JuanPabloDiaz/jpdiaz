@@ -9,10 +9,12 @@ const projects = await getCollection('open-source', ({ data }) => {
 });
 ---
 
+<!-- the div below is used to scroll to this section and place the navbar in this h-10 div otherwise the navbar will overlap the section -->
+<div class="h-10" id="oss"></div>
+
 <section
 	data-testid="openSource"
-	id="oss"
-	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen"
+	class="mb-20 flex flex-col items-center justify-center md:mb-0 md:h-screen"
 >
 	<SubTitle text="Open Source" />
 	<p class="text-gray-500 text-center lg:w-1/2">
