@@ -8,6 +8,7 @@ import ToggleTheme from '@components/ui/ToggleTheme.astro';
 export interface LayoutProps {
 	metaTitle: string;
 }
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { metaTitle = 'Juan Diaz | Portfolio' } = Astro.props as LayoutProps;
 ---
@@ -25,7 +26,10 @@ const { metaTitle = 'Juan Diaz | Portfolio' } = Astro.props as LayoutProps;
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-		<title>{metaTitle}</title>
+		<!-- <title>{metaTitle}</title> -->
+
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
 	</head>
 	<body
 		class="mx-auto max-w-screen-xl bg-white px-5 font-sans text-white dark:bg-black xs:text-[16px] md:text-[18px]"
