@@ -69,6 +69,7 @@ Features:
 - ✅ Sitemap support
 - ✅ Markdown support
 - ✅ Google Analytics metrics
+- ✅ [GitHub Actions for automated tasks](https://github.com/JuanPabloDiaz/jpdiaz/actions)
 
 ## Useful Commands 🧰
 
