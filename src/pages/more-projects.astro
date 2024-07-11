@@ -14,14 +14,14 @@ const projects = await getCollection('more-projects', ({ data }) => {
 
 const backHomeMenu = [
 	{
-		title: 'BackToHome',
+		title: '',
 		path: '/',
 	},
 ];
 ---
 
 <Layout title="Juan Diaz | More Projects">
-	<Navbar menu={backHomeMenu} />
+	<Navbar menu={backHomeMenu} button="Home" />
 	<main class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto">
 		<SubTitle text="More Projects" />
 		<p class="text-black dark:text-white">Here are some more projects that I have worked on.</p>

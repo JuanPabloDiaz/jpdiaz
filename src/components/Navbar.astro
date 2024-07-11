@@ -7,15 +7,24 @@ import Home from '@components/icons/Home.astro';
 import MenuOpen from '@components/icons/MenuOpen.astro';
 import MenuClose from '@components/icons/MenuClose.astro';
 
-const { menu } = Astro.props;
+const { menu, button } = Astro.props;
+
+// Determine the current path
+const path = new URL(Astro.request.url).pathname;
+
+// Logic to select the appropriate menu based on the current path
+// let menu;
+// if (path === '/') {
+// 	menu = cvMenu;
+// } else {
+// 	menu = homeMenu;
+// }
 ---
 
-<header
-	class="bg-background/80 sticky inset-x-0 top-0 z-50 w-full backdrop-blur-md transition-colors md:my-10"
->
+<header class="backdro p-blur-md sticky inset-x-0 top-0 z-50 w-full transition-colors md:my-10">
 	<Astronav>
 		<nav
-			class="flex flex-col justify-between rounded-lg px-2 md:flex-row md:items-baseline md:space-x-16 lg:px-8 xl:px-20"
+			class="flex flex-col justify-between rounded-lg px-2 dark:text-black md:flex-row md:items-baseline md:space-x-16 lg:px-8 xl:px-20"
 		>
 			<div class="flex h-10 items-center justify-between">
 				<ToggleTheme />
@@ -31,22 +40,23 @@ const { menu } = Astro.props;
 				</div>
 			</div>
 
-			<MenuItems class="hidden flex-1 space-y-2 pb-2 pt-1 md:flex md:space-y-0 md:py-0">
+			<MenuItems class="hidden space-y-2 pb-2 pt-1 md:flex md:flex-1 md:space-y-0 md:py-0">
 				<Button
-					style="primary"
+					style="secondary"
 					size="sm"
-					name="Home"
-					href="/"
+					name={button || 'Resume'}
+					href={button === 'Resume' ? '/resume' : button === 'Home' ? '/' : `/${button}`}
 					rel="noopener noreferrer"
-					class="flex items-center justify-center"
+					class="flex w-20 items-center justify-center"
 				>
-					<Home class="h-6 w-6" />
+					{button || 'Resume'}
 				</Button>
+				<!-- <Home class="h-6 w-6" /> -->
 				{
 					menu.map((item) => (
-						<ul class="flex flex-1 flex-col gap-4 md:w-max md:flex-row" key={item.path}>
+						<ul class="flex flex-col md:w-max md:flex-1 md:flex-row" key={item.path}>
 							<li class="flex items-center justify-end">
-								<Link text={item.title} ariaLabel="navigation link" href={item.path} />
+								<Link text={item.title} ariaLabel="navigation link" href={item.path} className="" />
 							</li>
 						</ul>
 					))
@@ -65,7 +75,7 @@ const { menu } = Astro.props;
 
 	@keyframes nav-shadown {
 		to {
-			@apply rounded-lg bg-white/50 shadow-lg ring-1 ring-white/10 backdrop-blur dark:bg-black/50;
+			@apply rounded-lg bg-black shadow-lg ring-1 ring-white/10 backdrop-blur;
 		}
 	}
 </style>
