@@ -38,7 +38,7 @@ const { menu, button } = Astro.props;
 					name={button || 'Resume'}
 					href={button === 'Resume' ? '/resume' : button === 'Home' ? '/' : `/${button}`}
 					rel="noopener noreferrer"
-					class="flex w-20 items-center justify-center"
+					class="flex flex-1 items-center justify-center md:w-20"
 				>
 					{button === 'Home' ? <Home class="h-6 w-6" /> : button || 'Resume'}
 				</Button>
