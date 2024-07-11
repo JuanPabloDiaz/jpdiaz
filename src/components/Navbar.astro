@@ -10,10 +10,10 @@ import MenuClose from '@components/icons/MenuClose.astro';
 const { menu, button } = Astro.props;
 ---
 
-<header class="sticky inset-x-0 top-0 z-50 w-full transition-colors md:my-5">
+<header class="sticky top-0 z-50 w-full md:my-5">
 	<Astronav>
 		<nav
-			class="flex flex-col justify-between rounded-lg px-2 dark:text-black md:flex-row md:items-baseline md:space-x-16 lg:px-8 xl:px-20"
+			class="flex flex-col justify-end px-2 md:flex-row md:items-center md:space-x-16 lg:px-8 xl:px-20"
 		>
 			<div class="flex h-10 items-center justify-between">
 				<div class="block md:hidden">
@@ -47,7 +47,7 @@ const { menu, button } = Astro.props;
 					menu.map((item) => (
 						<ul class="flex flex-col md:w-max md:flex-1 md:flex-row" key={item.path}>
 							<li class="flex items-center justify-end">
-								<Link text={item.title} ariaLabel="navigation link" href={item.path} className="" />
+								<Link text={item.title} ariaLabel="navigation link" href={item.path} />
 							</li>
 						</ul>
 					))
@@ -66,7 +66,7 @@ const { menu, button } = Astro.props;
 
 	@keyframes nav-shadown {
 		to {
-			@apply justify-center rounded-lg text-sm shadow-lg;
+			@apply justify-center rounded-lg text-sm;
 		}
 	}
 
@@ -78,7 +78,7 @@ const { menu, button } = Astro.props;
 
 	@keyframes menu-effect {
 		to {
-			@apply ring-1 ring-white/10 backdrop-blur;
+			@apply rounded-lg bg-brown/40 shadow-lg ring-1 ring-white/10 backdrop-blur;
 		}
 	}
 </style>

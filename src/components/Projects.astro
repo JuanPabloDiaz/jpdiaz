@@ -3,6 +3,7 @@ import Card from '@components/ui/Card.astro';
 import { getCollection } from 'astro:content';
 import Link from '@components/ui/Link.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
+import GithubButtons from './ui/GithubButtons.astro';
 
 const projects = await getCollection('projects', ({ data }) => {
 	return !data.inProgress;
@@ -33,4 +34,7 @@ const projects = await getCollection('projects', ({ data }) => {
 		}
 	</div>
 	<Link text="View more projects" ariaLabel="View more projects" href="./more-projects" arrow />
+	<div class="my-10">
+		<GithubButtons />
+	</div>
 </section>
