@@ -1,79 +1,84 @@
 ---
 import Button from '@components/ui/Button.astro';
 import ToggleTheme from '@components/ui/ToggleTheme.astro';
-import { Astronav, MenuIcon, MenuItems } from 'astro-navbar';
-const PDF = './files/2024-FrontEndCV.pdf';
+import { Astronav, MenuItems, MenuIcon, OpenIcon, CloseIcon } from 'astro-navbar';
+import Link from '@components/ui/Link.astro';
+import Home from '@components/icons/Home.astro';
+import MenuOpen from '@components/icons/MenuOpen.astro';
+import MenuClose from '@components/icons/MenuClose.astro';
 
-const menuitems = [
-	{
-		title: 'About',
-		path: '#about',
-	},
-	{
-		title: 'Projects',
-		path: '#projects',
-	},
-	{
-		title: 'Open Source',
-		path: '#oss',
-	},
-	{
-		title: 'Contact',
-		path: '#contact',
-	},
-];
-
-const backHomeMenu = [
-	{
-		title: 'Back to home',
-		path: '/',
-	},
-];
-
-let menu = Astro.props.isIndexPage ? menuitems : backHomeMenu;
-
-// let CV = Astro.props.isIndexPage ? path : download;
+const { menu, button } = Astro.props;
 ---
 
-<header data-testId="header" class="my-5 flex flex-col items-center justify-between lg:flex-row">
+<header class="sticky top-0 z-50 w-full md:my-5">
 	<Astronav>
-		<div class="flex w-full items-center justify-between lg:w-auto">
-			{
-				Astro.props.isIndexPage ? (
-					<a href="./CV" rel="noopener noreferrer">
-						<Button style="primary" size={'sm'} name="Download CV">
-							My Resume
-						</Button>
-					</a>
-				) : (
-					<a href={PDF} target="_blank" rel="noopener noreferrer">
-						<Button name="Download CV">Download CV</Button>
-					</a>
-				)
-			}
-			<div class="block lg:hidden">
-				<MenuIcon class="h-4 w-4 text-black dark:text-white" />
+		<nav
+			class="flex flex-col justify-end px-2 md:flex-row md:items-center md:space-x-16 lg:px-8 xl:px-20"
+		>
+			<div class="flex h-10 items-center justify-between">
+				<div class="block md:hidden">
+					<ToggleTheme />
+				</div>
+				<div class="block md:hidden">
+					<MenuIcon>
+						<OpenIcon class="text-black dark:text-white">
+							<MenuOpen />
+						</OpenIcon>
+						<CloseIcon class="text-black dark:text-white">
+							<MenuClose />
+						</CloseIcon>
+					</MenuIcon>
+				</div>
 			</div>
-		</div>
-		<MenuItems class="mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto">
-			<ul class="flex flex-col lg:flex-row lg:gap-3">
+
+			<MenuItems class="scrollMenu hidden space-y-2 pb-2 pt-1 md:flex md:space-y-0 md:py-0">
+				<Button
+					style="secondary"
+					size="sm"
+					name={button || 'Resume'}
+					href={button === 'Resume' ? '/resume' : button === 'Home' ? '/' : `/${button}`}
+					rel="noopener noreferrer"
+					class="flex flex-1 items-center justify-center md:w-20"
+				>
+					{button === 'Home' ? <Home class="h-6 w-6" /> : button || 'Resume'}
+				</Button>
+				<!-- <Home class="h-6 w-6" /> -->
 				{
 					menu.map((item) => (
-						<>
-							<li>
-								<a
-									aria-label="navigation link"
-									href={item.path}
-									class="flex py-2 text-black transition duration-300 hover:text-orange dark:text-white dark:hover:text-orange lg:px-3"
-								>
-									{item.title}
-								</a>
+						<ul class="flex flex-col md:w-max md:flex-1 md:flex-row" key={item.path}>
+							<li class="flex items-center justify-end">
+								<Link text={item.title} ariaLabel="navigation link" href={item.path} />
 							</li>
-						</>
+						</ul>
 					))
 				}
-				<li><ToggleTheme /></li>
-			</ul>
-		</MenuItems>
+			</MenuItems>
+		</nav>
 	</Astronav>
 </header>
+
+<style>
+	nav {
+		animation: nav-shadown 1s linear both;
+		animation-timeline: scroll();
+		animation-range: 0 100px;
+	}
+
+	@keyframes nav-shadown {
+		to {
+			@apply justify-center rounded-lg text-sm;
+		}
+	}
+
+	.scrollMenu {
+		animation: menu-effect 1s linear both;
+		animation-timeline: scroll();
+		animation-range: 0 100px;
+	}
+
+	@keyframes menu-effect {
+		to {
+			@apply rounded-lg bg-brown/40 shadow-lg ring-1 ring-white/10 backdrop-blur;
+		}
+	}
+</style>

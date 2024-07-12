@@ -4,5 +4,5 @@ title: Feliz Navidad
 description: Personal project created for the holidays
 link: https://navidad.jpdiaz.dev/
 github_link: https://github.com/JuanPabloDiaz/felizNavidad
-tags: ['Next.js', 'Chart.js', 'Tailwind CSS']
+tags: ['Astro', 'JS', 'CSS']
 ---

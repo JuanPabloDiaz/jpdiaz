@@ -1,20 +1,27 @@
 ---
-import About from '@components/About.astro';
-import Contact from '@components/Contact.astro';
-import Hero from '@components/Hero.astro';
-import OpenSource from '@components/OpenSource.astro';
-import Projects from '@components/Projects.astro';
-import BackToTop from '@components/ui/BackToTop.astro';
 import Layout from '@layouts/Layout.astro';
+import Hero from '@components/Hero.astro';
+import About from '@components/About.astro';
+import Projects from '@components/Projects.astro';
+import OpenSource from '@components/OpenSource.astro';
+import Contact from '@components/Contact.astro';
+import Navbar from '@components/Navbar.astro';
+
+const homeMenu = [
+	{ title: 'About', path: '#top' },
+	{ title: 'Projects', path: '#projects' },
+	{ title: 'OpenˑSource', path: '#oss' },
+	{ title: 'Contact', path: '#contact' },
+];
 ---
 
-<Layout isIndexPage={true}>
+<Layout>
 	<main>
+		<Navbar menu={homeMenu} button="Resume" />
 		<Hero />
-		<About />
+		<!-- <About /> -->
 		<Projects />
 		<OpenSource />
 		<Contact />
-		<BackToTop />
 	</main>
 </Layout>

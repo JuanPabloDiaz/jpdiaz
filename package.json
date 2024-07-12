@@ -1,8 +1,9 @@
 {
-	"name": "astro-portfolio",
+	"name": "jpdiaz.dev",
 	"author": "Juan Diaz",
-	"type": "module",
 	"version": "0.0.1",
+	"homepage": "https://jpdiaz.dev",
+	"type": "module",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",

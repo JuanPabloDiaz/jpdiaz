@@ -1,0 +1,73 @@
+<!-- Source code: https://astroship.web3templates.com/
+     To make this contact form work, create your *free access key* from https://web3forms.com/
+		 In the value attribute of the input tag name="access_key", replace it with your Public access key.
+     Then you will get all form submissions in your email inbox. -->
+<form action="https://api.web3forms.com/submit" method="POST" id="form">
+	<input type="hidden" name="access_key" value="d9fbcb2b-34f1-4e76-b64a-77046f862123" />
+	<input type="hidden" name="subject" value="New Submission from jpdiaz.dev" />
+	<!-- <input type="hidden" name="redirect" value="https://web3forms.com/success" /> -->
+	<input type="hidden" name="redirect" value="https://jpdiaz.dev/thanks" />
+	<input type="checkbox" class="hidden" style="display:none" name="botcheck" />
+	<div class="mb-5">
+		<input
+			type="text"
+			placeholder="Full Name"
+			required
+			class="placeholder:text-gray-800 border-gray-300 focus:border-gray-600 w-full rounded-md border-2 px-4 py-3 outline-none ring-black/80 focus:ring-2 dark:ring-orange"
+			name="name"
+		/>
+		<div class="empty-feedback invalid-feedback text-red-400 mt-1 text-sm">
+			Please provide your full name.
+		</div>
+	</div>
+	<div class="mb-5">
+		<label for="email_address" class="sr-only">Email Address</label><input
+			id="email_address"
+			type="email"
+			placeholder="Email Address"
+			name="email"
+			required
+			class="placeholder:text-gray-800 border-gray-300 focus:border-gray-600 w-full rounded-md border-2 px-4 py-3 outline-none ring-black focus:ring-2 dark:ring-orange"
+		/>
+		<div class="empty-feedback text-red-400 mt-1 text-sm">Please provide your email address.</div>
+		<div class="invalid-feedback text-red-400 mt-1 text-sm">
+			Please provide a valid email address.
+		</div>
+	</div>
+	<div class="mb-3">
+		<textarea
+			name="message"
+			required
+			placeholder="Your Message"
+			class="placeholder:text-gray-800 border-gray-300 focus:border-gray-600 h-36 w-full rounded-md border-2 px-4 py-3 outline-none ring-black/80 focus:ring-2 dark:ring-orange"
+		></textarea>
+		<div class="empty-feedback invalid-feedback text-red-400 mt-1 text-sm">
+			Please enter your message.
+		</div>
+	</div>
+	<button
+		type="submit"
+		class="border-transparent cursor-pointer rounded-xl border-2 bg-black px-6 py-3 text-center text-white ring-black/50 ring-offset-2 transition hover:bg-orange focus-visible:ring-2 dark:ring-orange"
+		>Send Message</button
+	>
+</form>
+
+<style>
+	.invalid-feedback,
+	.empty-feedback {
+		display: none;
+	}
+
+	.was-validated :placeholder-shown:invalid ~ .empty-feedback {
+		display: block;
+	}
+
+	.was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback {
+		display: block;
+	}
+
+	.is-invalid,
+	.was-validated :invalid {
+		border-color: #dc3545;
+	}
+</style>

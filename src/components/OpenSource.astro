@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
-import CardSmall from './ui/CardSmall.astro';
+import CardSmall from '@components/ui/CardSmall.astro';
+import SubTitle from '@components/ui/SubTitle.astro';
 
 const projects = await getCollection('open-source', ({ data }) => {
 	// console.log('data: ', data);
@@ -8,13 +9,14 @@ const projects = await getCollection('open-source', ({ data }) => {
 });
 ---
 
+<!-- the div below is used to scroll to this section and place the navbar in this h-10 div otherwise the navbar will overlap the section -->
+<div class="h-10" id="oss"></div>
+
 <section
 	data-testid="openSource"
-	id="oss"
-	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen"
+	class="mb-20 flex flex-col items-center justify-center md:mb-0 md:h-screen"
 >
-	<h2 class="font-monospace text-2xl text-orange lg:text-4xl">Open Source</h2>
-	<span class="mb-10 h-1 w-10 bg-orange"></span>
+	<SubTitle text="Open Source" />
 	<p class="text-gray-500 text-center lg:w-1/2">
 		I love to contribute to OSS. Here are a few projects that I have worked on.
 	</p>
@@ -22,11 +24,12 @@ const projects = await getCollection('open-source', ({ data }) => {
 		{
 			projects.map((project) => (
 				<CardSmall
-					url={project.data.link}
 					title={project.data.title}
 					description={project.data.description}
-					tags={project.data.tags}
 					github_url={project.data.github_link}
+					url={project.data.link}
+					tags={project.data.tags}
+					contribution={project.data.contribution}
 				/>
 			))
 		}

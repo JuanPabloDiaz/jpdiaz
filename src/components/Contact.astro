@@ -1,22 +1,31 @@
 ---
-import Button from '@components/ui/Button.astro';
-import Social from '@components/ui/Social.astro';
-import Hire from '@components/icons/Hire.astro';
+import ContactForm from '@components/ContactForm.astro';
+import SubTitle from '@components/ui/SubTitle.astro';
+import Link from '@components/ui/Link.astro';
+import CallToAction from '@components/CallToAction.astro';
 ---
 
 <section
 	data-testid="contact"
 	id="contact"
-	class="flex flex-col flex-wrap items-center justify-center gap-8 text-black dark:text-white md:mb-20 lg:mb-0 lg:h-screen"
+	class="mb-10 flex flex-col items-center justify-center md:mb-52 lg:mb-0 lg:h-screen lg:flex-row"
 >
-	<a href="mailto:juan.diaz93@hotmail.com">
-		<Button size={'lg'} style={'primary'} name="Contact">
-			Hire Me
-			<!-- <Hire class="text-4xl" /> -->
-		</Button>
-	</a>
-	<hr class="w-1/2" />
-	<div class="flex-col-3 flex gap-8 lg:flex lg:flex-row lg:gap-20">
-		<Social />
+	<div class="mb-10 flex w-full flex-col items-center justify-center lg:mb-0 lg:w-1/2">
+		<SubTitle text="Contact me" />
+		<div class="text-gray-500 flex flex-col items-center justify-center text-center lg:w-1/2">
+			<CallToAction />
+			Feel free to email me directly.
+			<Link
+				text="juan.diaz93@hotmail.com"
+				ariaLabel="juan.diaz93@hotmail.com"
+				href="mailto:juan.diaz93@hotmail.com"
+			/>
+		</div>
+	</div>
+
+	<div class="w-full text-justify text-black lg:w-1/2">
+		<p class="mb-2">
+			<ContactForm />
+		</p>
 	</div>
 </section>

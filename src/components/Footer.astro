@@ -1,23 +1,23 @@
+---
+import Link from '@components/ui/Link.astro';
+
+const copyRight = `Copyright © 2023 - ${new Date().getFullYear()}`;
+const developer = ` Juan Diaz`;
+---
+
 <footer data-testid="footer" class="p-6 text-center text-sm text-black dark:text-white">
-	<p>
-		Copyright © 2023 - {new Date().getFullYear()}. Developed by <a
-			href="https://github.com/juanpablodiaz"
-			target="_blank"
-			rel="noopener"
-		>
-			<span class="text-orange"> Juan Diaz</span>
-		</a>
-	</p>
-	<!-- <p>
-		Copyright © {new Date().getFullYear()}. All rights reserved. Made by <a
-			href="https://github.com/veranikabarel"
-			target="_blank"
-			rel="noopener"
-		>
-			<span class="text-orange"> Veranika Kasparevych</span>
-		</a>
-		Assets designed by <a href="www.freepik.com" target="_blank" rel="noopener"
-			><span class="text-orange">freepik</span></a
-		>
-	</p> -->
+	<div class="flex flex-col items-center justify-center md:flex-row">
+		{copyRight}
+
+		<span class="mx-1 hidden text-orange dark:text-orange md:block">•</span>
+		<p class="flex items-center justify-center">
+			Developed by
+			<Link
+				text={developer}
+				ariaLabel=`Website developed by ${developer}`
+				href="https://github.com/juanpablodiaz"
+				className="text-orange dark:text-orange hover:underline hover:underline-orange hover:underline-offset-4 font-bold pl-1"
+			/>
+		</p>
+	</div>
 </footer>

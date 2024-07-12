@@ -1,19 +1,38 @@
 ---
 export interface Props {
 	tags?: string[];
+	tagsImg?: string[];
 }
 
 const { tags } = Astro.props;
+
+const iconURL = 'https://go-skill-icons.vercel.app/api/icons?i=';
+const oldIconURL = 'https://skillicons.dev/icons?i=';
 ---
 
 {
 	tags && (
-		<div class="flex w-2/3 flex-row flex-wrap justify-between">
-			{tags.map((tag) => (
+		<div class="flex flex-row flex-wrap justify-start gap-2">
+			{/* {tags.map((tag) => (
 				<span class="inline-block rounded-lg px-2 py-1 text-xs text-black shadow-sm shadow-orange lg:py-1">
 					{tag}
 				</span>
-			))}
+			))} */}
+
+			{tags?.map((tag) => {
+				const iconPath = tag.toLowerCase();
+				return (
+					<img
+						src={`${iconURL}${iconPath}`}
+						class="aspect-square opacity-100 duration-75 hover:scale-105 hover:transform hover:opacity-50"
+						alt={`${tag} logo`}
+						loading="eager"
+						width="25"
+						height="25"
+						title={tags[tags.indexOf(tag)]}
+					/>
+				);
+			})}
 		</div>
 	)
 }

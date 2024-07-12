@@ -1,31 +1,33 @@
 ---
 import Tags from '@components/ui/Tags.astro';
-
-import OpenOutline from '@components/icons/OpenOutline.astro';
-import GitHubIcon from '@components/icons/GitHubIcon.astro';
+import SmallCardButtons from '@components/ui/SmallCardButtons.astro';
+import GitHubStars from '@components/ui/GitHubStars.astro';
+import GitHubContribution from './GitHubContribution.astro';
 
 interface Props {
-	github_url?: string;
-	url?: string;
-	alt?: string;
 	title?: string;
 	description?: string;
+	url?: string;
+	github_url?: string;
+	alt?: string;
 	tags: string[];
+	contribution: number;
 	children?: HTMLElement | HTMLElement[];
 }
 
 const {
-	github_url = '#',
-	url = '#',
 	title = 'Project title',
 	description = 'Project description',
+	url = '#',
+	github_url = '#',
 	tags = ['Tags'],
+	contribution = 0,
 } = Astro.props;
 ---
 
 <main class="group w-full p-4 md:w-1/2 lg:w-1/3">
 	<section data-testId="card" class="flex h-28 rounded-xl bg-white/90 p-1 shadow-lg">
-		<article class="flex w-11/12 flex-grow flex-col p-2">
+		<article class="flex w-10/12 flex-grow flex-col p-2">
 			<h3 class="text-md h-full text-black group-hover:invisible group-hover:h-0 lg:text-xl">
 				{title}
 			</h3>
@@ -34,25 +36,15 @@ const {
 			>
 				{description}
 			</p>
-			<div class="h-full w-full group-hover:invisible group-hover:h-0">
-				<Tags tags={tags} />
+			<div class="flex w-full">
+				<div class="h-fit w-fit flex-grow group-hover:invisible group-hover:h-0">
+					<Tags tags={tags} />
+				</div>
+				<div class="h-fit w-fit flex-grow group-hover:invisible group-hover:h-0">
+					<GitHubStars github_url={github_url} />
+				</div>
 			</div>
 		</article>
-		<article class="relative m-2 w-1/12 p-1">
-			<a
-				href={url}
-				target="_blank"
-				class="absolute mx-auto flex h-8 w-8 items-center justify-center rounded-xl bg-orange p-1 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
-			>
-				<OpenOutline class="h-6 w-8" />
-			</a>
-			<a
-				href={github_url}
-				target="_blank"
-				class="absolute top-12 flex h-8 w-8 items-center justify-center rounded-xl bg-orange p-1 px-2 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
-			>
-				<GitHubIcon class="h-4 w-5" />
-			</a>
-		</article>
+		<SmallCardButtons url={url} github_url={github_url} contribution={contribution} />
 	</section>
 </main>

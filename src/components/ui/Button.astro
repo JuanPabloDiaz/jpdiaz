@@ -2,12 +2,12 @@
 interface Props {
 	size?: 'sm' | 'md' | 'lg';
 	block?: boolean;
-	style?: 'primary' | 'secondary' | 'juan';
+	style?: 'primary' | 'secondary' | 'cv';
 	class?: string;
 	[x: string]: any;
 }
 
-const { size = 'md', style = 'primary', block, class: className, ...rest } = Astro.props;
+const { href, size = 'md', style = 'primary', block, class: className, ...rest } = Astro.props;
 
 const sizes = {
 	sm: 'px-4 py-1.5',
@@ -16,20 +16,22 @@ const sizes = {
 };
 
 const styles = {
-	primary: 'bg-black text-white hover:bg-orange  border-2 border-transparent',
+	primary: 'bg-black text-white hover:bg-orange border-2 border-transparent',
 	secondary: 'bg-white text-black hover:bg-orange border-2 border-transparent',
-	juan: 'bg-orange text-white hover:bg-yellow  border-2 border-transparent',
+	cv: 'bg-orange text-white hover:bg-orange/50 border-2 m-1 border-transparent',
 };
 ---
 
-<button
+<a
 	{...rest}
 	class:list={[
-		'rounded-xl text-center transition focus-visible:ring-2 ring-offset-2 ring-orange',
+		'rounded-xl text-center transition focus-visible:ring-2 ring-offset-2 ring-orange cursor-pointer',
 		block && 'w-full',
 		sizes[size],
 		styles[style],
 		className,
 	]}
+	href={href}
+	role="link"
 	><slot />
-</button>
+</a>

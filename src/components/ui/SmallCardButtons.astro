@@ -1,0 +1,41 @@
+---
+import OpenOutline from '@components/icons/OpenOutline.astro';
+import GitHubIcon from '@components/icons/GitHubIcon.astro';
+import GitHubContribution from '@components/ui/GitHubContribution.astro';
+
+// Define the props interface
+interface Props {
+	url: string;
+	github_url: string;
+	contribution: number;
+}
+
+// Extract props
+const { url, github_url, contribution } = Astro.props;
+---
+
+<article class="relative m-1 flex w-2/12 flex-col items-center gap-2">
+	<GitHubContribution github_url={github_url} contribution={contribution} />
+	<div class="flex justify-center space-x-2 pt-3">
+		<a
+			href={url}
+			target="_blank"
+			aria-label="link to project"
+			class="flex h-8 w-8 items-center justify-center rounded-xl bg-orange p-1 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
+		>
+			<OpenOutline class="h-6 w-8" />
+		</a>
+		{
+			github_url !== '#' && (
+				<a
+					href={github_url}
+					target="_blank"
+					aria-label="link to github repository"
+					class="flex h-8 w-8 items-center justify-center rounded-xl bg-orange p-1 px-2 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
+				>
+					<GitHubIcon class="h-4 w-5" />
+				</a>
+			)
+		}
+	</div>
+</article>
