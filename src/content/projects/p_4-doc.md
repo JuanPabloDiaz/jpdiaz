@@ -5,6 +5,6 @@ description: My documentation site for projects, tech notes, and career advancem
 img_alt: Juan Diaz's Docs Project
 link: https://docs.jpdiaz.dev/
 github_link: https://github.com/JuanPabloDiaz/doc
-tags: ['Jekyll', 'Ruby', 'JS', 'SASS', 'PowerShell']
+tags: ['Jekyll', 'Ruby', 'JS', 'SASS', 'Terminal']
 image_path: /assets/images/projects/docs.png
 ---
