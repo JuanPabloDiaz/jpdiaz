@@ -30,7 +30,7 @@
 		},
 		{
 			"source": "/docus",
-			"destination": "docusaurus-jpdiaz.vercel.app"
+			"destination": "https://docusaurus-jpdiaz.vercel.app"
 		},
 		{
 			"source": "/figma",

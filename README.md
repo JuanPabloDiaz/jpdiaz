@@ -64,7 +64,7 @@ Features:
 - ✅ Additional projects page
 - ✅ [Tailwind CSS](https://tailwindcss.com/)
 - ✅ [Navbar with burger button](https://github.com/surjithctly/astro-navbar)
-- ✅ [Image Optimization](https://unpic.pics/)
+- ✅ Image Optimization
 - ✅ SEO-friendly with canonical URLs and OpenGraph data
 - ✅ Sitemap support
 - ✅ Markdown support
