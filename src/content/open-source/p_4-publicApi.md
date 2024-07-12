@@ -5,5 +5,5 @@ description: A collaborative list of public APIs for developers.
 link: https://publicapis.dev/
 github_link: https://github.com/marcelscruz/public-apis
 tags: ['Python', 'JS', 'PowerShell']
-contribution: 7
+contribution: 11
 ---
