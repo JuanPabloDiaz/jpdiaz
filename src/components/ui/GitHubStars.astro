@@ -65,16 +65,22 @@ if (repoDetails) {
 }
 ---
 
-<div class="group flex flex-wrap justify-end gap-2">
-	<a
-		href={forkUrl}
-		target="_blank"
-		aria-label="GitHub Stars for this repository"
-		rel="noopener noreferrer"
-		class="icon-container flex items-center rounded-lg px-2 py-1 text-xs text-black shadow-sm shadow-orange lg:py-1"
-	>
-		<StarHover class="mr-1 h-4 w-4 group-hover:hidden" />
-		<Star class="mr-1 hidden h-4 w-4 group-hover:block" />
-		<span>{formattedStarsCount}</span>
-	</a>
-</div>
+{
+	formattedStarsCount === '0' ? (
+		<div class="h-full" />
+	) : (
+		<div class="group flex flex-wrap justify-end gap-2">
+			<a
+				href={forkUrl}
+				target="_blank"
+				aria-label="GitHub Stars for this repository"
+				rel="noopener noreferrer"
+				class="icon-container flex items-center rounded-lg px-2 py-1 text-xs text-black shadow-sm shadow-orange lg:py-1"
+			>
+				<StarHover class="mr-1 h-4 w-4 group-hover:hidden" />
+				<Star class="mr-1 hidden h-4 w-4 group-hover:block" />
+				<span>{formattedStarsCount}</span>
+			</a>
+		</div>
+	)
+}
