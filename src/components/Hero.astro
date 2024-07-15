@@ -3,7 +3,6 @@ import juanImage from '@assets/images/juan.jpg';
 import { Image } from '@astrojs/image/components';
 import CallToAction from '@components/CallToAction.astro';
 import About from './About.astro';
-import Button from './ui/Button.astro';
 ---
 
 <section data-testid="hero" id="hero" class="mb-0 mt-0 h-auto text-center md:mb-24 md:mt-24">
@@ -16,11 +15,7 @@ import Button from './ui/Button.astro';
 				</h1>
 			</div>
 			<div class="mb-10">
-				<Button size={'lg'} style={'primary'} name="hire-me" href="mailto:juan.diaz93@hotmail.com">
-					Hire Me
-				</Button>
-
-				<!-- <CallToAction button /> -->
+				<CallToAction button />
 			</div>
 		</div>
 		<div data-testid="hero-img" class="my-10 flex w-1/2 items-center justify-center">

@@ -3,10 +3,12 @@ import Button from '@components/ui/Button.astro';
 import Social from '@components/ui/Social.astro';
 
 interface Props {
+	social?: boolean;
+	line?: boolean;
 	button?: boolean;
 }
 
-const { button } = Astro.props;
+const { social, line, button } = Astro.props;
 ---
 
 <section
@@ -14,10 +16,15 @@ const { button } = Astro.props;
 	id="hire-me"
 	class="flex flex-col flex-wrap items-center justify-center gap-2 text-black dark:text-white md:mb-20 lg:mb-0"
 >
-	<div class="flex-col-3 flex gap-8 lg:flex lg:flex-row lg:gap-20">
-		<Social />
-	</div>
-	<hr class="my-6 w-3/4" />
+	{
+		social ? (
+			<div class="flex-col-3 flex gap-8 lg:flex lg:flex-row lg:gap-20">
+				<Social />
+			</div>
+		) : null
+	}
+
+	{line ? <hr class="my-6 w-3/4" /> : null}
 
 	{
 		button ? (
