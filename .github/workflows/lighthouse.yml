@@ -18,6 +18,7 @@ jobs:
         with:
           urls: |
             https://jpdiaz.dev/
+            https://dev.jpdiaz.dev/
           budgetPath: ./budget.json
           uploadArtifacts: true
           temporaryPublicStorage: true
@@ -35,7 +36,7 @@ jobs:
             const commentBody = `
             **Check the Lighthouse CI Report** 🚀
 
-            1. **Audit URL**:\`https://jpdiaz.dev/\`
+            1. **Audit URL**:\`jpdiaz.dev/\` & \`dev.jpdiaz.dev/\`
             2. **Open the [Lighthouse CI action here](${actionUrl})**
             3. **Check the Report**:
                - Click on \`lighthouse\` > \`Audit URLs using Lighthouse\` > \`Uploading\` > \`open the report\` to see the full report.
