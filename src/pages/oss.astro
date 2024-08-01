@@ -3,11 +3,10 @@ import Layout from '@layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import CardSmall from '@components/ui/CardSmall.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
-import GithubButtons from '@components/ui/GithubButtons.astro';
 import Navbar from '@components/Navbar.astro';
 import CallToAction from '@components/CallToAction.astro';
 
-const projects = await getCollection('more-projects', ({ data }) => {
+const projects = await getCollection('more-open-source', ({ data }) => {
 	// console.log('data: ', data);
 	// console.log('data inProgress: ', data.inProgress);
 	return !data.inProgress;
@@ -21,11 +20,13 @@ const backHomeMenu = [
 ];
 ---
 
-<Layout metaTitle="Juan Diaz | More Projects" includeSidebar={false}>
+<Layout metaTitle="Juan Diaz | More Open Source" includeSidebar={false}>
 	<Navbar menu={backHomeMenu} button="Home" />
 	<main class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto">
-		<SubTitle text="More Projects" />
-		<p class="text-black dark:text-white">Here are some more projects that I have worked on.</p>
+		<SubTitle text="More Open Source" />
+		<p class="text-black dark:text-white">
+			Here are some additional open-source projects that I have contributed to.
+		</p>
 		<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
 			{
 				projects.map((project) => (
@@ -40,9 +41,6 @@ const backHomeMenu = [
 				))
 			}
 		</div>
-		<div class="mb-10">
-			<GithubButtons />
-		</div>
-		<div><CallToAction social line button /></div>
+		<div class="mt-20"><CallToAction social line button /></div>
 	</main>
 </Layout>

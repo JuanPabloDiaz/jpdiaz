@@ -35,8 +35,19 @@ const openSourceCollection = defineCollection({
 	}),
 });
 
+const moreOpenSourceCollection = defineCollection({
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		tags: z.array(z.string()),
+		link: z.string(),
+		contribution: z.number().optional(),
+	}),
+});
+
 export const collections = {
 	projects: projectsCollection,
 	moreProjects: moreProjectsCollection,
 	openSource: openSourceCollection,
+	moreOpenSource: moreOpenSourceCollection,
 };

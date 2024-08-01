@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import CardSmall from '@components/ui/CardSmall.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
+import Link from '@components/ui/Link.astro';
 
 const projects = await getCollection('open-source', ({ data }) => {
 	// console.log('data: ', data);
@@ -34,4 +35,10 @@ const projects = await getCollection('open-source', ({ data }) => {
 			))
 		}
 	</div>
+	<Link
+		text="View more Contributions"
+		ariaLabel="View more Contributions to Open Source"
+		href="./oss"
+		arrow
+	/>
 </section>
