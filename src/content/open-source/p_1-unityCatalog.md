@@ -1,9 +1,9 @@
 ---
 inProgress: false # set to true to hide the file from the list
 title: Unity Catalog
-description: Unity Catalog UI is a user interface for managing and interacting with Unity Catalog, which handles data permissions, auditing, and discovery.
+description: Open, Multi-modal Catalog for Data & AI.
 link: https://www.unitycatalog.io/
-github_link: https://github.com/unitycatalog/unitycatalog-ui
+github_link: https://github.com/unitycatalog/unitycatalog
 tags: ['Java', 'Scala', 'Python', 'Terminal', 'TS']
-contribution: 5
+contribution: 2
 ---
