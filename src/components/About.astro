@@ -1,5 +1,7 @@
 ---
 import SubTitle from '@components/ui/SubTitle.astro';
+import GitHubIcon from './icons/GitHubIcon.astro';
+import GitHub from './icons/GitHub.astro';
 
 const description =
 	'Committed Front End developer seeking opportunities in growth-oriented startups. Upholds values of discipline, loyalty, and reliability, with a self-motivated approach to continuous learning and skill enhancement';
@@ -10,16 +12,19 @@ const LinkStyle = 'hover:underline hover:underline-offset-4 text-orange';
 const whatImDoing = [
 	{
 		url: 'http://confs.tech',
+		repo: 'https://github.com/tech-conferences/conference-data/graphs/contributors',
 		title: 'Confs.tech',
 		date: 'Apr. 2024.',
 	},
 	{
 		url: 'http://publicapis.dev',
+		repo: 'https://github.com/marcelscruz/public-apis/graphs/contributors',
 		title: 'Public APIs',
 		date: 'July 2024.',
 	},
 	{
 		url: 'http://devresourc.es',
+		repo: 'https://github.com/marcelscruz/dev-resources/graphs/contributors',
 		title: 'Dev Resources',
 		date: 'July 2024.',
 	},
@@ -68,7 +73,7 @@ const whatImDoing = [
 	<div class="w-full text-justify text-black dark:text-white lg:w-1/2">
 		{
 			whatImDoing.map((iDo, index) => (
-				<p class="mb-2" key={index}>
+				<p class="mb-2 flex justify-evenly" key={index}>
 					Open-Source Maintainer @
 					<a
 						href={iDo.url}
@@ -78,7 +83,17 @@ const whatImDoing = [
 						rel="noopener noreferrer"
 					>
 						{iDo.title}
-					</a>{' '}
+					</a>
+					<a
+						href={iDo.repo}
+						class="hover:text-orange"
+						aria-label={iDo.title}
+						title="GitHub Contributors Graph"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<GitHubIcon />
+					</a>
 					• Since {iDo.date}
 				</p>
 			))
