@@ -1,5 +1,6 @@
 ---
-const { title, subtitle, comments } = Astro.props;
+const { title, subtitle, comments, url } = Astro.props;
+const LinkStyle = 'hover:underline hover:underline-offset-4';
 ---
 
 <style>
@@ -15,7 +16,9 @@ const { title, subtitle, comments } = Astro.props;
 		></span><!-- linea -->
 	</div>
 	<div class="experience__data bd-grid px-5">
-		<h3 class="mb-1 font-semibold">{title}</h3>
+		<a href={url} class={LinkStyle} aria-label={title} target="_blank" rel="noopener noreferrer">
+			<h3 class="mb-1 font-semibold">{title}</h3>
+		</a>
 		<p class="text-sm font-light text-orange">{comments}</p>
 		<span class="text-sm font-light">{subtitle}</span>
 		<p class="my-2 text-justify">
