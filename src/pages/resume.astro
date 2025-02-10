@@ -43,11 +43,10 @@ let certifications = [
 		year: '2022',
 	},
 	{
-		url: 'https://www.linkedin.com/in/1diazdev/details/certifications/',
-		title:
-			'Information Technology with a specialization in Application Software Fundamentals at Central Piedmont Community College',
-		year: '2018',
-		isWide: true,
+		url: './certification/IT-AplicationSoftwareFundamentals.jpg',
+		title: 'IT in Application Software Fundamentals',
+		year: '2020',
+		isWide: false, // set to true if you want the item to take the full width of the page
 	},
 ];
 
@@ -97,7 +96,9 @@ const resumeMenu = [
 			<div class="mb-5 flex items-center justify-between">
 				<div class="flex w-1/5">
 					<h2 class="w-full text-3xl font-bold">Profile</h2>
-					<Icon name="carbon:identification" class="inline-block h-10 w-10" />
+					<a href="https://www.linkedin.com/in/1diazdev" target="_blank">
+						<Icon name="carbon:identification" class="inline-block h-10 w-10" />
+					</a>
 				</div>
 				<div class="flex">
 					<Button
@@ -124,7 +125,9 @@ const resumeMenu = [
 		<section id="skills">
 			<div class="mb-5 flex w-1/5">
 				<h2 class="w-full text-3xl font-bold">Skills</h2>
-				<Icon name="carbon:skill-level" class="inline-block h-10 w-10" />
+				<a href="https://www.linkedin.com/in/1diazdev/details/skills" target="_blank">
+					<Icon name="carbon:skill-level" class="inline-block h-10 w-10" />
+				</a>
 			</div>
 
 			<ul class="mx-6 mb-5 list-disc columns-2 md:columns-5">
@@ -162,288 +165,290 @@ const resumeMenu = [
 		<section>
 			<div class="mb-5 flex w-1/5">
 				<h2 class="w-full text-3xl font-bold">Education</h2>
-				<Icon name="carbon:education" class="inline-block h-10 w-10" />
+				<a href="https://www.linkedin.com/in/1diazdev/details/education" target="_blank">
+					<Icon name="carbon:education" class="inline-block h-10 w-10" />
+				</a>
 			</div>
 
 			<div class="time-line-container mb-10 grid gap-4">
 				<TimeLineElement title="FreeCodeCamp" subtitle="2022 to present, Online" />
-				<TimeLineElement title="Platzi" subtitle="2021 to 2024, Online">
-					Self-taught Front-end developer, still actively taking classes and embracing the <span
-						class="font-bold">Never Stop Learning</span
-					> philosophy.
-				</TimeLineElement>
 				<TimeLineElement
-					title="Web Technologies Associate (A.A.S. IT)"
+					title="Platzi"
+					subtitle="2021 to 2024, Online"
+					url="https://platzi.com/p/1diazdev"
+				/>
+				<!-- Self-taught Front-end developer, still actively taking classes and embracing the <span
+					class="font-bold">Never Stop Learning</span
+				> philosophy. -->
+				<TimeLineElement
+					title="Information Technologies - Web Technologies (A.A.S)"
 					subtitle="2017 to 2020 at Central Piedmont Community College, Charlotte, NC, USA"
+					url="./certification/IT-WebTechnologies(AAS).jpg"
 				/>
 				<!-- <TimeLineElement
-		title="Title Name"
-		subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
-	/> -->
-			</div>
-		</section>
-
-		<section id="certification">
-			<div class="mb-5 flex w-1/5">
-				<h2 class="w-full text-3xl font-bold">Certifications</h2>
-				<Icon name="carbon:certificate" class="inline-block h-10 w-10" />
-			</div>
-
-			<ul class="mx-6 mb-10 grid list-disc grid-cols-3 gap-2">
-				{
-					certifications.map((cert) => (
-						<li class={cert.isWide ? 'col-span-3 hidden md:block' : ''}>
-							<a href={cert.url} class={`group ${basicLinkStyle}`} target="_blank">
-								<p class="underline-offset-4 hover:underline">{cert.title}</p>
-								<span class="ml-2 hidden text-xs opacity-50 group-hover:block">● {cert.year}</span>
-							</a>
-						</li>
-					))
-				}
-			</ul>
-		</section>
-
-		<section id="courses">
-			<div class="mb-5 flex w-1/5">
-				<h2 class="w-full text-3xl font-bold">Courses</h2>
-				<Icon name="carbon:code" class="inline-block h-10 w-10" />
-			</div>
-
-			<ul class="mx-6 mb-10 grid list-disc grid-cols-3 gap-2">
-				{
-					courses.map((course) => (
-						<li>
-							<a
-								href={course.url}
-								class={`underline-offset-4 hover:underline ${basicLinkStyle}`}
-								target="_blank"
-							>
-								{course.title}
-							</a>
-						</li>
-					))
-				}
-			</ul>
-		</section>
-
-		<!-- the div below is used to scroll to this section and place the navbar in this h-12 div otherwise the navbar will overlap the section -->
-		<div class="h-12" id="experience"></div>
-
-		<section>
-			<div class="mb-5 flex w-1/5">
-				<h2 class="w-full text-3xl font-bold">Experience</h2>
-				<Icon name="carbon:development" class="inline-block h-10 w-10" />
-			</div>
-
-			<div class="time-line-container mb-10">
-				<TimeLineElement
-					title="Open-Source Maintainer @ Confs.tech 🎙️"
-					subtitle="From Apr. 2024 to Present. ~ Remote"
-					url="https://confs.tech"
-				>
-					<ul class="ml-6 list-disc">
-						<li>Maintained code quality by reviewing and approving pull requests.</li>
-						<li>Enriched project database with a variety of developer-related conferences.</li>
-						<li>
-							Provided support to three different repositories within the <a
-								href="https://github.com/tech-conferences"
-								target="_blank"
-								class={LinkStyle}>organization</a
-							>, covering frontend, backend, and API.
-						</li>
-						<div class="grid grid-cols-1 gap-2 p-2 md:grid-cols-3">
-							<p>
-								<span class="mx-1">✔</span>
-								Frontend: <a href="https://Confs.tech" target="_blank" class={LinkStyle}
-									>Confs.tech</a
-								>
-								<span class="mx-1">•</span>
-								<a
-									href="https://github.com/tech-conferences/confs.tech"
-									target="_blank"
-									class={LinkStyle}>GitHub</a
-								>
-							</p>
-							<p>
-								<span class="mx-1">✔</span>
-								Backend:
-								<a
-									href="https://github.com/tech-conferences/conference-data"
-									target="_blank"
-									class={LinkStyle}>GitHub</a
-								>
-							</p>
-							<p>
-								<span class="mx-1">✔</span>
-								API:
-								<a
-									href="https://github.com/tech-conferences/api.confs.tech"
-									target="_blank"
-									class={LinkStyle}>GitHub</a
-								>
-							</p>
-						</div>
-						<li>Expanded the existing test suite to cover additional functionalities.</li>
-						<li>
-							Increased developer engagement by fostering a welcoming and inclusive community.
-						</li>
-						<li>Enhanced project stability through bug identification and resolution.</li>
-						<li>
-							Collaborated with contributors to ensure seamless integration across various parts of
-							the project.
-						</li>
-					</ul>
-				</TimeLineElement>
-				<TimeLineElement
-					title="Open-Source Maintainer @ Public APIs 📡"
-					subtitle="From July 2024 to Present. ~ Remote"
-					url="https://publicapis.dev"
-				/>
-				<TimeLineElement
-					title="Open-Source Maintainer @ Dev Resources 🛠️"
-					subtitle="From July 2024 to Present. ~ Remote"
-					url="https://devresourc.es"
-				/>
-				<TimeLineElement
-					title="Open Source Contributor 🤝"
-					subtitle="From Jan. 2024 to Present. ~ Remote"
-				>
-					<ul class="ml-6 list-disc">
-						<li>
-							Contributed to multiple open source projects, enhancing features and fixing bugs.
-						</li>
-						<li>Collaborated with maintainers and other contributors to improve the project.</li>
-						<li>Learn new technologies and best practices through community feedback.</li>
-					</ul>
-				</TimeLineElement>
-				<TimeLineElement
-					title="Freelance Web Developer 🏠"
-					subtitle="From Feb. 2023 to Present. ~ Charlotte, NC, USA"
-				>
-					<ul class="ml-6 list-disc">
-						<li>
-							<a href="https://jpdiaz.dev" target="_blank" class={LinkStyle}>Jpdiaz.dev</a> is my portfolio
-							website with up-to-date projects.
-						</li>
-						<li>
-							<a href="https://freeforgeeks.com" target="_blank" class={LinkStyle}
-								>FreeForGeeks.com</a
-							>
-							is a curated toolbox for building better software. Free resources for all your dev needs.
-						</li>
-						<li>
-							<a href="https://links.jpdiaz.dev" target="_blank" class={LinkStyle}
-								>Links.jpdiaz.dev</a
-							> is my own Linktree alternative. It is a simple and clean way to display links.
-						</li>
-						<li>
-							<a href="https://docs.jpdiaz.dev" target="_blank" class={LinkStyle}>Docs.jpdiaz.dev</a
-							> delves into the intricacies of my projects, detailing the technologies used, development
-							processes, and challenges tackled. It is a testament to continuous learning and skill development.
-						</li>
-					</ul>
-				</TimeLineElement>
-				<TimeLineElement
-					title="Service Desk Analyst at ePlus"
-					subtitle="From Jan. 2020 to Feb. 2023. ~ Remote"
-					url="https://eplus.com"
-				>
-					<ul class="ml-6 list-disc">
-						<li>Closed 84.8% of trouble tickets on the first call without escalation in 2021.</li>
-						<li>
-							Handles technical troubleshooting within an enterprise environment. Navigates common
-							issues such as user administration, network outages, network printers, IP phones and
-							enterprise tools.
-						</li>
-						<li>Provides remote assistance with software deployment, and system configuration.</li>
-						<li>Effectively communicate with a variety of departments.</li>
-						<li>Proactively investigate and resolve end user problems/complications.</li>
-						<li>
-							Adaptability to multiple enterprise environments. Following a process oriented
-							approach.
-						</li>
-						<li>Utilizes problem solving skills to find solutions to unusual issues.</li>
-					</ul>
-				</TimeLineElement>
-				<TimeLineElement
-					title="Information Systems Technician at Central Piedmont Community College"
-					subtitle="From May 2018 to July 2019. ~ Charlotte, N.C."
-					url="https://www.cpcc.edu"
-				>
-					<ul class="ml-6 list-disc">
-						<li>
-							Deployed first-level support to users by installing, configuring, troubleshooting and
-							maintaining user’s hardware and software.
-						</li>
-						<li>
-							Responded to inquiries and requests from users and provided assistance with the
-							college’s computer systems.
-						</li>
-						<li>Coordinated with other units within ITS to clear up problems as was necessary.</li>
-					</ul>
-				</TimeLineElement>
-				<TimeLineElement
-					title="Information Systems Technician Intern at Central Piedmont Community College"
-					subtitle="From May 2017 to May 2018. ~ Charlotte, N.C."
-					url="https://www.cpcc.edu"
-				>
-					<ul class="ml-6 list-disc">
-						<li>
-							Arranged excellent customer service and technical assistance to students and staff
-							around campus.
-						</li>
-						<li>
-							Commended for quickly resolving complex issues including system crashes in Smart
-							classrooms, computer classrooms, and conference rooms.
-						</li>
-						<li>
-							Controlled client’s computer to fix, install or upgrade software related issues.
-						</li>
-					</ul>
-				</TimeLineElement>
-			</div>
-		</section>
-
-		<section id="download" class="w-full">
-			<div class="flex w-full justify-center">
-				<div class="md:w-112 lg:w-128 w-96 rounded-lg border p-2 transition-all hover:shadow-lg">
-					<figure>
-						<object data={PDF} type="application/pdf" width="100%"></object>
-					</figure>
-					<div class="flex flex-col items-center gap-2">
-						<h2 class="mt-4 w-full text-xl font-bold">Resume</h2>
-						<p>View and download my resume by clicking on the button below</p>
-						<div class="flex w-full">
-							<Button
-								style="primary"
-								size={'sm'}
-								name="Download CV"
-								rel="noopener noreferrer"
-								class="flex w-1/2 items-center justify-center"
-								target="_blank"
-								href={PDF}
-							>
-								<p class="text-sm">Download resume</p>
-								<Icon name="carbon:document-pdf" class="ml-1 h-6 w-6" />
-							</Button>
-							<!-- </div> -->
-							<!-- <div class="justify-end"> -->
-							<Button
-								style="primary"
-								size={'sm'}
-								name="Download CV"
-								rel="noopener noreferrer"
-								class="flex w-1/2 items-center justify-center"
-								target="_blank"
-								href="https://www.linkedin.com/in/1diazdev"
-							>
-								<p class="text-sm">View CV Online</p>
-								<OpenOutline class="ml-1 h-6 w-6" />
-							</Button>
-						</div>
-					</div>
-				</div>
+				title="Title Name"
+				subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
+				/> -->
 			</div>
 		</section>
 	</main>
+
+	<section id="certification">
+		<div class="mb-5 flex w-1/5">
+			<h2 class="w-full text-3xl font-bold">Certifications</h2>
+			<a href="https://www.linkedin.com/in/1diazdev/details/certifications" target="_blank">
+				<Icon name="carbon:certificate" class="inline-block h-10 w-10" />
+			</a>
+		</div>
+
+		<ul class="mx-6 mb-10 grid list-disc grid-cols-3 gap-2">
+			{
+				certifications.map((cert) => (
+					<li class={cert.isWide ? 'col-span-3 hidden md:block' : ''}>
+						<a href={cert.url} class={`group ${basicLinkStyle}`} target="_blank">
+							<p class="underline-offset-4 hover:underline">{cert.title}</p>
+							<span class="ml-2 hidden text-xs opacity-50 group-hover:block">● {cert.year}</span>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+
+	<section id="courses">
+		<div class="mb-5 flex w-1/5">
+			<h2 class="w-full text-3xl font-bold">Courses</h2>
+			<a href="https://www.linkedin.com/in/1diazdev/details/courses" target="_blank">
+				<Icon name="carbon:code" class="inline-block h-10 w-10" />
+			</a>
+		</div>
+
+		<ul class="mx-6 mb-10 grid list-disc grid-cols-3 gap-2">
+			{
+				courses.map((course) => (
+					<li>
+						<a
+							href={course.url}
+							class={`underline-offset-4 hover:underline ${basicLinkStyle}`}
+							target="_blank"
+						>
+							{course.title}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+
+	<!-- the div below is used to scroll to this section and place the navbar in this h-12 div otherwise the navbar will overlap the section -->
+	<div class="h-12" id="experience"></div>
+
+	<section>
+		<div class="mb-5 flex w-1/5">
+			<h2 class="w-full text-3xl font-bold">Experience</h2>
+			<a href="https://www.linkedin.com/in/1diazdev/details/experience" target="_blank">
+				<Icon name="carbon:development" class="inline-block h-10 w-10" />
+			</a>
+		</div>
+
+		<div class="time-line-container mb-10">
+			<TimeLineElement
+				title="Open-Source Maintainer @ Confs.tech 🎙️"
+				subtitle="From Apr. 2024 to Present. ~ Remote"
+				url="https://confs.tech"
+			>
+				<ul class="ml-6 list-disc">
+					<li>Maintained code quality by reviewing and approving pull requests.</li>
+					<li>Enriched project database with a variety of developer-related conferences.</li>
+					<li>
+						Provided support to three different repositories within the <a
+							href="https://github.com/tech-conferences"
+							target="_blank"
+							class={LinkStyle}>organization</a
+						>, covering frontend, backend, and API.
+					</li>
+					<div class="grid grid-cols-1 gap-2 p-2 md:grid-cols-3">
+						<p>
+							<span class="mx-1">✔</span>
+							Frontend: <a href="https://Confs.tech" target="_blank" class={LinkStyle}>Confs.tech</a
+							>
+							<span class="mx-1">•</span>
+							<a
+								href="https://github.com/tech-conferences/confs.tech"
+								target="_blank"
+								class={LinkStyle}>GitHub</a
+							>
+						</p>
+						<p>
+							<span class="mx-1">✔</span>
+							Backend:
+							<a
+								href="https://github.com/tech-conferences/conference-data"
+								target="_blank"
+								class={LinkStyle}>GitHub</a
+							>
+						</p>
+						<p>
+							<span class="mx-1">✔</span>
+							API:
+							<a
+								href="https://github.com/tech-conferences/api.confs.tech"
+								target="_blank"
+								class={LinkStyle}>GitHub</a
+							>
+						</p>
+					</div>
+					<li>Expanded the existing test suite to cover additional functionalities.</li>
+					<li>Increased developer engagement by fostering a welcoming and inclusive community.</li>
+					<li>Enhanced project stability through bug identification and resolution.</li>
+					<li>
+						Collaborated with contributors to ensure seamless integration across various parts of
+						the project.
+					</li>
+				</ul>
+			</TimeLineElement>
+			<TimeLineElement
+				title="Open-Source Maintainer @ Public APIs 📡"
+				subtitle="From July 2024 to Present. ~ Remote"
+				url="https://publicapis.dev"
+			/>
+			<TimeLineElement
+				title="Open-Source Maintainer @ Dev Resources 🛠️"
+				subtitle="From July 2024 to Present. ~ Remote"
+				url="https://devresourc.es"
+			/>
+			<TimeLineElement
+				title="Open Source Contributor 🤝"
+				subtitle="From Jan. 2024 to Present. ~ Remote"
+			>
+				<ul class="ml-6 list-disc">
+					<li>Contributed to multiple open source projects, enhancing features and fixing bugs.</li>
+					<li>Collaborated with maintainers and other contributors to improve the project.</li>
+					<li>Learn new technologies and best practices through community feedback.</li>
+				</ul>
+			</TimeLineElement>
+			<TimeLineElement
+				title="Freelance Web Developer 🏠"
+				subtitle="From Feb. 2023 to Present. ~ Charlotte, NC, USA"
+			>
+				<ul class="ml-6 list-disc">
+					<li>
+						<a href="https://jpdiaz.dev" target="_blank" class={LinkStyle}>Jpdiaz.dev</a> is my portfolio
+						website with up-to-date projects.
+					</li>
+					<li>
+						<a href="https://freeforgeeks.com" target="_blank" class={LinkStyle}>FreeForGeeks.com</a
+						>
+						is a curated toolbox for building better software. Free resources for all your dev needs.
+					</li>
+					<li>
+						<a href="https://links.jpdiaz.dev" target="_blank" class={LinkStyle}>Links.jpdiaz.dev</a
+						> is my own Linktree alternative. It is a simple and clean way to display links.
+					</li>
+					<li>
+						<a href="https://docs.jpdiaz.dev" target="_blank" class={LinkStyle}>Docs.jpdiaz.dev</a> delves
+						into the intricacies of my projects, detailing the technologies used, development processes,
+						and challenges tackled. It is a testament to continuous learning and skill development.
+					</li>
+				</ul>
+			</TimeLineElement>
+			<TimeLineElement
+				title="Service Desk Analyst at ePlus"
+				subtitle="From Jan. 2020 to Feb. 2023. ~ Remote"
+				url="https://eplus.com"
+			>
+				<ul class="ml-6 list-disc">
+					<li>Closed 84.8% of trouble tickets on the first call without escalation in 2021.</li>
+					<li>
+						Handles technical troubleshooting within an enterprise environment. Navigates common
+						issues such as user administration, network outages, network printers, IP phones and
+						enterprise tools.
+					</li>
+					<li>Provides remote assistance with software deployment, and system configuration.</li>
+					<li>Effectively communicate with a variety of departments.</li>
+					<li>Proactively investigate and resolve end user problems/complications.</li>
+					<li>
+						Adaptability to multiple enterprise environments. Following a process oriented approach.
+					</li>
+					<li>Utilizes problem solving skills to find solutions to unusual issues.</li>
+				</ul>
+			</TimeLineElement>
+			<TimeLineElement
+				title="Information Systems Technician at Central Piedmont Community College"
+				subtitle="From May 2018 to July 2019. ~ Charlotte, N.C."
+				url="https://www.cpcc.edu"
+			>
+				<ul class="ml-6 list-disc">
+					<li>
+						Deployed first-level support to users by installing, configuring, troubleshooting and
+						maintaining user’s hardware and software.
+					</li>
+					<li>
+						Responded to inquiries and requests from users and provided assistance with the
+						college’s computer systems.
+					</li>
+					<li>Coordinated with other units within ITS to clear up problems as was necessary.</li>
+				</ul>
+			</TimeLineElement>
+			<TimeLineElement
+				title="Information Systems Technician Intern at Central Piedmont Community College"
+				subtitle="From May 2017 to May 2018. ~ Charlotte, N.C."
+				url="https://www.cpcc.edu"
+			>
+				<ul class="ml-6 list-disc">
+					<li>
+						Arranged excellent customer service and technical assistance to students and staff
+						around campus.
+					</li>
+					<li>
+						Commended for quickly resolving complex issues including system crashes in Smart
+						classrooms, computer classrooms, and conference rooms.
+					</li>
+					<li>Controlled client’s computer to fix, install or upgrade software related issues.</li>
+				</ul>
+			</TimeLineElement>
+		</div>
+	</section>
+
+	<section id="download" class="w-full">
+		<div class="flex w-full justify-center">
+			<div class="md:w-112 lg:w-128 w-96 rounded-lg border p-2 transition-all hover:shadow-lg">
+				<figure>
+					<object data={PDF} type="application/pdf" width="100%"></object>
+				</figure>
+				<div class="flex flex-col items-center gap-2">
+					<h2 class="mt-4 w-full text-xl font-bold">Resume</h2>
+					<p>View and download my resume by clicking on the button below</p>
+					<div class="flex w-full">
+						<Button
+							style="primary"
+							size={'sm'}
+							name="Download CV"
+							rel="noopener noreferrer"
+							class="flex w-1/2 items-center justify-center"
+							target="_blank"
+							href={PDF}
+						>
+							<p class="text-sm">Download resume</p>
+							<Icon name="carbon:document-pdf" class="ml-1 h-6 w-6" />
+						</Button>
+						<!-- </div> -->
+						<!-- <div class="justify-end"> -->
+						<Button
+							style="primary"
+							size={'sm'}
+							name="Download CV"
+							rel="noopener noreferrer"
+							class="flex w-1/2 items-center justify-center"
+							target="_blank"
+							href="https://www.linkedin.com/in/1diazdev"
+						>
+							<p class="text-sm">View CV Online</p>
+							<OpenOutline class="ml-1 h-6 w-6" />
+						</Button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </Layout>
