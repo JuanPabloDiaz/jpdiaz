@@ -112,9 +112,11 @@ Resources list that I find helpful and would like to give credit to.
 
 - [Astro](https://astro.build/)
 - [AstroShip](https://astroship.web3templates.com/)
-- I used [Astro Portfolio Template - Created by veranikabarel](https://github.com/veranikabarel/astro-portfolio) as a starting point for this project.
 - [Tailwind CSS](https://tailwindcss.com/)
-- [GitHub API](https://docs.github.com/en/rest)
 - [Vercel](https://vercel.com/)
+- [GitHub API](https://docs.github.com/en/rest)
+- [Web3Forms](https://web3forms.com/)
+- [Dev-skill-icons](https://github.com/lelouchfr/skill-icons) <!-- skillicons.dev -->
+- I used [Astro Portfolio Template - Created by veranikabarel](https://github.com/veranikabarel/astro-portfolio) as a starting point for this project.
 
 <p align="right">(<a href="#top">👆 Top 👆</a>)</p>
