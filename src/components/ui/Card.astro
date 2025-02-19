@@ -8,11 +8,15 @@ import docs from '@assets/images/projects/docs.png';
 import dataLanding from '@assets/images/projects/data-landing.png';
 import jpshop from '@assets/images/projects/jpshop-ipad.png';
 import freeCode from '@assets/images/projects/freecode-ipad.png';
+import freeCodeCampCertifications from '@assets/images/projects/freecodecamp.png';
 import migueDiaz from '@assets/images/projects/migue-diaz.jpg';
 import freeForGeeks from '@assets/images/projects/free-for-geeks.jpg';
+import porfolio3d from '@assets/images/projects/3d-portfolio.png';
+import api from '@assets/images/projects/public-api.png';
 import OpenOutline from '@components/icons/OpenOutline.astro';
 import GitHub from '@components/icons/GitHub.astro';
 import GitHubStars from '@components/ui/GitHubStars.astro';
+import { defineCollection } from 'astro:content';
 
 interface Props {
 	github_url?: string;
@@ -44,6 +48,9 @@ const images = {
 	'jpshop-ipad.png': jpshop,
 	'freecode-ipad.png': freeCode,
 	'free-for-geeks.jpg': freeForGeeks,
+	'freecodecamp_certifications.png': freeCodeCampCertifications,
+	'3d-portfolio.png': porfolio3d,
+	'public-api.png': api,
 };
 // const imagePath = images[images_path];
 const filename = images_path.split('/').pop();
