@@ -23,7 +23,7 @@ Welcome to my personal website! I'm Juan Pablo Díaz, a Front-End Developer and 
 
 <div align="center">
 
-[![jpdiaz](https://img.shields.io/badge/View%20Demo-000?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://jpdiaz.dev/)
+[![jpdiaz](https://img.shields.io/badge/View%20Demo-000?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://jpdiaz.dev)
 [![repo](https://img.shields.io/badge/View%20Code-000?style=for-the-badge&logo=GitHub&logoColor=white)](https://stackblitz.com/github.com/JuanPabloDiaz/jpdiaz)
 
 </div>
