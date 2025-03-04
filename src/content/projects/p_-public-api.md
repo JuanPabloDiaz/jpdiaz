@@ -1,5 +1,5 @@
 ---
-inProgress: false
+inProgress: true
 title: Public API
 description: A collaborative list of public APIs for developers
 img_alt: Public API project
