@@ -1,5 +1,5 @@
 ---
-inProgress: false
+inProgress: true
 title: Netflix Clone
 description: Full Stack app to create and manage movies with authentication. MERN stack.
 link: https://netflix.jpdiaz.dev
