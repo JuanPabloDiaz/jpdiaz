@@ -27,6 +27,10 @@ Welcome to my personal website! I'm Juan Pablo Díaz, a Front-End Developer and 
 [![repo](https://img.shields.io/badge/View%20Code-000?style=for-the-badge&logo=GitHub&logoColor=white)](https://stackblitz.com/github.com/JuanPabloDiaz/jpdiaz)
 
 </div>
+<div align=center>
+  <img src="https://img.shields.io/github/languages/code-size/JuanPabloDiaz/jpdiaz" alt="code size">
+  <a href="https://github.com/JuanPabloDiaz/jpdiaz/graphs/contributors"><img src="https://img.shields.io/github/contributors/JuanPabloDiaz/jpdiaz" alt="contributors"></a>
+</div>
 
 ### Desktop View 🖥️
 
