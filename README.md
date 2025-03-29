@@ -90,11 +90,11 @@ To get started with [jpdiaz](https://jpdiaz.dev), simply clone the repository an
 1. Clone the repo
 2. Install dependencies
    ```sh
-   npm install
+   yarn install
    ```
 3. Start the development server
    ```sh
-   npm run dev
+   yarn run dev
    ```
 4. Open [http://localhost:5173/](http://localhost:5173/) with your browser to see the result.
 
