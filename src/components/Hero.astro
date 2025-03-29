@@ -1,8 +1,8 @@
 ---
-import juanImage from '@assets/images/juan.webp';
 import CallToAction from '@components/CallToAction.astro';
 import About from './About.astro';
 import { Image } from 'astro:assets';
+import juanImage from '@assets/images/juan.jpg';
 ---
 
 <section data-testid="hero" id="hero" class="mb-0 mt-0 h-auto text-center md:mb-24">
@@ -26,7 +26,6 @@ import { Image } from 'astro:assets';
 				format="jpg"
 				width={450}
 				height={450}
-				loading="eager"
 				quality={100}
 			/>
 		</div>

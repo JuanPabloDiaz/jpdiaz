@@ -1,10 +1,9 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import juanImage from '@assets/images/juan.webp';
 import Link from '@components/ui/Link.astro';
 import Navbar from '@components/Navbar.astro';
 import { Image } from 'astro:assets';
-
+import juanImage from '@assets/images/juan.jpg';
 const backHomeMenu = [
 	{
 		title: '',
@@ -30,7 +29,6 @@ const backHomeMenu = [
 					format="jpg"
 					width={150}
 					height={150}
-					loading="eager"
 					quality={100}
 				/>
 			</div>
