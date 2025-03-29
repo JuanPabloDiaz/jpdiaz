@@ -1,9 +1,9 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import juanImage from '@assets/images/juan.jpg';
-import { Image } from '@astrojs/image/components';
 import Link from '@components/ui/Link.astro';
 import Navbar from '@components/Navbar.astro';
+import { Image } from 'astro:assets';
 
 const backHomeMenu = [
 	{
@@ -27,7 +27,6 @@ const backHomeMenu = [
 					class="rounded-full opacity-90 shadow-orange/50 duration-75 hover:scale-105 hover:transform hover:opacity-50 hover:shadow-2xl"
 					src={juanImage}
 					alt="Juan Diaz"
-					aspectRatio="4:4"
 					format="jpg"
 					width={150}
 					height={150}

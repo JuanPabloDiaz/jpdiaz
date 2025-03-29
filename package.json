@@ -15,7 +15,6 @@
 		"lighthouse": "npx unlighthouse --site https://jpdiaz.dev"
 	},
 	"dependencies": {
-		"@astrojs/image": "^0.18.0",
 		"@astrojs/mdx": "^0.19.7",
 		"@astrojs/sitemap": "^3.3.0",
 		"@astrojs/tailwind": "^3.1.3",

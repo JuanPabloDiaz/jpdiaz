@@ -1,5 +1,4 @@
 ---
-import { Image } from '@astrojs/image/components';
 import Tags from '@components/ui/Tags.astro';
 
 // dynamic images Workaround:
@@ -18,6 +17,7 @@ import OpenOutline from '@components/icons/OpenOutline.astro';
 import GitHub from '@components/icons/GitHub.astro';
 import GitHubStars from '@components/ui/GitHubStars.astro';
 import { defineCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 
 interface Props {
 	github_url?: string;
@@ -69,15 +69,7 @@ const imagePath = images[filename];
 	>
 		<a href={url} target="_blank" aria-label="link to project">
 			<div class="relative flex items-end overflow-hidden rounded-xl">
-				<Image
-					src={imagePath}
-					alt={alt}
-					aspectRatio="4:4"
-					format="png"
-					width={400}
-					height={400}
-					loading="eager"
-				/>
+				<Image src={imagePath} alt={alt} format="png" width={400} height={400} loading="eager" />
 			</div>
 		</a>
 		<div class="mt-1 flex flex-grow flex-col p-2">
