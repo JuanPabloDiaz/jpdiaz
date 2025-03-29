@@ -67,11 +67,17 @@ const imagePath = images[filename];
 		data-testId="card"
 		class="flex h-[620px] flex-col rounded-xl bg-white/90 p-3 shadow-lg duration-300 hover:scale-105 hover:transform hover:shadow-xl"
 	>
-		<a href={url} target="_blank" aria-label="link to project">
-			<div class="relative flex items-end overflow-hidden rounded-xl">
-				<Image src={imagePath} alt={alt} format="png" width={400} height={400} loading="eager" />
-			</div>
-		</a>
+	<a href={url} target="_blank" aria-label="link to project">
+    <div class="relative flex items-end overflow-hidden rounded-xl aspect-square">
+        <Image
+            src={imagePath}
+            alt={alt}
+            format="png"
+            class="object-cover w-full h-full"
+            loading="eager"
+        />
+    </div>
+</a>
 		<div class="mt-1 flex flex-grow flex-col p-2">
 			<h3 class="text-xl text-black lg:text-2xl">{title}</h3>
 			<p class="text-md h-full text-black/70">{description}</p>
