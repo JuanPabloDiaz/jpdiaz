@@ -1,8 +1,8 @@
 ---
-import juanImage from '@assets/images/juan.jpg';
-import { Image } from '@astrojs/image/components';
+import juanImage from '@assets/images/juan.webp';
 import CallToAction from '@components/CallToAction.astro';
 import About from './About.astro';
+import { Image } from 'astro:assets';
 ---
 
 <section data-testid="hero" id="hero" class="mb-0 mt-0 h-auto text-center md:mb-24">
@@ -23,7 +23,6 @@ import About from './About.astro';
 				class="rounded-full opacity-90 shadow-orange/50 duration-75 hover:scale-105 hover:transform hover:opacity-50 hover:shadow-2xl"
 				src={juanImage}
 				alt="Juan Diaz"
-				aspectRatio="4:4"
 				format="jpg"
 				width={450}
 				height={450}
