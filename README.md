@@ -15,17 +15,21 @@ Welcome to my personal website! I'm Juan Pablo Díaz, a Front-End Developer and 
   <!-- <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2F1diazdev%2F1diazdev&label=VISITORS&labelColor=%23000&countColor=%230A0209" /> -->
   <br>
   <a href="https://peerlist.io/1diazdev"><img src="https://img.shields.io/badge/peerlist-d5d5d5?style=for-the-badge&logo=peerlist&logoColor=0A0209" alt="profile of Peerlist with username 1diazdev" ></a>
-  <a href="https://www.linkedin.com/in/1diazdev/"><img src="https://img.shields.io/badge/LinkedIn-d5d5d5?style=for-the-badge&logo=linkedin&logoColor=0A0209" alt="profile of LinkedIn with username 1diazdev" /></a>
+  <a href="https://www.linkedin.com/in/1diazdev"><img src="https://img.shields.io/badge/LinkedIn-d5d5d5?style=for-the-badge&logo=linkedin&logoColor=0A0209" alt="profile of LinkedIn with username 1diazdev" /></a>
   <a href="mailto:juan.diaz.rodriguez93@gmail.com"><img src="https://img.shields.io/badge/Gmail-d5d5d5?style=for-the-badge&logo=gmail&logoColor=0A0209" alt="Gmail of Juan Diaz i.e.   juan.diaz.rodriguez93@gmail.com" /></a>
-  <a href="https://twitter.com/1diazdev"><img src="https://img.shields.io/badge/Twitter-d5d5d5?style=for-the-badge&logo=x&logoColor=0A0209" alt="profile of Twitter with username 1diazdev" ></a>
+  <a href="https://twitter.com/JuanDiaz_427"><img src="https://img.shields.io/badge/Twitter-d5d5d5?style=for-the-badge&logo=x&logoColor=0A0209" alt="profile of Twitter with username 1diazdev" ></a>
   <a href="https://dev.to/1diazdev"><img src="https://img.shields.io/badge/dev.to-d5d5d5?style=for-the-badge&logo=devdotto&logoColor=0A0209" alt="profile of Dev.to with username 1diazdev" /></a>
 </div>
 
 <div align="center">
 
-[![jpdiaz](https://img.shields.io/badge/View%20Demo-000?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://jpdiaz.dev/)
+[![jpdiaz](https://img.shields.io/badge/View%20Demo-000?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://jpdiaz.dev)
 [![repo](https://img.shields.io/badge/View%20Code-000?style=for-the-badge&logo=GitHub&logoColor=white)](https://stackblitz.com/github.com/JuanPabloDiaz/jpdiaz)
 
+</div>
+<div align=center>
+  <img src="https://img.shields.io/github/languages/code-size/JuanPabloDiaz/jpdiaz" alt="code size">
+  <a href="https://github.com/JuanPabloDiaz/jpdiaz/graphs/contributors"><img src="https://img.shields.io/github/contributors/JuanPabloDiaz/jpdiaz" alt="contributors"></a>
 </div>
 
 ### Desktop View 🖥️
@@ -86,11 +90,11 @@ To get started with [jpdiaz](https://jpdiaz.dev), simply clone the repository an
 1. Clone the repo
 2. Install dependencies
    ```sh
-   npm install
+   yarn install
    ```
 3. Start the development server
    ```sh
-   npm run dev
+   yarn run dev
    ```
 4. Open [http://localhost:5173/](http://localhost:5173/) with your browser to see the result.
 
@@ -112,9 +116,11 @@ Resources list that I find helpful and would like to give credit to.
 
 - [Astro](https://astro.build/)
 - [AstroShip](https://astroship.web3templates.com/)
-- I used [Astro Portfolio Template - Created by veranikabarel](https://github.com/veranikabarel/astro-portfolio) as a starting point for this project.
 - [Tailwind CSS](https://tailwindcss.com/)
-- [GitHub API](https://docs.github.com/en/rest)
 - [Vercel](https://vercel.com/)
+- [GitHub API](https://docs.github.com/en/rest)
+- [Web3Forms](https://web3forms.com/)
+- [Dev-skill-icons](https://github.com/lelouchfr/skill-icons) <!-- skillicons.dev -->
+- I used [Astro Portfolio Template - Created by veranikabarel](https://github.com/veranikabarel/astro-portfolio) as a starting point for this project.
 
 <p align="right">(<a href="#top">👆 Top 👆</a>)</p>

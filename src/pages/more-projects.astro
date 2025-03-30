@@ -7,12 +7,28 @@ import GithubButtons from '@components/ui/GithubButtons.astro';
 import Navbar from '@components/Navbar.astro';
 import CallToAction from '@components/CallToAction.astro';
 
+// Fetch full stack projects
+const fullStackProjects = await getCollection('more-full-stack-projects', ({ data }) => {
+	return !data.inProgress;
+});
+
+// Sort full stack projects by extracting the numeric part of the file name
+fullStackProjects.sort((a, b) => {
+	const numA = parseInt(a.id.match(/\d+/)[0], 10);
+	const numB = parseInt(b.id.match(/\d+/)[0], 10);
+	return numA - numB;
+});
 const projects = await getCollection('more-projects', ({ data }) => {
 	// console.log('data: ', data);
 	// console.log('data inProgress: ', data.inProgress);
 	return !data.inProgress;
 });
-
+// Sort projects by extracting the numeric part of the file name
+projects.sort((a, b) => {
+	const numA = parseInt(a.id.match(/\d+/)[0], 10);
+	const numB = parseInt(b.id.match(/\d+/)[0], 10);
+	return numA - numB;
+});
 const backHomeMenu = [
 	{
 		title: '',
@@ -26,6 +42,20 @@ const backHomeMenu = [
 	<main class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto">
 		<SubTitle text="More Projects" />
 		<p class="text-black dark:text-white">Here are some more projects that I have worked on.</p>
+		<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
+			{
+				fullStackProjects.map((fullStack) => (
+					<CardSmall
+						title={fullStack.data.title}
+						description={fullStack.data.description}
+						github_url={fullStack.data?.github_link}
+						url={fullStack.data.link}
+						tags={fullStack.data.tags}
+						contribution={fullStack.data.contribution}
+					/>
+				))
+			}
+		</div>
 		<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
 			{
 				projects.map((project) => (

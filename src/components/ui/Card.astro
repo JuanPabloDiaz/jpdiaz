@@ -1,18 +1,22 @@
 ---
-import { Image } from '@astrojs/image/components';
 import Tags from '@components/ui/Tags.astro';
 
 // dynamic images Workaround:
-import landing from '@assets/images/projects/landing.png';
+import freeForGeeks from '@assets/images/projects/free-for-geeks.png';
+import bookStore from '@assets/images/projects/book-store.png';
+import freeCode from '@assets/images/projects/free-code-camp.png';
+import porfolio3d from '@assets/images/projects/3d-portfolio.png';
+import migueDiaz from '@assets/images/projects/migue-diaz.png';
 import docs from '@assets/images/projects/docs.png';
-import dataLanding from '@assets/images/projects/data-landing.png';
-import jpshop from '@assets/images/projects/jpshop-ipad.png';
-import freeCode from '@assets/images/projects/freecode-ipad.png';
-import migueDiaz from '@assets/images/projects/migue-diaz.jpg';
-import freeForGeeks from '@assets/images/projects/free-for-geeks.jpg';
+import freeCodeCampCertifications from '@assets/images/projects/freecodecamp.png';
+import landing from '@assets/images/projects/landing.png';
+import jpshop from '@assets/images/projects/jpshop.png';
+
 import OpenOutline from '@components/icons/OpenOutline.astro';
 import GitHub from '@components/icons/GitHub.astro';
 import GitHubStars from '@components/ui/GitHubStars.astro';
+import { defineCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 
 interface Props {
 	github_url?: string;
@@ -39,11 +43,13 @@ const {
 const images = {
 	'landing.png': landing,
 	'docs.png': docs,
-	'data-landing.png': dataLanding,
-	'migue-diaz.jpg': migueDiaz,
-	'jpshop-ipad.png': jpshop,
+	'migue-diaz.png': migueDiaz,
+	'jpshop.png': jpshop,
 	'freecode-ipad.png': freeCode,
-	'free-for-geeks.jpg': freeForGeeks,
+	'free-for-geeks.png': freeForGeeks,
+	'freecodecamp_certifications.png': freeCodeCampCertifications,
+	'3d-portfolio.png': porfolio3d,
+	'book-store.png': bookStore,
 };
 // const imagePath = images[images_path];
 const filename = images_path.split('/').pop();
@@ -58,19 +64,17 @@ const imagePath = images[filename];
 		data-testId="card"
 		class="flex h-[620px] flex-col rounded-xl bg-white/90 p-3 shadow-lg duration-300 hover:scale-105 hover:transform hover:shadow-xl"
 	>
-		<a href={url} target="_blank" aria-label="link to project">
-			<div class="relative flex items-end overflow-hidden rounded-xl">
-				<Image
-					src={imagePath}
-					alt={alt}
-					aspectRatio="4:4"
-					format="png"
-					width={400}
-					height={400}
-					loading="eager"
-				/>
-			</div>
-		</a>
+	<a href={url} target="_blank" aria-label="link to project">
+    <div class="relative flex items-end overflow-hidden rounded-xl aspect-square">
+        <Image
+            src={imagePath}
+            alt={alt}
+            format="png"
+            class="object-contain w-full h-full"
+            loading="eager"
+        />
+    </div>
+</a>
 		<div class="mt-1 flex flex-grow flex-col p-2">
 			<h3 class="text-xl text-black lg:text-2xl">{title}</h3>
 			<p class="text-md h-full text-black/70">{description}</p>

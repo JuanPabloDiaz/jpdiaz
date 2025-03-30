@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 
 export interface Props {
 	tags?: string[];
@@ -34,7 +34,6 @@ const oldIconURL = 'https://skillicons.dev/icons?i=';
 						width={25}
 						height={25}
 						title={tags[tags.indexOf(tag)]}
-						aspectRatio="1:1"
 						format="svg"
 					/>
 				);
