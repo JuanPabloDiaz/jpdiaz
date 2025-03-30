@@ -1,9 +1,9 @@
 ---
-import Card from '@components/ui/Card.astro';
 import { getCollection } from 'astro:content';
 import Link from '@components/ui/Link.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
 import GithubButtons from './ui/GithubButtons.astro';
+import Card from './ui/Card.astro';
 
 const projects = await getCollection('projects', ({ data }) => {
 	return !data.inProgress;
