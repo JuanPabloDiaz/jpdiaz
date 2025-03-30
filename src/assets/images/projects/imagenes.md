@@ -1,0 +1,1 @@
+Todas las imagenes deben medir 1000x840px

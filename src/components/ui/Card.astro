@@ -2,17 +2,16 @@
 import Tags from '@components/ui/Tags.astro';
 
 // dynamic images Workaround:
-import landing from '@assets/images/projects/landing.png';
-import docs from '@assets/images/projects/docs.png';
-import dataLanding from '@assets/images/projects/data-landing.png';
-import jpshop from '@assets/images/projects/jpshop-ipad.png';
-import freeCode from '@assets/images/projects/freecode-ipad.png';
-import freeCodeCampCertifications from '@assets/images/projects/freecodecamp.png';
-import migueDiaz from '@assets/images/projects/migue-diaz.jpg';
-import freeForGeeks from '@assets/images/projects/free-for-geeks.jpg';
-import porfolio3d from '@assets/images/projects/3d-portfolio.png';
+import freeForGeeks from '@assets/images/projects/free-for-geeks.png';
 import bookStore from '@assets/images/projects/book-store.png';
-import api from '@assets/images/projects/public-api.png';
+import freeCode from '@assets/images/projects/free-code-camp.png';
+import porfolio3d from '@assets/images/projects/3d-portfolio.png';
+import migueDiaz from '@assets/images/projects/migue-diaz.png';
+import docs from '@assets/images/projects/docs.png';
+import freeCodeCampCertifications from '@assets/images/projects/freecodecamp.png';
+import landing from '@assets/images/projects/landing.png';
+import jpshop from '@assets/images/projects/jpshop.png';
+
 import OpenOutline from '@components/icons/OpenOutline.astro';
 import GitHub from '@components/icons/GitHub.astro';
 import GitHubStars from '@components/ui/GitHubStars.astro';
@@ -44,15 +43,13 @@ const {
 const images = {
 	'landing.png': landing,
 	'docs.png': docs,
-	'data-landing.png': dataLanding,
-	'migue-diaz.jpg': migueDiaz,
-	'jpshop-ipad.png': jpshop,
+	'migue-diaz.png': migueDiaz,
+	'jpshop.png': jpshop,
 	'freecode-ipad.png': freeCode,
-	'free-for-geeks.jpg': freeForGeeks,
+	'free-for-geeks.png': freeForGeeks,
 	'freecodecamp_certifications.png': freeCodeCampCertifications,
 	'3d-portfolio.png': porfolio3d,
 	'book-store.png': bookStore,
-	'public-api.png': api,
 };
 // const imagePath = images[images_path];
 const filename = images_path.split('/').pop();
@@ -73,7 +70,7 @@ const imagePath = images[filename];
             src={imagePath}
             alt={alt}
             format="png"
-            class="object-cover w-full h-full"
+            class="object-contain w-full h-full"
             loading="eager"
         />
     </div>
