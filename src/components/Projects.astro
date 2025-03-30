@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Link from '@components/ui/Link.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
 import GithubButtons from './ui/GithubButtons.astro';
-import NewCard from './ui/NewCard.astro';
+import Card from './ui/Card.astro';
 
 const projects = await getCollection('projects', ({ data }) => {
 	return !data.inProgress;
@@ -21,7 +21,7 @@ const projects = await getCollection('projects', ({ data }) => {
 	<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
 		{
 			projects.map((project) => (
-				<NewCard
+				<Card
 					url={project.data.link}
 					title={project.data.title}
 					description={project.data.description}
