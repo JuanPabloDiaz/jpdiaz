@@ -1,9 +1,9 @@
 ---
-// import Card from '@components/ui/Card.astro';
 import { getCollection } from 'astro:content';
 import Link from '@components/ui/Link.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
 import GithubButtons from './ui/GithubButtons.astro';
+import NewCard from './ui/NewCard.astro';
 
 const projects = await getCollection('projects', ({ data }) => {
 	return !data.inProgress;
@@ -18,10 +18,10 @@ const projects = await getCollection('projects', ({ data }) => {
 	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto"
 >
 	<SubTitle text="Projects" />
-	<!-- <div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
+	<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
 		{
 			projects.map((project) => (
-				<Card
+				<NewCard
 					url={project.data.link}
 					title={project.data.title}
 					description={project.data.description}
@@ -32,7 +32,7 @@ const projects = await getCollection('projects', ({ data }) => {
 				/>
 			))
 		}
-	</div> -->
+	</div>
 	<Link text="View more projects" ariaLabel="View more projects" href="./more-projects" arrow />
 	<div class="my-10">
 		<GithubButtons />
