@@ -64,7 +64,7 @@ const imagePath = images[filename];
 		data-testId="card"
 		class="flex h-[620px] flex-col rounded-xl bg-white/90 p-3 shadow-lg duration-300 hover:scale-105 hover:transform hover:shadow-xl"
 	>
-	<a href={url} target="_blank" aria-label="link to project">
+	<a href={url} target="_blank" aria-label={`link to project: ${title}`}>
     <div class="relative flex items-end overflow-hidden rounded-xl aspect-square">
         <Image
             src={imagePath}
@@ -91,7 +91,7 @@ const imagePath = images[filename];
 						<a
 							href={github_url}
 							target="_blank"
-							area-label={`link to github repository: ${title}`}
+							aria-label={`link to GitHub repository: ${title}`}
 							class="rounded-xl bg-orange p-1 px-2 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
 						>
 							<GitHub />
@@ -101,7 +101,7 @@ const imagePath = images[filename];
 				<a
 					href={url}
 					target="_blank"
-					area-label={`link to project: ${title}`}
+					aria-label={`link to project: ${title}`}
 					class="rounded-xl bg-orange p-1 shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
 				>
 					<OpenOutline />
