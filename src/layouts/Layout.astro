@@ -1,56 +1,71 @@
 ---
+import '../styles/markdown.css';
+import 'remixicon/fonts/remixicon.css';
 import Footer from '@components/Footer.astro';
 import { SEO } from 'astro-seo';
 import GoogleAnalytics from '@components/GoogleAnalytics.astro';
 import BackToTop from '@components/ui/BackToTop.astro';
 import ToggleTheme from '@components/ui/ToggleTheme.astro';
+import LangSwitch from '@components/ui/LangSwitch.astro';
 
 export interface LayoutProps {
-	metaTitle: string;
+    metaTitle: string;
 }
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Dynamically determine the language based on the current URL
+const lang = Astro.url.pathname.startsWith('/es/') ? 'es' : 'en';
+const langToggleUrl = lang === 'es'
+    ? Astro.url.pathname.replace('/es/', '/')
+    : `/es${Astro.url.pathname}`;
 
 const { metaTitle = 'Juan Diaz | Portfolio' } = Astro.props as LayoutProps;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth" data-testid="html">
-	<head>
-		<SEO
-			title={metaTitle}
-			description="Juan Diaz is a web developer based in Charlotte, NC. He specializes in building (and occasionally designing) exceptional websites."
-		/>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<link rel="icon" type="image/png" href="/favicon.png" />
+<html lang={lang} class="scroll-smooth" data-testid="html">
+    <head>
+        <SEO
+            title={metaTitle}
+            description="Juan Diaz is a web developer based in Charlotte, NC. He specializes in building (and occasionally designing) exceptional websites."
+        />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
 
-		<title>{metaTitle}</title>
+        <title>{metaTitle}</title>
 
-		<!-- Canonical URL -->
-		<link rel="canonical" href={canonicalURL} />
-	</head>
-	<body
-		class="mx-auto max-w-screen-xl bg-white px-5 font-sans text-white dark:bg-black xs:text-[16px] md:text-[18px]"
-	>
-		<div
-			class="fixed left-5 top-5 hidden rounded-full p-2 leading-tight ring-1 ring-white/10 backdrop-blur md:block"
-		>
-			<ToggleTheme />
-		</div>
+        <!-- Canonical URL -->
+        <link rel="canonical" href={canonicalURL} />
+    </head>
+    <body
+        class="mx-auto max-w-screen-xl bg-white px-5 font-sans text-white dark:bg-black xs:text-[16px] md:text-[18px]"
+    >
+        <div
+            class="fixed left-5 top-5 flex flex-col gap-4 rounded-full p-2 leading-tight ring-1 ring-white/10 backdrop-blur md:block"
+        >
+            <ToggleTheme />
+        </div>
+        <!-- <div
+            class="fixed right-5 top-5 flex flex-col gap-4 p-2 md:block"
+        >
+            <LangSwitch langToggleUrl={langToggleUrl} lang={lang} />
+        </div> -->
 
-		<slot />
-		<BackToTop />
-		<Footer />
-		<style is:global>
-			/* Improve Page speed */
-			/* https://css-tricks.com/almanac/properties/c/content-visibility/ */
-			img {
-				content-visibility: auto;
-			}
-		</style>
-		<GoogleAnalytics />
-	</body>
+        <slot />
+        <BackToTop />
+        <Footer />
+        <style is:global>
+            /* Improve Page speed */
+            /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+            img {
+                content-visibility: auto;
+            }
+        </style>
+        <GoogleAnalytics />
+    </body>
 </html>

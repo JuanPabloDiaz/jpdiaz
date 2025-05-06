@@ -1,0 +1,28 @@
+.github-avatar{
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+}
+
+.avatar {
+  border-radius: 50%;
+  padding: 4px;
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  background-color: transparent;
+}
+
+.expressive-code {
+  margin: 1rem 0;
+}
+
+/* fix mathjax style */
+.MathJax {
+  text-align: left !important;
+}
+
+.MathJax svg {
+  display: inline;
+}

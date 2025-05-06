@@ -19,9 +19,19 @@
 		"@astrojs/sitemap": "^3.3.0",
 		"@astrojs/tailwind": "^6.0.2",
 		"@astrojs/ts-plugin": "^1.10.4",
+		"@expressive-code/plugin-collapsible-sections": "^0.41.2",
+		"@expressive-code/plugin-line-numbers": "^0.41.2",
 		"astro": "^5.5.5",
+		"astro-expressive-code": "^0.41.2",
 		"astro-navbar": "^2.3.9",
-		"astro-seo": "^0.8.4"
+		"astro-seo": "^0.8.4",
+		"mathjax": "^3.2.2",
+		"mermaid": "^11.6.0",
+		"reading-time": "^1.5.0",
+		"remark-directive": "^4.0.0",
+		"remixicon": "^4.6.0",
+		"unist-util-remove": "^4.0.0",
+		"unist-util-visit": "^5.0.0"
 	},
 	"devDependencies": {
 		"@iconify-json/carbon": "^1.2.8",
