@@ -1,4 +1,8 @@
 import { defineCollection, z } from 'astro:content';
+import type { languages } from '../i18n/ui';
+
+type Lang = keyof typeof languages;
+
 
 const projectsCollection = defineCollection({
 	schema: z.object({
@@ -45,9 +49,24 @@ const moreOpenSourceCollection = defineCollection({
 	}),
 });
 
+const blogCollection = defineCollection({
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		pubDate: z.date(),
+		updatedDate: z.date().optional(),
+		lang: z.enum(['en', 'es'] as const),
+		tags: z.array(z.string()),
+		image: z.string().optional(),
+		canonicalURL: z.string().url().optional(),
+		draft: z.boolean().default(false),
+	}),
+});
+
 export const collections = {
 	projects: projectsCollection,
 	moreProjects: moreProjectsCollection,
+	blog: blogCollection,
 	openSource: openSourceCollection,
 	moreOpenSource: moreOpenSourceCollection,
 };
