@@ -3,7 +3,19 @@ import tailwind from '@astrojs/tailwind';
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
+import remarkDirective from 'remark-directive';
 import expressiveCode from 'astro-expressive-code';
+
+import {pluginLineNumbers} from '@expressive-code/plugin-line-numbers'
+import {pluginCollapsibleSections} from '@expressive-code/plugin-collapsible-sections'
+
+import {remarkModifiedTime,} from "./src/plugins/remark-modified-time.mjs";
+import {resetRemark} from "./src/plugins/reset-remark.js";
+import {remarkAsides} from './src/plugins/remark-asides.js'
+import {remarkCollapse} from "./src/plugins/remark-collapse.js";
+import {remarkGithubCard} from './src/plugins/remark-github-card.js'
+import {remarkButton} from "./src/plugins/remark-button.js";
+import {remarkHtml} from "./src/plugins/remark-html.js";
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,8 +32,8 @@ export default defineConfig({
 	],
 	site: 'https://jpdiaz.dev/',
 	markdown: {
-		remarkPlugins: [],
-		rehypePlugins: [],
+    remarkPlugins: [remarkModifiedTime, resetRemark, remarkDirective, remarkAsides({}), remarkCollapse({}), remarkGithubCard(), remarkButton(), remarkHtml()],
+    rehypePlugins: [],
 		shikiConfig: {
 			theme: 'github-dark',
 			wrap: true,

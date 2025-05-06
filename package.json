@@ -27,7 +27,10 @@
 		"astro-seo": "^0.8.4",
 		"mathjax": "^3.2.2",
 		"mermaid": "^11.6.0",
+		"reading-time": "^1.5.0",
+		"remark-directive": "^4.0.0",
 		"remixicon": "^4.6.0",
+		"unist-util-remove": "^4.0.0",
 		"unist-util-visit": "^5.0.0"
 	},
 	"devDependencies": {

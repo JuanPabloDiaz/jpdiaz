@@ -51,9 +51,18 @@ My transition from contributor to maintainer happened organically through consis
 
 - **[Confs.tech](https://confs.tech)** (Maintainer since April 2024): An open-source, crowd-sourced list of tech conferences around software development. I've contributed significantly to the UI, helped update packages, fixed bugs, and added numerous conferences to the database.
 
+::github{repo="tech-conferences/confs.tech"}
+
+::github{repo="tech-conferences/conference-data"}
+
+
 - **[Public APIs](https://publicapis.dev)** (Maintainer since July 2024): A comprehensive collection of public APIs for developers, categorized across numerous domains including animals, books, cryptocurrencies, development tools, music, weather and more. My work includes expanding the available API listings and reviewing pull requests.
 
+::github{repo="marcelscruz/public-apis"}
+
 - **[Dev Resources](https://devresourc.es)** (Maintainer since July 2024): A collection of resources for developers that includes programming tutorials, UI inspiration, job boards, images, icons and much more. I focus on expanding the resource listings and reviewing community contributions.
+
+::github{repo="marcelscruz/dev-resources"}
 
 ![Open Source Maintainer](../../assets/images/blog/oss/oss-maintainer.png)
 
