@@ -15,11 +15,19 @@ Like many developers, I was initially drawn to open source for several compellin
 
 Beyond personal growth, I also recognized the practical benefits: gaining real-world experience and strengthening my resume with tangible GitHub contributions that potential employers could examine. Open source offered all of this in one package.
 
+
+![Open Source Cycle](../../assets/images/blog/oss/oss-cycle.png)
+
+<!-- ![Open Source Journey](../../assets/images/blog/oss/oss-journey.png) -->
+
 ## First Steps: Starting Small
 
 My journey began like most contributors – with small, manageable first steps. I started with documentation improvements and simple bug fixes, primarily focusing on learning the mechanics: how to use Git properly, create pull requests, find appropriate issues to tackle, and navigate the contribution process.
 
 These initial contributions might have seemed minor, but they served a crucial purpose. They helped me understand the collaborative workflow of open source development and build confidence in my ability to contribute meaningfully.
+
+![Open Source Contributions](../../assets/images/blog/oss/oss-contributions.png)
+
 
 ## Finding My Niche
 
@@ -27,11 +35,15 @@ As I explored GitHub more extensively, I discovered an affinity for a particular
 
 This exploration phase was critical – it helped me identify where my interests and skills could provide the most value. Rather than spreading myself too thin across many different types of projects, I found a focus that energized me.
 
+![Open Source Niche](../../assets/images/blog/oss/oss-niche.png)
+
 ## Taking the Leap: Creating My Own Project
 
 By February 2024, my passion for developer resources had grown so strong that I decided to create my own open source project: [Free For Geeks](https://freeforgeeks.jpdiaz.dev). The project was born from a practical need – I had been collecting useful development resources in word documents and markdown files but needed a better way to organize and access them.
 
 What started as a personal solution has grown into a community resource with 51 GitHub stars. Free For Geeks serves as a curated toolbox of free resources for developers building software, addressing a gap I had noticed in existing collections.
+
+![Free For Geeks](../../assets/images/blog/oss/oss-idea-project.png)
 
 ## The Path to Maintainer
 
@@ -42,6 +54,8 @@ My transition from contributor to maintainer happened organically through consis
 - **[Public APIs](https://publicapis.dev)** (Maintainer since July 2024): A comprehensive collection of public APIs for developers, categorized across numerous domains including animals, books, cryptocurrencies, development tools, music, weather and more. My work includes expanding the available API listings and reviewing pull requests.
 
 - **[Dev Resources](https://devresourc.es)** (Maintainer since July 2024): A collection of resources for developers that includes programming tutorials, UI inspiration, job boards, images, icons and much more. I focus on expanding the resource listings and reviewing community contributions.
+
+![Open Source Maintainer](../../assets/images/blog/oss/oss-maintainer.png)
 
 ## Overcoming Challenges
 
@@ -54,6 +68,8 @@ When facing these challenges, I've relied on several strategies:
 - Being humble enough to ask for help when needed
 
 Each challenge overcome has added to my technical toolkit and confidence.
+
+![Open Source Challenges](../../assets/images/blog/oss/oss-challenges.png)
 
 ## Impact on Professional Growth
 
@@ -79,3 +95,5 @@ Open source contribution has transformed my development journey from a solitary 
 Whether you're considering your first pull request or thinking about maintaining a project, I encourage you to take that step into the open source world. The community is waiting to welcome you, and your unique perspective might be exactly what a project needs.
 
 Remember: every major project began with a single contribution, and every maintainer was once a first-time contributor. Your open source journey is limited only by your willingness to participate.
+
+![Open Source 0 to 100](../../assets/images/blog/oss/oss-0-to-100.png)
