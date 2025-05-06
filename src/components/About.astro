@@ -11,19 +11,29 @@ const LinkStyle = 'hover:underline hover:underline-offset-4 text-orange';
 
 const whatImDoing = [
 	{
-		url: 'http://confs.tech',
-		repo: 'https://github.com/tech-conferences/conference-data/graphs/contributors',
-		title: 'Confs.tech',
-		date: 'Apr. 2024.',
+		role: 'Founder & Front-End Developer @',
+		url: 'https://talentoparati.com',
+		repo: '#', // No repo for this one
+		title: 'Talento Pata TI',
+		date: 'June 2024.',
 	},
 	{
-		url: 'http://publicapis.dev',
+		role: 'Open-Source Maintainer @',
+		url: 'https://confs.tech',
+		repo: 'https://github.com/tech-conferences/conference-data/graphs/contributors',
+		title: 'Confs.tech',
+		date: 'April 2024.',
+	},
+	{
+		role: 'Open-Source Maintainer @',
+		url: 'https://publicapis.dev',
 		repo: 'https://github.com/marcelscruz/public-apis/graphs/contributors',
 		title: 'Public APIs',
 		date: 'July 2024.',
 	},
 	{
-		url: 'http://devresourc.es',
+		role: 'Open-Source Maintainer @',
+		url: 'https://devresourc.es',
 		repo: 'https://github.com/marcelscruz/dev-resources/graphs/contributors',
 		title: 'Dev Resources',
 		date: 'July 2024.',
@@ -74,7 +84,7 @@ const whatImDoing = [
 		{
 			whatImDoing.map((iDo, index) => (
 				<p class="mb-2 flex justify-evenly" key={index}>
-					Open-Source Maintainer @
+											{iDo.role}
 					<a
 						href={iDo.url}
 						class={LinkStyle}
