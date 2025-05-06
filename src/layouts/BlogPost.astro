@@ -8,12 +8,16 @@ interface Props {
   description: string;
   pubDate: Date;
   updatedDate?: Date;
-  lang: keyof typeof ui;
+  lang: 'en' | 'es';
   tags: string[];
   image?: string;
+  canonicalURL?: string;
+  draft?: boolean;
+  mathjax?: boolean;
+  mermaid?: boolean;
 }
 
-const { title, description, pubDate, updatedDate, lang, tags, image } = Astro.props;
+const { title, description, pubDate, updatedDate, lang, tags, image, canonicalURL, draft, mathjax, mermaid } = Astro.props;
 const formattedPubDate = pubDate.toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US' as const, {
   year: 'numeric',
   month: 'long',
@@ -27,6 +31,21 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString(lang === 'es' ? 'es
 ---
 
 <Layout metaTitle={`${title} | Blog`} includeSidebar={false}>
+  {mathjax && (
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    />
+  )}
+  {mermaid && (
+    <script
+      type="module"
+      async
+      src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"
+    />
+  )}
   <Navbar
     menu={[
       { title: lang === 'es' ? 'Inicio' : 'Home', path: lang === 'es' ? '/es' : '/' },
@@ -34,7 +53,7 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString(lang === 'es' ? 'es
     ]}
     button="Resume"
   />
-  <article class="mx-auto max-w-3xl px-4 py-8 text-black dark:text-white">
+  <article class="mx-auto max-w-3xl px-4 py-8 text-black dark:text-white prose prose-black dark:prose-invert">
     {image && (
       <img
         src={image}

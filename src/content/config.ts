@@ -60,6 +60,8 @@ const blogCollection = defineCollection({
 		image: z.string().optional(),
 		canonicalURL: z.string().url().optional(),
 		draft: z.boolean().default(false),
+		mathjax: z.boolean().default(false),
+		mermaid: z.boolean().default(false),
 	}),
 });
 

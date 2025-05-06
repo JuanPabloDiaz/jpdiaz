@@ -1,0 +1,50 @@
+---
+interface Props {
+  repo: string;
+}
+
+const { repo } = Astro.props;
+const [owner, repoName] = repo.split('/');
+
+const response = await fetch(`https://api.github.com/repos/${repo}`);
+const data = await response.json();
+
+const {
+  html_url,
+  description,
+  stargazers_count,
+  forks_count,
+  language,
+} = data;
+---
+
+<a
+  href={html_url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="block rounded-lg border border-gray-200 p-6 hover:border-gray-300 dark:border-gray-700 dark:hover:border-gray-600"
+>
+  <div class="flex items-center gap-2">
+    <i class="ri-github-fill text-xl"></i>
+    <h3 class="text-lg font-semibold">
+      {owner}/<span class="text-blue-600 dark:text-blue-400">{repoName}</span>
+    </h3>
+  </div>
+  {description && <p class="mt-2 text-gray-600 dark:text-gray-300">{description}</p>}
+  <div class="mt-4 flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+    {language && (
+      <div class="flex items-center gap-1">
+        <span class="h-3 w-3 rounded-full bg-blue-500"></span>
+        <span>{language}</span>
+      </div>
+    )}
+    <div class="flex items-center gap-1">
+      <i class="ri-star-line"></i>
+      <span>{stargazers_count.toLocaleString()}</span>
+    </div>
+    <div class="flex items-center gap-1">
+      <i class="ri-git-branch-line"></i>
+      <span>{forks_count.toLocaleString()}</span>
+    </div>
+  </div>
+</a>
