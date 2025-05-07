@@ -1,14 +1,14 @@
 ---
-import Layout from './Layout.astro';
-import { ui } from '../i18n/ui';
-import Navbar from '../components/Navbar.astro';
+import Layout from '@layouts/Layout.astro';
+import { ui } from '@i18n/ui';
+import Navbar from '@components/Navbar.astro';
 
 interface Props {
   title: string;
   description: string;
   pubDate: Date;
   updatedDate?: Date;
-  lang: 'en' | 'es';
+  lang: string;
   tags: string[];
   image?: string;
   canonicalURL?: string;

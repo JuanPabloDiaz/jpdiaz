@@ -11,7 +11,7 @@ interface Props {
 	github_url?: string;
 	alt?: string;
 	tags: string[];
-	contribution: number;
+	contribution: string;
 	children?: HTMLElement | HTMLElement[];
 }
 
@@ -21,7 +21,7 @@ const {
 	url = '#',
 	github_url = '#',
 	tags = ['Tags'],
-	contribution = 0,
+	contribution = '0',
 } = Astro.props;
 ---
 

@@ -1,7 +1,6 @@
 import {h as _h, s as _s} from "hastscript";
 import {remove} from "unist-util-remove";
 import {visit} from "unist-util-visit";
-import {t} from '../i18n/utils.ts';
 
 /** Hacky function that generates an mdast HTML tree ready for conversion to HTML by rehype. */
 function h(el, attrs = {}, children = []) {
@@ -13,9 +12,9 @@ function h(el, attrs = {}, children = []) {
   };
 }
 
-export function remarkCollapse(options) {
-  options = {
-    label: t('remark.open') || "Open",
+export function remarkCollapse(options = {}) {
+  const defaultOptions = {
+    label: "Open",
     ...options,
   };
 

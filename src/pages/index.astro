@@ -1,28 +1,6 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import Hero from '@components/Hero.astro';
-import About from '@components/About.astro';
-import Projects from '@components/Projects.astro';
-import OpenSource from '@components/OpenSource.astro';
-import Contact from '@components/Contact.astro';
-import Navbar from '@components/Navbar.astro';
+import { getLangFromUrl } from '../i18n/utils';
 
-const homeMenu = [
-	{ title: 'About', path: '#top' },
-	{ title: 'Projects', path: '#projects' },
-	{ title: 'OpenˑSource', path: '#oss' },
-	{ title: 'Blog', path: '/blog' },
-	{ title: 'Contact', path: '#contact' },
-];
+const lang = getLangFromUrl(Astro.url);
+return Astro.redirect(`/${lang}`);
 ---
-
-<Layout>
-	<main>
-		<Navbar menu={homeMenu} button="Resume" />
-		<Hero />
-		<!-- <About /> -->
-		<Projects />
-		<OpenSource />
-		<Contact />
-	</main>
-</Layout>

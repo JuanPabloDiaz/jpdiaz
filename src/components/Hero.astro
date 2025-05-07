@@ -3,6 +3,10 @@ import CallToAction from '@components/CallToAction.astro';
 import About from './About.astro';
 import { Image } from 'astro:assets';
 import juanImage from '@assets/images/juan.jpg';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section data-testid="hero" id="hero" class="mb-0 mt-0 h-auto text-center md:mb-24">
@@ -13,9 +17,13 @@ import juanImage from '@assets/images/juan.jpg';
 					class="mb-10 font-monospace text-2xl text-black dark:text-white lg:text-4xl"
 					style="font-display: swap;"
 				>
-					Hi! My name is <span class="text-orange">Juan Diaz</span> and I am a Front End Developer based
-					in Charlotte, NC.
+					{t('hero.greeting')} <span class="text-orange">Juan Diaz</span>
+					<br />
+					{t('hero.title')}
 				</h1>
+				<p class="text-lg text-gray-600 dark:text-gray-300">
+					{t('hero.subtitle')}
+				</p>
 			</div>
 			<div class="mb-10">
 				<CallToAction button />

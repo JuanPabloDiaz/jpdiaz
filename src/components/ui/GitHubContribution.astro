@@ -2,7 +2,7 @@
 // Props definition
 interface Props {
 	github_url: string;
-	contribution: number;
+	contribution: string;
 }
 
 const { github_url, contribution } = Astro.props;
@@ -32,7 +32,7 @@ const contributionUrl = `${github_url}/commits?author=JuanPabloDiaz`;
 
 <!-- If contributionsCount is undefined, display the contribution values -->{
 	typeof contributionsCount === 'undefined' &&
-		(contribution !== 0 ? (
+		(contribution !== '0' ? (
 			<a
 				href={contributionUrl}
 				target="_blank"
@@ -47,7 +47,7 @@ const contributionUrl = `${github_url}/commits?author=JuanPabloDiaz`;
 		))
 }
 {
-	contributionsCount !== 0 ? (
+	contributionsCount !== 0 && contributionsCount !== undefined ? (
 		<a
 			href={contributionUrl}
 			target="_blank"

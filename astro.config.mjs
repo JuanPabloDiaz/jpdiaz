@@ -19,6 +19,14 @@ import {remarkHtml} from "./src/plugins/remark-html.js";
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://jpdiaz.dev',
+	i18n: {
+		defaultLocale: 'en',
+		locales: ['en', 'es'],
+		routing: {
+			prefixDefaultLocale: true
+		}
+	},
 	integrations: [
 		tailwind(),
 		expressiveCode({
@@ -30,10 +38,18 @@ export default defineConfig({
 		sitemap(),
 		icon(),
 	],
-	site: 'https://jpdiaz.dev/',
 	markdown: {
-    remarkPlugins: [remarkModifiedTime, resetRemark, remarkDirective, remarkAsides({}), remarkCollapse({}), remarkGithubCard(), remarkButton(), remarkHtml()],
-    rehypePlugins: [],
+		remarkPlugins: [
+			remarkModifiedTime,
+			resetRemark,
+			remarkDirective,
+			remarkAsides,
+			remarkCollapse,
+			remarkGithubCard,
+			remarkButton,
+			remarkHtml
+		],
+		rehypePlugins: [],
 		shikiConfig: {
 			theme: 'github-dark',
 			wrap: true,

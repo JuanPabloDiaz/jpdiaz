@@ -6,8 +6,26 @@ import Link from '@components/ui/Link.astro';
 import Home from '@components/icons/Home.astro';
 import MenuOpen from '@components/icons/MenuOpen.astro';
 import MenuClose from '@components/icons/MenuClose.astro';
+import { languages, ui } from '../i18n/ui';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
-const { menu, button } = Astro.props;
+type NavKey = keyof typeof ui.en;
+
+interface Props {
+	menu: Array<{ title: string; path: string }>;
+	button?: boolean;
+}
+
+const { menu, button = false } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Get the pathname without the lang prefix
+const currentPath = Astro.url.pathname.replace(`/${lang}`, '') || '/';
+
+// Create URLs for language switcher
+const otherLang = lang === 'en' ? 'es' : 'en';
+const redirectPath = currentPath === '/' ? `/${otherLang}` : `/${otherLang}${currentPath}`;
 ---
 
 <header class="sticky top-0 z-50 w-full md:my-5">
@@ -15,9 +33,18 @@ const { menu, button } = Astro.props;
 		<nav
 			class="flex flex-col justify-end px-2 md:flex-row md:items-center md:space-x-16 lg:px-8 xl:px-20"
 		>
-			<div class="flex h-10 items-center justify-between">
+			<div class="flex h-10 items-center justify-between gap-4">
 				<div class="block md:hidden">
 					<ToggleTheme />
+				</div>
+				<div class="flex items-center space-x-2 ml-4">
+					<a 
+						href={redirectPath}
+						class="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+						aria-label={`Switch to ${languages[otherLang]} version`}
+					>
+						{languages[otherLang]}
+					</a>
 				</div>
 				<div class="block md:hidden">
 					<MenuIcon>
@@ -32,22 +59,27 @@ const { menu, button } = Astro.props;
 			</div>
 
 			<MenuItems class="scrollMenu hidden space-y-2 pb-2 pt-1 md:flex md:space-y-0 md:py-0">
-				<Button
-					style="secondary"
-					size="sm"
-					name={button || 'Resume'}
-					href={button === 'Resume' ? '/resume' : button === 'Home' ? '/' : `/${button}`}
-					rel="noopener noreferrer"
-					class="flex flex-1 items-center justify-center md:w-20"
-				>
-					{button === 'Home' ? <Home class="h-6 w-6" /> : button || 'Resume'}
-				</Button>
-				<!-- <Home class="h-6 w-6" /> -->
+				{button && (
+					<Button
+						style="secondary"
+						size="sm"
+						name={t('nav.resume')}
+						href={`/${lang}/resume`}
+						rel="noopener noreferrer"
+						class="flex flex-1 items-center justify-center md:w-20"
+					>
+						{t('nav.resume')}
+					</Button>
+				)}
 				{
 					menu.map((item) => (
-						<ul class="flex flex-col md:w-max md:flex-1 md:flex-row" key={item.path}>
+						<ul class="flex flex-col md:w-max md:flex-1 md:flex-row">
 							<li class="flex items-center justify-end">
-								<Link text={item.title} ariaLabel="navigation link" href={item.path} />
+								<Link 
+									text={t(`nav.${item.title.toLowerCase()}` as NavKey)} 
+									ariaLabel="navigation link" 
+									href={`/${lang}${item.path}`} 
+								/>
 							</li>
 						</ul>
 					))
