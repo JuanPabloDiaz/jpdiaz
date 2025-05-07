@@ -10,9 +10,9 @@ tags:
 draft: false
 ---
 
-<!-- ![confs.tech maintainer](../../assets/images/blog/oss/confs-.png) -->
-
 # My Experience as a confs.tech Maintainer: Promoting Open Source
+
+![confs.tech maintainer](../../assets/images/blog/oss/confs-maintainer.png)
 
 The world of open source software is full of opportunities for those who want to contribute, learn, and grow professionally. Today I want to share my experience as a maintainer of [confs.tech](https://confs.tech), a resource that has become an important part of my professional life and has allowed me to promote open source in a meaningful way.
 
@@ -23,6 +23,8 @@ For those who aren't familiar, [confs.tech](https://confs.tech) is a comprehensi
 As its description states:
 
 > confs.tech: List of all tech conferences of the year. Find your next tech conference. An open-source and crowd-sourced list of conferences around software development.
+
+![confs.tech maintainer role](../../assets/images/blog/oss/confs-role.png)
 
 ## My Journey to confs.tech
 
@@ -41,6 +43,8 @@ Among my various contributions, there's one I'm particularly proud of: creating 
 I also implemented similar changes to the project's README, all with the goal of recognizing the work of those behind confs.tech and fostering a sense of community.
 
 Additionally, I've contributed to various aspects of the UI, updating packages, fixing bugs, and making numerous contributions to increase the list of available conferences on the platform.
+
+![confs.tech maintainer roadmap](../../assets/images/blog/oss/confs-roadmap.png)
 
 ## Challenges and Learnings
 
@@ -61,6 +65,8 @@ Being a maintainer of confs.tech has significantly enriched my professional deve
 - To review PRs with judgment, carefully evaluating proposed conferences
 - To deepen my knowledge of Git and GitHub
 
+![confs.tech maintainer Top Professional Development Learnings](../../assets/images/blog/oss/confs-top.png)
+
 ## The Satisfaction of Recognition
 
 One of the greatest satisfactions as a maintainer is receiving positive feedback from users. There have been many occasions when people recognize our work and express gratitude for this resource that has been very useful for finding conferences. This positive feedback is what motivates me to continue contributing to the project.
@@ -79,6 +85,8 @@ If you're interested in contributing to open source, my advice is simple: find a
 
 You don't need to make big contributions from the beginning. Every small contribution counts, and over time, you can become an essential part of the community around the project.
 
+![confs.tech maintainer pros and cons](../../assets/images/blog/oss/confs-pros-cons.png)
+
 ## Conclusion
 
 My experience as a maintainer of confs.tech has been incredibly enriching. It has allowed me not only to improve my technical skills but also to be part of a global community that values and promotes open source.
@@ -86,3 +94,5 @@ My experience as a maintainer of confs.tech has been incredibly enriching. It ha
 If you're considering contributing to an open source project, I encourage you to take the step. You'll not only be helping to improve a tool that others use, but you'll also be investing in your own professional and personal growth.
 
 Remember: success in open source, as in many other areas of life, is built step by step, with dedication and perseverance.
+
+![confs.tech maintainer Journey to Open-Source Success](../../assets/images/blog/oss/confs-success.png)

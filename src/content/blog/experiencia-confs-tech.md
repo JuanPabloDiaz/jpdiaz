@@ -10,9 +10,9 @@ tags:
 draft: false
 ---
 
-<!-- ![confs.tech maintainer](../../assets/images/blog/oss/confs-.png) -->
-
 # Mi Experiencia como Mantenedor de confs.tech: Promoviendo el Código Abierto
+
+![confs.tech maintainer](../../assets/images/blog/oss/confs-maintainer.png)
 
 El mundo del software de código abierto está lleno de oportunidades para quien quiere contribuir, aprender y crecer profesionalmente. Hoy quiero compartir mi experiencia como mantenedor de [confs.tech](https://confs.tech), un recurso que se ha convertido en una parte importante de mi vida profesional y que me ha permitido promover el código abierto de manera significativa.
 
@@ -23,6 +23,8 @@ Para quienes no lo conocen, [confs.tech](https://confs.tech) es una lista comple
 Como indica su descripción:
 
 > confs.tech: Lista de todas las conferencias tecnológicas del año. Encuentra tu próxima conferencia tecnológica. Una lista de código abierto y colaborativa de conferencias sobre desarrollo de software.
+
+![confs.tech maintainer role](../../assets/images/blog/oss/confs-role.png)
 
 ## Mi camino hacia confs.tech
 
@@ -41,6 +43,8 @@ Entre mis diversas contribuciones, hay una de la que estoy particularmente orgul
 También implementé cambios similares en el README del proyecto, todo con el objetivo de reconocer el trabajo de quienes están detrás de confs.tech y fomentar un sentido de comunidad.
 
 Además, he contribuido en varios aspectos de la UI, actualizando paquetes, solucionando bugs y realizando numerosas contribuciones para aumentar la lista de conferencias disponibles en la plataforma.
+
+![confs.tech maintainer roadmap](../../assets/images/blog/oss/confs-roadmap.png)
 
 ## Desafíos y aprendizajes
 
@@ -61,6 +65,8 @@ Ser mantenedor de confs.tech ha enriquecido significativamente mi desarrollo pro
 - A revisar PRs con criterio, evaluando cuidadosamente las conferencias propuestas
 - A profundizar mis conocimientos de Git y GitHub
 
+![confs.tech maintainer Top Professional Development Learnings](../../assets/images/blog/oss/confs-top.png)
+
 ## La satisfacción del reconocimiento
 
 Una de las mayores satisfacciones como mantenedor es recibir feedback positivo de los usuarios. Han sido muchas las ocasiones en que las personas reconocen nuestro trabajo y agradecen por este recurso que les ha sido muy útil para encontrar conferencias. Esta retroalimentación positiva es lo que me motiva a seguir contribuyendo al proyecto.
@@ -79,6 +85,8 @@ Si estás interesado en contribuir al código abierto, mi consejo es simple: enc
 
 No es necesario hacer grandes contribuciones desde el principio. Cada pequeño aporte cuenta y, con el tiempo, puedes convertirte en una parte esencial de la comunidad alrededor del proyecto.
 
+![confs.tech maintainer pros and cons](../../assets/images/blog/oss/confs-pros-cons.png)
+
 ## Conclusión
 
 Mi experiencia como mantenedor de confs.tech ha sido increíblemente enriquecedora. Me ha permitido no solo mejorar mis habilidades técnicas, sino también ser parte de una comunidad global que valora y promueve el código abierto.
@@ -86,3 +94,5 @@ Mi experiencia como mantenedor de confs.tech ha sido increíblemente enriquecedo
 Si estás considerando contribuir a un proyecto open source, te animo a dar el paso. No solo estarás ayudando a mejorar una herramienta que otros utilizan, sino que también estarás invirtiendo en tu propio crecimiento profesional y personal.
 
 Recuerda: el éxito en el código abierto, como en muchas otras áreas de la vida, se construye paso a paso, con dedicación y perseverancia.
+
+![confs.tech maintainer Journey to Open-Source Success](../../assets/images/blog/oss/confs-success.png)
