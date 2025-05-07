@@ -1,8 +1,8 @@
 ---
-title: "Building FreeForGeeks"
-description: "My Journey Creating an Open Source Developer Resource"
+title: 'Building FreeForGeeks'
+description: 'My Journey Creating an Open Source Developer Resource'
 pubDate: 2025-05-06
-lang: "en"
+lang: 'en'
 tags:
   - open-source
   - journey
@@ -11,11 +11,15 @@ draft: false
 
 ## The Problem: Resource Chaos
 
+![FreeForGeeks Building Process](../../assets/images/blog/oss/ffg-building.png)
+
 As developers, we all struggle with the same challenge: there are countless amazing tools and resources available, but finding and organizing them is a nightmare. I was no different.
 
 For years, I kept track of useful development resources in a hodgepodge of Word documents and scattered markdown files. Some were bookmarks, others were notes—but none were organized in a way that made them truly accessible when I needed them.
 
 What frustrated me even more was that many existing collections were either incomplete, abandoned by their creators, or simply didn't include the specific tools I was looking for as a frontend developer. As someone who was relatively new to GitHub and the open source ecosystem at the time, I found it difficult to locate a single, comprehensive resource that met my needs.
+
+![FreeForGeeks Resources Cycle](../../assets/images/blog/oss/ffg-resources-cycle.png)
 
 ## The Solution: Build It Myself
 
@@ -33,18 +37,20 @@ Why Docsify? It's straightforward, requires minimal configuration, and focuses o
 
 I wanted to spend my time curating high-quality resources, not fighting with complex frameworks or wrestling with excessive configuration. Docsify let me focus on what mattered: the content itself.
 
+![FreeForGeeks Dev Cycle](../../assets/images/blog/oss/ffg-dev-cycle.png)
+
 ## Structure and Organization
 
 FreeForGeeks is organized into several main categories:
 
-* **Frontend** (naturally my most comprehensive section)
-* **Backend**
-* **DevSecOps**
-* **Open Source**
-* **Others**
-* **Resources**
-* **Career Development**
-* **Other Resources**
+- **Frontend** (naturally my most comprehensive section)
+- **Backend**
+- **DevSecOps**
+- **Open Source**
+- **Others**
+- **Resources**
+- **Career Development**
+- **Other Resources**
 
 This structure evolved organically as I discovered and added new tools, always asking the critical question: "Where would I look for this if I needed it?"
 
@@ -66,6 +72,8 @@ I even implemented a secret token to avoid hitting GitHub's API rate limits. It'
 
 As I wrote in a recent LinkedIn post: "It's not flashy. It's not complex. But it works—and it solves a real issue."
 
+![FreeForGeeks GitHub Stars](../../assets/images/blog/oss/ffg-auto.png)
+
 ## Growth and Impact
 
 FreeForGeeks started as a personal project with just a handful of resources. Today, it hosts more than 450 carefully curated tools and resources, the result of over 400 commits and countless hours of work since February 2024.
@@ -73,6 +81,8 @@ FreeForGeeks started as a personal project with just a handful of resources. Tod
 While external contributions have been limited, the project has garnered 51 GitHub stars—a modest but meaningful indication that others find value in my curation efforts.
 
 More importantly, it's been a tremendous learning journey. From improving my Git skills to learning about site generators, from understanding GitHub Actions to implementing API integrations—each challenge has expanded my technical repertoire.
+
+![FreeForGeeks Growth](../../assets/images/blog/oss/ffg-growth.png)
 
 ## Lessons Learned
 
@@ -87,6 +97,8 @@ Building and maintaining FreeForGeeks has taught me several important lessons:
 4. **Open source contribution is rewarding**: There's a unique satisfaction in creating something that others can use freely and potentially build upon.
 
 5. **Technical challenges are learning opportunities**: Each problem I encountered and solved expanded my capabilities as a developer.
+
+![FreeForGeeks Pathways to Project Success](../../assets/images/blog/oss/ffg-success.png)
 
 ## Looking Forward
 
