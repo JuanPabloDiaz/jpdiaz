@@ -1,12 +1,18 @@
 ---
 import IndicatorCount from '@components/ui/IndicatorCount.astro';
 //fetch number of repos and export to the markup below
+const githubToken = import.meta.env.PUBLIC_GITHUB_TOKEN;
 const repoCount = await fetch(
-	'https://api.github.com/users/JuanPabloDiaz/repos?page=1&per_page=100'
+	'https://api.github.com/users/JuanPabloDiaz/repos?page=1&per_page=100',
+	{
+		headers: {
+			Authorization: `token ${githubToken}`,
+		},
+	}
 )
 	.then((res) => res.json())
 	.then((data) => data.length);
-console.log(repoCount);
+console.log(`Total GitHub Repositories: ${repoCount}`);
 ---
 
 <!-- <section class="bg-white p-4 text-black dark:bg-orange dark:text-white"> -->

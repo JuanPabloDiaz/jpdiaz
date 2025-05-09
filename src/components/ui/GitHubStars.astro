@@ -28,7 +28,7 @@ let starsCount = 'Loading...';
 
 // Function to fetch stars count
 const fetchStarsCount = async (owner: string, repo: string) => {
-	const githubToken = import.meta.env.GITHUB_TOKEN;
+	const githubToken = import.meta.env.PUBLIC_GITHUB_TOKEN;
 	const url = `https://api.github.com/repos/${owner}/${repo}`;
 
 	try {

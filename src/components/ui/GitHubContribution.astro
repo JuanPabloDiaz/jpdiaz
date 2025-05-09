@@ -16,9 +16,14 @@ let contributionsCount = 0;
 
 if (owner && repo) {
 	const apiUrl = `https://api.github.com/repos/${owner}/${repo}/commits?author=JuanPabloDiaz`;
+	const githubToken = import.meta.env.PUBLIC_GITHUB_TOKEN;
 
 	try {
-		const res = await fetch(apiUrl);
+		const res = await fetch(apiUrl, {
+			headers: {
+				Authorization: `token ${githubToken}`,
+			},
+		});
 		const data = await res.json();
 		contributionsCount = data.length;
 	} catch (err) {
@@ -30,34 +35,21 @@ if (owner && repo) {
 const contributionUrl = `${github_url}/commits?author=JuanPabloDiaz`;
 ---
 
-<!-- If contributionsCount is undefined, display the contribution values -->{
-	typeof contributionsCount === 'undefined' &&
-		(contribution !== 0 ? (
-			<a
-				href={contributionUrl}
-				target="_blank"
-				rel="noopener noreferrer"
-				class="mr-1 flex flex-col items-center justify-center rounded bg-orange text-white shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
-			>
-				{contribution}
-				<span class="px-1 text-xs">contributions</span>
-			</a>
-		) : (
-			<div class="h-full" />
-		))
-}
 {
-	contributionsCount !== 0 ? (
+	(contributionsCount > 0 || contribution > 0) && (
 		<a
 			href={contributionUrl}
 			target="_blank"
 			rel="noopener noreferrer"
 			class="mr-1 flex flex-col items-center justify-center rounded bg-orange text-white shadow-sm shadow-black transition duration-300 hover:bg-opacity-60 hover:shadow-none"
 		>
-			{contributionsCount === 30 ? <span>99+</span> : contributionsCount}
-			{contributionsCount ? <span class="px-1 text-xs">contributions</span> : null}
+			{contributionsCount > 0 
+				? contributionsCount >= 30 
+					? '99+' 
+					: contributionsCount
+				: contribution
+			}
+			<span class="px-1 text-xs">contributions</span>
 		</a>
-	) : (
-		<div class="h-full" />
 	)
 }
