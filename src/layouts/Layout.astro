@@ -45,17 +45,6 @@ const { metaTitle = 'Juan Diaz | Portfolio' } = Astro.props as LayoutProps;
     <body
         class="mx-auto max-w-screen-xl bg-white px-5 font-sans text-white dark:bg-black xs:text-[16px] md:text-[18px]"
     >
-        <div
-            class="fixed left-5 top-5 flex flex-col gap-4 rounded-full p-2 leading-tight ring-1 ring-white/10 backdrop-blur md:block"
-        >
-            <ToggleTheme />
-        </div>
-        <!-- <div
-            class="fixed right-5 top-5 flex flex-col gap-4 p-2 md:block"
-        >
-            <LangSwitch langToggleUrl={langToggleUrl} lang={lang} />
-        </div> -->
-
         <slot />
         <BackToTop />
         <Footer />

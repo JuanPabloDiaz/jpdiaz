@@ -10,75 +10,111 @@ import MenuClose from '@components/icons/MenuClose.astro';
 const { menu, button } = Astro.props;
 ---
 
-<header class="sticky top-0 z-50 w-full md:my-5">
-	<Astronav>
-		<nav
-			class="flex flex-col justify-end px-2 md:flex-row md:items-center md:space-x-16 lg:px-8 xl:px-20"
-		>
-			<div class="flex h-10 items-center justify-between">
-				<div class="block md:hidden">
-					<ToggleTheme />
-				</div>
-				<div class="block md:hidden">
-					<MenuIcon>
-						<OpenIcon class="text-black dark:text-white">
-							<MenuOpen />
-						</OpenIcon>
-						<CloseIcon class="text-black dark:text-white">
-							<MenuClose />
-						</CloseIcon>
-					</MenuIcon>
-				</div>
-			</div>
+<header class="sticky top-0 z-50 w-full transition-all duration-300" id="navbar">
+  <Astronav>
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <!-- Logo/Home y Toggle Theme -->
+        <div class="flex items-center gap-4">
+          <Button
+            style="secondary"
+            size="sm"
+            name={button || 'Resume'}
+            href={button === 'Resume' ? '/resume' : button === 'Home' ? '/' : `/${button}`}
+            class="flex items-center justify-center md:w-20"
+          >
+            {button === 'Home' ? <Home class="h-5 w-5" /> : button || 'Resume'}
+          </Button>
 
-			<MenuItems class="scrollMenu hidden space-y-2 pb-2 pt-1 md:flex md:space-y-0 md:py-0">
-				<Button
-					style="secondary"
-					size="sm"
-					name={button || 'Resume'}
-					href={button === 'Resume' ? '/resume' : button === 'Home' ? '/' : `/${button}`}
-					rel="noopener noreferrer"
-					class="flex flex-1 items-center justify-center md:w-20"
-				>
-					{button === 'Home' ? <Home class="h-6 w-6" /> : button || 'Resume'}
-				</Button>
-				<!-- <Home class="h-6 w-6" /> -->
-				{
-					menu.map((item) => (
-						<ul class="flex flex-col md:w-max md:flex-1 md:flex-row" key={item.path}>
-							<li class="flex items-center justify-end">
-								<Link text={item.title} ariaLabel="navigation link" href={item.path} />
-							</li>
-						</ul>
-					))
-				}
-			</MenuItems>
-		</nav>
-	</Astronav>
+          <div class="flex items-center rounded-full bg-white/10 p-1.5 ring-1 ring-white/10 backdrop-blur-lg dark:bg-black/10">
+            <ToggleTheme />
+          </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div class="flex md:hidden">
+          <MenuIcon>
+            <OpenIcon class="text-black transition-colors duration-200 dark:text-white">
+              <MenuOpen />
+            </OpenIcon>
+            <CloseIcon class="text-black transition-colors duration-200 dark:text-white">
+              <MenuClose />
+            </CloseIcon>
+          </MenuIcon>
+        </div>
+
+        <!-- Menú principal (visible solo en desktop) -->
+        <div class="hidden md:block">
+          <MenuItems class="flex items-center space-x-6">
+            {
+              menu.map((item) => (
+                <Link
+                  text={item.title}
+                  href={item.path}
+                  class="text-sm font-medium text-black transition-colors duration-200 hover:text-orange dark:text-white dark:hover:text-orange"
+                />
+              ))
+            }
+          </MenuItems>
+        </div>
+      </div>
+
+      <!-- Menú móvil expandido -->
+      <div class="md:hidden">
+        <MenuItems class="hidden mt-2 space-y-1 rounded-lg bg-white/80 p-2 backdrop-blur-lg dark:bg-[#111827]/90">
+          {
+            menu.map((item) => (
+              <Link
+                text={item.title}
+                href={item.path}
+                class="block rounded-lg px-4 py-2.5 text-base font-medium text-black transition-colors duration-200 hover:bg-orange/10 hover:text-orange dark:text-white dark:hover:bg-orange/20"
+              />
+            ))
+          }
+        </MenuItems>
+      </div>
+    </nav>
+  </Astronav>
 </header>
 
 <style>
-	nav {
-		animation: nav-shadown 1s linear both;
-		animation-timeline: scroll();
-		animation-range: 0 100px;
-	}
+  header {
+    animation: nav-shadow 300ms ease-in-out both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
 
-	@keyframes nav-shadown {
-		to {
-			@apply justify-center rounded-lg text-sm;
-		}
-	}
+  @keyframes nav-shadow {
+    to {
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  }
 
-	.scrollMenu {
-		animation: menu-effect 1s linear both;
-		animation-timeline: scroll();
-		animation-range: 0 100px;
-	}
+  :global(.dark) header {
+    animation: nav-shadow-dark 300ms ease-in-out both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
 
-	@keyframes menu-effect {
-		to {
-			@apply rounded-lg bg-brown/40 shadow-lg ring-1 ring-white/10 backdrop-blur;
-		}
-	}
+  @keyframes nav-shadow-dark {
+    to {
+      background-color: rgba(17, 24, 39, 0.9);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  }
 </style>
+
+<script>
+  const header = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+      header?.setAttribute('data-scrolled', 'true');
+    } else {
+      header?.setAttribute('data-scrolled', 'false');
+    }
+  });
+</script>
