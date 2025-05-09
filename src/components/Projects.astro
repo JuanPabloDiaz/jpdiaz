@@ -4,6 +4,13 @@ import Link from '@components/ui/Link.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
 import GithubButtons from './ui/GithubButtons.astro';
 import Card from './ui/Card.astro';
+import type { ImageMetadata } from 'astro';
+
+// Import all images from the projects directory
+const projectImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/projects/*.{png,jpg,jpeg,gif,webp}', { eager: true });
+
+// Debug: Log available image paths
+console.log('Available image paths:', Object.keys(projectImages));
 
 const projects = await getCollection('projects', ({ data }) => {
 	return !data.inProgress;
@@ -18,23 +25,104 @@ const projects = await getCollection('projects', ({ data }) => {
 	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto"
 >
 	<SubTitle text="Projects" />
-	<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
-		{
-			projects.map((project) => (
-				<Card
-					url={project.data.link}
-					title={project.data.title}
-					description={project.data.description}
-					alt={project.data.img_alt}
-					tags={project.data.tags}
-					github_url={project.data.github_link}
-					images_path={project.data.image_path}
-				/>
-			))
-		}
+	<div class="projects-container relative mb-10 h-[500px] w-full overflow-hidden">
+		<div class="projects-track absolute flex transform-gpu items-center">
+			{
+				projects.map(async (project) => {
+					const imageName = project.data.image_path.split('/').pop();
+					const fullPath = '/src/assets/images/projects/' + imageName;
+					const imageData = projectImages[fullPath];
+
+					if (!imageData) {
+						console.error(`Image not found for project ${project.data.title}:`, fullPath);
+						return null;
+					}
+
+					return (
+						<Card
+							className="mx-4 w-[300px]"
+							imageData={imageData}
+							img_alt={project.data.img_alt}
+							title={project.data.title}
+							description={project.data.description}
+							github_link={project.data.github_link}
+							link={project.data.link}
+							tags={project.data.tags}
+						/>
+					);
+				})
+			}
+		</div>
 	</div>
 	<Link text="View more projects" ariaLabel="View more projects" href="./more-projects" arrow />
 	<div class="my-10">
 		<GithubButtons />
 	</div>
 </section>
+
+<script>
+	import { gsap } from 'gsap';
+	import { Draggable } from 'gsap/Draggable';
+
+	gsap.registerPlugin(Draggable);
+
+	const track = document.querySelector('.projects-track');
+	const slides = gsap.utils.toArray('.project-slide');
+
+	if (track) {
+		const animation = gsap.to(slides, {
+			xPercent: -100 * (slides.length - 1),
+			ease: 'none',
+			paused: true,
+		});
+
+		Draggable.create(track, {
+			type: 'x',
+			inertia: true,
+			bounds: {
+				minX: 0,
+				maxX: -((slides.length - 1) * slides[0].offsetWidth),
+			},
+			onDrag: function() {
+				animation.progress(this.progress);
+			},
+			onDragEnd: function() {
+				const velocity = this.getVelocity();
+				if (Math.abs(velocity) > 100) {
+					const momentum = Math.sign(velocity) * 0.5;
+					const currentProgress = animation.progress();
+					let targetProgress = currentProgress + momentum;
+
+					targetProgress = Math.max(0, Math.min(1, targetProgress));
+
+					gsap.to(animation, {
+						progress: targetProgress,
+						duration: 0.5,
+						ease: 'power2.out',
+					});
+				}
+			},
+		});
+	}
+</script>
+
+<style>
+	.projects-container {
+		perspective: 1000px;
+	}
+
+	.project-slide {
+		transform-style: preserve-3d;
+		transition: transform 0.5s;
+	}
+
+	.project-slide:hover {
+		transform: scale(1.05) translateZ(20px);
+	}
+
+	@media (max-width: 768px) {
+		.projects-container {
+			height: 400px;
+		}
+	}
+</style>
