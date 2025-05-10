@@ -4,10 +4,35 @@ import Link from '@components/ui/Link.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
 import GithubButtons from './ui/GithubButtons.astro';
 import Card from './ui/Card.astro';
+import { getGitHubRepoData } from '../utils/github';
 
 const projects = await getCollection('projects', ({ data }) => {
 	return !data.inProgress;
 });
+
+// Fetch GitHub data for each project
+interface ProjectWithGitHub {
+	data: {
+		link: string;
+		title: string;
+		description: string;
+		img_alt: string;
+		tags: string[];
+		github_link: string;
+		image_path: string;
+	};
+	githubData: Awaited<ReturnType<typeof getGitHubRepoData>>;
+}
+
+const projectsWithGitHubData = await Promise.all(
+	projects.map(async (project): Promise<ProjectWithGitHub> => {
+		let githubData = null;
+		if (project.data.github_link && project.data.github_link !== '#') {
+			githubData = await getGitHubRepoData(project.data.github_link);
+		}
+		return { ...project, githubData } as ProjectWithGitHub;
+	})
+);
 ---
 
 <!-- the div below is used to scroll to this section and place the navbar in this h-10 div otherwise the navbar will overlap the section -->
@@ -20,7 +45,7 @@ const projects = await getCollection('projects', ({ data }) => {
 	<SubTitle text="Projects" />
 	<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
 		{
-			projects.map((project) => (
+			projectsWithGitHubData.map((project) => (
 				<Card
 					url={project.data.link}
 					title={project.data.title}
@@ -29,6 +54,10 @@ const projects = await getCollection('projects', ({ data }) => {
 					tags={project.data.tags}
 					github_url={project.data.github_link}
 					images_path={project.data.image_path}
+					lastUpdate={project.githubData?.lastUpdate}
+					languages={project.githubData?.languages}
+					forks={project.githubData?.forks}
+					openIssues={project.githubData?.openIssues}
 				/>
 			))
 		}
