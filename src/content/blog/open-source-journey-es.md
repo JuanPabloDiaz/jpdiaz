@@ -37,7 +37,7 @@ Esta fase de exploración fue crítica: me ayudó a identificar dónde mis inter
 
 ## Dando el Salto: Creando Mi Propio Proyecto
 
-Para febrero de 2024, mi pasión por los recursos para desarrolladores había crecido tanto que decidí crear mi propio proyecto de código abierto: [Free For Geeks](https://freeforgeeks.jpdiaz.dev). El proyecto nació de una necesidad práctica: había estado recopilando recursos de desarrollo útiles en documentos de Word y archivos Markdown, pero necesitaba una mejor manera de organizarlos y acceder a ellos.
+Para febrero de 2024, mi pasión por los recursos para desarrolladores había crecido tanto que decidí crear mi propio proyecto de código abierto: [FreeForGeeks](https://freeforgeeks.jpdiaz.dev). El proyecto nació de una necesidad práctica: había estado recopilando recursos de desarrollo útiles en documentos de Word y archivos Markdown, pero necesitaba una mejor manera de organizarlos y acceder a ellos.
 
 Lo que comenzó como una solución personal se ha convertido en un recurso comunitario con 51 estrellas en GitHub. Free For Geeks sirve como una caja de herramientas curada de recursos gratuitos para desarrolladores que construyen software, abordando una brecha que había notado en las colecciones existentes.
 
