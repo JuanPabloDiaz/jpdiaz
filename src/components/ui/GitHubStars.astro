@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Star from '@components/icons/Star.astro';
 import StarHover from '@components/icons/StarHover.astro';
 import { getGitHubRepoData } from '@utils/github';
@@ -41,8 +42,7 @@ const forkUrl = github_url + '/fork';
 			rel="noopener noreferrer"
 			class="icon-container flex items-center rounded-lg px-2 py-1 text-xs text-black shadow-sm shadow-orange lg:py-1"
 		>
-			<StarHover class="mr-1 h-4 w-4 group-hover:hidden" />
-			<Star class="mr-1 hidden h-4 w-4 group-hover:block" />
+			<Icon name="fe:star" class="mr-1 h-4 w-4" />
 			<span>{formattedStarsCount}</span>
 		</a>
 	</div>
