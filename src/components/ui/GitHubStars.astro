@@ -1,11 +1,9 @@
 ---
 import { Icon } from 'astro-icon/components';
-import Star from '@components/icons/Star.astro';
-import StarHover from '@components/icons/StarHover.astro';
 import { getGitHubRepoData } from '@utils/github';
 
 interface Props {
-	github_url: string;
+    github_url: string;
 }
 
 const { github_url } = Astro.props;
@@ -15,35 +13,35 @@ let starsCount = '0';
 
 // Fetch repository data including stars
 try {
-	const repoData = await getGitHubRepoData(github_url);
-	if (repoData) {
-		starsCount = repoData.stars.toString();
-	}
+    const repoData = await getGitHubRepoData(github_url);
+    if (repoData) {
+        starsCount = repoData.stars.toString();
+    }
 } catch (error) {
-	// Si es un repo privado o hay error, simplemente no mostramos el componente
-	console.debug(`No se puede mostrar stars para ${github_url}: ${error.message}`);
+    // Si es un repo privado o hay error, simplemente no mostramos el componente
+    console.debug(`No se puede mostrar stars para ${github_url}: ${error.message}`);
 }
 
 const numericStarsCount = parseInt(starsCount);
 const formattedStarsCount = !isNaN(numericStarsCount) && numericStarsCount > 1000
-	? `${(numericStarsCount / 1000).toFixed(1).replace(/\.0$/, '')}K`
-	: starsCount;
+    ? `${(numericStarsCount / 1000).toFixed(1).replace(/\.0$/, '')}K`
+    : starsCount;
 
 const starUrl = github_url + '/stargazers';
 const forkUrl = github_url + '/fork';
 ---
 
 {numericStarsCount > 0 && (
-	<div class="group flex flex-wrap justify-end gap-2">
+    <div class="group flex flex-wrap justify-end gap-2">
 		<a
-			href={forkUrl}
-			target="_blank"
-			aria-label="GitHub Stars for this repository"
-			rel="noopener noreferrer"
-			class="icon-container flex items-center rounded-lg px-2 py-1 text-xs text-black shadow-sm shadow-orange lg:py-1"
-		>
-			<Icon name="fe:star" class="mr-1 h-4 w-4" />
-			<span>{formattedStarsCount}</span>
-		</a>
-	</div>
+            href={forkUrl}
+            target="_blank"
+            aria-label="GitHub Stars for this repository"
+            rel="noopener noreferrer"
+            class="icon-container flex items-center rounded-lg px-2 py-1 text-xs text-black dark:text-white bg-gray-100 dark:bg-gray-800 shadow-sm shadow-orange lg:py-1 transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+        >
+            <Icon name="fe:star" class="mr-1 h-4 w-4 text-orange" />
+            <span>{formattedStarsCount}</span>
+        </a>
+    </div>
 )}
