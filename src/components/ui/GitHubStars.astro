@@ -3,8 +3,8 @@ import { Icon } from 'astro-icon/components';
 import { getGitHubRepoData } from '@utils/github';
 
 interface Props {
-    github_url: string;
-    small?: boolean;
+	github_url: string;
+	small?: boolean;
 }
 
 const { github_url, small = false } = Astro.props;
@@ -14,45 +14,48 @@ let starsCount = '0';
 
 // Fetch repository data including stars
 try {
-    const repoData = await getGitHubRepoData(github_url);
-    if (repoData) {
-        starsCount = repoData.stars.toString();
-    }
+	const repoData = await getGitHubRepoData(github_url);
+	if (repoData) {
+		starsCount = repoData.stars.toString();
+	}
 } catch (error) {
-    // Si es un repo privado o hay error, simplemente no mostramos el componente
-    console.debug(`No se puede mostrar stars para ${github_url}: ${error.message}`);
+	// Si es un repo privado o hay error, simplemente no mostramos el componente
+	console.debug(`No se puede mostrar stars para ${github_url}: ${error.message}`);
 }
 
 const numericStarsCount = parseInt(starsCount);
-const formattedStarsCount = !isNaN(numericStarsCount) && numericStarsCount > 1000
-    ? `${(numericStarsCount / 1000).toFixed(1).replace(/\.0$/, '')}K`
-    : starsCount;
+const formattedStarsCount =
+	!isNaN(numericStarsCount) && numericStarsCount > 1000
+		? `${(numericStarsCount / 1000).toFixed(1).replace(/\.0$/, '')}K`
+		: starsCount;
 
 const starUrl = github_url + '/stargazers';
 const forkUrl = github_url + '/fork';
 
 // Classes for different sizes
 const containerClass = small
-    ? "flex flex-wrap justify-end gap-1"
-    : "flex flex-wrap justify-end gap-2";
+	? 'flex flex-wrap justify-end gap-1'
+	: 'flex flex-wrap justify-end gap-2';
 const buttonClass = small
-    ? "inline-flex items-center gap-1 px-2 py-1 rounded bg-orange shadow-sm shadow-black/20 transition-all duration-300 hover:bg-opacity-80 hover:shadow-none hover:scale-105"
-    : "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-orange shadow-sm shadow-black/20 transition-all duration-300 hover:bg-opacity-80 hover:shadow-none hover:scale-105";
-const iconClass = small ? "h-3 w-3 text-white" : "h-4 w-4 text-white";
-const textClass = small ? "text-xs font-medium text-white" : "text-sm font-medium text-white";
+	? 'inline-flex items-center gap-1 px-2 py-1 rounded bg-orange shadow-sm shadow-black/20 transition-all duration-300 hover:bg-opacity-80 hover:shadow-none hover:scale-105'
+	: 'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-orange shadow-sm shadow-black/20 transition-all duration-300 hover:bg-opacity-80 hover:shadow-none hover:scale-105';
+const iconClass = small ? 'h-3 w-3 text-white' : 'h-4 w-4 text-white';
+const textClass = small ? 'text-xs font-medium text-white' : 'text-sm font-medium text-white';
 ---
 
-{numericStarsCount > 0 && (
-    <div class={containerClass}>
-        <a
-            href={starUrl}
-            target="_blank"
-            aria-label="Ver stargazers en GitHub"
-            rel="noopener noreferrer"
-            class={buttonClass}
-        >
-            <Icon name="fe:star" class={iconClass} />
-            <span class={textClass}>{formattedStarsCount}</span>
-        </a>
-    </div>
-)}
+{
+	numericStarsCount > 0 && (
+		<div class={containerClass}>
+			<a
+				href={starUrl}
+				target="_blank"
+				aria-label="Ver stargazers en GitHub"
+				rel="noopener noreferrer"
+				class={buttonClass}
+			>
+				<Icon name="fe:star" class={iconClass} />
+				<span class={textClass}>{formattedStarsCount}</span>
+			</a>
+		</div>
+	)
+}

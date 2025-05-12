@@ -49,11 +49,11 @@ const projectsWithGitHubData = await Promise.all(
 				<Card
 					url={project.data.link}
 					title={project.data.title}
-					description={project.data.description}
 					alt={project.data.img_alt}
-					tags={project.data.tags}
 					github_url={project.data.github_link}
 					images_path={project.data.image_path}
+					tags={project.data.tags}
+					description={project.data.description}
 					lastUpdate={project.githubData?.lastUpdate}
 					createdOn={project.githubData?.createdOn}
 					size={project.githubData?.size}

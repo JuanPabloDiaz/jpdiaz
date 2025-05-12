@@ -4,83 +4,111 @@ import { ui } from '../i18n/ui';
 import Navbar from '../components/Navbar.astro';
 
 interface Props {
-  title: string;
-  description: string;
-  pubDate: Date;
-  updatedDate?: Date;
-  lang: 'en' | 'es';
-  tags: string[];
-  image?: string;
-  canonicalURL?: string;
-  draft?: boolean;
-  mathjax?: boolean;
-  mermaid?: boolean;
+	title: string;
+	description: string;
+	pubDate: Date;
+	updatedDate?: Date;
+	lang: 'en' | 'es';
+	tags: string[];
+	image?: string;
+	canonicalURL?: string;
+	draft?: boolean;
+	mathjax?: boolean;
+	mermaid?: boolean;
 }
 
-const { title, description, pubDate, updatedDate, lang, tags, image, canonicalURL, draft, mathjax, mermaid } = Astro.props;
-const formattedPubDate = pubDate.toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US' as const, {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
+const {
+	title,
+	description,
+	pubDate,
+	updatedDate,
+	lang,
+	tags,
+	image,
+	canonicalURL,
+	draft,
+	mathjax,
+	mermaid,
+} = Astro.props;
+const formattedPubDate = pubDate.toLocaleDateString(lang === 'es' ? 'es-ES' : ('en-US' as const), {
+	year: 'numeric',
+	month: 'long',
+	day: 'numeric',
 });
-const formattedUpdatedDate = updatedDate?.toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US' as const, {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
+const formattedUpdatedDate = updatedDate?.toLocaleDateString(
+	lang === 'es' ? 'es-ES' : ('en-US' as const),
+	{
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+	}
+);
 ---
 
 <Layout metaTitle={`${title} | Blog`} includeSidebar={false}>
-  {mathjax && (
-    <script
-      type="text/javascript"
-      id="MathJax-script"
-      async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-    />
-  )}
-  {mermaid && (
-    <script
-      type="module"
-      async
-      src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"
-    />
-  )}
-  <Navbar
-    menu={[
-      { title: lang === 'es' ? 'Inicio' : 'Home', path: lang === 'es' ? '/es' : '/' },
-      { title: 'Blog', path: lang === 'es' ? '/es/blog' : '/blog' },
-    ]}
-    button="Resume"
-  />
-  <article class="mx-auto max-w-3xl px-4 py-8 text-black dark:text-white prose prose-black dark:prose-invert">
-    {image && (
-      <img
-        src={image}
-        alt={title}
-        class="mb-8 w-full rounded-lg object-cover shadow-lg dark:shadow-zinc-800"
-      />
-    )}
-    <h1 class="mb-4 text-4xl font-bold text-black dark:text-white">{title}</h1>
-    <div class="mb-8 flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-300">
-      <time datetime={pubDate.toISOString()}>
-        {ui[lang]['blog.publishedOn']} {formattedPubDate}
-      </time>
-      {updatedDate && (
-        <time datetime={updatedDate.toISOString()}>
-          • {ui[lang]['blog.updatedOn']} {formattedUpdatedDate}
-        </time>
-      )}
-    </div>
-    <div class="mb-8">
-      {tags.map((tag) => (
-        <span class="mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-          #{tag}
-        </span>
-      ))}
-    </div>
-    <div class="prose max-w-none prose-black dark:prose-invert">
-      <slot />
-    </div>
-  </article>
+	{
+		mathjax && (
+			<script
+				type="text/javascript"
+				id="MathJax-script"
+				async
+				src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			/>
+		)
+	}
+	{
+		mermaid && (
+			<script
+				type="module"
+				async
+				src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"
+			/>
+		)
+	}
+	<Navbar
+		menu={[
+			{ title: lang === 'es' ? 'Inicio' : 'Home', path: lang === 'es' ? '/es' : '/' },
+			{ title: 'Blog', path: lang === 'es' ? '/es/blog' : '/blog' },
+		]}
+		button="Resume"
+	/>
+	<article
+		class="prose prose-black dark:prose-invert mx-auto max-w-3xl px-4 py-8 text-black dark:text-white"
+	>
+		{
+			image && (
+				<img
+					src={image}
+					alt={title}
+					class="dark:shadow-zinc-800 mb-8 w-full rounded-lg object-cover shadow-lg"
+				/>
+			)
+		}
+		<h1 class="mb-4 text-4xl font-bold text-black dark:text-white">{title}</h1>
+		<div class="text-gray-600 dark:text-gray-300 mb-8 flex flex-wrap items-center gap-4 text-sm">
+			<time datetime={pubDate.toISOString()}>
+				{ui[lang]['blog.publishedOn']}
+				{formattedPubDate}
+			</time>
+			{
+				updatedDate && (
+					<time datetime={updatedDate.toISOString()}>
+						• {ui[lang]['blog.updatedOn']} {formattedUpdatedDate}
+					</time>
+				)
+			}
+		</div>
+		<div class="mb-8">
+			{
+				tags.map((tag) => (
+					<span class="bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 mr-2 inline-block rounded-full px-3 py-1 text-sm">
+						#{tag}
+					</span>
+				))
+			}
+		</div>
+		<div class="prose prose-black dark:prose-invert max-w-none">
+			<slot />
+		</div>
+	</article>
 </Layout>

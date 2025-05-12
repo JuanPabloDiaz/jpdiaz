@@ -1,9 +1,9 @@
 ---
-title: "Bienvenidos a Mi Blog"
-description: "Esta es mi primera entrada del blog donde compartiré mis pensamientos sobre desarrollo web y tecnología."
+title: 'Bienvenidos a Mi Blog'
+description: 'Esta es mi primera entrada del blog donde compartiré mis pensamientos sobre desarrollo web y tecnología.'
 pubDate: 2025-05-05
-lang: "es"
-tags: ["bienvenida", "primera-entrada", "desarrollo-web"]
+lang: 'es'
+tags: ['bienvenida', 'primera-entrada', 'desarrollo-web']
 draft: true
 ---
 
@@ -26,10 +26,10 @@ Aquí hay un ejemplo simple de cómo se verán los bloques de código en el blog
 
 ```javascript
 function saludar(nombre) {
-  return `¡Hola, ${nombre}! Bienvenido a mi blog.`;
+	return `¡Hola, ${nombre}! Bienvenido a mi blog.`;
 }
 
-console.log(saludar("amigo"));
+console.log(saludar('amigo'));
 ```
 
 ## Mantente Conectado

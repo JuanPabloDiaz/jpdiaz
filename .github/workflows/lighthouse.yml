@@ -2,9 +2,8 @@ name: Lighthouse CI
 
 on:
   workflow_dispatch:
-  pull_request:
-    branches:
-      - 'main'
+  schedule:
+    - cron: '30 12 1 1,7 *' # run on the 1st day of January and July, every year.
 
 jobs:
   lighthouse:

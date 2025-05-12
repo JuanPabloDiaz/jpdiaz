@@ -34,22 +34,16 @@
 			'.theme-switch input[type="checkbox"]'
 		) as HTMLInputElement;
 
+		// Initialize checkbox state based on current theme
+		const isDark = document.documentElement.classList.contains('dark');
+		button.checked = isDark;
+
 		const switchTheme = () => {
-			document.documentElement.classList.toggle('dark');
-			if (document.documentElement.classList.contains('dark')) {
-				localStorage.setItem('theme', 'dark');
-			}
+			const root = document.documentElement;
+			const isDark = root.classList.toggle('dark');
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
 		};
 
-		if (
-			localStorage.theme === 'dark' ||
-			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-		) {
-			switchTheme();
-		}
-
-		button.addEventListener('click', () => {
-			switchTheme();
-		});
+		button.addEventListener('click', switchTheme);
 	});
 </script>
