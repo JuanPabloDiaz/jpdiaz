@@ -31,6 +31,13 @@ interface Props {
     languages?: string[];
     forks?: number;
     openIssues?: number;
+    license?: {
+        key: string;
+        name: string;
+        spdx_id: string;
+        url: string | null;
+        node_id: string;
+    };
 }
 
 const {
@@ -45,6 +52,7 @@ const {
     languages = [],
     forks = 0,
     openIssues = 0,
+    license = undefined,
 } = Astro.props;
 
 // dynamic images Workaround:
@@ -104,6 +112,16 @@ const imagePath = filename && filename in images ? images[filename as keyof type
                                     <div class="flex items-center gap-1.5">
                                         <Icon name="codicon:issues" class="w-4 h-4 text-orange" />
                                         <span>{openIssues} issues</span>
+                                    </div>
+                                )}
+                                {license && (
+                                    <div class="flex items-center gap-1.5">
+                                        <Icon name="codicon:law" class="w-4 h-4 text-orange" />
+                                        <span>
+                                            {license.spdx_id && license.spdx_id !== 'NOASSERTION'
+                                                ? license.spdx_id
+                                                : (license.name || 'No License')}
+                                        </span>
                                     </div>
                                 )}
                             </div>

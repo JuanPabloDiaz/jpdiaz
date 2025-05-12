@@ -58,6 +58,7 @@ const projectsWithGitHubData = await Promise.all(
 					languages={project.githubData?.languages}
 					forks={project.githubData?.forks}
 					openIssues={project.githubData?.openIssues}
+					license={project.githubData?.license}
 				/>
 			))
 		}
