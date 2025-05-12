@@ -12,39 +12,39 @@ const iconURL = 'https://go-skill-icons.vercel.app/api/icons?i=';
 ---
 
 <script>
-// Update icons when theme changes
-function updateIconsTheme() {
-	const isDark = document.documentElement.classList.contains('dark');
-	const icons = document.querySelectorAll('.skill-icon') as NodeListOf<HTMLImageElement>;
-	icons.forEach(icon => {
-		if (icon.src) {
-			const url = new URL(icon.src);
-			url.searchParams.set('theme', isDark ? 'dark' : 'light');
-			icon.src = url.toString();
-		}
-	});
-}
+	// Update icons when theme changes
+	function updateIconsTheme() {
+		const isDark = document.documentElement.classList.contains('dark');
+		const icons = document.querySelectorAll('.skill-icon') as NodeListOf<HTMLImageElement>;
+		icons.forEach((icon) => {
+			if (icon.src) {
+				const url = new URL(icon.src);
+				url.searchParams.set('theme', isDark ? 'dark' : 'light');
+				icon.src = url.toString();
+			}
+		});
+	}
 
-// Watch for theme changes using a MutationObserver
-const observer = new MutationObserver((mutations) => {
-	mutations.forEach((mutation) => {
-		if (mutation.attributeName === 'class') {
-			updateIconsTheme();
-		}
+	// Watch for theme changes using a MutationObserver
+	const observer = new MutationObserver((mutations) => {
+		mutations.forEach((mutation) => {
+			if (mutation.attributeName === 'class') {
+				updateIconsTheme();
+			}
+		});
 	});
-});
 
-// Start observing theme changes
-window.addEventListener('load', () => {
-	updateIconsTheme(); // Initial update
-	observer.observe(document.documentElement, {
-		attributes: true,
-		attributeFilter: ['class']
+	// Start observing theme changes
+	window.addEventListener('load', () => {
+		updateIconsTheme(); // Initial update
+		observer.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ['class'],
+		});
 	});
-});
 
-// Cleanup observer when component is destroyed
-document.addEventListener('astro:before-swap', () => observer.disconnect());
+	// Cleanup observer when component is destroyed
+	document.addEventListener('astro:before-swap', () => observer.disconnect());
 </script>
 
 {

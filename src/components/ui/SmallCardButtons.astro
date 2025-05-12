@@ -14,14 +14,14 @@ interface Props {
 const { url, github_url, contribution } = Astro.props;
 ---
 
-<article class="relative flex w-2/12 flex-col items-center justify-between h-full py-2">
+<article class="relative flex h-full w-2/12 flex-col items-center justify-between py-2">
 	<GitHubContribution github_url={github_url} contribution={contribution} />
-	<div class="flex items-center justify-center gap-2 mt-3">
+	<div class="mt-3 flex items-center justify-center gap-2">
 		<a
 			href={url}
 			target="_blank"
 			aria-label="link to project"
-			class="flex h-7 w-7 items-center justify-center rounded-lg bg-orange shadow-sm shadow-black/20 transition-all duration-300 hover:bg-opacity-80 hover:shadow-none hover:scale-105"
+			class="flex h-7 w-7 items-center justify-center rounded-lg bg-orange shadow-sm shadow-black/20 transition-all duration-300 hover:scale-105 hover:bg-opacity-80 hover:shadow-none"
 		>
 			<Icon name="majesticons:open" class="h-4 w-4" />
 		</a>
@@ -31,7 +31,7 @@ const { url, github_url, contribution } = Astro.props;
 					href={github_url}
 					target="_blank"
 					aria-label="link to github repository"
-					class="flex h-7 w-7 items-center justify-center rounded-lg bg-orange shadow-sm shadow-black/20 transition-all duration-300 hover:bg-opacity-80 hover:shadow-none hover:scale-105"
+					class="flex h-7 w-7 items-center justify-center rounded-lg bg-orange shadow-sm shadow-black/20 transition-all duration-300 hover:scale-105 hover:bg-opacity-80 hover:shadow-none"
 				>
 					<GitHubIcon class="h-3.5 w-3.5" />
 				</a>

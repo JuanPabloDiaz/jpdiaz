@@ -42,7 +42,7 @@
 		"@playwright/test": "^1.33.0",
 		"astro-icon": "^1.1.5",
 		"prettier": "^3.5.3",
-		"prettier-plugin-astro": "^0.8.0",
+		"prettier-plugin-astro": "^0.14.1",
 		"prettier-plugin-tailwindcss": "^0.6.11",
 		"tailwindcss": "3"
 	}

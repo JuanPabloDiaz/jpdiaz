@@ -11,26 +11,26 @@ const basicLinkStyle =
 	'hover:text-orange dark:hover:text-orange text-black transition duration-300 dark:text-white flex items-center';
 
 let certifications = [
-{
-	  url: 'https://credentials.databricks.com/3428c69a-03d0-4598-8429-55786b9d8ddd#acc.G6QlY0p3',
-	 	title: 'Databricks MVP',
-	 	year: '2025',
-	 },
-	 {
-	 	url: 'https://credentials.databricks.com/7c7d153e-2986-4fb1-a38e-5b14e9b71365#acc.U5feJdOb',
-	 	title: 'Generative AI Fundamentals',
-	 	year: '2025',
-	 },
-	 {
-	 	url: 'https://credentials.databricks.com/f11020d3-09ad-47a5-a9a4-06b4ef5f9980#acc.Poi85KdA',
-	 	title: 'Databricks Fundamentals',
-	 	year: '2025',
-	 },
-	 {
-	 	url: 'https://www.freecodecamp.org/certification/1diazdev/javascript-algorithms-and-data-structures',
-	 	title: 'Legacy JavaScript',
-	 	year: '2025',
-	 },
+	{
+		url: 'https://credentials.databricks.com/3428c69a-03d0-4598-8429-55786b9d8ddd#acc.G6QlY0p3',
+		title: 'Databricks MVP',
+		year: '2025',
+	},
+	{
+		url: 'https://credentials.databricks.com/7c7d153e-2986-4fb1-a38e-5b14e9b71365#acc.U5feJdOb',
+		title: 'Generative AI Fundamentals',
+		year: '2025',
+	},
+	{
+		url: 'https://credentials.databricks.com/f11020d3-09ad-47a5-a9a4-06b4ef5f9980#acc.Poi85KdA',
+		title: 'Databricks Fundamentals',
+		year: '2025',
+	},
+	{
+		url: 'https://www.freecodecamp.org/certification/1diazdev/javascript-algorithms-and-data-structures',
+		title: 'Legacy JavaScript',
+		year: '2025',
+	},
 	{
 		url: 'https://www.freecodecamp.org/certification/1diazdev/javascript-algorithms-and-data-structures-v8',
 		title: 'JavaScript and Data Structures',
@@ -114,12 +114,12 @@ const resumeMenu = [
 
 <!-- Source code: https://github.com/manuelernestog/astrofy -->
 <Layout metaTitle="Juan Diaz | Resume" sideBarActiveItemID="cv">
-	<main class="text-black dark:text-white relative">
+	<main class="relative text-black dark:text-white">
 		<Navbar menu={resumeMenu} button="Home" />
 		<div class="container mx-auto px-4 py-8">
 			<section id="profile" class="scroll-mt-20">
 				<div class="mb-5 flex items-center justify-between">
-					<div class="flex w-full md:w-1/5 items-center justify-between">
+					<div class="flex w-full items-center justify-between md:w-1/5">
 						<h2 class="w-full text-3xl font-bold">Profile</h2>
 						<a href="https://www.linkedin.com/in/1diazdev" target="_blank">
 							<Icon name="carbon:identification" class="inline-block h-10 w-10" />
@@ -148,7 +148,7 @@ const resumeMenu = [
 			</section>
 
 			<section id="skills">
-				<div class="mb-5 flex w-full md:w-1/5 items-center justify-between">
+				<div class="mb-5 flex w-full items-center justify-between md:w-1/5">
 					<h2 class="w-full text-3xl font-bold">Skills</h2>
 					<a href="https://www.linkedin.com/in/1diazdev/details/skills" target="_blank">
 						<Icon name="carbon:skill-level" class="inline-block h-10 w-10" />
@@ -188,7 +188,7 @@ const resumeMenu = [
 			<div class="h-12" id="education"></div>
 
 			<section>
-				<div class="mb-5 flex w-full md:w-1/5 items-center justify-between">
+				<div class="mb-5 flex w-full items-center justify-between md:w-1/5">
 					<h2 class="w-full text-3xl font-bold">Education</h2>
 					<a href="https://www.linkedin.com/in/1diazdev/details/education" target="_blank">
 						<Icon name="carbon:education" class="inline-block h-10 w-10" />
@@ -238,7 +238,7 @@ const resumeMenu = [
 		</div>
 
 		<section id="certification">
-			<div class="mb-5 flex w-full md:w-1/5 items-center justify-between">
+			<div class="mb-5 flex w-full items-center justify-between md:w-1/5">
 				<h2 class="w-full text-3xl font-bold">Certifications</h2>
 				<a href="https://www.linkedin.com/in/1diazdev/details/certifications" target="_blank">
 					<Icon name="carbon:certificate" class="inline-block h-10 w-10" />
@@ -260,7 +260,7 @@ const resumeMenu = [
 		</section>
 
 		<section id="courses">
-			<div class="mb-5 flex w-full md:w-1/5 items-center justify-between">
+			<div class="mb-5 flex w-full items-center justify-between md:w-1/5">
 				<h2 class="w-full text-3xl font-bold">Courses</h2>
 				<a href="https://www.linkedin.com/in/1diazdev/details/courses" target="_blank">
 					<Icon name="carbon:code" class="inline-block h-10 w-10" />
@@ -288,7 +288,7 @@ const resumeMenu = [
 		<div class="h-12" id="experience"></div>
 
 		<section>
-			<div class="mb-5 flex w-full md:w-1/5 items-center justify-between">
+			<div class="mb-5 flex w-full items-center justify-between md:w-1/5">
 				<h2 class="w-full text-3xl font-bold">Experience</h2>
 				<a href="https://www.linkedin.com/in/1diazdev/details/experience" target="_blank">
 					<Icon name="carbon:development" class="inline-block h-10 w-10" />
@@ -297,17 +297,17 @@ const resumeMenu = [
 
 			<div class="time-line-container mb-10">
 				<TimeLineElement
-				title="Owner & Developer @ Talento Para TI"
-				subtitle="From July 2024 to Present. ~ Remote"
-				url="https://talentoparati.com"
-			>
+					title="Owner & Developer @ Talento Para TI"
+					subtitle="From July 2024 to Present. ~ Remote"
+					url="https://talentoparati.com"
+				>
 					<ul class="ml-6 list-disc">
-						<li>Founded a platform to connect tech talent with job opportunities in Latin America.</li>
 						<li>
-							Please visit <a
-								href="https://talentoparati.com"
-								target="_blank"
-								class={LinkStyle}>talentoparati.com</a
+							Founded a platform to connect tech talent with job opportunities in Latin America.
+						</li>
+						<li>
+							Please visit <a href="https://talentoparati.com" target="_blank" class={LinkStyle}
+								>talentoparati.com</a
 							> to learn more about the platform and its mission.
 						</li>
 					</ul>
@@ -330,7 +330,8 @@ const resumeMenu = [
 						<div class="grid grid-cols-1 gap-2 p-2 md:grid-cols-3">
 							<p>
 								<span class="mx-1">✔</span>
-								Frontend: <a href="https://Confs.tech" target="_blank" class={LinkStyle}>Confs.tech</a
+								Frontend: <a href="https://Confs.tech" target="_blank" class={LinkStyle}
+									>Confs.tech</a
 								>
 								<span class="mx-1">•</span>
 								<a
@@ -359,7 +360,9 @@ const resumeMenu = [
 							</p>
 						</div>
 						<li>Expanded the existing test suite to cover additional functionalities.</li>
-						<li>Increased developer engagement by fostering a welcoming and inclusive community.</li>
+						<li>
+							Increased developer engagement by fostering a welcoming and inclusive community.
+						</li>
 						<li>Enhanced project stability through bug identification and resolution.</li>
 						<li>
 							Collaborated with contributors to ensure seamless integration across various parts of
@@ -382,7 +385,9 @@ const resumeMenu = [
 					subtitle="From Jan. 2024 to Present. ~ Remote"
 				>
 					<ul class="ml-6 list-disc">
-						<li>Contributed to multiple open source projects, enhancing features and fixing bugs.</li>
+						<li>
+							Contributed to multiple open source projects, enhancing features and fixing bugs.
+						</li>
 						<li>Collaborated with maintainers and other contributors to improve the project.</li>
 						<li>Learn new technologies and best practices through community feedback.</li>
 					</ul>
@@ -408,9 +413,9 @@ const resumeMenu = [
 							> is my own Linktree alternative. It is a simple and clean way to display links.
 						</li>
 						<li>
-							<a href="https://docs.jpdiaz.dev" target="_blank" class={LinkStyle}>Docs.jpdiaz.dev</a> delves
-							into the intricacies of my projects, detailing the technologies used, development processes,
-							and challenges tackled. It is a testament to continuous learning and skill development.
+							<a href="https://docs.jpdiaz.dev" target="_blank" class={LinkStyle}>Docs.jpdiaz.dev</a
+							> delves into the intricacies of my projects, detailing the technologies used, development
+							processes, and challenges tackled. It is a testament to continuous learning and skill development.
 						</li>
 						<li>
 							<a
@@ -445,7 +450,8 @@ const resumeMenu = [
 						<li>Effectively communicate with a variety of departments.</li>
 						<li>Proactively investigate and resolve end user problems/complications.</li>
 						<li>
-							Adaptability to multiple enterprise environments. Following a process oriented approach.
+							Adaptability to multiple enterprise environments. Following a process oriented
+							approach.
 						</li>
 						<li>Utilizes problem solving skills to find solutions to unusual issues.</li>
 					</ul>
@@ -481,7 +487,9 @@ const resumeMenu = [
 							Commended for quickly resolving complex issues including system crashes in Smart
 							classrooms, computer classrooms, and conference rooms.
 						</li>
-						<li>Controlled client’s computer to fix, install or upgrade software related issues.</li>
+						<li>
+							Controlled client’s computer to fix, install or upgrade software related issues.
+						</li>
 					</ul>
 				</TimeLineElement>
 			</div>
@@ -528,4 +536,5 @@ const resumeMenu = [
 				</div>
 			</div>
 		</section>
+	</main>
 </Layout>

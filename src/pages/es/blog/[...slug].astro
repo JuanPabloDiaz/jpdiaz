@@ -4,13 +4,13 @@ import Layout from '@layouts/Layout.astro';
 import BlogPost from '@layouts/BlogPost.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts
-    .filter(post => post.data.lang === 'es')
-    .map(post => ({
-      params: { slug: post.slug },
-      props: { post },
-    }));
+	const posts = await getCollection('blog');
+	return posts
+		.filter((post) => post.data.lang === 'es')
+		.map((post) => ({
+			params: { slug: post.slug },
+			props: { post },
+		}));
 }
 
 const { post } = Astro.props;
@@ -18,5 +18,5 @@ const { Content } = await post.render();
 ---
 
 <BlogPost {...post.data}>
-  <Content />
+	<Content />
 </BlogPost>
