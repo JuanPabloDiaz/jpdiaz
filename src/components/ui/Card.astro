@@ -93,45 +93,101 @@ const imagePath = filename && filename in images ? images[filename as keyof type
                     <div class="space-y-4">
                         <p class="text-sm text-black dark:text-white leading-relaxed">{description}</p>
                         {github_url !== '#' && (
-                            <div class="grid grid-cols-2 gap-2 text-xs text-black dark:text-white font-medium">
+                            <div class="flex flex-col gap-2 text-xs text-black dark:text-gray-300 font-normal">
                                 {lastUpdate && (
-                                    <div class="flex items-center gap-1.5">
+                                    <div class="flex items-center gap-2 border-b border-gray-200 dark:border-gray-700 pb-1">
                                         <Icon name="fe:clock" class="w-4 h-4 text-orange" />
-                                        <span>{lastUpdate}</span>
+                                        <span>Last update: {lastUpdate}</span>
                                     </div>
                                 )}
                                 {createdOn && (
-                                    <div class="flex items-center gap-1.5">
+                                    <div class="flex items-center gap-2 border-b border-gray-200 dark:border-gray-700 pb-1">
                                         <Icon name="fe:calendar" class="w-4 h-4 text-orange" />
                                         <span>Created: {createdOn}</span>
                                     </div>
                                 )}
                                 {size > 0 && (
-                                    <div class="flex items-center gap-1.5">
+                                    <div class="flex items-center gap-2 border-b border-gray-200 dark:border-gray-700 pb-1">
                                         <Icon name="codicon:database" class="w-4 h-4 text-orange" />
-                                        <span>{size} KB</span>
+                                        <span>Size: {size} KB</span>
                                     </div>
                                 )}
                                 {languages.length > 0 && (
-                                    <div class="flex items-center gap-1.5 col-span-2">
+                                    <div class="flex items-center gap-2 border-b border-gray-200 dark:border-gray-700 pb-1">
                                         <Icon name="fe:code" class="w-4 h-4 text-orange" />
-                                        <span>{languages.slice(0, 3).join(', ')}{languages.length > 3 ? '...' : ''}</span>
+                                        <span>Languages: {languages.slice(0, 3).join(', ')}{languages.length > 3 ? '...' : ''}</span>
                                     </div>
                                 )}
                                 {forks > 0 && (
-                                    <div class="flex items-center gap-1.5">
+                                    <div class="flex items-center gap-2 border-b border-gray-200 dark:border-gray-700 pb-1">
                                         <Icon name="fe:fork" class="w-4 h-4 text-orange" />
-                                        <span>{forks} forks</span>
+                                        <span>Forks: {forks}</span>
                                     </div>
                                 )}
                                 {openIssues > 0 && (
-                                    <div class="flex items-center gap-1.5">
+                                    <div class="flex items-center gap-2 border-b border-gray-200 dark:border-gray-700 pb-1">
                                         <Icon name="codicon:issues" class="w-4 h-4 text-orange" />
-                                        <span>{openIssues} issues</span>
+                                        <span>Issues: {openIssues}</span>
                                     </div>
                                 )}
                                 {license && (
-                                    <div class="flex items-center gap-1.5">
+                                    <div class="flex items-center gap-2">
+                                        <Icon name="codicon:law" class="w-4 h-4 text-orange" />
+                                        <span>
+                                            {license.spdx_id && license.spdx_id !== 'NOASSERTION'
+                                                ? license.spdx_id
+                                                : (license.name || 'No License')}
+                                        </span>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+                    </div>
+                </div>
+                <div class="absolute inset-0 flex flex-col justify-end opacity-0 transform translate-y-4 transition-all duration-300 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 p-6 bg-white/90 dark:bg-[rgba(17,24,39,0.97)] backdrop-blur-lg shadow-xl rounded-xl ring-1 ring-orange/20">
+                    <div class="space-y-3">
+                        <p class="text-lg font-bold text-black dark:text-white leading-snug mb-1">{description}</p>
+                        <hr class="border-orange/40 dark:border-gray-700 my-2" />
+                        {github_url !== '#' && (
+                            <div class="flex flex-col gap-2 text-xs text-gray-700 dark:text-gray-300 font-normal">
+                                {lastUpdate && (
+                                    <div class="flex items-center gap-2 border-b border-gray-200 dark:border-gray-700 pb-1">
+                                        <Icon name="fe:clock" class="w-4 h-4 text-orange" />
+                                        <span>Last update: {lastUpdate}</span>
+                                    </div>
+                                )}
+                                {createdOn && (
+                                    <div class="flex items-center gap-2 border-b border-gray-200 dark:border-gray-700 pb-1">
+                                        <Icon name="fe:calendar" class="w-4 h-4 text-orange" />
+                                        <span>Created: {createdOn}</span>
+                                    </div>
+                                )}
+                                {size > 0 && (
+                                    <div class="flex items-center gap-2 border-b border-gray-200 dark:border-gray-700 pb-1">
+                                        <Icon name="codicon:database" class="w-4 h-4 text-orange" />
+                                        <span>Size: {size} KB</span>
+                                    </div>
+                                )}
+                                {languages.length > 0 && (
+                                    <div class="flex items-center gap-2 border-b border-gray-200 dark:border-gray-700 pb-1">
+                                        <Icon name="fe:code" class="w-4 h-4 text-orange" />
+                                        <span>Languages: {languages.slice(0, 3).join(', ')}{languages.length > 3 ? '...' : ''}</span>
+                                    </div>
+                                )}
+                                {forks > 0 && (
+                                    <div class="flex items-center gap-2 border-b border-gray-200 dark:border-gray-700 pb-1">
+                                        <Icon name="fe:fork" class="w-4 h-4 text-orange" />
+                                        <span>Forks: {forks}</span>
+                                    </div>
+                                )}
+                                {openIssues > 0 && (
+                                    <div class="flex items-center gap-2 border-b border-gray-200 dark:border-gray-700 pb-1">
+                                        <Icon name="codicon:issues" class="w-4 h-4 text-orange" />
+                                        <span>Issues: {openIssues}</span>
+                                    </div>
+                                )}
+                                {license && (
+                                    <div class="flex items-center gap-2">
                                         <Icon name="codicon:law" class="w-4 h-4 text-orange" />
                                         <span>
                                             {license.spdx_id && license.spdx_id !== 'NOASSERTION'
@@ -177,7 +233,7 @@ const imagePath = filename && filename in images ? images[filename as keyof type
                             )
                         }
                     </div>
-					<article class="flex items-center gap-1 bg-gray-100 dark:bg-gray-800 rounded-lg px-3 py-1.5 transition duration-300 hover:bg-gray-200 dark:hover:bg-gray-700">
+					<article class="flex items-center gap-1 bg-gray-100 dark:bg-gray-800 rounded-lg px-3 py-1.5 transition duration-300 hover:bg-gray-200 dark:hover:bg-gray-700 text-black dark:text-white">
                         <GitHubStars github_url={github_url} />
                     </article>
                 </div>

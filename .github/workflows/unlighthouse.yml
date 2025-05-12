@@ -4,12 +4,12 @@
 name: Unlighthouse Report on Netlify
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   workflow_dispatch:
-# schedule:
-#     - cron: '30 12 * * 1-5'
+  schedule:
+    - cron: '30 12 1 1,7 *' # run on the 1st day of January and July, every year.
 
 jobs:
   Build:
