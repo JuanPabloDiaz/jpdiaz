@@ -1,5 +1,6 @@
 ---
 import '../styles/markdown.css';
+import '../styles/theme.css';
 import 'remixicon/fonts/remixicon.css';
 import Footer from '@components/Footer.astro';
 import { SEO } from 'astro-seo';
@@ -24,7 +25,7 @@ const { metaTitle = 'Juan Diaz | Portfolio' } = Astro.props as LayoutProps;
 ---
 
 <!DOCTYPE html>
-<html lang={lang} class="scroll-smooth" data-testid="html">
+<html lang={lang} class="scroll-smooth" data-testid="html" class:list={["scroll-smooth", "no-js"]} data-testid="html">
     <head>
         <SEO
             title={metaTitle}
@@ -38,6 +39,26 @@ const { metaTitle = 'Juan Diaz | Portfolio' } = Astro.props as LayoutProps;
         <link rel="icon" type="image/png" href="/favicon.png" />
 
         <title>{metaTitle}</title>
+
+        <!-- Theme initialization to prevent FOUC (Flash of Unstyled Content) -->
+        <script is:inline>
+            const root = document.documentElement;
+            const theme = (() => {
+                if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+                    return localStorage.getItem('theme');
+                }
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    return 'dark';
+                }
+                return 'light';
+            })();
+            if (theme === 'light') {
+                root.classList.remove('dark');
+            } else {
+                root.classList.add('dark');
+            }
+            root.classList.remove('no-js');
+        </script>
 
         <!-- Canonical URL -->
         <link rel="canonical" href={canonicalURL} />

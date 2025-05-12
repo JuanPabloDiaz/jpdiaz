@@ -1,0 +1,23 @@
+/* Prevent theme flash (FOUC) */
+:root {
+  color-scheme: light;
+}
+
+:root.dark {
+  color-scheme: dark;
+}
+
+/* Add a very short transition for theme changes */
+:root {
+  transition: background-color 0.2s ease;
+}
+
+/* Hide content until theme is initialized */
+.no-js {
+  visibility: hidden;
+}
+
+/* Show content once theme is initialized */
+:root:not(.no-js) {
+  visibility: visible;
+}
