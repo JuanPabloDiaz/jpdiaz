@@ -1,0 +1,22 @@
+---
+
+---
+
+<script is:inline>
+	const root = document.documentElement;
+	const theme = (() => {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+			return localStorage.getItem('theme');
+		}
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			return 'dark';
+		}
+		return 'light';
+	})();
+	if (theme === 'light') {
+		root.classList.remove('dark');
+	} else {
+		root.classList.add('dark');
+	}
+	root.classList.remove('no-js');
+</script>

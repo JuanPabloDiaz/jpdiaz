@@ -6,6 +6,7 @@ import Link from '@components/ui/Link.astro';
 import Home from '@components/icons/Home.astro';
 import MenuOpen from '@components/icons/MenuOpen.astro';
 import MenuClose from '@components/icons/MenuClose.astro';
+import '@styles/navbar.css';
 
 const { menu, button } = Astro.props;
 ---
@@ -53,7 +54,7 @@ const { menu, button } = Astro.props;
 								<Link
 									text={item.title}
 									href={item.path}
-									class="text-sm font-medium text-black transition-colors duration-200 hover:text-orange dark:text-white dark:hover:text-orange"
+									styles="text-sm font-medium text-black transition-colors duration-200 hover:text-orange dark:text-white dark:hover:text-orange"
 								/>
 							))
 						}
@@ -71,7 +72,7 @@ const { menu, button } = Astro.props;
 							<Link
 								text={item.title}
 								href={item.path}
-								class="block rounded-lg px-4 py-2.5 text-base font-medium text-black transition-colors duration-200 hover:bg-orange/10 hover:text-orange dark:text-white dark:hover:bg-orange/20"
+								styles="block rounded-lg px-4 py-2.5 text-base font-medium text-black transition-colors duration-200 hover:bg-orange/10 hover:text-orange dark:text-white dark:hover:bg-orange/20"
 							/>
 						))
 					}

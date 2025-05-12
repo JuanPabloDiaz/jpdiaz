@@ -4,13 +4,13 @@ import ArrowRight from '@components/icons/ArrowRight.astro';
 interface Props {
 	text: string;
 	href: string;
-	className?: string;
+	styles?: string;
 	arrow?: boolean;
 	target?: boolean;
 	ariaLabel?: string;
 }
 
-const { text, href, className, target, ariaLabel, arrow } = Astro.props;
+const { text, href, styles, target, ariaLabel, arrow } = Astro.props;
 const targetAttribute = target ? '_blank' : '_self';
 // class={`flex py-2 transition duration-300 lg:px-3 ${className} hover:text-orange dark:hover:text-orange`}
 ---
@@ -20,7 +20,7 @@ const targetAttribute = target ? '_blank' : '_self';
 	target={targetAttribute}
 	rel="noopener"
 	aria-label={ariaLabel}
-	class={`flex py-2 transition duration-300 lg:px-3 text-black hover:text-orange dark:text-white dark:hover:text-orange ${className}`}
+	class={`flex py-2 transition duration-300 lg:px-3 text-black hover:text-orange dark:text-white dark:hover:text-orange ${styles}`}
 >
 	{text}
 	{arrow ? <ArrowRight /> : null}

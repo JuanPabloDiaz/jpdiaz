@@ -1,6 +1,7 @@
 ---
-import '../styles/markdown.css';
-import '../styles/theme.css';
+import '@styles/markdown.css';
+import '@styles/theme.css';
+import '@styles/global.css';
 import 'remixicon/fonts/remixicon.css';
 import Footer from '@components/Footer.astro';
 import { SEO } from 'astro-seo';
@@ -8,6 +9,7 @@ import GoogleAnalytics from '@components/GoogleAnalytics.astro';
 import BackToTop from '@components/ui/BackToTop.astro';
 import ToggleTheme from '@components/ui/ToggleTheme.astro';
 import LangSwitch from '@components/ui/LangSwitch.astro';
+import ThemeInitializer from '@components/ui/ThemeInitializer.astro';
 
 export interface LayoutProps {
 	metaTitle: string;
@@ -24,13 +26,7 @@ const { metaTitle = 'Juan Diaz | Portfolio' } = Astro.props as LayoutProps;
 ---
 
 <!doctype html>
-<html
-	lang={lang}
-	class="scroll-smooth"
-	data-testid="html"
-	class:list={['scroll-smooth', 'no-js']}
-	data-testid="html"
->
+<html lang={lang} class:list={['scroll-smooth', 'no-js']} data-testid="html">
 	<head>
 		<SEO
 			title={metaTitle}
@@ -45,25 +41,7 @@ const { metaTitle = 'Juan Diaz | Portfolio' } = Astro.props as LayoutProps;
 
 		<title>{metaTitle}</title>
 
-		<!-- Theme initialization to prevent FOUC (Flash of Unstyled Content) -->
-		<script is:inline>
-			const root = document.documentElement;
-			const theme = (() => {
-				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-					return localStorage.getItem('theme');
-				}
-				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-					return 'dark';
-				}
-				return 'light';
-			})();
-			if (theme === 'light') {
-				root.classList.remove('dark');
-			} else {
-				root.classList.add('dark');
-			}
-			root.classList.remove('no-js');
-		</script>
+		<ThemeInitializer />
 
 		<!-- Canonical URL -->
 		<link rel="canonical" href={canonicalURL} />
@@ -74,13 +52,7 @@ const { metaTitle = 'Juan Diaz | Portfolio' } = Astro.props as LayoutProps;
 		<slot />
 		<BackToTop />
 		<Footer />
-		<style is:global>
-			/* Improve Page speed */
-			/* https://css-tricks.com/almanac/properties/c/content-visibility/ */
-			img {
-				content-visibility: auto;
-			}
-		</style>
+
 		<GoogleAnalytics />
 	</body>
 </html>

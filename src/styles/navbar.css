@@ -1,0 +1,27 @@
+header {
+  animation: nav-shadow 300ms ease-in-out both;
+  animation-timeline: scroll();
+  animation-range: 0 100px;
+}
+
+@keyframes nav-shadow {
+  to {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+:global(.dark) header {
+  animation: nav-shadow-dark 300ms ease-in-out both;
+  animation-timeline: scroll();
+  animation-range: 0 100px;
+}
+
+@keyframes nav-shadow-dark {
+  to {
+    background-color: rgba(17, 24, 39, 0.8);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
