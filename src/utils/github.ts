@@ -125,11 +125,13 @@ export async function getGitHubCommits(
 			const statsResponse = await githubRequest<GitHubContributor[]>(
 				`/repos/${owner}/${repo}/stats/contributors`
 			);
-			const authorStats = statsResponse.find((stat) => stat.author?.login === author);
-			if (authorStats) {
-				return {
-					count: authorStats.total,
-				};
+			if (Array.isArray(statsResponse)) {
+				const authorStats = statsResponse.find((stat) => stat.author?.login === author);
+				if (authorStats) {
+					return {
+						count: authorStats.total,
+					};
+				}
 			}
 		} catch (statsError) {
 			console.warn('Could not fetch commit stats, falling back to commit list:', statsError);
