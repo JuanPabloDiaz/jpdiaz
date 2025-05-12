@@ -5,6 +5,8 @@ interface GitHubRepo {
 	forks_count: number;
 	open_issues_count: number;
 	stargazers_count: number;
+	created_at: string;
+	size: number; // in KB
 	license?: {
 		key: string;
 		name: string;
@@ -16,6 +18,8 @@ interface GitHubRepo {
 
 interface GitHubRepoData {
 	lastUpdate: string;
+	createdOn: string;
+	size: number;
 	languages: string[];
 	forks: number;
 	openIssues: number;
@@ -92,6 +96,8 @@ export async function getGitHubRepoData(repoUrl: string): Promise<GitHubRepoData
 
 		return {
 			lastUpdate: new Date(repoData.updated_at).toLocaleDateString(),
+			createdOn: new Date(repoData.created_at).toLocaleDateString(),
+			size: repoData.size,
 			languages: Object.keys(languagesData),
 			forks: repoData.forks_count,
 			openIssues: repoData.open_issues_count,

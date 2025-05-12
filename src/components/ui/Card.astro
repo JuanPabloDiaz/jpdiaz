@@ -28,6 +28,8 @@ interface Props {
     children?: HTMLElement | HTMLElement[];
     images_path?: string;
     lastUpdate?: string;
+    createdOn?: string;
+    size?: number;
     languages?: string[];
     forks?: number;
     openIssues?: number;
@@ -49,6 +51,8 @@ const {
     tags = ['Tags'],
     images_path,
     lastUpdate = '',
+    createdOn = '',
+    size = 0,
     languages = [],
     forks = 0,
     openIssues = 0,
@@ -94,6 +98,18 @@ const imagePath = filename && filename in images ? images[filename as keyof type
                                     <div class="flex items-center gap-1.5">
                                         <Icon name="fe:clock" class="w-4 h-4 text-orange" />
                                         <span>{lastUpdate}</span>
+                                    </div>
+                                )}
+                                {createdOn && (
+                                    <div class="flex items-center gap-1.5">
+                                        <Icon name="fe:calendar" class="w-4 h-4 text-orange" />
+                                        <span>Created: {createdOn}</span>
+                                    </div>
+                                )}
+                                {size > 0 && (
+                                    <div class="flex items-center gap-1.5">
+                                        <Icon name="codicon:database" class="w-4 h-4 text-orange" />
+                                        <span>{size} KB</span>
                                     </div>
                                 )}
                                 {languages.length > 0 && (
