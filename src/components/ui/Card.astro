@@ -111,7 +111,7 @@ const imagePath = filename && filename in images ? images[filename as keyof type
                                         </span>
                                     )}
                                 </div>
-                                
+
                                 <div class="grid grid-cols-2 gap-3 text-sm">
                                     {lastUpdate && (
                                         <div class="flex items-center gap-2 bg-black/5 dark:bg-white/5 px-3 py-1.5 rounded-lg">
@@ -160,6 +160,9 @@ const imagePath = filename && filename in images ? images[filename as keyof type
             </div>
             <div class="absolute bottom-4 left-4 right-4 opacity-0 transform translate-y-full transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
                 <div class="flex flex-wrap items-center justify-between gap-2">
+                	<article class="flex items-center gap-1 bg-gray-100 dark:bg-gray-800 rounded-lg px-3 py-1.5 transition duration-300 hover:bg-gray-200 dark:hover:bg-gray-700 text-black dark:text-white">
+                        <GitHubStars github_url={github_url} />
+                    </article>
                     <div class="flex items-center gap-2">
                         <a
                             href={url}
@@ -184,9 +187,7 @@ const imagePath = filename && filename in images ? images[filename as keyof type
                             )
                         }
                     </div>
-					<article class="flex items-center gap-1 bg-gray-100 dark:bg-gray-800 rounded-lg px-3 py-1.5 transition duration-300 hover:bg-gray-200 dark:hover:bg-gray-700 text-black dark:text-white">
-                        <GitHubStars github_url={github_url} />
-                    </article>
+
                 </div>
             </div>
         </div>

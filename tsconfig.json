@@ -21,7 +21,7 @@
 			"@assets/*": ["assets/*"],
 			"@pages/*": ["pages/*"],
 			"@plugins/*": ["plugins/*"],
-			"@i18n/*": ["i18n/*"],
+			"@i18n/*": ["i18n/*"]
 		}
 	}
 }

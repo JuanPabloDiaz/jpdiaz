@@ -1,8 +1,8 @@
 ---
-title: "My Open Source Journey"
-description: "My journey into open source development."
+title: 'My Open Source Journey'
+description: 'My journey into open source development.'
 pubDate: 2025-05-06
-lang: "en"
+lang: 'en'
 tags:
   - open-source
   - journey
@@ -15,7 +15,6 @@ Like many developers, I was initially drawn to open source for several compellin
 
 Beyond personal growth, I also recognized the practical benefits: gaining real-world experience and strengthening my resume with tangible GitHub contributions that potential employers could examine. Open source offered all of this in one package.
 
-
 ![Open Source Cycle](../../assets/images/blog/oss/oss-cycle.png)
 
 <!-- ![Open Source Journey](../../assets/images/blog/oss/oss-journey.png) -->
@@ -27,7 +26,6 @@ My journey began like most contributors – with small, manageable first steps. 
 These initial contributions might have seemed minor, but they served a crucial purpose. They helped me understand the collaborative workflow of open source development and build confidence in my ability to contribute meaningfully.
 
 ![Open Source Contributions](../../assets/images/blog/oss/oss-contributions.png)
-
 
 ## Finding My Niche
 
@@ -55,7 +53,6 @@ My transition from contributor to maintainer happened organically through consis
 
 ::github{repo="tech-conferences/conference-data"}
 
-
 - **[Public APIs](https://publicapis.dev)** (Maintainer since July 2024): A comprehensive collection of public APIs for developers, categorized across numerous domains including animals, books, cryptocurrencies, development tools, music, weather and more. My work includes expanding the available API listings and reviewing pull requests.
 
 ::github{repo="marcelscruz/public-apis"}
@@ -71,6 +68,7 @@ My transition from contributor to maintainer happened organically through consis
 The journey hasn't been without obstacles. I've frequently encountered unfamiliar technologies and frameworks that initially seemed intimidating. In one particularly stressful incident, I deployed a change that broke a production website – a sobering lesson in the responsibility that comes with open source contribution.
 
 When facing these challenges, I've relied on several strategies:
+
 - Consulting documentation thoroughly
 - Leveraging AI tools like ChatGPT to understand complex concepts
 - Reaching out to community members on Discord and other platforms
