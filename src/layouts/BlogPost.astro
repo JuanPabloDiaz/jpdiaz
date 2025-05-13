@@ -1,7 +1,8 @@
 ---
 import Layout from './Layout.astro';
-import { ui } from '../i18n/ui';
-import Navbar from '../components/Navbar.astro';
+import { ui } from '@i18n/ui';
+import Navbar from '@components/Navbar.astro';
+import { site } from '@src/consts';
 
 interface Props {
 	title: string;
@@ -45,7 +46,7 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString(
 );
 ---
 
-<Layout metaTitle={`${title} | Blog`} includeSidebar={false}>
+<Layout metaTitle={`${title} - ${site.author} | Blog`} includeSidebar={false}>
 	{
 		mathjax && (
 			<script

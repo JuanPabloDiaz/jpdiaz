@@ -4,6 +4,7 @@ import Layout from '@layouts/Layout.astro';
 import { ui } from '../../../i18n/ui';
 import Navbar from '@components/Navbar.astro';
 import { getSortedPosts } from '@utils/collectionUtils';
+import { site } from '@src/consts';
 
 const blogMenu = [
 	{ title: 'Inicio', path: '/es' },
@@ -20,7 +21,7 @@ const langToggleUrl = currentPath.startsWith('/es/')
 	: `/es${currentPath}`;
 ---
 
-<Layout metaTitle="Blog | Juan Diaz" includeSidebar={false}>
+<Layout metaTitle={`Blog | ${site.author}`} includeSidebar={false}>
 	<Navbar menu={blogMenu} button="Resume" />
 	<section class="mx-auto max-w-3xl px-4 py-8 text-black dark:text-white">
 		<h1 class="mb-8 text-4xl font-bold text-black dark:text-white">

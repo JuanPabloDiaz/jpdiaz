@@ -5,9 +5,10 @@ import Navbar from '@components/Navbar.astro';
 import CallToAction from '@components/CallToAction.astro';
 import ProjectListSmall from '@components/ProjectListSmall.astro';
 import { backHomeMenu } from '@src/consts';
+import { site } from '@src/consts';
 ---
 
-<Layout metaTitle="Juan Diaz | More Open Source" includeSidebar={false}>
+<Layout metaTitle={`More Open Source | ${site.author}`} includeSidebar={false}>
 	<Navbar menu={backHomeMenu} button="Home" />
 	<main class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto">
 		<SubTitle text="More Open Source" />
