@@ -1,56 +1,10 @@
 ---
 import SubTitle from '@components/ui/SubTitle.astro';
 import GitHubIcon from './icons/GitHubIcon.astro';
-import { site } from '@src/consts';
+import { site, whatImDoing } from '@src/consts';
 const LinkStyle = 'hover:underline hover:underline-offset-4 text-orange';
-
-const whatImDoing = [
-	{
-		role: 'Founder & Front-End Developer @',
-		url: 'https://talentoparati.com',
-		repo: '#',
-		title: 'Talento Pata TI',
-		date: 'June 2024.',
-	},
-	{
-		role: 'Open-Source Maintainer @',
-		url: 'https://confs.tech',
-		repo: 'https://github.com/tech-conferences/conference-data/graphs/contributors',
-		title: 'Confs.tech',
-		date: 'April 2024.',
-	},
-	{
-		role: 'Open-Source Maintainer @',
-		url: 'https://publicapis.dev',
-		repo: 'https://github.com/marcelscruz/public-apis/graphs/contributors',
-		title: 'Public APIs',
-		date: 'July 2024.',
-	},
-	{
-		role: 'Open-Source Maintainer @',
-		url: 'https://devresourc.es',
-		repo: 'https://github.com/marcelscruz/dev-resources/graphs/contributors',
-		title: 'Dev Resources',
-		date: 'July 2024.',
-	},
-];
 ---
 
-<!-- <section
-	data-testid="about"
-	id="about"
-	class="mb-10 flex flex-col items-center justify-center md:mb-52 lg:mb-0 lg:h-screen lg:flex-row"
->
-	<div class="mb-10 flex w-full flex-col items-center justify-center lg:mb-0 lg:w-1/2">
-		<SubTitle text="About me" />
-	</div>
-
-	<div class="w-full text-justify text-black dark:text-white lg:w-1/2">
-		<p class="mb-2">
-			{description}
-		</p>
-	</div>
-</section> -->
 <section
 	data-testid="about"
 	id="about"
@@ -75,33 +29,62 @@ const whatImDoing = [
 		<SubTitle text="What I do" />
 	</div>
 
-	<div class="w-full text-justify text-black dark:text-white lg:w-1/2">
-		{
-			whatImDoing.map((iDo, index) => (
-				<p class="mb-2 flex justify-evenly" key={index}>
-					{iDo.role}
+	<div class="w-full text-black dark:text-white lg:w-1/2">
+		<!-- Founder Role -->
+		{(() => {
+			const founder = whatImDoing.find(iDo => iDo.role.includes('Founder'));
+			if (!founder) return null;
+			return (
+				<div class="mb-6 pb-2 border-b border-orange-200 dark:border-orange-800 flex flex-wrap items-center gap-2">
+					<span class="font-semibold">{founder.role}</span>
 					<a
-						href={iDo.url}
+						href={founder.url}
 						class={LinkStyle}
-						aria-label={iDo.title}
+						aria-label={founder.title}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						{iDo.title}
+						{founder.title}
 					</a>
-					<a
-						href={iDo.repo}
-						class="hover:text-orange"
-						aria-label={iDo.title}
-						title="GitHub Contributors Graph"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<GitHubIcon />
-					</a>
-					• Since {iDo.date}
-				</p>
-			))
-		}
+					<span class="text-sm text-gray-500">• Since {founder.date}</span>
+				</div>
+			);
+		})()}
+
+		<!-- Maintainer Banner & Project Pills -->
+		<div class="mb-4">
+			<span class="block font-bold text-orange-700 dark:text-orange-300 mb-2">
+				Maintainer of
+			</span>
+			<div class="flex flex-wrap gap-2">
+				{whatImDoing.filter(iDo => iDo.role.includes('Open-Source Maintainer')).map((iDo) => (
+					<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-orange-50 dark:bg-orange-900 border border-orange-200 dark:border-orange-800 text-sm font-medium">
+						<a href={iDo.url} class="project-link font-semibold" target="_blank" rel="noopener noreferrer">{iDo.title}</a>
+						<a href={iDo.repo} target="_blank" rel="noopener noreferrer" title="GitHub Contributors" class="github-link">
+							<GitHubIcon class="w-4 h-4" />
+						</a>
+						<span class="text-gray-400 text-xs ml-1">{iDo.date.replace(/\./g, '')}</span>
+					</span>
+				))}
+			</div>
+			<style>
+			.project-link {
+			  color: #be580c;
+			  transition: color 0.2s, text-decoration 0.2s;
+			}
+			.project-link:hover {
+			  color: #f97316;
+			  text-decoration: underline;
+			  text-underline-offset: 2px;
+			}
+			.github-link {
+			  color: inherit;
+			  transition: color 0.2s;
+			}
+			.github-link:hover {
+			  color: #f97316;
+			}
+			</style>
+		</div>
 	</div>
 </section>
