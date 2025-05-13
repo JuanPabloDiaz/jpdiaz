@@ -1,4 +1,4 @@
-const GITHUB_API_BASE = 'https://api.github.com';
+import { GITHUB_API_BASE_URL } from '@src/consts';
 
 interface GitHubRepo {
 	updated_at: string;
@@ -70,7 +70,7 @@ export function getRepoDetails(url: string) {
 // Helper function to make authenticated GitHub API requests
 async function githubRequest<T>(endpoint: string): Promise<T> {
 	const githubToken = import.meta.env.PUBLIC_GITHUB_TOKEN;
-	const response = await fetch(`${GITHUB_API_BASE}${endpoint}`, {
+	const response = await fetch(`${GITHUB_API_BASE_URL}${endpoint}`, {
 		headers: {
 			Accept: 'application/vnd.github.v3+json',
 			Authorization: `token ${githubToken}`,

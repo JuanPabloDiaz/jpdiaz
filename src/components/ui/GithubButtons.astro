@@ -1,15 +1,13 @@
 ---
 import IndicatorCount from '@components/ui/IndicatorCount.astro';
 import { getGitHubUserData } from '@utils/github';
+import { site } from '@src/consts';
 
-const userData = await getGitHubUserData('JuanPabloDiaz');
+const userData = await getGitHubUserData(site.githubUsername);
 const repoCount = userData?.repoCount || 0;
+const githubProfileUrl = `https://github.com/${site.githubUsername}?tab=repositories`;
 ---
 
 <div class="mr-auto place-self-center lg:col-span-7">
-	<IndicatorCount
-		text="GitHub Repos"
-		count={repoCount || 75}
-		href="https://github.com/juanPablodiaz?tab=repositories"
-	/>
+	<IndicatorCount text="GitHub Repos" count={repoCount || 75} href={githubProfileUrl} />
 </div>

@@ -4,7 +4,7 @@ import Link from '@components/ui/Link.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
 import GithubButtons from './ui/GithubButtons.astro';
 import Card from './ui/Card.astro';
-import { getGitHubRepoData } from '../utils/github';
+import { getGitHubRepoData } from '@utils/github';
 
 const projects = await getCollection('projects', ({ data }) => {
 	return !data.inProgress;

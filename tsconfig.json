@@ -1,5 +1,5 @@
 {
-	"extends": "astro/tsconfigs/base",
+	"extends": "astro/tsconfigs/strict",
 	"compilerOptions": {
 		"target": "ESNext",
 		"module": "ESNext",
@@ -12,17 +12,18 @@
 		// Astro will directly run your TypeScript code, no transpilation needed.
 		"noEmit": true,
 		"strictNullChecks": true,
-		"baseUrl": "src",
+		"baseUrl": ".",
 		"paths": {
-			"@lib/*": ["lib/*"],
-			"@utils/*": ["utils/*"],
-			"@components/*": ["components/*"],
-			"@layouts/*": ["layouts/*"],
-			"@assets/*": ["assets/*"],
-			"@pages/*": ["pages/*"],
-			"@plugins/*": ["plugins/*"],
-			"@i18n/*": ["i18n/*"],
-			"@styles/*": ["styles/*"]
+			"@src/*": ["src/*"],
+			"@components/*": ["src/components/*"],
+			"@layouts/*": ["src/layouts/*"],
+			"@assets/*": ["src/assets/*"],
+			"@pages/*": ["src/pages/*"],
+			"@styles/*": ["src/styles/*"],
+			"@utils/*": ["src/utils/*"],
+			"@i18n/*": ["src/i18n/*"],
+			"@lib/*": ["src/lib/*"],
+			"@plugins/*": ["src/plugins/*"]
 		}
 	}
 }

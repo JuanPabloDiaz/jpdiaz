@@ -31,12 +31,9 @@ export const site = {
 	url: 'https://jpdiaz.vercel.app/', // required
 	baseUrl: '', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
 	motto: 'Actions speak louder than words.',
-	recentBlogSize: 5,
-	archivePageSize: 25,
-	postPageSize: 10,
-	feedPageSize: 20,
-	beian: '',
-	asideTagsMaxSize: 0,
+	githubUsername: 'JuanPabloDiaz',
+	aboutMePageDescription:
+		'Committed Front End developer seeking opportunities in growth-oriented startups. Upholds values of discipline, loyalty, and reliability, with a self-motivated approach to continuous learning and skill enhancement',
 };
 
 export const SITE_DESCRIPTION =
@@ -44,11 +41,22 @@ export const SITE_DESCRIPTION =
 export const GENERATE_SLUG_FROM_TITLE = true;
 export const TRANSITION_API = true;
 
+export const GITHUB_API_BASE_URL = 'https://api.github.com';
+export const SKILL_ICON_BASE_URL = 'https://go-skill-icons.vercel.app/api/icons?i=';
+
 export const backHomeMenu = [
 	{
 		title: '', // Intentionally blank, assuming Navbar handles this as an icon or specific style
 		path: '/',
 	},
+];
+
+export const homePageMenu = [
+	{ title: 'About', path: '#top' },
+	{ title: 'Projects', path: '#projects' },
+	{ title: 'Open-Source', path: '#oss' },
+	{ title: 'Blog', path: '/blog' },
+	{ title: 'Contact', path: '#contact' },
 ];
 
 export const config = {
@@ -63,10 +71,6 @@ export const config = {
 
 /**
  * Navigator
- * name {string}
- * iconClass {string} icon style
- * href {string}  link url
- * target {string} optional "_self|_blank" open in current window / open in new window
  */
 export const categories = [
 	{
@@ -103,52 +107,3 @@ export const categories = [
 		],
 	},
 ];
-
-/**
- * Personal link address
- */
-export const infoLinks = [
-	{
-		icon: 'ri-telegram-fill',
-		name: 'telegram',
-		outlink: '',
-	},
-	{
-		icon: 'ri-twitter-fill',
-		name: 'twitter',
-		outlink: '',
-	},
-	{
-		icon: 'ri-instagram-fill',
-		name: 'instagram',
-		outlink: '',
-	},
-	{
-		icon: 'ri-github-fill',
-		name: 'github',
-		outlink: 'https://github.com/',
-	},
-	{
-		icon: 'ri-rss-fill',
-		name: 'rss',
-		outlink: '',
-	},
-];
-
-export const comment = {
-	enable: false,
-	type: 'giscus', // waline | giscus,
-	walineConfig: {
-		serverUrl: '',
-		lang: 'en',
-		pageSize: 20,
-		wordLimit: '',
-		count: 5,
-		pageview: true,
-		reaction: true,
-		requiredMeta: ['nick', 'mail'],
-		whiteList: ['/message/', '/friends/'],
-	},
-
-	//
-};

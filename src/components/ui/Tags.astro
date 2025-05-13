@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { SKILL_ICON_BASE_URL } from '@src/consts';
 
 export interface Props {
 	tags?: string[];
@@ -7,8 +8,6 @@ export interface Props {
 }
 
 const { tags } = Astro.props;
-
-const iconURL = 'https://go-skill-icons.vercel.app/api/icons?i=';
 ---
 
 <script>
@@ -52,7 +51,7 @@ const iconURL = 'https://go-skill-icons.vercel.app/api/icons?i=';
 		<div class="flex flex-row flex-wrap justify-start gap-2">
 			{tags?.map((tag) => {
 				const iconPath = tag.toLowerCase();
-				const skillURL = `${iconURL}${iconPath}`;
+				const skillURL = `${SKILL_ICON_BASE_URL}${iconPath}`;
 				return (
 					<Image
 						src={skillURL}

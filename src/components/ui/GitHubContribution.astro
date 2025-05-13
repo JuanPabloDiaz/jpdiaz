@@ -1,5 +1,6 @@
 ---
 import { getGitHubCommits } from '@utils/github';
+import { site } from '@src/consts';
 
 interface Props {
 	github_url: string;
@@ -12,12 +13,12 @@ const isMoreProjectsPage = currentPath.includes('/more-projects');
 const labelText = isMoreProjectsPage ? 'commits' : 'contributions';
 
 let contributionsCount = 0;
-const commitData = await getGitHubCommits(github_url, 'JuanPabloDiaz');
+const commitData = await getGitHubCommits(github_url, site.githubUsername);
 if (commitData) {
 	contributionsCount = commitData.count;
 }
 
-const contributionUrl = `${github_url}/commits?author=JuanPabloDiaz`;
+const contributionUrl = `${github_url}/commits?author=${site.githubUsername}`;
 ---
 
 {

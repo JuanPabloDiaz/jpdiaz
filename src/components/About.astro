@@ -1,10 +1,7 @@
 ---
 import SubTitle from '@components/ui/SubTitle.astro';
 import GitHubIcon from './icons/GitHubIcon.astro';
-
-const description =
-	'Committed Front End developer seeking opportunities in growth-oriented startups. Upholds values of discipline, loyalty, and reliability, with a self-motivated approach to continuous learning and skill enhancement';
-
+import { site } from '@src/consts';
 const LinkStyle = 'hover:underline hover:underline-offset-4 text-orange';
 
 const whatImDoing = [
@@ -65,7 +62,7 @@ const whatImDoing = [
 
 	<div class="w-full text-justify text-black dark:text-white lg:w-1/2">
 		<p class="mb-2">
-			{description}
+			{site.aboutMePageDescription}
 		</p>
 	</div>
 </section>
