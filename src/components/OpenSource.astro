@@ -1,12 +1,7 @@
 ---
-import { getCollection } from 'astro:content';
-import CardSmall from '@components/ui/CardSmall.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
 import Link from '@components/ui/Link.astro';
-
-const projects = await getCollection('open-source', ({ data }) => {
-	return !data.inProgress;
-});
+import ProjectListSmall from '@components/ProjectListSmall.astro';
 ---
 
 <!-- the div below is used to scroll to this section and place the navbar in this h-10 div otherwise the navbar will overlap the section -->
@@ -20,20 +15,7 @@ const projects = await getCollection('open-source', ({ data }) => {
 	<p class="text-gray-500 text-center lg:w-1/2">
 		I love to contribute to OSS. Here are a few projects that I have worked on.
 	</p>
-	<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
-		{
-			projects.map((project) => (
-				<CardSmall
-					title={project.data.title}
-					description={project.data.description}
-					github_url={project.data.github_link}
-					url={project.data.link}
-					tags={project.data.tags}
-					contribution={project.data.contribution}
-				/>
-			))
-		}
-	</div>
+	<ProjectListSmall collectionName="open-source" />
 	<Link
 		text="View more Contributions"
 		ariaLabel="View more Contributions to Open Source"

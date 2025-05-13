@@ -1,0 +1,68 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import CardSmall from '@components/ui/CardSmall.astro';
+import { sortCollectionById } from '@utils/collectionUtils';
+
+// Define a union type for all possible collection names this component will handle
+type ProjectCollectionName =
+	| 'more-full-stack-projects'
+	| 'more-projects'
+	| 'open-source'
+	| 'more-open-source';
+
+// Define a base interface for the data structure expected from these collections
+interface BaseProjectData {
+	title: string;
+	description: string;
+	link: string;
+	tags: string[];
+	github_link?: string;
+	contribution?: number;
+	inProgress?: boolean;
+}
+
+// Define the component's props
+interface Props {
+	collectionName: ProjectCollectionName;
+}
+
+const { collectionName } = Astro.props;
+
+// Fetch the collection, explicitly typing the expected data structure
+let items = await getCollection(collectionName, (entry: CollectionEntry<ProjectCollectionName>) => {
+	const data = entry.data as BaseProjectData; // Type assertion
+	return !data.inProgress;
+});
+
+// Apply sorting for specific collections
+if (collectionName === 'more-full-stack-projects' || collectionName === 'more-projects') {
+	// Assuming sortCollectionById can handle CollectionEntry[]
+	items = sortCollectionById(items);
+}
+---
+
+<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
+	{
+		items.map((item) => {
+			const projectData = item.data as BaseProjectData; // Assert type for easier access
+			return (
+				<CardSmall
+					title={projectData.title}
+					description={projectData.description}
+					github_url={projectData.github_link}
+					CardSmall
+					defaults
+					if
+					undefined
+					url={projectData.link}
+					tags={projectData.tags}
+					contribution={projectData.contribution}
+					CardSmall
+					defaults
+					if
+					undefined
+				/>
+			);
+		})
+	}
+</div>

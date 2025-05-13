@@ -4,17 +4,11 @@ import avatar from '/public/avatar.svg';
 import Link from '@components/ui/Link.astro';
 import Navbar from '@components/Navbar.astro';
 import { Image } from 'astro:assets';
-
-const backHomeMenu = [
-	{
-		title: '',
-		path: '/',
-	},
-];
+import { backHomeMenu } from '../consts';
 ---
 
 <Layout metaTitle="Juan Diaz | Thank you!" includeSidebar={false}>
-	<Navbar menu={backHomeMenu} />
+	<Navbar menu={backHomeMenu} button="Home" />
 	<section class="flex h-[80vh] flex-col items-center justify-center">
 		<div class="flex flex-col items-center space-x-4">
 			<h1 class="text-3xl font-bold text-black dark:text-white lg:text-5xl">Thank you!</h1>

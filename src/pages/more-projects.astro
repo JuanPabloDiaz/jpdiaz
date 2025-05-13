@@ -1,29 +1,11 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-import CardSmall from '@components/ui/CardSmall.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
 import GithubButtons from '@components/ui/GithubButtons.astro';
 import Navbar from '@components/Navbar.astro';
 import CallToAction from '@components/CallToAction.astro';
-import { sortCollectionById } from '@utils/collectionUtils';
-
-let fullStackProjects = await getCollection('more-full-stack-projects', ({ data }) => {
-	return !data.inProgress;
-});
-fullStackProjects = sortCollectionById(fullStackProjects);
-
-let projects = await getCollection('more-projects', ({ data }) => {
-	return !data.inProgress;
-});
-projects = sortCollectionById(projects);
-
-const backHomeMenu = [
-	{
-		title: '',
-		path: '/',
-	},
-];
+import ProjectListSmall from '@components/ProjectListSmall.astro';
+import { backHomeMenu } from '../consts';
 ---
 
 <Layout metaTitle="Juan Diaz | More Projects" includeSidebar={false}>
@@ -31,34 +13,9 @@ const backHomeMenu = [
 	<main class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto">
 		<SubTitle text="More Projects" />
 		<p class="text-black dark:text-white">Here are some more projects that I have worked on.</p>
-		<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
-			{
-				fullStackProjects.map((fullStack) => (
-					<CardSmall
-						title={fullStack.data.title}
-						description={fullStack.data.description}
-						github_url={fullStack.data?.github_link}
-						url={fullStack.data.link}
-						tags={fullStack.data.tags}
-						contribution={fullStack.data.contribution}
-					/>
-				))
-			}
-		</div>
-		<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
-			{
-				projects.map((project) => (
-					<CardSmall
-						title={project.data.title}
-						description={project.data.description}
-						github_url={project.data?.github_link}
-						url={project.data.link}
-						tags={project.data.tags}
-						contribution={project.data.contribution}
-					/>
-				))
-			}
-		</div>
+
+		<ProjectListSmall collectionName="more-full-stack-projects" />
+		<ProjectListSmall collectionName="more-projects" />
 		<div class="mb-10">
 			<GithubButtons />
 		</div>

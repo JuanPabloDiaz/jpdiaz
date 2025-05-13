@@ -1,21 +1,10 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-import CardSmall from '@components/ui/CardSmall.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
 import Navbar from '@components/Navbar.astro';
 import CallToAction from '@components/CallToAction.astro';
-
-const projects = await getCollection('more-open-source', ({ data }) => {
-	return !data.inProgress;
-});
-
-const backHomeMenu = [
-	{
-		title: '',
-		path: '/',
-	},
-];
+import ProjectListSmall from '@components/ProjectListSmall.astro';
+import { backHomeMenu } from '../consts';
 ---
 
 <Layout metaTitle="Juan Diaz | More Open Source" includeSidebar={false}>
@@ -25,20 +14,7 @@ const backHomeMenu = [
 		<p class="text-black dark:text-white">
 			Here are some additional open-source projects that I have contributed to.
 		</p>
-		<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
-			{
-				projects.map((project) => (
-					<CardSmall
-						title={project.data.title}
-						description={project.data.description}
-						github_url={project.data?.github_link}
-						url={project.data.link}
-						tags={project.data.tags}
-						contribution={project.data.contribution}
-					/>
-				))
-			}
-		</div>
+		<ProjectListSmall collectionName="more-open-source" />
 		<div class="mt-20"><CallToAction social line button /></div>
 	</main>
 </Layout>
