@@ -3,7 +3,8 @@ import CallToAction from '@components/CallToAction.astro';
 import About from './About.astro';
 import { Image } from 'astro:assets';
 import juanImage from '@assets/images/juan.jpg';
-import { site } from '@src/consts'; // Asegúrate de importar 'site'
+import { site } from '@src/consts';
+import Typewriter from 'astro-typewriter';
 
 const PDF = './files/2025-FrontEndCV.pdf';
 ---
@@ -16,8 +17,17 @@ const PDF = './files/2025-FrontEndCV.pdf';
 					class="mb-10 font-monospace text-2xl text-black dark:text-white lg:text-4xl"
 					style="font-display: swap;"
 				>
-					Hi! My name is <span class="text-orange">{site.author}</span> and I am a Front End Developer
-					based in Charlotte, NC.
+					Hi! My name is <span class="text-orange">{site.author}</span> and I am a
+					<Typewriter
+						slot="item-1"
+						words={['Front End Developer', 'React Specialist', 'UI/UX Enthusiast']}
+						loop={true}
+						cursor={true}
+						delay={75}
+						typeSpeed={75}
+						deleteSpeed={50}
+					/>
+					<span>based in Charlotte, NC.</span>
 				</h1>
 			</div>
 
