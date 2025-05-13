@@ -1,5 +1,5 @@
 ---
-inProgress: true # set to true to hide the file from the list
+inProgress: true
 title: Social Media (fix)
 description: work in progress
 link: https://social-media-jpdiaz.vercel.app/

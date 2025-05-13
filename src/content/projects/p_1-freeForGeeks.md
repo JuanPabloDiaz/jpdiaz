@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: Free For Geeks
 description: A curated list of free resources for developers and geeks.
 img_alt: Free For Geeks site

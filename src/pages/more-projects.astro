@@ -19,8 +19,6 @@ fullStackProjects.sort((a, b) => {
 	return numA - numB;
 });
 const projects = await getCollection('more-projects', ({ data }) => {
-	// console.log('data: ', data);
-	// console.log('data inProgress: ', data.inProgress);
 	return !data.inProgress;
 });
 // Sort projects by extracting the numeric part of the file name

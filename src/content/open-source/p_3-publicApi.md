@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: Public APIs
 description: A collaborative list of public APIs for developers.
 link: https://publicapis.dev/

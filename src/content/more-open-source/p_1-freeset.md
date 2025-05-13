@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: Freesets
 description: Collection of free resources like icons, images, illustrations, components, libraries and more!
 link: https://freesets.vercel.app/

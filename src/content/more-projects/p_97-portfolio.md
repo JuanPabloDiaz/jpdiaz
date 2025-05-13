@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: Portfolio React
 description: One of my first projects in React, created while following along with a course.
 link: https://portfolio-react-template-xi.vercel.app/

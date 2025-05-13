@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: Unity Catalog
 description: Open, Multi-modal Catalog for Data & AI.
 link: https://www.unitycatalog.io/

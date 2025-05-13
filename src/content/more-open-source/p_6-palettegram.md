@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: Palettegram
 description: A social media app to get designs and color palettes for designers by designer.
 link: https://palettegram.vercel.app/

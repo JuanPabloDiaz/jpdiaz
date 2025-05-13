@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: Performance Reports
 description: A GitHub Action project that runs a workflow using Unlighthouse CI to generate a performance reports for all my websites and deploy it to a Netlify site.
 link: https://reportesdiaz.netlify.app/

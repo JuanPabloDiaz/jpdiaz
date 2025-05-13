@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: Projectshut
 description: Projectshut is an open source web app that enables users to freely publish their projects and create user profiles within the platform
 link: https://www.projectshut.tech/

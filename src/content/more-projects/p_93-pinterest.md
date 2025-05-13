@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: Pinterest
 description: A Pinterest clone
 link: https://pinterest.jpdiaz.dev

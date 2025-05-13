@@ -1,5 +1,5 @@
 ---
-inProgress: true # set to true to hide the file from the list
+inProgress: true
 title: juanpablodiaz.github.io
 description: My personal portfolio built with React and Tailwind CSS.
 link: https://juanpablodiaz.github.io/

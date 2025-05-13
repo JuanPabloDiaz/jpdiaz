@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: Recharts
 description: A Next.js project that uses Recharts to display a simple chart with random data.
 link: https://recharts.jpdiaz.dev

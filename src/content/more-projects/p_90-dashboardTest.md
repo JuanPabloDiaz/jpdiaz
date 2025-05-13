@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: Experimental Dashboard
 description: An experimental dashboard that I created to learn.
 link: https://dev-shadcn-dashboard-jpdiaz.vercel.app/dashboard

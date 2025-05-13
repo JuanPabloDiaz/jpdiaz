@@ -7,8 +7,6 @@ import Navbar from '@components/Navbar.astro';
 import CallToAction from '@components/CallToAction.astro';
 
 const projects = await getCollection('more-open-source', ({ data }) => {
-	// console.log('data: ', data);
-	// console.log('data inProgress: ', data.inProgress);
 	return !data.inProgress;
 });
 

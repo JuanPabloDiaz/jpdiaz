@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: LinksHub
 description: Provides access to free resources and tools for learning and developing tech skills.
 link: https://linkshub.dev/

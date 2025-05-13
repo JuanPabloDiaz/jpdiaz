@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: My First Site at CPCC
 description: A collection of all the projects I did at CPCC (2018)
 link: https://cpcc.vercel.app/

@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: Google
 description: A Google homepage clone.
 link: https://googlehtml.jpdiaz.dev

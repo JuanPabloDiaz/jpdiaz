@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: Simple Card Design
 description: A simple card design.
 link: https://youtube-tutorials-jpdiaz.vercel.app/Glassmorphism/index.html

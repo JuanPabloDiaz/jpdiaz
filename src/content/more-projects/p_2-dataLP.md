@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: Data Landing Page
 description: Responsive website designed for a Data enterprise.
 link: https://datalp.jpdiaz.dev

@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: Feliz Navidad
 description: Personal project created for the holidays
 link: https://navidad.jpdiaz.dev

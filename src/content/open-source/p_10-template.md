@@ -1,5 +1,5 @@
 ---
-inProgress: true # set to true to hide the file from the list
+inProgress: true
 title: site here
 description: description here
 link: demoHere

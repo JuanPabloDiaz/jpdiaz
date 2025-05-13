@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: FreeCodeCamp
 description: Collection of projects. Including a Markdown Previewer, a Drum Machine, a Calculator, a Pomodoro Clock, a Quote Generator and many more.
 img_alt: freecodecamp Project

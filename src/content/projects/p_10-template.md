@@ -1,5 +1,5 @@
 ---
-inProgress: true # set to true to hide the file from the list
+inProgress: true
 title: site here
 description: description here
 img_alt: project image alt text

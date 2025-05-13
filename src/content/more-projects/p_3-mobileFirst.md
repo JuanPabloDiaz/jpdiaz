@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: Landing Page (Mobile First)
 description: A mobile first project that uses HTML and CSS to create a simple landing page.
 link: https://mobile-first-jpdiaz.vercel.app/

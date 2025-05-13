@@ -1,5 +1,5 @@
 ---
-inProgress: true # set to true to hide the file from the list
+inProgress: true
 title: Astro Test
 description: work in progress
 link: https://astro-test-eight-mu.vercel.app

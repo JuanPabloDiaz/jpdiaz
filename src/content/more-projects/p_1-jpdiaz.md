@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: My Portfolio
 description: This is my portfolio, where I show my projects and skills.
 link: https://jpdiaz.dev

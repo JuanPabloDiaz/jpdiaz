@@ -6,12 +6,10 @@ const userData = await getGitHubUserData('JuanPabloDiaz');
 const repoCount = userData?.repoCount || 0;
 ---
 
-<!-- <section class="bg-white p-4 text-black dark:bg-orange dark:text-white"> -->
 <div class="mr-auto place-self-center lg:col-span-7">
 	<IndicatorCount
 		text="GitHub Repos"
-		count={repoCount || 65}
+		count={repoCount || 75}
 		href="https://github.com/juanPablodiaz?tab=repositories"
 	/>
 </div>
-<!-- </section> -->

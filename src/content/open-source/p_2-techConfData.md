@@ -1,5 +1,5 @@
 ---
-inProgress: false # set to true to hide the file from the list
+inProgress: false
 title: Confs Tech Database
 description: A simple, clutter-free project that lists upcoming tech conferences. Permanently free.
 link: https://www.confs.tech

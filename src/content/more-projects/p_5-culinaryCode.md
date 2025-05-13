@@ -1,5 +1,5 @@
 ---
-inProgress: true # set to true to hide the file from the list
+inProgress: true
 title: Food API
 description: A Fullstack Food Ordering App.
 link: https://culinarycode.jpdiaz.dev
