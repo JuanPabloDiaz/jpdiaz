@@ -124,6 +124,7 @@ Resources list that I find helpful and would like to give credit to.
 - [GitHub API](https://docs.github.com/en/rest)
 - [Web3Forms](https://web3forms.com/)
 - [Dev-skill-icons](https://github.com/lelouchfr/skill-icons) <!-- skillicons.dev -->
+- [Astro-Typewriter](https://cyrillbolliger.github.io/astro-typewriter)
 - I used [Astro Portfolio Template - Created by veranikabarel](https://github.com/veranikabarel/astro-portfolio) as a starting point for this project.
 
 <p align="right">(<a href="#top">👆 Top 👆</a>)</p>

@@ -19,19 +19,30 @@ const PDF = './files/2025-FrontEndCV.pdf';
 				>
 					Hi! My name is <span class="text-orange">{site.author}</span> and I’m based in Charlotte, NC.
 					<br />
-					<span>I’m a </span>
-					<span style="display: inline-block; min-height: 2.5rem; text-align: left;">
+					<span>I’m </span>
+					<span style="display: inline-block; text-align: left;">
 						<Typewriter
 							messages={[
-								'Full-Stack Dev 👨‍💻',
-								'passionate Front-End Dev',
-								'Databricks MVP 2025 🏆',
-								'Open-Source Enthusiast 💻',
-								'always building side projects 🚀',
-								'always learning new things 📚',
-								'community-driven developer 🤝',
+								'a Full-Stack Dev 👨‍💻',
+								'a Front-End Dev 🤓',
+								'a Databricks MVP 🏆',
+								'a data enthusiast 📊',
+								'an OSS enthusiast 💻',
+								'a project maker 🚀',
+								'an OSS maintainer 🛠️',
+								'a learner 📚',
 							]}
+							class="typewriter"
+							writeSpeed={100}
+							deleteSpeed={50}
 						/>
+						<style>
+							.typewriter {
+								font-size: 2.5rem;
+								font-weight: 700;
+								color: #f97316;
+							}
+						</style>
 					</span>
 				</h1>
 			</div>

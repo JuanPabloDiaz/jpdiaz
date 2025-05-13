@@ -38,6 +38,37 @@ export const config = {
 	lang: 'en', // en | es
 };
 
+export const whatImDoing = [
+	{
+		role: 'Founder & Front-End Developer @',
+		url: 'https://talentoparati.com',
+		repo: '#',
+		title: 'Talento Para TI',
+		date: 'June 2024.',
+	},
+	{
+		role: 'Open-Source Maintainer @',
+		url: 'https://confs.tech',
+		repo: 'https://github.com/tech-conferences/conference-data/graphs/contributors',
+		title: 'Confs.tech',
+		date: 'April 2024.',
+	},
+	{
+		role: 'Open-Source Maintainer @',
+		url: 'https://publicapis.dev',
+		repo: 'https://github.com/marcelscruz/public-apis/graphs/contributors',
+		title: 'Public APIs',
+		date: 'July 2024.',
+	},
+	{
+		role: 'Open-Source Maintainer @',
+		url: 'https://devresourc.es',
+		repo: 'https://github.com/marcelscruz/dev-resources/graphs/contributors',
+		title: 'Dev Resources',
+		date: 'July 2024.',
+	},
+];
+
 export const social = [
 	{
 		href: 'https://github.com/juanpablodiaz',
