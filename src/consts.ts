@@ -2,12 +2,10 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const site = {
-	title: 'Juan Diaz', // required
-	favicon: '/favicon.svg', // required
-	description: 'Welcome to my Portfolio website! ',
-	author: 'Juan Diaz', // required
-	avatar: '/avatar.png', // required
-	url: 'https://jpdiaz.vercel.app/', // required
+	author: 'Juan Díaz',
+	description:
+		'Juan Díaz is a web developer based in Charlotte, NC. He specializes in building (and occasionally designing) exceptional websites.',
+	url: 'https://jpdiaz.vercel.app/',
 	baseUrl: '', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
 	motto: 'Actions speak louder than words.',
 	githubUsername: 'JuanPabloDiaz',
@@ -15,8 +13,6 @@ export const site = {
 		'Committed Front End developer seeking opportunities in growth-oriented startups. Upholds values of discipline, loyalty, and reliability, with a self-motivated approach to continuous learning and skill enhancement',
 };
 
-export const SITE_DESCRIPTION =
-	'Juan Diaz is a web developer based in Charlotte, NC. He specializes in building (and occasionally designing) exceptional websites.';
 export const GENERATE_SLUG_FROM_TITLE = true;
 export const TRANSITION_API = true;
 
@@ -25,7 +21,7 @@ export const SKILL_ICON_BASE_URL = 'https://go-skill-icons.vercel.app/api/icons?
 
 export const backHomeMenu = [
 	{
-		title: '', // Intentionally blank, assuming Navbar handles this as an icon or specific style
+		title: '', // Intentionally blank, Navbar handles this as an icon or specific style
 		path: '/',
 	},
 ];

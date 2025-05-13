@@ -5,6 +5,7 @@ import Link from '@components/ui/Link.astro';
 import Navbar from '@components/Navbar.astro';
 import { Image } from 'astro:assets';
 import { backHomeMenu } from '@src/consts';
+import { site } from '@src/consts';
 ---
 
 <Layout metaTitle="Juan Diaz | Thank you!" includeSidebar={false}>
@@ -22,7 +23,7 @@ import { backHomeMenu } from '@src/consts';
 				<Image
 					class="opacity-90 shadow-orange/50 duration-75 hover:scale-105 hover:transform hover:opacity-50 hover:shadow-2xl"
 					src={avatar}
-					alt="Juan Diaz"
+					alt={site.author}
 					format="svg"
 					width={150}
 					height={150}

@@ -3,6 +3,9 @@ import CallToAction from '@components/CallToAction.astro';
 import About from './About.astro';
 import { Image } from 'astro:assets';
 import juanImage from '@assets/images/juan.jpg';
+import { site } from '@src/consts'; // Asegúrate de importar 'site'
+
+const PDF = './files/2025-FrontEndCV.pdf';
 ---
 
 <section data-testid="hero" id="hero" class="mb-0 mt-0 h-auto text-center md:mb-24">
@@ -13,11 +16,17 @@ import juanImage from '@assets/images/juan.jpg';
 					class="mb-10 font-monospace text-2xl text-black dark:text-white lg:text-4xl"
 					style="font-display: swap;"
 				>
-					Hi! My name is <span class="text-orange">Juan Diaz</span> and I am a Front End Developer based
-					in Charlotte, NC.
+					Hi! My name is <span class="text-orange">{site.author}</span> and I am a Front End Developer
+					based in Charlotte, NC.
 				</h1>
 			</div>
-			<div class="mb-10">
+
+			<p
+				class="text-gray-500 dark:text-gray-400 mb-6 max-w-2xl font-light md:text-lg lg:mb-8 lg:text-xl"
+			>
+				{site.motto}
+			</p>
+			<div class="mb-4 space-y-4 sm:flex sm:space-x-4 sm:space-y-0">
 				<CallToAction button />
 			</div>
 		</div>
@@ -25,7 +34,7 @@ import juanImage from '@assets/images/juan.jpg';
 			<Image
 				class="rounded-full opacity-90 shadow-orange/50 duration-75 hover:scale-105 hover:transform hover:opacity-50 hover:shadow-2xl"
 				src={juanImage}
-				alt="Juan Diaz"
+				alt={site.author}
 				format="jpg"
 				width={450}
 				height={450}

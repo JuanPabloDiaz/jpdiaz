@@ -5,6 +5,7 @@ import Navbar from '@components/Navbar.astro';
 import { Image } from 'astro:assets';
 import juanImage from '@assets/images/juan.jpg';
 import { backHomeMenu } from '@src/consts';
+import { site } from '@src/consts';
 ---
 
 <Layout metaTitle="Juan Diaz | 404: Not Found" includeSidebar={false}>
@@ -20,7 +21,7 @@ import { backHomeMenu } from '@src/consts';
 				<Image
 					class="rounded-full opacity-90 shadow-orange/50 duration-75 hover:scale-105 hover:transform hover:opacity-50 hover:shadow-2xl"
 					src={juanImage}
-					alt="Juan Diaz"
+					alt={site.author}
 					format="jpg"
 					width={150}
 					height={150}

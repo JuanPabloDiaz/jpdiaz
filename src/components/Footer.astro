@@ -1,8 +1,7 @@
 ---
 import Link from '@components/ui/Link.astro';
-
+import { site } from '@src/consts';
 const copyRight = `Copyright © 2023 - ${new Date().getFullYear()}`;
-const developer = ` Juan Diaz`;
 ---
 
 <footer data-testid="footer" class="p-6 text-center text-sm text-black dark:text-white">
@@ -13,9 +12,9 @@ const developer = ` Juan Diaz`;
 		<p class="flex items-center justify-center">
 			Developed by
 			<Link
-				text={developer}
-				ariaLabel=`Website developed by ${developer}`
-				href="https://github.com/juanpablodiaz"
+				text={site.author}
+				ariaLabel=`Website developed by ${site.author}`
+				href=`https://github.com/${site.githubUsername}`
 				styles="hover:underline-orange pl-1 font-bold text-orange hover:underline hover:underline-offset-4 dark:text-orange"
 			/>
 		</p>

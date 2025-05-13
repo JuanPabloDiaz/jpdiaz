@@ -10,6 +10,7 @@ import BackToTop from '@components/ui/BackToTop.astro';
 import ToggleTheme from '@components/ui/ToggleTheme.astro';
 import LangSwitch from '@components/ui/LangSwitch.astro';
 import ThemeInitializer from '@components/ui/ThemeInitializer.astro';
+import { site } from '@src/consts';
 
 export interface LayoutProps {
 	metaTitle: string;
@@ -22,16 +23,13 @@ const lang = Astro.url.pathname.startsWith('/es/') ? 'es' : 'en';
 const langToggleUrl =
 	lang === 'es' ? Astro.url.pathname.replace('/es/', '/') : `/es${Astro.url.pathname}`;
 
-const { metaTitle = 'Juan Diaz | Portfolio' } = Astro.props as LayoutProps;
+const { metaTitle = site.author + ' | Portfolio' } = Astro.props as LayoutProps;
 ---
 
 <!doctype html>
 <html lang={lang} class:list={['scroll-smooth', 'no-js']} data-testid="html">
 	<head>
-		<SEO
-			title={metaTitle}
-			description="Juan Diaz is a web developer based in Charlotte, NC. He specializes in building (and occasionally designing) exceptional websites."
-		/>
+		<SEO title={metaTitle} description={site.description} />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
