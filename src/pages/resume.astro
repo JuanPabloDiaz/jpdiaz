@@ -4,118 +4,20 @@ import TimeLineElement from '@components/ui/TimeLine.astro';
 import { Icon } from 'astro-icon/components';
 import Button from '@components/ui/Button.astro';
 import Navbar from '@components/Navbar.astro';
+import { resumeCertifications, resumeCourses, resumePageMenu } from '@src/consts';
+
 const PDF = './files/2025-FrontEndCV.pdf';
 const LinkStyle =
 	'hover:text-black dark:hover:text-white text-orange transition duration-300 dark:text-orange hover:underline hover:underline-offset-4';
 const basicLinkStyle =
 	'hover:text-orange dark:hover:text-orange text-black transition duration-300 dark:text-white flex items-center';
-
-let certifications = [
-	{
-		url: 'https://credentials.databricks.com/3428c69a-03d0-4598-8429-55786b9d8ddd#acc.G6QlY0p3',
-		title: 'Databricks MVP',
-		year: '2025',
-	},
-	{
-		url: 'https://credentials.databricks.com/7c7d153e-2986-4fb1-a38e-5b14e9b71365#acc.U5feJdOb',
-		title: 'Generative AI Fundamentals',
-		year: '2025',
-	},
-	{
-		url: 'https://credentials.databricks.com/f11020d3-09ad-47a5-a9a4-06b4ef5f9980#acc.Poi85KdA',
-		title: 'Databricks Fundamentals',
-		year: '2025',
-	},
-	{
-		url: 'https://www.freecodecamp.org/certification/1diazdev/javascript-algorithms-and-data-structures',
-		title: 'Legacy JavaScript',
-		year: '2025',
-	},
-	{
-		url: 'https://www.freecodecamp.org/certification/1diazdev/javascript-algorithms-and-data-structures-v8',
-		title: 'JavaScript and Data Structures',
-		year: '2025',
-	},
-	{
-		url: 'https://www.freecodecamp.org/certification/1diazdev/scientific-computing-with-python-v7',
-		title: 'Scientific Computing with Python',
-		year: '2025',
-	},
-	{
-		url: 'https://www.freecodecamp.org/certification/1diazdev/legacy-front-end',
-		title: 'Legacy Front End',
-		year: '2024',
-	},
-	{
-		url: 'https://freecodecamp.org/certification/1diazdev/front-end-development-libraries',
-		title: 'Front End Development Libraries',
-		year: '2023',
-	},
-	{
-		url: 'https://freecodecamp.org/certification/1diazdev/responsive-web-design',
-		title: 'Responsive Web Design',
-		year: '2022',
-	},
-	{
-		url: 'https://platzi.com/p/1diazdev/ruta/8350-cloud-servidores/diploma/detalle/',
-		title: 'Server Management',
-		year: '2022',
-	},
-	{
-		url: 'https://platzi.com/p/1diazdev/ruta/8422-cloud-digital-leader/diploma/detalle/',
-		title: 'Cloud Digital Leader',
-		year: '2022',
-	},
-	{
-		url: './certification/IT-AplicationSoftwareFundamentals.jpg',
-		title: 'IT in Application Software Fundamentals',
-		year: '2020',
-		isWide: false, // set to true if you want the item to take the full width of the page
-	},
-];
-
-let courses = [
-	{
-		url: 'https://platzi.com/p/1diazdev/curso/7396-course/diploma/detalle/',
-		title: 'React course with Vite.js & Tailwind CSS',
-	},
-	{
-		url: 'https://platzi.com/p/1diazdev/curso/6867-sass/diploma/detalle/',
-		title: 'Learn Sass: Fundamentals!',
-	},
-	{
-		url: 'https://platzi.com/p/1diazdev/curso/6207-astro/diploma/detalle/',
-		title: 'Build a website with Astro',
-	},
-	{
-		url: 'https://platzi.com/p/1diazdev/curso/7758-web-chatgpt/diploma/detalle/',
-		title: 'Build a website with ChatGPT',
-	},
-	{
-		url: 'https://platzi.com/p/1diazdev/curso/3215-new-relic/diploma/detalle/',
-		title: 'Learn Observability: Fundamentals!',
-	},
-];
-const resumeMenu = [
-	{
-		title: 'Profile',
-		path: '#top',
-	},
-	{
-		title: 'Education',
-		path: '#education',
-	},
-	{
-		title: 'Experience',
-		path: '#experience',
-	},
-];
 ---
 
 <!-- Source code: https://github.com/manuelernestog/astrofy -->
 <Layout metaTitle="Juan Diaz | Resume" sideBarActiveItemID="cv">
 	<main class="relative text-black dark:text-white">
-		<Navbar menu={resumeMenu} button="Home" />
+		<Navbar menu={resumePageMenu} button="Home" />
+		{/* Use imported resumePageMenu */}
 		<div class="container mx-auto px-4 py-8">
 			<section id="profile" class="scroll-mt-20">
 				<div class="mb-5 flex items-center justify-between">
@@ -247,14 +149,20 @@ const resumeMenu = [
 
 			<ul class="mx-6 mb-10 grid list-disc grid-cols-3 gap-2">
 				{
-					certifications.map((cert) => (
-						<li class={cert.isWide ? 'col-span-3 hidden md:block' : ''}>
-							<a href={cert.url} class={`group ${basicLinkStyle}`} target="_blank">
-								<p class="underline-offset-4 hover:underline">{cert.title}</p>
-								<span class="ml-2 hidden text-xs opacity-50 group-hover:block">● {cert.year}</span>
-							</a>
-						</li>
-					))
+					resumeCertifications.map(
+						(
+							cert // Use imported resumeCertifications
+						) => (
+							<li class={cert.isWide ? 'col-span-3 hidden md:block' : ''}>
+								<a href={cert.url} class={`group ${basicLinkStyle}`} target="_blank">
+									<p class="underline-offset-4 hover:underline">{cert.title}</p>
+									<span class="ml-2 hidden text-xs opacity-50 group-hover:block">
+										● {cert.year}
+									</span>
+								</a>
+							</li>
+						)
+					)
 				}
 			</ul>
 		</section>
@@ -269,17 +177,21 @@ const resumeMenu = [
 
 			<ul class="mx-6 mb-10 grid list-disc grid-cols-3 gap-2">
 				{
-					courses.map((course) => (
-						<li>
-							<a
-								href={course.url}
-								class={`underline-offset-4 hover:underline ${basicLinkStyle}`}
-								target="_blank"
-							>
-								{course.title}
-							</a>
-						</li>
-					))
+					resumeCourses.map(
+						(
+							course // Use imported resumeCourses
+						) => (
+							<li>
+								<a
+									href={course.url}
+									class={`underline-offset-4 hover:underline ${basicLinkStyle}`}
+									target="_blank"
+								>
+									{course.title}
+								</a>
+							</li>
+						)
+					)
 				}
 			</ul>
 		</section>
