@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 import { ui, defaultLang } from '@i18n/ui';
 import Navbar from '@components/Navbar.astro';
+import { getSortedPosts } from '@utils/collectionUtils';
 
 const blogMenu = [
 	{ title: 'Home', path: '/' },
@@ -10,15 +11,8 @@ const blogMenu = [
 ];
 
 const lang = defaultLang;
-const posts = (await getCollection('blog'))
-	.filter((post) => post.data.lang === lang)
-	.filter((post) => {
-		// In dev mode, show all posts
-		if (import.meta.env.DEV) return true;
-		// In production, only show non-draft posts
-		return !post.data.draft;
-	})
-	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const allPosts = await getCollection('blog');
+const posts = getSortedPosts(allPosts, lang);
 
 const currentPath = Astro.url.pathname;
 const langToggleUrl = currentPath.startsWith('/es/')
