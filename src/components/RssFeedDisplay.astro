@@ -1,7 +1,13 @@
 ---
 import { fetchRssFeed } from '../utils/rssFeed.js';
 
-const posts = await fetchRssFeed();
+export interface Props {
+	lang: 'en' | 'es';
+}
+
+const { lang } = Astro.props;
+
+const posts = await fetchRssFeed(lang);
 
 // Helper function to format date
 function formatDate(dateString) {

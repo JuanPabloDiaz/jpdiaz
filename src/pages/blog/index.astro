@@ -1,18 +1,21 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
-import { ui, defaultLang } from '@i18n/ui';
+
 import Navbar from '@components/Navbar.astro';
 import { getSortedPosts } from '@utils/collectionUtils';
 import { site } from '@src/consts';
-import RssFeedDisplay from '@components/RssFeedDisplay.astro'; // Import the new component
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { getCollection } from 'astro:content'; // Import getCollection
+
+import RssFeedDisplay from '@components/RssFeedDisplay.astro';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const blogMenu = [
 	{ title: 'Home', path: '/' },
 	{ title: 'Blog', path: '/blog' },
 ];
 
-const lang = defaultLang;
 const allPosts = await getCollection('blog');
 const posts = getSortedPosts(allPosts, lang);
 
@@ -26,7 +29,7 @@ const langToggleUrl = currentPath.startsWith('/es/')
 	<Navbar menu={blogMenu} button="Resume" />
 	<section class="mx-auto max-w-3xl px-4 py-8 text-black dark:text-white">
 		<h1 class="mb-8 text-4xl font-bold text-black dark:text-white">
-			{ui[lang]['blog.title']}
+			{t('blog.title')}
 		</h1>
 		<div class="space-y-8">
 			{
@@ -43,7 +46,8 @@ const langToggleUrl = currentPath.startsWith('/es/')
 								datetime={post.data.pubDate.toISOString()}
 								class="text-gray-600 dark:text-gray-300"
 							>
-								{ui[lang]['blog.publishedOn']} {post.data.pubDate.toLocaleDateString('en-US')}
+								{t('blog.publishedOn')}{' '}
+								{post.data.pubDate.toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US')}
 							</time>
 							<div class="flex flex-wrap gap-2">
 								{post.data.tags.map((tag) => (
@@ -63,12 +67,14 @@ const langToggleUrl = currentPath.startsWith('/es/')
 			}
 		</div>
 
-		{/* Add the RSS Feed Display component here */}
+		{/* Section for displaying RSS feed posts */}
 		<div class="mt-12">
 			<h2 class="mb-8 text-3xl font-bold text-black dark:text-white">
-				Latest from Talento Para TI
+				{/* This uses the 'lang' variable defined once above */}
+				{lang === 'es' ? 'Últimas entradas de Talento Para TI' : 'Latest from Talento Para TI'}
 			</h2>
-			<RssFeedDisplay />
+			{/* This passes the 'lang' variable defined once above */}
+			<RssFeedDisplay lang={lang} />
 		</div>
 	</section>
 </Layout>
