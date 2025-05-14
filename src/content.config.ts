@@ -17,6 +17,7 @@ const blogSchema = z.object({
 	updatedDate: z.date().optional(),
 	draft: z.boolean().optional(),
 	lang: z.string().optional(),
+	tags: z.array(z.string()),
 });
 
 export const collections = {

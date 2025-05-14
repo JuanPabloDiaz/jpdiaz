@@ -13,7 +13,7 @@ const blogMenu = [
 
 const lang = defaultLang;
 const allPosts = await getCollection('blog');
-const posts = getSortedPosts(allPosts, lang);
+const posts = Array.isArray(getSortedPosts(allPosts, lang)) ? getSortedPosts(allPosts, lang) : [];
 
 const currentPath = Astro.url.pathname;
 const langToggleUrl = currentPath.startsWith('/es/')
