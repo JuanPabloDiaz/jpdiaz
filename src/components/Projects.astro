@@ -48,9 +48,8 @@ const projectsWithGitHubData = await Promise.all(
 	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto"
 >
 	<SubTitle text="Projects" />
-	
-	<!-- Swiper Container -->
-	<div class="projects-swiper-container w-full">
+
+	<div class="projects-swiper-container relative w-full">
 		<div class="swiper projects-swiper">
 			<div class="swiper-wrapper">
 				{
@@ -76,14 +75,15 @@ const projectsWithGitHubData = await Promise.all(
 					))
 				}
 			</div>
-			<!-- Add navigation buttons -->
-			<div class="swiper-button-next"></div>
-			<div class="swiper-button-prev"></div>
+			<!-- Custom navigation buttons -->
+			<div class="swiper-button-prev custom-nav-btn custom-prev-btn" aria-label="Previous slide">
+			</div>
+			<div class="swiper-button-next custom-nav-btn custom-next-btn" aria-label="Next slide"></div>
 			<!-- Add pagination -->
 			<div class="swiper-pagination"></div>
 		</div>
 	</div>
-	
+
 	<div class="mt-8">
 		<Link text="View more projects" ariaLabel="View more projects" href="./more-projects" arrow />
 	</div>
@@ -109,6 +109,7 @@ const projectsWithGitHubData = await Promise.all(
 			pagination: {
 				el: '.swiper-pagination',
 				clickable: true,
+				dynamicBullets: false,
 			},
 			navigation: {
 				nextEl: '.swiper-button-next',
@@ -136,6 +137,10 @@ const projectsWithGitHubData = await Promise.all(
 					spaceBetween: 40,
 				},
 			},
+			effect: 'slide',
+			speed: 800,
+			preloadImages: true,
+			watchSlidesProgress: true,
 		});
 	});
 </script>
@@ -143,49 +148,170 @@ const projectsWithGitHubData = await Promise.all(
 <style>
 	/* Custom styles for Swiper */
 	.projects-swiper-container {
-		padding: 0 15px;
+		padding: 0 25px;
 		max-width: 1400px;
 		margin: 0 auto;
+		position: relative;
 	}
-	
+
 	.swiper {
 		width: 100%;
 		padding-bottom: 60px;
+		/* overflow: visible; */
 	}
-	
+
 	.swiper-slide {
 		height: auto;
 		display: flex;
 		justify-content: center;
 	}
-	
-	/* Style pagination bullets */
+
+	/* Style pagination bullets - smaller, cleaner bullets */
 	:global(.swiper-pagination-bullet) {
-		background: theme('colors.orange', #FF5733);
+		background: theme('colors.orange', #ff5733);
 		opacity: 0.5;
+		width: 8px;
+		height: 8px;
+		margin: 0 6px;
+		/* Fixed size for better consistency */
+		transition: all 0.3s ease;
 	}
-	
+
 	:global(.swiper-pagination-bullet-active) {
 		opacity: 1;
+		width: 8px; /* Keep the same width for a more consistent look */
+		height: 8px;
+		/* We can add a little transform instead of changing dimensions */
+		transform: scale(1.2);
 	}
-	
-	/* Style navigation arrows */
-	:global(.swiper-button-next),
-	:global(.swiper-button-prev) {
-		color: theme('colors.orange', #FF5733);
+
+	/* Custom navigation buttons */
+	:global(.custom-nav-btn) {
+		position: absolute;
+		top: 50%;
+		width: 35px;
+		height: 35px;
+		border-radius: 50%;
+		background-color: theme('colors.orange', #ff5733);
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 10;
+		cursor: pointer;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+		transition: all 0.3s ease;
 	}
-	
+
+	:global(.custom-nav-btn:hover) {
+		background-color: #ff7f50;
+		transform: scale(1.1);
+	}
+
+	:global(.custom-prev-btn) {
+		left: -10px;
+	}
+
+	:global(.custom-next-btn) {
+		right: -10px;
+	}
+
 	:global(.swiper-button-next:after),
 	:global(.swiper-button-prev:after) {
-		font-size: 1.5rem;
+		font-size: 1rem;
 		font-weight: bold;
 	}
-	
+
+	/* Style pagination bullets */
+	:global(.swiper-pagination-bullet) {
+		background: theme('colors.orange', #ff5733);
+		opacity: 0.5;
+		width: 10px;
+		height: 10px;
+		transition: all 0.3s ease;
+	}
+
+	:global(.swiper-pagination-bullet-active) {
+		opacity: 1;
+		width: 20px;
+		border-radius: 5px;
+	}
+
 	/* Responsiveness adjustments */
+	@media (max-width: 768px) {
+		:global(.custom-nav-btn) {
+			width: 35px;
+			height: 35px;
+		}
+
+		:global(.custom-prev-btn) {
+			left: -5px;
+		}
+
+		:global(.custom-next-btn) {
+			right: -5px;
+		}
+	}
+
+	/* Style navigation arrows - Enhanced version */
+	:global(.swiper-button-next),
+	:global(.swiper-button-prev) {
+		background-color: theme('colors.orange', #ff5733);
+		color: white;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		opacity: 0.8;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		/* Move buttons inward so they don't touch the card edges */
+		margin: 0 10px;
+	}
+
+	:global(.swiper-button-next:hover),
+	:global(.swiper-button-prev:hover) {
+		opacity: 1;
+		transform: scale(1.1);
+		box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+	}
+
+	:global(.swiper-button-next:after),
+	:global(.swiper-button-prev:after) {
+		font-size: 1.2rem;
+		font-weight: bold;
+	}
+
+	/* Position the navigation buttons outside the slides */
+	:global(.swiper-button-next) {
+		right: 10px;
+	}
+
+	:global(.swiper-button-prev) {
+		left: 10px;
+	}
+
+	/* Responsiveness adjustments */
+	@media (min-width: 1024px) {
+		:global(.swiper-button-next) {
+			right: -10px;
+		}
+
+		:global(.swiper-button-prev) {
+			left: -10px;
+		}
+	}
+
 	@media (max-width: 640px) {
-		.swiper-button-next,
-		.swiper-button-prev {
-			display: none;
+		:global(.swiper-button-next),
+		:global(.swiper-button-prev) {
+			display: flex;
+			width: 30px;
+			height: 30px;
+		}
+
+		:global(.swiper-button-next:after),
+		:global(.swiper-button-prev:after) {
+			font-size: 0.8rem;
 		}
 	}
 </style>
