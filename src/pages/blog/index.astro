@@ -5,6 +5,7 @@ import { ui, defaultLang } from '@i18n/ui';
 import Navbar from '@components/Navbar.astro';
 import { getSortedPosts } from '@utils/collectionUtils';
 import { site } from '@src/consts';
+import RssFeedDisplay from '@components/RssFeedDisplay.astro'; // Import the new component
 
 const blogMenu = [
 	{ title: 'Home', path: '/' },
@@ -60,6 +61,14 @@ const langToggleUrl = currentPath.startsWith('/es/')
 					</article>
 				))
 			}
+		</div>
+
+		{/* Add the RSS Feed Display component here */}
+		<div class="mt-12">
+			<h2 class="mb-8 text-3xl font-bold text-black dark:text-white">
+				Latest from Talento Para TI
+			</h2>
+			<RssFeedDisplay />
 		</div>
 	</section>
 </Layout>

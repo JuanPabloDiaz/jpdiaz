@@ -31,12 +31,14 @@
 		"astro-typewriter": "^1.1.0",
 		"mathjax": "^3.2.2",
 		"mermaid": "^11.6.0",
+		"node-fetch": "^3.3.2",
 		"reading-time": "^1.5.0",
 		"remark-directive": "^4.0.0",
 		"remixicon": "^4.6.0",
 		"swiper": "^11.2.6",
 		"unist-util-remove": "^4.0.0",
-		"unist-util-visit": "^5.0.0"
+		"unist-util-visit": "^5.0.0",
+		"xml2js": "^0.6.2"
 	},
 	"devDependencies": {
 		"@iconify-json/carbon": "^1.2.8",
