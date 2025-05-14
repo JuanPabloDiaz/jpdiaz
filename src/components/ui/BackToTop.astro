@@ -14,26 +14,32 @@ import ArrowUp from '@components/icons/ArrowUp.astro';
 	<ArrowUp />
 </button>
 
-<script>
-	let mybutton = document.getElementById('btn-back-to-top') as HTMLButtonElement;
-	window.onscroll = function (event) {
-		event.preventDefault();
-		scrollFunction();
-	};
+<script is:inline>
+  // Show/hide button and scroll to top using safe event listeners
+  window.addEventListener('DOMContentLoaded', () => {
+    const mybutton = document.getElementById('btn-back-to-top');
+    if (!mybutton) return;
 
-	function scrollFunction() {
-		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-			mybutton.style.display = 'block';
-		} else {
-			mybutton.style.display = 'none';
-		}
-	}
+    // Show/hide logic
+    const scrollFunction = () => {
+      if (window.scrollY > 20) {
+        mybutton.style.display = 'block';
+      } else {
+        mybutton.style.display = 'none';
+      }
+    };
+    window.addEventListener('scroll', scrollFunction, { passive: true });
+    scrollFunction(); // Initial state
 
-	mybutton.addEventListener('click', backToTop);
+    // Scroll to top
+    mybutton.addEventListener('click', (event) => {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-	function backToTop(event) {
-		event.preventDefault();
-		document.body.scrollTop = 0;
-		document.documentElement.scrollTop = 0;
-	}
+    // Cleanup on Astro navigation
+    document.addEventListener('astro:before-swap', () => {
+      window.removeEventListener('scroll', scrollFunction);
+    });
+  });
 </script>

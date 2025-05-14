@@ -2,8 +2,8 @@
 import { getCollection } from 'astro:content';
 import Link from '@components/ui/Link.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
-import GithubButtons from './ui/GithubButtons.astro';
-import Card from './ui/Card.astro';
+import GithubButtons from '@components/ui/GithubButtons.astro';
+import Card from '@components/projects/Card.astro';
 import { getGitHubRepoData } from '@utils/github';
 
 // Import Swiper styles
@@ -93,19 +93,19 @@ const projectsWithGitHubData = await Promise.all(
 </section>
 
 <script>
-	// Import Swiper JS
-	import Swiper from 'swiper';
-	import { Pagination, Navigation, Autoplay } from 'swiper/modules';
-
-	// Initialize Swiper
-	document.addEventListener('DOMContentLoaded', () => {
-		const projectsSwiper = new Swiper('.projects-swiper', {
-			modules: [Pagination, Navigation, Autoplay],
-			slidesPerView: 1,
-			spaceBetween: 20,
-			centeredSlides: false,
-			loop: true,
-			grabCursor: true,
+  import Swiper from 'swiper';
+  import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+  window.addEventListener('DOMContentLoaded', () => {
+    // Prevent double init in Astro navigation
+    if (window.__projectsSwiper) return;
+    window.__projectsSwiper = true;
+    const projectsSwiper = new Swiper('.projects-swiper', {
+      modules: [Pagination, Navigation, Autoplay],
+      slidesPerView: 1,
+      spaceBetween: 20,
+      centeredSlides: false,
+      loop: true,
+      grabCursor: true,
 			pagination: {
 				el: '.swiper-pagination',
 				clickable: true,
@@ -114,13 +114,12 @@ const projectsWithGitHubData = await Promise.all(
 			navigation: {
 				nextEl: '.swiper-button-next',
 				prevEl: '.swiper-button-prev',
-			},
-			autoplay: {
-				delay: 5000,
-				disableOnInteraction: false,
-				pauseOnMouseEnter: true,
-			},
-			breakpoints: {
+			},      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      breakpoints: {
 				// when window width is >= 640px
 				640: {
 					slidesPerView: 1,
@@ -136,13 +135,19 @@ const projectsWithGitHubData = await Promise.all(
 					slidesPerView: 3,
 					spaceBetween: 40,
 				},
-			},
-			effect: 'slide',
-			speed: 800,
-			preloadImages: true,
-			watchSlidesProgress: true,
-		});
-	});
+      },
+      effect: 'slide',
+      speed: 800,
+      watchSlidesProgress: true,
+    });
+    // Clean up on Astro navigation
+    document.addEventListener('astro:before-swap', () => {
+      window.__projectsSwiper = false;
+      if (projectsSwiper && typeof projectsSwiper.destroy === 'function') {
+        projectsSwiper.destroy(true, true);
+      }
+    });
+  });
 </script>
 
 <style>
