@@ -15,31 +15,31 @@ import ArrowUp from '@components/icons/ArrowUp.astro';
 </button>
 
 <script is:inline>
-  // Show/hide button and scroll to top using safe event listeners
-  window.addEventListener('DOMContentLoaded', () => {
-    const mybutton = document.getElementById('btn-back-to-top');
-    if (!mybutton) return;
+	// Show/hide button and scroll to top using safe event listeners
+	window.addEventListener('DOMContentLoaded', () => {
+		const mybutton = document.getElementById('btn-back-to-top');
+		if (!mybutton) return;
 
-    // Show/hide logic
-    const scrollFunction = () => {
-      if (window.scrollY > 20) {
-        mybutton.style.display = 'block';
-      } else {
-        mybutton.style.display = 'none';
-      }
-    };
-    window.addEventListener('scroll', scrollFunction, { passive: true });
-    scrollFunction(); // Initial state
+		// Show/hide logic
+		const scrollFunction = () => {
+			if (window.scrollY > 20) {
+				mybutton.style.display = 'block';
+			} else {
+				mybutton.style.display = 'none';
+			}
+		};
+		window.addEventListener('scroll', scrollFunction, { passive: true });
+		scrollFunction(); // Initial state
 
-    // Scroll to top
-    mybutton.addEventListener('click', (event) => {
-      event.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+		// Scroll to top
+		mybutton.addEventListener('click', (event) => {
+			event.preventDefault();
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		});
 
-    // Cleanup on Astro navigation
-    document.addEventListener('astro:before-swap', () => {
-      window.removeEventListener('scroll', scrollFunction);
-    });
-  });
+		// Cleanup on Astro navigation
+		document.addEventListener('astro:before-swap', () => {
+			window.removeEventListener('scroll', scrollFunction);
+		});
+	});
 </script>
