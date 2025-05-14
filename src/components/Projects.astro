@@ -6,6 +6,11 @@ import GithubButtons from './ui/GithubButtons.astro';
 import Card from './ui/Card.astro';
 import { getGitHubRepoData } from '@utils/github';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
 const projects = await getCollection('projects', ({ data }) => {
 	return !data.inProgress;
 });
@@ -43,30 +48,144 @@ const projectsWithGitHubData = await Promise.all(
 	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto"
 >
 	<SubTitle text="Projects" />
-	<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
-		{
-			projectsWithGitHubData.map((project) => (
-				<Card
-					url={project.data.link}
-					title={project.data.title}
-					alt={project.data.img_alt}
-					github_url={project.data.github_link}
-					images_path={project.data.image_path}
-					tags={project.data.tags}
-					description={project.data.description}
-					lastUpdate={project.githubData?.lastUpdate}
-					createdOn={project.githubData?.createdOn}
-					size={project.githubData?.size}
-					languages={project.githubData?.languages}
-					forks={project.githubData?.forks}
-					openIssues={project.githubData?.openIssues}
-					license={project.githubData?.license}
-				/>
-			))
-		}
+	
+	<!-- Swiper Container -->
+	<div class="projects-swiper-container w-full">
+		<div class="swiper projects-swiper">
+			<div class="swiper-wrapper">
+				{
+					projectsWithGitHubData.map((project) => (
+						<div class="swiper-slide">
+							<Card
+								url={project.data.link}
+								title={project.data.title}
+								alt={project.data.img_alt}
+								github_url={project.data.github_link}
+								images_path={project.data.image_path}
+								tags={project.data.tags}
+								description={project.data.description}
+								lastUpdate={project.githubData?.lastUpdate}
+								createdOn={project.githubData?.createdOn}
+								size={project.githubData?.size}
+								languages={project.githubData?.languages}
+								forks={project.githubData?.forks}
+								openIssues={project.githubData?.openIssues}
+								license={project.githubData?.license}
+							/>
+						</div>
+					))
+				}
+			</div>
+			<!-- Add navigation buttons -->
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+			<!-- Add pagination -->
+			<div class="swiper-pagination"></div>
+		</div>
 	</div>
-	<Link text="View more projects" ariaLabel="View more projects" href="./more-projects" arrow />
+	
+	<div class="mt-8">
+		<Link text="View more projects" ariaLabel="View more projects" href="./more-projects" arrow />
+	</div>
 	<div class="my-10">
 		<GithubButtons />
 	</div>
 </section>
+
+<script>
+	// Import Swiper JS
+	import Swiper from 'swiper';
+	import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+
+	// Initialize Swiper
+	document.addEventListener('DOMContentLoaded', () => {
+		const projectsSwiper = new Swiper('.projects-swiper', {
+			modules: [Pagination, Navigation, Autoplay],
+			slidesPerView: 1,
+			spaceBetween: 20,
+			centeredSlides: false,
+			loop: true,
+			grabCursor: true,
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+				pauseOnMouseEnter: true,
+			},
+			breakpoints: {
+				// when window width is >= 640px
+				640: {
+					slidesPerView: 1,
+					spaceBetween: 20,
+				},
+				// when window width is >= 768px
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 30,
+				},
+				// when window width is >= 1024px
+				1024: {
+					slidesPerView: 3,
+					spaceBetween: 40,
+				},
+			},
+		});
+	});
+</script>
+
+<style>
+	/* Custom styles for Swiper */
+	.projects-swiper-container {
+		padding: 0 15px;
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+	
+	.swiper {
+		width: 100%;
+		padding-bottom: 60px;
+	}
+	
+	.swiper-slide {
+		height: auto;
+		display: flex;
+		justify-content: center;
+	}
+	
+	/* Style pagination bullets */
+	:global(.swiper-pagination-bullet) {
+		background: theme('colors.orange', #FF5733);
+		opacity: 0.5;
+	}
+	
+	:global(.swiper-pagination-bullet-active) {
+		opacity: 1;
+	}
+	
+	/* Style navigation arrows */
+	:global(.swiper-button-next),
+	:global(.swiper-button-prev) {
+		color: theme('colors.orange', #FF5733);
+	}
+	
+	:global(.swiper-button-next:after),
+	:global(.swiper-button-prev:after) {
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+	
+	/* Responsiveness adjustments */
+	@media (max-width: 640px) {
+		.swiper-button-next,
+		.swiper-button-prev {
+			display: none;
+		}
+	}
+</style>

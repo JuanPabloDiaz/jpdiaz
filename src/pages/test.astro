@@ -1,0 +1,16 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Link from '@components/ui/Link.astro';
+import Navbar from '@components/Navbar.astro';
+import { backHomeMenu } from '@src/consts';
+import { site } from '@src/consts';
+---
+
+<Layout metaTitle={`${site.author} | Test`} includeSidebar={false}>
+	<Navbar menu={backHomeMenu} button="Home" />
+	<main class="flex h-[80vh] flex-col items-center justify-center">
+		<div class="flex flex-col items-center space-x-4">
+			<h1 class="text-3xl font-bold text-black dark:text-white lg:text-5xl">Test</h1>
+		</div>
+	</main>
+</Layout>

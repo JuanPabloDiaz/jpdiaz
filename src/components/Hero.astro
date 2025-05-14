@@ -18,9 +18,8 @@ const PDF = './files/2025-FrontEndCV.pdf';
 					style="font-display: swap;"
 				>
 					Hi! My name is <span class="text-orange">{site.author}</span> and I’m based in Charlotte, NC.
-					<br />
 					<span>I’m </span>
-					<span style="display: inline-block; text-align: left;">
+					<span class="w-full text-left mx-auto">
 						<Typewriter
 							messages={[
 								'a Full-Stack Dev 👨‍💻',
@@ -38,9 +37,14 @@ const PDF = './files/2025-FrontEndCV.pdf';
 						/>
 						<style>
 							.typewriter {
-								font-size: 2.5rem;
-								font-weight: 700;
+								font-size: 1.9rem;
+								font-weight: 600;
 								color: #f97316;
+							}
+							@media (max-width: 768px) {
+								.typewriter {
+									font-size: 1.5rem;
+								}
 							}
 						</style>
 					</span>
