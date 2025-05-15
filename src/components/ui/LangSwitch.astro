@@ -1,15 +1,44 @@
 ---
-const { lang } = Astro.props;
+interface Props {
+	currentLang: 'en' | 'es';
+	currentPathname: string;
+}
 
-// Always redirect to the home page in the selected language
-const langToggleUrl = lang === 'es' ? '/' : '/es/';
+const { currentLang, currentPathname } = Astro.props;
+
+let langToggleUrl: string;
+let switchToLangText: string;
+
+if (currentLang === 'es') {
+	if (currentPathname === '/es') {
+		langToggleUrl = '/';
+	} else if (currentPathname.startsWith('/es/')) {
+		langToggleUrl = currentPathname.substring(3);
+		if (langToggleUrl === '') {
+			langToggleUrl = '/';
+		} else if (!langToggleUrl.startsWith('/')) {
+			langToggleUrl = '/' + langToggleUrl;
+		}
+	} else {
+		langToggleUrl = '/';
+	}
+	switchToLangText = 'English';
+} else {
+	if (currentPathname === '/') {
+		langToggleUrl = '/es';
+	} else {
+		langToggleUrl = `/es${currentPathname}`;
+	}
+	switchToLangText = 'Español';
+}
 ---
 
-<div class="bg-orange">
+<div class="flex items-center">
 	<a
 		href={langToggleUrl}
 		class="bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 rounded-lg px-3 py-1 text-sm"
+		aria-label={`Switch to ${switchToLangText}`}
 	>
-		{lang === 'es' ? 'English' : 'Español'}
+		{switchToLangText}
 	</a>
 </div>

@@ -1,33 +1,35 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
-import { ui } from '../../../i18n/ui';
 import Navbar from '@components/Navbar.astro';
+import LangSwitch from '@components/ui/LangSwitch.astro';
 import { getSortedPosts } from '@utils/collectionUtils';
 import { site } from '@src/consts';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
 import RssFeedDisplay from '@components/RssFeedDisplay.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const currentPathname = Astro.url.pathname;
 
 const blogMenu = [
 	{ title: 'Inicio', path: '/es' },
 	{ title: 'Blog', path: '/es/blog' },
 ];
 
-const lang = 'es';
 const allPosts = await getCollection('blog');
 const posts = getSortedPosts(allPosts, lang);
-
-const currentPath = Astro.url.pathname;
-const langToggleUrl = currentPath.startsWith('/es/')
-	? currentPath.replace('/es/', '/')
-	: `/es${currentPath}`;
 ---
 
 <Layout metaTitle={`Blog | ${site.author}`} includeSidebar={false}>
 	<Navbar menu={blogMenu} button="Resume" />
 	<section class="mx-auto max-w-3xl px-4 py-8 text-black dark:text-white">
-		<h1 class="mb-8 text-4xl font-bold text-black dark:text-white">
-			{ui[lang]['blog.title']}
-		</h1>
+		<div class="mb-8 flex items-center justify-between">
+			<h1 class="text-4xl font-bold text-black dark:text-white">
+				{t('blog.title')}
+			</h1>
+			<LangSwitch currentLang={lang} currentPathname={currentPathname} />
+		</div>
 		<div class="space-y-8">
 			{
 				posts.map((post) => (
@@ -46,7 +48,7 @@ const langToggleUrl = currentPath.startsWith('/es/')
 								datetime={post.data.pubDate.toISOString()}
 								class="text-gray-600 dark:text-gray-300"
 							>
-								{ui[lang]['blog.publishedOn']} {post.data.pubDate.toLocaleDateString('es-ES')}
+								{t('blog.publishedOn')} {post.data.pubDate.toLocaleDateString('es-ES')}
 							</time>
 							<div class="flex flex-wrap gap-2">
 								{post.data.tags.map((tag) => (

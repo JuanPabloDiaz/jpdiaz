@@ -9,15 +9,12 @@ type Lang = (typeof supportedLangs)[number];
 const translationsData = {
 	en: {
 		'post.dateFormat': 'YYYY-MM-DD',
-		// Add other 'en' translations here if useTranslations will use this object
-		// For example, if your blog/index.astro uses t('blog.title')
 		'blog.title': 'Blog',
 		'blog.publishedOn': 'Published on',
 	},
 	es: {
 		'post.dateFormat': 'DD/MM/YYYY',
-		// Add other 'es' translations here
-		'blog.title': 'Blog', // Or 'Bitácora', 'Publicaciones', etc.
+		'blog.title': 'Blog',
 		'blog.publishedOn': 'Publicado el',
 	},
 } as const; // Using "as const" for better type inference and stricter keys
