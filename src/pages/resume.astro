@@ -4,7 +4,7 @@ import TimeLineElement from '@components/ui/TimeLine.astro';
 import { Icon } from 'astro-icon/components';
 import Button from '@components/ui/Button.astro';
 import Navbar from '@components/Navbar.astro';
-import { site, resumeCertifications, resumeCourses, resumePageMenu } from '@src/consts'; // Added site
+import { site, resumeCertifications, resumeCourses, resumePageMenu } from '@src/consts';
 
 const PDF = './files/2025-FrontEndCV.pdf';
 const LinkStyle =
@@ -17,7 +17,7 @@ const basicLinkStyle =
 <Layout metaTitle={`Resume | ${site.author}`} sideBarActiveItemID="cv">
 	<main class="relative text-black dark:text-white">
 		<Navbar menu={resumePageMenu} button="Home" />
-		{/* Use imported resumePageMenu */}
+
 		<div class="container mx-auto px-4 py-8">
 			<section id="profile" class="scroll-mt-20">
 				<div class="mb-5 flex items-center justify-between">

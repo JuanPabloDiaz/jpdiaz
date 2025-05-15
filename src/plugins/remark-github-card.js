@@ -113,16 +113,6 @@ export function remarkGithubCard() {
           }]
       )
 
-      // remove(node, (child) => {
-      //   if (child.data && "directiveLabel" in child.data && child.data.directiveLabel) {
-      //     return true;
-      //   }
-      // });
-      // remove(node,child => {
-      //   return true
-      // });
-
-
       parent.children[index] = h(
         `div#${cardUuid}-card`,
         {
