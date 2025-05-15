@@ -5,6 +5,7 @@ import { ui } from '../../../i18n/ui';
 import Navbar from '@components/Navbar.astro';
 import { getSortedPosts } from '@utils/collectionUtils';
 import { site } from '@src/consts';
+import RssFeedDisplay from '@components/RssFeedDisplay.astro'; // <-- Añadir esta importación
 
 const blogMenu = [
 	{ title: 'Inicio', path: '/es' },
@@ -63,6 +64,12 @@ const langToggleUrl = currentPath.startsWith('/es/')
 					</article>
 				))
 			}
+		</div>
+
+		{/* Sección para mostrar las entradas del feed RSS de Talento Para TI */}
+		<div class="mt-12">
+			<h2 class="mb-8 text-3xl font-bold text-black dark:text-white">Blogs de Talento Para TI</h2>
+			<RssFeedDisplay lang={lang} />
 		</div>
 	</section>
 </Layout>
