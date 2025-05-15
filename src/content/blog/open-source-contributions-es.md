@@ -10,7 +10,7 @@ tags:
 draft: false
 ---
 
-<!-- ![Open Source Contributor](../../assets/images/blog/oss/os-.png) -->
+
 
 # El Contribuidor Constante: Encontrando Mi Camino en el Open Source
 

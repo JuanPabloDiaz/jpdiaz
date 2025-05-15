@@ -17,7 +17,7 @@ Beyond personal growth, I also recognized the practical benefits: gaining real-w
 
 ![Open Source Cycle](../../assets/images/blog/oss/oss-cycle.png)
 
-<!-- ![Open Source Journey](../../assets/images/blog/oss/oss-journey.png) -->
+
 
 ## First Steps: Starting Small
 

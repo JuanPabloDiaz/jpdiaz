@@ -10,7 +10,7 @@ tags:
 draft: false
 ---
 
-<!-- ![Open Source Contributor](../../assets/images/blog/oss/os-.png) -->
+
 
 # The Consistent Contributor: Finding My Path in Open Source
 
