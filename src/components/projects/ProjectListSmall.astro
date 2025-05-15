@@ -1,6 +1,6 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
-import CardSmall from '@components/ui/CardSmall.astro';
+import CardSmall from '@components/projects/CardSmall.astro';
 import { sortCollectionById } from '@utils/collectionUtils';
 
 // Define a union type for all possible collection names this component will handle
@@ -30,7 +30,7 @@ const { collectionName } = Astro.props;
 
 // Fetch the collection, explicitly typing the expected data structure
 let items = await getCollection(collectionName, (entry: CollectionEntry<ProjectCollectionName>) => {
-	const data = entry.data as BaseProjectData; // Type assertion
+	const data = entry.data as BaseProjectData;
 	return !data.inProgress;
 });
 
@@ -44,7 +44,7 @@ if (collectionName === 'more-full-stack-projects' || collectionName === 'more-pr
 <div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
 	{
 		items.map((item) => {
-			const projectData = item.data as BaseProjectData; // Assert type for easier access
+			const projectData = item.data as BaseProjectData;
 			return (
 				<CardSmall
 					title={projectData.title}
