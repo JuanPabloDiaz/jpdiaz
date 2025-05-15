@@ -336,6 +336,11 @@
   dependencies:
     "@expressive-code/core" "^0.41.2"
 
+"@fancyapps/ui@^5.0.36":
+  version "5.0.36"
+  resolved "https://registry.npmjs.org/@fancyapps/ui/-/ui-5.0.36.tgz"
+  integrity sha512-GMygQzp1MBTFNTT6AzpbL6pXTD6bTxwjmmpI1fe8Ozmmiseu8/g82Sudl1YhcbZmS4bJgaBOF5THDFGpXQ1fDw==
+
 "@iconify-json/carbon@^1.2.8":
   version "1.2.8"
   resolved "https://registry.npmjs.org/@iconify-json/carbon/-/carbon-1.2.8.tgz"

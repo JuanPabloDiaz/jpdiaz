@@ -3,6 +3,7 @@ import Layout from './Layout.astro';
 import { ui } from '@i18n/ui';
 import Navbar from '@components/Navbar.astro';
 import { site } from '@src/consts';
+import { Image } from 'astro:assets';
 
 interface Props {
 	title: string;
@@ -53,7 +54,7 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString(
 				type="text/javascript"
 				id="MathJax-script"
 				async
-				src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+				src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" {/* Corrección: Removidos backticks */}
 			/>
 		)
 	}
@@ -62,7 +63,7 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString(
 			<script
 				type="module"
 				async
-				src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"
+				src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs" {/* Corrección: Removidos backticks */}
 			/>
 		)
 	}
@@ -74,15 +75,21 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString(
 		button="Resume"
 	/>
 	<article
-		class="prose prose-black dark:prose-invert mx-auto max-w-3xl px-4 py-8 text-black dark:text-white"
+		class="mx-auto max-w-3xl px-4 py-8 text-black dark:text-white" {/* Se mantiene la clase base del article, las clases prose se aplican más abajo */}
 	>
 		{
 			image && (
-				<img
-					src={image}
-					alt={title}
-					class="dark:shadow-zinc-800 mb-8 w-full rounded-lg object-cover shadow-lg"
-				/>
+				<div class="mb-8 flex justify-center">
+					<Image
+						src={image}
+						alt={title}
+						width={1200}
+						height={675}
+						class="dark:shadow-zinc-800 max-h-[400px] w-full max-w-2xl rounded-lg object-contain"
+						data-fancybox="hero-image" {/* Opcional: Añadir Fancybox a la imagen principal si lo deseas */}
+						data-caption={title}
+					/>
+				</div>
 			)
 		}
 		<h1 class="mb-4 text-4xl font-bold text-black dark:text-white">{title}</h1>
@@ -108,8 +115,97 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString(
 				))
 			}
 		</div>
-		<div class="prose prose-black dark:prose-invert max-w-none">
+		{/* Modificación: Envolver slot con markdown-body y mantener clases prose */}
+		<div class="markdown-body prose prose-black dark:prose-invert max-w-none">
 			<slot />
 		</div>
 	</article>
 </Layout>
+
+{/* Nuevo script añadido */}
+<script>
+  import { Fancybox } from "@fancyapps/ui";
+  import "@fancyapps/ui/dist/fancybox/fancybox.css";
+
+  Fancybox.bind("[data-fancybox]", {
+    // Tus opciones personalizadas de Fancybox aquí, si las necesitas
+    // Por ejemplo:
+    // Toolbar: {
+    //   display: {
+    //     left: ["infobar"],
+    //     middle: [],
+    //     right: ["close"],
+    //   },
+    // },
+  });
+
+  const markdownBody = document.querySelector(".markdown-body");
+
+  if (markdownBody) {
+    // Lazy loading y Fancybox para imágenes dentro del contenido Markdown
+    const images = markdownBody.querySelectorAll("img");
+    const imageObserverCallback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const image = entry.target;
+          const data_src = image.getAttribute("data-src");
+          const data_alt = image.getAttribute("data-alt"); // Para el alt real si se usa data-alt
+
+          // Añadir atributo para Fancybox a todas las imágenes dentro de .markdown-body
+          image.setAttribute("data-fancybox", "gallery"); // Agrupa todas las imágenes del post en una galería
+          // Si no tiene data-caption, usar el alt como caption para Fancybox
+          if (!image.hasAttribute('data-caption') && image.alt) {
+            image.setAttribute('data-caption', image.alt);
+          }
+
+          if (data_src) {
+            image.setAttribute("src", data_src);
+            image.removeAttribute("data-src");
+          }
+          if (data_alt) { // Si estás usando data-alt para el texto alternativo final
+             image.setAttribute("alt", data_alt);
+             image.removeAttribute("data-alt");
+          }
+          observer.unobserve(image);
+        }
+      });
+    };
+
+    const imageObserver = new IntersectionObserver(imageObserverCallback);
+    images.forEach((image) => {
+      // Para que el lazy loading funcione como en el ejemplo de mini_blog-astro,
+      // tus imágenes en Markdown deberían generarse con un atributo data-src.
+      // Ejemplo en Markdown: ![Alt text](placeholder.jpg){data-src="real-image.jpg"}
+      // Si tus <img> ya tienen 'src', Fancybox funcionará directamente sobre ellas,
+      // pero no tendrás el beneficio del lazy loading a menos que ajustes tu pipeline de Markdown.
+      // Por ahora, si la imagen ya tiene 'src', se le aplicará Fancybox.
+      // Si tiene 'data-src', se cargará de forma diferida y luego se le aplicará Fancybox.
+      if (image.hasAttribute("data-src") || image.hasAttribute("src")) {
+        imageObserver.observe(image);
+      } else {
+        // Si la imagen no tiene src ni data-src, al menos intentamos aplicar Fancybox
+        // y usar su alt como caption si está disponible.
+        image.setAttribute("data-fancybox", "gallery");
+        if (!image.hasAttribute('data-caption') && image.alt) {
+          image.setAttribute('data-caption', image.alt);
+        }
+      }
+    });
+
+    // Modificar enlaces externos para que se abran en una nueva pestaña
+    const links = markdownBody.querySelectorAll("a");
+    for (const link of links) {
+      const linkAttributes = link.getAttributeNames();
+      // Evitar modificar enlaces de notas al pie (footnote) u otros enlaces internos especiales
+      if (
+        !linkAttributes.includes('data-footnote-backref') &&
+        !linkAttributes.includes('data-footnote-ref') &&
+        link.hostname !== window.location.hostname && // Solo enlaces externos
+        link.href // Asegurarse de que el enlace tiene un href
+      ) {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer nofollow"); // 'nofollow' es opcional, considera si lo necesitas
+      }
+    }
+  }
+</script>

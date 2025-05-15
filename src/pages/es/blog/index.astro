@@ -7,6 +7,7 @@ import { getSortedPosts } from '@utils/collectionUtils';
 import { site } from '@src/consts';
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 import RssFeedDisplay from '@components/RssFeedDisplay.astro';
+import { formatDate } from '@src/utils/formatDate';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -25,9 +26,7 @@ const posts = getSortedPosts(allPosts, lang);
 	<Navbar menu={blogMenu} button="Resume" />
 	<section class="mx-auto max-w-3xl px-4 py-8 text-black dark:text-white">
 		<div class="mb-8 flex items-center justify-between">
-			<h1 class="text-4xl font-bold text-black dark:text-white">
-				{t('blog.title')}
-			</h1>
+			<h1 class="text-4xl font-bold text-black dark:text-white">Blog</h1>
 			<LangSwitch currentLang={lang} currentPathname={currentPathname} />
 		</div>
 		<div class="space-y-8">
@@ -48,7 +47,7 @@ const posts = getSortedPosts(allPosts, lang);
 								datetime={post.data.pubDate.toISOString()}
 								class="text-gray-600 dark:text-gray-300"
 							>
-								{t('blog.publishedOn')} {post.data.pubDate.toLocaleDateString('es-ES')}
+								{t('blog.publishedOn')} {formatDate(post.data.pubDate, lang)}
 							</time>
 							<div class="flex flex-wrap gap-2">
 								{post.data.tags.map((tag) => (
