@@ -1,79 +1,80 @@
 ---
-title: 'Mi Primera Media Maratón'
-description: 'Lecciones de vida más allá del asfalto'
+title: 'My First Half Marathon'
+description: 'Life lessons beyond the pavement'
 pubDate: 2025-05-10
-lang: 'es'
+lang: 'en'
 tags:
   - personal
   - journey
   - fitness
+image: '/blog-cover/life/run-finish.jpeg'
 draft: false
 ---
 
-# Mi Primera Media Maratón: Más Allá del Asfalto
+# My First Half Marathon: Beyond the Pavement
 
-## El Inicio de una Carrera Inesperada
+## The Beginning of an Unexpected Journey
 
-Como muchos de mis proyectos personales, esta historia comienza con una influencia familiar. Mi hermano, a quien considero un mentor en muchos aspectos de mi vida, es un corredor apasionado. No cualquier corredor: un atleta que ha completado un Ironman en Cartagena y actualmente se prepara para otro en San Andrés. Su dedicación al deporte siempre me ha inspirado, aunque correr nunca fue mi fuerte.
+Like many of my personal projects, this story begins with family influence. My brother, whom I consider a mentor in many aspects of my life, is a passionate runner. Not just any runner: an athlete who has completed an Ironman in Cartagena and is currently preparing for another one in San Andrés. His dedication to sports has always inspired me, even though running was never my strong suit.
 
-"Tengo pie plano," me decía a mí mismo, "correr no es para mí." Durante años, esta narrativa me limitó. El dolor que sentía era real, pero resultó ser más superable de lo que imaginaba. Con la guía de mi hermano, adquirí tenis de atletismo adecuados y plantillas específicas. Santo remedio. Lo que antes parecía imposible comenzó a transformarse en disfrutable.
+"I have flat feet," I would tell myself, "running is not for me." For years, this narrative limited me. The pain I felt was real, but it turned out to be more surmountable than I imagined. With my brother's guidance, I acquired proper running shoes and specific insoles. Problem solved. What once seemed impossible began to transform into something enjoyable.
 
-Así, casi sin darme cuenta, pasé de evitar correr a contemplar la posibilidad de una media maratón. En enero de este año, di el paso y me inscribí para la Charity Chase en Hickory, programada para mayo. No sabía entonces que esta decisión me enseñaría mucho más que resistencia física.
+And so, almost without realizing it, I went from avoiding running to contemplating the possibility of a half marathon. In January of this year, I took the leap and signed up for the Charity Chase in Hickory, scheduled for May. I didn't know then that this decision would teach me much more than physical endurance.
 
-## Más Allá del Entrenamiento
+## Beyond Training
 
-Cualquiera que haya corrido largas distancias sabe que el verdadero desafío no está en las piernas, sino en la mente. Durante mi preparación, logré completar la distancia completa de 21K un par de veces. Cada kilómetro recorrido era una pequeña victoria personal, cada sesión una prueba de voluntad.
+Anyone who has run long distances knows that the real challenge isn't in your legs, but in your mind. During my preparation, I managed to complete the full 21K distance a couple of times. Each kilometer covered was a small personal victory, each session a test of willpower.
 
-Lo que no anticipé fue cómo la pista real diferiría de mis rutas de entrenamiento. El día de la carrera me enfrenté a un terreno más irregular, con subidas y bajadas que no había experimentado antes. El cuerpo protesta, los músculos imploran descanso, y es allí donde la verdadera batalla comienza.
+What I didn't anticipate was how the actual course would differ from my training routes. On race day, I faced more irregular terrain, with uphill and downhill sections I hadn't experienced before. The body protests, muscles beg for rest, and that's where the real battle begins.
 
-> "La mente es tan poderosa que puede romper tus propios límites físicos."
+> "The mind is so powerful that it can break through your own physical limitations."
 
-Esta frase se volvió mi mantra durante la carrera. Hubo momentos en que quería detenerme, cuando cada paso parecía imposible. Pero algo extraño sucede en estas situaciones: descubres reservas de fuerza que no sabías que existían. No es magia, aunque lo parece: es el poder de la determinación humana.
+This phrase became my mantra during the race. There were moments when I wanted to stop, when each step seemed impossible. But something strange happens in these situations: you discover reserves of strength you didn't know existed. It's not magic, though it seems like it: it's the power of human determination.
 
-## Rompiendo mi Propio Récord
+## Breaking My Own Record
 
-El resultado me sorprendió tanto como la experiencia: no solo completé los 21 kilómetros en un terreno más desafiante, sino que mejoré significativamente mi tiempo. De 2 horas y 30 minutos en entrenamiento a solo 2 horas el día de la carrera.
+The result surprised me as much as the experience: not only did I complete the 21 kilometers on more challenging terrain, but I significantly improved my time. From 2 hours and 30 minutes in training to just 2 hours on race day.
 
-¿Cómo es posible rendir mejor en condiciones más difíciles? La respuesta está en esa mezcla única de adrenalina, ambiente colectivo y propósito claro que genera una carrera oficial. Ver a otros corriendo a tu lado, sentir esa energía compartida, no querer quedarte atrás—todo ello crea un combustible emocional que impulsa tu rendimiento más allá de lo que creías posible.
+How is it possible to perform better in more difficult conditions? The answer lies in that unique mix of adrenaline, collective atmosphere, and clear purpose that an official race generates. Seeing others running beside you, feeling that shared energy, not wanting to fall behind—all of this creates an emotional fuel that drives your performance beyond what you thought possible.
 
-Pero más importante que el tiempo fue la presencia de mi madre, quien viajó desde Colombia para acompañarme. Tenerla allí, animándome, fue un recordatorio de por qué hacemos lo que hacemos: por las conexiones, las experiencias compartidas y los momentos que trascienden lo cotidiano.
+But more important than the time was my mother's presence, who traveled from Colombia to support me. Having her there, cheering me on, was a reminder of why we do what we do: for the connections, the shared experiences, and the moments that transcend the ordinary.
 
-## Lecciones Más Allá del Asfalto
+## Lessons Beyond the Pavement
 
-### Compárate Solo con Tu Yo de Ayer
+### Compare Yourself Only to Yesterday's You
 
-Una de las lecciones más valiosas que me ha dejado esta experiencia es la importancia de compararse únicamente con uno mismo. En la era de las redes sociales, es fácil caer en la trampa de medirse constantemente contra los logros de otros. Vemos tiempos de carrera, distancias y logros atléticos publicados constantemente, creando una presión invisible pero poderosa.
+One of the most valuable lessons this experience has left me with is the importance of comparing yourself only to yourself. In the age of social media, it's easy to fall into the trap of constantly measuring yourself against others' achievements. We see race times, distances, and athletic accomplishments posted constantly, creating an invisible but powerful pressure.
 
-Sin embargo, cuando corres, solo importan dos personas: quien eras ayer y quien eres hoy. No conoces el viaje de los demás: sus años de entrenamiento, su contexto físico, sus ventajas naturales. Pero conoces tu propio viaje en detalle, cada obstáculo superado y cada pequeña victoria.
+However, when you run, only two people matter: who you were yesterday and who you are today. You don't know others' journeys: their years of training, their physical context, their natural advantages. But you know your own journey in detail, every obstacle overcome and every small victory.
 
-Mi tiempo de 2 horas puede parecer modesto para un corredor experimentado, pero representa un triunfo personal considerando de dónde venía: alguien que evitaba correr por completo debido al dolor. Este enfoque —medir mi progreso contra mi línea base personal— me ha brindado una satisfacción mucho más profunda que cualquier comparación externa podría ofrecer.
+My 2-hour time might seem modest to an experienced runner, but it represents a personal triumph considering where I came from: someone who completely avoided running due to pain. This approach—measuring my progress against my personal baseline—has given me much deeper satisfaction than any external comparison could offer.
 
-### El Dominio de la Mente
+### Mastery of the Mind
 
-Correr largas distancias es un ejercicio de control mental tanto como físico. Descubrí que el diálogo interno durante una carrera puede determinar su resultado más que cualquier preparación física.
+Running long distances is an exercise in mental control as much as physical. I discovered that internal dialogue during a race can determine its outcome more than any physical preparation.
 
-Es casi automático comenzar a sabotearse cuando el cuerpo duele y la meta parece distante. "No puedo más", "esto fue un error", "mejor me detengo"—estos pensamientos emergen naturalmente cuando enfrentamos desafíos. Lo fascinante es que tenemos el poder de transformar activamente ese diálogo.
+It's almost automatic to begin sabotaging yourself when your body hurts and the finish line seems distant. "I can't do this anymore," "this was a mistake," "I should stop"—these thoughts naturally emerge when facing challenges. The fascinating thing is that we have the power to actively transform that dialogue.
 
-Aprendí a interrumpir los pensamientos negativos con afirmaciones constructivas: "He entrenado para esto", "cada paso me acerca a la meta", "el dolor es temporal, el logro es permanente". Este cambio de narrativa no es simple pensamiento positivo—es una habilidad práctica que puede cultivarse y que tiene efectos tangibles en el rendimiento físico.
+I learned to interrupt negative thoughts with constructive affirmations: "I've trained for this," "each step brings me closer to the goal," "pain is temporary, achievement is permanent." This narrative shift isn't simple positive thinking—it's a practical skill that can be cultivated and has tangible effects on physical performance.
 
-Esta capacidad de redirigir la mente se extiende mucho más allá de la pista de carreras. En el trabajo, en proyectos personales, en momentos de duda—la habilidad de controlar y transformar nuestros pensamientos se ha convertido en una de mis herramientas más valiosas.
+This ability to redirect the mind extends far beyond the race track. At work, in personal projects, in moments of doubt—the ability to control and transform our thoughts has become one of my most valuable tools.
 
-### La Vida es un Balance
+### Life is a Balance
 
-Quizás la lección más profunda que me ha dejado esta experiencia es la comprensión de que la vida requiere equilibrio. Como profesionales ambiciosos, especialmente en tecnología, a menudo caemos en patrones de trabajo excesivo y obsesión por la productividad. Perseguimos metas profesionales y financieras como si fueran lo único que importa.
+Perhaps the deepest lesson this experience has left me with is the understanding that life requires balance. As ambitious professionals, especially in technology, we often fall into patterns of overwork and obsession with productivity. We pursue professional and financial goals as if they were all that matters.
 
-Preparar y completar una media maratón me obligó a adoptar una perspectiva más balanceada. Tuve que hacer espacio para el entrenamiento, descanso adecuado y recuperación. Tuve que prestar atención a mi alimentación y sueño. En resumen, tuve que cuidar de mí mismo de manera integral.
+Preparing for and completing a half marathon forced me to adopt a more balanced perspective. I had to make space for training, proper rest, and recovery. I had to pay attention to my nutrition and sleep. In short, I had to take care of myself holistically.
 
-Este enfoque me hizo cuestionar algunas prioridades. Entendí que, si bien el éxito profesional y financiero es importante, no puede ser a costa de experiencias que enriquecen la vida. El dinero viene y va, las posesiones materiales son pasajeras, pero las experiencias y los recuerdos que creamos perduran.
+This approach made me question some priorities. I understood that, while professional and financial success is important, it cannot come at the cost of experiences that enrich life. Money comes and goes, material possessions are fleeting, but the experiences and memories we create endure.
 
-Por eso he decidido invertir más en mí mismo—no solo en educación y preparación profesional, sino también en experiencias que expanden mis horizontes y enriquecen mi vida. Estas carreras no son simplemente eventos atléticos; son inversiones en recuerdos y vivencias que forman parte de quien soy.
+That's why I've decided to invest more in myself—not just in education and professional development, but also in experiences that expand my horizons and enrich my life. These races aren't simply athletic events; they're investments in memories and experiences that become part of who I am.
 
-## El Viaje Continúa
+## The Journey Continues
 
-Completar mi primera media maratón no marcó el final de un camino, sino el comienzo de uno nuevo. Ya estoy contemplando nuevos desafíos, incluyendo eventualmente un maratón completo. Pero más allá de las metas atléticas específicas, lo que realmente valoro es el viaje mismo.
+Completing my first half marathon didn't mark the end of a road, but the beginning of a new one. I'm already contemplating new challenges, including eventually a full marathon. But beyond specific athletic goals, what I truly value is the journey itself.
 
-La satisfacción no está solo en cruzar la línea de meta, sino en cada entrenamiento, cada madrugada, cada momento de superación personal. La medalla es un símbolo agradable, pero las verdaderas recompensas son internas: la fuerza que descubres, la disciplina que construyes, y la perspectiva que ganas.
+Satisfaction isn't just in crossing the finish line, but in every training session, every early morning, every moment of personal achievement. The medal is a nice symbol, but the true rewards are internal: the strength you discover, the discipline you build, and the perspective you gain.
 
-Si estás considerando dar el salto a un nuevo desafío—sea una carrera, un proyecto, o cualquier meta que parezca intimidante—mi consejo es simple: concéntrate en el proceso, no solo en el resultado. Disfruta el camino, celebra los pequeños avances, y sobre todo, recuerda que el único estándar que realmente importa es tu propio crecimiento.
+If you're considering taking the leap into a new challenge—whether a race, a project, or any goal that seems intimidating—my advice is simple: focus on the process, not just the outcome. Enjoy the journey, celebrate small advances, and above all, remember that the only standard that truly matters is your own growth.
 
-Como en la pista, así en la vida: el ritmo es personal, el viaje es único, y la verdadera victoria está en seguir avanzando, un paso a la vez.
+As on the track, so in life: the pace is personal, the journey is unique, and the true victory is in continuing to move forward, one step at a time.

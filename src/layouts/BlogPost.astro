@@ -3,6 +3,7 @@ import Layout from './Layout.astro';
 import { ui } from '@i18n/ui';
 import Navbar from '@components/Navbar.astro';
 import { site } from '@src/consts';
+import { Image } from 'astro:assets';
 
 interface Props {
 	title: string;
@@ -78,11 +79,15 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString(
 	>
 		{
 			image && (
-				<img
-					src={image}
-					alt={title}
-					class="dark:shadow-zinc-800 mb-8 w-full rounded-lg object-cover shadow-lg"
-				/>
+				<div class="mb-8 flex justify-center">
+					<Image
+						src={image}
+						alt={title}
+						width={1200}
+						height={675}
+						class="dark:shadow-zinc-800 max-h-[400px] w-full max-w-2xl rounded-lg object-contain"
+					/>
+				</div>
 			)
 		}
 		<h1 class="mb-4 text-4xl font-bold text-black dark:text-white">{title}</h1>

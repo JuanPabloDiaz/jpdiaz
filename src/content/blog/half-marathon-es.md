@@ -7,6 +7,7 @@ tags:
   - personal
   - journey
   - fitness
+image: '/blog-cover/life/run-finish.jpeg'
 draft: false
 ---
 
