@@ -1,5 +1,7 @@
 ---
-import { fetchRssFeed } from '../utils/rssFeed.js';
+import { fetchRssFeed } from '@utils/rssFeed.js';
+import { formatDate } from '@utils/formatDate';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
 
 export interface Props {
 	lang: 'en' | 'es';
@@ -7,21 +9,9 @@ export interface Props {
 
 const { lang } = Astro.props;
 
-const posts = await fetchRssFeed(lang);
+const t = useTranslations(lang);
 
-// Helper function to format date
-function formatDate(dateString) {
-	if (!dateString) return 'No date';
-	try {
-		return new Date(dateString).toLocaleDateString('en-US', {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric',
-		});
-	} catch (e) {
-		return 'Invalid date';
-	}
-}
+const posts = await fetchRssFeed(lang);
 ---
 
 <div class="rss-feed-container space-y-8">
@@ -44,7 +34,8 @@ function formatDate(dateString) {
 					)}
 					<div class="flex flex-wrap items-center gap-4 text-sm">
 						<time datetime={post.pubDate} class="text-gray-600 dark:text-gray-300">
-							Published on: {formatDate(post.pubDate)}
+							{t('blog.publishedOn')}
+							{formatDate(post.pubDate, lang)}
 						</time>
 					</div>
 				</article>
