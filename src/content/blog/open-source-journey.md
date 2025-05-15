@@ -17,8 +17,6 @@ Beyond personal growth, I also recognized the practical benefits: gaining real-w
 
 ![Open Source Cycle](../../assets/images/blog/oss/oss-cycle.png)
 
-
-
 ## First Steps: Starting Small
 
 My journey began like most contributors – with small, manageable first steps. I started with documentation improvements and simple bug fixes, primarily focusing on learning the mechanics: how to use Git properly, create pull requests, find appropriate issues to tackle, and navigate the contribution process.

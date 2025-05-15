@@ -10,8 +10,6 @@ tags:
 draft: false
 ---
 
-
-
 # The Consistent Contributor: Finding My Path in Open Source
 
 As a front-end developer navigating the ever-evolving tech landscape, I've discovered that one of the most rewarding aspects of my journey has been my involvement in open source. Unlike many contributors who join high-profile projects with massive codebases, my path took a different direction—one focused on consistency, resource sharing, and community building.

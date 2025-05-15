@@ -11,9 +11,9 @@ export function getSortedPosts(
 	return posts
 		.filter((post) => post.data.lang === lang)
 		.filter((post) => {
-			// In dev mode, show all posts
+			
 			if (import.meta.env.DEV) return true;
-			// In production, only show non-draft posts
+			
 			return !post.data.draft;
 		})
 		.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());

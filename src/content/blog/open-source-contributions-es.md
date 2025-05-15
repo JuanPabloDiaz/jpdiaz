@@ -10,8 +10,6 @@ tags:
 draft: false
 ---
 
-
-
 # El Contribuidor Constante: Encontrando Mi Camino en el Open Source
 
 Como desarrollador frontend navegando por el siempre cambiante panorama tecnológico, he descubierto que uno de los aspectos más gratificantes de mi viaje ha sido mi participación en el código abierto. A diferencia de muchos contribuidores que se unen a proyectos de alto perfil con bases de código masivas, mi camino tomó una dirección diferente: una centrada en la consistencia, el intercambio de recursos y la construcción de comunidad.
