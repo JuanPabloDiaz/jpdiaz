@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import { parseStringPromise } from 'xml2js';
 
 const RSS_FEED_BASE_URL = 'https://talentoparati.com/';
-const TARGET_AUTHOR = 'juan diaz'; // Author to filter by (case-insensitive)
+const TARGET_AUTHOR = 'juan diaz';
 
 export async function fetchRssFeed(lang = 'en') {
 	if (lang !== 'es' && lang !== 'en') {
@@ -10,19 +10,16 @@ export async function fetchRssFeed(lang = 'en') {
 		lang = 'en';
 	}
 	const RSS_FEED_URL = `${RSS_FEED_BASE_URL}${lang}/rss.xml`;
-	
 
 	try {
 		const response = await fetch(RSS_FEED_URL);
-		
+
 		if (!response.ok) {
 			throw new Error(`HTTP error! status: ${response.status}, statusText: ${response.statusText}`);
 		}
 		const xmlData = await response.text();
-		
 
 		const parsedData = await parseStringPromise(xmlData, { explicitArray: false, trim: true });
-		
 
 		let items = [];
 		if (parsedData.rss && parsedData.rss.channel && parsedData.rss.channel.item) {
@@ -38,7 +35,7 @@ export async function fetchRssFeed(lang = 'en') {
 
 		// Filter items by author
 		const filteredItems = items.filter((item) => {
-			const authorField = item.author; // Changed from item['dc:creator'] to item.author
+			const authorField = item.author;
 			return (
 				authorField &&
 				typeof authorField === 'string' &&
@@ -49,6 +46,6 @@ export async function fetchRssFeed(lang = 'en') {
 		return filteredItems;
 	} catch (error) {
 		console.error(`[RSS Feed] Failed to fetch or parse RSS feed from ${RSS_FEED_URL}:`, error);
-		return []; // Return an empty array in case of an error
+		return [];
 	}
 }

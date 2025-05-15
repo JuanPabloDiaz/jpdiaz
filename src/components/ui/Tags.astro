@@ -35,7 +35,7 @@ const { tags } = Astro.props;
 
 	// Start observing theme changes
 	window.addEventListener('load', () => {
-		updateIconsTheme(); // Initial update
+		updateIconsTheme();
 		observer.observe(document.documentElement, {
 			attributes: true,
 			attributeFilter: ['class'],

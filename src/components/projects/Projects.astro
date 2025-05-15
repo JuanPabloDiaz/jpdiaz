@@ -6,7 +6,6 @@ import GithubButtons from '@components/ui/GithubButtons.astro';
 import Card from '@components/projects/Card.astro';
 import { getGitHubRepoData } from '@utils/github';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -92,7 +91,6 @@ const projectsWithGitHubData = await Promise.all(
 </section>
 
 <script>
-	// Import Swiper JS
 	import Swiper from 'swiper';
 	import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
@@ -145,7 +143,6 @@ const projectsWithGitHubData = await Promise.all(
 </script>
 
 <style>
-	/* Custom styles for Swiper */
 	.projects-swiper-container {
 		padding: 0 25px;
 		max-width: 1400px;
@@ -172,15 +169,13 @@ const projectsWithGitHubData = await Promise.all(
 		width: 8px;
 		height: 8px;
 		margin: 0 6px;
-		/* Fixed size for better consistency */
 		transition: all 0.3s ease;
 	}
 
 	:global(.swiper-pagination-bullet-active) {
 		opacity: 1;
-		width: 8px; /* Keep the same width for a more consistent look */
+		width: 8px;
 		height: 8px;
-		/* We can add a little transform instead of changing dimensions */
 		transform: scale(1.2);
 	}
 
