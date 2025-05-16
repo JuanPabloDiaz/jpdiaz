@@ -19,7 +19,7 @@ Like many of my personal projects, this story begins with family influence. My b
 
 "I have flat feet," I would tell myself, "running is not for me." For years, this narrative limited me. The pain I felt was real, but it turned out to be more surmountable than I imagined. With my brother's guidance, I acquired proper running shoes and specific insoles. Problem solved. What once seemed impossible began to transform into something enjoyable.
 
-And so, almost without realizing it, I went from avoiding running to contemplating the possibility of a half marathon. In January of this year, I took the leap and signed up for the Charity Chase in Hickory, scheduled for May. I didn't know then that this decision would teach me much more than physical endurance.
+And so, almost without realizing it, I went from avoiding running to contemplating the possibility of a half marathon. In January of this year, I took the leap and signed up for the [Charity Chase Half Marathon](https://runsignup.com/Race/Info/NC/Hickory/CharityChaseHalfMarathon) in Hickory, NC, scheduled for May. I didn't know then that this decision would teach me much more than physical endurance.
 
 ## Beyond Training
 
