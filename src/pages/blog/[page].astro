@@ -1,36 +1,44 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 import Navbar from '@components/Navbar.astro';
 import LangSwitch from '@components/ui/LangSwitch.astro';
 import { getSortedPosts } from '@utils/collectionUtils';
 import { site } from '@src/consts';
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
-import RssFeedDisplay from '@components/RssFeedDisplay.astro';
-import { formatDate } from '@src/utils/formatDate';
+import { getCollection } from 'astro:content';
+import { formatDate } from '@utils/formatDate';
 import Pagination from '@components/ui/Pagination.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
+
+// Generate pages for pagination
+export async function getStaticPaths({ paginate }: { paginate: any }) {
+  const lang = 'en';
+  const allPosts = await getCollection('blog');
+  const posts = getSortedPosts(allPosts, lang);
+  
+  // Generate all pages including page 1
+  return paginate(posts, { pageSize: 5 });
+}
+
+const { page } = Astro.props;
+const { currentPage, data: posts, lastPage } = page;
+
+// Redirigir /blog/1 a /blog para evitar contenido duplicado
+if (currentPage === 1) {
+  return Astro.redirect('/blog');
+}
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const currentPathname = Astro.url.pathname;
 
 const blogMenu = [
-	{ title: 'Inicio', path: '/' },
-	{ title: 'Blog', path: '/es/blog' },
+	{ title: 'Home', path: '/' },
+	{ title: 'Blog', path: '/blog' },
 ];
-
-// Get all posts and paginate them
-const allPosts = await getCollection('blog');
-const posts = getSortedPosts(allPosts, lang);
-
-// Only show the first 5 posts on the main page
-const pageSize = 5;
-const displayedPosts = posts.slice(0, pageSize);
-const totalPages = Math.ceil(posts.length / pageSize);
 ---
 
-<Layout metaTitle={`Blog | ${site.author}`} includeSidebar={false}>
+<Layout metaTitle={`Blog | Page ${currentPage} | ${site.author}`} includeSidebar={false}>
 	<Navbar menu={blogMenu} button="Resume" />
 	<main class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto text-black dark:text-white">
 		<SubTitle text="Blog" />
@@ -38,17 +46,14 @@ const totalPages = Math.ceil(posts.length / pageSize);
 			<LangSwitch currentLang={lang} currentPathname={currentPathname} />
 		</div>
 		<p class="mb-8 max-w-2xl text-center text-gray-600 dark:text-gray-300">
-			¡Bienvenido a mi blog! Aquí encontrarás artículos, tutoriales y pensamientos sobre desarrollo web, tecnología y más.
+			Welcome to my blog! Here you’ll find articles, tutorials, and thoughts on web development, technology, and more.
 		</p>
 		<div class="space-y-8 w-full max-w-3xl">
 			{
-				displayedPosts.map((post) => (
+				posts.map((post: any) => (
 					<article class="border-zinc-200 dark:border-zinc-800 group relative rounded-lg border p-6">
 						<h2 class="mb-2 text-2xl font-semibold text-black dark:text-white">
-							<a
-								href={`/es/blog/${post.slug}`}
-								class="hover:text-blue-600 dark:hover:text-blue-400"
-							>
+							<a href={`/blog/${post.slug}`} class="hover:text-blue-600 dark:hover:text-blue-400">
 								{post.data.title}
 							</a>
 						</h2>
@@ -61,7 +66,7 @@ const totalPages = Math.ceil(posts.length / pageSize);
 								{t('blog.publishedOn')} {formatDate(post.data.pubDate, lang)}
 							</time>
 							<div class="flex flex-wrap gap-2">
-								{post.data.tags.map((tag) => (
+								{post.data.tags.map((tag: string) => (
 									<span class="bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 rounded-full px-3 py-1 text-sm">
 										#{tag}
 									</span>
@@ -69,26 +74,19 @@ const totalPages = Math.ceil(posts.length / pageSize);
 							</div>
 						</div>
 						<a
-							href={`/es/blog/${post.slug}`}
+							href={`/blog/${post.slug}`}
 							class="ring-blue-600 dark:ring-offset-zinc-900 absolute inset-0 rounded-lg ring-offset-2 ring-offset-white hover:ring-2"
-							aria-label={`Leer ${post.data.title}`}
+							aria-label={`Read ${post.data.title}`}
 						/>
 					</article>
 				))
 			}
 		</div>
 
-		{totalPages > 1 && (
-			<Pagination
-				currentPage={1}
-				totalPages={totalPages}
-				baseUrl="/es/blog/"
-			/>
-		)}
-
-		<div class="mt-12">
-			<SubTitle text='También escribo en Talento Para TI' />
-			<RssFeedDisplay lang={lang} page={1} pageSize={5} />
-		</div>
+		<Pagination
+			currentPage={currentPage}
+			totalPages={lastPage}
+			baseUrl="/blog/"
+		/>
 	</main>
 </Layout>

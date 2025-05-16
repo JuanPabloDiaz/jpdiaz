@@ -1,6 +1,5 @@
 ---
 import Layout from '@layouts/Layout.astro';
-
 import Navbar from '@components/Navbar.astro';
 import LangSwitch from '@components/ui/LangSwitch.astro';
 import { getSortedPosts } from '@utils/collectionUtils';
@@ -9,6 +8,8 @@ import { getLangFromUrl, useTranslations } from '@i18n/utils';
 import { getCollection } from 'astro:content';
 import { formatDate } from '@utils/formatDate';
 import RssFeedDisplay from '@components/RssFeedDisplay.astro';
+import Pagination from '@components/ui/Pagination.astro';
+import SubTitle from '@components/ui/SubTitle.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -19,20 +20,29 @@ const blogMenu = [
 	{ title: 'Blog', path: '/blog' },
 ];
 
+// Get all posts and paginate them
 const allPosts = await getCollection('blog');
 const posts = getSortedPosts(allPosts, lang);
+
+const pageSize = 5;
+const currentPage = 1;
+const displayedPosts = posts.slice(0, pageSize);
+const totalPages = Math.ceil(posts.length / pageSize);
 ---
 
 <Layout metaTitle={`Blog | ${site.author}`} includeSidebar={false}>
 	<Navbar menu={blogMenu} button="Resume" />
-	<section class="mx-auto max-w-3xl px-4 py-8 text-black dark:text-white">
-		<div class="mb-8 flex items-center justify-between">
-			<h1 class="text-4xl font-bold text-black dark:text-white">Blog</h1>
+	<main class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto text-black dark:text-white">
+		<SubTitle text="Blog" />
+		<div class="flex flex-col items-center mb-8 w-full max-w-3xl">
 			<LangSwitch currentLang={lang} currentPathname={currentPathname} />
 		</div>
-		<div class="space-y-8">
+		<p class="mb-8 max-w-2xl text-center text-gray-600 dark:text-gray-300">
+			Welcome to my blog! Here you’ll find articles, tutorials, and thoughts on web development, technology, and more.
+		</p>
+		<div class="space-y-8 w-full max-w-3xl">
 			{
-				posts.map((post) => (
+				displayedPosts.map((post: any) => (
 					<article class="border-zinc-200 dark:border-zinc-800 group relative rounded-lg border p-6">
 						<h2 class="mb-2 text-2xl font-semibold text-black dark:text-white">
 							<a href={`/blog/${post.slug}`} class="hover:text-blue-600 dark:hover:text-blue-400">
@@ -48,7 +58,7 @@ const posts = getSortedPosts(allPosts, lang);
 								{t('blog.publishedOn')} {formatDate(post.data.pubDate, lang)}
 							</time>
 							<div class="flex flex-wrap gap-2">
-								{post.data.tags.map((tag) => (
+								{post.data.tags.map((tag: string) => (
 									<span class="bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 rounded-full px-3 py-1 text-sm">
 										#{tag}
 									</span>
@@ -65,11 +75,17 @@ const posts = getSortedPosts(allPosts, lang);
 			}
 		</div>
 
-		<div class="mt-12">
-			<h2 class="mb-8 text-3xl font-bold text-black dark:text-white">
-				{lang === 'es' ? 'Últimas entradas de Talento Para TI' : 'Latest from Talento Para TI'}
-			</h2>
-			<RssFeedDisplay lang={lang} />
+		{totalPages > 1 && (
+			<Pagination
+				currentPage={currentPage}
+				totalPages={totalPages}
+				baseUrl="/blog/"
+			/>
+		)}
+
+		<div class="mt-16 border-t border-zinc-200 dark:border-zinc-800 pt-12 w-full max-w-3xl">
+			<SubTitle text='Also writing at Talento Para TI' />
+			<RssFeedDisplay lang={lang} page={1} pageSize={3} />
 		</div>
-	</section>
+	</main>
 </Layout>

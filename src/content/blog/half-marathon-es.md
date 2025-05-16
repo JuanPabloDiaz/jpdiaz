@@ -15,15 +15,15 @@ draft: false
 
 ## El Inicio de una Carrera Inesperada
 
-Como muchos de mis proyectos personales, esta historia comienza con una influencia familiar. Mi hermano, a quien considero un mentor en muchos aspectos de mi vida, es un corredor apasionado. No cualquier corredor: un atleta que ha completado un Ironman en Cartagena y actualmente se prepara para otro en San Andrés. Su dedicación al deporte siempre me ha inspirado, aunque correr nunca fue mi fuerte.
+Como muchos de mis proyectos personales, esta historia comienza con una influencia familiar. Mi hermano, a quien considero un mentor en muchos aspectos de mi vida, es un corredor apasionado. No cualquier corredor: un atleta que ha realizado varias competencias, entre ellas algunas maratones y un Ironman en Cartagena y actualmente se prepara para otro en San Andrés. Su dedicación al deporte siempre me ha inspirado, aunque correr nunca fue mi fuerte.
 
-"Tengo pie plano," me decía a mí mismo, "correr no es para mí." Durante años, esta narrativa me limitó. El dolor que sentía era real, pero resultó ser más superable de lo que imaginaba. Con la guía de mi hermano, adquirí tenis de atletismo adecuados y plantillas específicas. Santo remedio. Lo que antes parecía imposible comenzó a transformarse en disfrutable.
+"Tengo pie plano," me decía a mí mismo, "correr no es para mí." Durante años, esta narrativa me limitó. El dolor que sentía era real, pero resultó ser más superable de lo que imaginaba. Con la guía de mi hermano, adquirí tenis de atletismo adecuados y plantillas especiales. Lo que antes me parecía imposible se volvió realidad.
 
-Así, casi sin darme cuenta, pasé de evitar correr a contemplar la posibilidad de una media maratón. En enero de este año, di el paso y me inscribí para la Charity Chase en Hickory, programada para mayo. No sabía entonces que esta decisión me enseñaría mucho más que resistencia física.
+Así, casi sin darme cuenta, pasé de evitar correr a contemplar la posibilidad de una media maratón. En enero de este año, di el paso y me inscribí para la [Charity Chase Half Marathon](https://runsignup.com/Race/Info/NC/Hickory/CharityChaseHalfMarathon) en Hickory, NC, programada para mayo. No sabía entonces que esta decisión me enseñaría mucho más que resistencia física.
 
 ## Más Allá del Entrenamiento
 
-Cualquiera que haya corrido largas distancias sabe que el verdadero desafío no está en las piernas, sino en la mente. Durante mi preparación, logré completar la distancia completa de 21K un par de veces. Cada kilómetro recorrido era una pequeña victoria personal, cada sesión una prueba de voluntad.
+Cualquiera que haya corrido largas distancias sabe que el verdadero desafío no está en las piernas, sino en la mente. Durante mi preparación, logré completar la distancia de 21K un par de veces. Cada kilómetro recorrido era una pequeña victoria personal, cada sesión una prueba de voluntad.
 
 Lo que no anticipé fue cómo la pista real diferiría de mis rutas de entrenamiento. El día de la carrera me enfrenté a un terreno más irregular, con subidas y bajadas que no había experimentado antes. El cuerpo protesta, los músculos imploran descanso, y es allí donde la verdadera batalla comienza.
 
@@ -41,9 +41,9 @@ Pero más importante que el tiempo fue la presencia de mi madre, quien viajó de
 
 ## Lecciones Más Allá del Asfalto
 
-### Compárate Solo con Tu Yo de Ayer
+### Compárate Solo con Tu Yo del Pasado
 
-Una de las lecciones más valiosas que me ha dejado esta experiencia es la importancia de compararse únicamente con uno mismo. En la era de las redes sociales, es fácil caer en la trampa de medirse constantemente contra los logros de otros. Vemos tiempos de carrera, distancias y logros atléticos publicados constantemente, creando una presión invisible pero poderosa.
+Tendemos a compararnos con los demás, especialmente en un mundo donde las redes sociales nos muestran constantemente los logros de otros, pero la verdad es que cada uno va a su ritmo según su propósito. Es por esto que es crucial enfocarnos en nuestro progreso. Es importante evaluarnos nosotros mismos, pues es fácil caer en la trampa de medirnos con los demás. Vemos tiempos de carrera, distancias y logros atléticos publicados constantemente, creando una presión invisible pero poderosa.
 
 Sin embargo, cuando corres, solo importan dos personas: quien eras ayer y quien eres hoy. No conoces el viaje de los demás: sus años de entrenamiento, su contexto físico, sus ventajas naturales. Pero conoces tu propio viaje en detalle, cada obstáculo superado y cada pequeña victoria.
 

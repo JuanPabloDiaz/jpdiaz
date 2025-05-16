@@ -1,71 +1,67 @@
 ---
-title: '10 Años en Estados Unidos'
-description: 'Un viaje de transformación personal'
+title: '10 Years in the United States'
+description: 'A journey of personal transformation'
 pubDate: 2025-02-06
-lang: 'es'
+lang: 'en'
 tags:
-  - Sueño americano
-  - Crecimiento personal
-  - Reflexiones
+  - American dream
+  - Personal growth
+  - Reflections
 draft: false
 ---
 
-Hace exactamente una década, aterricé en suelo estadounidense con una maleta llena de sueños y un plan que parecía simple: estudiar inglés durante seis meses, regresar a Colombia y trabajar en cruceros como chef mientras recorría el mundo. Hoy, al mirar atrás, no puedo evitar sonreír ante la ingenuidad de ese plan inicial y maravillarme por el camino que realmente terminé recorriendo.
+Exactly a decade ago, I landed on American soil with a suitcase full of dreams and a plan that seemed simple: study English for six months, return to Colombia, and work on cruise ships as a chef while traveling the world. Today, looking back, I can't help but smile at the naivety of that initial plan and marvel at the path I actually ended up taking.
 
-## El sueño original vs. la realidad
+## The original dream vs. reality
 
-Mi formación en Colombia fue en cocina. Siempre me apasionaron los sabores, las técnicas y el arte culinario. Sin embargo, el destino tenía otros planes para mí. Lo que comenzó como una breve estadía para aprender inglés se convirtió en un viaje de autodescubrimiento que me llevó por caminos que nunca imaginé.
+My education in Colombia was in cooking. I was always passionate about flavors, techniques, and culinary arts. However, destiny had other plans for me. What began as a brief stay to learn English became a journey of self-discovery that took me down paths I never imagined.
 
-A medida que me adaptaba a vivir solo en un país extranjero, también iba conociendo más sobre mí mismo. La madurez llegó rápido, casi impuesta por las circunstancias. Y con ella, mis aspiraciones también evolucionaron.
+As I adapted to living alone in a foreign country, I was also learning more about myself. Maturity came quickly, almost imposed by circumstances, and with it, my aspirations also evolved.
 
-## La desilusión en la cocina
+## Disillusionment in the kitchen
 
-Trabajar en cocinas estadounidenses me mostró una realidad muy distinta a la que había idealizado. Las largas jornadas, el desgaste físico y los salarios precarios comenzaron a desgastar mi pasión por la gastronomía. No era solo el trabajo duro lo que me desanimaba, sino también el ambiente. Como dije alguna vez: "el chef es solo uno dentro de millones de cocineros".
+Working in American kitchens showed me a reality very different from what I had idealized. The long hours, physical wear, and precarious salaries began to erode my passion for gastronomy. It wasn't just the hard work that discouraged me, but also the environment. As I once said: "the chef is just one among millions of cooks."
 
-Sin embargo, no considero que estudiar cocina haya sido tiempo perdido. Gracias a ese plan inicial de trabajar en cruceros fue que terminé en Estados Unidos estudiando inglés. Como suelo pensar: las cosas pasan por algo. Hoy disfruto la cocina como un hobbie valioso, algo que comparto con mi familia y amigos, pero no como mi camino profesional.
+However, I don't consider studying cooking to have been wasted time. Thanks to that initial plan of working on cruise ships, I ended up in the United States studying English. As I often think: **things happen for and because of something**. Today I enjoy cooking as a valuable hobby, something I share with my family and friends, but not as my professional path.
 
-## Un giro hacia la tecnología: redescubriendo pasiones tempranas
+## A turn toward technology: rediscovering early passions
 
-Desde pequeño siempre tuve curiosidad por los computadores. Desarmaba equipos solo para ver sus componentes, pasaba horas explorando programas y aplicaciones. Cuando terminé el colegio, estaba indeciso entre estudiar cocina o informática.
+Since I was young, I always had curiosity about computers. I would take apart equipment just to see its components, spend hours exploring programs and applications. When I finished high school, I was undecided between studying cooking or computer science.
 
-La vida me dio la oportunidad de experimentar ambos caminos. Una vez establecido en Estados Unidos, decidí estudiar Computer Science, especializándome en desarrollo web. La programación despertó en mí algo similar a lo que sentía cuando jugaba con LEGO de niño: la emoción de construir algo desde cero, de ver cómo mis líneas de código cobraban vida en la pantalla.
+Life gave me the opportunity to experience both paths. Once established in the United States, I decided to study Computer Science, specializing in web development. Programming awakened in me something similar to what I felt when playing with LEGO as a child: the excitement of building something from scratch, of seeing how my lines of code came to life on the screen.
 
-> "La idea de poder crear cosas me voló la cabeza."
+> "The idea of being able to create things blew my mind."
 
-## Los desafíos de la inmigración
+## The challenges of immigration
 
-Estos diez años no han sido un camino fácil. La adaptación cultural fue un choque más fuerte de lo que anticipé, incluso sabiendo algo de inglés antes de llegar. La distancia con mi familia en Colombia se siente cada día más difícil de sobrellevar, especialmente cuando pienso en mi hermano, mis padres y mis sobrinas.
+These ten years have not been an easy road. Cultural adaptation was a stronger shock than I thought, even having basic English skills. The distance from my family in Colombia was felt more every day, especially when thinking about my brother, my parents, and my nieces.
 
-Para combatir la soledad, me mantengo constantemente ocupado. Trabajé incansablemente, muchas veces teniendo dos o hasta tres empleos simultáneamente. Fui lavaplatos, trabajé en construcción, en landscaping, en estacionamientos... hice lo necesario para mantenerme y pagar mis estudios.
+To combat loneliness, I've kept myself constantly busy. I've worked tirelessly, often with two or three jobs simultaneously. I was a dishwasher, worked in construction, in landscaping, in parking lots... I did what was necessary to support myself and pay for my studies.
 
-> "La vida como inmigrante es bien complicada. Uno descuida su perfil profesional para trabajar en lo que sea."
+> "Life as an immigrant is very complicated. One neglects their professional profile to work in whatever is available."
 
-## Logros que construyen orgullo
+## Achievements that build pride
 
-A pesar de los desafíos, estos años también me han traído logros que me llenan de orgullo:
+Despite the challenges, these years have also brought me achievements that fill me with pride:
 
-1. **Independencia financiera**: Ahorrar y comprar mi primer carro, un Suzuki Forenza 2007, fue un hito importante. No era nada lujoso, pero me daba la libertad de movimiento tan necesaria en ciudades como Charlotte.
+1. **Financial independence**: Saving and buying my first car, a 2007 Suzuki Forenza, was an important milestone. It wasn't luxurious, but it gave me the freedom of movement so necessary in cities like Charlotte.
 
-2. **Autosuficiencia**: Poder costearme todo por mí mismo, sin depender económicamente de mis padres o de nadie más.
+2. **Self-sufficiency**: Being able to support myself financially without depending on anyone.
 
-3. **Educación**: Pagarme mis propios estudios mientras trabajaba intensamente fue quizás mi mayor logro. Como aprendí en este país: "Lo que uno se propone, lo logra. Acá todo se puede."
+3. **Education**: Paying for my studies while working intensely was perhaps my greatest achievement.
 
-Después de graduarme con un Associate en Web Technology, pude entrar al mundo laboral formal en tecnología, comenzando en un call center y trabajando cinco años en soporte técnico para diferentes empresas.
+After graduating with an Associate's in Web Technology, I was able to enter the formal technology workforce, starting in a call center and working five years in technical support for different companies.
 
-## Reflexiones sobre el "sueño americano"
+## Reflections on the "American dream"
 
-Después de una década en este país, mi perspectiva sobre el "sueño americano" ha cambiado sustancialmente. La pandemia y la modernización han transformado las reglas del juego. Hoy creo que existen alternativas interesantes, como el trabajo remoto y la vida nómada digital, que permiten disfrutar de lo mejor de ambos mundos.
+After a decade in this country, my perspective on the "American dream" has changed substantially. The pandemic and modernization have transformed the rules of the game. Today I believe there are interesting alternatives, such as remote work and digital nomad life, that allow enjoying the best of both worlds.
 
-Si pudiera hablar con mi yo del pasado, le diría que lo piense bien, que analice cuidadosamente. La vida en Estados Unidos puede ser muy solitaria, y definitivamente no es para todos. El "sueño americano" podría estar en otra nación, no necesariamente en Estados Unidos.
+If I could talk to my past self, I would tell him to think carefully, to analyze carefully, life in the United States can be very lonely, and it's definitely not for everyone. The "American dream" might be in another nation, not necessarily in the United States.
 
-## El balance final
+## The final balance
 
-Estos diez años me han transformado profundamente. He madurado, he descubierto fortalezas que no sabía que tenía y he reorientado mi camino profesional. El sacrificio ha sido grande: dejar a mi familia en Colombia y aceptar la soledad como compañera frecuente.
+These ten years have transformed me deeply, I have matured, I have discovered strengths I didn't know I had, and I have reoriented my professional path. The sacrifice has been great: leaving my family in Colombia and accepting loneliness as a frequent companion.
 
-Sin embargo, también he aprendido que con esfuerzo, perseverancia y una buena formación, es posible construir el futuro que uno desea. Como dije antes, "esto es algo que aprendí en este país: lo que uno se propone, lo logra."
+However, I have also learned that with effort, perseverance, and good training, it is possible to build the future one desires.
 
-Hoy miro hacia el futuro con ojos diferentes. Sueño con conseguir un trabajo remoto que me permita viajar por el mundo y pasar temporadas en Colombia junto a mi familia, mientras me desarrollo profesionalmente. Porque si algo me han enseñado estos diez años, es que los planes pueden cambiar, pero la capacidad de adaptación y el deseo de superación siempre deben permanecer.
-
----
-
-_Este blog refleja mi experiencia personal de diez años viviendo en Estados Unidos. Cada historia de inmigración es única, con sus propios desafíos y alegrías. Si estás considerando un cambio similar, te animo a investigar bien, prepararte profesionalmente y, sobre todo, estar dispuesto a reinventarte las veces que sea necesario._
+Today I look ahead with different eyes. I dream of finding a remote job that allows me to travel the world and spend time in Colombia with my family, while continuing my professional development. Because if these ten years have taught me anything, it's that plans can change, but the capacity to adapt and the desire to improve must always remain.

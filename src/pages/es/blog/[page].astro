@@ -1,17 +1,28 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 import Navbar from '@components/Navbar.astro';
 import LangSwitch from '@components/ui/LangSwitch.astro';
 import { getSortedPosts } from '@utils/collectionUtils';
 import { site } from '@src/consts';
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
-import RssFeedDisplay from '@components/RssFeedDisplay.astro';
-import { formatDate } from '@src/utils/formatDate';
+import { useTranslations } from '@i18n/utils';
+import { getCollection } from 'astro:content';
+import { formatDate } from '@utils/formatDate';
 import Pagination from '@components/ui/Pagination.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
 
-const lang = getLangFromUrl(Astro.url);
+// Generate pages for pagination
+export async function getStaticPaths({ paginate }) {
+  const lang = 'es';
+  const allPosts = await getCollection('blog');
+  const posts = getSortedPosts(allPosts, lang);
+
+  return paginate(posts, { pageSize: 5 });
+}
+
+const { page } = Astro.props;
+const { currentPage, data: posts, lastPage } = page;
+
+const lang = 'es';
 const t = useTranslations(lang);
 const currentPathname = Astro.url.pathname;
 
@@ -19,22 +30,13 @@ const blogMenu = [
 	{ title: 'Inicio', path: '/' },
 	{ title: 'Blog', path: '/es/blog' },
 ];
-
-// Get all posts and paginate them
-const allPosts = await getCollection('blog');
-const posts = getSortedPosts(allPosts, lang);
-
-// Only show the first 5 posts on the main page
-const pageSize = 5;
-const displayedPosts = posts.slice(0, pageSize);
-const totalPages = Math.ceil(posts.length / pageSize);
 ---
 
-<Layout metaTitle={`Blog | ${site.author}`} includeSidebar={false}>
+<Layout metaTitle={`Blog | Página ${currentPage} | ${site.author}`} includeSidebar={false}>
 	<Navbar menu={blogMenu} button="Resume" />
-	<main class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto text-black dark:text-white">
-		<SubTitle text="Blog" />
-		<div class="flex flex-col items-center mb-8 w-full max-w-3xl">
+	<section class="mx-auto max-w-3xl px-4 py-8 text-black dark:text-white">
+		<div class="mb-8 flex items-center justify-between">
+			<h1 class="text-4xl font-bold text-black dark:text-white">Blog</h1>
 			<LangSwitch currentLang={lang} currentPathname={currentPathname} />
 		</div>
 		<p class="mb-8 max-w-2xl text-center text-gray-600 dark:text-gray-300">
@@ -42,13 +44,10 @@ const totalPages = Math.ceil(posts.length / pageSize);
 		</p>
 		<div class="space-y-8 w-full max-w-3xl">
 			{
-				displayedPosts.map((post) => (
+				posts.map((post) => (
 					<article class="border-zinc-200 dark:border-zinc-800 group relative rounded-lg border p-6">
 						<h2 class="mb-2 text-2xl font-semibold text-black dark:text-white">
-							<a
-								href={`/es/blog/${post.slug}`}
-								class="hover:text-blue-600 dark:hover:text-blue-400"
-							>
+							<a href={`/es/blog/${post.slug}`} class="hover:text-blue-600 dark:hover:text-blue-400">
 								{post.data.title}
 							</a>
 						</h2>
@@ -78,17 +77,10 @@ const totalPages = Math.ceil(posts.length / pageSize);
 			}
 		</div>
 
-		{totalPages > 1 && (
-			<Pagination
-				currentPage={1}
-				totalPages={totalPages}
-				baseUrl="/es/blog/"
-			/>
-		)}
-
-		<div class="mt-12">
-			<SubTitle text='También escribo en Talento Para TI' />
-			<RssFeedDisplay lang={lang} page={1} pageSize={5} />
-		</div>
+		<Pagination
+			currentPage={currentPage}
+			totalPages={lastPage}
+			baseUrl="/es/blog/"
+		/>
 	</main>
 </Layout>
