@@ -1,7 +1,7 @@
 ---
 import { fetchRssFeed } from '@utils/rssFeed';
 import { formatDate } from '@utils/formatDate';
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { useTranslations } from '@i18n/utils';
 import Pagination from '@components/ui/Pagination.astro';
 
 export interface Props {
@@ -10,18 +10,25 @@ export interface Props {
 	pageSize?: number;
 }
 
+interface RssPost {
+	link: string;
+	title: string;
+	description?: string;
+	pubDate: string;
+}
+
 const { lang, page = 1, pageSize = 5 } = Astro.props;
 
 const t = useTranslations(lang);
 
-const result = await fetchRssFeed(lang, { page, pageSize, returnTotal: true });
+const result: { posts: RssPost[]; totalPages: number } = await fetchRssFeed(lang, { page, pageSize, returnTotal: true });
 const { posts, totalPages } = result;
 ---
 
 <div class="rss-feed-container space-y-8">
 	{
 		posts && posts.length > 0 ? (
-			posts.map((post: any) => (
+			posts.map((post: RssPost) => (
 				<article class="border-zinc-200 dark:border-zinc-800 group relative rounded-lg border p-6">
 					<h2 class="mb-2 text-2xl font-semibold text-black dark:text-white">
 						<a
@@ -50,10 +57,10 @@ const { posts, totalPages } = result;
 	}
 
 	{totalPages > 1 && (
-		<Pagination 
-			currentPage={page} 
-			totalPages={totalPages} 
-			baseUrl={`/${lang === 'en' ? '' : 'es/'}rss/`} 
+		<Pagination
+			currentPage={page}
+			totalPages={totalPages}
+			baseUrl={`/${lang === 'en' ? '' : 'es/'}rss/`}
 		/>
 	)}
 </div>

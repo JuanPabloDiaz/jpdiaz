@@ -8,13 +8,14 @@ import { getLangFromUrl, useTranslations } from '@i18n/utils';
 import { getCollection } from 'astro:content';
 import { formatDate } from '@utils/formatDate';
 import Pagination from '@components/ui/Pagination.astro';
+import SubTitle from '@components/ui/SubTitle.astro';
 
 // Generate pages for pagination
 export async function getStaticPaths({ paginate }) {
   const lang = 'en';
   const allPosts = await getCollection('blog');
   const posts = getSortedPosts(allPosts, lang);
-  
+
   return paginate(posts, { pageSize: 5 });
 }
 
@@ -33,12 +34,15 @@ const blogMenu = [
 
 <Layout metaTitle={`Blog | Page ${currentPage} | ${site.author}`} includeSidebar={false}>
 	<Navbar menu={blogMenu} button="Resume" />
-	<section class="mx-auto max-w-3xl px-4 py-8 text-black dark:text-white">
-		<div class="mb-8 flex items-center justify-between">
-			<h1 class="text-4xl font-bold text-black dark:text-white">Blog</h1>
+	<main class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto text-black dark:text-white">
+		<SubTitle text="Blog" />
+		<div class="flex flex-col items-center mb-8 w-full max-w-3xl">
 			<LangSwitch currentLang={lang} currentPathname={currentPathname} />
 		</div>
-		<div class="space-y-8">
+		<p class="mb-8 max-w-2xl text-center text-gray-600 dark:text-gray-300">
+			Welcome to my blog! Here you’ll find articles, tutorials, and thoughts on web development, technology, and more.
+		</p>
+		<div class="space-y-8 w-full max-w-3xl">
 			{
 				posts.map((post) => (
 					<article class="border-zinc-200 dark:border-zinc-800 group relative rounded-lg border p-6">
@@ -73,10 +77,10 @@ const blogMenu = [
 			}
 		</div>
 
-		<Pagination 
-			currentPage={currentPage} 
-			totalPages={lastPage} 
-			baseUrl="/blog/" 
+		<Pagination
+			currentPage={currentPage}
+			totalPages={lastPage}
+			baseUrl="/blog/"
 		/>
-	</section>
+	</main>
 </Layout>

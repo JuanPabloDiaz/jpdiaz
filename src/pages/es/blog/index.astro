@@ -9,6 +9,7 @@ import { getLangFromUrl, useTranslations } from '@i18n/utils';
 import RssFeedDisplay from '@components/RssFeedDisplay.astro';
 import { formatDate } from '@src/utils/formatDate';
 import Pagination from '@components/ui/Pagination.astro';
+import SubTitle from '@components/ui/SubTitle.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -31,12 +32,15 @@ const totalPages = Math.ceil(posts.length / pageSize);
 
 <Layout metaTitle={`Blog | ${site.author}`} includeSidebar={false}>
 	<Navbar menu={blogMenu} button="Resume" />
-	<section class="mx-auto max-w-3xl px-4 py-8 text-black dark:text-white">
-		<div class="mb-8 flex items-center justify-between">
-			<h1 class="text-4xl font-bold text-black dark:text-white">Blog</h1>
+	<main class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto text-black dark:text-white">
+		<SubTitle text="Blog" />
+		<div class="flex flex-col items-center mb-8 w-full max-w-3xl">
 			<LangSwitch currentLang={lang} currentPathname={currentPathname} />
 		</div>
-		<div class="space-y-8">
+		<p class="mb-8 max-w-2xl text-center text-gray-600 dark:text-gray-300">
+			¡Bienvenido a mi blog! Aquí encontrarás artículos, tutoriales y pensamientos sobre desarrollo web, tecnología y más.
+		</p>
+		<div class="space-y-8 w-full max-w-3xl">
 			{
 				displayedPosts.map((post) => (
 					<article class="border-zinc-200 dark:border-zinc-800 group relative rounded-lg border p-6">
@@ -86,5 +90,5 @@ const totalPages = Math.ceil(posts.length / pageSize);
 			<h2 class="mb-8 text-3xl font-bold text-black dark:text-white">Blogs de Talento Para TI</h2>
 			<RssFeedDisplay lang={lang} page={1} pageSize={5} />
 		</div>
-	</section>
+	</main>
 </Layout>

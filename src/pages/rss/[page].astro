@@ -2,6 +2,7 @@
 import Layout from '@layouts/Layout.astro';
 import Navbar from '@components/Navbar.astro';
 import LangSwitch from '@components/ui/LangSwitch.astro';
+import SubTitle from '@components/ui/SubTitle.astro';
 import { site } from '@src/consts';
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 import RssFeedDisplay from '@components/RssFeedDisplay.astro';
@@ -29,9 +30,9 @@ const menu = [
 
 <Layout metaTitle={`Talento Para TI | Page ${currentPage} | ${site.author}`} includeSidebar={false}>
   <Navbar menu={menu} button="Resume" />
-  <section class="mx-auto max-w-3xl px-4 py-8 text-black dark:text-white">
-    <div class="mb-8 flex items-center justify-between">
-      <h1 class="text-4xl font-bold text-black dark:text-white">Talento Para TI</h1>
+  <main class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto text-black dark:text-white">
+    <SubTitle text="Talento Para TI" />
+    <div class="flex flex-col items-center mb-8 w-full max-w-3xl">
       <LangSwitch currentLang={lang} currentPathname={currentPathname} />
     </div>
 
