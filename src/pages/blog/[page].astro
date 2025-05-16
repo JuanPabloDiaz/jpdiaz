@@ -11,16 +11,22 @@ import Pagination from '@components/ui/Pagination.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
 
 // Generate pages for pagination
-export async function getStaticPaths({ paginate }) {
+export async function getStaticPaths({ paginate }: { paginate: any }) {
   const lang = 'en';
   const allPosts = await getCollection('blog');
   const posts = getSortedPosts(allPosts, lang);
-
+  
+  // Generate all pages including page 1
   return paginate(posts, { pageSize: 5 });
 }
 
 const { page } = Astro.props;
 const { currentPage, data: posts, lastPage } = page;
+
+// Redirigir /blog/1 a /blog para evitar contenido duplicado
+if (currentPage === 1) {
+  return Astro.redirect('/blog');
+}
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -44,7 +50,7 @@ const blogMenu = [
 		</p>
 		<div class="space-y-8 w-full max-w-3xl">
 			{
-				posts.map((post) => (
+				posts.map((post: any) => (
 					<article class="border-zinc-200 dark:border-zinc-800 group relative rounded-lg border p-6">
 						<h2 class="mb-2 text-2xl font-semibold text-black dark:text-white">
 							<a href={`/blog/${post.slug}`} class="hover:text-blue-600 dark:hover:text-blue-400">
@@ -60,7 +66,7 @@ const blogMenu = [
 								{t('blog.publishedOn')} {formatDate(post.data.pubDate, lang)}
 							</time>
 							<div class="flex flex-wrap gap-2">
-								{post.data.tags.map((tag) => (
+								{post.data.tags.map((tag: string) => (
 									<span class="bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 rounded-full px-3 py-1 text-sm">
 										#{tag}
 									</span>

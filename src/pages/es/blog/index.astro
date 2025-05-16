@@ -16,7 +16,7 @@ const t = useTranslations(lang);
 const currentPathname = Astro.url.pathname;
 
 const blogMenu = [
-	{ title: 'Inicio', path: '/es' },
+	{ title: 'Inicio', path: '/' },
 	{ title: 'Blog', path: '/es/blog' },
 ];
 
@@ -87,7 +87,7 @@ const totalPages = Math.ceil(posts.length / pageSize);
 		)}
 
 		<div class="mt-12">
-			<h2 class="mb-8 text-3xl font-bold text-black dark:text-white">Blogs de Talento Para TI</h2>
+			<SubTitle text='También escribo en Talento Para TI' />
 			<RssFeedDisplay lang={lang} page={1} pageSize={5} />
 		</div>
 	</main>

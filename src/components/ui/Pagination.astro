@@ -45,12 +45,14 @@ if (totalPages <= 5) {
 }
 
 // Create URLs for each page
-const getPageUrl = (page: number) => {
-  if (page === 1) {
-    // First page might have a different URL pattern
-    return baseUrl.replace(/\/1\/?$/, '/');
+const getPageUrl = (i: number) => {
+  if (i === 1) {
+    // Para la página 1, siempre usar la URL base sin número de página
+    const base = baseUrl.endsWith('/') && baseUrl.length > 1 ? baseUrl.slice(0, -1) : baseUrl;
+    // Si estamos en /blog/1, redirigir a /blog
+    return base.replace(/\/1$/, '');
   }
-  return `${baseUrl}${page}`;
+  return `${baseUrl}${i}`;
 };
 
 // Labels for navigation

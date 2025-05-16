@@ -24,8 +24,8 @@ const blogMenu = [
 const allPosts = await getCollection('blog');
 const posts = getSortedPosts(allPosts, lang);
 
-// Only show the first 5 posts on the main page
 const pageSize = 5;
+const currentPage = 1;
 const displayedPosts = posts.slice(0, pageSize);
 const totalPages = Math.ceil(posts.length / pageSize);
 ---
@@ -42,7 +42,7 @@ const totalPages = Math.ceil(posts.length / pageSize);
 		</p>
 		<div class="space-y-8 w-full max-w-3xl">
 			{
-				displayedPosts.map((post) => (
+				displayedPosts.map((post: any) => (
 					<article class="border-zinc-200 dark:border-zinc-800 group relative rounded-lg border p-6">
 						<h2 class="mb-2 text-2xl font-semibold text-black dark:text-white">
 							<a href={`/blog/${post.slug}`} class="hover:text-blue-600 dark:hover:text-blue-400">
@@ -58,7 +58,7 @@ const totalPages = Math.ceil(posts.length / pageSize);
 								{t('blog.publishedOn')} {formatDate(post.data.pubDate, lang)}
 							</time>
 							<div class="flex flex-wrap gap-2">
-								{post.data.tags.map((tag) => (
+								{post.data.tags.map((tag: string) => (
 									<span class="bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 rounded-full px-3 py-1 text-sm">
 										#{tag}
 									</span>
@@ -76,18 +76,16 @@ const totalPages = Math.ceil(posts.length / pageSize);
 		</div>
 
 		{totalPages > 1 && (
-			<Pagination 
-				currentPage={1} 
-				totalPages={totalPages} 
-				baseUrl="/blog/" 
+			<Pagination
+				currentPage={currentPage}
+				totalPages={totalPages}
+				baseUrl="/blog/"
 			/>
 		)}
 
-		<div class="mt-12">
-			<h2 class="mb-8 text-3xl font-bold text-black dark:text-white">
-				{lang === 'es' ? 'Últimas entradas de Talento Para TI' : 'Latest from Talento Para TI'}
-			</h2>
-			<RssFeedDisplay lang={lang} page={1} pageSize={5} />
+		<div class="mt-16 border-t border-zinc-200 dark:border-zinc-800 pt-12 w-full max-w-3xl">
+			<SubTitle text='Also writing at Talento Para TI' />
+			<RssFeedDisplay lang={lang} page={1} pageSize={3} />
 		</div>
 	</main>
 </Layout>
