@@ -8,6 +8,7 @@ import { site } from '@src/consts';
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 import RssFeedDisplay from '@components/RssFeedDisplay.astro';
 import { formatDate } from '@src/utils/formatDate';
+import Pagination from '@components/ui/Pagination.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -18,8 +19,14 @@ const blogMenu = [
 	{ title: 'Blog', path: '/es/blog' },
 ];
 
+// Get all posts and paginate them
 const allPosts = await getCollection('blog');
 const posts = getSortedPosts(allPosts, lang);
+
+// Only show the first 5 posts on the main page
+const pageSize = 5;
+const displayedPosts = posts.slice(0, pageSize);
+const totalPages = Math.ceil(posts.length / pageSize);
 ---
 
 <Layout metaTitle={`Blog | ${site.author}`} includeSidebar={false}>
@@ -31,7 +38,7 @@ const posts = getSortedPosts(allPosts, lang);
 		</div>
 		<div class="space-y-8">
 			{
-				posts.map((post) => (
+				displayedPosts.map((post) => (
 					<article class="border-zinc-200 dark:border-zinc-800 group relative rounded-lg border p-6">
 						<h2 class="mb-2 text-2xl font-semibold text-black dark:text-white">
 							<a
@@ -67,10 +74,17 @@ const posts = getSortedPosts(allPosts, lang);
 			}
 		</div>
 
-		{/* Sección para mostrar las entradas del feed RSS de Talento Para TI */}
+		{totalPages > 1 && (
+			<Pagination
+				currentPage={1}
+				totalPages={totalPages}
+				baseUrl="/es/blog/"
+			/>
+		)}
+
 		<div class="mt-12">
 			<h2 class="mb-8 text-3xl font-bold text-black dark:text-white">Blogs de Talento Para TI</h2>
-			<RssFeedDisplay lang={lang} />
+			<RssFeedDisplay lang={lang} page={1} pageSize={5} />
 		</div>
 	</section>
 </Layout>

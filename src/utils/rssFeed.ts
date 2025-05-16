@@ -4,7 +4,15 @@ import { parseStringPromise } from 'xml2js';
 const RSS_FEED_BASE_URL = 'https://talentoparati.com/';
 const TARGET_AUTHOR = 'juan diaz';
 
-export async function fetchRssFeed(lang = 'en') {
+export interface RssFeedOptions {
+  page?: number;
+  pageSize?: number;
+  returnTotal?: boolean;
+}
+
+export async function fetchRssFeed(lang = 'en', options: RssFeedOptions = {}) {
+	const { page = 1, pageSize = 5, returnTotal = false } = options;
+	
 	if (lang !== 'es' && lang !== 'en') {
 		console.error(`[RSS Feed] Unsupported language: ${lang}. Defaulting to 'en'.`);
 		lang = 'en';
@@ -30,11 +38,21 @@ export async function fetchRssFeed(lang = 'en') {
 			console.warn(
 				'[RSS Feed] RSS feed structure not as expected or no items found in parsedData.rss.channel.item.'
 			);
-			return [];
+			return returnTotal ? { posts: [], total: 0, totalPages: 0 } : [];
+		}
+
+		// Define interface for RSS item
+		interface RssItem {
+			author: string;
+			title?: string;
+			description?: string;
+			link?: string;
+			pubDate?: string;
+			[key: string]: any;
 		}
 
 		// Filter items by author
-		const filteredItems = items.filter((item) => {
+		const filteredItems = items.filter((item: RssItem) => {
 			const authorField = item.author;
 			return (
 				authorField &&
@@ -43,9 +61,23 @@ export async function fetchRssFeed(lang = 'en') {
 			);
 		});
 
-		return filteredItems;
+		// Calculate pagination
+		const startIndex = (page - 1) * pageSize;
+		const endIndex = startIndex + pageSize;
+		const paginatedItems = filteredItems.slice(startIndex, endIndex);
+		const totalPages = Math.ceil(filteredItems.length / pageSize);
+
+		if (returnTotal) {
+			return {
+				posts: paginatedItems,
+				total: filteredItems.length,
+				totalPages
+			};
+		}
+
+		return paginatedItems;
 	} catch (error) {
 		console.error(`[RSS Feed] Failed to fetch or parse RSS feed from ${RSS_FEED_URL}:`, error);
-		return [];
+		return returnTotal ? { posts: [], total: 0, totalPages: 0 } : [];
 	}
 }
