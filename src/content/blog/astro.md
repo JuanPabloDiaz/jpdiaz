@@ -186,3 +186,7 @@ If you want to get started with Astro, here are some resources that were useful 
 - [Official Astro Documentation](https://docs.astro.build/)
 - [Astro Templates](https://astro.build/themes/)
 - [Framework Integration](https://docs.astro.build/en/core-concepts/framework-components/)
+
+::github{repo="withastro/astro"}
+
+::github{repo="withastro/starlight"}

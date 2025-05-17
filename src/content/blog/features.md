@@ -41,10 +41,10 @@ mermaid: true
 ### Support Github Card
 
 ```text
-::github{repo="cirry/astro-yi"}
+::github{repo="JuanPabloDiaz/freeForGeeks"}
 ```
 
-::github{repo="cirry/astro-yi"}
+::github{repo="JuanPabloDiaz/freeForGeeks"}
 
 ### Support collapse
 

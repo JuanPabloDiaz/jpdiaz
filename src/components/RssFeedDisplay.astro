@@ -21,46 +21,48 @@ const { lang, page = 1, pageSize = 5 } = Astro.props;
 
 const t = useTranslations(lang);
 
-const result: { posts: RssPost[]; totalPages: number } = await fetchRssFeed(lang, { page, pageSize, returnTotal: true });
+const result: { posts: RssPost[]; totalPages: number } = await fetchRssFeed(lang, {
+	page,
+	pageSize,
+	returnTotal: true,
+});
 const { posts, totalPages } = result;
 ---
 
 <div class="rss-feed-container space-y-8">
+	<div class="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4">
+		{
+			posts && posts.length > 0 ? (
+				posts.map((post: RssPost) => (
+					<article class="dark:ring-offset-zinc-900 group relative inset-0 cursor-pointer rounded-lg border p-6 ring-orange ring-offset-2 ring-offset-orange transition-all duration-300 ease-in-out hover:border-orange hover:ring-2">
+						<h2 class="mb-2 text-2xl font-semibold text-black dark:text-white">
+							<a href={post.link} target="_blank" rel="noopener noreferrer">
+								{post.title || 'No Title'}
+							</a>
+						</h2>
+						{post.description && (
+							<p class="text-gray-600 dark:text-gray-300 mb-4" set:html={post.description} />
+						)}
+						<div class="flex flex-wrap items-center gap-4 text-sm">
+							<time datetime={post.pubDate} class="text-gray-600 dark:text-gray-300">
+								{t('blog.publishedOn')}
+								{formatDate(post.pubDate, lang)}
+							</time>
+						</div>
+					</article>
+				))
+			) : (
+				<p>No posts found or unable to load feed.</p>
+			)
+		}
+	</div>
 	{
-		posts && posts.length > 0 ? (
-			posts.map((post: RssPost) => (
-				<article class="border-zinc-200 dark:border-zinc-800 group relative rounded-lg border p-6">
-					<h2 class="mb-2 text-2xl font-semibold text-black dark:text-white">
-						<a
-							href={post.link}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="hover:text-blue-600 dark:hover:text-blue-400"
-						>
-							{post.title || 'No Title'}
-						</a>
-					</h2>
-					{post.description && (
-						<p class="text-gray-600 dark:text-gray-300 mb-4" set:html={post.description} />
-					)}
-					<div class="flex flex-wrap items-center gap-4 text-sm">
-						<time datetime={post.pubDate} class="text-gray-600 dark:text-gray-300">
-							{t('blog.publishedOn')}
-							{formatDate(post.pubDate, lang)}
-						</time>
-					</div>
-				</article>
-			))
-		) : (
-			<p>No posts found or unable to load feed.</p>
+		totalPages > 1 && (
+			<Pagination
+				currentPage={page}
+				totalPages={totalPages}
+				baseUrl={`/${lang === 'en' ? '' : 'es/'}rss/`}
+			/>
 		)
 	}
-
-	{totalPages > 1 && (
-		<Pagination
-			currentPage={page}
-			totalPages={totalPages}
-			baseUrl={`/${lang === 'en' ? '' : 'es/'}rss/`}
-		/>
-	)}
 </div>

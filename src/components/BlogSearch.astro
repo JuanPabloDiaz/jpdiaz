@@ -1,0 +1,476 @@
+---
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { Icon } from 'astro-icon/components';
+
+const { currentLang } = Astro.props;
+const lang = currentLang || getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="mb-6 w-full max-w-3xl">
+	<div class="relative">
+		<span class="absolute inset-y-0 flex items-center pl-3 opacity-75">
+			<Icon name="fe:search" class="text-gray-500 dark:text-gray-400 h-5 w-5" />
+		</span>
+		<input
+			id="blog-search"
+			class="border-gray-300 dark:border-gray-700 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500 block w-full rounded-lg border py-2 pl-10 pr-3 text-black focus:outline-none dark:text-white"
+			placeholder={lang === 'en' ? 'Search blog posts...' : 'Buscar artículos...'}
+			type="search"
+			name="search"
+		/>
+	</div>
+	<p id="search-results-count" class="text-gray-600 dark:text-gray-300 mt-2 hidden text-sm"></p>
+</div>
+
+<script>
+	import DOMPurify from 'dompurify';
+	import Fuse from 'fuse.js';
+
+	interface SearchItem {
+		element?: HTMLElement;
+		slug?: string;
+		externalId?: string;
+		title: string;
+		description: string;
+		tags: string[];
+		lang: string;
+		pubDate?: Date;
+		type?: 'blog' | 'rss';
+	}
+
+	interface SearchResult {
+		item: SearchItem;
+		score?: number;
+		refIndex?: number;
+	}
+
+	// DOM elements
+	const searchInput = document.getElementById('blog-search') as HTMLInputElement;
+	const searchResultsCount = document.getElementById('search-results-count');
+	const articleElements = document.querySelectorAll('article');
+
+	// Store original articles for resetting
+	const originalArticles = Array.from(articleElements) as HTMLElement[];
+
+	// Fuse.js options
+	const fuseOptions = {
+		includeScore: true,
+		threshold: 0.6, // Increased threshold for better matching
+		keys: [
+			{ name: 'title', weight: 1 },
+			{ name: 'description', weight: 0.75 },
+			{ name: 'tags', weight: 0.5 },
+		],
+	};
+
+	let searchData: SearchItem[] = [];
+	let fuse: Fuse<SearchItem>;
+	let currentLang = document.documentElement.lang || 'en';
+
+	// Extract data from articles on the page
+	function extractDataFromArticles(): SearchItem[] {
+		return Array.from(articleElements).map((article) => {
+			const titleElement = article.querySelector('h2 a');
+			const descriptionElement = article.querySelector('p');
+			const tagsElements = article.querySelectorAll('.flex-wrap.gap-2 span');
+
+			return {
+				element: article as HTMLElement,
+				title: titleElement && titleElement.textContent ? titleElement.textContent.trim() : '',
+				description:
+					descriptionElement && descriptionElement.textContent
+						? descriptionElement.textContent.trim()
+						: '',
+				tags: Array.from(tagsElements).map((tag) =>
+					tag.textContent ? tag.textContent.trim().replace('#', '') : ''
+				),
+				lang: (article as HTMLElement).dataset.lang || currentLang,
+			};
+		});
+	}
+
+	// Initialize search
+	async function initSearch(): Promise<void> {
+		try {
+			// Try to fetch data from search.json
+			const response = await fetch('/search.json');
+			if (response.ok) {
+				const jsonData = await response.json();
+				// Get current page language
+				const currentPath = window.location.pathname;
+				const currentLang = currentPath.startsWith('/es/') ? 'es' : 'en';
+
+				// Filter by current language
+				searchData = jsonData.filter((item: SearchItem) => {
+					return item.lang === currentLang;
+				});
+			} else {
+				// Fallback to extracting data from the current page
+				searchData = extractDataFromArticles();
+			}
+
+			// Initialize Fuse instance
+			fuse = new Fuse(searchData, fuseOptions);
+
+			// Add event listener to search input
+			if (searchInput) {
+				searchInput.addEventListener('input', handleSearch);
+			}
+		} catch (error) {
+			console.error('Error initializing search:', error);
+			// Fallback to extracting data from the current page
+			searchData = extractDataFromArticles();
+			fuse = new Fuse(searchData, fuseOptions);
+		}
+	}
+
+	// Handle search
+	function handleSearch(event: Event): void {
+		if (!searchInput) return;
+
+		const searchTerm = DOMPurify.sanitize(searchInput.value.trim());
+
+		if (searchTerm === '') {
+			// If search is empty, show all articles
+			resetArticles();
+			if (searchResultsCount) {
+				searchResultsCount.classList.add('hidden');
+			}
+			// Show pagination when not searching
+			togglePagination(true);
+			return;
+		}
+
+		// Search using Fuse.js
+		const results = fuse.search(searchTerm);
+
+		// Filter articles based on search results
+		filterArticles(results, searchTerm);
+
+		// Hide pagination when searching
+		togglePagination(false);
+	}
+
+	// Filter articles based on search results
+	function filterArticles(results: SearchResult[], searchTerm: string): void {
+		// Get current page language
+		const currentPath = window.location.pathname;
+		const currentLang = currentPath.startsWith('/es/') ? 'es' : 'en';
+
+		// Filter results by current language
+		const languageFilteredResults = results.filter((result) => result.item.lang === currentLang);
+
+		// If we have search results from the JSON endpoint
+		if (languageFilteredResults.length > 0) {
+			// Hide all articles first
+			originalArticles.forEach((article) => {
+				article.style.display = 'none';
+			});
+
+			// Separate blog posts and RSS posts
+			const blogResults = languageFilteredResults.filter(
+				(result) => !result.item.type || result.item.type === 'blog'
+			);
+			const rssResults = languageFilteredResults.filter((result) => result.item.type === 'rss');
+
+			// Handle blog posts
+			if (blogResults.length > 0) {
+				const matchingSlugs = blogResults.map((result) => result.item.slug).filter(Boolean);
+
+				// Check if we need to fetch and display all blog posts
+				// This happens when we're on the main blog page and there are matching posts that might be paginated
+				if (
+					(window.location.pathname === '/blog' || window.location.pathname === '/es/blog') &&
+					matchingSlugs.length > 0
+				) {
+					// First, show any matching articles that are already on the page
+					originalArticles.forEach((article) => {
+						const linkElement =
+							article.querySelector('a[href^="/blog/"]') ||
+							article.querySelector('a[href^="/es/blog/"]');
+						if (linkElement) {
+							const href = linkElement.getAttribute('href');
+							if (href) {
+								const slug = href.split('/').pop();
+
+								if (slug && matchingSlugs.includes(slug)) {
+									article.style.display = 'block';
+								}
+							}
+						}
+					});
+
+					// First, remove any previously added articles to prevent duplicates
+					const addedArticles = document.querySelectorAll('article[data-added="true"]');
+					addedArticles.forEach((article) => article.remove());
+
+					// For any matching slugs that aren't on the current page, we need to check if they exist in searchData
+					// and create elements for them if needed
+					const articlesContainer = document.querySelector('.space-y-8.w-full.max-w-3xl');
+					if (articlesContainer) {
+						// Get slugs of articles currently displayed (original articles, not dynamically added ones)
+						const displayedSlugs = Array.from(originalArticles)
+							.filter((article) => article.style.display === 'block')
+							.map((article) => {
+								const link =
+									article.querySelector('a[href^="/blog/"]') ||
+									article.querySelector('a[href^="/es/blog/"]');
+								return link ? link.getAttribute('href')?.split('/').pop() : null;
+							})
+							.filter(Boolean) as string[];
+
+						// Find matching articles from searchData that aren't displayed yet
+						const missingArticles = blogResults.filter(
+							(result) => result.item.slug && !displayedSlugs.includes(result.item.slug)
+						);
+
+						// If there are missing articles, we need to display them
+						if (missingArticles.length > 0) {
+							// Get the current language for path construction
+							const langPrefix = window.location.pathname.startsWith('/es') ? '/es' : '';
+
+							// Create elements for missing articles
+							missingArticles.forEach((result) => {
+								const article = document.createElement('article');
+								article.className =
+									'border-zinc-200 dark:border-zinc-800 group relative rounded-lg border p-6';
+								article.dataset.lang = result.item.lang;
+								article.dataset.added = 'true'; // Mark as dynamically added
+
+								const pubDate = result.item.pubDate ? new Date(result.item.pubDate) : new Date();
+								const formattedDate = pubDate.toLocaleDateString(
+									result.item.lang === 'es' ? 'es-ES' : 'en-US',
+									{
+										year: 'numeric',
+										month: 'long',
+										day: 'numeric',
+									}
+								);
+
+								// Create article content
+								article.innerHTML = `
+                  <h2 class="mb-2 text-2xl font-semibold text-black dark:text-white">
+                    <a href="${langPrefix}/blog/${result.item.slug}" class="hover:text-blue-600 dark:hover:text-blue-400">
+                      ${result.item.title}
+                    </a>
+                  </h2>
+                  <p class="text-gray-600 dark:text-gray-300 mb-4">${result.item.description}</p>
+                  <div class="flex flex-wrap items-center gap-4 text-sm">
+                    <time datetime="${pubDate.toISOString()}" class="text-gray-600 dark:text-gray-300">
+                      ${result.item.lang === 'es' ? 'Publicado el' : 'Published on'} ${formattedDate}
+                    </time>
+                    <div class="flex flex-wrap gap-2">
+                      ${result.item.tags
+												.map(
+													(tag: string) => `
+                        <span class="bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 rounded-full px-3 py-1 text-sm">
+                          #${tag}
+                        </span>
+                      `
+												)
+												.join('')}
+                    </div>
+                  </div>
+                  <a
+                    href="${langPrefix}/blog/${result.item.slug}"
+                    class="ring-blue-600 dark:ring-offset-zinc-900 absolute inset-0 rounded-lg ring-offset-2 ring-offset-white hover:ring-2"
+                    aria-label="Read ${result.item.title}"
+                  />
+                `;
+
+								// Add the article to the container
+								articlesContainer.appendChild(article);
+							});
+						}
+					}
+				} else {
+					// For pagination pages or when not on main blog page, just show matching articles
+					originalArticles.forEach((article) => {
+						const linkElement =
+							article.querySelector('a[href^="/blog/"]') ||
+							article.querySelector('a[href^="/es/blog/"]');
+						if (linkElement) {
+							const href = linkElement.getAttribute('href');
+							if (href) {
+								const slug = href.split('/').pop();
+
+								if (slug && matchingSlugs.includes(slug)) {
+									article.style.display = 'block';
+								}
+							}
+						}
+					});
+				}
+			}
+
+			// Handle RSS posts - these are not on the current page, so we need to create elements for them
+			if (rssResults.length > 0) {
+				const rssContainer = document.querySelector('.rss-feed-container');
+				const rssArticles = rssContainer?.querySelectorAll('article');
+
+				// If we have RSS articles on the page
+				if (rssContainer && rssArticles && rssArticles.length > 0) {
+					// Get external IDs from search results
+					const matchingExternalIds = rssResults
+						.map((result) => result.item.externalId)
+						.filter(Boolean);
+
+					// Show only RSS articles that match the external IDs
+					Array.from(rssArticles).forEach((article) => {
+						const htmlArticle = article as HTMLElement;
+						const linkElement = htmlArticle.querySelector('a[href]');
+						if (linkElement) {
+							const href = linkElement.getAttribute('href');
+							if (href && matchingExternalIds.includes(href)) {
+								htmlArticle.style.display = 'block';
+								// Make sure the RSS container is visible
+								const rssSection = rssContainer.closest('.mt-16') as HTMLElement;
+								if (rssSection) {
+									rssSection.style.display = 'block';
+								}
+							} else {
+								htmlArticle.style.display = 'none';
+							}
+						}
+					});
+				}
+			}
+
+			// Count visible articles - ensure we don't count duplicates
+			// Use a Set to track unique slugs that are displayed
+			const displayedSlugs = new Set<string>();
+
+			// Count visible blog articles and track their slugs
+			const visibleBlogArticles = Array.from(
+				document.querySelectorAll(
+					'.space-y-8.w-full.max-w-3xl article[style="display: block;"], .space-y-8.w-full.max-w-3xl article[data-added="true"]'
+				)
+			).filter((article) => {
+				const link =
+					article.querySelector('a[href^="/blog/"]') ||
+					article.querySelector('a[href^="/es/blog/"]');
+				if (link) {
+					const href = link.getAttribute('href');
+					if (href) {
+						const slug = href.split('/').pop();
+						if (slug && !displayedSlugs.has(slug)) {
+							displayedSlugs.add(slug);
+							return true;
+						}
+					}
+				}
+				return false;
+			}).length;
+
+			// Count visible RSS articles
+			const visibleRssArticles = document.querySelectorAll(
+				'.rss-feed-container article[style="display: block;"]'
+			).length;
+
+			// Update results count
+			updateResultsCount(visibleBlogArticles + visibleRssArticles, searchTerm);
+		} else {
+			// No results, hide all articles
+			originalArticles.forEach((article) => {
+				article.style.display = 'none';
+			});
+
+			// Hide RSS articles too
+			const rssArticles = document.querySelectorAll('.rss-feed-container article');
+			Array.from(rssArticles).forEach((article) => {
+				(article as HTMLElement).style.display = 'none';
+			});
+
+			// Update results count
+			updateResultsCount(0, searchTerm);
+		}
+	}
+
+	// Reset articles to original state
+	function resetArticles(): void {
+		// Remove any dynamically added articles
+		const addedArticles = document.querySelectorAll('article[data-added="true"]');
+		addedArticles.forEach((article) => article.remove());
+
+		// For the main blog page (page 1), show only the first page of articles
+		if (window.location.pathname === '/blog' || window.location.pathname === '/es/blog') {
+			// Get all blog articles
+			const allArticles = Array.from(originalArticles);
+
+			// Show only the first page of articles (usually 5)
+			const pageSize = 5;
+			allArticles.forEach((article, index) => {
+				article.style.display = index < pageSize ? 'block' : 'none';
+			});
+		} else {
+			// For pagination pages, show all articles on the current page
+			originalArticles.forEach((article) => {
+				article.style.display = 'block';
+			});
+		}
+
+		// Show all RSS articles
+		const rssArticles = document.querySelectorAll('.rss-feed-container article');
+		Array.from(rssArticles).forEach((article) => {
+			(article as HTMLElement).style.display = 'block';
+		});
+
+		// Make sure the RSS section is visible
+		const rssSection = document
+			.querySelector('.rss-feed-container')
+			?.closest('.mt-16') as HTMLElement | null;
+		if (rssSection) {
+			rssSection.style.display = 'block';
+		}
+	}
+
+	// Update results count text
+	function updateResultsCount(count: number, searchTerm: string): void {
+		if (!searchResultsCount) return;
+
+		searchResultsCount.classList.remove('hidden');
+
+		const lang = document.documentElement.lang || 'en';
+		if (lang === 'es') {
+			searchResultsCount.textContent = `${count} ${count === 1 ? 'resultado' : 'resultados'} para "${searchTerm}"`;
+		} else {
+			searchResultsCount.textContent = `${count} ${count === 1 ? 'result' : 'results'} for "${searchTerm}"`;
+		}
+	}
+
+	// Toggle pagination visibility
+	function togglePagination(show: boolean): void {
+		const paginationElements = document.querySelectorAll('.pagination-container');
+		paginationElements.forEach((element) => {
+			(element as HTMLElement).style.display = show ? 'flex' : 'none';
+		});
+
+		// When searching, we need to show all blog posts, not just the paginated ones
+		if (!show) {
+			// Get all blog posts from all pages
+			const allBlogPostsContainer = document.querySelector('.space-y-8.w-full.max-w-3xl');
+
+			// If we're on the main blog page and there are hidden posts due to pagination
+			if (
+				(window.location.pathname === '/blog' || window.location.pathname === '/es/blog') &&
+				allBlogPostsContainer
+			) {
+				// We need to show all posts that match the search, not just the first page
+				// This will be handled in filterArticles() by showing/hiding based on search results
+				// We don't need to do anything special here
+			}
+		}
+	}
+
+	// Initialize search when DOM is loaded
+	document.addEventListener('DOMContentLoaded', () => {
+		initSearch();
+
+		// Add class to pagination container for easier selection
+		const paginationElements = document.querySelectorAll('nav[aria-label="Pagination"]');
+		paginationElements.forEach((element) => {
+			element.classList.add('pagination-container');
+		});
+	});
+</script>
