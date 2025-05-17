@@ -1,7 +1,7 @@
 ---
 title: 'Mi Experiencia como Mantenedor de confs.tech'
 description: 'Promoviendo el Código Abierto'
-pubDate: 2025-05-07
+pubDate: 2025-03-07
 lang: 'es'
 tags:
   - open-source
@@ -23,6 +23,10 @@ Para quienes no lo conocen, [confs.tech](https://confs.tech) es una lista comple
 Como indica su descripción:
 
 > confs.tech: Lista de todas las conferencias tecnológicas del año. Encuentra tu próxima conferencia tecnológica. Una lista de código abierto y colaborativa de conferencias sobre desarrollo de software.
+
+::github{repo="tech-conferences/confs.tech"}
+
+::github{repo="tech-conferences/conference-data"}
 
 ![confs.tech maintainer role](../../assets/images/blog/oss/confs-role.png)
 

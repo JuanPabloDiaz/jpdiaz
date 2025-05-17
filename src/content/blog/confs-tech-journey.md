@@ -1,7 +1,7 @@
 ---
 title: 'Confs.tech Maintainer'
 description: 'My Experience as a confs.tech Maintainer: Promoting Open Source'
-pubDate: 2025-05-07
+pubDate: 2025-03-07
 lang: 'en'
 tags:
   - open-source
@@ -23,6 +23,10 @@ For those who aren't familiar, [confs.tech](https://confs.tech) is a comprehensi
 As its description states:
 
 > confs.tech: List of all tech conferences of the year. Find your next tech conference. An open-source and crowd-sourced list of conferences around software development.
+
+::github{repo="tech-conferences/confs.tech"}
+
+::github{repo="tech-conferences/conference-data"}
 
 ![confs.tech maintainer role](../../assets/images/blog/oss/confs-role.png)
 
