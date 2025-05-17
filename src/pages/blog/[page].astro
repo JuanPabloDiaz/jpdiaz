@@ -13,12 +13,12 @@ import BlogSearch from '@components/BlogSearch.astro';
 
 // Generate pages for pagination
 export async function getStaticPaths({ paginate }: { paginate: any }) {
-  const lang = 'en';
-  const allPosts = await getCollection('blog');
-  const posts = getSortedPosts(allPosts, lang);
-  
-  // Generate all pages including page 1
-  return paginate(posts, { pageSize: 5 });
+	const lang = 'en';
+	const allPosts = await getCollection('blog');
+	const posts = getSortedPosts(allPosts, lang);
+
+	// Generate all pages including page 1
+	return paginate(posts, { pageSize: 5 });
 }
 
 const { page } = Astro.props;
@@ -29,7 +29,7 @@ const blogPosts = Array.isArray(posts) ? posts : [];
 
 // Redirigir /blog/1 a /blog para evitar contenido duplicado
 if (currentPage === 1) {
-  return Astro.redirect('/blog');
+	return Astro.redirect('/blog');
 }
 
 const lang = getLangFromUrl(Astro.url);
@@ -44,19 +44,21 @@ const blogMenu = [
 
 <Layout metaTitle={`Blog | Page ${currentPage} | ${site.author}`} includeSidebar={false}>
 	<Navbar menu={blogMenu} button="Resume" />
-	<main class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto text-black dark:text-white">
+	<main
+		class="mb-10 flex flex-col items-center justify-center text-black dark:text-white md:mb-0 md:h-screen lg:h-auto"
+	>
 		<SubTitle text="Blog" />
-		<div class="flex flex-col items-center mb-8 w-full max-w-3xl">
+		<div class="mb-8 flex w-full max-w-3xl flex-col items-center">
 			<LangSwitch currentLang={lang} currentPathname={currentPathname} />
 		</div>
-		<p class="mb-8 max-w-2xl text-center text-gray-600 dark:text-gray-300">
-			Welcome to my blog! Here you’ll find articles, tutorials, and thoughts on web development, technology, and more.
+		<p class="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl text-center">
+			Welcome to my blog! Here you’ll find articles about web development, technology, and more.
 		</p>
 		<BlogSearch currentLang={lang} />
-		<div class="space-y-8 w-full max-w-3xl">
+		<div class="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4">
 			{
 				blogPosts.map((post: any) => (
-					<article class="border-zinc-200 dark:border-zinc-800 group relative rounded-lg border p-6" data-lang={post.data.lang || lang}>
+					<article class="group relative rounded-lg border p-6" data-lang={post.data.lang || lang}>
 						<h2 class="mb-2 text-2xl font-semibold text-black dark:text-white">
 							<a href={`/blog/${post.slug}`} class="hover:text-blue-600 dark:hover:text-blue-400">
 								{post.data.title}
@@ -80,7 +82,7 @@ const blogMenu = [
 						</div>
 						<a
 							href={`/blog/${post.slug}`}
-							class="ring-blue-600 dark:ring-offset-zinc-900 absolute inset-0 rounded-lg ring-offset-2 ring-offset-white hover:ring-2"
+							class="dark:ring-offset-zinc-900 absolute inset-0 rounded-lg ring-orange ring-offset-2 ring-offset-orange transition-all duration-300 ease-in-out hover:ring-2"
 							aria-label={`Read ${post.data.title}`}
 						/>
 					</article>
@@ -88,10 +90,6 @@ const blogMenu = [
 			}
 		</div>
 
-		<Pagination
-			currentPage={currentPage}
-			totalPages={lastPage}
-			baseUrl="/blog/"
-		/>
+		<Pagination currentPage={currentPage} totalPages={lastPage} baseUrl="/blog/" />
 	</main>
 </Layout>

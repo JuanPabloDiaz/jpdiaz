@@ -13,29 +13,33 @@ const t = useTranslations(lang);
 const currentPathname = Astro.url.pathname;
 
 const menu = [
-  { title: 'Inicio', path: '/' },
-  { title: 'Blog', path: '/es/blog' },
+	{ title: 'Inicio', path: '/' },
+	{ title: 'Blog', path: '/es/blog' },
 ];
 const currentPage = 1;
 ---
+
 <Layout metaTitle={`Talento Para TI | Página 1 | ${site.author}`} includeSidebar={false}>
-  <Navbar menu={menu} button="Resume" />
-  <main class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto text-black dark:text-white">
-    <SubTitle text="Talento Para TI" />
-    <div class="flex flex-col items-center mb-8 w-full max-w-3xl">
-      <LangSwitch currentLang={lang} currentPathname={currentPathname} />
-    </div>
-    <div class="w-full max-w-3xl mb-6">
-      <p class="mb-6 text-center text-gray-600 dark:text-gray-300">
-        Artículos de mi blog en Talento Para TI, donde escribo sobre ingeniería de datos, tecnologías cloud y más.
-      </p>
-      <RssSearch currentLang={lang} />
-    </div>
-    <RssFeedDisplay lang={lang} page={currentPage} pageSize={5} />
-    <div class="mt-8 text-center">
-      <a href="/es/blog" class="text-blue-600 dark:text-blue-400 hover:underline">
-        ← Volver al Blog
-      </a>
-    </div>
-  </main>
+	<Navbar menu={menu} button="Resume" />
+	<main
+		class="mb-10 flex flex-col items-center justify-center text-black dark:text-white md:mb-0 md:h-screen lg:h-auto"
+	>
+		<SubTitle text="Talento Para TI" />
+		<div class="mb-8 flex w-full max-w-3xl flex-col items-center">
+			<LangSwitch currentLang={lang} currentPathname={currentPathname} />
+		</div>
+		<div class="mb-6 w-full max-w-3xl">
+			<p class="text-gray-600 dark:text-gray-300 mb-6 text-center">
+				Artículos de mi blog en Talento Para TI, donde escribo sobre ingeniería de datos, Databricks
+				y más.
+			</p>
+			<RssSearch currentLang={lang} />
+		</div>
+		<RssFeedDisplay lang={lang} page={currentPage} pageSize={6} />
+		<div class="mt-8 text-center">
+			<a href="/es/blog" class="transition-colors duration-200 hover:text-orange">
+				← Volver al Blog
+			</a>
+		</div>
+	</main>
 </Layout>

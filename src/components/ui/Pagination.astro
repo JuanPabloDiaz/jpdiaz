@@ -1,11 +1,12 @@
 ---
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { Icon } from 'astro-icon/components';
 
 export interface Props {
-  currentPage: number;
-  totalPages: number;
-  baseUrl: string;
-  showFirstLast?: boolean;
+	currentPage: number;
+	totalPages: number;
+	baseUrl: string;
+	showFirstLast?: boolean;
 }
 
 const { currentPage, totalPages, baseUrl, showFirstLast = true } = Astro.props;
@@ -16,43 +17,31 @@ const t = useTranslations(lang);
 let pageNumbers = [];
 
 if (totalPages <= 5) {
-  // Show all pages if 5 or fewer
-  pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+	// Show all pages if 5 or fewer
+	pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 } else {
-  // Calculate which pages to show for larger page counts
-  if (currentPage <= 3) {
-    // Near the beginning
-    pageNumbers = [1, 2, 3, 4, 5];
-  } else if (currentPage >= totalPages - 2) {
-    // Near the end
-    pageNumbers = [
-      totalPages - 4,
-      totalPages - 3,
-      totalPages - 2,
-      totalPages - 1,
-      totalPages
-    ];
-  } else {
-    // In the middle
-    pageNumbers = [
-      currentPage - 2,
-      currentPage - 1,
-      currentPage,
-      currentPage + 1,
-      currentPage + 2
-    ];
-  }
+	// Calculate which pages to show for larger page counts
+	if (currentPage <= 3) {
+		// Near the beginning
+		pageNumbers = [1, 2, 3, 4, 5];
+	} else if (currentPage >= totalPages - 2) {
+		// Near the end
+		pageNumbers = [totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+	} else {
+		// In the middle
+		pageNumbers = [currentPage - 2, currentPage - 1, currentPage, currentPage + 1, currentPage + 2];
+	}
 }
 
 // Create URLs for each page
 const getPageUrl = (i: number) => {
-  if (i === 1) {
-    // Para la página 1, siempre usar la URL base sin número de página
-    const base = baseUrl.endsWith('/') && baseUrl.length > 1 ? baseUrl.slice(0, -1) : baseUrl;
-    // Si estamos en /blog/1, redirigir a /blog
-    return base.replace(/\/1$/, '');
-  }
-  return `${baseUrl}${i}`;
+	if (i === 1) {
+		// Para la página 1, siempre usar la URL base sin número de página
+		const base = baseUrl.endsWith('/') && baseUrl.length > 1 ? baseUrl.slice(0, -1) : baseUrl;
+		// Si estamos en /blog/1, redirigir a /blog
+		return base.replace(/\/1$/, '');
+	}
+	return `${baseUrl}${i}`;
 };
 
 // Labels for navigation
@@ -62,85 +51,120 @@ const firstLabel = lang === 'es' ? 'Primera' : 'First';
 const lastLabel = lang === 'es' ? 'Última' : 'Last';
 ---
 
-<nav aria-label={lang === 'es' ? 'Paginación' : 'Pagination'} class="pagination-container flex justify-center my-8">
-  <ul class="flex items-center gap-1">
-    {showFirstLast && currentPage > 1 && (
-      <li>
-        <a 
-          href={getPageUrl(1)}
-          class="flex items-center justify-center w-10 h-10 rounded-md border border-zinc-200 dark:border-zinc-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-          aria-label={firstLabel}
-        >
-          <span class="sr-only">{firstLabel}</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M15.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-            <path fill-rule="evenodd" d="M7.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L3.414 10l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-          </svg>
-        </a>
-      </li>
-    )}
+<nav
+	aria-label={lang === 'es' ? 'Paginación' : 'Pagination'}
+	class="pagination-container my-8 flex justify-center"
+>
+	<ul class="flex items-center gap-1">
+		{
+			showFirstLast && currentPage > 1 && (
+				<li>
+					<a
+						href={getPageUrl(1)}
+						class="border-zinc-200 dark:border-zinc-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 flex h-10 w-10 items-center justify-center rounded-md border transition-colors duration-200 hover:text-orange"
+						aria-label={firstLabel}
+					>
+						<span class="sr-only">{firstLabel}</span>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="h-5 w-5"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M15.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 010 1.414z"
+								clip-rule="evenodd"
+							/>
+							<path
+								fill-rule="evenodd"
+								d="M7.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L3.414 10l4.293 4.293a1 1 0 010 1.414z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+					</a>
+				</li>
+			)
+		}
 
-    {currentPage > 1 && (
-      <li>
-        <a 
-          href={getPageUrl(currentPage - 1)}
-          class="flex items-center justify-center w-10 h-10 rounded-md border border-zinc-200 dark:border-zinc-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-          aria-label={prevLabel}
-        >
-          <span class="sr-only">{prevLabel}</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
-          </svg>
-        </a>
-      </li>
-    )}
+		{
+			currentPage > 1 && (
+				<li>
+					<a
+						href={getPageUrl(currentPage - 1)}
+						class="border-zinc-200 dark:border-zinc-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 flex h-10 w-10 items-center justify-center rounded-md border transition-colors duration-200 hover:text-orange"
+						aria-label={prevLabel}
+					>
+						<span class="sr-only">{prevLabel}</span>
+						<Icon name="fe:arrow-left" class="h-5 w-5" />
+					</a>
+				</li>
+			)
+		}
 
-    {pageNumbers.map(page => (
-      <li>
-        <a 
-          href={getPageUrl(page)}
-          class={`flex items-center justify-center w-10 h-10 rounded-md border ${
-            page === currentPage 
-              ? 'bg-blue-600 text-white border-blue-600 dark:bg-blue-700 dark:border-blue-700' 
-              : 'border-zinc-200 dark:border-zinc-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-          }`}
-          aria-label={`${lang === 'es' ? 'Página' : 'Page'} ${page}`}
-          aria-current={page === currentPage ? 'page' : undefined}
-        >
-          {page}
-        </a>
-      </li>
-    ))}
+		{
+			pageNumbers.map((page) => (
+				<li>
+					<a
+						href={getPageUrl(page)}
+						class={`flex h-10 w-10 items-center justify-center rounded-md border ${
+							page === currentPage
+								? 'bg-blue-600 border-blue-600 dark:bg-blue-700 dark:border-blue-700 text-white'
+								: 'border-zinc-200 dark:border-zinc-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 hover:text-orange'
+						}`}
+						aria-label={`${lang === 'es' ? 'Página' : 'Page'} ${page}`}
+						aria-current={page === currentPage ? 'page' : undefined}
+					>
+						{page}
+					</a>
+				</li>
+			))
+		}
 
-    {currentPage < totalPages && (
-      <li>
-        <a 
-          href={getPageUrl(currentPage + 1)}
-          class="flex items-center justify-center w-10 h-10 rounded-md border border-zinc-200 dark:border-zinc-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-          aria-label={nextLabel}
-        >
-          <span class="sr-only">{nextLabel}</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-          </svg>
-        </a>
-      </li>
-    )}
+		{
+			currentPage < totalPages && (
+				<li>
+					<a
+						href={getPageUrl(currentPage + 1)}
+						class="border-zinc-200 dark:border-zinc-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 flex h-10 w-10 items-center justify-center rounded-md border transition-colors duration-200 hover:text-orange"
+						aria-label={nextLabel}
+					>
+						<span class="sr-only">{nextLabel}</span>
+						<Icon name="fe:arrow-right" class="h-5 w-5" />
+					</a>
+				</li>
+			)
+		}
 
-    {showFirstLast && currentPage < totalPages && (
-      <li>
-        <a 
-          href={getPageUrl(totalPages)}
-          class="flex items-center justify-center w-10 h-10 rounded-md border border-zinc-200 dark:border-zinc-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-          aria-label={lastLabel}
-        >
-          <span class="sr-only">{lastLabel}</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 6.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-            <path fill-rule="evenodd" d="M12.293 15.707a1 1 0 010-1.414L16.586 10l-4.293-3.293a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-          </svg>
-        </a>
-      </li>
-    )}
-  </ul>
+		{
+			showFirstLast && currentPage < totalPages && (
+				<li>
+					<a
+						href={getPageUrl(totalPages)}
+						class="border-zinc-200 dark:border-zinc-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 flex h-10 w-10 items-center justify-center rounded-md border transition-colors duration-200 hover:text-orange"
+						aria-label={lastLabel}
+					>
+						<span class="sr-only">{lastLabel}</span>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="h-5 w-5"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 6.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+								clip-rule="evenodd"
+							/>
+							<path
+								fill-rule="evenodd"
+								d="M12.293 15.707a1 1 0 010-1.414L16.586 10l-4.293-3.293a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+					</a>
+				</li>
+			)
+		}
+	</ul>
 </nav>

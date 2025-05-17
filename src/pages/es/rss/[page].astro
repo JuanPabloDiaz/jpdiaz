@@ -10,10 +10,10 @@ import RssSearch from '@components/RssSearch.astro';
 
 // Generate pages for pagination - we'll determine the number of pages from the RSS feed
 export async function getStaticPaths() {
-  // Create pages 1-5 by default, the actual number will be determined at runtime
-  return Array.from({ length: 5 }, (_, i) => ({
-    params: { page: i + 1 },
-  }));
+	// Create pages 1-5 by default, the actual number will be determined at runtime
+	return Array.from({ length: 5 }, (_, i) => ({
+		params: { page: i + 1 },
+	}));
 }
 
 const { page } = Astro.params;
@@ -25,33 +25,38 @@ const t = useTranslations(lang);
 const currentPathname = Astro.url.pathname;
 
 const menu = [
-  { title: 'Inicio', path: '/' },
-  { title: 'Blog', path: '/es/blog' },
+	{ title: 'Inicio', path: '/' },
+	{ title: 'Blog', path: '/es/blog' },
 ];
-
 ---
 
-<Layout metaTitle={`Talento Para TI | Página ${currentPageString} | ${site.author}`} includeSidebar={false}>
-  <Navbar menu={menu} button="Resume" />
-  <main class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen lg:h-auto text-black dark:text-white">
-    <SubTitle text="Talento Para TI" />
-    <div class="flex flex-col items-center mb-8 w-full max-w-3xl">
-      <LangSwitch currentLang={lang} currentPathname={currentPathname} />
-    </div>
-    
-    <div class="w-full max-w-3xl mb-6">
-      <p class="mb-6 text-center text-gray-600 dark:text-gray-300">
-        Artículos de mi blog en Talento Para TI, donde escribo sobre ingeniería de datos, tecnologías cloud y más.
-      </p>
-      <RssSearch currentLang={lang} />
-    </div>
+<Layout
+	metaTitle={`Talento Para TI | Página ${currentPageString} | ${site.author}`}
+	includeSidebar={false}
+>
+	<Navbar menu={menu} button="Resume" />
+	<main
+		class="mb-10 flex flex-col items-center justify-center text-black dark:text-white md:mb-0 md:h-screen lg:h-auto"
+	>
+		<SubTitle text="Talento Para TI" />
+		<div class="mb-8 flex w-full max-w-3xl flex-col items-center">
+			<LangSwitch currentLang={lang} currentPathname={currentPathname} />
+		</div>
 
-    <RssFeedDisplay lang={lang} page={currentPage} pageSize={5} />
+		<div class="mb-6 w-full max-w-3xl">
+			<p class="text-gray-600 dark:text-gray-300 mb-6 text-center">
+				Artículos de mi blog en Talento Para TI, donde escribo sobre ingeniería de datos,
+				tecnologías cloud y más.
+			</p>
+			<RssSearch currentLang={lang} />
+		</div>
 
-    <div class="mt-8 text-center">
-      <a href="/es/blog" class="text-blue-600 dark:text-blue-400 hover:underline">
-        ← Volver al Blog
-      </a>
-    </div>
-  </main>
+		<RssFeedDisplay lang={lang} page={currentPage} pageSize={5} />
+
+		<div class="mt-8 text-center">
+			<a href="/blog" class="transition-colors duration-200 hover:text-orange">
+				← Volver al Blog
+			</a>
+		</div>
+	</main>
 </Layout>

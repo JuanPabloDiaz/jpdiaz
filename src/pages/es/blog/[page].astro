@@ -13,11 +13,11 @@ import BlogSearch from '@components/BlogSearch.astro';
 
 // Generate pages for pagination
 export async function getStaticPaths({ paginate }) {
-  const lang = 'es';
-  const allPosts = await getCollection('blog');
-  const posts = getSortedPosts(allPosts, lang);
+	const lang = 'es';
+	const allPosts = await getCollection('blog');
+	const posts = getSortedPosts(allPosts, lang);
 
-  return paginate(posts, { pageSize: 5 });
+	return paginate(posts, { pageSize: 5 });
 }
 
 const { page } = Astro.props;
@@ -38,21 +38,26 @@ const blogMenu = [
 
 <Layout metaTitle={`Blog | Página ${currentPage} | ${site.author}`} includeSidebar={false}>
 	<Navbar menu={blogMenu} button="Resume" />
-	<section class="mx-auto max-w-3xl px-4 py-8 text-black dark:text-white">
-		<div class="mb-8 flex items-center justify-between">
-			<h1 class="text-4xl font-bold text-black dark:text-white">Blog</h1>
+	<main
+		class="mb-10 flex flex-col items-center justify-center text-black dark:text-white md:mb-0 md:h-screen lg:h-auto"
+	>
+		<SubTitle text="Blog" />
+		<div class="mb-8 flex w-full max-w-3xl flex-col items-center">
 			<LangSwitch currentLang={lang} currentPathname={currentPathname} />
 		</div>
-		<p class="mb-8 max-w-2xl text-center text-gray-600 dark:text-gray-300">
-			¡Bienvenido a mi blog! Aquí encontrarás artículos, tutoriales y pensamientos sobre desarrollo web, tecnología y más.
+		<p class="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl text-center">
+			¡Bienvenido a mi blog! Aquí encontrarás artículos sobre desarrollo web, tecnología y más.
 		</p>
 		<BlogSearch currentLang={lang} />
-		<div class="space-y-8 w-full max-w-3xl">
+		<div class="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4">
 			{
 				blogPosts.map((post) => (
-					<article class="border-zinc-200 dark:border-zinc-800 group relative rounded-lg border p-6" data-lang={post.data.lang || lang}>
+					<article class="group relative rounded-lg border p-6" data-lang={post.data.lang || lang}>
 						<h2 class="mb-2 text-2xl font-semibold text-black dark:text-white">
-							<a href={`/es/blog/${post.slug}`} class="hover:text-blue-600 dark:hover:text-blue-400">
+							<a
+								href={`/es/blog/${post.slug}`}
+								class="hover:text-blue-600 dark:hover:text-blue-400"
+							>
 								{post.data.title}
 							</a>
 						</h2>
@@ -74,7 +79,7 @@ const blogMenu = [
 						</div>
 						<a
 							href={`/es/blog/${post.slug}`}
-							class="ring-blue-600 dark:ring-offset-zinc-900 absolute inset-0 rounded-lg ring-offset-2 ring-offset-white hover:ring-2"
+							class="dark:ring-offset-zinc-900 absolute inset-0 rounded-lg ring-orange ring-offset-2 ring-offset-orange transition-all duration-300 ease-in-out hover:ring-2"
 							aria-label={`Leer ${post.data.title}`}
 						/>
 					</article>
@@ -82,10 +87,6 @@ const blogMenu = [
 			}
 		</div>
 
-		<Pagination
-			currentPage={currentPage}
-			totalPages={lastPage}
-			baseUrl="/es/blog/"
-		/>
+		<Pagination currentPage={currentPage} totalPages={lastPage} baseUrl="/es/blog/" />
 	</main>
 </Layout>

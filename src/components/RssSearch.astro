@@ -1,189 +1,197 @@
 ---
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { Icon } from 'astro-icon/components';
 
 const { currentLang } = Astro.props;
 const lang = currentLang || getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<div class="w-full max-w-3xl mb-6">
-  <div class="relative">
-    <span class="absolute inset-y-0 flex items-center pl-3 opacity-75">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-      </svg>
-    </span>
-    <input
-      id="rss-search"
-      class="block w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-black dark:text-white py-2 pl-10 pr-3 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500 focus:outline-none"
-      placeholder={lang === 'en' ? "Search Talento Para TI articles..." : "Buscar artículos de Talento Para TI..."}
-      type="search"
-      name="search"
-    />
-  </div>
-  <p id="rss-search-results-count" class="text-sm text-gray-600 dark:text-gray-300 mt-2 hidden"></p>
+<div class="mb-6 w-full max-w-3xl">
+	<div class="relative">
+		<span class="absolute inset-y-0 flex items-center pl-3 opacity-75">
+			<Icon name="fe:search" class="text-gray-500 dark:text-gray-400 h-5 w-5" />
+		</span>
+		<input
+			id="rss-search"
+			class="border-gray-300 dark:border-gray-700 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:orange block w-full rounded-lg border py-2 pl-10 pr-3 text-black focus:border-orange focus:outline-none dark:text-white"
+			placeholder={lang === 'en'
+				? 'Search Talento Para TI articles...'
+				: 'Buscar artículos de Talento Para TI...'}
+			type="search"
+			name="search"
+		/>
+	</div>
+	<p id="rss-search-results-count" class="text-gray-600 dark:text-gray-300 mt-2 hidden text-sm"></p>
 </div>
 
 <script>
-  import DOMPurify from "dompurify";
-  import Fuse from "fuse.js";
+	import DOMPurify from 'dompurify';
+	import Fuse from 'fuse.js';
 
-  interface RssItem {
-    link: string;
-    title: string;
-    description?: string;
-    pubDate: string;
-  }
+	interface RssItem {
+		link: string;
+		title: string;
+		description?: string;
+		pubDate: string;
+	}
 
-  interface SearchResult {
-    item: RssItem;
-    score?: number;
-    refIndex?: number;
-  }
+	interface SearchResult {
+		item: RssItem;
+		score?: number;
+		refIndex?: number;
+	}
 
-  // DOM elements
-  const searchInput = document.getElementById('rss-search') as HTMLInputElement;
-  const searchResultsCount = document.getElementById('rss-search-results-count');
-  const articleElements = document.querySelectorAll('.rss-feed-container article');
-  
-  // Store original articles for resetting
-  const originalArticles = Array.from(articleElements) as HTMLElement[];
-  
-  // Fuse.js options
-  const fuseOptions = {
-    includeScore: true,
-    threshold: 0.6,
-    keys: [
-      { name: 'title', weight: 1 },
-      { name: 'description', weight: 0.75 }
-    ]
-  };
+	// DOM elements
+	const searchInput = document.getElementById('rss-search') as HTMLInputElement;
+	const searchResultsCount = document.getElementById('rss-search-results-count');
+	const articleElements = document.querySelectorAll('.rss-feed-container article');
 
-  let searchData: RssItem[] = [];
-  let fuse: Fuse<RssItem>;
-  let currentLang = document.documentElement.lang || 'en';
+	// Store original articles for resetting
+	const originalArticles = Array.from(articleElements) as HTMLElement[];
 
-  // Extract data from RSS articles on the page
-  function extractDataFromArticles(): RssItem[] {
-    return Array.from(articleElements).map(article => {
-      const titleElement = article.querySelector('h2 a');
-      const descriptionElement = article.querySelector('p');
-      const linkElement = article.querySelector('a[href]');
-      const timeElement = article.querySelector('time');
-      
-      return {
-        link: linkElement && linkElement.getAttribute('href') ? linkElement.getAttribute('href')! : '',
-        title: titleElement && titleElement.textContent ? titleElement.textContent.trim() : '',
-        description: descriptionElement && descriptionElement.textContent ? descriptionElement.textContent.trim() : '',
-        pubDate: timeElement && timeElement.getAttribute('datetime') ? timeElement.getAttribute('datetime')! : ''
-      };
-    });
-  }
+	// Fuse.js options
+	const fuseOptions = {
+		includeScore: true,
+		threshold: 0.6,
+		keys: [
+			{ name: 'title', weight: 1 },
+			{ name: 'description', weight: 0.75 },
+		],
+	};
 
-  // Initialize search
-  async function initSearch(): Promise<void> {
-    try {
-      // Extract data from the current page
-      searchData = extractDataFromArticles();
-      
-      // Initialize Fuse instance
-      fuse = new Fuse(searchData, fuseOptions);
-      
-      // Add event listener to search input
-      if (searchInput) {
-        searchInput.addEventListener('input', handleSearch);
-      }
-    } catch (error) {
-      console.error('Error initializing RSS search:', error);
-    }
-  }
+	let searchData: RssItem[] = [];
+	let fuse: Fuse<RssItem>;
+	let currentLang = document.documentElement.lang || 'en';
 
-  // Handle search
-  function handleSearch(event: Event): void {
-    if (!searchInput) return;
-    
-    const searchTerm = DOMPurify.sanitize(searchInput.value.trim());
-    
-    if (searchTerm === '') {
-      // If search is empty, show all articles
-      resetArticles();
-      if (searchResultsCount) {
-        searchResultsCount.classList.add('hidden');
-      }
-      // Show pagination when not searching
-      togglePagination(true);
-      return;
-    }
-    
-    // Search using Fuse.js
-    const results = fuse.search(searchTerm);
-    
-    // Filter articles based on search results
-    filterArticles(results, searchTerm);
-    
-    // Hide pagination when searching
-    togglePagination(false);
-  }
+	// Extract data from RSS articles on the page
+	function extractDataFromArticles(): RssItem[] {
+		return Array.from(articleElements).map((article) => {
+			const titleElement = article.querySelector('h2 a');
+			const descriptionElement = article.querySelector('p');
+			const linkElement = article.querySelector('a[href]');
+			const timeElement = article.querySelector('time');
 
-  // Filter articles based on search results
-  function filterArticles(results: SearchResult[], searchTerm: string): void {
-    // Hide all articles first
-    originalArticles.forEach(article => {
-      article.style.display = 'none';
-    });
-    
-    if (results.length > 0) {
-      // Get the links from search results
-      const matchingLinks = results.map(result => result.item.link);
-      
-      // Show only articles that match the links
-      originalArticles.forEach(article => {
-        const linkElement = article.querySelector('a[href]');
-        if (linkElement) {
-          const href = linkElement.getAttribute('href');
-          if (href && matchingLinks.includes(href)) {
-            article.style.display = 'block';
-          }
-        }
-      });
-      
-      // Update results count
-      updateResultsCount(results.length, searchTerm);
-    } else {
-      // No results
-      updateResultsCount(0, searchTerm);
-    }
-  }
+			return {
+				link:
+					linkElement && linkElement.getAttribute('href') ? linkElement.getAttribute('href')! : '',
+				title: titleElement && titleElement.textContent ? titleElement.textContent.trim() : '',
+				description:
+					descriptionElement && descriptionElement.textContent
+						? descriptionElement.textContent.trim()
+						: '',
+				pubDate:
+					timeElement && timeElement.getAttribute('datetime')
+						? timeElement.getAttribute('datetime')!
+						: '',
+			};
+		});
+	}
 
-  // Reset articles to original state
-  function resetArticles(): void {
-    originalArticles.forEach(article => {
-      article.style.display = 'block';
-    });
-  }
+	// Initialize search
+	async function initSearch(): Promise<void> {
+		try {
+			// Extract data from the current page
+			searchData = extractDataFromArticles();
 
-  // Toggle pagination visibility
-  function togglePagination(show: boolean): void {
-    const paginationElements = document.querySelectorAll('.pagination-container');
-    paginationElements.forEach(element => {
-      (element as HTMLElement).style.display = show ? 'flex' : 'none';
-    });
-  }
+			// Initialize Fuse instance
+			fuse = new Fuse(searchData, fuseOptions);
 
-  // Update results count text
-  function updateResultsCount(count: number, searchTerm: string): void {
-    if (!searchResultsCount) return;
-    
-    searchResultsCount.classList.remove('hidden');
-    
-    const lang = document.documentElement.lang || 'en';
-    if (lang === 'es') {
-      searchResultsCount.textContent = `${count} ${count === 1 ? 'resultado' : 'resultados'} para "${searchTerm}"`;
-    } else {
-      searchResultsCount.textContent = `${count} ${count === 1 ? 'result' : 'results'} for "${searchTerm}"`;
-    }
-  }
+			// Add event listener to search input
+			if (searchInput) {
+				searchInput.addEventListener('input', handleSearch);
+			}
+		} catch (error) {
+			console.error('Error initializing RSS search:', error);
+		}
+	}
 
-  // Initialize search when DOM is loaded
-  document.addEventListener('DOMContentLoaded', initSearch);
+	// Handle search
+	function handleSearch(event: Event): void {
+		if (!searchInput) return;
+
+		const searchTerm = DOMPurify.sanitize(searchInput.value.trim());
+
+		if (searchTerm === '') {
+			// If search is empty, show all articles
+			resetArticles();
+			if (searchResultsCount) {
+				searchResultsCount.classList.add('hidden');
+			}
+			// Show pagination when not searching
+			togglePagination(true);
+			return;
+		}
+
+		// Search using Fuse.js
+		const results = fuse.search(searchTerm);
+
+		// Filter articles based on search results
+		filterArticles(results, searchTerm);
+
+		// Hide pagination when searching
+		togglePagination(false);
+	}
+
+	// Filter articles based on search results
+	function filterArticles(results: SearchResult[], searchTerm: string): void {
+		// Hide all articles first
+		originalArticles.forEach((article) => {
+			article.style.display = 'none';
+		});
+
+		if (results.length > 0) {
+			// Get the links from search results
+			const matchingLinks = results.map((result) => result.item.link);
+
+			// Show only articles that match the links
+			originalArticles.forEach((article) => {
+				const linkElement = article.querySelector('a[href]');
+				if (linkElement) {
+					const href = linkElement.getAttribute('href');
+					if (href && matchingLinks.includes(href)) {
+						article.style.display = 'block';
+					}
+				}
+			});
+
+			// Update results count
+			updateResultsCount(results.length, searchTerm);
+		} else {
+			// No results
+			updateResultsCount(0, searchTerm);
+		}
+	}
+
+	// Reset articles to original state
+	function resetArticles(): void {
+		originalArticles.forEach((article) => {
+			article.style.display = 'block';
+		});
+	}
+
+	// Toggle pagination visibility
+	function togglePagination(show: boolean): void {
+		const paginationElements = document.querySelectorAll('.pagination-container');
+		paginationElements.forEach((element) => {
+			(element as HTMLElement).style.display = show ? 'flex' : 'none';
+		});
+	}
+
+	// Update results count text
+	function updateResultsCount(count: number, searchTerm: string): void {
+		if (!searchResultsCount) return;
+
+		searchResultsCount.classList.remove('hidden');
+
+		const lang = document.documentElement.lang || 'en';
+		if (lang === 'es') {
+			searchResultsCount.textContent = `${count} ${count === 1 ? 'resultado' : 'resultados'} para "${searchTerm}"`;
+		} else {
+			searchResultsCount.textContent = `${count} ${count === 1 ? 'result' : 'results'} for "${searchTerm}"`;
+		}
+	}
+
+	// Initialize search when DOM is loaded
+	document.addEventListener('DOMContentLoaded', initSearch);
 </script>
