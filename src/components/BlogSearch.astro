@@ -1,0 +1,212 @@
+---
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+
+const { currentLang } = Astro.props;
+const lang = currentLang || getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="w-full max-w-3xl mb-6">
+  <div class="relative">
+    <span class="absolute inset-y-0 flex items-center pl-3 opacity-75">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+      </svg>
+    </span>
+    <input
+      id="blog-search"
+      class="block w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-black dark:text-white py-2 pl-10 pr-3 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-blue-500 focus:outline-none"
+      placeholder={lang === 'en' ? "Search blog posts..." : "Buscar artículos..."}
+      type="search"
+      name="search"
+    />
+  </div>
+  <p id="search-results-count" class="text-sm text-gray-600 dark:text-gray-300 mt-2 hidden"></p>
+</div>
+
+<script>
+  import DOMPurify from "dompurify";
+  import Fuse from "fuse.js";
+
+  interface SearchItem {
+    element?: HTMLElement;
+    slug?: string;
+    title: string;
+    description: string;
+    tags: string[];
+    lang: string;
+    pubDate?: Date;
+  }
+
+  interface SearchResult {
+    item: SearchItem;
+    score?: number;
+    refIndex?: number;
+  }
+
+  // DOM elements
+  const searchInput = document.getElementById('blog-search') as HTMLInputElement;
+  const searchResultsCount = document.getElementById('search-results-count');
+  const articleElements = document.querySelectorAll('article');
+  
+  // Store original articles for resetting
+  const originalArticles = Array.from(articleElements) as HTMLElement[];
+  
+  // Fuse.js options
+  const fuseOptions = {
+    includeScore: true,
+    threshold: 0.4,
+    keys: [
+      { name: 'title', weight: 1 },
+      { name: 'description', weight: 0.75 },
+      { name: 'tags', weight: 0.5 }
+    ]
+  };
+
+  let searchData: SearchItem[] = [];
+  let fuse: Fuse<SearchItem>;
+  let currentLang = document.documentElement.lang || 'en';
+
+  // Extract data from articles on the page
+  function extractDataFromArticles(): SearchItem[] {
+    return Array.from(articleElements).map(article => {
+      const titleElement = article.querySelector('h2 a');
+      const descriptionElement = article.querySelector('p');
+      const tagsElements = article.querySelectorAll('.flex-wrap.gap-2 span');
+      
+      return {
+        element: article as HTMLElement,
+        title: titleElement && titleElement.textContent ? titleElement.textContent.trim() : '',
+        description: descriptionElement && descriptionElement.textContent ? descriptionElement.textContent.trim() : '',
+        tags: Array.from(tagsElements).map(tag => tag.textContent ? tag.textContent.trim().replace('#', '') : ''),
+        lang: (article as HTMLElement).dataset.lang || currentLang
+      };
+    });
+  }
+
+  // Initialize search
+  async function initSearch(): Promise<void> {
+    try {
+      // Try to fetch data from search.json
+      const response = await fetch('/search.json');
+      if (response.ok) {
+        const jsonData = await response.json();
+        searchData = jsonData;
+      } else {
+        // Fallback to extracting data from the current page
+        searchData = extractDataFromArticles();
+      }
+      
+      // Initialize Fuse instance
+      fuse = new Fuse(searchData, fuseOptions);
+      
+      // Add event listener to search input
+      if (searchInput) {
+        searchInput.addEventListener('input', handleSearch);
+      }
+    } catch (error) {
+      console.error('Error initializing search:', error);
+      // Fallback to extracting data from the current page
+      searchData = extractDataFromArticles();
+      fuse = new Fuse(searchData, fuseOptions);
+    }
+  }
+
+  // Handle search
+  function handleSearch(event: Event): void {
+    if (!searchInput) return;
+    
+    const searchTerm = DOMPurify.sanitize(searchInput.value.trim());
+    
+    if (searchTerm === '') {
+      // If search is empty, show all articles
+      resetArticles();
+      if (searchResultsCount) {
+        searchResultsCount.classList.add('hidden');
+      }
+      return;
+    }
+    
+    // Search using Fuse.js
+    const results = fuse.search(searchTerm);
+    
+    // Filter articles based on search results
+    filterArticles(results, searchTerm);
+  }
+
+  // Filter articles based on search results
+  function filterArticles(results: SearchResult[], searchTerm: string): void {
+    // If using data from search.json, we need to match results to DOM elements
+    if (results.length > 0 && results[0].item.slug) {
+      // Hide all articles first
+      originalArticles.forEach(article => {
+        article.style.display = 'none';
+      });
+      
+      // Get the slugs from search results
+      const matchingSlugs = results.map(result => result.item.slug);
+      
+      // Show only articles that match the slugs
+      let visibleCount = 0;
+      originalArticles.forEach(article => {
+        const linkElement = article.querySelector('a[href^="/blog/"]');
+        if (linkElement) {
+          const href = linkElement.getAttribute('href');
+          if (href) {
+            const slug = href.split('/').pop();
+            
+            if (slug && matchingSlugs.includes(slug)) {
+              article.style.display = 'block';
+              visibleCount++;
+            }
+          }
+        }
+      });
+      
+      // Update results count
+      updateResultsCount(visibleCount, searchTerm);
+    } else {
+      // Using data extracted from the page
+      const matchingElements = results.map(result => result.item.element);
+      
+      // Hide all articles first
+      originalArticles.forEach(article => {
+        article.style.display = 'none';
+      });
+      
+      // Show only matching articles
+      matchingElements.forEach(element => {
+        if (element) {
+          element.style.display = 'block';
+        }
+      });
+      
+      // Update results count
+      updateResultsCount(matchingElements.length, searchTerm);
+    }
+  }
+
+  // Reset articles to original state
+  function resetArticles(): void {
+    originalArticles.forEach(article => {
+      article.style.display = 'block';
+    });
+  }
+
+  // Update results count text
+  function updateResultsCount(count: number, searchTerm: string): void {
+    if (!searchResultsCount) return;
+    
+    searchResultsCount.classList.remove('hidden');
+    
+    const lang = document.documentElement.lang || 'en';
+    if (lang === 'es') {
+      searchResultsCount.textContent = `${count} ${count === 1 ? 'resultado' : 'resultados'} para "${searchTerm}"`;
+    } else {
+      searchResultsCount.textContent = `${count} ${count === 1 ? 'result' : 'results'} for "${searchTerm}"`;
+    }
+  }
+
+  // Initialize search when DOM is loaded
+  document.addEventListener('DOMContentLoaded', initSearch);
+</script>
