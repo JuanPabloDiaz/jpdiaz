@@ -62,7 +62,7 @@ const firstLabel = lang === 'es' ? 'Primera' : 'First';
 const lastLabel = lang === 'es' ? 'Última' : 'Last';
 ---
 
-<nav aria-label={lang === 'es' ? 'Paginación' : 'Pagination'} class="flex justify-center my-8">
+<nav aria-label={lang === 'es' ? 'Paginación' : 'Pagination'} class="pagination-container flex justify-center my-8">
   <ul class="flex items-center gap-1">
     {showFirstLast && currentPage > 1 && (
       <li>

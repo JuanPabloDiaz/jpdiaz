@@ -10,6 +10,7 @@ import RssFeedDisplay from '@components/RssFeedDisplay.astro';
 import { formatDate } from '@src/utils/formatDate';
 import Pagination from '@components/ui/Pagination.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
+import BlogSearch from '@components/BlogSearch.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -40,10 +41,11 @@ const totalPages = Math.ceil(posts.length / pageSize);
 		<p class="mb-8 max-w-2xl text-center text-gray-600 dark:text-gray-300">
 			¡Bienvenido a mi blog! Aquí encontrarás artículos, tutoriales y pensamientos sobre desarrollo web, tecnología y más.
 		</p>
+		<BlogSearch currentLang={lang} />
 		<div class="space-y-8 w-full max-w-3xl">
 			{
 				displayedPosts.map((post) => (
-					<article class="border-zinc-200 dark:border-zinc-800 group relative rounded-lg border p-6">
+					<article class="border-zinc-200 dark:border-zinc-800 group relative rounded-lg border p-6" data-lang={post.data.lang || lang}>
 						<h2 class="mb-2 text-2xl font-semibold text-black dark:text-white">
 							<a
 								href={`/es/blog/${post.slug}`}

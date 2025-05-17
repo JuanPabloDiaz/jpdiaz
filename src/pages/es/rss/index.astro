@@ -6,6 +6,7 @@ import SubTitle from '@components/ui/SubTitle.astro';
 import { site } from '@src/consts';
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 import RssFeedDisplay from '@components/RssFeedDisplay.astro';
+import RssSearch from '@components/RssSearch.astro';
 
 const lang = 'es';
 const t = useTranslations(lang);
@@ -23,6 +24,12 @@ const currentPage = 1;
     <SubTitle text="Talento Para TI" />
     <div class="flex flex-col items-center mb-8 w-full max-w-3xl">
       <LangSwitch currentLang={lang} currentPathname={currentPathname} />
+    </div>
+    <div class="w-full max-w-3xl mb-6">
+      <p class="mb-6 text-center text-gray-600 dark:text-gray-300">
+        Artículos de mi blog en Talento Para TI, donde escribo sobre ingeniería de datos, tecnologías cloud y más.
+      </p>
+      <RssSearch currentLang={lang} />
     </div>
     <RssFeedDisplay lang={lang} page={currentPage} pageSize={5} />
     <div class="mt-8 text-center">

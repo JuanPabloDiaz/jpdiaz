@@ -9,6 +9,7 @@ import { getCollection } from 'astro:content';
 import { formatDate } from '@utils/formatDate';
 import Pagination from '@components/ui/Pagination.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
+import BlogSearch from '@components/BlogSearch.astro';
 
 // Generate pages for pagination
 export async function getStaticPaths({ paginate }) {
@@ -21,6 +22,9 @@ export async function getStaticPaths({ paginate }) {
 
 const { page } = Astro.props;
 const { currentPage, data: posts, lastPage } = page;
+
+// Ensure posts is treated as an array
+const blogPosts = Array.isArray(posts) ? posts : [];
 
 const lang = 'es';
 const t = useTranslations(lang);
@@ -42,10 +46,11 @@ const blogMenu = [
 		<p class="mb-8 max-w-2xl text-center text-gray-600 dark:text-gray-300">
 			¡Bienvenido a mi blog! Aquí encontrarás artículos, tutoriales y pensamientos sobre desarrollo web, tecnología y más.
 		</p>
+		<BlogSearch currentLang={lang} />
 		<div class="space-y-8 w-full max-w-3xl">
 			{
-				posts.map((post) => (
-					<article class="border-zinc-200 dark:border-zinc-800 group relative rounded-lg border p-6">
+				blogPosts.map((post) => (
+					<article class="border-zinc-200 dark:border-zinc-800 group relative rounded-lg border p-6" data-lang={post.data.lang || lang}>
 						<h2 class="mb-2 text-2xl font-semibold text-black dark:text-white">
 							<a href={`/es/blog/${post.slug}`} class="hover:text-blue-600 dark:hover:text-blue-400">
 								{post.data.title}

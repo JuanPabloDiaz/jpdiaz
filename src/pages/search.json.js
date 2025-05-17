@@ -1,7 +1,9 @@
 import { getCollection } from 'astro:content';
-import { getSortedPosts } from '@utils/collectionUtils';
+import { getSortedPosts } from '../utils/collectionUtils';
+import { fetchRssFeed } from '../utils/rssFeed';
 
 async function getBlogs() {
+  // Get blog posts from content collection
   const allPosts = await getCollection('blog');
   
   // Get both English and Spanish posts
@@ -17,10 +19,37 @@ async function getBlogs() {
       pubDate: post.data.pubDate,
       tags: post.data.tags,
       lang: post.data.lang || 'en',
+      type: 'blog'
     };
   });
   
-  return allFormattedPosts;
+  // Get RSS feed posts
+  const enRssPosts = await fetchRssFeed('en', { returnTotal: true, pageSize: 100 });
+  const esRssPosts = await fetchRssFeed('es', { returnTotal: true, pageSize: 100 });
+  
+  // Format RSS posts
+  const enRssFormatted = enRssPosts.posts ? enRssPosts.posts.map(post => ({
+    externalId: post.link,
+    title: post.title || '',
+    description: post.description || '',
+    pubDate: post.pubDate,
+    tags: ['rss', 'talentoparati'],
+    lang: 'en',
+    type: 'rss'
+  })) : [];
+  
+  const esRssFormatted = esRssPosts.posts ? esRssPosts.posts.map(post => ({
+    externalId: post.link,
+    title: post.title || '',
+    description: post.description || '',
+    pubDate: post.pubDate,
+    tags: ['rss', 'talentoparati'],
+    lang: 'es',
+    type: 'rss'
+  })) : [];
+  
+  // Combine all posts
+  return [...allFormattedPosts, ...enRssFormatted, ...esRssFormatted];
 }
 
 export async function GET() {
