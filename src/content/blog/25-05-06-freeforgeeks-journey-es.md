@@ -27,6 +27,8 @@ En febrero de 2024, decidí resolver mi propio problema. Si no podía encontrar 
 
 Así nació [FreeForGeeks](https://freeforgeeks.jpdiaz.dev).
 
+::github{repo="juanpablodiaz/freeforgeeks"}
+
 La visión era simple: crear una colección bien organizada y completa de recursos gratuitos para desarrolladores en diferentes dominios. Aunque comencé enfocándome en frontend (mi área de especialización), quería construir algo que creciera para cubrir múltiples disciplinas.
 
 ## Elecciones Técnicas: Abrazo a la Simplicidad
