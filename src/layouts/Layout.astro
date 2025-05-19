@@ -8,6 +8,7 @@ import { SEO } from 'astro-seo';
 import GoogleAnalytics from '@components/GoogleAnalytics.astro';
 import BackToTop from '@components/ui/BackToTop.astro';
 import ThemeInitializer from '@components/ui/ThemeInitializer.astro';
+import { ClientRouter } from 'astro:transitions';
 import { site } from '@src/consts';
 
 export interface LayoutProps {
@@ -36,18 +37,16 @@ const { metaTitle = site.author + ' | Portfolio' } = Astro.props as LayoutProps;
 		<link rel="icon" type="image/png" href="/favicon.png" />
 
 		<title>{metaTitle}</title>
-
+		<ClientRouter />
 		<ThemeInitializer />
-
 		<link rel="canonical" href={canonicalURL} />
 	</head>
 	<body
 		class="mx-auto max-w-screen-xl bg-white px-5 font-sans text-white dark:bg-black xs:text-[16px] md:text-[18px]"
 	>
-		<slot />
-		<BackToTop />
-		<Footer />
-
-		<GoogleAnalytics />
+			<slot />
+			<BackToTop />
+			<Footer />
+			<GoogleAnalytics />
 	</body>
 </html>
