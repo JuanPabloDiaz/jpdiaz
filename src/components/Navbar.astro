@@ -48,11 +48,7 @@ const { menu, button } = Astro.props;
 					<MenuItems class="flex items-center space-x-6">
 						{
 							menu.map((item) => (
-								<Link
-									text={item.title}
-									href={item.path}
-									styles="text-sm md:text-lg font-medium"
-								/>
+								<Link text={item.title} href={item.path} styles="text-sm md:text-lg font-medium" />
 							))
 						}
 					</MenuItems>
