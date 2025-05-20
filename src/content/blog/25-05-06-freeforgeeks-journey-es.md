@@ -80,7 +80,7 @@ Como escribí en una publicación reciente de LinkedIn: "No es llamativo. No es 
 
 FreeForGeeks comenzó como un proyecto personal con solo un puñado de recursos. Hoy, alberga más de 450 herramientas y recursos cuidadosamente seleccionados, el resultado de más de 400 commits y innumerables horas de trabajo desde febrero de 2024.
 
-Aunque las contribuciones externas han sido limitadas, el proyecto ha acumulado 51 estrellas en GitHub—una indicación modesta pero significativa de que otros encuentran valor en mis esfuerzos de curación.
+Aunque las contribuciones externas han sido limitadas, el proyecto ha acumulado 51 estrellas en GitHub—una indicación modesta pero significativa que otros encuentran valor en mis esfuerzos de curación.
 
 Más importante aún, ha sido un tremendo viaje de aprendizaje. Desde mejorar mis habilidades de Git hasta aprender sobre generadores de sitios, desde entender GitHub Actions hasta implementar integraciones de API—cada desafío ha expandido mi repertorio técnico.
 

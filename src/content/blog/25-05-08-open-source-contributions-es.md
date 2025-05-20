@@ -16,7 +16,7 @@ Como desarrollador frontend navegando por el siempre cambiante panorama tecnoló
 
 ## Encontrando Mi Nicho: Herramientas que Facilitan la Vida de los Desarrolladores
 
-Mi viaje en el open source comenzó con una necesidad simple: quería descubrir mejores herramientas para mi flujo de trabajo diario. Mientras buscaba formas de trabajar más eficientemente, me di cuenta de que había valor en organizar y compartir estos descubrimientos con otros.
+Mi viaje en el open source comenzó con una necesidad simple: quería descubrir mejores herramientas para mi flujo de trabajo diario. Mientras buscaba formas de trabajar más eficientemente, me di cuenta que había valor en organizar y compartir estos descubrimientos con otros.
 
 Lo que no entendí inmediatamente fue dónde podría contribuir más eficazmente. Durante meses, miraba repositorios complejos pensando: "Estos proyectos son demasiado avanzados para mí". Estaba buscando en los lugares equivocados, intimidado por tecnologías que aún no había dominado.
 

@@ -48,7 +48,7 @@ Esta práctica puede parecer excesiva para algunos, pero ha sido reveladora para
 
 ### Control sobre tu tiempo
 
-El mayor beneficio es simple pero profundo: recuperas el control sobre tu tiempo. En lugar de que tu día te suceda a ti, tú determinas cómo invertir cada hora. Esta sensación de autonomía es increíblemente poderosa y reduce significativamente el estrés.
+El mayor beneficio es simple pero profundo: recuperas el control sobre tu tiempo. En lugar que tu día te suceda a ti, tú determinas cómo invertir cada hora. Esta sensación de autonomía es increíblemente poderosa y reduce significativamente el estrés.
 
 ### Claridad mental
 

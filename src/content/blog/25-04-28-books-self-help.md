@@ -23,7 +23,7 @@ I have grouped these books by subtopics so you can easily find the one that best
 **Resumen corto:** Un libro que presenta la rutina matutina como clave para el éxito y la productividad.
 
 **Enseñanzas clave:**
-- **El poder de levantarse temprano:** Sharma explica que las primeras horas del día son "horas de oro" con menos distracciones y mayor claridad mental. Estas horas ofrecen tranquilidad para conectar con uno mismo antes de que el mundo despierte.
+- **El poder de levantarse temprano:** Sharma explica que las primeras horas del día son "horas de oro" con menos distracciones y mayor claridad mental. Estas horas ofrecen tranquilidad para conectar con uno mismo antes que el mundo despierte.
 - **La fórmula 20/20/20:** Divide la primera hora del día en tres bloques de 20 minutos: el primero para ejercicio intenso que active tu metabolismo, el segundo para reflexión, planificación y visualización, y el tercero para aprendizaje y crecimiento personal.
 - **El concepto de "victoria privada":** Ganar la batalla contra la pereza matutina construye fuerza de voluntad que se transfiere a otras áreas de la vida. Cada mañana que te levantas temprano es una victoria sobre tu yo anterior.
 - **Los cuatro focos de transformación:** El libro detalla cómo mejorar sistemáticamente tu mentalidad (psicología), estado físico (fisiología), productividad (rendimiento) y contribución (legado).

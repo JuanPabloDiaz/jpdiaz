@@ -61,7 +61,7 @@ Esta capacidad de redirigir la mente se extiende mucho más allá de la pista de
 
 ### La Vida es un Balance
 
-Quizás la lección más profunda que me ha dejado esta experiencia es la comprensión de que la vida requiere equilibrio. Como profesionales ambiciosos, especialmente en tecnología, a menudo caemos en patrones de trabajo excesivo y obsesión por la productividad. Perseguimos metas profesionales y financieras como si fueran lo único que importa.
+Quizás la lección más profunda que me ha dejado esta experiencia es la comprensión que la vida requiere equilibrio. Como profesionales ambiciosos, especialmente en tecnología, a menudo caemos en patrones de trabajo excesivo y obsesión por la productividad. Perseguimos metas profesionales y financieras como si fueran lo único que importa.
 
 Preparar y completar una media maratón me obligó a adoptar una perspectiva más balanceada. Tuve que hacer espacio para el entrenamiento, descanso adecuado y recuperación. Tuve que prestar atención a mi alimentación y sueño. En resumen, tuve que cuidar de mí mismo de manera integral.
 

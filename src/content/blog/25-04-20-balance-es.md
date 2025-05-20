@@ -7,7 +7,7 @@ lang: es
 draft: false
 ---
 
-En el mundo actual, donde la hiperconectividad y la cultura hustle 24/7 se han convertido en la norma, muchos profesionales nos encontramos atrapados en un ciclo aparentemente interminable de productividad. Abrimos el ordenador apenas nos despertamos y lo cerramos justo antes de dormir, siempre con la sensación de que podríamos —o deberíamos— estar haciendo más.
+En el mundo actual, donde la hiperconectividad y la cultura hustle 24/7 se han convertido en la norma, muchos profesionales nos encontramos atrapados en un ciclo aparentemente interminable de productividad. Abrimos el ordenador apenas nos despertamos y lo cerramos justo antes de dormir, siempre con la sensación que podríamos —o deberíamos— estar haciendo más.
 
 ## La trampa de la productividad constante
 

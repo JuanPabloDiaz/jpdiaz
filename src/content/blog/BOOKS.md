@@ -134,7 +134,7 @@ Para cada libro, incluye la siguiente informacion de forma breve y concisa:
 
 * **Titulo:** [Nombre del libro]
 * **Autor:** [Nombre del autor]
-* **Resumen corto:** [1-2 oraciones maximo sobre de que se trata el libro]
+* **Resumen corto:** [1-2 oraciones maximo sobre que se trata el libro]
 * **Ensenanza(s) clave:** [2-3 puntos maximo de lo mas importante que aprendiste o te gusto del libro]
 * **Recomendacion (opcional):** [1 oracion maximo sobre a quien le recomendarias el libro]
 
