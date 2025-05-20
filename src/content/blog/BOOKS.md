@@ -5,7 +5,7 @@ classification of my 76 books into 10 groups, aiming for 6-10 books per group, a
 - 5 am club - Robin Sharma
 - Atomic Habits - James Clear
 - The Subtle Art of Not Giving a F\*ck - Mark Manson
-- The Four Agreements - Don Miguel Ruiz
+- The Four Agreements - Dr. Miguel Ruiz
 - Control Your Mind and Master Your Feelings - Eric Robertson
 - Don't Believe Everything You Think - Joseph Nguyen
 - Breathe - James Nestor

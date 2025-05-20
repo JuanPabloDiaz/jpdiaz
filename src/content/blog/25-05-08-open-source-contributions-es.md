@@ -44,11 +44,11 @@ Mirando hacia atrás en mi historial de contribuciones desde principios de 2024,
 
 Mis contribuciones no han sido implementaciones revolucionarias de características o cambios arquitectónicos complejos. En su lugar, han sido:
 
-- Mejoras en la documentación
-- Traducciones que hacen las herramientas accesibles a más desarrolladores
-- Añadir recursos a colecciones curadas
-- Reportar problemas cuando los encuentro
-- Sugerir nuevas conferencias para calendarios de desarrolladores
+- Mejoras en la documentación.
+- Traducciones que hacen las herramientas accesibles a más desarrolladores.
+- Añadir recursos a colecciones curadas.
+- Reportar problemas cuando los encuentro.
+- Sugerir nuevas conferencias para calendarios de desarrolladores.
 
 Lo que hace valiosas estas contribuciones no es su impacto individual, sino su consistencia. Durante casi dos años, he mantenido un ritmo constante de contribuciones—abriendo issues, enviando pull requests y participando con las comunidades.
 
