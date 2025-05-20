@@ -224,7 +224,7 @@ El ecosistema de generadores de sitios estáticos (SSG) y herramientas de docume
 
 1. **Versatilidad**: Mientras herramientas como Docsify o MkDocs están optimizadas exclusivamente para documentación, Jekyll es versátil y puede servir para blogs, portafolios, sitios corporativos, documentación y más.
 
-2. **Control total**: Jekyll te da control completo sobre la estructura y el diseño de tu sitio, a diferencia de soluciones más opinionadas como GitBook.
+2. **Control total**: Jekyll te da control completo sobre la estructura y el diseño de tu sitio, a diferencia de soluciones como GitBook.
 
 3. **Sin dependencia de JavaScript**: A diferencia de Docsify que requiere JavaScript para funcionar, los sitios Jekyll son HTML puro y funcionan incluso sin JavaScript habilitado.
 

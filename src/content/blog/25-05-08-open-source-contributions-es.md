@@ -16,7 +16,7 @@ Como desarrollador frontend navegando por el siempre cambiante panorama tecnoló
 
 ## Encontrando Mi Nicho: Herramientas que Facilitan la Vida de los Desarrolladores
 
-Mi viaje en el open source comenzó con una necesidad simple: quería descubrir mejores herramientas para mi flujo de trabajo diario. Mientras buscaba formas de trabajar más eficientemente, me di cuenta de que había valor en organizar y compartir estos descubrimientos con otros.
+Mi viaje en el open source comenzó con una necesidad simple: quería descubrir mejores herramientas para mi flujo de trabajo diario. Mientras buscaba formas de trabajar más eficientemente, me di cuenta que había valor en organizar y compartir estos descubrimientos con otros.
 
 Lo que no entendí inmediatamente fue dónde podría contribuir más eficazmente. Durante meses, miraba repositorios complejos pensando: "Estos proyectos son demasiado avanzados para mí". Estaba buscando en los lugares equivocados, intimidado por tecnologías que aún no había dominado.
 
@@ -44,11 +44,11 @@ Mirando hacia atrás en mi historial de contribuciones desde principios de 2024,
 
 Mis contribuciones no han sido implementaciones revolucionarias de características o cambios arquitectónicos complejos. En su lugar, han sido:
 
-- Mejoras en la documentación
-- Traducciones que hacen las herramientas accesibles a más desarrolladores
-- Añadir recursos a colecciones curadas
-- Reportar problemas cuando los encuentro
-- Sugerir nuevas conferencias para calendarios de desarrolladores
+- Mejoras en la documentación.
+- Traducciones que hacen las herramientas accesibles a más desarrolladores.
+- Añadir recursos a colecciones curadas.
+- Reportar problemas cuando los encuentro.
+- Sugerir nuevas conferencias para calendarios de desarrolladores.
 
 Lo que hace valiosas estas contribuciones no es su impacto individual, sino su consistencia. Durante casi dos años, he mantenido un ritmo constante de contribuciones—abriendo issues, enviando pull requests y participando con las comunidades.
 

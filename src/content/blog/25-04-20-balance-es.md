@@ -7,7 +7,7 @@ lang: es
 draft: false
 ---
 
-En el mundo actual, donde la hiperconectividad y la cultura hustle 24/7 se han convertido en la norma, muchos profesionales nos encontramos atrapados en un ciclo aparentemente interminable de productividad. Abrimos el ordenador apenas nos despertamos y lo cerramos justo antes de dormir, siempre con la sensación de que podríamos —o deberíamos— estar haciendo más.
+En el mundo actual, donde la hiperconectividad y la cultura hustle 24/7 se han convertido en la norma, muchos profesionales nos encontramos atrapados en un ciclo aparentemente interminable de productividad. Abrimos el ordenador apenas nos despertamos y lo cerramos justo antes de dormir, siempre con la sensación que podríamos —o deberíamos— estar haciendo más.
 
 ## La trampa de la productividad constante
 
@@ -15,11 +15,9 @@ Durante mucho tiempo, mi rutina diaria estaba diseñada alrededor de una simple 
 
 Este enfoque parecía lógico: más tiempo trabajando debe equivaler a mayor productividad, ¿verdad? La realidad resultó ser mucho más compleja.
 
-Con el tiempo, me di cuenta de que estaba confundiendo actividad con productividad. No por estar más tiempo frente al ordenador estaba generando más valor. De hecho, muchas veces esas largas jornadas resultaban en un rendimiento decreciente: tareas que deberían tomar una hora con mente fresca se extendían a cinco horas con una mente agotada.
+Con el tiempo, me di cuenta que estaba confundiendo actividad con productividad. No por estar más tiempo frente al ordenador estaba generando más valor. De hecho, muchas veces esas largas jornadas resultaban en un rendimiento decreciente: tareas que deberían tomar una hora con mente fresca se extendían a cinco horas con una mente agotada.
 
 ## El punto de inflexión
-
-El cambio de perspectiva llegó cuando comprendí que trabajar más horas no es sinónimo de ser más productivo. De hecho, puede ser contraproducente.
 
 Comencé a notar que había sacrificado elementos fundamentales como el ejercicio físico y el tiempo personal en aras de esa "productividad" mal entendida. La ironía es que este enfoque terminó socavando precisamente lo que intentaba maximizar: mi capacidad para generar valor y resultados de calidad.
 
@@ -41,7 +39,7 @@ El proceso de cambio no fue inmediato ni sencillo, pero comenzó con algunos pas
 
 Dos libros han sido particularmente valiosos en este camino:
 
-En "Los Cuatro Acuerdos" de Don Miguel Ruiz, el cuarto acuerdo—"Haz siempre tu máximo esfuerzo"—toma un significado especial en este contexto. No se trata de exprimir cada gota de energía hasta agotarse, sino de dar lo mejor de uno mismo en cada circunstancia, reconociendo que ese "máximo" varía según el momento y nuestro estado.
+En "Los Cuatro Acuerdos" de Dr. Miguel Ruiz, el cuarto acuerdo—"Haz siempre tu máximo esfuerzo"—toma un significado especial en este contexto. No se trata de exprimir cada gota de energía hasta agotarse, sino de dar lo mejor de uno mismo en cada circunstancia, reconociendo que ese "máximo" varía según el momento y nuestro estado.
 
 Por otro lado, "Atomic Habits" de James Clear me enseñó que los pequeños cambios consistentes son más poderosos que las transformaciones radicales. Incorporar pequeños momentos de descanso intencional y estructurar mi día con hábitos bien diseñados ha tenido un impacto más profundo que cualquier intento de "revolución" drástica en mi rutina.
 
