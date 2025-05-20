@@ -23,7 +23,7 @@ Así, casi sin darme cuenta, pasé de evitar correr a contemplar la posibilidad 
 
 ## Más Allá del Entrenamiento
 
-Cualquiera que haya corrido largas distancias sabe que el verdadero desafío no está en las piernas, sino en la mente. Durante mi preparación, logré completar la distancia de 21K un par de veces. Cada kilómetro recorrido era una pequeña victoria personal, cada sesión una prueba de voluntad.
+Cualquiera que haya corrido largas distancias sabe que el verdadero desafío no solo está en las piernas, sino en la mente. Durante mi preparación, logré completar la distancia de 21K un par de veces. Cada kilómetro recorrido era una pequeña victoria personal, cada sesión una prueba de voluntad.
 
 Lo que no anticipé fue cómo la pista real diferiría de mis rutas de entrenamiento. El día de la carrera me enfrenté a un terreno más irregular, con subidas y bajadas que no había experimentado antes. El cuerpo protesta, los músculos imploran descanso, y es allí donde la verdadera batalla comienza.
 
@@ -47,11 +47,11 @@ Tendemos a compararnos con los demás, especialmente en un mundo donde las redes
 
 Sin embargo, cuando corres, solo importan dos personas: quien eras ayer y quien eres hoy. No conoces el viaje de los demás: sus años de entrenamiento, su contexto físico, sus ventajas naturales. Pero conoces tu propio viaje en detalle, cada obstáculo superado y cada pequeña victoria.
 
-Mi tiempo de 2 horas puede parecer modesto para un corredor experimentado, pero representa un triunfo personal considerando de dónde venía: alguien que evitaba correr por completo debido al dolor. Este enfoque —medir mi progreso contra mi línea base personal— me ha brindado una satisfacción mucho más profunda que cualquier comparación externa podría ofrecer.
+Mi tiempo de 2 horas puede parecer modesto para un corredor experimentado, pero representa un triunfo personal considerando de dónde venía: alguien que evitaba correr por completo debido al dolor. Este enfoque —medir mi progreso contra mi línea base personal —me ha brindado una gran satisfacción, haber hecho esa carrera en 2 horas, para mi fue lo máximo.
 
 ### El Dominio de la Mente
 
-Correr largas distancias es un ejercicio de control mental tanto como físico. Descubrí que el diálogo interno durante una carrera puede determinar su resultado más que cualquier preparación física.
+Correr largas distancias es un ejercicio tanto físico como de control mental. Descubrí que el diálogo interno durante una carrera puede determinar su resultado más que cualquier preparación física.
 
 Es casi automático comenzar a sabotearse cuando el cuerpo duele y la meta parece distante. "No puedo más", "esto fue un error", "mejor me detengo"—estos pensamientos emergen naturalmente cuando enfrentamos desafíos. Lo fascinante es que tenemos el poder de transformar activamente ese diálogo.
 
@@ -75,6 +75,6 @@ Completar mi primera media maratón no marcó el final de un camino, sino el com
 
 La satisfacción no está solo en cruzar la línea de meta, sino en cada entrenamiento, cada madrugada, cada momento de superación personal. La medalla es un símbolo agradable, pero las verdaderas recompensas son internas: la fuerza que descubres, la disciplina que construyes, y la perspectiva que ganas.
 
-Si estás considerando dar el salto a un nuevo desafío—sea una carrera, un proyecto, o cualquier meta que parezca intimidante—mi consejo es simple: concéntrate en el proceso, no solo en el resultado. Disfruta el camino, celebra los pequeños avances, y sobre todo, recuerda que el único estándar que realmente importa es tu propio crecimiento.
+Si estás considerando dar el salto a un nuevo desafío—sea una carrera, un proyecto, o cualquier meta que parezca intimidante—mi consejo es simple: concéntrate en el proceso, no solo en el resultado. **Disfruta el camino, celebra los pequeños avances**, y sobre todo, recuerda que el único estándar que realmente importa es **tu propio crecimiento**.
 
 Como en la pista, así en la vida: el ritmo es personal, el viaje es único, y la verdadera victoria está en seguir avanzando, un paso a la vez.

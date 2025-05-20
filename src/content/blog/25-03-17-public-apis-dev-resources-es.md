@@ -85,7 +85,7 @@ Estas "soft skills" son fundamentales para:
 
 ## El camino por delante
 
-Mientras continúo en este rol, busco constantemente formas de mejorar mi contribución a estos proyectos mientras exploro oportunidades para involucrarme en iniciativas de código abierto de mayor escala. Cada revisión, cada interacción con la comunidad y cada mejora implementada representa un paso en mi desarrollo profesional y en mi capacidad para contribuir significativamente al ecosistema de desarrollo.
+Busco constantemente formas de mejorar mi contribución a estos proyectos mientras exploro oportunidades para involucrarme en iniciativas de código abierto de mayor escala. Cada revisión, cada interacción con la comunidad y cada mejora implementada representa un paso en mi desarrollo profesional y en mi capacidad para contribuir significativamente al ecosistema de desarrollo.
 
 ## Lecciones para futuros contribuidores
 
