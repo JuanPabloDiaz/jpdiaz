@@ -12,15 +12,26 @@ draft: false
 
 # Dominando la Mente: Libros de Autoayuda para una Mejor Versión de Ti Mismo
 
+<div class="grid grid-cols-4">
+<img src="https://covers.openlibrary.org/b/id/14614079-M.jpg" alt="The 5 AM Club by Robin Sharma">
+<img src="https://covers.openlibrary.org/b/id/14987737-M.jpg" alt="Atomic Habits by James Clear">
+<img src="https://covers.openlibrary.org/b/id/14832101-M.jpg" alt="The Subtle Art of Not Giving a F*ck by Mark Manson">
+<img src="https://covers.openlibrary.org/b/id/10723490-M.jpg" alt="The Four Agreements by Don Miguel Ruiz">
+<img src="https://covers.openlibrary.org/b/id/14927109-M.jpg" alt="Control Your Mind and Master Your Feelings by Eric Robertson">
+<img src="https://covers.openlibrary.org/b/id/12818585-M.jpg" alt="Don't Believe Everything You Think by Joseph Nguyen">
+<img src="https://covers.openlibrary.org/b/id/12400934-M.jpg" alt="Breathe by James Nestor">
+<img src="https://covers.openlibrary.org/b/id/15088263-M.jpg" alt="El Poder de Estar Solo by Brian Alba">
+</div>
+
 A lo largo de mi vida, he buscado herramientas para entenderme mejor y crecer como persona. Muchas de estas herramientas han venido en forma de libros que amigos, familiares y mi psicólogo de cabecera han recomendado en diferentes momentos. Hoy quiero compartir contigo algunos de estos tesoros literarios que me han ayudado a dominar mi mente y mejorar como persona.
 
 He agrupado estos libros por subtemas para que puedas encontrar más fácilmente el que mejor se adapte a lo que estás buscando en este momento de tu vida.
 
 ## Hábitos y Rutinas
 
-### **Título:** The 5 AM Club
-**Autor:** Robin Sharma
-**Resumen corto:** Un libro que presenta la rutina matutina como clave para el éxito y la productividad.
+### **Libro:** The 5 AM Club
+- **Autor:** Robin Sharma
+- **Resumen corto:** Un libro que presenta la rutina matutina como clave para el éxito y la productividad.
 
 **Enseñanzas clave:**
 
@@ -33,9 +44,9 @@ He agrupado estos libros por subtemas para que puedas encontrar más fácilmente
 
 **Recomendación:** Ideal para quienes quieren transformar su productividad y bienestar mediante rutinas matutinas estructuradas y comprobadas.
 
-### **Título:** Atomic Habits
-**Autor:** James Clear
-**Resumen corto:** Una guía práctica para desarrollar buenos hábitos y eliminar los malos a través de cambios pequeños pero consistentes.
+### **Libro:** Atomic Habits
+- **Autor:** James Clear
+- **Resumen corto:** Una guía práctica para desarrollar buenos hábitos y eliminar los malos a través de cambios pequeños pero consistentes.
 
 **Enseñanzas clave:**
 - **La mejora del 1%:** Clear demuestra matemáticamente cómo mejorar un 1% cada día conduce a resultados exponenciales con el tiempo. Al final de un año, serás 37 veces mejor que cuando comenzaste.
@@ -53,9 +64,9 @@ He agrupado estos libros por subtemas para que puedas encontrar más fácilmente
 
 ## Mentalidad y Actitud
 
-### **Título:** The Subtle Art of Not Giving a F*ck
-**Autor:** Mark Manson
-**Resumen corto:** Un enfoque contracultural sobre cómo vivir una vida buena aceptando las dificultades y eligiendo conscientemente lo que debe importarnos.
+### **Libro:** The Subtle Art of Not Giving a F*ck
+- **Autor:** Mark Manson
+- **Resumen corto:** Un enfoque contracultural sobre cómo vivir una vida buena aceptando las dificultades y eligiendo conscientemente lo que debe importarnos.
 
 **Enseñanzas clave:**
 - **La economía de la atención:** Manson argumenta que tenemos una cantidad limitada de "f*cks" para dar en la vida. Elegir sabiamente dónde invertir nuestra preocupación es crucial para la satisfacción vital.
@@ -68,9 +79,9 @@ He agrupado estos libros por subtemas para que puedas encontrar más fácilmente
 
 **Recomendación:** Para quienes buscan un enfoque honesto, directo y sin adornos sobre cómo afrontar la vida y sus inevitables dificultades.
 
-### **Título:** The Four Agreements
-**Autor:** Dr. Miguel Ruiz
-**Resumen corto:** Una guía basada en la sabiduría tolteca ancestral que ofrece cuatro principios fundamentales para alcanzar la libertad personal y la felicidad.
+### **Libro:** The Four Agreements
+- **Autor:** Dr. Miguel Ruiz
+- **Resumen corto:** Una guía basada en la sabiduría tolteca ancestral que ofrece cuatro principios fundamentales para alcanzar la libertad personal y la felicidad.
 
 **Enseñanzas clave:**
 - **Sé impecable con tus palabras:** Ruiz explica cómo nuestras palabras tienen un poder transformador, tanto cuando las dirigimos a otros como a nosotros mismos. Las palabras pueden crear y destruir, envenenar relaciones o sanarlas.
@@ -83,9 +94,9 @@ He agrupado estos libros por subtemas para que puedas encontrar más fácilmente
 
 **Recomendación:** Excelente para quienes buscan principios simples pero profundos que puedan transformar radicalmente cómo interactúan con el mundo y consigo mismos.
 
-### **Título:** Think Like a Monk
-**Autor:** Jay Shetty
-**Resumen corto:** Aplicación práctica de la sabiduría monástica y las técnicas contemplativas a los desafíos y ritmos de la vida moderna.
+### **Libro:** Think Like a Monk
+- **Autor:** Jay Shetty
+- **Resumen corto:** Aplicación práctica de la sabiduría monástica y las técnicas contemplativas a los desafíos y ritmos de la vida moderna.
 
 **Enseñanzas clave:**
 - **La mentalidad del monje en el mundo moderno:** Shetty, quien vivió como monje durante tres años, traduce prácticas milenarias a aplicaciones prácticas para la vida contemporánea sin perder su esencia.
@@ -109,9 +120,9 @@ He agrupado estos libros por subtemas para que puedas encontrar más fácilmente
 
 ## Control Mental y Emocional
 
-### **Título:** Control Your Mind and Master Your Feelings
-**Autor:** Eric Robertson
-**Resumen corto:** Guía práctica y basada en evidencia para gestionar eficazmente pensamientos negativos y emociones difíciles.
+### **Libro:** Control Your Mind and Master Your Feelings
+- **Autor:** Eric Robertson
+- **Resumen corto:** Guía práctica y basada en evidencia para gestionar eficazmente pensamientos negativos y emociones difíciles.
 
 **Enseñanzas clave:**
 - **El modelo ABC de gestión emocional:** Robertson explica que no son los acontecimientos (A) los que causan nuestras emociones (C), sino nuestras creencias e interpretaciones (B) sobre esos acontecimientos.
@@ -132,9 +143,9 @@ He agrupado estos libros por subtemas para que puedas encontrar más fácilmente
 
 **Recomendación:** Especialmente útil para quienes luchan con ansiedad, depresión o patrones de pensamiento negativo recurrentes.
 
-### **Título:** Don't Believe Everything You Think
-**Autor:** Joseph Nguyen
-**Resumen corto:** Explora cómo nuestros pensamientos distorsionan la realidad y ofrece estrategias concretas para corregir estas distorsiones.
+### **Libro:** Don't Believe Everything You Think
+- **Autor:** Joseph Nguyen
+- **Resumen corto:** Explora cómo nuestros pensamientos distorsionan la realidad y ofrece estrategias concretas para corregir estas distorsiones.
 
 **Enseñanzas clave:**
 - **La tiranía del pensamiento automático:** Nguyen muestra cómo muchos de nuestros pensamientos son automáticos y no elegidos conscientemente, influenciados por nuestra historia, condicionamiento y sesgos cognitivos.
@@ -159,9 +170,9 @@ He agrupado estos libros por subtemas para que puedas encontrar más fácilmente
 
 ## Bienestar Integral
 
-### **Título:** Breathe
-**Autor:** James Nestor
-**Resumen corto:** Una investigación periodística fascinante sobre cómo la respiración afecta cada aspecto de nuestra salud física y mental, respaldada por ciencia de vanguardia y sabiduría ancestral.
+### **Libro:** Breathe
+- **Autor:** James Nestor
+- **Resumen corto:** Una investigación periodística fascinante sobre cómo la respiración afecta cada aspecto de nuestra salud física y mental, respaldada por ciencia de vanguardia y sabiduría ancestral.
 
 **Enseñanzas clave:**
 - **La crisis respiratoria moderna:** Nestor documenta cómo los humanos modernos hemos olvidado cómo respirar correctamente, con consecuencias devastadoras para nuestra salud. El 90% de nosotros respira incorrectamente.
@@ -179,9 +190,9 @@ He agrupado estos libros por subtemas para que puedas encontrar más fácilmente
 
 **Recomendación:** Fundamental para cualquiera interesado en mejorar su salud desde lo más básico y esencial: la forma en que respiramos cada minuto de cada día.
 
-### **Título:** El Poder de Estar Solo
-**Autor:** Brian Alba
-**Resumen corto:** Explora el valor transformador de la soledad como espacio para el autoconocimiento, la creatividad y el crecimiento personal en un mundo hiperconectado.
+### **Libro:** El Poder de Estar Solo
+- **Autor:** Brian Alba
+- **Resumen corto:** Explora el valor transformador de la soledad como espacio para el autoconocimiento, la creatividad y el crecimiento personal en un mundo hiperconectado.
 
 **Enseñanzas clave:**
 - **La diferencia crucial entre soledad y aislamiento:** Alba distingue claramente entre la soledad nutritiva (elegida, temporal y con propósito) y el aislamiento tóxico (impuesto, crónico y sin dirección).
@@ -214,4 +225,14 @@ Lo importante es reconocer cuando necesitamos ayuda y buscarla, ya sea en libros
 ¿Has leído alguno de estos libros? ¿Tienes otros que me recomendarías? Me encantaría saber tu opinión en los comentarios.
 
 ---
-*Este artículo forma parte de mi serie sobre libros que han transformado mi vida. Puedes encontrar mi colección completa de libros en [https://books.jpdiaz.dev/](https://books.jpdiaz.dev/).*
+*Este artículo forma parte de mi serie sobre libros que han transformado mi vida. Puedes encontrar mi colección completa de libros en [books.jpdiaz.dev](https://books.jpdiaz.dev/).*
+
+<!-- ![The 5 AM Club by Robin Sharma](https://covers.openlibrary.org/b/id/14614079-M.jpg)
+![Atomic Habits by James Clear](https://covers.openlibrary.org/b/id/14987737-M.jpg)
+![The Subtle Art of Not Giving a F*ck by Mark Manson](https://covers.openlibrary.org/b/id/14832101-M.jpg)
+![The Four Agreements by Don Miguel Ruiz](https://covers.openlibrary.org/b/id/10723490-M.jpg)
+![Control Your Mind and Master Your Feelings by Eric Robertson](https://covers.openlibrary.org/b/id/14927109-M.jpg)
+![Don't Believe Everything You Think by Joseph Nguyen](https://covers.openlibrary.org/b/id/12818585-M.jpg)
+![Breathe by James Nestor](https://covers.openlibrary.org/b/id/12400934-M.jpg)
+![El Poder de Estar Solo by Brian Alba](https://covers.openlibrary.org/b/id/15088263-M.jpg)
+![Think Like a Monk by Jay Shetty](https://covers.openlibrary.org/b/id/10434513-M.jpg) -->
