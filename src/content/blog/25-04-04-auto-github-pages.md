@@ -6,7 +6,6 @@ lang: 'en'
 tags:
   - Automation
   - GitHubActions
-  - Productivity
 draft: false
 ---
 

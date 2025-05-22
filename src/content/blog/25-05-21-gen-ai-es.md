@@ -6,8 +6,6 @@ lang: 'es'
 tags:
   - IAGenerativa
   - EstrategiaNegocios
-  - Tecnología
-  - ÉticaIA
 draft: false
 ---
 

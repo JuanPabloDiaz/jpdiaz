@@ -7,7 +7,6 @@ tags:
   - Jekyll
   - GithubPages
   - DesarrolloWeb
-  - SitiosEstaticos
 draft: false
 ---
 

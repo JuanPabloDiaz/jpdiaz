@@ -6,7 +6,6 @@ lang: 'es'
 tags:
   - Networking
   - HabilidadesBlandas
-  - Comunidad
 draft: false
 ---
 
