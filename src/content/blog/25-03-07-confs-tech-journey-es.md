@@ -6,7 +6,6 @@ lang: 'es'
 tags:
   - OpenSource
   - Maintainer
-  - Journey
 draft: false
 ---
 

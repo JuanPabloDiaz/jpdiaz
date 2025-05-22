@@ -5,9 +5,7 @@ pubDate: 2025-04-13
 lang: 'en'
 image: '/blog-cover/life/calendar.webp'
 tags:
-  - Productivity
   - TimeManagement
-  - Organization
   - Habits
 draft: false
 ---

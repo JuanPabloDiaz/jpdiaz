@@ -4,9 +4,8 @@ description: 'Automatiza tareas repetitivas y mejora tu productividad con herram
 pubDate: 2025-04-04
 lang: 'es'
 tags:
-  - Automatización
+  - Automatizacion
   - GitHubActions
-  - Productividad
 draft: false
 ---
 

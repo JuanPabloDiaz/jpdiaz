@@ -6,7 +6,6 @@ lang: 'en'
 tags:
   - Networking
   - SoftSkills
-  - Community
 draft: false
 ---
 
