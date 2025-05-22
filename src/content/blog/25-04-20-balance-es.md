@@ -2,7 +2,10 @@
 title: 'El Balance en la Vida'
 description: 'Más Allá de la Productividad'
 pubDate: 2025-04-20
-tags: ['productividad', 'bienestar', 'equilibrio']
+tags:
+  - Productividad
+  - Bienestar
+  - Equilibrio
 lang: es
 draft: false
 ---

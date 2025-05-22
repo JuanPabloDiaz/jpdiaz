@@ -5,7 +5,7 @@ pubDate: 2025-02-17
 lang: 'en'
 tags:
   - Networking
-  - Soft Skills
+  - SoftSkills
   - Community
 draft: false
 ---

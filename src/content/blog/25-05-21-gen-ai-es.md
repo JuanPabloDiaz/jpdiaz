@@ -4,10 +4,10 @@ description: 'Lo que todo líder empresarial necesita saber'
 pubDate: 2025-05-21
 lang: 'es'
 tags:
-  - IA Generativa
-  - Estrategia de Negocios
+  - IAGenerativa
+  - EstrategiaNegocios
   - Tecnología
-  - Ética de la IA
+  - ÉticaIA
 draft: false
 ---
 

@@ -5,7 +5,7 @@ pubDate: 2025-02-25
 lang: 'es'
 tags:
   - Astro
-  - Desarrollo Web
+  - DesarrolloWeb
 draft: false
 ---
 

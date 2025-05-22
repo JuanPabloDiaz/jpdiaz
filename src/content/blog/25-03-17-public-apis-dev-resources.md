@@ -4,9 +4,9 @@ description: 'The world of open source'
 pubDate: 2025-03-17
 lang: 'en'
 tags:
-  - open-source
-  - maintainer
-  - journey
+  - OpenSource
+  - Maintainer
+  - Journey
 draft: false
 ---
 

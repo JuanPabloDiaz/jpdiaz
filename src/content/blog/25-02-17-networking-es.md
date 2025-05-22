@@ -5,7 +5,7 @@ pubDate: 2025-02-17
 lang: 'es'
 tags:
   - Networking
-  - Habilidades blandas
+  - HabilidadesBlandas
   - Comunidad
 draft: false
 ---

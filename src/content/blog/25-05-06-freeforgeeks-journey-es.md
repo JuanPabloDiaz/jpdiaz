@@ -4,8 +4,8 @@ description: 'Mi Viaje Creando un Recurso Open Source para Desarrolladores'
 pubDate: 2025-05-06
 lang: 'es'
 tags:
-  - open-source
-  - journey
+  - OpenSource
+  - Journey
 draft: false
 ---
 

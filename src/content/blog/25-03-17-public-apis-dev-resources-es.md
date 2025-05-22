@@ -4,9 +4,9 @@ description: 'El mundo del código abierto'
 pubDate: 2025-03-17
 lang: 'es'
 tags:
-  - open-source
-  - maintainer
-  - journey
+  - OpenSource
+  - Maintainer
+  - Journey
 draft: false
 ---
 

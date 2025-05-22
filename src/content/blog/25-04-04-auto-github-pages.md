@@ -5,7 +5,7 @@ pubDate: 2025-04-04
 lang: 'en'
 tags:
   - Automation
-  - GitHub Actions
+  - GitHubActions
   - Productivity
 draft: false
 ---
