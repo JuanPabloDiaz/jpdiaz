@@ -1,0 +1,100 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@layouts/Layout.astro';
+import Navbar from '@components/Navbar.astro';
+import SubTitle from '@components/ui/SubTitle.astro';
+import Pagination from '@components/ui/Pagination.astro';
+import { getPostsByTagAndLang, getUniqueTagsByLang } from '../../../../utils/collectionUtils';
+import { site } from '@src/consts';
+import { formatDate } from '@utils/formatDate';
+import { useTranslations } from '@i18n/utils';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog');
+  const uniqueEnglishTags = getUniqueTagsByLang(allPosts, 'en');
+
+  return uniqueEnglishTags.map(tag => { // tag from getUniqueTagsByLang has original casing
+    return {
+      params: { tag: encodeURIComponent(tag.toLowerCase()) }, 
+      props: { originalTag: tag }, 
+    };
+  });
+}
+
+const lang = 'en'; // Hardcoded for this English-specific tag page
+const t = useTranslations(lang);
+const { originalTag } = Astro.props; // The original tag name, Astro.params.tag is URL decoded
+const tagParam = Astro.params.tag; // URL-decoded tag, should be lowercase from getStaticPaths
+
+// Pagination setup
+const currentPage = parseInt(Astro.url.searchParams.get('page') || '1', 10);
+const pageSize = 6;
+
+const allPosts = await getCollection('blog');
+// Use the new utility function to get filtered and sorted posts
+const sortedFilteredPosts = getPostsByTagAndLang(allPosts, lang, tagParam);
+
+const totalPages = Math.ceil(sortedFilteredPosts.length / pageSize);
+const displayedPosts = sortedFilteredPosts.slice(
+  (currentPage - 1) * pageSize,
+  currentPage * pageSize
+);
+
+const pageTitle = `${t('blog.postsTaggedWith')} "${originalTag}" | ${site.author} Blog`;
+const navMenu = [
+	{ title: t('nav.home'), path: `/${lang}` },
+	{ title: t('nav.blog'), path: `/${lang}/blog` },
+];
+---
+
+<Layout metaTitle={pageTitle} includeSidebar={false}>
+  <Navbar menu={navMenu} button="Resume" />
+  <main class="mb-10 flex flex-col items-center justify-center text-black dark:text-white md:mb-0 md:h-auto lg:h-auto">
+    <SubTitle text={`${t('blog.postsTaggedWith')} "${originalTag}"`} />
+
+    {displayedPosts.length === 0 ? (
+      <p class="text-gray-600 dark:text-gray-300 mt-8 text-center">
+        {t('blog.noPostsFoundTag')} "{originalTag}".
+      </p>
+    ) : (
+      <div class="mt-8 grid w-full max-w-3xl grid-cols-1 gap-2 md:grid-cols-2 md:gap-4">
+        {displayedPosts.map(post => (
+          <article class="group relative rounded-lg border p-6" data-lang={post.data.lang || lang}>
+            <h2 class="mb-2 text-2xl font-semibold text-black dark:text-white">
+              <a href={`/${post.data.lang}/blog/${post.slug}`}>{post.data.title}</a>
+            </h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">{post.data.description}</p>
+            <div class="flex flex-wrap items-center gap-4 text-sm">
+              <time datetime={post.data.pubDate.toISOString()} class="text-gray-600 dark:text-gray-300">
+                {t('blog.publishedOn')} {formatDate(post.data.pubDate, lang)}
+              </time>
+              <div class="flex flex-wrap gap-2">
+                {post.data.tags.map((postTag: string) => (
+                  <a 
+                    href={`/${lang}/blog/tags/${encodeURIComponent(postTag.toLowerCase())}`}
+                    class="bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 mr-2 mb-2 inline-block rounded-full px-3 py-1 text-sm"
+                  >
+                    #{postTag}
+                  </a>
+                ))}
+              </div>
+            </div>
+            <a
+              href={`/${post.data.lang}/blog/${post.slug}`}
+              class="dark:ring-offset-zinc-900 absolute inset-0 rounded-lg ring-orange ring-offset-2 ring-offset-orange transition-all duration-300 ease-in-out hover:ring-2"
+              aria-label={`${t('blog.read')} ${post.data.title}`}
+            />
+          </article>
+        ))}
+      </div>
+    )}
+
+    {totalPages > 1 && (
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        baseUrl={`/${lang}/blog/tags/${encodeURIComponent(tagParam)}/`}
+      />
+    )}
+  </main>
+</Layout>

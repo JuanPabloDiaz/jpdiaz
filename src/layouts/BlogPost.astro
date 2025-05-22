@@ -107,9 +107,12 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString(
 		<div class="mb-8">
 			{
 				tags.map((tag) => (
-					<span class="bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 mr-2 inline-block rounded-full px-3 py-1 text-sm">
+					<a
+						href={`/${lang === 'es' ? 'es/' : ''}blog/tags/${encodeURIComponent(tag)}`}
+						class="bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 mr-2 inline-block rounded-full px-3 py-1 text-sm"
+					>
 						#{tag}
-					</span>
+					</a>
 				))
 			}
 		</div>

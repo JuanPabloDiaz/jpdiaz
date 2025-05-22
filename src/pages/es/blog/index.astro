@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 import Navbar from '@components/Navbar.astro';
 import LangSwitch from '@components/ui/LangSwitch.astro';
-import { getSortedPosts } from '@utils/collectionUtils';
+import { getSortedPosts, getUniqueTagsByLang } from '../../utils/collectionUtils';
 import { site } from '@src/consts';
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 import RssFeedDisplay from '@components/RssFeedDisplay.astro';
@@ -25,6 +25,9 @@ const blogMenu = [
 const allPosts = await getCollection('blog');
 const posts = getSortedPosts(allPosts, lang);
 
+// Get unique tags for the current language using the utility function
+const uniqueTags = getUniqueTagsByLang(allPosts, lang);
+
 const pageSize = 6;
 const displayedPosts = posts.slice(0, pageSize);
 const totalPages = Math.ceil(posts.length / pageSize);
@@ -43,6 +46,23 @@ const totalPages = Math.ceil(posts.length / pageSize);
 			¡Bienvenido a mi blog! Aquí encontrarás artículos sobre desarrollo web, tecnología y más.
 		</p>
 		<BlogSearch currentLang={lang} />
+
+		{uniqueTags.length > 0 && (
+			<div class="mb-8 w-full max-w-3xl">
+				<h3 class="mb-4 text-xl font-semibold text-black dark:text-white">Filtrar por Etiqueta</h3>
+				<div class="flex flex-wrap gap-2">
+					{uniqueTags.map(tag => ( // uniqueTags from getUniqueTagsByLang has original casing and is sorted
+						<a
+							href={`/es/blog/tags/${encodeURIComponent(tag.toLowerCase())}`} // Ensure URL is lowercase
+							class="bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 mr-2 mb-2 inline-block rounded-full px-3 py-1 text-sm"
+						>
+							#{tag}
+						</a>
+					))}
+				</div>
+			</div>
+		)}
+
 		<div class="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4">
 			{
 				displayedPosts.map((post) => (
