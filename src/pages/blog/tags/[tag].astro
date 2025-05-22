@@ -4,9 +4,9 @@ import Layout from '@layouts/Layout.astro';
 import Navbar from '@components/Navbar.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
 import Pagination from '@components/ui/Pagination.astro';
-import { getPostsByTagAndLang, getUniqueTagsByLang } from '../../../../utils/collectionUtils';
-import { site } from '@src/consts';
+import { getPostsByTagAndLang, getUniqueTagsByLang } from '@utils/collectionUtils';
 import { formatDate } from '@utils/formatDate';
+import { site } from '@src/consts';
 import { useTranslations } from '@i18n/utils';
 
 export async function getStaticPaths() {
@@ -15,8 +15,8 @@ export async function getStaticPaths() {
 
   return uniqueEnglishTags.map(tag => { // tag from getUniqueTagsByLang has original casing
     return {
-      params: { tag: encodeURIComponent(tag.toLowerCase()) }, 
-      props: { originalTag: tag }, 
+      params: { tag: encodeURIComponent(tag.toLowerCase()) },
+      props: { originalTag: tag },
     };
   });
 }
@@ -70,7 +70,7 @@ const navMenu = [
               </time>
               <div class="flex flex-wrap gap-2">
                 {post.data.tags.map((postTag: string) => (
-                  <a 
+                  <a
                     href={`/${lang}/blog/tags/${encodeURIComponent(postTag.toLowerCase())}`}
                     class="bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 mr-2 mb-2 inline-block rounded-full px-3 py-1 text-sm"
                   >

@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 import Navbar from '@components/Navbar.astro';
 import LangSwitch from '@components/ui/LangSwitch.astro';
-import { getSortedPosts, getUniqueTagsByLang } from '../../utils/collectionUtils';
+import { getSortedPosts, getUniqueTagsByLang } from '@utils/collectionUtils';
 import { site } from '@src/consts';
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 import RssFeedDisplay from '@components/RssFeedDisplay.astro';

@@ -2,7 +2,7 @@
 import Layout from '@layouts/Layout.astro';
 import Navbar from '@components/Navbar.astro';
 import LangSwitch from '@components/ui/LangSwitch.astro';
-import { getSortedPosts, getUniqueTagsByLang } from '../../utils/collectionUtils';
+import { getSortedPosts, getUniqueTagsByLang } from '@utils/collectionUtils';
 import { site } from '@src/consts';
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 import { getCollection } from 'astro:content';
@@ -58,7 +58,7 @@ const totalPages = Math.ceil(posts.length / pageSize);
 							href={`/blog/tags/${encodeURIComponent(tag.toLowerCase())}`} // Ensure URL is lowercase
 							class="bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 mr-2 mb-2 inline-block rounded-full px-3 py-1 text-sm"
 						>
-							#{tag} 
+							#{tag}
 						</a>
 					))}
 				</div>
