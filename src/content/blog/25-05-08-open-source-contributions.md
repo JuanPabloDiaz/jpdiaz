@@ -4,9 +4,9 @@ description: 'Finding My Path in Open Source'
 pubDate: 2025-05-08
 lang: 'en'
 tags:
-  - open-source
-  - journey
-  - contribution
+  - OpenSource
+  - Journey
+  - Contribution
 draft: false
 ---
 

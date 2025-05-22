@@ -4,9 +4,9 @@ description: "Mis 8 libros favoritos para emprendedores"
 pubDate: 2025-05-28
 lang: "es"
 tags:
-  - libros
-  - liderazgo
-  - emprendimiento
+  - Libros
+  - Liderazgo
+  - Emprendimiento
 draft: false
 ---
 

@@ -4,9 +4,9 @@ description: '8 Libros Esenciales'
 pubDate: 2025-05-19
 lang: 'es'
 tags:
-  - libros
-  - desarrollo personal
-  - autoayuda
+  - Libros
+  - DesarrolloPersonal
+  - AutoAyuda
 draft: false
 ---
 

@@ -4,8 +4,8 @@ description: 'A journey of personal transformation'
 pubDate: 2025-02-06
 lang: 'en'
 tags:
-  - American dream
-  - Personal growth
+  - AmericanDream
+  - PersonalGrowth
   - Reflections
 draft: false
 ---

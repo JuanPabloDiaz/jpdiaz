@@ -4,8 +4,8 @@ description: 'A personal journey'
 pubDate: 2025-03-15
 lang: 'en'
 tags:
-  - Soft skills
-  - Personal development
+  - SoftSkills
+  - PersonalDevelopment
 draft: false
 ---
 

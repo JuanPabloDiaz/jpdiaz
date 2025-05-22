@@ -4,9 +4,9 @@ description: 'Libros de Autoayuda para una Mejor Versión de Ti Mismo'
 pubDate: 2025-04-28
 lang: 'es'
 tags:
-  - autoayuda
-  - desarrollo personal
-  - libros
+  - Libros
+  - AutoAyuda
+  - DesarrolloPersonal
 draft: false
 ---
 

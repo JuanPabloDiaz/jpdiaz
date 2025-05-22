@@ -4,9 +4,9 @@ description: 'Promoviendo el Código Abierto'
 pubDate: 2025-03-07
 lang: 'es'
 tags:
-  - open-source
-  - maintainer
-  - journey
+  - OpenSource
+  - Maintainer
+  - Journey
 draft: false
 ---
 
