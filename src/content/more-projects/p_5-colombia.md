@@ -1,8 +1,8 @@
 ---
 inProgress: false
-title: Colombia
-description: A Next.js site that fetch data and display it on multiple pages.
-link: https://colombia.jpdiaz.dev
-github_link: https://github.com/JuanPabloDiaz/colombia
-tags: ['Next', 'JS', 'TS', 'Tailwind']
+title: Tourism Map of Colombia
+description: An interactive tourist map of Colombia built with Leaflet.js, using data from api-colombia.com and deployed with Jekyll and GitHub Pages.
+link: https://turismo.colombia.jpdiaz.dev
+github_link: https://github.com/JuanPabloDiaz/turismo
+tags: ['Jekyll', 'leaflet', 'GithubPages', 'githubactions', 'CSS', 'JS']
 ---

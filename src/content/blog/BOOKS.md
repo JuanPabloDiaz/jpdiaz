@@ -141,3 +141,4 @@ Para cada libro, incluye la siguiente informacion de forma breve y concisa:
 Quiero que el blog tenga un titulo llamativo y una breve introduccion y conclusion.
 
 Ahora, para este blog en especifico, los libros son: [AQUI VOY A PONER LA LISTA DE LIBROS DE CADA GRUPO]
+```
