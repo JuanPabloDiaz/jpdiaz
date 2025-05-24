@@ -4,9 +4,8 @@ description: 'Life lessons beyond the pavement'
 pubDate: 2025-05-10
 lang: 'en'
 tags:
-  - personal
-  - journey
-  - fitness
+  - Journey
+  - Fitness
 image: '/blog-cover/life/run-finish.jpeg'
 draft: false
 ---

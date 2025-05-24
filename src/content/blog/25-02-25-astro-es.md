@@ -5,7 +5,7 @@ pubDate: 2025-02-25
 lang: 'es'
 tags:
   - Astro
-  - Desarrollo Web
+  - DesarrolloWeb
 draft: false
 ---
 
@@ -65,7 +65,7 @@ import VueToggle from '../components/VueToggle.vue';
 <VueToggle client:idle />
 ```
 
-Esta estrategia tiene un impacto dramático en el rendimiento. En un enfoque tradicional de SPA (Single Page Application), todo el JavaScript necesario para la página completa se carga de inmediato, incluso antes de que el usuario interactúe con esos componentes. Con Astro, solo se carga el JavaScript necesario para los componentes interactivos, y solo cuando son visibles para el usuario.
+Esta estrategia tiene un impacto dramático en el rendimiento. En un enfoque tradicional de SPA (Single Page Application), todo el JavaScript necesario para la página completa se carga de inmediato, incluso antes que el usuario interactúe con esos componentes. Con Astro, solo se carga el JavaScript necesario para los componentes interactivos, y solo cuando son visibles para el usuario.
 
 El resultado es impresionante: tiempos de carga iniciales significativamente reducidos, menor consumo de datos para el usuario y una experiencia notablemente más rápida, especialmente en dispositivos móviles o conexiones lentas. En varios escenarios que he explorado y analizado, he observado reducciones significativas en la cantidad de JavaScript enviado al navegador, lo que potencialmente lleva a una disminución en la tasa de rebote.
 

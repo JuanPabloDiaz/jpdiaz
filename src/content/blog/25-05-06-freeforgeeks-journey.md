@@ -4,8 +4,8 @@ description: 'My Journey Creating an Open Source Developer Resource'
 pubDate: 2025-05-06
 lang: 'en'
 tags:
-  - open-source
-  - journey
+  - OpenSource
+  - Journey
 draft: false
 ---
 

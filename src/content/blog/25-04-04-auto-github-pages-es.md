@@ -4,9 +4,8 @@ description: 'Automatiza tareas repetitivas y mejora tu productividad con herram
 pubDate: 2025-04-04
 lang: 'es'
 tags:
-  - Automatización
-  - GitHub Actions
-  - Productividad
+  - Automatizacion
+  - GitHubActions
 draft: false
 ---
 
@@ -76,7 +75,7 @@ Los procesos automatizados aseguran que las verificaciones se realicen de manera
 
 ### Detección Temprana de Problemas
 
-Recibo notificaciones inmediatas sobre problemas potenciales, lo que me permite abordarlos antes de que afecten a los usuarios. En lugar de descubrir un enlace roto meses después, lo sé casi al instante.
+Recibo notificaciones inmediatas sobre problemas potenciales, lo que me permite abordarlos antes que afecten a los usuarios. En lugar de descubrir un enlace roto meses después, lo sé casi al instante.
 
 ### Mejora la Colaboración
 

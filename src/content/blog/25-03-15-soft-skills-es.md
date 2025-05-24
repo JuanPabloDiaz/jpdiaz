@@ -4,8 +4,8 @@ description: 'Un viaje personal'
 pubDate: 2025-03-15
 lang: 'es'
 tags:
-  - Habilidades blandas
-  - Desarrollo personal
+  - HabilidadesBlandas
+  - DesarrolloPersonal
 draft: false
 ---
 
@@ -13,7 +13,7 @@ En el mundo de la tecnología, solemos obsesionarnos con dominar el último fram
 
 ## El desequilibrio entre lo técnico y lo humano
 
-Como desarrollador web, he pasado gran parte de mi carrera enfocándome en mejorar mis habilidades técnicas. Aprendí JavaScript, React, Astro y otras tecnologías que uso diariamente. Sin embargo, hace un tiempo me di cuenta de que algo estaba faltando en mi crecimiento profesional.
+Como desarrollador web, he pasado gran parte de mi carrera enfocándome en mejorar mis habilidades técnicas. Aprendí JavaScript, React, Astro y otras tecnologías que uso diariamente. Sin embargo, hace un tiempo me di cuenta que algo estaba faltando en mi crecimiento profesional.
 
 Soy naturalmente tímido y reservado. Durante mucho tiempo, consideré que esto no era un problema mientras mi código funcionara correctamente. La realidad es que esta mentalidad limitaba mi potencial tanto profesional como personalmente.
 

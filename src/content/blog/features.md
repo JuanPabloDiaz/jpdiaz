@@ -3,7 +3,10 @@ title: 'New Features'
 description: More new features specific to this theme.
 pubDate: 2025-05-06
 lang: 'en'
-tags: ['markdown', 'features', 'guide']
+tags:
+  - Markdown
+  - Features
+  - Guide
 image: '/certification/IT-WebTechnologies(AAS).jpg'
 draft: true
 mathjax: true
