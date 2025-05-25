@@ -6,16 +6,21 @@ const variants = new Set(['note', 'tip', 'caution', 'danger']);
 
 function defaultLabel(v) {
   switch (v) {
-    case 'note':
-      return  t('aside.note') || 'Note';
-    case 'tip':
+    case 'note': {
+      return t('aside.note') || 'Note';
+    }
+    case 'tip': {
       return t('aside.tip') || 'Tip';
-    case 'caution':
+    }
+    case 'caution': {
       return t('aside.caution') || 'Caution';
-    case 'danger':
+    }
+    case 'danger': {
       return t('aside.danger') || 'Danger';
-    default:
+    }
+    default: {
       return '';
+    }
   }
 }
 
