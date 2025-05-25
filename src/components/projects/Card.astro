@@ -1,18 +1,5 @@
 ---
 import Tags from '@components/ui/Tags.astro';
-
-// dynamic images Workaround:
-import freeForGeeks from '@assets/images/projects/free-for-geeks.png';
-import bookStore from '@assets/images/projects/book-store.png';
-import freeCode from '@assets/images/projects/free-code-camp.png';
-import porfolio3d from '@assets/images/projects/3d-portfolio.png';
-import migueDiaz from '@assets/images/projects/migue-diaz.png';
-import docs from '@assets/images/projects/docs.png';
-import freeCodeCampCertifications from '@assets/images/projects/freecodecamp.png';
-import landing from '@assets/images/projects/landing.png';
-import jpshop from '@assets/images/projects/jpshop.png';
-import colombia from '@assets/images/projects/colombia.webp';
-
 import GitHubIcon from '@components/icons/GitHubIcon.astro';
 import GitHubStars from '@components/ui/GitHubStars.astro';
 import { Image } from 'astro:assets';
@@ -26,7 +13,7 @@ interface Props {
 	description: string;
 	tags: string[];
 	children?: HTMLElement | HTMLElement[];
-	images_path?: string;
+	image: any; // Updated prop
 	lastUpdate?: string;
 	createdOn?: string;
 	size?: number;
@@ -49,7 +36,7 @@ const {
 	alt = 'Project preview',
 	description = 'Project description',
 	tags = ['Tags'],
-	images_path,
+	image, // Updated prop
 	lastUpdate = '',
 	createdOn = '',
 	size = 0,
@@ -58,23 +45,6 @@ const {
 	openIssues = 0,
 	license = undefined,
 } = Astro.props;
-
-// dynamic images Workaround:
-const images = {
-	'landing.png': landing,
-	'docs.png': docs,
-	'migue-diaz.png': migueDiaz,
-	'jpshop.png': jpshop,
-	'freecode-ipad.png': freeCode,
-	'free-for-geeks.png': freeForGeeks,
-	'freecodecamp_certifications.png': freeCodeCampCertifications,
-	'3d-portfolio.png': porfolio3d,
-	'book-store.png': bookStore,
-	'colombia.webp': colombia,
-};
-const filename = images_path ? images_path.split('/').pop() : '';
-const imagePath =
-	filename && filename in images ? images[filename as keyof typeof images] : landing;
 ---
 
 <section class="w-full">
@@ -85,7 +55,7 @@ const imagePath =
 		<a href={url} target="_blank" aria-label={`link to project: ${title}`}>
 			<div class="relative flex aspect-square items-end overflow-hidden rounded-xl">
 				<Image
-					src={imagePath}
+					src={image}
 					alt={alt}
 					format="png"
 					class="h-full w-full object-center transition-all duration-300 ease-in-out group-hover:opacity-10"

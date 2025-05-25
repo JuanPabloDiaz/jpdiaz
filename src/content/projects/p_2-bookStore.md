@@ -18,5 +18,5 @@ tags:
     'JWT',
     'Redux',
   ]
-image_path: /assets/images/projects/book-store.png
+image: ../assets/images/projects/book-store.png
 ---
