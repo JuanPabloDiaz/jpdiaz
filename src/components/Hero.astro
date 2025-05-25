@@ -65,11 +65,12 @@ const PDF = './files/2025-FrontEndCV.pdf';
 				class="rounded-full opacity-90 shadow-orange/50 duration-75 hover:scale-105 hover:transform hover:opacity-50 hover:shadow-2xl"
 				src={juanImage}
 				alt={site.author}
-				format="jpg"
+				format="webp"
 				width={450}
 				height={450}
-				quality={100}
-				loading="lazy"
+				quality={80}
+				loading="eager"
+				densities={[1.5, 2]}
 			/>
 		</div>
 	</main>
