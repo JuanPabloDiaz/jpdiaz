@@ -23,10 +23,10 @@ function h(
   el: string,
   attrs: HastProperties = {},
   children: PhrasingContent[] = []
-): MdastHtmlNode {
+): MdastLinkNode {
   const { tagName, properties } = _h(el, attrs);
   return {
-    type: 'paragraph', // Still unconventional, but consistent
+    type: 'link', // Use 'link' for semantic accuracy
     data: { hName: tagName, hProperties: properties },
     children,
   };
