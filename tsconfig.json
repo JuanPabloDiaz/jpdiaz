@@ -2,12 +2,12 @@
 	"extends": "astro/tsconfigs/strict",
 	"include": ["src/**/*.ts", "src/**/*.mts", "src/**/*.cts", "*.ts", "*.mts", "*.cts"],
 	"compilerOptions": {
-		"allowImportingTsExtensions": true, // Permite importar .ts/.mts/.cts
+		"allowImportingTsExtensions": true,
 		"moduleSuffixes": [".mts", ".cts", ".ts", ".js"],
 		"target": "ESNext",
 		"module": "ESNext",
 		// Enable node-style module resolution, for things like npm package imports.
-		"moduleResolution": "node",
+		"moduleResolution": "bundler",
 		// Enable JSON imports.
 		"resolveJsonModule": true,
 		// Enable stricter transpilation for better output.
@@ -26,7 +26,9 @@
 			"@utils/*": ["src/utils/*"],
 			"@i18n/*": ["src/i18n/*"],
 			"@lib/*": ["src/lib/*"],
-			"@plugins/*": ["src/plugins/*"]
-		}
+			"@plugins/*": ["src/plugins/*"],
+			"@i18n/utils": ["src/i18n/utils.ts"]
+		},
+		"types": ["node", "astro/client"]
 	}
 }

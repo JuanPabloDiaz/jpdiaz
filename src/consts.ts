@@ -7,7 +7,7 @@ export const site = {
 	motto: 'Actions speak louder than words.',
 	githubUsername: 'JuanPabloDiaz',
 	aboutMePageDescription:
-		'Committed Front End developer seeking opportunities in growth-oriented startups. Upholds values of discipline, loyalty, and reliability, with a self-motivated approach to continuous learning and skill enhancement',
+		'Committed Full Stack Developer seeking opportunities in growth-oriented startups. Upholds values of discipline, loyalty, and reliability, with a self-motivated approach to continuous learning and skill enhancement',
 };
 
 export const GENERATE_SLUG_FROM_TITLE = true;
