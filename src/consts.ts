@@ -1,5 +1,3 @@
-
-
 export const site = {
 	author: 'Juan Díaz',
 	description:
@@ -39,7 +37,7 @@ export const config = {
 
 export const whatImDoing = [
 	{
-		role: 'Founder & Front-End Developer @',
+		role: 'Founder & Full Stack Developer @',
 		url: 'https://talentoparati.com',
 		repo: '#',
 		title: 'Talento Para TI',
