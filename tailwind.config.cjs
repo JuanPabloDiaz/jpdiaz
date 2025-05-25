@@ -16,6 +16,7 @@ module.exports = {
 			black: '#000',
 			white: '#fff',
 			orange: '#E06330',
+			'orange-darker': '#B94F28',
 			brown: '#6F2B11', // only for nav
 		},
 		fontFamily: {

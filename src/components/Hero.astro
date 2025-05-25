@@ -39,7 +39,10 @@ const PDF = './files/2025-FrontEndCV.pdf';
 							.typewriter {
 								font-size: 1.9rem;
 								font-weight: 600;
-								color: #f97316;
+								color: #374151; /* Equivalent to text-gray-700 for light mode */
+							}
+							html.dark .typewriter {
+								color: #f97316; /* orange-500 for dark mode */
 							}
 							@media (max-width: 768px) {
 								.typewriter {
