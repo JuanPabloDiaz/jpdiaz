@@ -11,7 +11,10 @@ import ThemeInitializer from '@components/ui/ThemeInitializer.astro';
 import { site } from '@src/consts';
 
 export interface LayoutProps {
-	metaTitle: string;
+	metaTitle?: string;
+	metaDescription?: string;
+	ogImage?: string;
+	pageKeywords?: string[];
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -21,23 +24,58 @@ const lang = Astro.url.pathname.startsWith('/es/') ? 'es' : 'en';
 const langToggleUrl =
 	lang === 'es' ? Astro.url.pathname.replace('/es/', '/') : `/es${Astro.url.pathname}`;
 
-const { metaTitle = site.author + ' | Portfolio' } = Astro.props as LayoutProps;
+const { 
+    metaTitle = site.author + ' | Portfolio',
+    metaDescription = site.description, 
+    ogImage = site.defaultOgImage,
+    pageKeywords = site.keywords 
+} = Astro.props as LayoutProps;
+
+const effectiveOgImageUrl = ogImage && ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro.site).toString();
+const effectiveKeywordsString = pageKeywords.join(', ');
 ---
 
 <!doctype html>
 <html lang={lang} class:list={['scroll-smooth', 'no-js']} data-testid="html">
 	<head>
-		<SEO title={metaTitle} description={site.description} />
+		<SEO
+			title={metaTitle}
+			description={metaDescription}
+			canonical={canonicalURL.toString()}
+			openGraph={{
+				basic: {
+					title: metaTitle,
+					// description for Open Graph is taken from the main 'description' prop of the SEO component
+					image: effectiveOgImageUrl,
+					// url for Open Graph is often inferred from the main 'canonical' prop or Astro.site
+					type: 'website'
+				},
+			}}
+			twitter={{
+				card: 'summary_large_image',
+				site: '@JuanDiaz_427', // Replace with your actual Twitter handle if different or make dynamic
+				creator: '@JuanDiaz_427', // Replace with your actual Twitter handle if different or make dynamic
+				title: metaTitle,
+				description: metaDescription,
+				image: effectiveOgImageUrl,
+			}}
+			extend={{
+				meta: [
+					{ name: 'keywords', content: effectiveKeywordsString },
+					{ name: 'generator', content: Astro.generator }, // astro-seo might do this, but explicit is fine
+				],
+			}}
+		/>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="generator" content={Astro.generator} />
+		
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 
-		<title>{metaTitle}</title>
+		<!-- The <title> tag is now handled by the SEO component -->
 		<ThemeInitializer />
-		<link rel="canonical" href={canonicalURL} />
+		<!-- The canonical link is now handled by the SEO component -->
 	</head>
 	<body
 		class="mx-auto max-w-screen-xl bg-white px-5 font-sans text-white dark:bg-black xs:text-[16px] md:text-[18px]"

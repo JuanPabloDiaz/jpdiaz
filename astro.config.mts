@@ -8,6 +8,8 @@ import expressiveCode from 'astro-expressive-code';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 import {remarkModifiedTime,} from "./src/plugins/remark-modified-time.mts";
 import {resetRemark} from "./src/plugins/reset-remark.ts";
 import {remarkAsides} from './src/plugins/remark-asides.ts'
@@ -41,8 +43,18 @@ export default defineConfig({
 	vite: {
 		resolve: {
 			alias: {
-				'@i18n': path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src/i18n'),
-				'@i18n/utils': path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src/i18n/utils.ts'),
+				'@src': path.resolve(__dirname, 'src'),
+				'@components': path.resolve(__dirname, 'src/components'),
+				'@layouts': path.resolve(__dirname, 'src/layouts'),
+				'@assets': path.resolve(__dirname, 'src/assets'),
+				'@pages': path.resolve(__dirname, 'src/pages'),
+				'@styles': path.resolve(__dirname, 'src/styles'),
+				'@utils': path.resolve(__dirname, 'src/utils'),
+				'@lib': path.resolve(__dirname, 'src/lib'),
+				'@plugins': path.resolve(__dirname, 'src/plugins'),
+				// Existing ones:
+				'@i18n': path.resolve(__dirname, 'src/i18n'),
+				'@i18n/utils': path.resolve(__dirname, 'src/i18n/utils.ts'),
 			},
 		},
 	},
