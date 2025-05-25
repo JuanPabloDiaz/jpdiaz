@@ -12,6 +12,10 @@
 		"astro": "astro",
 		"test": "playwright test",
 		"format": "npx prettier --write \"**/*.{astro,md,json}\"",
+		"lint": "npx eslint --ext .js,.ts,.astro .",
+		"lint:fix": "npx eslint --ext .js,.ts,.astro . --fix",
+		"check": "npx eslint --ext .js,.ts,.astro . && npx prettier --check \"**/*.{astro,md,json}\"",
+		"clean": "rm -rf node_modules .astro dist && npm install",
 		"lighthouse": "npx unlighthouse --site https://jpdiaz.dev"
 	},
 	"dependencies": {
@@ -41,6 +45,7 @@
 	},
 	"devDependencies": {
 		"@astrojs/ts-plugin": "^1.10.4",
+		"@eslint/js": "^9.27.0",
 		"@iconify-json/carbon": "^1.2.8",
 		"@iconify-json/codicon": "^1.2.16",
 		"@iconify-json/fe": "^1.2.2",
