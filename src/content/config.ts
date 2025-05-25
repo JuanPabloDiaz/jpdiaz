@@ -1,4 +1,5 @@
 import { defineCollection, z } from 'astro:content';
+import { i18nLangs } from '@i18n/ui';
 import type { languages } from '@i18n/ui';
 
 type Lang = keyof typeof languages;
@@ -30,6 +31,7 @@ const blogCollection = defineCollection({
     updatedDate: z.coerce.date().optional(),
     heroImage: image().optional(),
     tags: z.array(z.string()),
+    lang: z.enum(i18nLangs),
     draft: z.boolean().optional(),
     author: z.string().optional(),
     // SEO related fields, if you want them per-post
