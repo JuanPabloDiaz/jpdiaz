@@ -23,9 +23,8 @@ function h(
 ): MdastHtmlNode {
   const { tagName, properties } = _h(el, attrs);
   return {
-    type: 'paragraph', // This is unconventional; typically 'html' or a custom node type
-    data: { hName: tagName, hProperties: properties },
-    children,
+    type: 'html', // Use the correct node type for raw HTML
+    value: _h(el, attrs).outerHTML, // Store the raw HTML string in the `value` property
   };
 }
 
