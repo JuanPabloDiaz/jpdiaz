@@ -100,10 +100,8 @@ const remarkCollapse: Plugin<[RemarkCollapseOptions?], Node, Node> = (options?: 
       // The `h` function expects PhrasingContent[] for its children if strictly typed.
       // This implies that the `div` wrapper for content might need to handle FlowContent,
       // or the `h` function needs to be more flexible or a different node type used.
-      // For now, casting as any to match original behavior of passing Content[] through.
-      const contentChildren = directiveNode.children as any[];
-
-
+      // Transform Content[] into PhrasingContent[] to ensure type safety.
+      const contentChildren = transformToPhrasingContent(directiveNode.children);
       const detailsNode = h(
         'details',
         { class: 'remark-collapse' } as HastProperties,
