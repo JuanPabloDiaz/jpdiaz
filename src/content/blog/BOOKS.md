@@ -7,6 +7,7 @@ tags:
   - Books
 draft: true
 ---
+
 classification of my 76 books into 10 groups, aiming for 6-10 books per group, and considering the categories and themes to create cohesive blog topics. I've also given each group a blog-friendly title!
 
 **Group 1: Mastering the Mind: Self-Help for a Better You** (9 books)

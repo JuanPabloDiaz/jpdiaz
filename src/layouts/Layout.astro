@@ -24,14 +24,15 @@ const lang = Astro.url.pathname.startsWith('/es/') ? 'es' : 'en';
 const langToggleUrl =
 	lang === 'es' ? Astro.url.pathname.replace('/es/', '/') : `/es${Astro.url.pathname}`;
 
-const { 
-    metaTitle = site.author + ' | Portfolio',
-    metaDescription = site.description, 
-    ogImage = site.defaultOgImage,
-    pageKeywords = site.keywords 
+const {
+	metaTitle = site.author + ' | Portfolio',
+	metaDescription = site.description,
+	ogImage = site.defaultOgImage,
+	pageKeywords = site.keywords,
 } = Astro.props as LayoutProps;
 
-const effectiveOgImageUrl = ogImage && ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro.site).toString();
+const effectiveOgImageUrl =
+	ogImage && ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro.site).toString();
 const effectiveKeywordsString = pageKeywords.join(', ');
 ---
 
@@ -48,7 +49,7 @@ const effectiveKeywordsString = pageKeywords.join(', ');
 					// description for Open Graph is taken from the main 'description' prop of the SEO component
 					image: effectiveOgImageUrl,
 					// url for Open Graph is often inferred from the main 'canonical' prop or Astro.site
-					type: 'website'
+					type: 'website',
 				},
 			}}
 			twitter={{
@@ -69,11 +70,19 @@ const effectiveKeywordsString = pageKeywords.join(', ');
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		
+
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 
 		<!-- The <title> tag is now handled by the SEO component -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Inconsolata:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Preloading the Inconsolata font used in H1 (LCP element) -->
+		<!-- Note: This preloads the CSS that then loads the font. For more aggressive preloading, direct .woff2 links would be needed once identified. -->
 		<ThemeInitializer />
 		<!-- The canonical link is now handled by the SEO component -->
 	</head>
