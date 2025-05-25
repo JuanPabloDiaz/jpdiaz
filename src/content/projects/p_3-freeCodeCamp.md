@@ -6,5 +6,5 @@ img_alt: freecodecamp Project
 link: https://freecodecamp.jpdiaz.dev # demoHere
 github_link: https://github.com/JuanPabloDiaz/freecodecamp
 tags: ['React', 'Tailwind', 'FastAPI', 'Vite', 'HTML', 'CSS', 'JS', 'Markdown']
-image_path: /assets/images/projects/freecode-ipad.png
+image: ../../assets/images/projects/freecode-ipad.png
 ---

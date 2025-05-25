@@ -6,5 +6,5 @@ img_alt: Migue Diaz Project
 link: https://miguediaz.com/
 # github_link:
 tags: ['Next', 'JS', 'Tailwind', 'Leaflet', 'API', 'Supabase']
-image_path: /assets/images/projects/migue-diaz.png
+image: ../../assets/images/projects/migue-diaz.png
 ---
