@@ -9,13 +9,13 @@ import expressiveCode from 'astro-expressive-code';
 
 
 
-import {remarkModifiedTime,} from "./src/plugins/remark-modified-time.mjs";
-import {resetRemark} from "./src/plugins/reset-remark.js";
-import {remarkAsides} from './src/plugins/remark-asides.js'
-import {remarkCollapse} from "./src/plugins/remark-collapse.js";
-import {remarkGithubCard} from './src/plugins/remark-github-card.js'
-import {remarkButton} from "./src/plugins/remark-button.js";
-import {remarkHtml} from "./src/plugins/remark-html.js";
+import {remarkModifiedTime,} from "./src/plugins/remark-modified-time.mts";
+import {resetRemark} from "./src/plugins/reset-remark.ts";
+import {remarkAsides} from './src/plugins/remark-asides.ts'
+import {remarkCollapse} from "./src/plugins/remark-collapse.ts";
+import {remarkGithubCard} from './src/plugins/remark-github-card.ts'
+import {remarkButton} from "./src/plugins/remark-button.ts";
+import {remarkHtml} from "./src/plugins/remark-html.ts";
 
 // https://astro.build/config
 export default defineConfig({

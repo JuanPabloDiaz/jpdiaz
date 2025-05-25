@@ -1,6 +1,9 @@
 {
 	"extends": "astro/tsconfigs/strict",
+	"include": ["src/**/*.ts", "src/**/*.mts", "src/**/*.cts", "*.ts", "*.mts", "*.cts"],
 	"compilerOptions": {
+		"allowImportingTsExtensions": true, // Permite importar .ts/.mts/.cts
+		"moduleSuffixes": [".mts", ".cts", ".ts", ".js"],
 		"target": "ESNext",
 		"module": "ESNext",
 		// Enable node-style module resolution, for things like npm package imports.
