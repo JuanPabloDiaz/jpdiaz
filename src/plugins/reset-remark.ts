@@ -28,8 +28,8 @@ const resetRemark: Plugin<[], Node, Node> = () => {
 				const htmlNode = node as unknown as Html;
 				htmlNode.type = 'html';
 				htmlNode.value = `<pre class="mermaid">\n${node.value}\n</pre>`;
-				// delete (htmlNode as any).lang; // Clean up old properties if necessary
-				// delete (htmlNode as any).meta; // Clean up old properties if necessary
+				delete htmlNode.lang; // Clean up old properties
+				delete htmlNode.meta; // Clean up old properties
 			}
 		});
 	};
