@@ -6,8 +6,8 @@ import icon from 'astro-icon';
 import remarkDirective from 'remark-directive';
 import expressiveCode from 'astro-expressive-code';
 
-import {pluginLineNumbers} from '@expressive-code/plugin-line-numbers'
-import {pluginCollapsibleSections} from '@expressive-code/plugin-collapsible-sections'
+
+
 
 import {remarkModifiedTime,} from "./src/plugins/remark-modified-time.mjs";
 import {resetRemark} from "./src/plugins/reset-remark.js";

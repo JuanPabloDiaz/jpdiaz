@@ -23,7 +23,7 @@ test.describe('ui test', () => {
 	test('website is shown correctly', async ({ page }) => {
 		await expect(page).toHaveURL('http://localhost:3000/');
 		await expect(page).toHaveTitle('A Very Descriptive Title');
-		const metaDescription = page.locator("meta[name='description']");
+		const metaDescription = page.locator('meta[name=\'description\']');
 		await expect(metaDescription).toHaveAttribute(
 			'content',
 			'A heavily optimized description full of well-researched keywords.'

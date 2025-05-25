@@ -1,10 +1,10 @@
-import {h as _h, s as _s} from "hastscript";
-import {visit} from "unist-util-visit";
+import {h as _h, s as _s} from 'hastscript';
+import {visit} from 'unist-util-visit';
 
 function h(el, attrs = {}, children = []) {
   const {tagName, properties} = _h(el, attrs);
   return {
-    type: "paragraph",
+    type: 'paragraph',
     data: {hName: tagName, hProperties: properties},
     children,
   };
@@ -20,7 +20,7 @@ export function remarkHtml() {
         return;
       }
       if (node.name !== 'i') {
-        return
+        return;
       }
       /*
       *{
@@ -39,7 +39,7 @@ export function remarkHtml() {
         {
           ...node.attributes,
         },
-      )
+      );
     });
   };
   return () => transformer;
