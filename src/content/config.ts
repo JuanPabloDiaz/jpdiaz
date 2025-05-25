@@ -9,7 +9,7 @@ export const config = {
 
 const projectCollection = defineCollection({
   type: 'content', // v2.5.0 and later
-  schema: z.object({
+  schema: ({ image }) => z.object({
     inProgress: z.boolean(),
     title: z.string(),
     description: z.string(),

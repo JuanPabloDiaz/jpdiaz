@@ -6,5 +6,5 @@ img_alt: Landing Page Project
 link: https://lp.jpdiaz.dev
 github_link: https://github.com/JuanPabloDiaz/landingZone
 tags: ['React', 'JS', 'Tailwind']
-image: ../assets/images/projects/landing.png
+image: ../../assets/images/projects/landing.png
 ---

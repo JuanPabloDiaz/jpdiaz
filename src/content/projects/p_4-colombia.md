@@ -6,5 +6,5 @@ img_alt: Colombia
 link: https://colombia.jpdiaz.dev
 github_link: https://github.com/JuanPabloDiaz/colombia
 tags: ['Next', 'JS', 'TS', 'Tailwind']
-image: ../assets/images/projects/colombia.webp
+image: ../../assets/images/projects/colombia.webp
 ---

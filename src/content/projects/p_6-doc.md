@@ -6,5 +6,5 @@ img_alt: Juan Diaz's Docs Project
 link: https://docs.jpdiaz.dev
 github_link: https://github.com/JuanPabloDiaz/doc
 tags: ['Jekyll', 'Ruby', 'JS', 'SASS', 'Terminal']
-image: ../assets/images/projects/docs.png
+image: ../../assets/images/projects/docs.png
 ---
