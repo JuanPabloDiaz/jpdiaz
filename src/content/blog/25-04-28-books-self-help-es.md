@@ -85,12 +85,10 @@ El poder de levantarnos temprano para conectarnos mejor, rendir más y por tanto
 
 > "Lo que los demás dicen y hacen es una proyección de su propia realidad. Cuando eres inmune a las opiniones y acciones de los demás, dejas de ser la víctima de un sufrimiento innecesario."
 
-**Recomendación:** Excelente para quienes buscan principios simples pero profundos que puedan transformar radicalmente cómo interactúan con el mundo y consigo mismos.
-
 ### **Libro:** Think Like a Monk
 
 - **Autor:** Jay Shetty
-- **Resumen corto:** Aplicación práctica de la sabiduría monástica y las técnicas contemplativas a los desafíos y ritmos de la vida moderna.
+- **Resumen corto:** Aplicación práctica de la sabiduría monástica y las técnicas contemplativas a los desafíos y ritmos de la vida moderna. Ideal para quienes buscan incorporar prácticas espirituales y de mindfulness.
 
 **Enseñanzas clave:**
 
@@ -111,13 +109,12 @@ El poder de levantarnos temprano para conectarnos mejor, rendir más y por tanto
 
 > "Cuando vivimos al servicio de los demás, nuestra vida tiene sentido automáticamente. Cuando vivimos solo para nosotros mismos, a menudo nos preguntamos sobre el sentido de la vida."
 
-**Recomendación:** Ideal para quienes buscan incorporar prácticas espirituales y de mindfulness en su vida moderna sin retirarse del mundo.
-
 ## Control Mental y Emocional
 
 ### **Libro:** Control Your Mind and Master Your Feelings
 
 - **Autor:** Eric Robertson
+- **Resumen corto:** Un manual práctico para entender y gestionar nuestras emociones a través de la psicología cognitiva y técnicas de mindfulness. Especialmente útil para quienes luchan contra la ansiedad, la depresión o patrones de pensamiento negativo recurrentes.
 
 **Enseñanzas clave:**
 
@@ -136,8 +133,6 @@ El poder de levantarnos temprano para conectarnos mejor, rendir más y por tanto
 - **El círculo de control:** Dirigir la energía mental hacia lo que podemos controlar, mientras aceptamos lo que está fuera de nuestro alcance.
 
 > "Tu mente es como un jardín. Puedes dejar que cualquier semilla crezca allí, o puedes cultivarlo intencionalmente plantando lo que deseas ver florecer."
-
-**Recomendación:** Especialmente útil para quienes luchan con ansiedad, depresión o patrones de pensamiento negativo recurrentes.
 
 ### **Libro:** Don't Believe Everything You Think
 
@@ -163,8 +158,6 @@ El poder de levantarnos temprano para conectarnos mejor, rendir más y por tanto
 
 > "Entre el estímulo y la respuesta hay un espacio. En ese espacio está nuestro poder para elegir nuestra respuesta. En nuestra respuesta yace nuestro crecimiento y nuestra libertad."
 
-**Recomendación:** Perfecto para quienes quieren desarrollar un mayor control sobre sus procesos mentales y liberarse de patrones de pensamiento limitantes.
-
 ## Bienestar Integral
 
 ### **Libro:** Breathe
@@ -186,8 +179,6 @@ El poder de levantarnos temprano para conectarnos mejor, rendir más y por tanto
   - **Respiración Buteyko:** Método para reentrenar patrones respiratorios disfuncionales con énfasis en la reducción del volumen respiratorio.
 
 > "La manera correcta de respirar es un potente medicamento autoadministrado. Los humanos modernos hemos abandonado en gran parte este medicamento gratuito, con graves consecuencias para nuestra salud."
-
-**Recomendación:** Fundamental para cualquiera interesado en mejorar su salud desde lo más básico y esencial: la forma en que respiramos cada minuto de cada día.
 
 ### **Libro:** El Poder de Estar Solo
 
