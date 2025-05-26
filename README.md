@@ -6,7 +6,7 @@
 
 # [JpDiaz](https://jpdiaz.dev)
 
-Welcome to my personal website! I'm Juan Pablo Díaz, a Front-End Developer and UI/UX Designer. I'm passionate about creating beautiful and intuitive user interfaces, and I'm always looking for new opportunities to learn and grow.
+Welcome to my personal website! I'm Juan Pablo Díaz, a Full Stack Developer and UI/UX Designer. I'm passionate about creating beautiful and intuitive user interfaces, and I'm always looking for new opportunities to learn and grow.
 <br>
 <br>
 <br>
@@ -28,10 +28,10 @@ Welcome to my personal website! I'm Juan Pablo Díaz, a Front-End Developer and 
 
 </div>
 <div align=center>
- 
- ![code size](https://img.shields.io/github/languages/code-size/JuanPabloDiaz/jpdiaz)
- [![contributors](https://img.shields.io/github/contributors/JuanPabloDiaz/jpdiaz)](https://github.com/JuanPabloDiaz/jpdiaz/graphs/contributors)
- [![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/JuanPabloDiaz/jpdiaz?utm_source=oss&utm_medium=github&utm_campaign=JuanPabloDiaz%2Fjpdiaz&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)](https://app.coderabbit.ai/settings/repositories)
+
+![code size](https://img.shields.io/github/languages/code-size/JuanPabloDiaz/jpdiaz)
+[![contributors](https://img.shields.io/github/contributors/JuanPabloDiaz/jpdiaz)](https://github.com/JuanPabloDiaz/jpdiaz/graphs/contributors)
+[![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/JuanPabloDiaz/jpdiaz?utm_source=oss&utm_medium=github&utm_campaign=JuanPabloDiaz%2Fjpdiaz&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)](https://app.coderabbit.ai/settings/repositories)
 
 </div>
 

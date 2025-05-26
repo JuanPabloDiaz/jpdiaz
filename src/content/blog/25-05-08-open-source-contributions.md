@@ -4,15 +4,15 @@ description: 'Finding My Path in Open Source'
 pubDate: 2025-05-08
 lang: 'en'
 tags:
-  - open-source
-  - journey
-  - contribution
+  - OpenSource
+  - Journey
+  - Contribution
 draft: false
 ---
 
 # The Consistent Contributor: Finding My Path in Open Source
 
-As a front-end developer navigating the ever-evolving tech landscape, I've discovered that one of the most rewarding aspects of my journey has been my involvement in open source. Unlike many contributors who join high-profile projects with massive codebases, my path took a different direction—one focused on consistency, resource sharing, and community building.
+As a Full Stack developer navigating the ever-evolving tech landscape, I've discovered that one of the most rewarding aspects of my journey has been my involvement in open source. Unlike many contributors who join high-profile projects with massive codebases, my path took a different direction—one focused on consistency, resource sharing, and community building.
 
 ## Finding My Niche: Tools That Make Developers' Lives Easier
 
@@ -88,7 +88,7 @@ If you're standing where I once stood, uncertain about how to begin your open so
 
 As I look to the future, my approach to open source is evolving. While I'll continue maintaining my commitments to existing projects, I'm setting my sights on larger, high-visibility contributions in the data engineering space.
 
-Projects like Unity Catalog, Delta Lake, Apache Iceberg, MLFlow, Parquet, and Apache Airflow are now on my radar as I transition from front-end development to data engineering with a focus on Databricks technologies.
+Projects like Unity Catalog, Delta Lake, Apache Iceberg, MLFlow, Parquet, and Apache Airflow are now on my radar as I transition from Full Stack development to data engineering with a focus on Databricks technologies.
 
 I've already begun contributing to Unity Catalog, though the project is still in its early stages as an open source initiative. While UI contributions aren't yet available as they're still developing the backend architecture, I'm positioning myself to make meaningful contributions as opportunities arise.
 

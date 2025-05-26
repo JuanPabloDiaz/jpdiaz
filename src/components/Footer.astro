@@ -8,14 +8,14 @@ const copyRight = `Copyright © 2023 - ${new Date().getFullYear()}`;
 	<div class="flex flex-col items-center justify-center md:flex-row">
 		{copyRight}
 
-		<span class="mx-1 hidden text-orange dark:text-orange md:block">•</span>
+		<span class="mx-1 hidden text-orange-darker dark:text-orange md:block">•</span>
 		<p class="flex items-center justify-center">
 			Developed by
 			<Link
 				text={site.author}
 				ariaLabel=`Website developed by ${site.author}`
 				href=`https://github.com/${site.githubUsername}`
-				styles="hover:underline-orange pl-1 font-bold text-orange hover:underline hover:underline-offset-4 dark:text-orange"
+				styles="pl-1 font-bold text-orange-darker hover:text-orange-darker hover:underline hover:underline-offset-4 dark:text-orange dark:hover:text-orange"
 			/>
 		</p>
 	</div>

@@ -4,8 +4,8 @@ description: 'Una Aventura que Transformó mi Desarrollo'
 pubDate: 2025-05-06
 lang: 'es'
 tags:
-  - open-source
-  - journey
+  - OpenSource
+  - Journey
 draft: false
 ---
 

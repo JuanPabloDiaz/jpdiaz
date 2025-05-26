@@ -4,9 +4,8 @@ description: 'Un viaje de transformación personal'
 pubDate: 2025-02-06
 lang: 'es'
 tags:
-  - Sueño americano
-  - Crecimiento personal
-  - Reflexiones
+  - SuenoAmericano
+  - CrecimientoPersonal
 draft: false
 ---
 

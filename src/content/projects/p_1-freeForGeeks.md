@@ -6,5 +6,5 @@ img_alt: Free For Geeks site
 link: https://freeforgeeks.jpdiaz.dev
 github_link: https://github.com/JuanPabloDiaz/freeForGeeks
 tags: ['Docsify', 'OpenSource']
-image_path: /assets/images/projects/free-for-geeks.png
+image: ../../assets/images/projects/free-for-geeks.png
 ---

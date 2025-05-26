@@ -22,12 +22,12 @@ const PDF = './files/2025-FrontEndCV.pdf';
 					<span class="mx-auto w-full text-left">
 						<Typewriter
 							messages={[
-								'a Full-Stack Dev 👨‍💻',
-								'a Front-End Dev 🤓',
+								'a Full Stack Dev 👨‍💻',
+								'Founder of Talento Para TI 🚀',
 								'a Databricks MVP 🏆',
 								'a data enthusiast 📊',
 								'an OSS enthusiast 💻',
-								'a project maker 🚀',
+								'a project maker 🤓',
 								'an OSS maintainer 🛠️',
 								'a learner 📚',
 							]}
@@ -39,7 +39,10 @@ const PDF = './files/2025-FrontEndCV.pdf';
 							.typewriter {
 								font-size: 1.9rem;
 								font-weight: 600;
-								color: #f97316;
+								color: #374151; /* Equivalent to text-gray-700 for light mode */
+							}
+							html.dark .typewriter {
+								color: #f97316; /* orange-500 for dark mode */
 							}
 							@media (max-width: 768px) {
 								.typewriter {
@@ -65,11 +68,12 @@ const PDF = './files/2025-FrontEndCV.pdf';
 				class="rounded-full opacity-90 shadow-orange/50 duration-75 hover:scale-105 hover:transform hover:opacity-50 hover:shadow-2xl"
 				src={juanImage}
 				alt={site.author}
-				format="jpg"
+				format="webp"
 				width={450}
 				height={450}
-				quality={100}
-				loading="lazy"
+				quality={70}
+				loading="eager"
+				densities={[1.5, 2]}
 			/>
 		</div>
 	</main>

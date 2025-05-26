@@ -1,10 +1,14 @@
 {
 	"extends": "astro/tsconfigs/strict",
+	"include": ["src/**/*.ts", "src/**/*.mts", "src/**/*.cts", "*.ts", "*.mts", "*.cts"],
+	"exclude": ["node_modules", "dist"],
 	"compilerOptions": {
+		"allowImportingTsExtensions": true,
+		"moduleSuffixes": [".mts", ".cts", ".ts", ".js"],
 		"target": "ESNext",
-		"module": "ESNext",
+		"module": "nodenext",
 		// Enable node-style module resolution, for things like npm package imports.
-		"moduleResolution": "node",
+		"moduleResolution": "nodenext",
 		// Enable JSON imports.
 		"resolveJsonModule": true,
 		// Enable stricter transpilation for better output.
@@ -12,6 +16,8 @@
 		// Astro will directly run your TypeScript code, no transpilation needed.
 		"noEmit": true,
 		"strictNullChecks": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
 		"baseUrl": ".",
 		"paths": {
 			"@src/*": ["src/*"],
@@ -23,7 +29,9 @@
 			"@utils/*": ["src/utils/*"],
 			"@i18n/*": ["src/i18n/*"],
 			"@lib/*": ["src/lib/*"],
-			"@plugins/*": ["src/plugins/*"]
-		}
+			"@plugins/*": ["src/plugins/*"],
+			"@i18n/utils": ["src/i18n/utils.ts"]
+		},
+		"types": ["node"]
 	}
 }

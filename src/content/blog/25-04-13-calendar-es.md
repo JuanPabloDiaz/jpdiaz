@@ -5,10 +5,8 @@ pubDate: 2025-04-13
 lang: 'es'
 image: '/blog-cover/life/calendar.webp'
 tags:
-  - productividad
-  - gestión del tiempo
-  - organización
-  - hábitos
+  - GestionDelTiempo
+  - Habitos
 draft: false
 ---
 

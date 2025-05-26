@@ -4,10 +4,9 @@ description: 'Descubre cómo Jekyll y GitHub Pages pueden transformar tu experie
 pubDate: 2025-03-23
 lang: 'es'
 tags:
-  - jekyll
-  - github-pages
-  - desarrollo-web
-  - sitios-estaticos
+  - Jekyll
+  - GithubPages
+  - DesarrolloWeb
 draft: false
 ---
 

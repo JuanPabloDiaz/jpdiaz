@@ -22,10 +22,12 @@ import { site } from '@src/consts';
 					class="rounded-full opacity-90 shadow-orange/50 duration-75 hover:scale-105 hover:transform hover:opacity-50 hover:shadow-2xl"
 					src={juanImage}
 					alt={site.author}
-					format="jpg"
+					format="webp"
 					width={150}
 					height={150}
-					quality={100}
+					quality={80}
+					loading="lazy"
+					densities={[1.5, 2]}
 				/>
 			</div>
 

@@ -1,15 +1,22 @@
-
-
 export const site = {
 	author: 'Juan Díaz',
 	description:
 		'Juan Díaz is a web developer based in Charlotte, NC. He specializes in building (and occasionally designing) exceptional websites.',
-	url: 'https://jpdiaz.vercel.app/',
-	baseUrl: '', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
+	url: 'https://jpdiaz.dev/',
 	motto: 'Actions speak louder than words.',
 	githubUsername: 'JuanPabloDiaz',
+	defaultOgImage: '/placeholder-og-image.jpg',
+	keywords: [
+		'Juan Pablo Diaz developer',
+		'Full stack developer',
+		'React developer',
+		'JavaScript developer',
+		'Frontend developer',
+		'Backend developer',
+		'Web developer portfolio',
+	],
 	aboutMePageDescription:
-		'Committed Front End developer seeking opportunities in growth-oriented startups. Upholds values of discipline, loyalty, and reliability, with a self-motivated approach to continuous learning and skill enhancement',
+		'Committed Full Stack Developer seeking opportunities in growth-oriented startups. Upholds values of discipline, loyalty, and reliability, with a self-motivated approach to continuous learning and skill enhancement',
 };
 
 export const GENERATE_SLUG_FROM_TITLE = true;
@@ -39,7 +46,7 @@ export const config = {
 
 export const whatImDoing = [
 	{
-		role: 'Founder & Front-End Developer @',
+		role: 'Founder & Full Stack Developer @',
 		url: 'https://talentoparati.com',
 		repo: '#',
 		title: 'Talento Para TI',

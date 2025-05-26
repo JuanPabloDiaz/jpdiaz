@@ -4,8 +4,8 @@ description: 'Un viaje personal'
 pubDate: 2025-03-15
 lang: 'es'
 tags:
-  - Habilidades blandas
-  - Desarrollo personal
+  - HabilidadesBlandas
+  - DesarrolloPersonal
 draft: false
 ---
 

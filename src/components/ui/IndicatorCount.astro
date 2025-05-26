@@ -15,7 +15,7 @@ const { text, count, href } = Astro.props;
 	{text}
 	{
 		count > 0 && (
-			<div class="absolute -right-2 -top-2 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-orange text-xs font-bold text-white dark:border-white">
+			<div class="absolute -right-2 -top-2 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-orange text-xs font-bold text-black dark:border-white">
 				{count}
 			</div>
 		)
@@ -23,7 +23,7 @@ const { text, count, href } = Astro.props;
 
 	{
 		count > 10 && (
-			<div class="absolute -right-2 -top-2 inline-flex h-6 w-8 items-center justify-center rounded-full border-2 border-white bg-orange text-xs font-bold text-white dark:border-white">
+			<div class="absolute -right-2 -top-2 inline-flex h-6 w-8 items-center justify-center rounded-full border-2 border-white bg-orange text-xs font-bold text-black dark:border-white">
 				{count}
 			</div>
 		)
@@ -31,7 +31,7 @@ const { text, count, href } = Astro.props;
 
 	{
 		count > 99 && (
-			<div class="absolute -right-2 -top-2 inline-flex h-6 w-9 items-center justify-center rounded-full border-2 border-white bg-orange text-xs font-bold text-white dark:border-white">
+			<div class="absolute -right-2 -top-2 inline-flex h-6 w-9 items-center justify-center rounded-full border-2 border-white bg-orange text-xs font-bold text-black dark:border-white">
 				99+
 			</div>
 		)

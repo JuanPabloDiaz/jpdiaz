@@ -62,7 +62,7 @@ interface GitHubContributor {
 
 // Helper function to extract owner and repo from GitHub URL
 export function getRepoDetails(url: string) {
-	const regex = /github\.com\/([^\/]+)\/([^\/]+)/;
+	const regex = /github.com\/([^/]+)\/([^/]+)/;
 	const matches = url.match(regex);
 	return matches ? { owner: matches[1], repo: matches[2] } : null;
 }
