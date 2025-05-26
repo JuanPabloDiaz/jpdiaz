@@ -36,8 +36,6 @@ El poder de levantarnos temprano para conectarnos mejor, rendir más y por tanto
 
 > "Las 5 de la mañana es el momento en que los genios, los visionarios y los santos hacen sus mejores trabajos. Es el momento mágico de grandes posibilidades."
 
-**Recomendación:** Ideal para quienes quieren transformar su productividad y bienestar mediante rutinas matutinas estructuradas y comprobadas.
-
 ### **Libro:** Hábitos Atómicos (Atomic Habits)
 
 - **Autor:** James Clear
@@ -46,16 +44,16 @@ El poder de levantarnos temprano para conectarnos mejor, rendir más y por tanto
 **Enseñanzas clave:**
 
 - **El sistema de los cuatro pasos para crear hábitos duraderos:**
+
   1. **Hacerlo obvio:** Diseña tu entorno para que las señales de tus buenos hábitos sean imposibles de ignorar.
   2. **Hacerlo atractivo:** Combina hábitos que quieres desarrollar con actividades que ya disfrutas.
-  3. **Hacerlo fácil:** Reduce la fricción para tus buenos hábitos y aumenta la fricción para los malos.
-  4. **Hacerlo satisfactorio:** Crea un sistema de recompensas inmediatas para mantener la motivación.
+  3. **Hacerlo fácil**
+  4. **Hacerlo satisfactorio**
+
 - **La ley de identidad:** No se trata sólo de lo que quieres lograr, sino de quién quieres llegar a ser. Cuando tus hábitos se alinean con tu identidad deseada, son más sostenibles.
 - **El principio de la meseta de latencia:** Clear explica por qué muchos abandonan nuevos hábitos justo antes de ver resultados, y cómo perseverar a través de esta fase crítica.
 
-> "Los hábitos son el interés compuesto del mejoramiento personal. El mismo modo en que el dinero se multiplica a través del interés compuesto, los efectos de tus hábitos se multiplican a medida que los repites."
-
-**Recomendación:** Perfecto para cualquiera que quiera cambiar su vida a través de sistemas prácticos y pequeños hábitos diarios con impacto acumulativo.
+> "los efectos de tus hábitos se multiplican a medida que los repites."
 
 ## Mentalidad y Actitud
 
@@ -73,8 +71,6 @@ El poder de levantarnos temprano para conectarnos mejor, rendir más y por tanto
 - **La ley retroactiva de Manson:** Cuanto más persigues sentirte bien, peor te sientes. La verdadera felicidad viene cuando dejamos de obsesionarnos con estar felices.
 
 > "La habilidad de observar tu propio dolor con curiosidad, sin juzgarlo, es el primer paso para lidiar con él de manera constructiva."
-
-**Recomendación:** Para quienes buscan un enfoque honesto, directo y sin adornos sobre cómo afrontar la vida y sus inevitables dificultades.
 
 ### **Libro:** The Four Agreements
 
