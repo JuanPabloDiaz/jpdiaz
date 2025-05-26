@@ -21,7 +21,7 @@ draft: false
 <img src="https://covers.openlibrary.org/b/id/15088263-M.jpg" alt="El Poder de Estar Solo by Brian Alba">
 </div>
 
-A lo largo de mi vida, he querido cambiar algunas actitudes para crecer como persona. Es asi como familiares y amigos me han recomendado libros muy valiosos que hoy quiero compartir contigo, ya que en ellos he encontrado un mejor control de mis pensamientos.
+A lo largo de mi vida, he querido cambiar algunas actitudes para crecer como persona. Es asi como familiares y amigos me han recomendado libros muy valiosos que hoy quiero compartir contigo, en ellos he encontrado un mejor control de mis pensamientos.
 
 ## Hábitos y Rutinas
 
@@ -235,7 +235,7 @@ Lo importante es reconocer cuando necesitamos ayuda y buscarla, ya sea en libros
 
 ---
 
-*Este artículo forma parte de mi serie sobre libros que han transformado mi vida. Puedes encontrar mi colección completa de libros en [https://books.jpdiaz.dev/](https://books.jpdiaz.dev/).*
+_Este artículo forma parte de mi serie sobre libros que han transformado mi vida. Puedes encontrar mi colección completa de libros en [https://books.jpdiaz.dev/](https://books.jpdiaz.dev/)._
 
 <!-- ![The 5 AM Club by Robin Sharma](https://covers.openlibrary.org/b/id/14614079-M.jpg)
 ![Atomic Habits by James Clear](https://covers.openlibrary.org/b/id/14987737-M.jpg)
