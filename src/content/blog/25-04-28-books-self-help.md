@@ -4,9 +4,9 @@ description: 'Self-help books for a better version of yourself'
 pubDate: 2025-04-28
 lang: 'en'
 tags:
-  - Books
-  - SelfHelp
-  - PersonalDevelopment
+  - autohelp
+  - personal development
+  - books
 draft: false
 ---
 

@@ -235,7 +235,7 @@ Lo importante es reconocer cuando necesitamos ayuda y buscarla, ya sea en libros
 
 ---
 
-_Este artículo forma parte de mi serie sobre libros que han transformado mi vida. Puedes encontrar mi colección completa de libros en [books.jpdiaz.dev](https://books.jpdiaz.dev/)._
+*Este artículo forma parte de mi serie sobre libros que han transformado mi vida. Puedes encontrar mi colección completa de libros en [https://books.jpdiaz.dev/](https://books.jpdiaz.dev/).*
 
 <!-- ![The 5 AM Club by Robin Sharma](https://covers.openlibrary.org/b/id/14614079-M.jpg)
 ![Atomic Habits by James Clear](https://covers.openlibrary.org/b/id/14987737-M.jpg)
