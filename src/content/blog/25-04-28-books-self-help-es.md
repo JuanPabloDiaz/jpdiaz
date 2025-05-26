@@ -118,11 +118,10 @@ El poder de levantarnos temprano para conectarnos mejor, rendir más y por tanto
 ### **Libro:** Control Your Mind and Master Your Feelings
 
 - **Autor:** Eric Robertson
-- **Resumen corto:** Guía práctica y basada en evidencia para gestionar eficazmente pensamientos negativos y emociones difíciles.
 
 **Enseñanzas clave:**
 
-- **El modelo ABC de gestión emocional:** Robertson explica que no son los acontecimientos (A) los que causan nuestras emociones (C), sino nuestras creencias e interpretaciones (B) sobre esos acontecimientos.
+- **El modelo ABC de gestión emocional:** Robertson explica que no son los acontecimientos los que causan nuestras emociones, sino nuestras creencias e interpretaciones sobre esos acontecimientos.
 - **Técnicas para identificar patrones de pensamiento destructivos:**
   1. **Catastrofización:** Anticipar el peor escenario posible.
   2. **Filtrado mental:** Enfocarse solo en lo negativo ignorando lo positivo.
@@ -147,14 +146,13 @@ El poder de levantarnos temprano para conectarnos mejor, rendir más y por tanto
 
 **Enseñanzas clave:**
 
-- **La tiranía del pensamiento automático:** Nguyen muestra cómo muchos de nuestros pensamientos son automáticos y no elegidos conscientemente, influenciados por nuestra historia, condicionamiento y sesgos cognitivos.
+- **La tiranía del pensamiento automático:** muestra cómo muchos de nuestros pensamientos son automáticos y no elegidos conscientemente, influenciados por nuestra historia, condicionamiento y sesgos cognitivos.
 - **Las seis distorsiones cognitivas más dañinas:**
-  1. **Sobregeneralización:** Extraer una regla general de un incidente aislado
-  2. **Descalificación de lo positivo:** Rechazar experiencias positivas manteniéndose en una creencia negativa
-  3. **Razonamiento emocional:** Creer que algo es verdad porque "se siente" verdadero
-  4. **Etiquetado:** Definirte a ti mismo o a otros basándote en errores o comportamientos específicos
-  5. **Magnificación/minimización:** Exagerar lo negativo y minimizar lo positivo
-  6. **Deberías:** Criticarte a ti mismo y a otros con "debería" y "tendría que"
+  1. Sobregeneralización.
+  2. Descalificación de lo positivo.
+  3. Razonamiento emocional.
+  4. Etiquetado.
+  5. Magnificación/minimización.
 - **La técnica RAIN para trabajar con pensamientos difíciles:**
   - R: Reconocer el pensamiento
   - A: Aceptarlo sin resistencia
