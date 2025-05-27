@@ -1,6 +1,6 @@
 ---
 import type { GitHubIssueComment } from '@utils/github';
-import GitHubIcon from '../../components/icons/GitHubIcon.astro';
+import GitHubIcon from '@components/icons/GitHubIcon.astro';
 import { Icon } from 'astro-icon/components';
 
 interface Props {
@@ -13,29 +13,55 @@ const creationDate = new Date(comment.created_at).toLocaleDateString('en-US', {
 	month: 'long',
 	day: 'numeric',
 });
+
+// Extraer el nombre del repositorio de la URL
+const repoRegex = /github\.com\/([^\/]+\/[^\/]+)/;
+const repoMatch = comment.html_url.match(repoRegex);
+const repoFullName = repoMatch ? repoMatch[1] : 'Unknown Repository';
 ---
 
 <article
 	class="group relative flex h-full flex-col overflow-hidden rounded-xl bg-white/95 p-5 shadow-lg backdrop-blur-md transition-all duration-300 ease-in-out hover:scale-[1.01] hover:bg-white/80 hover:shadow-xl dark:bg-[rgba(17,24,39,0.9)] dark:hover:bg-[rgba(17,24,39,0.9)]"
 >
 	<div class="flex items-start">
-		<img
-			src={comment.user.avatar_url}
-			alt={`Avatar of ${comment.user.login}`}
-			class="border-gray-100 dark:border-gray-700 mr-4 h-16 w-16 rounded-full border-2 object-cover shadow-md"
-			loading="lazy"
-		/>
+		<a
+			href={comment.user.html_url}
+			target="_blank"
+			rel="noopener noreferrer"
+			title={`View ${comment.user.login}'s profile`}
+			class="block"
+		>
+			<img
+				src={comment.user.avatar_url}
+				alt={`Avatar of ${comment.user.login}`}
+				class="border-gray-100 dark:border-gray-700 mr-4 h-16 w-16 rounded-full border-2 object-cover shadow-md"
+				loading="lazy"
+			/>
+		</a>
 		<div class="flex-1">
-			<div class="flex items-center justify-between">
-				<h3 class="text-xl font-bold text-black/90 dark:text-white/90">{comment.user.login}</h3>
+			<div>
+				<h3 class="text-xl font-bold text-black/90 dark:text-white/90">
+					<a
+						href={comment.user.html_url}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="hover:text-blue-600 dark:hover:text-blue-400 after:bg-blue-600 dark:after:bg-blue-400 relative transition-all duration-300 ease-in-out after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full"
+					>
+						{comment.user.login}
+					</a>
+				</h3>
 				<a
-					href={comment.html_url}
+					href={`https://github.com/${repoFullName}`}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="bg-blue-100 text-blue-600 hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-800/60 inline-flex items-center justify-center rounded-full p-2 transition-colors"
-					title="View on GitHub"
+					class="hover:text-blue-600 dark:hover:text-blue-400 group inline-flex items-center gap-1 text-xs italic text-black/60 transition-all duration-300 dark:text-white/60"
+					title="View repository"
 				>
-					<GitHubIcon class="h-5 w-5" />
+					<span class="group-hover:underline">{repoFullName}</span>
+					<Icon
+						name="fe:arrow-right"
+						class="h-3 w-3 opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100"
+					/>
 				</a>
 			</div>
 			<p class="text-sm text-black/70 dark:text-white/70">{creationDate}</p>
@@ -43,22 +69,114 @@ const creationDate = new Date(comment.created_at).toLocaleDateString('en-US', {
 	</div>
 
 	<div class="mt-4 flex-1">
-		<div
-			class="prose prose-sm max-w-none text-black/80 dark:prose-invert dark:text-white/80"
-			set:html={comment.body}
-		/>
+		<div class="relative overflow-hidden">
+			<!-- Contenido del testimonio con altura máxima -->
+			<div
+				id={`testimonial-content-${comment.html_url.replace(/[^a-zA-Z0-9]/g, '-')}`}
+				class="prose prose-sm max-h-[150px] max-w-none overflow-hidden text-black/80 transition-all duration-300 dark:prose-invert dark:text-white/80"
+				set:html={comment.body}
+			/>
+
+			<!-- Degradado para indicar que hay más contenido -->
+			<div
+				class="to-transparent pointer-events-none absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white/95 transition-opacity duration-300 dark:from-[rgba(17,24,39,0.95)]"
+				id={`fade-${comment.html_url.replace(/[^a-zA-Z0-9]/g, '-')}`}
+			>
+			</div>
+
+			<!-- Botón para expandir/contraer -->
+			<button
+				type="button"
+				class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 mt-2 flex items-center gap-1 text-sm font-medium transition-all duration-300 focus:outline-none"
+				id={`expand-btn-${comment.html_url.replace(/[^a-zA-Z0-9]/g, '-')}`}
+				onclick={`
+					const content = document.getElementById('testimonial-content-${comment.html_url.replace(/[^a-zA-Z0-9]/g, '-')}');
+					const fadeEl = document.getElementById('fade-${comment.html_url.replace(/[^a-zA-Z0-9]/g, '-')}');
+					const btn = document.getElementById('expand-btn-${comment.html_url.replace(/[^a-zA-Z0-9]/g, '-')}');
+					const expanded = content.classList.contains('max-h-none');
+					
+					if (expanded) {
+						content.classList.remove('max-h-none');
+						content.classList.add('max-h-[150px]');
+						fadeEl.classList.remove('opacity-0');
+						btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg> Read More';
+					} else {
+						content.classList.remove('max-h-[150px]');
+						content.classList.add('max-h-none');
+						fadeEl.classList.add('opacity-0');
+						btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" /></svg> Show Less';
+					}
+					`}
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-4 w-4"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"
+					></path>
+				</svg>
+				Read More
+			</button>
+		</div>
 	</div>
 
 	<div class="mt-auto flex items-center justify-between pt-4">
 		<a
+			href={comment.html_url}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="bg-blue-100 text-blue-600 hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-800/60 group inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-md"
+			title="View original testimony on GitHub"
+		>
+			<GitHubIcon class="h-4 w-4 transition-transform duration-300 group-hover:rotate-12" />
+			Verify Testimony
+		</a>
+		<a
 			href={comment.user.html_url}
 			target="_blank"
 			rel="noopener noreferrer"
-			class="bg-blue-100 text-blue-600 hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-800/60 inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors"
+			class="bg-blue-100 text-blue-600 hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-800/60 group inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-md"
+			title="View author's GitHub profile"
 		>
-			<Icon name="fe:user" class="h-4 w-4" />
+			<Icon
+				name="fe:user"
+				class="h-4 w-4 transition-transform duration-300 group-hover:scale-110"
+			/>
 			View Profile
 		</a>
-		<div class="text-sm italic text-black/60 dark:text-white/60">via GitHub</div>
 	</div>
 </article>
+
+<script>
+	// Función para verificar si el contenido necesita el botón "Read More"
+	function checkContentHeight() {
+		// Obtener todos los contenedores de testimonios
+		const testimonialContents = document.querySelectorAll('[id^="testimonial-content-"]');
+
+		testimonialContents.forEach((contentEl) => {
+			const id = contentEl.id.replace('testimonial-content-', '');
+			const fadeEl = document.getElementById(`fade-${id}`);
+			const btnEl = document.getElementById(`expand-btn-${id}`);
+
+			if (fadeEl && btnEl) {
+				// Si el contenido es más corto que la altura máxima, ocultar el botón y el degradado
+				if (contentEl.scrollHeight <= 150) {
+					btnEl.classList.add('hidden');
+					fadeEl.classList.add('hidden');
+				} else {
+					btnEl.classList.remove('hidden');
+					fadeEl.classList.remove('hidden');
+				}
+			}
+		});
+	}
+
+	// Ejecutar la verificación cuando se carga la página
+	document.addEventListener('DOMContentLoaded', checkContentHeight);
+
+	// También ejecutar cuando se completan las imágenes, ya que pueden afectar la altura
+	window.addEventListener('load', checkContentHeight);
+</script>

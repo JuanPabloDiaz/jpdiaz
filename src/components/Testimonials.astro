@@ -19,11 +19,6 @@ interface Props {
 let allComments: GitHubIssueComment[] = [];
 let errors: string[] = [];
 
-// Debug: Check if GitHub token is available
-const githubToken = import.meta.env.PUBLIC_GITHUB_TOKEN;
-console.log('GitHub Token available:', !!githubToken);
-console.log('Testimonials data:', testimonialsData);
-
 // Flag to track if we should use fallback testimonials
 let useFallbackTestimonials = false;
 

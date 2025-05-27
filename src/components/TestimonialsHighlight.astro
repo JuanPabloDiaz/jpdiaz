@@ -1,0 +1,87 @@
+---
+import SubTitle from '@components/ui/SubTitle.astro';
+import TestimonialCard from '@components/ui/TestimonialCard.astro';
+import Link from '@components/ui/Link.astro';
+
+// Definir el tipo GitHubIssueComment ya que no podemos importarlo
+type GitHubIssueComment = {
+	body: string;
+	html_url: string;
+	created_at: string;
+	user: {
+		login: string;
+		avatar_url: string;
+		html_url: string;
+	};
+};
+
+// Importar los testimonios
+import testimonialsData from '@src/content/testimonials.json';
+
+// Especificar exactamente las URLs de los testimonios que quieres destacar
+const highlightedUrls = [
+	'https://github.com/tech-conferences/conference-data/pull/6814#issuecomment-2142232796', // Testimonio de cgrail
+	'https://github.com/unitycatalog/unitycatalog-ui/pull/60#issuecomment-2265438075', // Testimonio de marcelscruz
+	'https://github.com/marcelscruz/dev-resources/pull/463#issuecomment-2244810835', // Testimonio de marcelscruz
+];
+
+// Crear un array para almacenar los testimonios destacados
+const highlightedTestimonials: GitHubIssueComment[] = [];
+
+// Para cada URL destacada, buscar el testimonio correspondiente
+highlightedUrls.forEach((url) => {
+	// Buscar en todos los repositorios
+	let found = false;
+
+	for (const repo of testimonialsData.repositories) {
+		if (found) break;
+
+		for (const testimonial of repo.testimonials) {
+			if (testimonial.url === url) {
+				// Encontramos el testimonio con la URL especificada
+				const comment: GitHubIssueComment = {
+					body: testimonial.text,
+					html_url: testimonial.url,
+					created_at: new Date().toISOString(), // Fecha actual como fallback
+					user: {
+						login: testimonial.author,
+						avatar_url: `https://github.com/${testimonial.author}.png`,
+						html_url: `https://github.com/${testimonial.author}`,
+					},
+				};
+
+				// Añadir al array de testimonios destacados
+				highlightedTestimonials.push(comment);
+				found = true;
+				break;
+			}
+		}
+	}
+});
+
+// Mostrar un mensaje en la consola con los testimonios encontrados
+console.log(`Encontrados ${highlightedTestimonials.length} testimonios destacados`);
+---
+
+<div class="h-10" id="testimonials"></div>
+
+<section
+	data-testid="testimonials"
+	class="mb-20 flex flex-col items-center justify-center md:mb-0 md:h-screen"
+>
+	<SubTitle text="Testimonials" />
+	<p class="text-black dark:text-white">What the GitHub community says about my work</p>
+
+	<div class="mt-10 grid gap-8 md:grid-cols-3">
+		{highlightedTestimonials.map((testimonial) => <TestimonialCard comment={testimonial} />)}
+	</div>
+
+	<div class="mt-10 flex justify-center">
+		<Link
+			text="View more Testimonials"
+			ariaLabel="View more testimonials"
+			href="./testimonials"
+			arrow
+		/>
+	</div>
+</section>

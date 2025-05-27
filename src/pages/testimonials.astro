@@ -1,9 +1,8 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import SubTitle from '@components/ui/SubTitle.astro';
 import Navbar from '@components/Navbar.astro';
 import CallToAction from '@components/CallToAction.astro';
-import ProjectListSmall from '@components/projects/ProjectListSmall.astro';
+import Testimonials from '@components/Testimonials.astro';
 import { backHomeMenu } from '@src/consts';
 import { site } from '@src/consts';
 ---
@@ -13,11 +12,7 @@ import { site } from '@src/consts';
 	<main
 		class="mb-10 flex flex-col items-center justify-center text-black dark:text-white md:mb-0 md:h-screen lg:h-auto"
 	>
-		<SubTitle text="Testimonials" />
-		<p class="text-black dark:text-white">
-			What the GitHub community says about my open-source work.
-		</p>
-		<ProjectListSmall collectionName="testimonials" />
+		<Testimonials />
 		<div class="mt-20"><CallToAction social line button /></div>
 	</main>
 </Layout>
