@@ -29,12 +29,12 @@ const repoFullName = repoMatch ? repoMatch[1] : 'Unknown Repository';
 			target="_blank"
 			rel="noopener noreferrer"
 			title={`View ${comment.user.login}'s profile`}
-			class="block overflow-hidden rounded-full transition-all duration-300 ease-in-out hover:ring-2 hover:ring-blue-400 dark:hover:ring-blue-500"
+			class="block"
 		>
 			<img
 				src={comment.user.avatar_url}
 				alt={`Avatar of ${comment.user.login}`}
-				class="border-gray-100 dark:border-gray-700 mr-4 h-16 w-16 rounded-full border-2 object-cover shadow-md transition-transform duration-300 hover:scale-110"
+				class="border-gray-100 dark:border-gray-700 mr-4 h-16 w-16 rounded-full border-2 object-cover shadow-md"
 				loading="lazy"
 			/>
 		</a>
