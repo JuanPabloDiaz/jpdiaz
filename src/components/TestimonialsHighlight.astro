@@ -18,75 +18,49 @@ type GitHubIssueComment = {
 // Importar los testimonios
 import testimonialsData from '@src/content/testimonials.json';
 
-// Seleccionar 3 testimonios destacados (puedes elegir los que quieras)
-const highlightedRepos = [
-	'tech-conferences/conference-data',
-	'withastro/docs',
-	'marcelscruz/dev-resources',
+// Especificar exactamente las URLs de los testimonios que quieres destacar
+const highlightedUrls = [
+  "https://github.com/tech-conferences/conference-data/pull/6814#issuecomment-2142232796", // Testimonio de cgrail
+  "https://github.com/unitycatalog/unitycatalog-ui/pull/60#issuecomment-2265438075", // Testimonio de marcelscruz
+  "https://github.com/marcelscruz/dev-resources/pull/463#issuecomment-2244810835" // Testimonio de marcelscruz
 ];
 
 // Crear un array para almacenar los testimonios destacados
 const highlightedTestimonials: GitHubIssueComment[] = [];
 
-// Para cada repositorio destacado, seleccionar un testimonio
-highlightedRepos.forEach((repoName) => {
-	// Buscar el repositorio en los datos
-	const repo = testimonialsData.repositories.find((r) => r.repo === repoName);
-	if (repo && repo.testimonials.length > 0) {
-		// Tomar el primer testimonio del repositorio
-		const testimonial = repo.testimonials[0];
-
-		// Crear un objeto compatible con GitHubIssueComment
-		const comment: GitHubIssueComment = {
-			body: testimonial.text,
-			html_url: testimonial.url,
-			created_at: new Date().toISOString(), // Fecha actual como fallback
-			user: {
-				login: testimonial.author,
-				avatar_url: `https://github.com/${testimonial.author}.png`,
-				html_url: `https://github.com/${testimonial.author}`,
-			},
-		};
-
-		// Añadir al array de testimonios destacados
-		highlightedTestimonials.push(comment);
-	}
+// Para cada URL destacada, buscar el testimonio correspondiente
+highlightedUrls.forEach(url => {
+  // Buscar en todos los repositorios
+  let found = false;
+  
+  for (const repo of testimonialsData.repositories) {
+    if (found) break;
+    
+    for (const testimonial of repo.testimonials) {
+      if (testimonial.url === url) {
+        // Encontramos el testimonio con la URL especificada
+        const comment: GitHubIssueComment = {
+          body: testimonial.text,
+          html_url: testimonial.url,
+          created_at: new Date().toISOString(), // Fecha actual como fallback
+          user: {
+            login: testimonial.author,
+            avatar_url: `https://github.com/${testimonial.author}.png`,
+            html_url: `https://github.com/${testimonial.author}`
+          }
+        };
+        
+        // Añadir al array de testimonios destacados
+        highlightedTestimonials.push(comment);
+        found = true;
+        break;
+      }
+    }
+  }
 });
 
-// Si no tenemos 3 testimonios, podemos añadir algunos por defecto
-while (highlightedTestimonials.length < 3) {
-	// Buscar cualquier testimonio de cualquier repositorio
-	for (const repo of testimonialsData.repositories) {
-		if (repo.testimonials.length > 0) {
-			// Verificar que este testimonio no esté ya incluido
-			const testimonial = repo.testimonials[0];
-			const alreadyIncluded = highlightedTestimonials.some((t) => t.html_url === testimonial.url);
-
-			if (!alreadyIncluded) {
-				// Crear un objeto compatible con GitHubIssueComment
-				const comment: GitHubIssueComment = {
-					body: testimonial.text,
-					html_url: testimonial.url,
-					created_at: new Date().toISOString(),
-					user: {
-						login: testimonial.author,
-						avatar_url: `https://github.com/${testimonial.author}.png`,
-						html_url: `https://github.com/${testimonial.author}`,
-					},
-				};
-
-				// Añadir al array de testimonios destacados
-				highlightedTestimonials.push(comment);
-
-				// Si ya tenemos 3, salir del bucle
-				if (highlightedTestimonials.length >= 3) break;
-			}
-		}
-	}
-
-	// Si no hemos encontrado suficientes testimonios, salir del bucle
-	if (highlightedTestimonials.length < 3) break;
-}
+// Mostrar un mensaje en la consola con los testimonios encontrados
+console.log(`Encontrados ${highlightedTestimonials.length} testimonios destacados`);
 ---
 
 <section id="testimonials" class="py-16 md:py-24">
