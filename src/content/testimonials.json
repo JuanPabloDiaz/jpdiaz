@@ -1,190 +1,184 @@
 {
-	"repositories": [
-		{
-			"name": "api-colombia",
-			"testimonials": [
-				{
-					"url": "https://github.com/Mteheran/api-colombia/pull/142#pullrequestreview-2868757974",
-					"date": "May 2025"
-				}
-			]
-		},
-		{
-			"name": "unitycatalog",
-			"testimonials": [
-				{
-					"url": "",
-					"date": "Aug 2024"
-				}
-			]
-		},
-		{
-			"name": "unitycatalog-ui",
-			"testimonials": [
-				{
-					"url": "https://github.com/unitycatalog/unitycatalog-ui/pull/60#issuecomment-2265438075",
-					"date": "Aug 2024"
-				},
-				{
-					"url": "https://github.com/unitycatalog/unitycatalog-ui/pull/69#pullrequestreview-2255342420",
-					"date": "Aug 2024"
-				},
-				{
-					"url": "https://github.com/unitycatalog/unitycatalog-ui/pull/46#pullrequestreview-2201703568",
-					"date": "Aug 2024"
-				}
-			]
-		},
-		{
-			"name": "confs.tech",
-			"testimonials": [
-				{
-					"url": "https://github.com/tech-conferences/confs.tech/pull/632#issuecomment-2176280753",
-					"date": "May 2024"
-				},
-				{
-					"url": "https://github.com/tech-conferences/confs.tech/issues/877#issuecomment-2620095882",
-					"date": "Jan 2025"
-				},
-				{
-					"url": "https://github.com/tech-conferences/confs.tech/pull/875#issuecomment-2617766614",
-					"date": "Jan 2025"
-				},
-				{
-					"url": "",
-					"date": "Jan 2025"
-				}
-			]
-		},
-		{
-			"name": "conference-data",
-			"testimonials": [
-				{
-					"url": "https://github.com/tech-conferences/conference-data/pull/6816#pullrequestreview-2083732347",
-					"date": "May 2024"
-				},
-				{
-					"url": "https://github.com/tech-conferences/conference-data/pull/6814#issuecomment-2142232796",
-					"date": "May 2024"
-				},
-				{
-					"url": "https://github.com/tech-conferences/conference-data/issues/7526#issuecomment-2640137948",
-					"date": "Feb 2024"
-				},
-				{
-					"url": "https://github.com/tech-conferences/conference-data/issues/6596#issuecomment-2107757214",
-					"date": "Feb 2024"
-				}
-			]
-		},
-		{
-			"name": "dev-resources",
-			"testimonials": [
-				{
-					"url": "https://github.com/marcelscruz/dev-resources/pull/463#issuecomment-2244810835",
-					"date": "Jul 2024"
-				},
-				{
-					"url": "https://github.com/marcelscruz/dev-resources/pull/481#issuecomment-2271726460",
-					"date": "Jul 2024"
-				}
-			]
-		},
-		{
-			"name": "linkshub",
-			"testimonials": [
-				{
-					"url": "https://github.com/rupali-codes/LinksHub/pull/2264#pullrequestreview-1877029253",
-					"date": "Feb 2023"
-				},
-				{
-					"url": "https://github.com/rupali-codes/LinksHub/pull/2320#pullrequestreview-1956409322",
-					"date": "Feb 2023"
-				}
-			]
-		},
-		{
-			"name": "astro",
-			"testimonials": [
-				{
-					"url": "https://github.com/withastro/docs/pull/11426#pullrequestreview-2760668908",
-					"date": "Apr 2025"
-				},
-				{
-					"url": "https://github.com/withastro/docs/pull/11419#pullrequestreview-2762837515",
-					"date": "Apr 2025"
-				},
-				{
-					"url": "https://github.com/withastro/docs/pull/11433#pullrequestreview-2762983886",
-					"date": "Apr 2025"
-				},
-				{
-					"url": "https://github.com/withastro/docs/pull/11434#pullrequestreview-2763045406",
-					"date": "Apr 2025"
-				},
-				{
-					"url": "https://github.com/withastro/docs/pull/11422#pullrequestreview-2773460940",
-					"date": "Apr 2025"
-				},
-				{
-					"url": "https://github.com/withastro/docs/pull/11514#pullrequestreview-2797695639",
-					"date": "Apr 2025"
-				},
-				{
-					"url": "https://github.com/withastro/docs/pull/11515#pullrequestreview-2797697545",
-					"date": "Apr 2025"
-				},
-				{
-					"url": "https://github.com/withastro/docs/pull/11431#pullrequestreview-2800263668",
-					"date": "May 2025"
-				},
-				{
-					"url": "https://github.com/withastro/docs/pull/11597#pullrequestreview-2816351726",
-					"date": "May 2025"
-				},
-				{
-					"url": "https://github.com/withastro/docs/pull/11443#pullrequestreview-2818054299",
-					"date": "Apr 2025"
-				}
-			]
-		}
-	],
-	"fallbackTestimonials": [
-		{
-			"id": 1,
-			"user": {
-				"login": "johndoe",
-				"avatar_url": "https://avatars.githubusercontent.com/u/1234567",
-				"html_url": "https://github.com/johndoe"
-			},
-			"body": "Juan is an exceptional developer who contributed significantly to our project. His attention to detail and problem-solving skills are outstanding!",
-			"created_at": "2024-05-15T14:30:00Z",
-			"updated_at": "2024-05-15T14:30:00Z",
-			"html_url": "https://github.com/example/repo/issues/1#issuecomment-123456"
-		},
-		{
-			"id": 2,
-			"user": {
-				"login": "janesmith",
-				"avatar_url": "https://avatars.githubusercontent.com/u/7654321",
-				"html_url": "https://github.com/janesmith"
-			},
-			"body": "Working with Juan was a pleasure. He quickly understood our requirements and delivered high-quality code that exceeded our expectations.",
-			"created_at": "2024-04-20T10:15:00Z",
-			"updated_at": "2024-04-20T10:15:00Z",
-			"html_url": "https://github.com/example/repo/issues/2#issuecomment-234567"
-		},
-		{
-			"id": 3,
-			"user": {
-				"login": "techleader",
-				"avatar_url": "https://avatars.githubusercontent.com/u/8765432",
-				"html_url": "https://github.com/techleader"
-			},
-			"body": "Juan's contributions to our open source project have been invaluable. His code is clean, well-documented, and follows best practices. I highly recommend him for any development role.",
-			"created_at": "2024-03-10T16:45:00Z",
-			"updated_at": "2024-03-10T16:45:00Z",
-			"html_url": "https://github.com/example/repo/pull/3#issuecomment-345678"
-		}
-	]
+  "generated_at": "2025-05-27 12:01:34",
+  "repositories": [
+    {
+      "repo": "Mteheran/api-colombia",
+      "testimonials": [
+        {
+          "text": "I really like the map with the tourist places. Good job.",
+          "author": "Mteheran",
+          "date": "May 2025",
+          "url": "https://github.com/Mteheran/api-colombia/pull/142#pullrequestreview-2868757974"
+        }
+      ]
+    },
+    {
+      "repo": "marcelscruz/dev-resources",
+      "testimonials": [
+        {
+          "text": "Thank you so much!!",
+          "author": "marcelscruz",
+          "date": "Aug 2024",
+          "url": "https://github.com/marcelscruz/dev-resources/pull/481#issuecomment-2271726460"
+        },
+        {
+          "text": "Thank you so much for that, Juan!\r\nI just renamed the category to be only \"Conference\" as the \"Dev\" is redundant due to the nature of the project.",
+          "author": "marcelscruz",
+          "date": "Jul 2024",
+          "url": "https://github.com/marcelscruz/dev-resources/pull/463#issuecomment-2244810835"
+        }
+      ]
+    },
+    {
+      "repo": "rupali-codes/LinksHub",
+      "testimonials": [
+        {
+          "text": "Excellent PR, @JuanPabloDiaz 💪 🚀 💯 ",
+          "author": "aftabrehan",
+          "date": "Mar 2024",
+          "url": "https://github.com/rupali-codes/LinksHub/pull/2320#pullrequestreview-1956409322"
+        },
+        {
+          "text": "Excellent PR, @JuanPabloDiaz 👍 ",
+          "author": "aftabrehan",
+          "date": "Feb 2024",
+          "url": "https://github.com/rupali-codes/LinksHub/pull/2264#pullrequestreview-1877029253"
+        }
+      ]
+    },
+    {
+      "repo": "tech-conferences/conference-data",
+      "testimonials": [
+        {
+          "text": "Thanks a lot. Sounds like a good idea.",
+          "author": "cgrail",
+          "date": "May 2024",
+          "url": "https://github.com/tech-conferences/conference-data/issues/6596#issuecomment-2107757214"
+        },
+        {
+          "text": "Thanks, Juan!",
+          "author": "oliverlindberg",
+          "date": "Feb 2025",
+          "url": "https://github.com/tech-conferences/conference-data/issues/7526#issuecomment-2640137948"
+        },
+        {
+          "text": "Thanks a lot. It's not messing indentations up, it's rather fixing messed up indentation.\r\n\r\nYou've done a lot of great work recently. I'm happy to have you on board.",
+          "author": "cgrail",
+          "date": "May 2024",
+          "url": "https://github.com/tech-conferences/conference-data/pull/6814#issuecomment-2142232796"
+        },
+        {
+          "text": "Looks good to me! Thank you for doing that 🙏🏼 ",
+          "author": "nimzco",
+          "date": "May 2024",
+          "url": "https://github.com/tech-conferences/conference-data/pull/6816#pullrequestreview-2083732347"
+        }
+      ]
+    },
+    {
+      "repo": "tech-conferences/confs.tech",
+      "testimonials": [
+        {
+          "text": "👏🏼 thank you!",
+          "author": "nimzco",
+          "date": "Jan 2025",
+          "url": "https://github.com/tech-conferences/confs.tech/pull/875#issuecomment-2617766614"
+        },
+        {
+          "text": "Thanks a lot",
+          "author": "cgrail",
+          "date": "Jan 2025",
+          "url": "https://github.com/tech-conferences/confs.tech/issues/877#issuecomment-2620095882"
+        },
+        {
+          "text": "Hey @JuanPabloDiaz ! Love the love you're giving to that team page! \r\nGenerally speaking, I liked the _low key_ team page, but at the same time, it might help us having more contributors in the future :)\r\n\r\n<img width=\"343\" alt=\"image\" src=\"https://github.com/tech-conferences/confs.tech/assets/445045/03984a2c-687f-425a-8200-174bad94f140\">\r\n\r\n😱 @cgrail that's a huge number of contributions!\r\n\r\n> I am getting a bunch of error when running the project locally and I am not sure how to fix it. Please advise.\r\n\r\nWhat's your node version? How are you starting the project?",
+          "author": "nimzco",
+          "date": "Jun 2024",
+          "url": "https://github.com/tech-conferences/confs.tech/pull/632#issuecomment-2176280753"
+        }
+      ]
+    },
+    {
+      "repo": "unitycatalog/unitycatalog-ui",
+      "testimonials": [
+        {
+          "text": "LGTM, thanks @JuanPabloDiaz!",
+          "author": "MrPowers",
+          "date": "Jul 2024",
+          "url": "https://github.com/unitycatalog/unitycatalog-ui/pull/46#pullrequestreview-2201703568"
+        },
+        {
+          "text": "LGTM! Thank you!",
+          "author": "jamieknight-db",
+          "date": "Aug 2024",
+          "url": "https://github.com/unitycatalog/unitycatalog-ui/pull/69#pullrequestreview-2255342420"
+        },
+        {
+          "text": "Thanks very much @JuanPabloDiaz !",
+          "author": "dennyglee",
+          "date": "Aug 2024",
+          "url": "https://github.com/unitycatalog/unitycatalog-ui/pull/60#issuecomment-2265438075"
+        }
+      ]
+    },
+    {
+      "repo": "withastro/docs",
+      "testimonials": [
+        {
+          "text": "LGTM! Good job 🙌 ",
+          "author": "yanthomasdev",
+          "date": "May 2025",
+          "url": "https://github.com/withastro/docs/pull/11443#pullrequestreview-2818054299"
+        },
+        {
+          "text": "Muchas gracias @JuanPabloDiaz 🫡",
+          "author": "dreyfus92",
+          "date": "May 2025",
+          "url": "https://github.com/withastro/docs/pull/11597#pullrequestreview-2816351726"
+        },
+        {
+          "text": "LGTM! Good work!",
+          "author": "yanthomasdev",
+          "date": "Apr 2025",
+          "url": "https://github.com/withastro/docs/pull/11431#pullrequestreview-2800263668"
+        },
+        {
+          "text": "LGTM! Thanks!",
+          "author": "yanthomasdev",
+          "date": "Apr 2025",
+          "url": "https://github.com/withastro/docs/pull/11515#pullrequestreview-2797697545"
+        },
+        {
+          "text": "LGTM! Good job!",
+          "author": "yanthomasdev",
+          "date": "Apr 2025",
+          "url": "https://github.com/withastro/docs/pull/11514#pullrequestreview-2797695639"
+        },
+        {
+          "text": "Te dejo algunas sugerencias @JuanPabloDiaz, excelente trabajo 🫡",
+          "author": "dreyfus92",
+          "date": "Apr 2025",
+          "url": "https://github.com/withastro/docs/pull/11422#pullrequestreview-2773460940"
+        },
+        {
+          "text": "Gracias @JuanPabloDiaz 🫡",
+          "author": "dreyfus92",
+          "date": "Apr 2025",
+          "url": "https://github.com/withastro/docs/pull/11433#pullrequestreview-2762983886"
+        },
+        {
+          "text": "Muchas gracias @JuanPabloDiaz, LGTM ✅",
+          "author": "dreyfus92",
+          "date": "Apr 2025",
+          "url": "https://github.com/withastro/docs/pull/11419#pullrequestreview-2762837515"
+        },
+        {
+          "text": "@JuanPabloDiaz buen trabajo! Te dejo una sugerencia! 🚀",
+          "author": "drixswe",
+          "date": "Apr 2025",
+          "url": "https://github.com/withastro/docs/pull/11426#pullrequestreview-2760668908"
+        }
+      ]
+    }
+  ]
 }

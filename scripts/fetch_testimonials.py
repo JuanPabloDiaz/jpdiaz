@@ -17,7 +17,7 @@ load_dotenv()
 
 # Configuración
 INPUT_FILE = "scripts/testimonial_urls.txt"
-OUTPUT_FILE = "src/content/testimonials_manual.json"
+OUTPUT_FILE = "src/content/testimonials.json"
 GITHUB_TOKEN = os.environ.get("PUBLIC_GITHUB_TOKEN")
 
 # Headers para la API de GitHub
@@ -149,7 +149,7 @@ def main():
     print(f"Encontradas {len(urls)} URLs para procesar")
     
     # Procesar cada URL
-    testimonials = []
+    testimonials_by_repo = {}
     for url in urls:
         print(f"Procesando: {url}")
         url_info = parse_github_url(url)
@@ -165,40 +165,64 @@ def main():
         # Formatear la fecha
         comment_data["date"] = format_date(comment_data["date"])
         
-        # Añadir información del repositorio
-        comment_data["repository"] = {
-            "owner": url_info["owner"],
-            "name": url_info["repo"],
-            "full_name": f"{url_info['owner']}/{url_info['repo']}"
+        # Guardar la fecha original para ordenar
+        try:
+            date_obj = datetime.fromisoformat(comment_data["date"].replace("Z", "+00:00"))
+            comment_data["date_for_sorting"] = date_obj.timestamp()
+        except (ValueError, TypeError):
+            # Si hay un error al convertir la fecha, usar la fecha actual
+            comment_data["date_for_sorting"] = datetime.now().timestamp()
+        
+        # Crear un objeto simplificado con solo la información necesaria
+        simple_data = {
+            "text": comment_data["text"],
+            "author": comment_data["author"],
+            "date": comment_data["date"],
+            "url": comment_data["url"],
+            "date_for_sorting": comment_data["date_for_sorting"]
         }
         
-        testimonials.append(comment_data)
+        # Agrupar por repositorio
+        repo_key = f"{url_info['owner']}/{url_info['repo']}"
+        if repo_key not in testimonials_by_repo:
+            testimonials_by_repo[repo_key] = []
+        
+        testimonials_by_repo[repo_key].append(simple_data)
         print(f"  Éxito: {comment_data['author']} - {comment_data['date']}")
     
+    # Ordenar testimonios por fecha (más recientes primero) dentro de cada repositorio
+    for repo in testimonials_by_repo:
+        testimonials_by_repo[repo].sort(key=lambda x: x["date_for_sorting"], reverse=True)
+        # Eliminar el campo de ordenación que ya no necesitamos
+        for item in testimonials_by_repo[repo]:
+            del item["date_for_sorting"]
+    
+    # Crear el resultado final
+    result = {
+        "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "repositories": []
+    }
+    
+    # Convertir el diccionario a una lista de repositorios
+    for repo_name, testimonials in testimonials_by_repo.items():
+        result["repositories"].append({
+            "repo": repo_name,
+            "testimonials": testimonials
+        })
+    
+    # Ordenar repositorios alfabéticamente
+    result["repositories"].sort(key=lambda x: x["repo"])
+    
     # Guardar los testimonios en el archivo de salida
-    if testimonials:
+    if result["repositories"]:
         # Crear el directorio si no existe
         os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
         
-        # Añadir marca de tiempo
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        testimonials.insert(0, {
-            "author": "TIMESTAMP",
-            "avatar": "https://avatars.githubusercontent.com/u/0?v=4",
-            "date": timestamp,
-            "text": f"Este archivo fue generado el {timestamp}",
-            "url": "https://github.com/JuanPabloDiaz/jpdiaz",
-            "repository": {
-                "owner": "JuanPabloDiaz",
-                "name": "jpdiaz",
-                "full_name": "JuanPabloDiaz/jpdiaz"
-            }
-        })
-        
         with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-            json.dump(testimonials, f, indent=2, ensure_ascii=False)
+            json.dump(result, f, indent=2, ensure_ascii=False)
         
-        print(f"\nGuardados {len(testimonials) - 1} testimonios en {OUTPUT_FILE}")
+        total_testimonials = sum(len(repo["testimonials"]) for repo in result["repositories"])
+        print(f"\nGuardados {total_testimonials} testimonios de {len(result['repositories'])} repositorios en {OUTPUT_FILE}")
     else:
         print("\nNo se encontraron testimonios válidos para guardar")
 
