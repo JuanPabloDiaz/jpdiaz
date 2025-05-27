@@ -63,24 +63,25 @@ highlightedUrls.forEach((url) => {
 console.log(`Encontrados ${highlightedTestimonials.length} testimonios destacados`);
 ---
 
-<section id="testimonials" class="py-16 md:py-24">
-	<div class="container mx-auto px-4">
-		<div class="mb-12 text-center">
-			<SubTitle text="Testimonials" />
-			<p class="text-black dark:text-white">What the GitHub community says about my work</p>
-		</div>
+<div class="h-10" id="testimonials"></div>
 
-		<div class="mt-10 grid gap-8 md:grid-cols-3">
-			{highlightedTestimonials.map((testimonial) => <TestimonialCard comment={testimonial} />)}
-		</div>
+<section
+	data-testid="testimonials"
+	class="mb-20 flex flex-col items-center justify-center md:mb-0 md:h-screen"
+>
+	<SubTitle text="Testimonials" />
+	<p class="text-black dark:text-white">What the GitHub community says about my work</p>
 
-		<div class="mt-10 flex justify-center">
-			<Link
-				text="View all Testimonials"
-				ariaLabel="View all testimonials"
-				href="./testimonials"
-				arrow
-			/>
-		</div>
+	<div class="mt-10 grid gap-8 md:grid-cols-3">
+		{highlightedTestimonials.map((testimonial) => <TestimonialCard comment={testimonial} />)}
+	</div>
+
+	<div class="mt-10 flex justify-center">
+		<Link
+			text="View more Testimonials"
+			ariaLabel="View more testimonials"
+			href="./testimonials"
+			arrow
+		/>
 	</div>
 </section>
