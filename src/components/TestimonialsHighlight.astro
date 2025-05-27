@@ -1,0 +1,112 @@
+---
+import SubTitle from '@components/ui/SubTitle.astro';
+import TestimonialCard from '@components/ui/TestimonialCard.astro';
+import Link from '@components/ui/Link.astro';
+
+// Definir el tipo GitHubIssueComment ya que no podemos importarlo
+type GitHubIssueComment = {
+	body: string;
+	html_url: string;
+	created_at: string;
+	user: {
+		login: string;
+		avatar_url: string;
+		html_url: string;
+	};
+};
+
+// Importar los testimonios
+import testimonialsData from '@src/content/testimonials.json';
+
+// Seleccionar 3 testimonios destacados (puedes elegir los que quieras)
+const highlightedRepos = [
+	'tech-conferences/conference-data',
+	'withastro/docs',
+	'marcelscruz/dev-resources',
+];
+
+// Crear un array para almacenar los testimonios destacados
+const highlightedTestimonials: GitHubIssueComment[] = [];
+
+// Para cada repositorio destacado, seleccionar un testimonio
+highlightedRepos.forEach((repoName) => {
+	// Buscar el repositorio en los datos
+	const repo = testimonialsData.repositories.find((r) => r.repo === repoName);
+	if (repo && repo.testimonials.length > 0) {
+		// Tomar el primer testimonio del repositorio
+		const testimonial = repo.testimonials[0];
+
+		// Crear un objeto compatible con GitHubIssueComment
+		const comment: GitHubIssueComment = {
+			body: testimonial.text,
+			html_url: testimonial.url,
+			created_at: new Date().toISOString(), // Fecha actual como fallback
+			user: {
+				login: testimonial.author,
+				avatar_url: `https://github.com/${testimonial.author}.png`,
+				html_url: `https://github.com/${testimonial.author}`,
+			},
+		};
+
+		// Añadir al array de testimonios destacados
+		highlightedTestimonials.push(comment);
+	}
+});
+
+// Si no tenemos 3 testimonios, podemos añadir algunos por defecto
+while (highlightedTestimonials.length < 3) {
+	// Buscar cualquier testimonio de cualquier repositorio
+	for (const repo of testimonialsData.repositories) {
+		if (repo.testimonials.length > 0) {
+			// Verificar que este testimonio no esté ya incluido
+			const testimonial = repo.testimonials[0];
+			const alreadyIncluded = highlightedTestimonials.some((t) => t.html_url === testimonial.url);
+
+			if (!alreadyIncluded) {
+				// Crear un objeto compatible con GitHubIssueComment
+				const comment: GitHubIssueComment = {
+					body: testimonial.text,
+					html_url: testimonial.url,
+					created_at: new Date().toISOString(),
+					user: {
+						login: testimonial.author,
+						avatar_url: `https://github.com/${testimonial.author}.png`,
+						html_url: `https://github.com/${testimonial.author}`,
+					},
+				};
+
+				// Añadir al array de testimonios destacados
+				highlightedTestimonials.push(comment);
+
+				// Si ya tenemos 3, salir del bucle
+				if (highlightedTestimonials.length >= 3) break;
+			}
+		}
+	}
+
+	// Si no hemos encontrado suficientes testimonios, salir del bucle
+	if (highlightedTestimonials.length < 3) break;
+}
+---
+
+<section id="testimonials" class="py-16 md:py-24">
+	<div class="container mx-auto px-4">
+		<div class="mb-12 text-center">
+			<SubTitle text="Testimonials" />
+			<p class="text-black dark:text-white">What the GitHub community says about my work</p>
+		</div>
+
+		<div class="mt-10 grid gap-8 md:grid-cols-3">
+			{highlightedTestimonials.map((testimonial) => <TestimonialCard comment={testimonial} />)}
+		</div>
+
+		<div class="mt-10 flex justify-center">
+			<Link
+				text="View all Testimonials"
+				ariaLabel="View all testimonials"
+				href="./testimonials"
+				arrow
+			/>
+		</div>
+	</div>
+</section>
