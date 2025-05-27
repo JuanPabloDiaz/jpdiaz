@@ -17,7 +17,8 @@
 		"check": "npx eslint --ext .js,.ts,.astro . && npx prettier --check \"**/*.{astro,md,json}\"",
 		"clean": "rm -rf node_modules .astro dist && npm install",
 		"lighthouse": "npx unlighthouse --site https://jpdiaz.dev",
-		"lighthouse:local": "npx unlighthouse --site http://localhost:4321"
+		"lighthouse:local": "npx unlighthouse --site http://localhost:4321",
+		"testimonials": "python3 scripts/find-testimonials.py"
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^4.2.2",

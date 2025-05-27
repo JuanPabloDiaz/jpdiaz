@@ -35,10 +35,10 @@ MIN_WORDS = 1    # Minimum words for a testimonial
 MAX_WORDS = 500   # Maximum words (None for no limit)
 
 # API settings
-MAX_PRS_PER_REPO = 10  # Maximum number of PRs to process per repository
-MAX_ISSUES_PER_REPO = 10  # Maximum number of issues to process per repository
-MAX_DISCUSSIONS_PER_REPO = 10  # Maximum number of discussions to process per repository
-SLEEP_BETWEEN_REQUESTS = 0.5  # Sleep time between API requests to avoid rate limiting
+MAX_PRS_PER_REPO = 30  # Maximum number of PRs to process per repository
+MAX_ISSUES_PER_REPO = 30  # Maximum number of issues to process per repository
+MAX_DISCUSSIONS_PER_REPO = 30  # Maximum number of discussions to process per repository
+SLEEP_BETWEEN_REQUESTS = 0.2  # Sleep time between API requests to avoid rate limiting
 
 # What to scan
 SCAN_PRS = True
@@ -73,16 +73,14 @@ BOT_USERS = [
     "sonarcloud"
 ]
 
-# List of external repositories where you've contributed
-# Format: {"owner": "owner_name", "repo": "repo_name"}
 EXTERNAL_REPOS = [
     {"owner": "tech-conferences", "repo": "conference-data"},
-    {"owner": "withastro", "repo": "docs"},
-    {"owner": "rupali-codes", "repo": "LinksHub"},
-    {"owner": "marcelscruz", "repo": "dev-resources"},
-    {"owner": "Mteheran", "repo": "api-colombia"},
-    {"owner": "unitycatalog", "repo": "unitycatalog"},
-    {"owner": "unitycatalog", "repo": "unitycatalog-ui"}
+    # {"owner": "withastro", "repo": "docs"},
+    # {"owner": "rupali-codes", "repo": "LinksHub"},
+    # {"owner": "marcelscruz", "repo": "dev-resources"},
+    # {"owner": "Mteheran", "repo": "api-colombia"},
+    # {"owner": "unitycatalog", "repo": "unitycatalog"},
+    # {"owner": "unitycatalog", "repo": "unitycatalog-ui"} # Done 
 ]
 
 GITHUB_TOKEN = os.environ.get("PUBLIC_GITHUB_TOKEN")
@@ -406,8 +404,16 @@ def filter_testimonials(testimonials, min_words=10, max_words=None):
             
         word_count = len(testimonial["body"].split())
         
-        # Skip testimonials that are too short
-        if word_count < min_words:
+        # Skip testimonials that are too short (but keep simple thank you messages)
+        body_lower = testimonial["body"].strip().lower()
+        contains_thank = any(thank in body_lower for thank in ["thank", "thanks", "thx", "gracias", "👏", "👍", "lgtm"])
+        contains_name = "juanpablodiaz" in body_lower.replace(" ", "") or "juan" in body_lower
+        
+        # Keep simple thank you messages that mention you
+        if contains_thank and contains_name:
+            # This is a valuable testimonial - keep it regardless of length
+            pass
+        elif word_count < min_words:
             skipped_short += 1
             continue
             
@@ -421,15 +427,15 @@ def filter_testimonials(testimonials, min_words=10, max_words=None):
             skipped_code += 1
             continue
             
-        # Skip testimonials that are just "LGTM" or similar
-        if testimonial["body"].strip().lower() in ["lgtm", "looks good", "looks good to me", "+1", "👍", "👍", "thanks", "thank you"]:
-            skipped_simple += 1
-            continue
+        # Don't skip simple thank you messages anymore
+        # if testimonial["body"].strip().lower() in ["lgtm", "looks good", "looks good to me", "+1", "👍", "👍", "thanks", "thank you"]:
+        #    skipped_simple += 1
+        #    continue
             
         # Skip testimonials that are likely just markdown formatting or HTML
         body = testimonial["body"].strip()
         if (body.startswith("<!--") or 
-            body.startswith("<") and body.endswith(">") or
+            (body.startswith("<") and body.endswith(">") and not "<img" in body) or
             body.count("|") > 5 or  # Likely a table
             body.count("[vc]:") > 0 or  # Vercel bot format
             body.count("```") > 3):  # Too many code blocks
