@@ -18,7 +18,8 @@
 		"clean": "rm -rf node_modules .astro dist && npm install",
 		"lighthouse": "npx unlighthouse --site https://jpdiaz.dev",
 		"lighthouse:local": "npx unlighthouse --site http://localhost:4321",
-		"testimonios": "python3 scripts/find-testimonials.py"
+		"testimonios": "python3 scripts/find-testimonials.py",
+		"testimonios:manual": "python3 scripts/fetch_testimonials.py"
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^4.2.2",

@@ -1,0 +1,44 @@
+# Lista de URLs de testimonios de GitHub
+# Agrega una URL por línea
+
+# ✅ API-COLOMBIA
+https://github.com/Mteheran/api-colombia/pull/142#pullrequestreview-2868757974
+
+# ✅ UNITYCATALOG
+		nada aun
+
+# ✅ UNITYCATALOG-UI
+https://github.com/unitycatalog/unitycatalog-ui/pull/60#issuecomment-2265438075
+https://github.com/unitycatalog/unitycatalog-ui/pull/69#pullrequestreview-2255342420
+https://github.com/unitycatalog/unitycatalog-ui/pull/46#pullrequestreview-2201703568
+
+# ✅ CONFS.TECH
+https://github.com/tech-conferences/confs.tech/pull/632#issuecomment-2176280753
+https://github.com/tech-conferences/confs.tech/issues/877#issuecomment-2620095882	
+https://github.com/tech-conferences/confs.tech/pull/875#issuecomment-2617766614
+			
+# ✅ CONFERENCE-DATA
+https://github.com/tech-conferences/conference-data/pull/6816#pullrequestreview-2083732347
+https://github.com/tech-conferences/conference-data/pull/6814#issuecomment-2142232796
+https://github.com/tech-conferences/conference-data/issues/7526#issuecomment-2640137948
+https://github.com/tech-conferences/conference-data/issues/6596#issuecomment-2107757214
+
+# ✅ DEV-RESOURCES
+https://github.com/marcelscruz/dev-resources/pull/463#issuecomment-2244810835
+https://github.com/marcelscruz/dev-resources/pull/481#issuecomment-2271726460
+
+# ✅ LINKSHUB
+https://github.com/rupali-codes/LinksHub/pull/2264#pullrequestreview-1877029253
+https://github.com/rupali-codes/LinksHub/pull/2320#pullrequestreview-1956409322
+		
+# ✅ ASTRO
+https://github.com/withastro/docs/pull/11426#pullrequestreview-2760668908
+https://github.com/withastro/docs/pull/11419#pullrequestreview-2762837515
+https://github.com/withastro/docs/pull/11433#pullrequestreview-2762983886
+https://github.com/withastro/docs/pull/11422#pullrequestreview-2773460940
+https://github.com/withastro/docs/pull/11514#pullrequestreview-2797695639
+https://github.com/withastro/docs/pull/11515#pullrequestreview-2797697545
+https://github.com/withastro/docs/pull/11431#pullrequestreview-2800263668
+https://github.com/withastro/docs/pull/11597#pullrequestreview-2816351726
+https://github.com/withastro/docs/pull/11443#pullrequestreview-2818054299
+				

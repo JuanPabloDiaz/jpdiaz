@@ -1,0 +1,314 @@
+[
+  {
+    "author": "TIMESTAMP",
+    "avatar": "https://avatars.githubusercontent.com/u/0?v=4",
+    "date": "2025-05-27 11:28:34",
+    "text": "Este archivo fue generado el 2025-05-27 11:28:34",
+    "url": "https://github.com/JuanPabloDiaz/jpdiaz",
+    "repository": {
+      "owner": "JuanPabloDiaz",
+      "name": "jpdiaz",
+      "full_name": "JuanPabloDiaz/jpdiaz"
+    }
+  },
+  {
+    "author": "Mteheran",
+    "avatar": "https://avatars.githubusercontent.com/u/3578356?u=8d0fe4a3d3bdc955240f3bf495f93ca201ea6e5a&v=4",
+    "date": "May 2025",
+    "text": "I really like the map with the tourist places. Good job.",
+    "url": "https://github.com/Mteheran/api-colombia/pull/142#pullrequestreview-2868757974",
+    "repository": {
+      "owner": "Mteheran",
+      "name": "api-colombia",
+      "full_name": "Mteheran/api-colombia"
+    }
+  },
+  {
+    "author": "dennyglee",
+    "avatar": "https://avatars.githubusercontent.com/u/1446829?u=e50df468c27d87a03bb9be0c6fd8b1a1b57eb2cb&v=4",
+    "date": "Aug 2024",
+    "text": "Thanks very much @JuanPabloDiaz !",
+    "url": "https://github.com/unitycatalog/unitycatalog-ui/pull/60#issuecomment-2265438075",
+    "repository": {
+      "owner": "unitycatalog",
+      "name": "unitycatalog-ui",
+      "full_name": "unitycatalog/unitycatalog-ui"
+    }
+  },
+  {
+    "author": "jamieknight-db",
+    "avatar": "https://avatars.githubusercontent.com/u/172851492?u=993708d5bc7ecc7aba0f07d4e60a33349d597964&v=4",
+    "date": "Aug 2024",
+    "text": "LGTM! Thank you!",
+    "url": "https://github.com/unitycatalog/unitycatalog-ui/pull/69#pullrequestreview-2255342420",
+    "repository": {
+      "owner": "unitycatalog",
+      "name": "unitycatalog-ui",
+      "full_name": "unitycatalog/unitycatalog-ui"
+    }
+  },
+  {
+    "author": "MrPowers",
+    "avatar": "https://avatars.githubusercontent.com/u/2722395?u=3d0991b76ae14fff117b3d41e86eadd05c64af7e&v=4",
+    "date": "Jul 2024",
+    "text": "LGTM, thanks @JuanPabloDiaz!",
+    "url": "https://github.com/unitycatalog/unitycatalog-ui/pull/46#pullrequestreview-2201703568",
+    "repository": {
+      "owner": "unitycatalog",
+      "name": "unitycatalog-ui",
+      "full_name": "unitycatalog/unitycatalog-ui"
+    }
+  },
+  {
+    "author": "nimzco",
+    "avatar": "https://avatars.githubusercontent.com/u/445045?v=4",
+    "date": "Jun 2024",
+    "text": "Hey @JuanPabloDiaz ! Love the love you're giving to that team page! \r\nGenerally speaking, I liked the _low key_ team page, but at the same time, it might help us having more contributors in the future :)\r\n\r\n<img width=\"343\" alt=\"image\" src=\"https://github.com/tech-conferences/confs.tech/assets/445045/03984a2c-687f-425a-8200-174bad94f140\">\r\n\r\n😱 @cgrail that's a huge number of contributions!\r\n\r\n> I am getting a bunch of error when running the project locally and I am not sure how to fix it. Please advise.\r\n\r\nWhat's your node version? How are you starting the project?",
+    "url": "https://github.com/tech-conferences/confs.tech/pull/632#issuecomment-2176280753",
+    "repository": {
+      "owner": "tech-conferences",
+      "name": "confs.tech",
+      "full_name": "tech-conferences/confs.tech"
+    }
+  },
+  {
+    "author": "cgrail",
+    "avatar": "https://avatars.githubusercontent.com/u/5702278?u=ce73487f5825c8b687f252ab6bb0ce0fd0ee1ed0&v=4",
+    "date": "Jan 2025",
+    "text": "Thanks a lot",
+    "url": "https://github.com/tech-conferences/confs.tech/issues/877#issuecomment-2620095882",
+    "repository": {
+      "owner": "tech-conferences",
+      "name": "confs.tech",
+      "full_name": "tech-conferences/confs.tech"
+    }
+  },
+  {
+    "author": "nimzco",
+    "avatar": "https://avatars.githubusercontent.com/u/445045?v=4",
+    "date": "Jan 2025",
+    "text": "👏🏼 thank you!",
+    "url": "https://github.com/tech-conferences/confs.tech/pull/875#issuecomment-2617766614",
+    "repository": {
+      "owner": "tech-conferences",
+      "name": "confs.tech",
+      "full_name": "tech-conferences/confs.tech"
+    }
+  },
+  {
+    "author": "nimzco",
+    "avatar": "https://avatars.githubusercontent.com/u/445045?v=4",
+    "date": "May 2024",
+    "text": "Looks good to me! Thank you for doing that 🙏🏼 ",
+    "url": "https://github.com/tech-conferences/conference-data/pull/6816#pullrequestreview-2083732347",
+    "repository": {
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
+    }
+  },
+  {
+    "author": "cgrail",
+    "avatar": "https://avatars.githubusercontent.com/u/5702278?u=ce73487f5825c8b687f252ab6bb0ce0fd0ee1ed0&v=4",
+    "date": "May 2024",
+    "text": "Thanks a lot. It's not messing indentations up, it's rather fixing messed up indentation.\r\n\r\nYou've done a lot of great work recently. I'm happy to have you on board.",
+    "url": "https://github.com/tech-conferences/conference-data/pull/6814#issuecomment-2142232796",
+    "repository": {
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
+    }
+  },
+  {
+    "author": "oliverlindberg",
+    "avatar": "https://avatars.githubusercontent.com/u/1962384?u=203a5de981aa6de89009cc12d923eb6baba16cee&v=4",
+    "date": "Feb 2025",
+    "text": "Thanks, Juan!",
+    "url": "https://github.com/tech-conferences/conference-data/issues/7526#issuecomment-2640137948",
+    "repository": {
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
+    }
+  },
+  {
+    "author": "cgrail",
+    "avatar": "https://avatars.githubusercontent.com/u/5702278?u=ce73487f5825c8b687f252ab6bb0ce0fd0ee1ed0&v=4",
+    "date": "May 2024",
+    "text": "Thanks a lot. Sounds like a good idea.",
+    "url": "https://github.com/tech-conferences/conference-data/issues/6596#issuecomment-2107757214",
+    "repository": {
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
+    }
+  },
+  {
+    "author": "marcelscruz",
+    "avatar": "https://avatars.githubusercontent.com/u/12413903?u=5134dfa1eb89163b8610f0776144fb5b0da4a7c1&v=4",
+    "date": "Jul 2024",
+    "text": "Thank you so much for that, Juan!\r\nI just renamed the category to be only \"Conference\" as the \"Dev\" is redundant due to the nature of the project.",
+    "url": "https://github.com/marcelscruz/dev-resources/pull/463#issuecomment-2244810835",
+    "repository": {
+      "owner": "marcelscruz",
+      "name": "dev-resources",
+      "full_name": "marcelscruz/dev-resources"
+    }
+  },
+  {
+    "author": "marcelscruz",
+    "avatar": "https://avatars.githubusercontent.com/u/12413903?u=5134dfa1eb89163b8610f0776144fb5b0da4a7c1&v=4",
+    "date": "Aug 2024",
+    "text": "Thank you so much!!",
+    "url": "https://github.com/marcelscruz/dev-resources/pull/481#issuecomment-2271726460",
+    "repository": {
+      "owner": "marcelscruz",
+      "name": "dev-resources",
+      "full_name": "marcelscruz/dev-resources"
+    }
+  },
+  {
+    "author": "aftabrehan",
+    "avatar": "https://avatars.githubusercontent.com/u/93012310?u=d30626736af361f41d48c486cce709a42afd4bc3&v=4",
+    "date": "Feb 2024",
+    "text": "Excellent PR, @JuanPabloDiaz 👍 ",
+    "url": "https://github.com/rupali-codes/LinksHub/pull/2264#pullrequestreview-1877029253",
+    "repository": {
+      "owner": "rupali-codes",
+      "name": "LinksHub",
+      "full_name": "rupali-codes/LinksHub"
+    }
+  },
+  {
+    "author": "aftabrehan",
+    "avatar": "https://avatars.githubusercontent.com/u/93012310?u=d30626736af361f41d48c486cce709a42afd4bc3&v=4",
+    "date": "Mar 2024",
+    "text": "Excellent PR, @JuanPabloDiaz 💪 🚀 💯 ",
+    "url": "https://github.com/rupali-codes/LinksHub/pull/2320#pullrequestreview-1956409322",
+    "repository": {
+      "owner": "rupali-codes",
+      "name": "LinksHub",
+      "full_name": "rupali-codes/LinksHub"
+    }
+  },
+  {
+    "author": "drixswe",
+    "avatar": "https://avatars.githubusercontent.com/u/198779117?u=5c324cdc0a4861d307628a443fd23b7c5fb17a3d&v=4",
+    "date": "Apr 2025",
+    "text": "@JuanPabloDiaz buen trabajo! Te dejo una sugerencia! 🚀",
+    "url": "https://github.com/withastro/docs/pull/11426#pullrequestreview-2760668908",
+    "repository": {
+      "owner": "withastro",
+      "name": "docs",
+      "full_name": "withastro/docs"
+    }
+  },
+  {
+    "author": "dreyfus92",
+    "avatar": "https://avatars.githubusercontent.com/u/85648028?u=39ca04e333b7243f7bb8b796ff2112b17f7dcdca&v=4",
+    "date": "Apr 2025",
+    "text": "Muchas gracias @JuanPabloDiaz, LGTM ✅",
+    "url": "https://github.com/withastro/docs/pull/11419#pullrequestreview-2762837515",
+    "repository": {
+      "owner": "withastro",
+      "name": "docs",
+      "full_name": "withastro/docs"
+    }
+  },
+  {
+    "author": "dreyfus92",
+    "avatar": "https://avatars.githubusercontent.com/u/85648028?u=39ca04e333b7243f7bb8b796ff2112b17f7dcdca&v=4",
+    "date": "Apr 2025",
+    "text": "Gracias @JuanPabloDiaz 🫡",
+    "url": "https://github.com/withastro/docs/pull/11433#pullrequestreview-2762983886",
+    "repository": {
+      "owner": "withastro",
+      "name": "docs",
+      "full_name": "withastro/docs"
+    }
+  },
+  {
+    "author": "dreyfus92",
+    "avatar": "https://avatars.githubusercontent.com/u/85648028?u=39ca04e333b7243f7bb8b796ff2112b17f7dcdca&v=4",
+    "date": "Apr 2025",
+    "text": "Te dejo algunas sugerencias @JuanPabloDiaz, excelente trabajo 🫡",
+    "url": "https://github.com/withastro/docs/pull/11422#pullrequestreview-2773460940",
+    "repository": {
+      "owner": "withastro",
+      "name": "docs",
+      "full_name": "withastro/docs"
+    }
+  },
+  {
+    "author": "yanthomasdev",
+    "avatar": "https://avatars.githubusercontent.com/u/61414485?u=fcafb869e391e9282a148110fff838b184ae3f30&v=4",
+    "date": "Apr 2025",
+    "text": "LGTM! Good job!",
+    "url": "https://github.com/withastro/docs/pull/11514#pullrequestreview-2797695639",
+    "repository": {
+      "owner": "withastro",
+      "name": "docs",
+      "full_name": "withastro/docs"
+    }
+  },
+  {
+    "author": "yanthomasdev",
+    "avatar": "https://avatars.githubusercontent.com/u/61414485?u=fcafb869e391e9282a148110fff838b184ae3f30&v=4",
+    "date": "Apr 2025",
+    "text": "LGTM! Thanks!",
+    "url": "https://github.com/withastro/docs/pull/11515#pullrequestreview-2797697545",
+    "repository": {
+      "owner": "withastro",
+      "name": "docs",
+      "full_name": "withastro/docs"
+    }
+  },
+  {
+    "author": "yanthomasdev",
+    "avatar": "https://avatars.githubusercontent.com/u/61414485?u=fcafb869e391e9282a148110fff838b184ae3f30&v=4",
+    "date": "Apr 2025",
+    "text": "LGTM! Good work!",
+    "url": "https://github.com/withastro/docs/pull/11431#pullrequestreview-2800263668",
+    "repository": {
+      "owner": "withastro",
+      "name": "docs",
+      "full_name": "withastro/docs"
+    }
+  },
+  {
+    "author": "dreyfus92",
+    "avatar": "https://avatars.githubusercontent.com/u/85648028?u=39ca04e333b7243f7bb8b796ff2112b17f7dcdca&v=4",
+    "date": "May 2025",
+    "text": "Muchas gracias @JuanPabloDiaz 🫡",
+    "url": "https://github.com/withastro/docs/pull/11597#pullrequestreview-2816351726",
+    "repository": {
+      "owner": "withastro",
+      "name": "docs",
+      "full_name": "withastro/docs"
+    }
+  },
+  {
+    "author": "yanthomasdev",
+    "avatar": "https://avatars.githubusercontent.com/u/61414485?u=fcafb869e391e9282a148110fff838b184ae3f30&v=4",
+    "date": "May 2025",
+    "text": "LGTM! Good job 🙌 ",
+    "url": "https://github.com/withastro/docs/pull/11443#pullrequestreview-2818054299",
+    "repository": {
+      "owner": "withastro",
+      "name": "docs",
+      "full_name": "withastro/docs"
+    }
+  },
+  {
+    "author": "yanthomasdev",
+    "avatar": "https://avatars.githubusercontent.com/u/61414485?u=fcafb869e391e9282a148110fff838b184ae3f30&v=4",
+    "date": "May 2025",
+    "text": "LGTM! Good job 🙌 ",
+    "url": "https://github.com/withastro/docs/pull/11443#pullrequestreview-2818054299",
+    "repository": {
+      "owner": "withastro",
+      "name": "docs",
+      "full_name": "withastro/docs"
+    }
+  }
+]
