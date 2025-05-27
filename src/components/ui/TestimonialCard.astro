@@ -41,24 +41,27 @@ const repoFullName = repoMatch ? repoMatch[1] : 'Unknown Repository';
 		<div class="flex-1">
 			<div>
 				<h3 class="text-xl font-bold text-black/90 dark:text-white/90">
-					<a 
+					<a
 						href={comment.user.html_url}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="relative hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 ease-in-out after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-blue-600 dark:after:bg-blue-400 after:transition-all after:duration-300 hover:after:w-full"
+						class="hover:text-blue-600 dark:hover:text-blue-400 after:bg-blue-600 dark:after:bg-blue-400 relative transition-all duration-300 ease-in-out after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full"
 					>
 						{comment.user.login}
 					</a>
 				</h3>
-				<a 
+				<a
 					href={`https://github.com/${repoFullName}`}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="text-xs italic text-black/60 hover:text-blue-600 dark:text-white/60 dark:hover:text-blue-400 transition-all duration-300 inline-flex items-center gap-1 group"
+					class="hover:text-blue-600 dark:hover:text-blue-400 group inline-flex items-center gap-1 text-xs italic text-black/60 transition-all duration-300 dark:text-white/60"
 					title="View repository"
 				>
 					<span class="group-hover:underline">{repoFullName}</span>
-					<Icon name="fe:arrow-right" class="h-3 w-3 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0.5" />
+					<Icon
+						name="fe:arrow-right"
+						class="h-3 w-3 opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100"
+					/>
 				</a>
 			</div>
 			<p class="text-sm text-black/70 dark:text-white/70">{creationDate}</p>
@@ -77,7 +80,7 @@ const repoFullName = repoMatch ? repoMatch[1] : 'Unknown Repository';
 			href={comment.html_url}
 			target="_blank"
 			rel="noopener noreferrer"
-			class="bg-blue-100 text-blue-600 hover:bg-blue-200 hover:shadow-md dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-800/60 inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-all duration-300 ease-in-out hover:translate-y-[-2px] group"
+			class="bg-blue-100 text-blue-600 hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-800/60 group inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-md"
 			title="View original testimony on GitHub"
 		>
 			<GitHubIcon class="h-4 w-4 transition-transform duration-300 group-hover:rotate-12" />
@@ -87,10 +90,13 @@ const repoFullName = repoMatch ? repoMatch[1] : 'Unknown Repository';
 			href={comment.user.html_url}
 			target="_blank"
 			rel="noopener noreferrer"
-			class="bg-blue-100 text-blue-600 hover:bg-blue-200 hover:shadow-md dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-800/60 inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-all duration-300 ease-in-out hover:translate-y-[-2px] group"
+			class="bg-blue-100 text-blue-600 hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-800/60 group inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-md"
 			title="View author's GitHub profile"
 		>
-			<Icon name="fe:user" class="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
+			<Icon
+				name="fe:user"
+				class="h-4 w-4 transition-transform duration-300 group-hover:scale-110"
+			/>
 			View Profile
 		</a>
 	</div>
