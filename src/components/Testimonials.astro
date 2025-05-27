@@ -3,13 +3,15 @@ import {
 	getGitHubIssueComments,
 	getGitHubPullRequestReviewComments,
 	getGitHubDiscussionComments,
-} from '@utils/github';
-import TestimonialCard from '@components/ui/TestimonialCard.astro';
-import type { GitHubIssueComment } from '@utils/github';
-import { parseGitHubUrl } from '@utils/urlParser';
-import SubTitle from '@components/ui/SubTitle.astro';
+} from '../utils/github';
+import TestimonialCard from '../components/ui/TestimonialCard.astro';
+import LinkedInTestimonialCard from '../components/ui/LinkedInTestimonialCard.astro';
+import type { GitHubIssueComment } from '../utils/github';
+import { parseGitHubUrl } from '../utils/urlParser';
+import SubTitle from '../components/ui/SubTitle.astro';
 
-import testimonialsData from '@src/content/testimonials.json';
+import testimonialsData from '../content/testimonials.json';
+import linkedinTestimonialsData from '../content/linkedin_testimonials.json';
 
 interface Props {
 	title?: string;
@@ -168,7 +170,7 @@ const hasErrors = errors.length > 0 && !useFallbackTestimonials; // Don't show e
 	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-auto"
 >
 	<div class="mb-10 flex w-full flex-col items-center justify-center lg:mb-0 lg:w-1/2">
-		<SubTitle text="Testimonials" />
+		<SubTitle text="GitHub Testimonials" />
 	</div>
 	<p class="text-gray-500 text-center lg:w-1/2">
 		Testimonials from the GitHub community on my open-source contributions.
@@ -191,7 +193,7 @@ const hasErrors = errors.length > 0 && !useFallbackTestimonials; // Don't show e
 	{
 		!hasComments && !hasErrors && (
 			<p class="text-gray-600 dark:text-gray-400 max-w-2xl text-center">
-				No testimonials available at this time.
+				No GitHub testimonials available at this time.
 			</p>
 		)
 	}
@@ -215,6 +217,31 @@ const hasErrors = errors.length > 0 && !useFallbackTestimonials; // Don't show e
 					Note: Some testimonial sources couldn't be loaded.
 				</p>
 			</div>
+		)
+	}
+
+	{/* Sección de testimonios de LinkedIn */}
+	<div class="mb-10 mt-20 flex w-full flex-col items-center justify-center lg:mb-0 lg:w-1/2">
+		<SubTitle text="LinkedIn Testimonials" />
+	</div>
+	<p class="text-gray-500 text-center lg:w-1/2">
+		Testimonials from LinkedIn connections and colleagues.
+	</p>
+	<span class="bg-blue-600 dark:bg-blue-500 mt-2 h-1 w-20"></span>
+
+	{
+		linkedinTestimonialsData.testimonials && linkedinTestimonialsData.testimonials.length > 0 ? (
+			<div class="container mx-auto px-4 py-4">
+				<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+					{linkedinTestimonialsData.testimonials.map((testimonial) => (
+						<LinkedInTestimonialCard testimonial={testimonial} />
+					))}
+				</div>
+			</div>
+		) : (
+			<p class="text-gray-600 dark:text-gray-400 mt-4 max-w-2xl text-center">
+				No LinkedIn testimonials available at this time.
+			</p>
 		)
 	}
 </section>

@@ -1,0 +1,216 @@
+---
+// Definir el tipo LinkedInTestimonial
+interface LinkedInTestimonial {
+	author: string;
+	position: string;
+	company: string;
+	text: string;
+	date: string;
+	url: string;
+	avatar_url: string;
+}
+
+interface Props {
+	testimonial: LinkedInTestimonial;
+}
+
+const { testimonial } = Astro.props;
+
+// Formatear la fecha
+const creationDate = new Date(testimonial.date).toLocaleDateString('en-US', {
+	year: 'numeric',
+	month: 'long',
+	day: 'numeric',
+});
+---
+
+<article
+	class="group relative flex h-full flex-col overflow-hidden rounded-xl bg-white/95 p-5 shadow-lg backdrop-blur-md transition-all duration-300 ease-in-out hover:scale-[1.01] hover:bg-white/80 hover:shadow-xl dark:bg-[rgba(17,24,39,0.9)] dark:hover:bg-[rgba(17,24,39,0.9)]"
+>
+	<div class="flex items-start">
+		<a
+			href={testimonial.url}
+			target="_blank"
+			rel="noopener noreferrer"
+			title={`View ${testimonial.author}'s profile`}
+			class="block"
+		>
+			<img
+				src={testimonial.avatar_url}
+				alt={`Avatar of ${testimonial.author}`}
+				class="border-gray-100 dark:border-gray-700 mr-4 h-16 w-16 rounded-full border-2 object-cover shadow-md"
+				loading="lazy"
+			/>
+		</a>
+		<div class="flex-1">
+			<div>
+				<h3 class="text-xl font-bold text-black/90 dark:text-white/90">
+					<a
+						href={testimonial.url}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="hover:text-blue-600 dark:hover:text-blue-400 after:bg-blue-600 dark:after:bg-blue-400 relative transition-all duration-300 ease-in-out after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full"
+					>
+						{testimonial.author}
+					</a>
+				</h3>
+				<p class="text-xs italic text-black/60 dark:text-white/60">
+					{testimonial.position} at {testimonial.company}
+				</p>
+			</div>
+			<p class="text-sm text-black/70 dark:text-white/70">{creationDate}</p>
+		</div>
+	</div>
+
+	<div class="mt-4 flex-1">
+		<div class="relative overflow-hidden">
+			<!-- Contenido del testimonio con altura máxima -->
+			<div
+				id={`linkedin-testimonial-content-${testimonial.author.replace(/[^a-zA-Z0-9]/g, '-')}`}
+				class="prose prose-sm max-h-[150px] max-w-none overflow-hidden text-black/80 transition-all duration-300 dark:prose-invert dark:text-white/80"
+			>
+				<p>{testimonial.text}</p>
+			</div>
+
+			<!-- Degradado para indicar que hay más contenido -->
+			<div
+				class="to-transparent pointer-events-none absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white/95 transition-opacity duration-300 dark:from-[rgba(17,24,39,0.95)]"
+				id={`linkedin-fade-${testimonial.author.replace(/[^a-zA-Z0-9]/g, '-')}`}
+			>
+			</div>
+
+			<!-- Botón para expandir/contraer -->
+			<button
+				type="button"
+				class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 group mt-2 flex items-center gap-1 text-sm font-medium transition-all duration-300 focus:outline-none"
+				id={`linkedin-expand-btn-${testimonial.author.replace(/[^a-zA-Z0-9]/g, '-')}`}
+				data-testimonial-id={`${testimonial.author.replace(/[^a-zA-Z0-9]/g, '-')}`}
+				onclick={`
+					// Obtener el ID único de este testimonio
+					const testimonialId = this.getAttribute('data-testimonial-id');
+					
+					// Obtener los elementos específicos de este testimonio
+					const content = document.getElementById('linkedin-testimonial-content-' + testimonialId);
+					const fadeEl = document.getElementById('linkedin-fade-' + testimonialId);
+					const btn = document.getElementById('linkedin-expand-btn-' + testimonialId);
+					
+					// Verificar si el contenido está expandido
+					const expanded = content.classList.contains('max-h-none');
+					
+					if (expanded) {
+						// Contraer el contenido
+						content.classList.remove('max-h-none');
+						content.classList.add('max-h-[150px]');
+						fadeEl.classList.remove('opacity-0');
+						btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg> Read More';
+					} else {
+						// Expandir el contenido
+						content.classList.remove('max-h-[150px]');
+						content.classList.add('max-h-none');
+						fadeEl.classList.add('opacity-0');
+						btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" /></svg> Show Less';
+					}
+					`}
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-4 w-4 transition-transform duration-300 group-hover:rotate-12"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"
+					></path>
+				</svg>
+				Read More
+			</button>
+		</div>
+	</div>
+
+	<div class="mt-auto flex items-center justify-between pt-4">
+		<a
+			href={testimonial.url}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="bg-blue-100 text-blue-600 hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-800/60 group inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-md"
+			title="View original testimony on LinkedIn"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				class="h-4 w-4 transition-transform duration-300 group-hover:rotate-12"
+				fill="currentColor"
+			>
+				<path
+					d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+				></path>
+			</svg>
+			Verify on LinkedIn
+		</a>
+		<a
+			href={testimonial.url}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="bg-blue-100 text-blue-600 hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-800/60 group inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-md"
+			title="View author's LinkedIn profile"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				class="h-4 w-4 transition-transform duration-300 group-hover:scale-110"
+				fill="currentColor"
+			>
+				<path
+					d="M12 12.75c-1.79 0-3.25-1.46-3.25-3.25s1.46-3.25 3.25-3.25 3.25 1.46 3.25 3.25-1.46 3.25-3.25 3.25zm0-5c-.96 0-1.75.79-1.75 1.75s.79 1.75 1.75 1.75 1.75-.79 1.75-1.75-.79-1.75-1.75-1.75zm6 8.25c-.41 0-.75-.34-.75-.75v-.89c0-1.03-.84-1.86-1.86-1.86h-6.78c-1.02 0-1.86.83-1.86 1.86v.89c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-.89c0-1.85 1.5-3.36 3.36-3.36h6.78c1.85 0 3.36 1.51 3.36 3.36v.89c0 .41-.34.75-.75.75z"
+				></path>
+			</svg>
+			View Profile
+		</a>
+	</div>
+</article>
+
+<script>
+	// Función para verificar si el contenido necesita el botón "Read More"
+	function checkContentHeight() {
+		// Obtener todos los contenedores de testimonios
+		const testimonialContents = document.querySelectorAll('[id^="linkedin-testimonial-content-"]');
+
+		testimonialContents.forEach((contentEl) => {
+			// Extraer el ID único de este testimonio
+			const id = contentEl.id.replace('linkedin-testimonial-content-', '');
+			const fadeEl = document.getElementById(`linkedin-fade-${id}`);
+			const btnEl = document.getElementById(`linkedin-expand-btn-${id}`);
+
+			if (fadeEl && btnEl) {
+				// Si el contenido es más corto que la altura máxima, ocultar el botón y el degradado
+				if (contentEl.scrollHeight <= 150) {
+					btnEl.classList.add('hidden');
+					fadeEl.classList.add('hidden');
+				} else {
+					btnEl.classList.remove('hidden');
+					fadeEl.classList.remove('hidden');
+				}
+			}
+		});
+	}
+
+	// Ejecutar la verificación cuando se carga la página
+	document.addEventListener('DOMContentLoaded', checkContentHeight);
+
+	// También ejecutar cuando se completan las imágenes, ya que pueden afectar la altura
+	window.addEventListener('load', checkContentHeight);
+
+	// Añadir manejadores de eventos a todos los botones de expansión
+	document.addEventListener('DOMContentLoaded', function () {
+		const expandButtons = document.querySelectorAll('[id^="linkedin-expand-btn-"]');
+
+		expandButtons.forEach((button) => {
+			button.addEventListener('click', function (e) {
+				// Evitar que el evento se propague
+				e.stopPropagation();
+
+				// El resto de la lógica se maneja en el atributo onclick
+			});
+		});
+	});
+</script>

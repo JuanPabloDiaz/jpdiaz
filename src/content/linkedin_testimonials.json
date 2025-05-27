@@ -1,0 +1,31 @@
+{
+	"testimonials": [
+		{
+			"author": "Miguel Angel",
+			"position": "Solutions Architect / Microsoft MVP / Alibaba Cloud MVP",
+			"company": "SoftServe",
+			"text": "Excelente proyecto, me encantó cómo quedó la parte de los platos típicos, así también puedo detectar posibles datos erróneos. Gracias!! Lo voy a incluir en la lista de proyectos de api-colombia.",
+			"date": "2025-05-24",
+			"url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7331729441309474816?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7331729441309474816%2C7331829713885134848%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287331829713885134848%2Curn%3Ali%3AugcPost%3A7331729441309474816%29",
+			"avatar_url": "https://media.licdn.com/dms/image/v2/C4E03AQGbmFzxXpbr5A/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1651702749375?e=1753920000&v=beta&t=eK2vNzmcT-tKzDn40QxNV8OM8BHmUhX3vSGD33mVN6Y"
+		},
+		{
+			"author": "Christian Grail",
+			"position": "Staff Developer",
+			"company": "SAP",
+			"text": "We’re happy to have you on board.",
+			"date": "2025-05-22",
+			"url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7325914717925904384?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7325914717925904384%2C7331325246936948736%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287331325246936948736%2Curn%3Ali%3AugcPost%3A7325914717925904384%29",
+			"avatar_url": "https://media.licdn.com/dms/image/v2/D4E03AQE8ep_CrBiRqw/profile-displayphoto-shrink_100_100/B4EZYbMQaUHgAU-/0/1744212920553?e=1753920000&v=beta&t=FHt_Eu6TdgmOQZe763oriZEZCW79u7KDZF6YnpLeyVs"
+		},
+		{
+			"author": "Christian Grail",
+			"position": "Staff Developer",
+			"company": "SAP",
+			"text": "Hi Juan, I'm really glad to have you on board. It's great to also see that you're bringing new contributors to the project using \"good first issue\". I'm also excited about all the stuff you'll do in the future.",
+			"date": "2025-05-22",
+			"url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7203720060215947264?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7203720060215947264%2C7203736700974481409%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287203736700974481409%2Curn%3Ali%3AugcPost%3A7203720060215947264%29",
+			"avatar_url": "https://media.licdn.com/dms/image/v2/D4E03AQE8ep_CrBiRqw/profile-displayphoto-shrink_100_100/B4EZYbMQaUHgAU-/0/1744212920553?e=1753920000&v=beta&t=FHt_Eu6TdgmOQZe763oriZEZCW79u7KDZF6YnpLeyVs"
+		}
+	]
+}
