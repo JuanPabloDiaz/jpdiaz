@@ -477,41 +477,60 @@ def save_to_json(testimonials, output_file):
     """Save testimonials to a JSON file."""
     # Format for testimonials.json
     formatted_testimonials = []
-    
-    for t in testimonials:
-        # Extract repository name from source URL
-        repo_parts = t["source_url"].split("/")
+    for testimonial in testimonials:
+        # Format date (assuming ISO format from GitHub API)
+        date_str = testimonial["created_at"]
+        try:
+            date_obj = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+            formatted_date = date_obj.strftime("%b %Y")
+        except (ValueError, TypeError):
+            formatted_date = date_str
+        
+        # Extract repository owner and name from source_url
+        source_url = testimonial["source_url"]
+        repo_parts = source_url.split("/")
         if len(repo_parts) >= 5:
             repo_owner = repo_parts[3]
             repo_name = repo_parts[4]
         else:
             repo_owner = "unknown"
             repo_name = "unknown"
-        
-        # Format date to be more readable
-        try:
-            date_obj = datetime.fromisoformat(t["created_at"].replace("Z", "+00:00"))
-            formatted_date = date_obj.strftime("%b %Y")  # e.g., "May 2024"
-        except:
-            formatted_date = t["created_at"]
-        
-        formatted_testimonials.append({
-            "author": t["user"],
-            "avatar": t["avatar_url"],
+            
+        formatted_testimonial = {
+            "author": testimonial["user"],
+            "avatar": testimonial["avatar_url"],
             "date": formatted_date,
-            "text": t["body"],
-            "source": t["source"],
-            "source_url": t["source_url"],
-            "comment_url": t["url"],
+            "text": testimonial["body"],
+            "source": testimonial["source"],
+            "source_url": testimonial["source_url"],
+            "comment_url": testimonial["url"],
             "repository": {
                 "owner": repo_owner,
                 "name": repo_name,
                 "full_name": f"{repo_owner}/{repo_name}"
             }
-        })
-    
+        }
+        formatted_testimonials.append(formatted_testimonial)
+
     # Create directory if it doesn't exist
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    
+    # Añadir un comentario con la marca de tiempo para verificar que se actualiza
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    formatted_testimonials.insert(0, {
+        "author": "TIMESTAMP",
+        "avatar": "https://avatars.githubusercontent.com/u/0?v=4",
+        "date": timestamp,
+        "text": f"Este archivo fue generado el {timestamp}",
+        "source": "Script de testimonios",
+        "source_url": "https://github.com/JuanPabloDiaz/jpdiaz",
+        "comment_url": "https://github.com/JuanPabloDiaz/jpdiaz",
+        "repository": {
+            "owner": "JuanPabloDiaz",
+            "name": "jpdiaz",
+            "full_name": "JuanPabloDiaz/jpdiaz"
+        }
+    })
     
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(formatted_testimonials, f, indent=2, ensure_ascii=False)

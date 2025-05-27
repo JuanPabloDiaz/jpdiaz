@@ -7,15 +7,13 @@ import {
 import TestimonialCard from '@components/ui/TestimonialCard.astro';
 import type { GitHubIssueComment } from '@utils/github';
 import { parseGitHubUrl } from '@utils/urlParser';
-import type { ParsedGitHubUrl } from '@utils/urlParser';
+import SubTitle from '@components/ui/SubTitle.astro';
 
 import testimonialsData from '@src/content/testimonials.json';
 
 interface Props {
 	title?: string;
 }
-
-const { title = 'What People Are Saying' } = Astro.props;
 
 // Initialize arrays to store comments and errors
 let allComments: GitHubIssueComment[] = [];
@@ -174,10 +172,13 @@ const hasErrors = errors.length > 0 && !useFallbackTestimonials; // Don't show e
 	data-testid="testimonials"
 	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-auto"
 >
-	<div class="mb-8 flex flex-col items-center justify-center">
-		<h2 class="text-gray-900 text-2xl font-bold dark:text-white md:text-4xl">{title}</h2>
-		<span class="bg-blue-600 dark:bg-blue-500 mt-2 h-1 w-20"></span>
+	<div class="mb-10 flex w-full flex-col items-center justify-center lg:mb-0 lg:w-1/2">
+		<SubTitle text="Testimonials" />
 	</div>
+	<p class="text-gray-500 text-center lg:w-1/2">
+		Testimonials from the GitHub community on my open-source contributions.
+	</p>
+	<span class="bg-blue-600 dark:bg-blue-500 mt-2 h-1 w-20"></span>
 
 	{
 		hasErrors && !hasComments && (
