@@ -10,10 +10,61 @@
       ]
     },
     {
+      "name": "unitycatalog",
+      "testimonials": [
+        {
+          "url": "",
+          "date": "Aug 2024"
+        }
+      ]
+    },
+    {
+      "name": "unitycatalog-ui",
+      "testimonials": [
+        {
+          "url": "https://github.com/unitycatalog/unitycatalog-ui/pull/60#issuecomment-2265438075",
+          "date": "Aug 2024"
+        },
+        {
+          "url": "https://github.com/unitycatalog/unitycatalog-ui/pull/69#pullrequestreview-2255342420",
+          "date": "Aug 2024"
+        },
+        {
+          "url": "https://github.com/unitycatalog/unitycatalog-ui/pull/46#pullrequestreview-2201703568",
+          "date": "Aug 2024"
+        }
+      ]
+    },
+    {
+      "name": "confs.tech",
+      "testimonials": [
+        {
+          "url": "https://github.com/tech-conferences/confs.tech/pull/632#issuecomment-2176280753",
+          "date": "May 2024"
+        },
+        {
+          "url": "https://github.com/tech-conferences/confs.tech/issues/877#issuecomment-2620095882",
+          "date": "Jan 2025"
+        },
+        {
+          "url": "https://github.com/tech-conferences/confs.tech/pull/875#issuecomment-2617766614",
+          "date": "Jan 2025"
+        },
+        {
+          "url": "",
+          "date": "Jan 2025"
+        }
+      ]
+    },
+    {
       "name": "conference-data",
       "testimonials": [
         {
           "url": "https://github.com/tech-conferences/conference-data/pull/6816#pullrequestreview-2083732347",
+          "date": "May 2024"
+        },
+        {
+          "url": "https://github.com/tech-conferences/conference-data/pull/6814#issuecomment-2142232796",
           "date": "May 2024"
         }
       ]

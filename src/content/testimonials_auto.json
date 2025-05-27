@@ -1,0 +1,44 @@
+[
+  {
+    "author": "prigara",
+    "avatar": "https://avatars.githubusercontent.com/u/782562?v=4",
+    "date": "May 2025",
+    "text": "Yes, I saw the commit, @cgrail rightly removed the category. It seems that it has stuck somewhere in Algolia or elsewhere.",
+    "source": "Issue #7702: Removed event still visible",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7702",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7702#issuecomment-2876203306",
+    "repository": {
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
+    }
+  },
+  {
+    "author": "webchick",
+    "avatar": "https://avatars.githubusercontent.com/u/332535?v=4",
+    "date": "Apr 2025",
+    "text": "Looks like this has happened! \n\n<img width=\"543\" alt=\"A screenshot of the conference entry form showing fields for BlueSky, Mastodon, and Twitter\" src=\"https://github.com/user-attachments/assets/39f0eded-de74-40cb-898f-1d344d7f0fa5\" />",
+    "source": "Issue #7617: Support Bluesky / Mastodon",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7617",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7617#issuecomment-2811652153",
+    "repository": {
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
+    }
+  },
+  {
+    "author": "Lolincolc",
+    "avatar": "https://avatars.githubusercontent.com/u/9490515?v=4",
+    "date": "Mar 2025",
+    "text": "Hi @JuanPabloDiaz ,\n\nYes, I wanted to submit the BSides Mulhouse CFP, a cybersecurity conference. \nhttps://bsides-mulhouse.fr",
+    "source": "Issue #7625: Suggest new location",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7625",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7625#issuecomment-2765810156",
+    "repository": {
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
+    }
+  }
+]
