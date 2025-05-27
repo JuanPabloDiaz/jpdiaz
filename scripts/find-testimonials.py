@@ -395,6 +395,23 @@ def filter_testimonials(testimonials, min_words=10, max_words=None):
     skipped_simple = 0
     skipped_bots = 0
     skipped_markdown = 0
+    skipped_negative = 0
+    
+    # Phrases that indicate rejection or negative comments
+    rejection_phrases = [
+        "we'll close this pr",
+        "we don't think it's developer related", 
+        "sorry",
+        "but we'll close",
+        "not a good fit",
+        "doesn't fit",
+        "not appropriate",
+        "not relevant",
+        "not related",
+        "rejected",
+        "closing this",
+        "Thanks a lot for the contribution. But we'll close this PR as we don't think it's developer related. Please feel free to contact to us if you have any questions. Sorry."
+    ]
     
     for testimonial in testimonials:
         # Skip bot users
@@ -406,6 +423,12 @@ def filter_testimonials(testimonials, min_words=10, max_words=None):
         
         # Skip testimonials that are too short (but keep simple thank you messages)
         body_lower = testimonial["body"].strip().lower()
+        
+        # Skip rejection or negative comments
+        if any(phrase in body_lower for phrase in rejection_phrases):
+            skipped_negative += 1
+            continue
+            
         contains_thank = any(thank in body_lower for thank in ["thank", "thanks", "thx", "gracias", "👏", "👍", "lgtm"])
         contains_name = "juanpablodiaz" in body_lower.replace(" ", "") or "juan" in body_lower
         
@@ -427,11 +450,6 @@ def filter_testimonials(testimonials, min_words=10, max_words=None):
             skipped_code += 1
             continue
             
-        # Don't skip simple thank you messages anymore
-        # if testimonial["body"].strip().lower() in ["lgtm", "looks good", "looks good to me", "+1", "👍", "👍", "thanks", "thank you"]:
-        #    skipped_simple += 1
-        #    continue
-            
         # Skip testimonials that are likely just markdown formatting or HTML
         body = testimonial["body"].strip()
         if (body.startswith("<!--") or 
@@ -444,9 +462,10 @@ def filter_testimonials(testimonials, min_words=10, max_words=None):
             
         filtered.append(testimonial)
     
-    total_skipped = skipped_short + skipped_long + skipped_code + skipped_simple + skipped_bots + skipped_markdown
+    total_skipped = skipped_short + skipped_long + skipped_code + skipped_simple + skipped_bots + skipped_markdown + skipped_negative
     print(f"Filtered out {total_skipped} comments:")
     print(f"  - {skipped_bots} from bots")
+    print(f"  - {skipped_negative} negative or rejection comments")
     print(f"  - {skipped_short} too short (< {min_words} words)")
     print(f"  - {skipped_long} too long (> {max_words} words)" if max_words else "")
     print(f"  - {skipped_code} code blocks")

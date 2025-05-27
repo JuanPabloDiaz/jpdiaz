@@ -1,1276 +1,226 @@
 [
   {
-    "author": "dennyglee",
-    "avatar": "https://avatars.githubusercontent.com/u/1446829?v=4",
-    "date": "Sep 2024",
-    "text": "As part of the repo migration, this issue has been added to [unitycatalog #433](https://github.com/unitycatalog/unitycatalog/issues/433)",
-    "source": "Issue #51: Feature Request: Public Docker Image and Helm Chart",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/51",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/51#issuecomment-2334940466",
+    "author": "prigara",
+    "avatar": "https://avatars.githubusercontent.com/u/782562?v=4",
+    "date": "May 2025",
+    "text": "Yes, I saw the commit, @cgrail rightly removed the category. It seems that it has stuck somewhere in Algolia or elsewhere.",
+    "source": "Issue #7702: Removed event still visible",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7702",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7702#issuecomment-2876203306",
     "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
     }
   },
   {
-    "author": "dennyglee",
-    "avatar": "https://avatars.githubusercontent.com/u/1446829?v=4",
-    "date": "Sep 2024",
-    "text": "As part of the migration, you can find the new issue at [unitycatalog #431](https://github.com/unitycatalog/unitycatalog/issues/431)",
-    "source": "Issue #57: Use the official OpenAPI specification to generate types",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/57",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/57#issuecomment-2334938570",
+    "author": "webchick",
+    "avatar": "https://avatars.githubusercontent.com/u/332535?v=4",
+    "date": "Apr 2025",
+    "text": "Looks like this has happened! \n\n<img width=\"543\" alt=\"A screenshot of the conference entry form showing fields for BlueSky, Mastodon, and Twitter\" src=\"https://github.com/user-attachments/assets/39f0eded-de74-40cb-898f-1d344d7f0fa5\" />",
+    "source": "Issue #7617: Support Bluesky / Mastodon",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7617",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7617#issuecomment-2811652153",
     "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
     }
   },
   {
-    "author": "ItsLuized",
-    "avatar": "https://avatars.githubusercontent.com/u/32660456?v=4",
-    "date": "Sep 2024",
-    "text": "would the docker image comprise only launching the UI?",
-    "source": "Issue #51: Feature Request: Public Docker Image and Helm Chart",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/51",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/51#issuecomment-2323635730",
+    "author": "Lolincolc",
+    "avatar": "https://avatars.githubusercontent.com/u/9490515?v=4",
+    "date": "Mar 2025",
+    "text": "Hi @JuanPabloDiaz ,\n\nYes, I wanted to submit the BSides Mulhouse CFP, a cybersecurity conference. \nhttps://bsides-mulhouse.fr",
+    "source": "Issue #7625: Suggest new location",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7625",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7625#issuecomment-2765810156",
     "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
     }
   },
   {
-    "author": "almogtavor",
-    "avatar": "https://avatars.githubusercontent.com/u/70065337?v=4",
-    "date": "Sep 2024",
-    "text": "@jaceklaskowski I think the tasks are enough, to fit PRs at the subject",
-    "source": "Issue #51: Feature Request: Public Docker Image and Helm Chart",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/51",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/51#issuecomment-2323490575",
+    "author": "cgrail",
+    "avatar": "https://avatars.githubusercontent.com/u/5702278?v=4",
+    "date": "Feb 2025",
+    "text": "Thanks a lot. Done in https://github.com/tech-conferences/conference-data/pull/7577",
+    "source": "Issue #7576: Suggest new location",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7576",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7576#issuecomment-2688557773",
     "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
     }
   },
   {
-    "author": "jaceklaskowski",
-    "avatar": "https://avatars.githubusercontent.com/u/62313?v=4",
-    "date": "Aug 2024",
-    "text": "Can you split the request into two (as they can be developed separately, yet likely one after another)? In other words, I could work on a Docker image but have no intention for a helm chart 😉 ",
-    "source": "Issue #51: Feature Request: Public Docker Image and Helm Chart",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/51",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/51#issuecomment-2320275340",
+    "author": "3dit0r4o4",
+    "avatar": "https://avatars.githubusercontent.com/u/198575552?v=4",
+    "date": "Feb 2025",
+    "text": "Thank you for taking care! Great it's working again.",
+    "source": "Issue #7530: confs.tech Server Problem",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7530",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7530#issuecomment-2652961906",
     "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
     }
   },
   {
-    "author": "xx-db",
-    "avatar": "https://avatars.githubusercontent.com/u/173016806?v=4",
-    "date": "Aug 2024",
-    "text": "Refactoring to use axios can happen independently. It's more of a dependency for the UI work. ",
-    "source": "PR #73: Feat/login UI",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/73",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/73#discussion_r1736675372",
+    "author": "nimzco",
+    "avatar": "https://avatars.githubusercontent.com/u/445045?v=4",
+    "date": "Feb 2025",
+    "text": "Should be fixed!",
+    "source": "Issue #7520: Error while Adding a new conference",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7520",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7520#issuecomment-2648668458",
     "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
     }
   },
   {
-    "author": "creechy",
-    "avatar": "https://avatars.githubusercontent.com/u/1179360?v=4",
-    "date": "Aug 2024",
-    "text": "no biggie but just to check, could refactoring to use the axios client have happened independently of the \"login ui\" or are they intertwined?",
-    "source": "PR #73: Feat/login UI",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/73",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/73#discussion_r1736644600",
+    "author": "nimzco",
+    "avatar": "https://avatars.githubusercontent.com/u/445045?v=4",
+    "date": "Feb 2025",
+    "text": "And _thank you_ for reporting the issue!",
+    "source": "Issue #7530: confs.tech Server Problem",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7530",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7530#issuecomment-2648472820",
     "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
     }
   },
   {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "Yep, pushed up a change for this. Thank you!",
-    "source": "PR #73: Feat/login UI",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/73",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/73#discussion_r1735337032",
+    "author": "oliverlindberg",
+    "avatar": "https://avatars.githubusercontent.com/u/1962384?v=4",
+    "date": "Feb 2025",
+    "text": "Thanks, Juan!",
+    "source": "Issue #7526: Adding Pixel Pioneers Bristol",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7526",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7526#issuecomment-2640137948",
     "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
     }
   },
   {
-    "author": "yc-shawn",
-    "avatar": "https://avatars.githubusercontent.com/u/23707313?v=4",
-    "date": "Aug 2024",
-    "text": "It’s not recommended to have the same React state be both mutable and a dependency within the same useEffect, as this can potentially lead to an infinite loop.\r\n\r\nIf we just need to know whether the scrip been loaded can we just do a simple dom finder to see if script with 'https://accounts.google.com/gsi/client' exists?\r\n\r\n",
-    "source": "PR #73: Feat/login UI",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/73",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/73#discussion_r1735306018",
+    "author": "theoengland",
+    "avatar": "https://avatars.githubusercontent.com/u/5121621?v=4",
+    "date": "Jan 2025",
+    "text": "I'm having the same problem :-) ",
+    "source": "Issue #7520: Error while Adding a new conference",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7520",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7520#issuecomment-2624210527",
     "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
     }
   },
   {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "> > @xx-db looks like we are getting a failure with the node version in the `jwt-decode` package. Do you see any issues with upgrading?\r\n> \r\n> With #74 we won't need jwt-decode any more for the moment.\r\n\r\nIt's a dependency of `keycloak-js` so I'm going to remove that package for now.",
-    "source": "PR #73: Feat/login UI",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/73",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/73#issuecomment-2315871782",
+    "author": "cgrail",
+    "avatar": "https://avatars.githubusercontent.com/u/5702278?v=4",
+    "date": "Jan 2025",
+    "text": "Ok. Thanks a lot. I see that there are issues in the backend.\n\n@nimzco is this related to: https://github.com/tech-conferences/api.confs.tech/pull/109",
+    "source": "Issue #7520: Error while Adding a new conference",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7520",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7520#issuecomment-2619721003",
     "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
     }
   },
   {
-    "author": "xx-db",
-    "avatar": "https://avatars.githubusercontent.com/u/173016806?v=4",
-    "date": "Aug 2024",
-    "text": "> @xx-db looks like we are getting a failure with the node version in the `jwt-decode` package. Do you see any issues with upgrading?\r\n\r\nWith #74 we won't need jwt-decode any more for the moment.",
-    "source": "PR #73: Feat/login UI",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/73",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/73#issuecomment-2315823576",
+    "author": "cgrail",
+    "avatar": "https://avatars.githubusercontent.com/u/5702278?v=4",
+    "date": "Jan 2025",
+    "text": "Hi @lhutz \n\nI've added the location and conference in this PR: https://github.com/tech-conferences/conference-data/pull/7519\n\nThanks a lot for your contribution.\n\nBest regards,\nChristian",
+    "source": "Issue #7517: Suggest new location - 's-Hertogenbosch",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7517",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7517#issuecomment-2619146226",
     "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
     }
   },
   {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "@xx-db looks like we are getting a failure with the node version in the `jwt-decode` package. Do you see any issues with upgrading?",
-    "source": "PR #73: Feat/login UI",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/73",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/73#issuecomment-2315789517",
+    "author": "nimzco",
+    "avatar": "https://avatars.githubusercontent.com/u/445045?v=4",
+    "date": "Jan 2025",
+    "text": "Thank you for your contributions! Things should be live and working any minute! 😄 ",
+    "source": "Issue #7509: Add Bluesky data",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7509",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7509#issuecomment-2613708751",
     "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
     }
   },
   {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "@xx-db and @creechy please review as well 😄 ",
-    "source": "PR #73: Feat/login UI",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/73",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/73#issuecomment-2315783973",
+    "author": "JoshuaKGoldberg",
+    "avatar": "https://avatars.githubusercontent.com/u/3335181?v=4",
+    "date": "Jan 2025",
+    "text": "Awesome, thanks! I'll send those right away. 🚀 ",
+    "source": "Issue #7509: Add Bluesky data",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7509",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7509#issuecomment-2613424035",
     "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
     }
   },
   {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "We don't have BE API for this yet and is currently not in scope for 0.2",
-    "source": "Issue #42: Update function description",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/42",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/42#issuecomment-2310690217",
+    "author": "nimzco",
+    "avatar": "https://avatars.githubusercontent.com/u/445045?v=4",
+    "date": "Jan 2025",
+    "text": "Hi @JoshuaKGoldberg ! Thank you for your comment and suggestion!\nYes, that's a great idea, Bluesky is indeed started to grow fast! 😄 \nIf you can, feel free to submit a PR to these repo:\n\n- Front-end: https://github.com/tech-conferences/confs.tech - Example PRs for Mastodon\n  - https://github.com/tech-conferences/confs.tech/pull/564\n  - https://github.com/tech-conferences/confs.tech/pull/566\n\n- Backend: https://github.com/tech-conferences/api.confs.tech - Example for Mastodon: \n  - https://github.com/tech-conferences/api.confs.tech/pull/89\n  - https://github.com/tech-conferences/api.confs.tech/pull/88\n\nThanks again!",
+    "source": "Issue #7509: Add Bluesky data",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7509",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7509#issuecomment-2613392502",
     "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
     }
   },
   {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "We don't have BE API for this yet and is currently not in scope for 0.2",
-    "source": "Issue #40: Update table description",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/40",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/40#issuecomment-2310689755",
+    "author": "cgrail",
+    "avatar": "https://avatars.githubusercontent.com/u/5702278?v=4",
+    "date": "Jan 2025",
+    "text": "Hi @lchrusciel \nthanks a lot for the conference. I've added it in the following PR: https://github.com/tech-conferences/conference-data/pull/7488\n\nBest regards,\nChristian",
+    "source": "Issue #7485: Poznań is missing in the list of Polish cities",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7485",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7485#issuecomment-2595662356",
     "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
     }
   },
   {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "@xx-db can you please review as well?",
-    "source": "PR #69: Add ability to edit schema description",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/69",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/69#issuecomment-2305363502",
+    "author": "cgrail",
+    "avatar": "https://avatars.githubusercontent.com/u/5702278?v=4",
+    "date": "Oct 2024",
+    "text": "I've just tried it out and it worked:\r\nhttps://github.com/tech-conferences/conference-data/pull/7290\r\n\r\nI might be related to your browser settings which might be too strict. ",
+    "source": "Issue #7286: Add a new conference page broken",
+    "source_url": "https://github.com/tech-conferences/conference-data/issues/7286",
+    "comment_url": "https://github.com/tech-conferences/conference-data/issues/7286#issuecomment-2404499668",
     "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "@xx-db can you also review please?",
-    "source": "PR #68: Add support to edit volume description",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/68",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/68#issuecomment-2297371504",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "vksx",
-    "avatar": "https://avatars.githubusercontent.com/u/30385036?v=4",
-    "date": "Aug 2024",
-    "text": "I can take this one.",
-    "source": "Issue #41: Update volume description",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/41",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/41#issuecomment-2293964191",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "@JuanPabloDiaz are you still planning to work on this? Did you see the catalog description PR that was merged? You can use that as a guide for schema description.",
-    "source": "Issue #39: Update schema description",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/39",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/39#issuecomment-2284532204",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "> > THANK YOU @xx-db this was driving me nuts yesterday, I had to step away 😵‍💫 was the main fix to move the queryClient out of the AppProvider?\r\n> \r\n> haha it was bugging me too. Yes the main fix is to move the queryClient out, this one is just hard to debug but the fix is pretty straightforward. The other changes just made it cleaner. We don't have to include those if there are strong opinions.\r\n\r\nThe inconsistency was my hurdle, the tree view would update sometimes but mostly not. All the changes look good to me - thanks again!",
-    "source": "PR #64: fix schema browser not subscribing to query client",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/64",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/64#issuecomment-2278363588",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "xx-db",
-    "avatar": "https://avatars.githubusercontent.com/u/173016806?v=4",
-    "date": "Aug 2024",
-    "text": "> THANK YOU @xx-db this was driving me nuts yesterday, I had to step away 😵‍💫 was the main fix to move the queryClient out of the AppProvider?\r\n\r\nhaha it was bugging me too. Yes the main fix is to move the queryClient out, this one is just hard to debug but the fix is pretty straightforward. The other changes just made it cleaner. We don't have to include those if there are strong opinions. ",
-    "source": "PR #64: fix schema browser not subscribing to query client",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/64",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/64#issuecomment-2278357810",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "ognis1205",
-    "avatar": "https://avatars.githubusercontent.com/u/13074130?v=4",
-    "date": "Aug 2024",
-    "text": "@everettVT \r\nThank you for asking. If you have any advice, please feel free to let me know anytime.",
-    "source": "Issue #57: Use the official OpenAPI specification to generate types",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/57",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/57#issuecomment-2277098252",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "yc-shawn",
-    "avatar": "https://avatars.githubusercontent.com/u/23707313?v=4",
-    "date": "Aug 2024",
-    "text": "We only need to invalidate the cache for that one catalog\r\n```suggestion\r\n        queryKey: ['getCatalog', params.name],\r\n```",
-    "source": "PR #63: Add ability to edit catalog description",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/63",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/63#discussion_r1710309283",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "Going to merge this and circle back to the issue of refreshing the tree view. I haven't been able to find a solution.",
-    "source": "PR #62: remove all onSuccessCallback params",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/62",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/62#issuecomment-2276526518",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "> Looks nice, can you double check the invalidations are working properly?\r\n\r\n@Romanize everything is working as it was before, but I noticed the tree view browser is not updating after any of the `invalidateQueries` (which was an existing issue). It's bothering me so I am looking into a fix.",
-    "source": "PR #62: remove all onSuccessCallback params",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/62",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/62#issuecomment-2276371372",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "> Thanks!\r\n> \r\n> Assuming you already manually tested those\r\n\r\n@yc-shawn yes they have been tested and working as expected",
-    "source": "PR #62: remove all onSuccessCallback params",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/62",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/62#issuecomment-2276369283",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "@xx-db please review when you have a moment ",
-    "source": "PR #62: remove all onSuccessCallback params",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/62",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/62#issuecomment-2276205727",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "Ok got it, but we don't need to pass in `onSuccessCallback`. I will do a follow-on PR to remove all those. Thanks @yc-shawn 👍 ",
-    "source": "PR #61: Feat/delete schema",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/61",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/61#discussion_r1707927642",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "yc-shawn",
-    "avatar": "https://avatars.githubusercontent.com/u/23707313?v=4",
-    "date": "Aug 2024",
-    "text": "Similar example at [L39](https://github.com/TanStack/query/blob/1fc6124bfd22a26095ab1fca20caa39b4036fd86/examples/react/auto-refetching/src/pages/index.tsx#L39) and [L83](https://github.com/TanStack/query/blob/1fc6124bfd22a26095ab1fca20caa39b4036fd86/examples/react/auto-refetching/src/pages/index.tsx#L83) from official github",
-    "source": "PR #61: Feat/delete schema",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/61",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/61#discussion_r1707926727",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "yc-shawn",
-    "avatar": "https://avatars.githubusercontent.com/u/23707313?v=4",
-    "date": "Aug 2024",
-    "text": "Nope, keep `invalidateQueries` in the mutation hook.\r\nIt would works for both cases",
-    "source": "PR #61: Feat/delete schema",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/61",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/61#discussion_r1707922049",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "Do you mean to move the `invalidateQueries` to the caller as well?",
-    "source": "PR #61: Feat/delete schema",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/61",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/61#discussion_r1707920434",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "yc-shawn",
-    "avatar": "https://avatars.githubusercontent.com/u/23707313?v=4",
-    "date": "Aug 2024",
-    "text": "Sorry I just captured this.\r\nYou don't need to do create a new prop here to handle on success.\r\n\r\nYou can just simply do onSuccess in the caller\r\n```tsx\r\nmutation.mutate(values, {\r\n  onSuccess: () => {}\r\n});\r\n```\r\nCan we have follow-up PRs to remove this pattern on other deletion hooks?",
-    "source": "PR #61: Feat/delete schema",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/61",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/61#discussion_r1707914533",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "@xx-db I'm tagging you in a comment in hopes that it lets me add you as a reviewer 🙏 ",
-    "source": "PR #61: Feat/delete schema",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/61",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/61#issuecomment-2274344661",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "Hi @robertgv I need to get the delete schema functionality in, do you mind if I take this issue?",
-    "source": "Issue #36: Delete Schema",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/36",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/36#issuecomment-2274005834",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "vksx",
-    "avatar": "https://avatars.githubusercontent.com/u/30385036?v=4",
-    "date": "Aug 2024",
-    "text": "Maybe the table data can be previewed as follows:\r\n\r\n<img width=\"684\" alt=\"Screenshot 2024-08-05 at 3 38 44 PM\" src=\"https://github.com/user-attachments/assets/19efcf8a-9440-4047-9736-5e9c315d7e96\">\r\n\r\nI am trying to implement this but there is no API endpoint for reading the table data in UC yet (although we are reading the delta table in UC CLI). I am trying to find a workaround - but I'm not sure how it will work without an endpoint.\r\n\r\nIf anyone else wants to work on this or has a better idea - please go ahead - I don't want to block this - this is just to feed my curiosity (and to learn React).",
-    "source": "Issue #49: Display a few rows of data in the tables",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/49",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/49#issuecomment-2269422932",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "ognis1205",
-    "avatar": "https://avatars.githubusercontent.com/u/13074130?v=4",
-    "date": "Aug 2024",
-    "text": "@everettVT \r\n\r\n> Just curious what tool you were planning on using @ognis1205\r\n\r\nThe implementation of client-related components around OpenAPI and gRPC is progressing in Python, Rust, TypeScript, and Java. Since it seems that [OpenAPI Generator](https://openapi-generator.tech/) is being used for Java, Python, and Rust/OpenAPI, I thought of using [OpenAPI Generator](https://openapi-generator.tech/) if there is consensus here. Personally, I initially planned to use [openapi-typescript](https://www.npmjs.com/package/openapi-typescript) and define some utility types.\r\n\r\n> Something along the lines of this?\r\n> https://github.com/openapi-ts/openapi-typescript/tree/main/packages/openapi-typescript\r\n\r\nTherefore, the implementation method you pointed out will be the baseline, but I intended to make the url-path, request, and response types more type-safe by enabling inference at compile(transpile) time.\r\n\r\nIf you are going to implement the CreateTable API and the auto-generation of the API interfaces, you can take this issue as well. Otherwise, in case of just implementing the CreateTable API alone, please follow the conventional implementation.\r\n\r\nReference:\r\nhttps://github.com/unitycatalog/unitycatalog/discussions/208#discussioncomment-10223757",
-    "source": "Issue #57: Use the official OpenAPI specification to generate types",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/57",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/57#issuecomment-2266332532",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "dennyglee",
-    "avatar": "https://avatars.githubusercontent.com/u/1446829?v=4",
-    "date": "Aug 2024",
-    "text": "Thanks very much @JuanPabloDiaz !",
-    "source": "PR #60: Add Code of Conduct link to CONTRIBUTING.md",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/60",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/60#issuecomment-2265438075",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "dennyglee",
-    "avatar": "https://avatars.githubusercontent.com/u/1446829?v=4",
-    "date": "Aug 2024",
-    "text": "Oh got it, In that case, instead of modifying the `CONTRIBUTING.md` for the `CODE_OF_CONDUCT.md`, could you:\r\n* Add a new  `CODE_OF_CONDUCT.md` file that points to the UC main repo `CODE_OF_CONDUCT.md` \r\n* Modify the `CONTRIBUTING.md` so it is similar to previous and simply points to the UC main repo `CONTRIBUTING.md`.\r\n\r\nThanks! ",
-    "source": "PR #60: Add Code of Conduct link to CONTRIBUTING.md",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/60",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/60#discussion_r1701494145",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Aug 2024",
-    "text": "@xx-db can you document your decision here?",
-    "source": "Issue #55: Publish unitycatalog-ui to NPM",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/55",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/55#issuecomment-2263666469",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "dennyglee",
-    "avatar": "https://avatars.githubusercontent.com/u/1446829?v=4",
-    "date": "Aug 2024",
-    "text": "Thanks @JuanPabloDiaz  - the `Reporting Issues` seems incomplete.  ",
-    "source": "PR #60: Add Code of Conduct link to CONTRIBUTING.md",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/60",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/60#discussion_r1700183259",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "dennyglee",
-    "avatar": "https://avatars.githubusercontent.com/u/1446829?v=4",
-    "date": "Aug 2024",
-    "text": "Cool, @JuanPabloDiaz, up for creating the PR and I'll review it?",
-    "source": "PR #46: Add CONTRIBUTING.md to repo",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/46",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/46#issuecomment-2262098041",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "ognis1205",
-    "avatar": "https://avatars.githubusercontent.com/u/13074130?u=6b7979778645b0c60eae27af99bac8702e8856b6&v=4",
-    "date": "Aug 2024",
-    "text": "Thank you for sharing your ideas, folks! There are mainly two ideas:\r\n\r\n - Automatically generating interfaces from OpenAPI\r\n - Making API URL path union type and replacing fetch with axios\r\n\r\nThe first idea is straightforward but has a wide range of impacts, so I plan to implement it with the intention of including only this part in the PR at first. As for the second idea, I will share code snippets here separately, so please feel free to share your opinions.\r\n\r\nI think this issue is also related to this PR. While some parts of the current OpenAPI specification might lead to a somewhat cumbersome implementation, I believe it is a reasonable implementation considering the future:\r\n\r\nhttps://github.com/unitycatalog/unitycatalog/pull/290",
-    "source": "Discussion: Why don't we use the official OpenAPI specification?",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/discussions/54",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/discussions/54#discussioncomment-10208261",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "ognis1205",
-    "avatar": "https://avatars.githubusercontent.com/u/13074130?v=4",
-    "date": "Aug 2024",
-    "text": "@jamieknight-db\r\n\r\nThank you for filing the issue! Please feel free to assign it to me. Sorry for the late reply.",
-    "source": "Issue #57: Use the official OpenAPI specification to generate types",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/57",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/57#issuecomment-2262075606",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?u=993708d5bc7ecc7aba0f07d4e60a33349d597964&v=4",
-    "date": "Jul 2024",
-    "text": "@ognis1205 can you please comment on[ this issue ](https://github.com/unitycatalog/unitycatalog-ui/issues/57)so that I can assign to you?",
-    "source": "Discussion: Why don't we use the official OpenAPI specification?",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/discussions/54",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/discussions/54#discussioncomment-10203195",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "creechy",
-    "avatar": "https://avatars.githubusercontent.com/u/1179360?v=4",
-    "date": "Jul 2024",
-    "text": "This sounds like a good idea to me. Having two repositories makes this a little more complicated regarding synchronization, but for the short term the UI project could just grab the OpenAPI YAML from the server repo `main` branch directly - https://raw.githubusercontent.com/unitycatalog/unitycatalog/main/api/all.yaml",
-    "source": "Discussion: Why don't we use the official OpenAPI specification?",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/discussions/54",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/discussions/54#discussioncomment-10203124",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "dennyglee",
-    "avatar": "https://avatars.githubusercontent.com/u/1446829?v=4",
-    "date": "Jul 2024",
-    "text": "@JuanPabloDiaz concerning the code_of_conduct, should we create a new `CODE_OF_CONDUCT.md` verbatim and/or point to the [unitycatalog/unitycatalog/CODE_OF_CONDUCT.md](https://github.com/unitycatalog/unitycatalog/blob/main/CODE_OF_CONDUCT.md)",
-    "source": "PR #46: Add CONTRIBUTING.md to repo",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/46",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/46#issuecomment-2260681708",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Jul 2024",
-    "text": "@JuanPabloDiaz it's all yours!",
-    "source": "Issue #39: Update schema description",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/39",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/39#issuecomment-2258876595",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "xx-db",
-    "avatar": "https://avatars.githubusercontent.com/u/173016806?v=4",
-    "date": "Jul 2024",
-    "text": "yes, I can take this one",
-    "source": "Issue #38: Update catalog description",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/38",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/38#issuecomment-2258844981",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Jul 2024",
-    "text": "@xx-db can you take this first update description issue so others have code to reference for other assets?",
-    "source": "Issue #38: Update catalog description",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/38",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/38#issuecomment-2258804148",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "xx-db",
-    "avatar": "https://avatars.githubusercontent.com/u/173016806?v=4",
-    "date": "Jul 2024",
-    "text": "I can help with this one",
-    "source": "Issue #48: Add a code style tool",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/48",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/48#issuecomment-2256583194",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Jul 2024",
-    "text": "@JuanPabloDiaz I uploaded design screenshots. Would you like to take this one?",
-    "source": "Issue #38: Update catalog description",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/38",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/38#issuecomment-2256575620",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Jul 2024",
-    "text": "@JuanPabloDiaz I believe @xx-db is already working on this issue. I will get some designs for the update description tickets and those would be great first issues.",
-    "source": "Issue #33: Delete Volume",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/33",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/33#issuecomment-2256298382",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "xx-db",
-    "avatar": "https://avatars.githubusercontent.com/u/173016806?v=4",
-    "date": "Jul 2024",
-    "text": "I can take this one",
-    "source": "Issue #35: Delete Function",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/35",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/35#issuecomment-2253248658",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "xx-db",
-    "avatar": "https://avatars.githubusercontent.com/u/173016806?v=4",
-    "date": "Jul 2024",
-    "text": "I can take this one",
-    "source": "Issue #33: Delete Volume",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/33",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/33#issuecomment-2253245466",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "robertgv",
-    "avatar": "https://avatars.githubusercontent.com/u/11559903?v=4",
-    "date": "Jul 2024",
-    "text": "There is a space at the start of \"yarn\"",
-    "source": "PR #46: Add CONTRIBUTING.md to repo",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/46",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/46#discussion_r1692711915",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "robertgv",
-    "avatar": "https://avatars.githubusercontent.com/u/11559903?v=4",
-    "date": "Jul 2024",
-    "text": "I would like to work on this one once the PR for Delete Catalog is done! 😄 ",
-    "source": "Issue #36: Delete Schema",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/36",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/36#issuecomment-2252246085",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "robertgv",
-    "avatar": "https://avatars.githubusercontent.com/u/11559903?v=4",
-    "date": "Jul 2024",
-    "text": "Thank you @jamieknight-db! 😄 ",
-    "source": "PR #47: feat: Add 'Delete Catalog' feature in the catalog details page",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/47",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/47#discussion_r1692643540",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "robertgv",
-    "avatar": "https://avatars.githubusercontent.com/u/11559903?v=4",
-    "date": "Jul 2024",
-    "text": "Could someone squash and merge this PR? I do not have permissions.\r\nThank you! 😄 ",
-    "source": "PR #47: feat: Add 'Delete Catalog' feature in the catalog details page",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/47",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/47#issuecomment-2252157773",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "robertgv",
-    "avatar": "https://avatars.githubusercontent.com/u/11559903?v=4",
-    "date": "Jul 2024",
-    "text": "Thanks for the tip @Romanize!",
-    "source": "PR #47: feat: Add 'Delete Catalog' feature in the catalog details page",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/47",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/47#discussion_r1692638456",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "Romanize",
-    "avatar": "https://avatars.githubusercontent.com/u/79485163?v=4",
-    "date": "Jul 2024",
-    "text": "nit: you can use `{' '}` for cleaner spacing",
-    "source": "PR #47: feat: Add 'Delete Catalog' feature in the catalog details page",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/47",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/47#discussion_r1692167616",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Jul 2024",
-    "text": "This is nice 👍  we should do the same error handling on all the delete assets. ",
-    "source": "PR #47: feat: Add 'Delete Catalog' feature in the catalog details page",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/47",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/47#discussion_r1692122625",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "yc-shawn",
-    "avatar": "https://avatars.githubusercontent.com/u/23707313?v=4",
-    "date": "Jul 2024",
-    "text": "👍 it would be good to have separate PR for this to keep git history clean w/ single purpose commit next time.",
-    "source": "PR #45: Feat/delete table",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45#discussion_r1691955940",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "yc-shawn",
-    "avatar": "https://avatars.githubusercontent.com/u/23707313?v=4",
-    "date": "Jul 2024",
-    "text": "nit: is a bit duplicated.\r\n`tableFullName` always equal to `${catalog}.${schema}.${table}`",
-    "source": "PR #45: Feat/delete table",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45#discussion_r1691953814",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "yc-shawn",
-    "avatar": "https://avatars.githubusercontent.com/u/23707313?v=4",
-    "date": "Jul 2024",
-    "text": "similar but `type=\"text\"` instead of `type=\"primary\"`",
-    "source": "PR #45: Feat/delete table",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45#discussion_r1691735253",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Jul 2024",
-    "text": "Sure, I was using the template literals to handle the spaces, but I will add to the variable instead since it already utilizes curly brackets.",
-    "source": "PR #45: Feat/delete table",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45#discussion_r1691653482",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Jul 2024",
-    "text": "I kept getting 404's for the logo's in the manifest file so I removed the references and figured I would update the names while at it.",
-    "source": "PR #45: Feat/delete table",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45#discussion_r1691639775",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "robertgv",
-    "avatar": "https://avatars.githubusercontent.com/u/11559903?v=4",
-    "date": "Jul 2024",
-    "text": "This is my code:\r\n\r\n```\r\nreturn (\r\n    <>\r\n      <Dropdown menu={{ items: menuItems }} trigger={['click']}>\r\n        <Button type=\"primary\">\r\n          <MoreOutlined />\r\n        </Button>\r\n      </Dropdown>\r\n\r\n      {/* Render the EditCatalogModal */}\r\n      {openModal === CreateItemsEnum.Edit && (\r\n        <EditCatalogModal open={true} closeModal={closeModal} />\r\n      )}\r\n    </>\r\n  );\r\n```",
-    "source": "PR #45: Feat/delete table",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45#discussion_r1691027396",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "robertgv",
-    "avatar": "https://avatars.githubusercontent.com/u/11559903?v=4",
-    "date": "Jul 2024",
-    "text": "Something like this @yc-shawn ?\r\n![image](https://github.com/user-attachments/assets/1934696e-128f-4864-82a8-3458f4d3558f)\r\n",
-    "source": "PR #45: Feat/delete table",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45#discussion_r1691022949",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "Romanize",
-    "avatar": "https://avatars.githubusercontent.com/u/79485163?v=4",
-    "date": "Jul 2024",
-    "text": "Here you should pass catalog and schema name, queryKey should match same key on lane 36 in this file.",
-    "source": "PR #45: Feat/delete table",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45#discussion_r1690769954",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "MrPowers",
-    "avatar": "https://avatars.githubusercontent.com/u/2722395?v=4",
-    "date": "Jul 2024",
-    "text": "@JuanPabloDiaz - sure, assigned this one to you, thank you!",
-    "source": "Issue #26: Add CONTRIBUTING.md to repo",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/26",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/26#issuecomment-2249272753",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "yc-shawn",
-    "avatar": "https://avatars.githubusercontent.com/u/23707313?v=4",
-    "date": "Jul 2024",
-    "text": "Can we make it `type=\"text` and squared?\r\nFor UI consistency, this `...` dropdown will also show up in other pages like Catalog or Schema details, and it will have primary button next to it.",
-    "source": "PR #45: Feat/delete table",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45#discussion_r1690562389",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "yc-shawn",
-    "avatar": "https://avatars.githubusercontent.com/u/23707313?v=4",
-    "date": "Jul 2024",
-    "text": "Do we need `{}`?\r\n```suggestion\r\n        Are you sure you want to delete the table\r\n```",
-    "source": "PR #45: Feat/delete table",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45#discussion_r1690558654",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "yc-shawn",
-    "avatar": "https://avatars.githubusercontent.com/u/23707313?v=4",
-    "date": "Jul 2024",
-    "text": "is this related to this PR?",
-    "source": "PR #45: Feat/delete table",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45#discussion_r1690557682",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "yc-shawn",
-    "avatar": "https://avatars.githubusercontent.com/u/23707313?v=4",
-    "date": "Jul 2024",
-    "text": "+1 global context 👍",
-    "source": "PR #45: Feat/delete table",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45#discussion_r1690557281",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Jul 2024",
-    "text": "Ok, in order to handle this with the redirect, I'm going to create a `<NotificationContext />` so we can use it globally.",
-    "source": "PR #45: Feat/delete table",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45#discussion_r1690513600",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "Romanize",
-    "avatar": "https://avatars.githubusercontent.com/u/79485163?v=4",
-    "date": "Jul 2024",
-    "text": "I suggest using [notification api](https://ant.design/components/notification) with some duration for this.",
-    "source": "PR #45: Feat/delete table",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45#discussion_r1690483470",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "Romanize",
-    "avatar": "https://avatars.githubusercontent.com/u/79485163?v=4",
-    "date": "Jul 2024",
-    "text": "can you add catalog and schema to queryKey so we just invalidate this specific query?\r\n```suggestion\r\nqueryClient.invalidateQueries({ queryKey: ['listTables', params.catalog_name, params.schema_name] });\r\n```",
-    "source": "PR #45: Feat/delete table",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45#discussion_r1690480660",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "Romanize",
-    "avatar": "https://avatars.githubusercontent.com/u/79485163?v=4",
-    "date": "Jul 2024",
-    "text": "You might want to extend this for other usages like `rename`\r\n\r\n```suggestion\r\n enum TableActionsEnum {\r\n    Delete\r\n    Rename\r\n }\r\n  const [tableAction, setTableAction] = useState<TableActionsEnum | null>(null);\r\n  \r\n  // usage \r\n  setTableAction(TableActionsEnum.Delete)\r\n  <Modal open={tableAction === TableActionsEnum.Delete} closeModal={() => setTableAction(null) />\r\n```",
-    "source": "PR #45: Feat/delete table",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45#discussion_r1690479962",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "robertgv",
-    "avatar": "https://avatars.githubusercontent.com/u/11559903?v=4",
-    "date": "Jul 2024",
-    "text": "I would like to take this one! 😄 ",
-    "source": "Issue #37: Delete Catalog",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/37",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/37#issuecomment-2248935184",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "Romanize",
-    "avatar": "https://avatars.githubusercontent.com/u/79485163?v=4",
-    "date": "Jul 2024",
-    "text": "nit: Won't need these lanes\r\n```suggestion\r\n```",
-    "source": "PR #45: Feat/delete table",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/45#discussion_r1690475111",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "robertgv",
-    "avatar": "https://avatars.githubusercontent.com/u/11559903?v=4",
-    "date": "Jul 2024",
-    "text": "@yc-shawn Had to do via a fork because of permissions.",
-    "source": "Issue #25: Add license to repo",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/25",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/25#issuecomment-2248484036",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "MrPowers",
-    "avatar": "https://avatars.githubusercontent.com/u/2722395?v=4",
-    "date": "Jul 2024",
-    "text": "@robertgv - you can just use a fork if you don't have write access to the repo.",
-    "source": "Issue #25: Add license to repo",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/25",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/25#issuecomment-2248469820",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "yc-shawn",
-    "avatar": "https://avatars.githubusercontent.com/u/23707313?v=4",
-    "date": "Jul 2024",
-    "text": "@robertgv just create a PR against main branch",
-    "source": "Issue #25: Add license to repo",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/25",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/25#issuecomment-2248466925",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "robertgv",
-    "avatar": "https://avatars.githubusercontent.com/u/11559903?v=4",
-    "date": "Jul 2024",
-    "text": "@yc-shawn @MrPowers Can I contribute directly or do I need to fork?",
-    "source": "Issue #25: Add license to repo",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/25",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/25#issuecomment-2248463930",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "MrPowers",
-    "avatar": "https://avatars.githubusercontent.com/u/2722395?v=4",
-    "date": "Jul 2024",
-    "text": "@robertgv - yea, assigned this one to you!",
-    "source": "Issue #25: Add license to repo",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/25",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/25#issuecomment-2248453643",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "yc-shawn",
-    "avatar": "https://avatars.githubusercontent.com/u/23707313?v=4",
-    "date": "Jul 2024",
-    "text": "@robertgv this should be good: https://github.com/unitycatalog/unitycatalog/blob/main/LICENSE",
-    "source": "Issue #25: Add license to repo",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/25",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/25#issuecomment-2248442251",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "robertgv",
-    "avatar": "https://avatars.githubusercontent.com/u/11559903?v=4",
-    "date": "Jul 2024",
-    "text": "@MrPowers Should be \"Apache License 2.0\"?\r\n\r\nCan I start with this one? 😄 ",
-    "source": "Issue #25: Add license to repo",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/25",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/25#issuecomment-2248434721",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "jamieknight-db",
-    "avatar": "https://avatars.githubusercontent.com/u/172851492?v=4",
-    "date": "Jul 2024",
-    "text": "> lgtm! it would be good to attach a screenshot in PR\r\n\r\n@yc-shawn added - thank you!",
-    "source": "PR #29: add favicon, change title, delete old react logos",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/29",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/29#issuecomment-2239687642",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "Romanize",
-    "avatar": "https://avatars.githubusercontent.com/u/79485163?v=4",
-    "date": "Jul 2024",
-    "text": "just fixing parameters name",
-    "source": "PR #23: Create dropdown for creating assets under a schema",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/23",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/23#discussion_r1683140779",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "yc-shawn",
-    "avatar": "https://avatars.githubusercontent.com/u/23707313?v=4",
-    "date": "Jul 2024",
-    "text": "https://github.com/unitycatalog/unitycatalog-ui/pull/27",
-    "source": "Issue #24: Update README with project setup instructions",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/24",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/issues/24#issuecomment-2229688050",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
-    }
-  },
-  {
-    "author": "yc-shawn",
-    "avatar": "https://avatars.githubusercontent.com/u/23707313?v=4",
-    "date": "Jul 2024",
-    "text": "Nice",
-    "source": "PR #21: feat: ✨ Create catalog flow",
-    "source_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/21",
-    "comment_url": "https://github.com/unitycatalog/unitycatalog-ui/pull/21#discussion_r1676275989",
-    "repository": {
-      "owner": "unitycatalog",
-      "name": "unitycatalog-ui",
-      "full_name": "unitycatalog/unitycatalog-ui"
+      "owner": "tech-conferences",
+      "name": "conference-data",
+      "full_name": "tech-conferences/conference-data"
     }
   }
 ]
