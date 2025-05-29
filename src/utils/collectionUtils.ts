@@ -8,13 +8,36 @@ export function getSortedPosts(
 	posts: CollectionEntry<'blog'>[],
 	lang: string
 ): CollectionEntry<'blog'>[] {
+	// Convertir la fecha actual a UTC y establecerla al inicio del día
+	const now = new Date();
+	const nowUtc = Date.UTC(
+		now.getUTCFullYear(),
+		now.getUTCMonth(),
+		now.getUTCDate(),
+		0, 0, 0, 0
+	);
+
 	return posts
 		.filter((post) => post.data.lang === lang)
 		.filter((post) => {
-			
+			// Siempre filtrar posts que son borradores
+			if (post.data.draft) return false;
+
+			// En desarrollo, mostrar todos los posts no-borradores
 			if (import.meta.env.DEV) return true;
-			
-			return !post.data.draft;
+
+			// En producción, convertir la fecha de publicación a UTC
+			if (!(post.data.pubDate instanceof Date)) return false;
+
+			const pubDateUtc = Date.UTC(
+				post.data.pubDate.getUTCFullYear(),
+				post.data.pubDate.getUTCMonth(),
+				post.data.pubDate.getUTCDate(),
+				0, 0, 0, 0
+			);
+
+			// Comparar fechas en UTC
+			return pubDateUtc <= nowUtc;
 		})
 		.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 }
