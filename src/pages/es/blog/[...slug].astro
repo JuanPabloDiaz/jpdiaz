@@ -4,8 +4,25 @@ import BlogPost from '@layouts/BlogPost.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
+	const now = new Date();
+
 	return posts
-		.filter((post) => post.data.lang === 'es')
+		.filter((post) => {
+			// Filtrar por idioma
+			if (post.data.lang !== 'es') return false;
+
+			// Filtrar borradores
+			if (post.data.draft) return false;
+
+			// En desarrollo, mostrar todos los posts no-borradores
+			if (import.meta.env.DEV) return true;
+
+			// En producción, verificar la fecha
+			if (!(post.data.pubDate instanceof Date)) return false;
+
+			// Comparar fechas usando timestamps
+			return post.data.pubDate.getTime() <= now.getTime();
+		})
 		.map((post) => ({
 			params: { slug: post.slug },
 			props: { post },
@@ -13,7 +30,16 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+let Content;
+
+try {
+	const rendered = await post.render();
+	Content = rendered.Content;
+	console.log('Post rendered successfully:', post.slug);
+} catch (error) {
+	console.error('Error rendering post:', post.slug, error);
+	return Astro.redirect('/es/404');
+}
 ---
 
 <BlogPost {...post.data}>
