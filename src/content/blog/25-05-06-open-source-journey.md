@@ -3,7 +3,7 @@ title: 'My Open Source Journey'
 description: 'My journey into open source development.'
 pubDate: 2025-05-06
 lang: 'en'
-tags:
+tags: 
   - OpenSource
   - Journey
 draft: false

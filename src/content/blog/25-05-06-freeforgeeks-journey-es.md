@@ -3,7 +3,7 @@ title: 'Construyendo FreeForGeeks'
 description: 'Mi Viaje Creando un Recurso Open Source para Desarrolladores'
 pubDate: 2025-05-06
 lang: 'es'
-tags:
+tags: 
   - OpenSource
   - Journey
 draft: false

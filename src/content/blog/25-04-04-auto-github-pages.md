@@ -3,7 +3,7 @@ title: 'How Automation Transformed my Workflow'
 description: 'Automate repetitive tasks and improve your productivity with tools like GitHub Actions.'
 pubDate: 2025-04-04
 lang: 'en'
-tags:
+tags: 
   - Automation
   - GitHubActions
 draft: false

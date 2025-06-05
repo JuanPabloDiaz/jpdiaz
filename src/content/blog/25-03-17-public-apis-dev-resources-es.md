@@ -3,7 +3,7 @@ title: 'Mi experiencia como mantenedor de Public APIs y Dev Resources'
 description: 'El mundo del código abierto'
 pubDate: 2025-03-17
 lang: 'es'
-tags:
+tags: 
   - OpenSource
   - Maintainer
 draft: false

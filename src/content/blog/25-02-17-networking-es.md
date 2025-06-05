@@ -3,7 +3,7 @@ title: 'La Importancia del Networking en Tecnología'
 description: 'Más Allá del Código'
 pubDate: 2025-02-17
 lang: 'es'
-tags:
+tags: 
   - Networking
   - HabilidadesBlandas
 draft: false

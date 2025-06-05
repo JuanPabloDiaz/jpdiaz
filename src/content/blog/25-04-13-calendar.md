@@ -3,11 +3,11 @@ title: 'The Power of the Calendar'
 description: 'How Time Management Transforms Your Productivity'
 pubDate: 2025-04-13
 lang: 'en'
-image: '/blog-cover/life/calendar.webp'
-tags:
+tags: 
   - TimeManagement
   - Habits
 draft: false
+image: '/blog-cover/life/calendar.webp'
 ---
 
 # Discover how the effective use of a calendar can revolutionize your productivity.

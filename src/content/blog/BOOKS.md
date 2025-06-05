@@ -3,7 +3,7 @@ title: 'Classification of my 76 books into 10 groups'
 description: 'Classification of my 76 books into 10 groups'
 pubDate: 2025-05-25
 lang: 'en'
-tags:
+tags: 
   - Books
 draft: true
 ---

@@ -3,7 +3,7 @@ title: 'IA Generativa: De la Expectativa a la Realidad'
 description: 'Lo que todo líder empresarial necesita saber'
 pubDate: 2025-05-21
 lang: 'es'
-tags:
+tags: 
   - IAGenerativa
   - EstrategiaNegocios
 draft: false

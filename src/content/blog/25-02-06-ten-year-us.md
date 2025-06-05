@@ -3,7 +3,7 @@ title: '10 Years in the United States'
 description: 'A journey of personal transformation'
 pubDate: 2025-02-06
 lang: 'en'
-tags:
+tags: 
   - AmericanDream
   - PersonalGrowth
 draft: false

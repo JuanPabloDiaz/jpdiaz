@@ -3,7 +3,7 @@ title: 'Cómo la Automatización Transformó mi Flujo de Trabajo'
 description: 'Automatiza tareas repetitivas y mejora tu productividad con herramientas como GitHub Actions.'
 pubDate: 2025-04-04
 lang: 'es'
-tags:
+tags: 
   - Automatizacion
   - GitHubActions
 draft: false

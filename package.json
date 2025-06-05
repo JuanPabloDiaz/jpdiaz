@@ -29,6 +29,7 @@
 		"astro": "^5.8.2",
 		"dompurify": "^3.2.5",
 		"fuse.js": "^7.1.0",
+		"gray-matter": "^4.0.3",
 		"mathjax": "^3.2.2",
 		"mermaid": "^11.6.0",
 		"remixicon": "^4.6.0",

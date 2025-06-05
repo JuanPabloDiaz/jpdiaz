@@ -1,14 +1,14 @@
 ---
 title: 'New Features'
-description: More new features specific to this theme.
+description: 'More new features specific to this theme.'
 pubDate: 2025-05-06
 lang: 'en'
-tags:
+tags: 
   - Markdown
   - Features
   - Guide
-image: '/certification/IT-WebTechnologies(AAS).jpg'
 draft: true
+image: '/certification/IT-WebTechnologies(AAS).jpg'
 mathjax: true
 mermaid: true
 ---

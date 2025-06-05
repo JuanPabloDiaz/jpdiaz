@@ -3,7 +3,11 @@ title: '8 Libros Esenciales para Todo Emprendedor'
 description: 'Una selección de lecturas fundamentales que todo emprendedor debería considerar para desarrollar habilidades de liderazgo, negociación y crecimiento empresarial.'
 pubDate: 2025-05-28
 lang: 'es'
-tags: ['negocios', 'liderazgo', 'libros', 'emprendimiento']
+tags: 
+  - negocios
+  - liderazgo
+  - libros
+  - emprendimiento
 draft: false
 ---
 

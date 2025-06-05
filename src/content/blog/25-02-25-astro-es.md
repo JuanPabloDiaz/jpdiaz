@@ -3,7 +3,7 @@ title: 'Astro: El framework agnóstico que redefine la velocidad en la web'
 description: 'Un viaje personal hacia la simplicidad y el rendimiento en el desarrollo web'
 pubDate: 2025-02-25
 lang: 'es'
-tags:
+tags: 
   - Astro
   - DesarrolloWeb
 draft: false
