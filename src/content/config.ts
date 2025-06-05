@@ -36,7 +36,7 @@ const blogCollection = defineCollection({
 			lang: z.enum(i18nLangs),
 			draft: z.boolean().optional(),
 			author: z.string().optional(),
-			type: z.enum(['blog', 'rss']).optional().default('blog'),
+			type: z.enum(['blog', 'rss']).default('blog'),
 			metaTitle: z.string().optional(),
 			metaDescription: z.string().optional(),
 			ogImage: image().optional(), // For specific OG image per post
