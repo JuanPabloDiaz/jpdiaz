@@ -15,11 +15,14 @@
 		"lint": "npx eslint --ext .js,.ts,.astro .",
 		"lint:fix": "npx eslint --ext .js,.ts,.astro . --fix",
 		"check": "npx eslint --ext .js,.ts,.astro . && npx prettier --check \"**/*.{astro,md,json}\"",
-		"clean": "rm -rf node_modules .astro dist && npm install",
+		"clean": "rm -rf node_modules .astro dist && yarn install",
 		"lighthouse": "npx unlighthouse --site https://jpdiaz.dev",
 		"lighthouse:local": "npx unlighthouse --site http://localhost:4321",
 		"testimonios": "python3 scripts/find_testimonials.py",
 		"testimonios:manual": "python3 scripts/fetch_testimonials.py"
+	},
+	"engines": {
+		"node": ">=20.3.0"
 	},
 	"dependencies": {
 		"@fancyapps/ui": "^5.0.36",
