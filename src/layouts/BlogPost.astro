@@ -11,7 +11,7 @@ interface Props {
 	pubDate: Date;
 	updatedDate?: Date;
 	lang: 'en' | 'es';
-	tags: string[];
+	tags?: string[];
 	image?: string;
 	canonicalURL?: string;
 	draft?: boolean;
@@ -20,18 +20,18 @@ interface Props {
 }
 
 const {
-	title,
-	description,
-	pubDate,
+	title = 'No title',
+	description = '',
+	pubDate = new Date(),
 	updatedDate,
-	lang,
-	tags,
+	lang = 'en',
+	tags = [],
 	image,
 	canonicalURL,
-	draft,
-	mathjax,
-	mermaid,
-} = Astro.props;
+	draft = false,
+	mathjax = false,
+	mermaid = false,
+} = Astro.props ?? {};
 const formattedPubDate = pubDate.toLocaleDateString(lang === 'es' ? 'es-ES' : ('en-US' as const), {
 	year: 'numeric',
 	month: 'long',
@@ -104,15 +104,17 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString(
 				)
 			}
 		</div>
-		<div class="mb-8">
-			{
-				tags.map((tag) => (
-					<span class="bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 mr-2 inline-block rounded-full px-3 py-1 text-sm">
-						#{tag}
-					</span>
-				))
-			}
-		</div>
+		{
+			Array.isArray(tags) && tags.length > 0 && (
+				<div class="mb-8">
+					{tags.map((tag) => (
+						<span class="bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 mr-2 inline-block rounded-full px-3 py-1 text-sm">
+							#{tag}
+						</span>
+					))}
+				</div>
+			)
+		}
 		<div class="prose-black prose max-w-none dark:prose-invert">
 			<slot />
 		</div>
