@@ -5,7 +5,7 @@ pubDate: 2025-04-20
 tags:
   - Productividad
   - Bienestar
-lang: es
+lang: 'es'
 draft: false
 ---
 
