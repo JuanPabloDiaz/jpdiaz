@@ -115,9 +115,13 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString(
 				</div>
 			)
 		}
-		<div class="prose-black prose max-w-none dark:prose-invert">
-			<slot />
-		</div>
+		{
+			typeof Astro.slots.default === 'function' && (
+				<div class="prose-black prose max-w-none dark:prose-invert">
+					<slot />
+				</div>
+			)
+		}
 	</article>
 </Layout>
 
