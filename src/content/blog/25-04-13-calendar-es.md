@@ -6,8 +6,8 @@ lang: 'es'
 tags: 
   - GestionDelTiempo
   - Habitos
-draft: false
 image: '/blog-cover/life/calendar.webp'
+draft: false
 ---
 
 # Descubre cómo el uso efectivo de un calendario puede revolucionar tu productividad.

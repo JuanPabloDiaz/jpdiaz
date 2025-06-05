@@ -7,10 +7,10 @@ tags:
   - Markdown
   - Features
   - Guide
-draft: true
 image: '/certification/IT-WebTechnologies(AAS).jpg'
 mathjax: true
 mermaid: true
+draft: true
 ---
 
 ### Support Remixicon

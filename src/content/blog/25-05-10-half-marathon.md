@@ -6,8 +6,8 @@ lang: 'en'
 tags: 
   - Journey
   - Fitness
-draft: false
 image: '/blog-cover/life/run-finish.jpeg'
+draft: false
 ---
 
 # My First Half Marathon: Beyond the Pavement

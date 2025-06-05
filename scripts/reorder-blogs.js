@@ -3,7 +3,8 @@ import path from 'path';
 import matter from 'gray-matter';
 
 const BLOG_DIR = './src/content/blog';
-const desiredOrder = ['title', 'description', 'pubDate', 'lang', 'tags', 'draft'];
+const desiredOrder = ['title', 'description', 'pubDate', 'lang', 'tags', 'image', 'mathjax',
+'mermaid', 'draft'];
 
 function formatYamlValue(key, value) {
   if (typeof value === 'string') {

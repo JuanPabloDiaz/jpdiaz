@@ -6,8 +6,8 @@ lang: 'es'
 tags: 
   - Journey
   - Fitness
-draft: false
 image: '/blog-cover/life/run-finish.jpeg'
+draft: false
 ---
 
 # Mi Primera Media Maratón: Más Allá del Asfalto

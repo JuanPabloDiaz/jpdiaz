@@ -6,8 +6,8 @@ lang: 'en'
 tags: 
   - TimeManagement
   - Habits
-draft: false
 image: '/blog-cover/life/calendar.webp'
+draft: false
 ---
 
 # Discover how the effective use of a calendar can revolutionize your productivity.
