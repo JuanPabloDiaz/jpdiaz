@@ -6,7 +6,7 @@
 
 # [JpDiaz](https://jpdiaz.dev)
 
-Welcome to my personal website! I'm Juan Pablo Díaz, a Full Stack Developer and UI/UX Designer. I'm passionate about creating beautiful and intuitive user interfaces, and I'm always looking for new opportunities to learn and grow.
+Welcome to my personal website! I'm Juan Pablo Díaz, a Full Stack Developer and UI/UX Designer. I'm passionate about creating beautiful and intuitive user interfaces, and I'm always looking for new opportunities to learn and grow
 <br>
 <br>
 <br>
