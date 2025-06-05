@@ -33,7 +33,7 @@ export default defineConfig({
 	],
 	site: 'https://jpdiaz.dev/',
 	markdown: {
-    remarkPlugins: [remarkModifiedTime, resetRemark, remarkDirective, remarkAsides({}), remarkCollapse({}), remarkGithubCard({ token: process.env.PUBLIC_GITHUB_TOKEN }), remarkButton(), remarkHtml()],
+    remarkPlugins: [remarkModifiedTime, resetRemark, remarkDirective /*, remarkAsides({}), remarkCollapse({}), remarkGithubCard({ token: process.env.PUBLIC_GITHUB_TOKEN }), remarkButton(), remarkHtml() */],
     rehypePlugins: [],
 		shikiConfig: {
 			theme: 'github-dark',
