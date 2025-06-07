@@ -3,7 +3,7 @@ title: 'Mi Viaje al Código Abierto'
 description: 'Una Aventura que Transformó mi Desarrollo'
 pubDate: 2025-05-06
 lang: 'es'
-tags: 
+tags:
   - OpenSource
   - Journey
 draft: false

@@ -3,15 +3,15 @@ import {
 	getGitHubIssueComments,
 	getGitHubPullRequestReviewComments,
 	getGitHubDiscussionComments,
-} from '../utils/github';
-import TestimonialCard from '../components/ui/TestimonialCard.astro';
-import LinkedInTestimonialCard from '../components/ui/LinkedInTestimonialCard.astro';
-import type { GitHubIssueComment } from '../utils/github';
-import { parseGitHubUrl } from '../utils/urlParser';
-import SubTitle from '../components/ui/SubTitle.astro';
+	GitHubIssueComment,
+} from '@utils/github';
+import TestimonialCard from '@components/ui/TestimonialCard.astro';
+import LinkedInTestimonialCard from '@components/ui/LinkedInTestimonialCard.astro';
+import { parseGitHubUrl } from '@utils/urlParser';
+import SubTitle from '@components/ui/SubTitle.astro';
 
-import testimonialsData from '../content/testimonials.json';
-import linkedinTestimonialsData from '../content/linkedin_testimonials.json';
+import testimonialsData from '@src/content/testimonials.json';
+import linkedinTestimonialsData from '@src/content/linkedin_testimonials.json';
 
 interface Props {
 	title?: string;

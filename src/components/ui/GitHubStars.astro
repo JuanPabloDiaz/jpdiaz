@@ -18,8 +18,7 @@ try {
 		starsCount = repoData.stars.toString();
 	}
 } catch (error) {
-	// Si es un repo privado o hay error, simplemente no mostramos el componente
-	console.debug(`No se puede mostrar stars para ${github_url}: ${error.message}`);
+	console.debug(`Cannot show number of stars ${github_url}: ${error.message}`);
 }
 
 const numericStarsCount = parseInt(starsCount);

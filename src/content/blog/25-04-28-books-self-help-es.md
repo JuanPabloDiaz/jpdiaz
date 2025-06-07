@@ -3,7 +3,7 @@ title: 'Reeducando la Mente con Pensamientos Positivos'
 description: 'Libros de Autoayuda para una Mejor Versión de Ti Mismo'
 pubDate: 2025-04-28
 lang: 'es'
-tags: 
+tags:
   - Libros
   - AutoAyuda
   - DesarrolloPersonal

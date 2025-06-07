@@ -3,7 +3,7 @@ title: 'Mi Primera Media Maratón'
 description: 'Lecciones de vida más allá del asfalto'
 pubDate: 2025-05-10
 lang: 'es'
-tags: 
+tags:
   - Journey
   - Fitness
 image: '/blog-cover/life/run-finish.jpeg'

@@ -4,6 +4,7 @@ import TimeLineElement from '@components/ui/TimeLine.astro';
 import { Icon } from 'astro-icon/components';
 import Button from '@components/ui/Button.astro';
 import Navbar from '@components/Navbar.astro';
+import Polaroid from '@components/Polaroid.astro';
 import { site, resumeCertifications, resumeCourses, resumePageMenu } from '@src/consts';
 
 const PDF = './files/2025-FrontEndCV.pdf';
@@ -140,6 +141,8 @@ const basicLinkStyle =
 		</div>
 
 		<section id="certification">
+			<!-- Polaroid is to Display Certification Images -->
+			<!-- <Polaroid /> -->
 			<div class="mb-5 flex w-full items-center justify-between md:w-1/5">
 				<h2 class="w-full text-3xl font-bold">Certifications</h2>
 				<a href="https://www.linkedin.com/in/1diazdev/details/certifications" target="_blank">
@@ -318,6 +321,20 @@ const basicLinkStyle =
 								>FreeForGeeks</a
 							>
 							is a curated toolbox for building better software. Free resources for all your dev needs.
+						</li>
+						<li>
+							<a href="https://fit.jpdiaz.dev" target="_blank" class={LinkStyle}>Fitness Matrix</a> is
+							a cutting-edge web application that revolutionizes how you visualize and analyze your fitness
+							data. By seamlessly integrating Strava and Hevy APIs.
+						</li>
+
+						<li>
+							<a href="https://colombia.jpdiaz.dev" target="_blank" class={LinkStyle}>Colombia</a> is
+							an interactive web app exploring Colombia via maps, media, and data from api-colombia.com.
+						</li>
+						<li>
+							<a href="https://fav.jpdiaz.dev" target="_blank" class={LinkStyle}>Juan's Favorites</a
+							> is a curated collection of my favorite Books, movies, TV shows, Games, artists and podcasts.
 						</li>
 						<li>
 							<a href="https://follow.jpdiaz.dev" target="_blank" class={LinkStyle}

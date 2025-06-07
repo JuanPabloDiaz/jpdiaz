@@ -200,3 +200,14 @@ export const resumePageMenu = [
 		path: '#experience',
 	},
 ];
+
+export const CERTIFICATION_IMAGES = [
+	{
+		src: '/certification/IT-AplicationSoftwareFundamentals.jpg',
+		label: 'CPCC',
+	},
+	{
+		src: '/certification/IT-WebTechnologies(AAS).jpg',
+		label: 'Web Technologies (AAS)',
+	},
+];

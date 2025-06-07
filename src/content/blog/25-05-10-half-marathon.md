@@ -3,7 +3,7 @@ title: 'My First Half Marathon'
 description: 'Life lessons beyond the pavement'
 pubDate: 2025-05-10
 lang: 'en'
-tags: 
+tags:
   - Journey
   - Fitness
 image: '/blog-cover/life/run-finish.jpeg'

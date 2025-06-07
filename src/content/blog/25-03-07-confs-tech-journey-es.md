@@ -3,7 +3,7 @@ title: 'Mi Experiencia como Mantenedor de confs.tech'
 description: 'Promoviendo el Código Abierto'
 pubDate: 2025-03-07
 lang: 'es'
-tags: 
+tags:
   - OpenSource
   - Maintainer
 draft: false

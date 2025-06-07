@@ -3,7 +3,7 @@ title: 'La importancia de las habilidades blandas en tecnología'
 description: 'Un viaje personal'
 pubDate: 2025-03-15
 lang: 'es'
-tags: 
+tags:
   - HabilidadesBlandas
   - DesarrolloPersonal
 draft: false

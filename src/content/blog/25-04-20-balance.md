@@ -3,7 +3,7 @@ title: 'The Balance in Life'
 description: 'Beyond Productivity'
 pubDate: 2025-04-20
 lang: 'en'
-tags: 
+tags:
   - Productivity
   - WellBeing
 draft: false

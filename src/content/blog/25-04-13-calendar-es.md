@@ -3,7 +3,7 @@ title: 'El Poder del Calendario'
 description: 'Cómo la Gestión del Tiempo Transforma tu Productividad'
 pubDate: 2025-04-13
 lang: 'es'
-tags: 
+tags:
   - GestionDelTiempo
   - Habitos
 image: '/blog-cover/life/calendar.webp'

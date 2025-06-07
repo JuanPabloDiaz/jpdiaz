@@ -3,7 +3,7 @@ title: 'Confs.tech Maintainer'
 description: 'My Experience as a confs.tech Maintainer: Promoting Open Source'
 pubDate: 2025-03-07
 lang: 'en'
-tags: 
+tags:
   - OpenSource
   - Maintainer
 draft: false

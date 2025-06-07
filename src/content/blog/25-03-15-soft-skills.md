@@ -3,7 +3,7 @@ title: 'The Importance of Soft Skills in Technology'
 description: 'A personal journey'
 pubDate: 2025-03-15
 lang: 'en'
-tags: 
+tags:
   - SoftSkills
   - PersonalDevelopment
 draft: false

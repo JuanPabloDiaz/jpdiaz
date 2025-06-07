@@ -3,7 +3,7 @@ title: 'Jekyll: La forma más sencilla de crear sitios web estáticos con GitHub
 description: 'Descubre cómo Jekyll y GitHub Pages pueden transformar tu experiencia de desarrollo web'
 pubDate: 2025-03-23
 lang: 'es'
-tags: 
+tags:
   - Jekyll
   - GithubPages
   - DesarrolloWeb

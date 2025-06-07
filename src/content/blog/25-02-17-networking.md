@@ -3,7 +3,7 @@ title: 'The Importance of Networking in Technology'
 description: 'Beyond the Code'
 pubDate: 2025-02-17
 lang: 'en'
-tags: 
+tags:
   - Networking
   - SoftSkills
 draft: false

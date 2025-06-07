@@ -3,7 +3,7 @@ title: '8 Libros Esenciales para Todo Emprendedor'
 description: 'Mis 8 libros favoritos para emprendedores'
 pubDate: 2025-05-28
 lang: 'es'
-tags: 
+tags:
   - Libros
   - Liderazgo
   - Emprendimiento

@@ -3,7 +3,7 @@ title: 'El Contribuidor Constante'
 description: 'Encontrando Mi Camino en el Open Source'
 pubDate: 2025-05-08
 lang: 'es'
-tags: 
+tags:
   - OpenSource
   - Journey
   - Contribution

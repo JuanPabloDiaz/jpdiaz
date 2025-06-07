@@ -3,7 +3,7 @@ title: '10 Años en Estados Unidos'
 description: 'Un viaje de transformación personal'
 pubDate: 2025-02-06
 lang: 'es'
-tags: 
+tags:
   - SuenoAmericano
   - CrecimientoPersonal
 draft: false

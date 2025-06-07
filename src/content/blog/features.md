@@ -3,7 +3,7 @@ title: 'New Features'
 description: 'More new features specific to this theme.'
 pubDate: 2025-05-06
 lang: 'en'
-tags: 
+tags:
   - Markdown
   - Features
   - Guide
