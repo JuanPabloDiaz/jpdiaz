@@ -5,6 +5,7 @@ description: A web app that offers an interactive and comprehensive exploration 
 img_alt: Colombia
 link: https://colombia.jpdiaz.dev
 github_link: https://github.com/JuanPabloDiaz/colombia
+backup_url: https://clombia.netlify.app
 tags: ['Next', 'JS', 'TS', 'Tailwind']
 image: ../../assets/images/projects/colombia.webp
 ---

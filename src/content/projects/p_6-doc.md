@@ -5,6 +5,7 @@ description: My documentation site for projects, tech notes, and career advancem
 img_alt: Juan Diaz's Docs Project
 link: https://docs.jpdiaz.dev
 github_link: https://github.com/JuanPabloDiaz/doc
+backup_url: https://docjp.netlify.app
 tags: ['Jekyll', 'Ruby', 'JS', 'SASS', 'Terminal']
 image: ../../assets/images/projects/docs.png
 ---

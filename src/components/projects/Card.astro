@@ -8,6 +8,7 @@ import { Icon } from 'astro-icon/components';
 interface Props {
 	title: string;
 	url: string;
+	backup_url?: string;
 	github_url?: string;
 	alt: string;
 	description: string;
@@ -32,6 +33,7 @@ interface Props {
 const {
 	title,
 	url,
+	backup_url = '',
 	github_url = '#',
 	alt = 'Project preview',
 	description = 'Project description',
@@ -168,6 +170,19 @@ const {
 							<Icon name="majesticons:open" class="h-5 w-5" />
 							<span class="whitespace-nowrap text-sm font-medium">Demo</span>
 						</a>
+						{
+							backup_url && (
+								<a
+									href={backup_url}
+									target="_blank"
+									aria-label={`link to backup demo of project: ${title}`}
+									class="inline-flex items-center gap-1.5 rounded-lg bg-orange px-3 py-1.5 shadow-sm shadow-black/20 transition-all duration-300 hover:scale-105 hover:bg-opacity-80 hover:shadow-none"
+								>
+									<Icon name="majesticons:open" class="h-5 w-5" />
+									<span class="whitespace-nowrap text-sm font-medium">Backup</span>
+								</a>
+							)
+						}
 						{
 							github_url !== '#' && (
 								<a

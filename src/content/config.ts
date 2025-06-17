@@ -17,6 +17,7 @@ const projectCollection = defineCollection({
 			description: z.string(),
 			img_alt: z.string().optional(),
 			link: z.string().optional().nullable(),
+			backup_url: z.string().optional().nullable(),
 			github_link: z.string().optional(),
 			tags: z.array(z.string()),
 			image: image().optional(),
