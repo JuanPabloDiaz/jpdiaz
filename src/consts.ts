@@ -16,7 +16,7 @@ export const site = {
 		'Web developer portfolio',
 	],
 	aboutMePageDescription:
-		'Committed Full Stack Developer seeking opportunities in growth-oriented startups. Upholds values of discipline, loyalty, and reliability, with a self-motivated approach to continuous learning and skill enhancement',
+	'Committed Full Stack Developer advancing into Data Engineering, seeking opportunities with innovative teams. From 🇨🇴 in 🇺🇸, driven by continuous learning and passionate about building powerful solutions.'
 };
 
 export const GENERATE_SLUG_FROM_TITLE = true;
