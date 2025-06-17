@@ -1,0 +1,18 @@
+# Allow all main content
+User-agent: *
+
+# Block error, test, and utility endpoints
+Disallow: /404
+Disallow: /test
+Disallow: /search.json
+Disallow: /rss/
+Disallow: /go/
+
+# Allow all assets
+Allow: /images/
+Allow: /files/
+Allow: /blog-cover/
+Allow: /certification/
+
+# for the sitemap, uncomment the next line and set the correct URL
+# Sitemap: https://your-domain.com/sitemap.xml
