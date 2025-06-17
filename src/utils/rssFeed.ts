@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 import { parseStringPromise } from 'xml2js';
 
-const RSS_FEED_BASE_URL = 'https://talentoparati.com/';
+const RSS_FEED_BASE_URL = 'https://talentoparati.netlify.app/';
 const TARGET_AUTHOR = 'juan diaz';
 
 export interface RssFeedOptions {

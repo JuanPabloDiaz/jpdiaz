@@ -48,7 +48,7 @@ export const config = {
 export const whatImDoing = [
 	{
 		role: 'Founder & Full Stack Developer @',
-		url: 'https://talentoparati.com',
+		url: 'https://talentoparati.netlify.app',
 		repo: '#',
 		title: 'Talento Para TI',
 		date: 'June 2024.',
