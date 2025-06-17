@@ -5,7 +5,7 @@ description: A personal site for a client. Displays the location of both the vis
 img_alt: Migue Diaz Project
 link: https://miguediaz.com
 # github_link:
-backup_url: https://mige.netlify.app
+backup_url: https://madiaz.netlify.app
 tags: ['Next', 'JS', 'Tailwind', 'Leaflet', 'API', 'Supabase']
 image: ../../assets/images/projects/migue-diaz.png
 ---
