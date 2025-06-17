@@ -1,5 +1,5 @@
 ---
-inProgress: false
+inProgress: true
 title: Google
 description: A Google homepage clone.
 link: https://googlehtml.jpdiaz.dev
