@@ -10,7 +10,7 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"deploy:cloudflare": "npx wrangler@latest deploy",
-		"preview:cloudflare": "npx wrangler@latest dev --local",
+"preview:cloudflare": "yarn build && npx wrangler@latest dev --local",
 		"astro": "astro",
 		"test": "playwright test",
 		"format": "npx prettier --write \"**/*.{astro,md,json}\"",
