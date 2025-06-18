@@ -1,5 +1,5 @@
 ---
-inProgress: false
+inProgress: true #set false when vercel is working
 title: Book Store
 description: A Full Stack Book Store web app using MERN stack.
 img_alt: Book Store
