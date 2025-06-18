@@ -1,5 +1,5 @@
 {
-	"name": "jpdiaz.dev",
+	"name": "jpdiaz",
 	"author": "Juan Diaz",
 	"version": "0.0.1",
 	"homepage": "https://jpdiaz.dev",
@@ -17,7 +17,7 @@
 		"lint": "npx eslint --ext .js,.ts,.astro .",
 		"lint:fix": "npx eslint --ext .js,.ts,.astro . --fix",
 		"check": "npx eslint --ext .js,.ts,.astro . && npx prettier --check \"**/*.{astro,md,json}\"",
-		"clean": "rm -rf node_modules .astro dist yarn.lock && yarn install",
+		"clean": "rm -rf node_modules .astro dist yarn.lock .yarn/cache && yarn install",
 		"lighthouse": "npx unlighthouse --site https://jpdiaz.dev",
 		"lighthouse:local": "npx unlighthouse --site http://localhost:4321",
 		"testimonios": "python3 scripts/find_testimonials.py",
