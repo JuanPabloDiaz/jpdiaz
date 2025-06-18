@@ -24,6 +24,8 @@ Welcome to my personal website! I'm Juan Pablo Díaz, a Full Stack Developer and
 <div align="center">
 
 [![jpdiaz](https://img.shields.io/badge/View%20Demo-000?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://jpdiaz.dev)
+[![backup demo](https://img.shields.io/badge/Backup%20Demo-000?style=for-the-badge&logo=Netlify&logoColor=white)](https://jpdiaz.netlify.app/)
+[![Cloudflare Demo](https://img.shields.io/badge/Backup%20Demo-000?style=for-the-badge&logo=Cloudflare&logoColor=white)](https://jpdiaz.jpdiaz.workers.dev)
 [![repo](https://img.shields.io/badge/View%20Code-000?style=for-the-badge&logo=GitHub&logoColor=white)](https://stackblitz.com/github.com/JuanPabloDiaz/jpdiaz)
 
 </div>
@@ -77,6 +79,7 @@ Features:
 - ✅ Markdown support
 - ✅ Google Analytics metrics
 - ✅ [GitHub Actions for automated tasks](https://github.com/JuanPabloDiaz/jpdiaz/actions)
+- ✅ Easy deploy to Vercel, Netlify and Cloudflare Workers
 
 ## Useful Commands 🧰
 
@@ -99,11 +102,11 @@ To get started with [jpdiaz](https://jpdiaz.dev), simply clone the repository an
    ```sh
    yarn run dev
    ```
-4. Open [http://localhost:5173/](http://localhost:5173/) with your browser to see the result.
+4. Open [http://localhost:5173](http://localhost:5173/) with your browser to see the result.
 
 ## Contribution 🤝
 
-I welcome contributions to the jpdiaz collection repo! Feel free to fork the repository and submit pull requests with your improvements. -->
+I welcome contributions to the jpdiaz collection repo! Feel free to fork the repository and submit pull requests with your improvements.
 
 ## License 📜
 
@@ -121,6 +124,8 @@ Resources list that I find helpful and would like to give credit to.
 - [AstroShip](https://astroship.web3templates.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Vercel](https://vercel.com/)
+- [Netlify](https://netlify.com/)
+- [Cloudflare](https://cloudflare.com/)
 - [GitHub API](https://docs.github.com/en/rest)
 - [Web3Forms](https://web3forms.com/)
 - [Dev-skill-icons](https://github.com/lelouchfr/skill-icons) <!-- skillicons.dev -->
