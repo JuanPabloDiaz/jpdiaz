@@ -7,7 +7,7 @@ import Navbar from '@components/Navbar.astro';
 import Polaroid from '@components/Polaroid.astro';
 import { site, resumeCertifications, resumeCourses, resumePageMenu } from '@src/consts';
 
-const PDF = '/files/2025-FullStackCV.pdf';
+const PDF = '/files/2025-SoftwareEngineer-DataEngineerCV.pdf';
 const LinkStyle =
 	'hover:text-black dark:hover:text-white text-orange transition duration-300 dark:text-orange hover:underline hover:underline-offset-4';
 const basicLinkStyle =
@@ -43,9 +43,17 @@ const basicLinkStyle =
 				</div>
 
 				<div class="mb-10 text-justify">
-					Full Stack developer advancing into data engineering. Databricks MVP pursuing Data
-					Engineer Professional certification, certified with Generative AI expertise. Open-source
-					maintainer, tech content creator, and community organizer leading Apache Spark meetups.
+					Full Stack developer advancing into data engineering.
+					<a
+						href="https://www.databricks.com/discover/mvps"
+						target="_blank"
+						rel="noopener noreferrer"
+						class={LinkStyle}
+					>
+						Databricks MVP</a
+					> pursuing Data Engineer Professional certification, certified with Generative AI expertise.
+					Open-source maintainer, tech content creator, and community organizer leading Apache Spark
+					meetups.
 				</div>
 			</section>
 
@@ -70,21 +78,6 @@ const basicLinkStyle =
 					<li>CSS</li>
 				</ul>
 			</section>
-
-			<!-- <section id="posts">
-				<div class="mb-5">
-					<h2 class="w-full text-3xl font-bold">Posts</h2>
-				</div>
-
-				<ul class="mx-6 mb-10 grid list-disc gap-2">
-					<li>
-						<a href="#" target="_blank"> Posts Name (with link)</a>
-					</li>
-					<li>
-						<a href="#" target="_blank"> Posts Name (with link)</a>
-					</li>
-				</ul>
-			</section> -->
 
 			<!-- the div below is used to scroll to this section and place the navbar in this h-12 div otherwise the navbar will overlap the section -->
 			<div class="h-12" id="education"></div>
@@ -198,6 +191,44 @@ const basicLinkStyle =
 			</ul>
 		</section>
 
+		<section id="meetup">
+			<div class="mb-5">
+				<h2 class="w-full text-3xl font-bold">Meetup Co-organizer</h2>
+			</div>
+			<p>
+				Organize events for the <a
+					href="https://spark.apache.org/community"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-black transition duration-300 hover:text-orange hover:underline hover:underline-offset-4 dark:text-white dark:hover:text-orange"
+				>
+					Apache Spark community</a
+				>.
+			</p>
+			<ul class="mx-6 mb-10 grid list-disc gap-2">
+				<li>
+					<a
+						href="https://www.meetup.com/es/Apache-Spark-Bogota"
+						target="_blank"
+						rel="noopener noreferrer"
+						class={LinkStyle}
+					>
+						Apache Spark Bogotá</a
+					>
+				</li>
+				<li>
+					<a
+						href="https://www.meetup.com/es-ES/apache-spark-mexicocity"
+						target="_blank"
+						rel="noopener noreferrer"
+						class={LinkStyle}
+					>
+						Apache Spark México City</a
+					>
+				</li>
+			</ul>
+		</section>
+
 		<!-- the div below is used to scroll to this section and place the navbar in this h-12 div otherwise the navbar will overlap the section -->
 		<div class="h-12" id="experience"></div>
 
@@ -211,7 +242,7 @@ const basicLinkStyle =
 
 			<div class="time-line-container mb-10">
 				<TimeLineElement
-					title="Owner & Developer @ Talento Para TI"
+					title="Software Engineer & Data Engine @ Talento Para TI"
 					subtitle="From July 2024 to Present. ~ Remote"
 					url="https://talentoparati.netlify.app"
 				>
@@ -229,7 +260,7 @@ const basicLinkStyle =
 					</ul>
 				</TimeLineElement>
 				<TimeLineElement
-					title="Open-Source Maintainer @ Confs.tech 🎙️"
+					title="Open-Source Maintainer - Software Engineer @ Confs.tech 🎙️"
 					subtitle="From Apr. 2024 to Present. ~ Remote"
 					url="https://confs.tech"
 				>
@@ -287,17 +318,17 @@ const basicLinkStyle =
 					</ul>
 				</TimeLineElement>
 				<TimeLineElement
-					title="Open-Source Maintainer @ Public APIs 📡"
+					title="Open-Source Maintainer @ Public APIs"
 					subtitle="From July 2024 to Present. ~ Remote"
 					url="https://publicapis.dev"
 				/>
 				<TimeLineElement
-					title="Open-Source Maintainer @ Dev Resources 🛠️"
+					title="Open-Source Maintainer @ Dev Resources"
 					subtitle="From July 2024 to Present. ~ Remote"
 					url="https://devresourc.es"
 				/>
 				<TimeLineElement
-					title="Open Source Contributor 🤝"
+					title="Open Source Contributor"
 					subtitle="From Jan. 2024 to Present. ~ Remote"
 				>
 					<ul class="ml-6 list-disc">
@@ -309,7 +340,7 @@ const basicLinkStyle =
 					</ul>
 				</TimeLineElement>
 				<TimeLineElement
-					title="Personal Projects as Web Developer 🏠"
+					title="Professional Projects / Full Stack Projects"
 					subtitle="From Feb. 2023 to Present. ~ Charlotte, NC, USA"
 				>
 					<ul class="ml-6 list-disc">

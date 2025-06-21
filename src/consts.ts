@@ -16,7 +16,7 @@ export const site = {
 		'Web developer portfolio',
 	],
 	aboutMePageDescription:
-	'Committed Full Stack Developer advancing into Data Engineering, seeking opportunities with innovative teams. From 🇨🇴 in 🇺🇸, driven by continuous learning and passionate about building powerful solutions.'
+		'Committed Full Stack Developer advancing into Data Engineering, seeking opportunities with innovative teams. From 🇨🇴 in 🇺🇸, driven by continuous learning and passionate about building powerful solutions.',
 };
 
 export const GENERATE_SLUG_FROM_TITLE = true;
@@ -164,6 +164,10 @@ export const resumeCertifications = [
 ];
 
 export const resumeCourses = [
+	{
+		url: 'https://platzi.com/p/1diazdev',
+		title: 'Multiple courses at Platzi.com',
+	},
 	{
 		url: 'https://platzi.com/p/1diazdev/curso/7396-course/diploma/detalle/',
 		title: 'React course with Vite.js & Tailwind CSS',
