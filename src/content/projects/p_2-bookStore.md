@@ -5,7 +5,7 @@ description: A Full Stack Book Store web app using MERN stack.
 img_alt: Book Store
 link: https://boks.netlify.app
 #vercel: https://books.jpdiaz.dev
-backup_url: https://books-b.netlify.app/api/books
+backup_url: https://books-b.netlify.app
 #vercel-backend: https://backendbooks.jpdiaz.dev/api/books
 # github_link: https://github.com/JuanPabloDiaz/bookStore
 # github_backend: https://github.com/JuanPabloDiaz/booksStore
