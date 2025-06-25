@@ -11,9 +11,9 @@ draft: false
 
 I’m pumped to share a cool AWS project I’ve been working on. Today, we’re diving into how to deploy a static website (HTML, CSS, and JavaScript) using **Amazon S3**, **CloudFront**, and **Route 53**. This guide is for junior devs and curious folks who want to learn AWS in a fun, hands-on way. I believe teaching is the best way to learn, so let’s break this down step by step—no overwhelming details, just the big picture to get you started!
 
-**Projects architecture:**
+**Project architecture:**
 
-![projects architecture](/src/assets/images/blog/aws/aws-s3.svg)
+![project architecture](../../assets/images/blog/aws/aws-s3.png)
 
 ## Why This Project?
 
