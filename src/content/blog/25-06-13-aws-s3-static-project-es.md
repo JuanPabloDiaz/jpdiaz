@@ -6,14 +6,18 @@ lang: 'es'
 tags:
   - AWS
   - S3
+# image: '/blog-cover/life/run-finish.jpeg'
 draft: false
 ---
 
 Estoy muy emocionado de compartir un proyecto genial de AWS en el que he estado trabajando. Hoy, vamos a sumergirnos en cómo desplegar un sitio web estático (HTML, CSS y JavaScript) usando **Amazon S3**, **CloudFront** y **Route 53**. Esta guía es para desarrolladores junior y personas curiosas que quieren aprender AWS de una manera divertida y práctica. Creo que enseñar es la mejor manera de aprender, así que vamos a desglosarlo paso a paso, sin detalles abrumadores, solo el panorama general para que puedas empezar.
 
-## ¿Por qué este proyecto?
+**Arquitectura de proyectos:**
+![arquitectura de proyectos](/src/assets/images/blog/aws/aws-s3.svg)
 
-Esta configuración es perfecta para alojar un portafolio, blog o un pequeño proyecto, ofreciendo un dominio personalizado, HTTPS seguro y una entrega global ultrarrápida. Es una forma ideal de explorar AWS sin perderse en los detalles. Estoy usando una página de inicio simple `index.html` (que enlaza a mis perfiles) como una alternativa a Linktree: una forma limpia y efectiva de gestionar tus enlaces. ¿Listo? ¡Vamos!
+## ¿Porqué este proyecto?
+
+Esta configuración es perfecta para alojar un portafolio, blog o un pequeño proyecto, ofreciendo un dominio personalizado, HTTPS seguro y una entrega global ultrarrápida. Es una forma ideal de explorar AWS sin perderse en los detalles. Estoy usando una página de inicio simple `index.html` (que enlaza mis perfiles) como una alternativa a Linktree: una forma limpia y efectiva de gestionar tus enlaces. ¿Listo? ¡Vamos!
 
 ## Lo que necesitarás
 
