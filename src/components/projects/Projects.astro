@@ -94,227 +94,234 @@ const projectsWithGitHubData = await Promise.all(
 	<div class="mt-8">
 		<Link text="View more Projects" ariaLabel="View more projects" href="./more-projects" arrow />
 	</div>
-	<div class="my-10">
-		<GithubButtons />
+
+	<div class="mt-2">
+		<div class="my-10">
+			<GithubButtons />
+		</div>
 	</div>
-</section>
 
-<script>
-	import Swiper from 'swiper';
-	import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+	<div class="mt-2">
+		<Link text="Repos" ariaLabel="repos project" href="https://repos.jpdiaz.dev" />
+	</div>
 
-	// Initialize Swiper
-	document.addEventListener('DOMContentLoaded', () => {
-		const projectsSwiper = new Swiper('.projects-swiper', {
-			modules: [Pagination, Navigation, Autoplay],
-			slidesPerView: 1,
-			spaceBetween: 20,
-			centeredSlides: false,
-			loop: true,
-			grabCursor: true,
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-				dynamicBullets: false,
-			},
-			navigation: {
-				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev',
-			},
-			autoplay: {
-				delay: 5000,
-				disableOnInteraction: false,
-				pauseOnMouseEnter: true,
-			},
-			breakpoints: {
-				// when window width is >= 640px
-				640: {
-					slidesPerView: 1,
-					spaceBetween: 20,
+	<script>
+		import Swiper from 'swiper';
+		import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+
+		// Initialize Swiper
+		document.addEventListener('DOMContentLoaded', () => {
+			const projectsSwiper = new Swiper('.projects-swiper', {
+				modules: [Pagination, Navigation, Autoplay],
+				slidesPerView: 1,
+				spaceBetween: 20,
+				centeredSlides: false,
+				loop: true,
+				grabCursor: true,
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+					dynamicBullets: false,
 				},
-				// when window width is >= 768px
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 30,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
 				},
-				// when window width is >= 1024px
-				1024: {
-					slidesPerView: 3,
-					spaceBetween: 40,
+				autoplay: {
+					delay: 5000,
+					disableOnInteraction: false,
+					pauseOnMouseEnter: true,
 				},
-			},
-			effect: 'slide',
-			speed: 800,
-			preloadImages: true,
-			watchSlidesProgress: true,
+				breakpoints: {
+					// when window width is >= 640px
+					640: {
+						slidesPerView: 1,
+						spaceBetween: 20,
+					},
+					// when window width is >= 768px
+					768: {
+						slidesPerView: 2,
+						spaceBetween: 30,
+					},
+					// when window width is >= 1024px
+					1024: {
+						slidesPerView: 3,
+						spaceBetween: 40,
+					},
+				},
+				effect: 'slide',
+				speed: 800,
+				preloadImages: true,
+				watchSlidesProgress: true,
+			});
 		});
-	});
-</script>
+	</script>
 
-<style>
-	.projects-swiper-container {
-		padding: 0 25px;
-		max-width: 1400px;
-		margin: 0 auto;
-		position: relative;
-	}
+	<style>
+		.projects-swiper-container {
+			padding: 0 25px;
+			max-width: 1400px;
+			margin: 0 auto;
+			position: relative;
+		}
 
-	.swiper {
-		width: 100%;
-		padding-bottom: 60px;
-		/* overflow: visible; */
-	}
+		.swiper {
+			width: 100%;
+			padding-bottom: 60px;
+			/* overflow: visible; */
+		}
 
-	.swiper-slide {
-		height: auto;
-		display: flex;
-		justify-content: center;
-	}
+		.swiper-slide {
+			height: auto;
+			display: flex;
+			justify-content: center;
+		}
 
-	/* Style pagination bullets - smaller, cleaner bullets */
-	:global(.swiper-pagination-bullet) {
-		background: theme('colors.orange', #ff5733);
-		opacity: 0.5;
-		width: 8px;
-		height: 8px;
-		margin: 0 6px;
-		transition: all 0.3s ease;
-	}
+		/* Style pagination bullets - smaller, cleaner bullets */
+		:global(.swiper-pagination-bullet) {
+			background: theme('colors.orange', #ff5733);
+			opacity: 0.5;
+			width: 8px;
+			height: 8px;
+			margin: 0 6px;
+			transition: all 0.3s ease;
+		}
 
-	:global(.swiper-pagination-bullet-active) {
-		opacity: 1;
-		width: 8px;
-		height: 8px;
-		transform: scale(1.2);
-	}
+		:global(.swiper-pagination-bullet-active) {
+			opacity: 1;
+			width: 8px;
+			height: 8px;
+			transform: scale(1.2);
+		}
 
-	/* Custom navigation buttons */
-	:global(.custom-nav-btn) {
-		position: absolute;
-		top: 50%;
-		width: 35px;
-		height: 35px;
-		border-radius: 50%;
-		background-color: theme('colors.orange', #ff5733);
-		color: white;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		z-index: 10;
-		cursor: pointer;
-		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-		transition: all 0.3s ease;
-	}
-
-	:global(.custom-nav-btn:hover) {
-		background-color: #ff7f50;
-		transform: scale(1.1);
-	}
-
-	:global(.custom-prev-btn) {
-		left: -10px;
-	}
-
-	:global(.custom-next-btn) {
-		right: -10px;
-	}
-
-	:global(.swiper-button-next:after),
-	:global(.swiper-button-prev:after) {
-		font-size: 1rem;
-		font-weight: bold;
-	}
-
-	/* Style pagination bullets */
-	:global(.swiper-pagination-bullet) {
-		background: theme('colors.orange', #ff5733);
-		opacity: 0.5;
-		width: 10px;
-		height: 10px;
-		transition: all 0.3s ease;
-	}
-
-	:global(.swiper-pagination-bullet-active) {
-		opacity: 1;
-		width: 20px;
-		border-radius: 5px;
-	}
-
-	/* Responsiveness adjustments */
-	@media (max-width: 768px) {
+		/* Custom navigation buttons */
 		:global(.custom-nav-btn) {
+			position: absolute;
+			top: 50%;
 			width: 35px;
 			height: 35px;
+			border-radius: 50%;
+			background-color: theme('colors.orange', #ff5733);
+			color: white;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			z-index: 10;
+			cursor: pointer;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+			transition: all 0.3s ease;
+		}
+
+		:global(.custom-nav-btn:hover) {
+			background-color: #ff7f50;
+			transform: scale(1.1);
 		}
 
 		:global(.custom-prev-btn) {
-			left: -5px;
+			left: -10px;
 		}
 
 		:global(.custom-next-btn) {
-			right: -5px;
-		}
-	}
-
-	/* Style navigation arrows - Enhanced version */
-	:global(.swiper-button-next),
-	:global(.swiper-button-prev) {
-		background-color: theme('colors.orange', #ff5733);
-		color: white;
-		width: 40px;
-		height: 40px;
-		border-radius: 50%;
-		opacity: 0.8;
-		transition: all 0.3s ease;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		/* Move buttons inward so they don't touch the card edges */
-		margin: 0 10px;
-	}
-
-	:global(.swiper-button-next:hover),
-	:global(.swiper-button-prev:hover) {
-		opacity: 1;
-		transform: scale(1.1);
-		box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-	}
-
-	:global(.swiper-button-next:after),
-	:global(.swiper-button-prev:after) {
-		font-size: 1.2rem;
-		font-weight: bold;
-	}
-
-	/* Position the navigation buttons outside the slides */
-	:global(.swiper-button-next) {
-		right: 10px;
-	}
-
-	:global(.swiper-button-prev) {
-		left: 10px;
-	}
-
-	/* Responsiveness adjustments */
-	@media (min-width: 1024px) {
-		:global(.swiper-button-next) {
 			right: -10px;
-		}
-
-		:global(.swiper-button-prev) {
-			left: -10px;
-		}
-	}
-
-	@media (max-width: 640px) {
-		:global(.swiper-button-next),
-		:global(.swiper-button-prev) {
-			display: flex;
-			width: 30px;
-			height: 30px;
 		}
 
 		:global(.swiper-button-next:after),
 		:global(.swiper-button-prev:after) {
-			font-size: 0.8rem;
+			font-size: 1rem;
+			font-weight: bold;
 		}
-	}
-</style>
+
+		/* Style pagination bullets */
+		:global(.swiper-pagination-bullet) {
+			background: theme('colors.orange', #ff5733);
+			opacity: 0.5;
+			width: 10px;
+			height: 10px;
+			transition: all 0.3s ease;
+		}
+
+		:global(.swiper-pagination-bullet-active) {
+			opacity: 1;
+			width: 20px;
+			border-radius: 5px;
+		}
+
+		/* Responsiveness adjustments */
+		@media (max-width: 768px) {
+			:global(.custom-nav-btn) {
+				width: 35px;
+				height: 35px;
+			}
+
+			:global(.custom-prev-btn) {
+				left: -5px;
+			}
+
+			:global(.custom-next-btn) {
+				right: -5px;
+			}
+		}
+
+		/* Style navigation arrows - Enhanced version */
+		:global(.swiper-button-next),
+		:global(.swiper-button-prev) {
+			background-color: theme('colors.orange', #ff5733);
+			color: white;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			opacity: 0.8;
+			transition: all 0.3s ease;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			/* Move buttons inward so they don't touch the card edges */
+			margin: 0 10px;
+		}
+
+		:global(.swiper-button-next:hover),
+		:global(.swiper-button-prev:hover) {
+			opacity: 1;
+			transform: scale(1.1);
+			box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+		}
+
+		:global(.swiper-button-next:after),
+		:global(.swiper-button-prev:after) {
+			font-size: 1.2rem;
+			font-weight: bold;
+		}
+
+		/* Position the navigation buttons outside the slides */
+		:global(.swiper-button-next) {
+			right: 10px;
+		}
+
+		:global(.swiper-button-prev) {
+			left: 10px;
+		}
+
+		/* Responsiveness adjustments */
+		@media (min-width: 1024px) {
+			:global(.swiper-button-next) {
+				right: -10px;
+			}
+
+			:global(.swiper-button-prev) {
+				left: -10px;
+			}
+		}
+
+		@media (max-width: 640px) {
+			:global(.swiper-button-next),
+			:global(.swiper-button-prev) {
+				display: flex;
+				width: 30px;
+				height: 30px;
+			}
+
+			:global(.swiper-button-next:after),
+			:global(.swiper-button-prev:after) {
+				font-size: 0.8rem;
+			}
+		}
+	</style>
+</section>
