@@ -47,7 +47,7 @@ Lo que comenzó como una solución personal se ha convertido en un recurso comun
 
 Mi transición de colaborador a mantenedor ocurrió orgánicamente a través de una participación constante y un compromiso demostrado. Después de numerosas pull requests y una participación activa en varias comunidades, comencé a asumir más responsabilidades:
 
-- **[Confs.tech](https://confs.tech)** (Mantenedor desde abril de 2024): Una lista de código abierto y de colaboración colectiva de conferencias tecnológicas sobre desarrollo de software. He contribuido significativamente a la interfaz de usuario, ayudé a actualizar paquetes, corregí errores y agregué numerosas conferencias a la base de datos.
+- **[Confs.tech](https://confs.tech/pages/team)** (Mantenedor desde abril de 2024): Una lista de código abierto y de colaboración colectiva de conferencias tecnológicas sobre desarrollo de software. He contribuido significativamente a la interfaz de usuario, ayudé a actualizar paquetes, corregí errores y agregué numerosas conferencias a la base de datos.
 
 ::github{repo="tech-conferences/confs.tech"}
 

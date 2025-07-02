@@ -45,7 +45,7 @@ What started as a personal solution has grown into a community resource with 51 
 
 My transition from contributor to maintainer happened organically through consistent involvement and demonstrated commitment. After numerous pull requests and active participation in several communities, I began taking on more responsibility:
 
-- **[Confs.tech](https://confs.tech)** (Maintainer since April 2024): An open-source, crowd-sourced list of tech conferences around software development. I've contributed significantly to the UI, helped update packages, fixed bugs, and added numerous conferences to the database.
+- **[Confs.tech](https://confs.tech/pages/team)** (Maintainer since April 2024): An open-source, crowd-sourced list of tech conferences around software development. I've contributed significantly to the UI, helped update packages, fixed bugs, and added numerous conferences to the database.
 
 ::github{repo="tech-conferences/confs.tech"}
 

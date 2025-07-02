@@ -11,7 +11,7 @@ draft: false
 
 Automatizo para evitar errores. Para no tener que recordar cosas que una máquina puede hacer por mí. Para liberar espacio mental. Y sobre todo, para que mis proyectos no dependan de si tuve un buen día, si me acordé de revisar algo, o si tuve tiempo para mantenerlos.
 
-En este artículo comparto cómo la automatización se volvió parte esencial de mi flujo de trabajo en proyectos como FreeForGeeks, Confs.tech, Public APIs y mi portafolio personal. Desde pequeñas tareas hasta flujos complejos impulsados por IA, estas herramientas me han permitido trabajar de manera más eficiente y con mayor tranquilidad.
+En este artículo comparto cómo la automatización se volvió parte esencial de mi flujo de trabajo en proyectos como [FreeForGeeks](https://freeforgeeks.jpdiaz.dev), [Confs.tech](https://confs.tech/pages/team), [Public APIs](https://publicapis.dev), y mi portafolio personal. Desde pequeñas tareas hasta flujos complejos impulsados por IA, estas herramientas me han permitido trabajar de manera más eficiente y con mayor tranquilidad.
 
 ---
 

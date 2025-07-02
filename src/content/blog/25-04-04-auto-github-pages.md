@@ -11,7 +11,7 @@ draft: false
 
 I automate to avoid errors. To avoid having to remember things that a machine can do for me. To free up mental space. And above all, so that my projects don't depend on whether I had a good day, whether I remembered to check something, or whether I had time to maintain them.
 
-In this article, I share how automation has become an essential part of my workflow in projects like FreeForGeeks, Confs.tech, Public APIs, and my personal portfolio. From small tasks to complex AI-driven workflows, these tools have allowed me to work more efficiently and with greater peace of mind.
+In this article, I share how automation has become an essential part of my workflow in projects like [FreeForGeeks](https://freeforgeeks.jpdiaz.dev), [Confs.tech](https://confs.tech/pages/team), [Public APIs](https://publicapis.dev), and my personal portfolio. From small tasks to complex AI-driven workflows, these tools have allowed me to work more efficiently and with greater peace of mind.
 
 ---
 

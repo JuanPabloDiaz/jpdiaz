@@ -13,11 +13,11 @@ draft: false
 
 ![confs.tech maintainer](../../assets/images/blog/oss/confs-maintainer.png)
 
-The world of open source software is full of opportunities for those who want to contribute, learn, and grow professionally. Today I want to share my experience as a maintainer of [confs.tech](https://confs.tech), a resource that has become an important part of my professional life and has allowed me to promote open source in a meaningful way.
+The world of open source software is full of opportunities for those who want to contribute, learn, and grow professionally. Today I want to share my experience as a maintainer of [confs.tech](https://confs.tech/pages/team), a resource that has become an important part of my professional life and has allowed me to promote open source in a meaningful way.
 
 ## What is confs.tech?
 
-For those who aren't familiar, [confs.tech](https://confs.tech) is a comprehensive, open-source list of conferences related to software development. The project solves a common problem in the tech community: easily finding relevant conferences to attend, present at, or simply stay informed about events in the industry.
+For those who aren't familiar, [confs.tech](https://confs.tech/pages/team) is a comprehensive, open-source list of conferences related to software development. The project solves a common problem in the tech community: easily finding relevant conferences to attend, present at, or simply stay informed about events in the industry.
 
 As its description states:
 

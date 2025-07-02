@@ -13,7 +13,7 @@ draft: false
 
 ![confs.tech maintainer](../../assets/images/blog/oss/confs-maintainer.png)
 
-El mundo del software de código abierto está lleno de oportunidades para quien quiere contribuir, aprender y crecer profesionalmente. Hoy quiero compartir mi experiencia como mantenedor de [confs.tech](https://confs.tech), un recurso que se ha convertido en una parte importante de mi vida profesional y que me ha permitido promover el código abierto de manera significativa.
+El mundo del software de código abierto está lleno de oportunidades para quien quiere contribuir, aprender y crecer profesionalmente. Hoy quiero compartir mi experiencia como mantenedor de [confs.tech](https://confs.tech/pages/team), un recurso que se ha convertido en una parte importante de mi vida profesional y que me ha permitido promover el código abierto de manera significativa.
 
 ## ¿Qué es confs.tech?
 

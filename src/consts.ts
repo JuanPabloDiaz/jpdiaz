@@ -55,7 +55,7 @@ export const whatImDoing = [
 	},
 	{
 		role: 'Open-Source Maintainer @',
-		url: 'https://confs.tech',
+		url: 'https://confs.tech/pages/team',
 		repo: 'https://github.com/tech-conferences/conference-data/graphs/contributors',
 		title: 'Confs.tech',
 		date: 'April 2024.',
