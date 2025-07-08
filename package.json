@@ -1,6 +1,7 @@
 {
 	"name": "jpdiaz",
 	"author": "Juan Diaz",
+	"description": "Portfolio, blog and find_testimonial site of Juan Diaz, a software engineer from Colombia living in Unite States.",
 	"version": "0.0.1",
 	"homepage": "https://jpdiaz.dev",
 	"type": "module",
@@ -8,7 +9,6 @@
 	"packageManager": "yarn@1.22.19",
 	"scripts": {
 		"dev": "astro dev",
-		"start": "astro dev",
 		"build": "astro build",
 		"preview": "astro preview",
 		"deploy:cloudflare": "npx wrangler@latest deploy",
@@ -22,7 +22,7 @@
 		"clean": "rm -rf node_modules .astro dist yarn.lock .yarn/cache && yarn install",
 		"lighthouse": "npx unlighthouse --site https://jpdiaz.dev",
 		"lighthouse:local": "npx unlighthouse --site http://localhost:4321",
-		"testimonios": "python3 scripts/find_testimonials.py",
+		"testimonios": "python3 scripts/find_testimonials_github.py",
 		"testimonios:manual": "python3 scripts/fetch_testimonials.py"
 	},
 	"engines": {

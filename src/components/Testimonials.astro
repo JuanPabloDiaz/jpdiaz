@@ -30,141 +30,141 @@ const isProd = import.meta.env.PROD;
 let shouldUseFallbackTestimonials = isProd; // Always use fallbacks in production
 
 if (!isProd) {
-  // Only make API calls in development mode
-  try {
-    console.log('Running in development mode - fetching testimonials via API');
-    
-    // Process each repository group from the JSON file
-    for (const repoGroup of testimonialsData.repositories) {
-      try {
-        console.log(`Processing testimonials for repo: ${repoGroup.name}`);
+	// Only make API calls in development mode
+	try {
+		console.log('Running in development mode - fetching testimonials via API');
 
-        // Process each testimonial in this repository group
-        for (const testimonial of repoGroup.testimonials) {
-          console.log(`Processing testimonial source: ${testimonial.url}`);
+		// Process each repository group from the JSON file
+		for (const repoGroup of testimonialsData.repositories) {
+			try {
+				console.log(`Processing testimonials for repo: ${repoGroup.name}`);
 
-          // Parse the GitHub URL to extract owner, repo, number, and type
-          const parsedUrlData = parseGitHubUrl(testimonial.url);
-          console.log('Parsed URL data:', parsedUrlData);
+				// Process each testimonial in this repository group
+				for (const testimonial of repoGroup.testimonials) {
+					console.log(`Processing testimonial source: ${testimonial.url}`);
 
-          // Skip invalid URLs
-          if (
-            parsedUrlData.type === 'unknown' ||
-            !parsedUrlData.owner ||
-            !parsedUrlData.repo ||
-            !parsedUrlData.number
-          ) {
-            const errorMsg = `Invalid GitHub URL format: ${testimonial.url}`;
-            console.error(errorMsg);
-            errors.push(errorMsg);
-            continue;
-          }
+					// Parse the GitHub URL to extract owner, repo, number, and type
+					const parsedUrlData = parseGitHubUrl(testimonial.url);
+					console.log('Parsed URL data:', parsedUrlData);
 
-          const { owner, repo, number, type: commentType, commentId } = parsedUrlData;
-          let sourceComments: GitHubIssueComment[] | null = null;
+					// Skip invalid URLs
+					if (
+						parsedUrlData.type === 'unknown' ||
+						!parsedUrlData.owner ||
+						!parsedUrlData.repo ||
+						!parsedUrlData.number
+					) {
+						const errorMsg = `Invalid GitHub URL format: ${testimonial.url}`;
+						console.error(errorMsg);
+						errors.push(errorMsg);
+						continue;
+					}
 
-          // Fetch comments based on the URL type
-          console.log(`Fetching comments for ${commentType} from ${owner}/${repo}#${number}`);
+					const { owner, repo, number, type: commentType, commentId } = parsedUrlData;
+					let sourceComments: GitHubIssueComment[] | null = null;
 
-          switch (commentType) {
-            case 'issue':
-              sourceComments = await getGitHubIssueComments(
-                `https://github.com/${owner}/${repo}`,
-                number as number
-              );
-              break;
-            case 'pr_general_comment':
-              sourceComments = await getGitHubIssueComments(
-                `https://github.com/${owner}/${repo}`,
-                number as number
-              );
-              break;
-            case 'pr_review_comment':
-              sourceComments = await getGitHubPullRequestReviewComments(
-                owner as string,
-                repo as string,
-                number as number,
-                commentId
-              );
-              break;
-            case 'discussion':
-              sourceComments = await getGitHubDiscussionComments(
-                owner as string,
-                repo as string,
-                number as number
-              );
-              break;
-            default:
-              const errorMsg = `Unsupported comment type: ${commentType} for URL: ${testimonial.url}`;
-              console.error(errorMsg);
-              errors.push(errorMsg);
-              continue;
-          }
+					// Fetch comments based on the URL type
+					console.log(`Fetching comments for ${commentType} from ${owner}/${repo}#${number}`);
 
-          console.log(`Fetched comments:`, sourceComments ? sourceComments.length : 0);
+					switch (commentType) {
+						case 'issue':
+							sourceComments = await getGitHubIssueComments(
+								`https://github.com/${owner}/${repo}`,
+								number as number
+							);
+							break;
+						case 'pr_general_comment':
+							sourceComments = await getGitHubIssueComments(
+								`https://github.com/${owner}/${repo}`,
+								number as number
+							);
+							break;
+						case 'pr_review_comment':
+							sourceComments = await getGitHubPullRequestReviewComments(
+								owner as string,
+								repo as string,
+								number as number,
+								commentId
+							);
+							break;
+						case 'discussion':
+							sourceComments = await getGitHubDiscussionComments(
+								owner as string,
+								repo as string,
+								number as number
+							);
+							break;
+						default:
+							const errorMsg = `Unsupported comment type: ${commentType} for URL: ${testimonial.url}`;
+							console.error(errorMsg);
+							errors.push(errorMsg);
+							continue;
+					}
 
-          // Handle case when no comments are found
-          if (!sourceComments) {
-            const errorMsg = `No comments found for: ${testimonial.url}`;
-            console.error(errorMsg);
-            errors.push(errorMsg);
-            continue;
-          }
+					console.log(`Fetched comments:`, sourceComments ? sourceComments.length : 0);
 
-          // If a specific comment ID is specified, filter for that comment
-          if (commentId && sourceComments.length > 0) {
-            const numericCommentId = parseInt(commentId, 10);
-            console.log(`Filtering for comment ID: ${numericCommentId}`);
+					// Handle case when no comments are found
+					if (!sourceComments) {
+						const errorMsg = `No comments found for: ${testimonial.url}`;
+						console.error(errorMsg);
+						errors.push(errorMsg);
+						continue;
+					}
 
-            if (!isNaN(numericCommentId)) {
-              const filteredComments = sourceComments.filter((c) => c.id === numericCommentId);
-              console.log(`Found ${filteredComments.length} comments with ID ${numericCommentId}`);
+					// If a specific comment ID is specified, filter for that comment
+					if (commentId && sourceComments.length > 0) {
+						const numericCommentId = parseInt(commentId, 10);
+						console.log(`Filtering for comment ID: ${numericCommentId}`);
 
-              if (filteredComments.length === 0) {
-                const errorMsg = `Comment ID ${numericCommentId} not found in: ${testimonial.url}`;
-                console.error(errorMsg);
-                errors.push(errorMsg);
-                continue;
-              }
-              sourceComments = filteredComments;
-            } else {
-              const errorMsg = `Invalid comment ID format: ${commentId} in URL: ${testimonial.url}`;
-              console.error(errorMsg);
-              errors.push(errorMsg);
-              continue;
-            }
-          }
+						if (!isNaN(numericCommentId)) {
+							const filteredComments = sourceComments.filter((c) => c.id === numericCommentId);
+							console.log(`Found ${filteredComments.length} comments with ID ${numericCommentId}`);
 
-          // Add the valid comments to our collection
-          console.log(`Adding ${sourceComments.length} comments to collection`);
-          allComments = [...allComments, ...sourceComments];
-        } // End of testimonial loop
-      } catch (error) {
-        console.error(`Error fetching testimonials from repo ${repoGroup.name}:`, error);
-        errors.push(`Failed to load testimonials from repo: ${repoGroup.name}`);
-      }
-    }
-  } catch (error) {
-    console.error('Error in testimonial processing:', error);
-    shouldUseFallbackTestimonials = true;
-  }
+							if (filteredComments.length === 0) {
+								const errorMsg = `Comment ID ${numericCommentId} not found in: ${testimonial.url}`;
+								console.error(errorMsg);
+								errors.push(errorMsg);
+								continue;
+							}
+							sourceComments = filteredComments;
+						} else {
+							const errorMsg = `Invalid comment ID format: ${commentId} in URL: ${testimonial.url}`;
+							console.error(errorMsg);
+							errors.push(errorMsg);
+							continue;
+						}
+					}
+
+					// Add the valid comments to our collection
+					console.log(`Adding ${sourceComments.length} comments to collection`);
+					allComments = [...allComments, ...sourceComments];
+				} // End of testimonial loop
+			} catch (error) {
+				console.error(`Error fetching testimonials from repo ${repoGroup.name}:`, error);
+				errors.push(`Failed to load testimonials from repo: ${repoGroup.name}`);
+			}
+		}
+	} catch (error) {
+		console.error('Error in testimonial processing:', error);
+		shouldUseFallbackTestimonials = true;
+	}
 } else {
-  console.log('Running in production mode - using pre-defined testimonials');
-  shouldUseFallbackTestimonials = true;
+	console.log('Running in production mode - using pre-defined testimonials');
+	shouldUseFallbackTestimonials = true;
 }
 
 // Use pre-defined testimonials in production or if API calls failed
 if (allComments.length === 0 || shouldUseFallbackTestimonials) {
 	console.log('Using pre-defined testimonials from testimonials.json');
 	useFallbackTestimonials = true;
-	
+
 	// Create a manual collection of testimonials based on the testimonials.json data
 	const manualTestimonials: GitHubIssueComment[] = [];
-	
+
 	for (const repoGroup of testimonialsData.repositories) {
 		const repoName = repoGroup.repo;
 		const [owner, repo] = repoName ? repoName.split('/') : ['', ''];
-		
+
 		for (const testimonial of repoGroup.testimonials) {
 			manualTestimonials.push({
 				id: testimonial.url,
@@ -181,17 +181,17 @@ if (allComments.length === 0 || shouldUseFallbackTestimonials) {
 				html_url: testimonial.url,
 				issue_url: testimonial.url,
 				issue: {
-					title: testimonial.text.substring(0, 50) + '...'
+					title: testimonial.text.substring(0, 50) + '...',
 				},
 				repository: {
 					owner: owner,
 					name: repo,
-					full_name: repoName
-				}
+					full_name: repoName,
+				},
 			});
 		}
 	}
-	
+
 	allComments = manualTestimonials;
 	console.log(`Created ${allComments.length} manual testimonials from testimonials.json`);
 } else {
