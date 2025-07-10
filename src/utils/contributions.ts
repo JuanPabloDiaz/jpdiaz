@@ -26,11 +26,11 @@ export interface ContributionData {
 
 // Helper function to convert ContributionData to ProcessedContribution
 export function processContributions(contributions: ContributionData[]): ProcessedContribution[] {
-	return contributions.map(contrib => {
+	return contributions.map((contrib) => {
 		const urlParts = contrib.url.split('/');
 		const owner = urlParts[3];
 		const repo = urlParts[4];
-		
+
 		return {
 			title: contrib.title || `${contrib.type === 'pr' ? 'Pull Request' : 'Issue'} in ${repo}`,
 			url: contrib.url,

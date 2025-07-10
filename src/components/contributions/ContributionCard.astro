@@ -10,10 +10,6 @@ interface Props {
 
 const { contribution, showDescription = true, isTopContribution = false } = Astro.props;
 
-function getTypeIcon(type: string) {
-	return type === 'pr' ? '🔀' : '❗';
-}
-
 function formatDate(dateString: string) {
 	if (!dateString) return '';
 	return new Date(dateString).toLocaleDateString('en-US', {
@@ -21,20 +17,6 @@ function formatDate(dateString: string) {
 		month: 'short',
 		day: 'numeric',
 	});
-}
-
-function getLanguageColor(language: string) {
-	const colors = {
-		JavaScript: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
-		TypeScript: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
-		React: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200',
-		Vue: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
-		JSON: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200',
-		Markdown: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
-		Python: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
-		Java: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',
-	};
-	return colors[language] || 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200';
 }
 ---
 
@@ -60,20 +42,14 @@ function getLanguageColor(language: string) {
 			<h3
 				class="text-md transform font-medium text-black/90 transition-all duration-300 ease-in-out group-hover:translate-y-[-100%] group-hover:opacity-0 lg:text-lg"
 			>
-				<span class="mr-2 text-lg">{getTypeIcon(contribution.type)}</span>
 				{contribution.title}
 			</h3>
 
-			<!-- Repository name as link -->
-			<div class="mb-1">
-				<a
-					href={contribution.repoUrl}
-					target="_blank"
-					rel="noopener noreferrer"
-					class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-xs font-medium transition-colors"
-				>
+			<!-- Repository name (hidden on hover) -->
+			<div class="mb-1 transform transition-all duration-300 ease-in-out group-hover:translate-y-[100%] group-hover:opacity-0">
+				<span class="text-blue-600 dark:text-blue-600 text-xs font-medium">
 					{contribution.repoFullName}
-				</a>
+				</span>
 			</div>
 
 			<!-- Description on hover -->
@@ -93,16 +69,14 @@ function getLanguageColor(language: string) {
 				>
 					{
 						contribution.dateCompleted && (
-							<span class="text-gray-500 dark:text-gray-400 text-xs">
+							<span class="text-gray-500 dark:text-gray-600 text-xs">
 								{formatDate(contribution.dateCompleted)}
 							</span>
 						)
 					}
 					{
 						contribution.language && (
-							<span
-								class={`rounded-full px-2 py-0.5 text-xs font-medium ${getLanguageColor(contribution.language)}`}
-							>
+							<span class="rounded-full px-2 py-0.5 text-xs font-medium bg-gray-100 text-gray-800">
 								{contribution.language}
 							</span>
 						)

@@ -3,8 +3,9 @@ import SubTitle from '@components/ui/SubTitle.astro';
 import Link from '@components/ui/Link.astro';
 import ProjectListSmall from '@components/projects/ProjectListSmall.astro';
 import ContributionCard from '@components/contributions/ContributionCard.astro';
-import { topContributions } from '@src/data/top-contributions';
-import { processContributions } from '@utils/contributions';
+import { Icon } from 'astro-icon/components';
+import { topContributions } from '../data/top-contributions';
+import { processContributions } from '../utils/contributions';
 
 // Process the contributions data and filter for homepage
 const allProcessedContributions = processContributions(topContributions);
@@ -27,8 +28,9 @@ const processedContributions = allProcessedContributions.filter((contrib) => {
 	{
 		processedContributions.length > 0 && (
 			<div class="mb-16 w-full max-w-6xl">
-				<h3 class="text-gray-800 dark:text-gray-200 mb-8 text-center text-2xl font-bold">
-					🏆 Top Contributions
+				<h3 class="text-gray-800 dark:text-gray-200 mb-8 text-center text-2xl font-bold flex items-center justify-center gap-2">
+					<Icon name="carbon:trophy" class="h-6 w-6 text-yellow-500" />
+					Top Contributions
 				</h3>
 				<div class="flex flex-wrap justify-center">
 					{processedContributions.map((contribution) => (
@@ -45,8 +47,9 @@ const processedContributions = allProcessedContributions.filter((contrib) => {
 
 	<!-- Open Source Projects Section -->
 	<div class="w-full max-w-6xl">
-		<h3 class="text-gray-800 dark:text-gray-200 mb-8 text-center text-2xl font-bold">
-			🚀 Open Source Projects
+		<h3 class="text-gray-800 dark:text-gray-200 mb-8 text-center text-2xl font-bold flex items-center justify-center gap-2">
+			<Icon name="carbon:rocket" class="h-6 w-6 text-blue-500" />
+			Open Source Projects
 		</h3>
 		<ProjectListSmall collectionName="open-source" />
 	</div>

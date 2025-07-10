@@ -15,7 +15,7 @@ export const topContributions: ContributionData[] = [
 		url: 'https://github.com/tech-conferences/conference-data/pull/12345',
 		type: 'pr',
 		priority: 1,
-		title: 'Add 2024 Latin America tech conferences data',
+		title: 'Add Team page to Confs.tech',
 		description: 'Added comprehensive conference data for 2024 tech events across Latin America',
 		labels: ['data', 'conferences', 'enhancement'],
 		language: 'JSON',
