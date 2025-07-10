@@ -1,0 +1,21 @@
+---
+import type { ProcessedContribution } from '@utils/contributions.ts';
+import ContributionCard from '@components/contributions/ContributionCard.astro';
+
+interface Props {
+	contributions: ProcessedContribution[];
+	showDescription?: boolean;
+	maxItems?: number;
+}
+
+const { contributions, showDescription = true, maxItems } = Astro.props;
+const displayContributions = maxItems ? contributions.slice(0, maxItems) : contributions;
+---
+
+<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
+	{
+		displayContributions.map((contribution) => (
+			<ContributionCard contribution={contribution} showDescription={showDescription} />
+		))
+	}
+</div>

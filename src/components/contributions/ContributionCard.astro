@@ -1,0 +1,127 @@
+---
+import type { ProcessedContribution } from '@utils/contributions.ts';
+
+interface Props {
+	contribution: ProcessedContribution;
+	showDescription?: boolean;
+}
+
+const { contribution, showDescription = true } = Astro.props;
+
+function getStateColor(state: string) {
+	switch (state) {
+		case 'merged':
+			return 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200';
+		case 'closed':
+			return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200';
+		case 'open':
+			return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200';
+		default:
+			return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
+	}
+}
+
+function getTypeIcon(type: string) {
+	return type === 'pr' ? '🔀' : '❗';
+}
+
+function formatDate(dateString: string) {
+	return new Date(dateString).toLocaleDateString('en-US', {
+		year: 'numeric',
+		month: 'short',
+		day: 'numeric',
+	});
+}
+---
+
+<div class="group w-full p-4 md:w-1/2 lg:w-1/3">
+	<article
+		data-testid="contribution-card"
+		class="dark:bg-gray-900/95 dark:hover:bg-gray-900 relative flex h-36 overflow-hidden rounded-xl bg-white/95 p-4 shadow-lg transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-white hover:shadow-xl"
+	>
+		<div class="flex w-full flex-col">
+			<!-- Header -->
+			<div class="mb-2 flex items-start justify-between">
+				<div class="flex items-center gap-2">
+					<span class="text-lg">{getTypeIcon(contribution.type)}</span>
+					<span
+						class={`px-2 py-1 text-xs font-semibold rounded-full ${getStateColor(contribution.state)}`}
+					>
+						{contribution.state.toUpperCase()}
+					</span>
+				</div>
+				{
+					contribution.dateCompleted && (
+						<span class="text-gray-500 dark:text-gray-400 text-xs">
+							{formatDate(contribution.dateCompleted)}
+						</span>
+					)
+				}
+			</div>
+
+			<!-- Title -->
+			<h3 class="mb-2 line-clamp-2 text-sm font-semibold text-black/90 dark:text-white/90">
+				<a
+					href={contribution.url}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+				>
+					{contribution.title}
+				</a>
+			</h3>
+
+			<!-- Repository -->
+			<div class="mb-2">
+				<a
+					href={contribution.repoUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-xs transition-colors"
+				>
+					{contribution.repoFullName}
+				</a>
+			</div>
+
+			<!-- Description (if provided and showDescription is true) -->
+			{
+				showDescription && contribution.description && (
+					<p class="text-gray-600 dark:text-gray-300 mb-2 line-clamp-2 text-xs">
+						{contribution.description}
+					</p>
+				)
+			}
+
+			<!-- Labels -->
+			<div class="mt-auto flex flex-wrap gap-1">
+				{
+					contribution.customLabels &&
+						contribution.customLabels.map((label) => (
+							<span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 inline-block rounded-full px-2 py-1 text-xs">
+								{label}
+							</span>
+						))
+				}
+				{
+					!contribution.customLabels &&
+						contribution.labels
+							.slice(0, 3)
+							.map((label) => (
+								<span class="bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200 inline-block rounded-full px-2 py-1 text-xs">
+									{label}
+								</span>
+							))
+				}
+			</div>
+		</div>
+	</article>
+</div>
+
+<style>
+	.line-clamp-2 {
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+</style>

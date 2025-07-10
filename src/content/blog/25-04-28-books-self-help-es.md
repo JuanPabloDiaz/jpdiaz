@@ -44,7 +44,6 @@ El poder de levantarnos temprano para conectarnos mejor, rendir más y por tanto
 **Enseñanzas clave:**
 
 - **El sistema de los cuatro pasos para crear hábitos duraderos:**
-
   1. **Hacerlo obvio:** Diseña tu entorno para que las señales de tus buenos hábitos sean imposibles de ignorar.
   2. **Hacerlo atractivo:** Combina hábitos que quieres desarrollar con actividades que ya disfrutas.
   3. **Hacerlo fácil**

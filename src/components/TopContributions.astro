@@ -1,0 +1,78 @@
+---
+import SubTitle from '@components/ui/SubTitle.astro';
+import Link from '@components/ui/Link.astro';
+import ContributionList from '@components/contributions/ContributionList.astro';
+import type { ProcessedContribution } from '@utils/contributions.ts';
+
+// Mock data for development - replace with real API calls later
+const mockContributions: ProcessedContribution[] = [
+	{
+		id: 123456,
+		title: 'Add TypeScript support for VS Code extensions',
+		url: 'https://github.com/microsoft/vscode/pull/123456',
+		repoName: 'vscode',
+		repoFullName: 'microsoft/vscode',
+		repoUrl: 'https://github.com/microsoft/vscode',
+		type: 'pr',
+		state: 'merged',
+		dateCompleted: '2024-12-15T10:30:00Z',
+		dateCreated: '2024-12-10T09:15:00Z',
+		labels: ['typescript', 'enhancement', 'good-first-issue'],
+		description:
+			'Enhanced TypeScript support by implementing better type definitions and autocomplete functionality',
+		customLabels: ['typescript', 'enhancement'],
+	},
+	{
+		id: 789012,
+		title: 'Fix memory leak in React hooks',
+		url: 'https://github.com/facebook/react/issues/789012',
+		repoName: 'react',
+		repoFullName: 'facebook/react',
+		repoUrl: 'https://github.com/facebook/react',
+		type: 'issue',
+		state: 'closed',
+		dateCompleted: '2024-11-20T14:45:00Z',
+		dateCreated: '2024-11-18T08:20:00Z',
+		labels: ['bug', 'hooks', 'memory-leak'],
+		description: 'Identified and reported critical memory leak in useEffect cleanup functions',
+		customLabels: ['bug', 'critical'],
+	},
+	{
+		id: 345678,
+		title: 'Improve Node.js performance for large files',
+		url: 'https://github.com/nodejs/node/pull/345678',
+		repoName: 'node',
+		repoFullName: 'nodejs/node',
+		repoUrl: 'https://github.com/nodejs/node',
+		type: 'pr',
+		state: 'merged',
+		dateCompleted: '2024-10-05T16:22:00Z',
+		dateCreated: '2024-09-28T11:30:00Z',
+		labels: ['performance', 'fs', 'core'],
+		description: 'Optimized file system operations for better performance with large files',
+		customLabels: ['performance', 'optimization'],
+	},
+];
+
+// Get top 3 for homepage
+const topContributions = mockContributions.slice(0, 3);
+---
+
+<div class="h-10" id="top-contributions"></div>
+
+<section
+	data-testid="topContributions"
+	class="mb-20 flex flex-col items-center justify-center md:mb-0 md:h-screen"
+>
+	<SubTitle text="Top Contributions" />
+	<p class="text-gray-500 text-center lg:w-1/2">
+		Here are some of my most impactful contributions to open source projects.
+	</p>
+	<ContributionList contributions={topContributions} showDescription={true} maxItems={3} />
+	<Link
+		text="View all Contributions"
+		ariaLabel="View all GitHub Contributions"
+		href="./top-contributions"
+		arrow
+	/>
+</section>

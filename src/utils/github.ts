@@ -116,6 +116,74 @@ export interface GitHubIssueComment {
 	html_url: string; // URL to the comment itself
 }
 
+// GitHub Contribution interfaces
+export interface GitHubPullRequest {
+	id: number;
+	number: number;
+	title: string;
+	html_url: string;
+	state: 'open' | 'closed';
+	merged_at: string | null;
+	closed_at: string | null;
+	created_at: string;
+	updated_at: string;
+	user: GitHubUser;
+	base: {
+		repo: {
+			name: string;
+			full_name: string;
+			html_url: string;
+			owner: GitHubUser;
+		};
+	};
+	labels: Array<{
+		id: number;
+		name: string;
+		color: string;
+	}>;
+	body: string | null;
+}
+
+export interface GitHubIssue {
+	id: number;
+	number: number;
+	title: string;
+	html_url: string;
+	state: 'open' | 'closed';
+	closed_at: string | null;
+	created_at: string;
+	updated_at: string;
+	user: GitHubUser;
+	repository: {
+		name: string;
+		full_name: string;
+		html_url: string;
+		owner: GitHubUser;
+	};
+	labels: Array<{
+		id: number;
+		name: string;
+		color: string;
+	}>;
+	body: string | null;
+}
+
+export interface ProcessedContribution {
+	id: number;
+	title: string;
+	url: string;
+	repoName: string;
+	repoFullName: string;
+	repoUrl: string;
+	type: 'pr' | 'issue';
+	state: 'open' | 'closed' | 'merged';
+	dateCompleted: string | null; // merged_at for PRs, closed_at for issues
+	dateCreated: string;
+	labels: string[];
+	description?: string;
+	customLabels?: string[];
+}
+
 // Helper function to extract owner and repo from GitHub URL
 export function getRepoDetails(url: string) {
 	const regex = /github.com\/([^/]+)\/([^/]+)/;
@@ -522,6 +590,118 @@ export async function getGitHubUserData(username: string): Promise<GitHubUserDat
 		};
 	} catch (error) {
 		console.error('Error fetching GitHub user data:', error);
+		return null;
+	}
+}
+
+// Helper function to extract PR/Issue number from GitHub URL
+export function extractGitHubDetails(url: string): { owner: string; repo: string; number: number; type: 'pr' | 'issue' } | null {
+	const prMatch = url.match(/github\.com\/([^/]+)\/([^/]+)\/pull\/(\d+)/);
+	if (prMatch) {
+		return {
+			owner: prMatch[1],
+			repo: prMatch[2],
+			number: parseInt(prMatch[3]),
+			type: 'pr'
+		};
+	}
+
+	const issueMatch = url.match(/github\.com\/([^/]+)\/([^/]+)\/issues\/(\d+)/);
+	if (issueMatch) {
+		return {
+			owner: issueMatch[1],
+			repo: issueMatch[2],
+			number: parseInt(issueMatch[3]),
+			type: 'issue'
+		};
+	}
+
+	return null;
+}
+
+// Function to fetch PR data from GitHub API
+export async function fetchPullRequest(owner: string, repo: string, number: number): Promise<GitHubPullRequest> {
+	return githubRequest<GitHubPullRequest>(`/repos/${owner}/${repo}/pulls/${number}`);
+}
+
+// Function to fetch issue data from GitHub API
+export async function fetchIssue(owner: string, repo: string, number: number): Promise<GitHubIssue> {
+	const issue = await githubRequest<GitHubIssue>(`/repos/${owner}/${repo}/issues/${number}`);
+	
+	// Add repository info since the API doesn't include it
+	const repoData = await githubRequest<any>(`/repos/${owner}/${repo}`);
+	return {
+		...issue,
+		repository: {
+			name: repoData.name,
+			full_name: repoData.full_name,
+			html_url: repoData.html_url,
+			owner: repoData.owner
+		}
+	};
+}
+
+// Function to process and normalize contribution data
+export function processContribution(
+	data: GitHubPullRequest | GitHubIssue, 
+	type: 'pr' | 'issue',
+	customDescription?: string,
+	customLabels?: string[]
+): ProcessedContribution {
+	const isPR = type === 'pr';
+	const pr = data as GitHubPullRequest;
+	const issue = data as GitHubIssue;
+
+	const repoInfo = isPR ? pr.base.repo : issue.repository;
+	const state = isPR 
+		? (pr.merged_at ? 'merged' : pr.state) 
+		: issue.state;
+	
+	const dateCompleted = isPR 
+		? (pr.merged_at || pr.closed_at) 
+		: issue.closed_at;
+
+	return {
+		id: data.id,
+		title: data.title,
+		url: data.html_url,
+		repoName: repoInfo.name,
+		repoFullName: repoInfo.full_name,
+		repoUrl: repoInfo.html_url,
+		type,
+		state,
+		dateCompleted,
+		dateCreated: data.created_at,
+		labels: data.labels.map(label => label.name),
+		description: customDescription,
+		customLabels
+	};
+}
+
+// Main function to fetch and process a contribution
+export async function fetchContribution(
+	url: string, 
+	customDescription?: string, 
+	customLabels?: string[]
+): Promise<ProcessedContribution | null> {
+	try {
+		const details = extractGitHubDetails(url);
+		if (!details) {
+			console.error(`Invalid GitHub URL: ${url}`);
+			return null;
+		}
+
+		const { owner, repo, number, type } = details;
+
+		if (type === 'pr') {
+			const prData = await fetchPullRequest(owner, repo, number);
+			return processContribution(prData, 'pr', customDescription, customLabels);
+		} else {
+			const issueData = await fetchIssue(owner, repo, number);
+			return processContribution(issueData, 'issue', customDescription, customLabels);
+		}
+	} catch (error) {
+		console.error(`Error fetching contribution from ${url}:`, error);
 		return null;
 	}
 }
