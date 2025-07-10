@@ -25,7 +25,7 @@ export const topContributions: ContributionData[] = [
 		url: 'https://github.com/tech-conferences/confs.tech/pull/1021',
 		type: 'pr',
 		priority: 2,
-		title: '6 PRs merged to improve the update the project',
+		title: '6 PRs merged to improve and update the project',
 		description:
 			'Improves build performance, modernizes dependencies, adds cookie consent, enhances security headers, and updates key components for privacy and UX.',
 		language: 'Typescript',
