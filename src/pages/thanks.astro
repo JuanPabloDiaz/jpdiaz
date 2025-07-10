@@ -5,9 +5,18 @@ import Link from '@components/ui/Link.astro';
 import Navbar from '@components/Navbar.astro';
 import { Image } from 'astro:assets';
 import { backHomeMenu, site } from '@src/consts';
+import { getPageMetadata } from '@data/pageMetadata';
+
+const metadata = getPageMetadata('thanks');
 ---
 
-<Layout metaTitle={`Thank you! | ${site.author}`} includeSidebar={false}>
+<Layout
+	metaTitle={metadata.title}
+	metaDescription={metadata.description}
+	pageKeywords={metadata.keywords}
+	ogImage={metadata.ogImage}
+	includeSidebar={false}
+>
 	<Navbar menu={backHomeMenu} button="Home" />
 	<section class="flex h-[80vh] flex-col items-center justify-center">
 		<div class="flex flex-col items-center space-x-4">

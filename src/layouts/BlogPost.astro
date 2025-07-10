@@ -47,7 +47,15 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString(
 );
 ---
 
-<Layout metaTitle={`${title} - ${site.author} | Blog`} includeSidebar={false}>
+<Layout
+	metaTitle={`${title} - ${site.author} | Blog`}
+	metaDescription={description}
+	pageKeywords={tags && tags.length > 0
+		? [...tags, 'Juan Diaz blog', 'web development', 'programming']
+		: ['Juan Diaz blog', 'web development', 'programming', 'tutorial']}
+	ogImage={image || '/images/desktop-v2.png'}
+	includeSidebar={false}
+>
 	{
 		mathjax && (
 			<script

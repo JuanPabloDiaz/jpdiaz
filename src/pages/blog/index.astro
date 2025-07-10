@@ -11,6 +11,9 @@ import RssFeedDisplay from '@components/RssFeedDisplay.astro';
 import Pagination from '@components/ui/Pagination.astro';
 import SubTitle from '@components/ui/SubTitle.astro';
 import BlogSearch from '@components/BlogSearch.astro';
+import { getPageMetadata } from '@data/pageMetadata';
+
+const metadata = getPageMetadata('blog');
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -31,7 +34,13 @@ const displayedPosts = posts.slice(0, pageSize);
 const totalPages = Math.ceil(posts.length / pageSize);
 ---
 
-<Layout metaTitle={`Blog | ${site.author}`} includeSidebar={false}>
+<Layout
+	metaTitle={metadata.title}
+	metaDescription={metadata.description}
+	pageKeywords={metadata.keywords}
+	ogImage={metadata.ogImage}
+	includeSidebar={false}
+>
 	<Navbar menu={blogMenu} button="Resume" />
 	<main
 		class="mb-10 flex flex-col items-center justify-center text-black dark:text-white md:mb-0 md:h-screen lg:h-auto"

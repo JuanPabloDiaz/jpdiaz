@@ -8,8 +8,11 @@ import ContributionCard from '@components/contributions/ContributionCard.astro';
 import { backHomeMenu } from '@src/consts';
 import { Icon } from 'astro-icon/components';
 import { site } from '@src/consts';
-import { topContributions } from '@src/data/top-contributions';
+import { topContributions } from '@data/top-contributions';
 import { processContributions } from '@utils/contributions';
+import { getPageMetadata } from '@data/pageMetadata';
+
+const metadata = getPageMetadata('oss');
 
 // Process all contributions data for the full OSS page
 const allProcessedContributions = processContributions(topContributions);
@@ -24,7 +27,13 @@ const otherProcessedContributions = allProcessedContributions.filter((contrib) =
 });
 ---
 
-<Layout metaTitle={`Open Source | ${site.author}`} includeSidebar={false}>
+<Layout
+	metaTitle={metadata.title}
+	metaDescription={metadata.description}
+	pageKeywords={metadata.keywords}
+	ogImage={metadata.ogImage}
+	includeSidebar={false}
+>
 	<Navbar menu={backHomeMenu} button="Home" />
 	<main
 		class="mb-10 flex flex-col items-center justify-center text-black dark:text-white md:mb-0 lg:min-h-screen"

@@ -5,9 +5,18 @@ import CallToAction from '@components/CallToAction.astro';
 import Testimonials from '@components/Testimonials.astro';
 import { backHomeMenu } from '@src/consts';
 import { site } from '@src/consts';
+import { getPageMetadata } from '@data/pageMetadata';
+
+const metadata = getPageMetadata('testimonials');
 ---
 
-<Layout metaTitle={`Testimonials | ${site.author}`} includeSidebar={false}>
+<Layout
+	metaTitle={metadata.title}
+	metaDescription={metadata.description}
+	pageKeywords={metadata.keywords}
+	ogImage={metadata.ogImage}
+	includeSidebar={false}
+>
 	<Navbar menu={backHomeMenu} button="Home" />
 	<main
 		class="mb-10 flex flex-col items-center justify-center text-black dark:text-white md:mb-0 md:h-screen lg:h-auto"

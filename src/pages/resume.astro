@@ -6,6 +6,9 @@ import Button from '@components/ui/Button.astro';
 import Navbar from '@components/Navbar.astro';
 import Polaroid from '@components/Polaroid.astro';
 import { site, resumeCertifications, resumeCourses, resumePageMenu } from '@src/consts';
+import { getPageMetadata } from '@data/pageMetadata';
+
+const metadata = getPageMetadata('resume');
 
 const PDF = '/files/2025-SoftwareEngineer-DataEngineerCV.pdf';
 const LinkStyle =
@@ -15,7 +18,13 @@ const basicLinkStyle =
 ---
 
 <!-- Source code: https://github.com/manuelernestog/astrofy -->
-<Layout metaTitle={`Resume | ${site.author}`} sideBarActiveItemID="cv">
+<Layout
+	metaTitle={metadata.title}
+	metaDescription={metadata.description}
+	pageKeywords={metadata.keywords}
+	ogImage={metadata.ogImage}
+	sideBarActiveItemID="cv"
+>
 	<main class="relative text-black dark:text-white">
 		<Navbar menu={resumePageMenu} button="Home" />
 

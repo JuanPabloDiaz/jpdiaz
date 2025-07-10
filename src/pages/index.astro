@@ -7,9 +7,17 @@ import Contact from '@components/Contact.astro';
 import Navbar from '@components/Navbar.astro';
 import TestimonialsHighlight from '@components/TestimonialsHighlight.astro';
 import { homePageMenu } from '@src/consts';
+import { getPageMetadata } from '@data/pageMetadata';
+
+const metadata = getPageMetadata('home');
 ---
 
-<Layout>
+<Layout
+	metaTitle={metadata.title}
+	metaDescription={metadata.description}
+	pageKeywords={metadata.keywords}
+	ogImage={metadata.ogImage}
+>
 	<main>
 		<Navbar menu={homePageMenu} button="Resume" />
 		<Hero />

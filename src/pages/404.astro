@@ -6,9 +6,18 @@ import { Image } from 'astro:assets';
 import juanImage from '@assets/images/juan.jpg';
 import { backHomeMenu } from '@src/consts';
 import { site } from '@src/consts';
+import { getPageMetadata } from '@data/pageMetadata';
+
+const metadata = getPageMetadata('notFound');
 ---
 
-<Layout metaTitle={`${site.author} | 404: Not Found`} includeSidebar={false}>
+<Layout
+	metaTitle={metadata.title}
+	metaDescription={metadata.description}
+	pageKeywords={metadata.keywords}
+	ogImage={metadata.ogImage}
+	includeSidebar={false}
+>
 	<Navbar menu={backHomeMenu} button="Home" />
 	<main class="flex h-[80vh] flex-col items-center justify-center">
 		<div class="flex flex-col items-center space-x-4">

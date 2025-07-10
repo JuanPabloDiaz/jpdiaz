@@ -30,6 +30,7 @@
 			"@i18n/*": ["src/i18n/*"],
 			"@lib/*": ["src/lib/*"],
 			"@plugins/*": ["src/plugins/*"],
+			"@data/*": ["src/data/*"],
 			"@i18n/utils": ["src/i18n/utils.ts"]
 		},
 		"types": ["node"]
