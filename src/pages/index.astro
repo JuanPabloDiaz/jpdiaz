@@ -2,7 +2,7 @@
 import Layout from '@layouts/Layout.astro';
 import Hero from '@components/Hero.astro';
 import Projects from '@components/projects/Projects.astro';
-import OpenSourceCombined from '../components/OpenSourceCombined.astro';
+import OpenSource from '@components/OpenSource.astro';
 import Contact from '@components/Contact.astro';
 import Navbar from '@components/Navbar.astro';
 import TestimonialsHighlight from '@components/TestimonialsHighlight.astro';
@@ -14,7 +14,7 @@ import { homePageMenu } from '@src/consts';
 		<Navbar menu={homePageMenu} button="Resume" />
 		<Hero />
 		<Projects />
-		<OpenSourceCombined />
+		<OpenSource />
 		<TestimonialsHighlight />
 		<Contact />
 	</main>

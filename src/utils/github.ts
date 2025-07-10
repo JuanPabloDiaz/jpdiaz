@@ -197,14 +197,62 @@ async function githubRequest<T>(
 	acceptHeader: string = 'application/vnd.github.v3+json'
 ): Promise<T> {
 	const githubToken = import.meta.env.PUBLIC_GITHUB_TOKEN;
+
+	if (!githubToken) {
+		throw new Error(
+			'GitHub token is not available. Please check your PUBLIC_GITHUB_TOKEN environment variable.'
+		);
+	}
+
 	const response = await fetch(`${GITHUB_API_BASE_URL}${endpoint}`, {
 		headers: {
-			Accept: acceptHeader, // Use the parameter
-			Authorization: `token ${githubToken}`,
+			Accept: acceptHeader,
+			Authorization: `Bearer ${githubToken}`, // Updated to use Bearer token format
+			'User-Agent': 'jpdiaz-portfolio', // Add User-Agent header
 		},
 	});
+
 	if (!response.ok) {
-		throw new Error(`GitHub API responded with status code: ${response.status}`);
+		let errorMessage = `GitHub API responded with status code: ${response.status}`;
+
+		// Add more specific error information
+		switch (response.status) {
+			case 401:
+				errorMessage += ' - Unauthorized: Invalid or expired GitHub token';
+				break;
+			case 403:
+				const rateLimitRemaining = response.headers.get('X-RateLimit-Remaining');
+				const rateLimitReset = response.headers.get('X-RateLimit-Reset');
+				if (rateLimitRemaining === '0') {
+					const resetTime = rateLimitReset
+						? new Date(parseInt(rateLimitReset) * 1000).toLocaleString()
+						: 'unknown';
+					errorMessage += ` - Rate limit exceeded. Resets at: ${resetTime}`;
+				} else {
+					errorMessage += ' - Forbidden: Check token permissions or repository access';
+				}
+				break;
+			case 404:
+				errorMessage += ' - Not Found: Repository or resource does not exist';
+				break;
+			default:
+				errorMessage += ` - ${response.statusText}`;
+		}
+
+		// Try to get error details from response body
+		try {
+			const errorBody = await response.text();
+			if (errorBody) {
+				const parsedError = JSON.parse(errorBody);
+				if (parsedError.message) {
+					errorMessage += ` - ${parsedError.message}`;
+				}
+			}
+		} catch (e) {
+			// Ignore parsing errors
+		}
+
+		throw new Error(errorMessage);
 	}
 	return response.json();
 }
@@ -446,32 +494,32 @@ export async function getGitHubPullRequestReviewComments(
 		// If a specific review ID is provided, fetch that review
 		if (reviewId) {
 			console.log(`Fetching specific review: ${reviewId} for PR #${pullNumber}`);
-			
+
 			// Convert reviewId to a number if it's in the format 'pullrequestreview-123456'
 			let numericReviewId = reviewId;
 			if (reviewId.startsWith('pullrequestreview-')) {
 				numericReviewId = reviewId.replace('pullrequestreview-', '');
 			}
-			
+
 			// Fetch the specific review
 			const reviews = await githubRequest<RawGitHubPullRequestReview[]>(
 				`/repos/${owner}/${repo}/pulls/${pullNumber}/reviews`,
 				'application/vnd.github.v3.html+json'
 			);
-			
+
 			if (!reviews || reviews.length === 0) {
 				console.log(`No reviews found for PR #${pullNumber}`);
 				return null;
 			}
-			
+
 			// Find the specific review by ID
-			const targetReview = reviews.find(review => review.id.toString() === numericReviewId);
-			
+			const targetReview = reviews.find((review) => review.id.toString() === numericReviewId);
+
 			if (!targetReview) {
 				console.log(`Review with ID ${reviewId} not found for PR #${pullNumber}`);
 				return null;
 			}
-			
+
 			// Convert the review to the expected format
 			const mappedReview: GitHubIssueComment = {
 				id: targetReview.id,
@@ -485,10 +533,10 @@ export async function getGitHubPullRequestReviewComments(
 				updated_at: targetReview.submitted_at,
 				html_url: targetReview.html_url,
 			};
-			
+
 			return [mappedReview];
 		}
-		
+
 		// If no specific review ID, fetch all inline comments
 		const rawComments = await githubRequest<RawGitHubPullRequestReviewComment[]>(
 			`/repos/${owner}/${repo}/pulls/${pullNumber}/comments`,
@@ -529,20 +577,29 @@ export async function getGitHubCommits(
 ): Promise<GitHubCommitData | null> {
 	try {
 		const repoDetails = getRepoDetails(repoUrl);
-		if (!repoDetails) return null;
+		if (!repoDetails) {
+			console.error('Invalid repository URL:', repoUrl);
+			return null;
+		}
 		const { owner, repo } = repoDetails;
+
+		console.log(`Fetching commits for ${owner}/${repo} by author: ${author}`);
 
 		// First, try to get the total commit count using the statistics API
 		try {
+			console.log('Attempting to fetch contributor statistics...');
 			const statsResponse = await githubRequest<GitHubContributor[]>(
 				`/repos/${owner}/${repo}/stats/contributors`
 			);
 			if (Array.isArray(statsResponse)) {
 				const authorStats = statsResponse.find((stat) => stat.author?.login === author);
 				if (authorStats) {
+					console.log(`Found ${authorStats.total} commits for ${author} via stats API`);
 					return {
 						count: authorStats.total,
 					};
+				} else {
+					console.log(`Author ${author} not found in contributor stats`);
 				}
 			}
 		} catch (statsError) {
@@ -550,33 +607,44 @@ export async function getGitHubCommits(
 		}
 
 		// If stats API fails or author not found, fall back to paginated commits list
+		console.log('Falling back to paginated commits API...');
 		let page = 1;
 		let allCommits: GitHubCommit[] = [];
 		let hasMore = true;
-		const perPage = 100; // Maximum allowed by GitHub API
+		const perPage = 30; // Reduced from 100 to be more conservative
 
-		while (hasMore) {
-			const commits = await githubRequest<GitHubCommit[]>(
-				`/repos/${owner}/${repo}/commits?author=${author}&per_page=${perPage}&page=${page}`
-			);
+		while (hasMore && page <= 10) {
+			// Limit to 10 pages to prevent excessive API calls
+			try {
+				console.log(`Fetching commits page ${page}...`);
+				const commits = await githubRequest<GitHubCommit[]>(
+					`/repos/${owner}/${repo}/commits?author=${author}&per_page=${perPage}&page=${page}`
+				);
 
-			if (!Array.isArray(commits) || commits.length === 0) {
-				hasMore = false;
-			} else {
-				allCommits = [...allCommits, ...commits];
-				if (commits.length < perPage) {
+				if (!Array.isArray(commits) || commits.length === 0) {
 					hasMore = false;
 				} else {
-					page++;
+					allCommits = [...allCommits, ...commits];
+					if (commits.length < perPage) {
+						hasMore = false;
+					} else {
+						page++;
+					}
 				}
+			} catch (pageError) {
+				console.error(`Error fetching commits page ${page}:`, pageError);
+				// Stop pagination on error
+				break;
 			}
 		}
 
+		console.log(`Found ${allCommits.length} commits for ${author} via commits API`);
 		return {
 			count: allCommits.length,
 		};
 	} catch (error) {
 		console.error('Error fetching GitHub commits:', error);
+		// Return null instead of throwing to allow graceful degradation
 		return null;
 	}
 }
@@ -595,14 +663,16 @@ export async function getGitHubUserData(username: string): Promise<GitHubUserDat
 }
 
 // Helper function to extract PR/Issue number from GitHub URL
-export function extractGitHubDetails(url: string): { owner: string; repo: string; number: number; type: 'pr' | 'issue' } | null {
+export function extractGitHubDetails(
+	url: string
+): { owner: string; repo: string; number: number; type: 'pr' | 'issue' } | null {
 	const prMatch = url.match(/github\.com\/([^/]+)\/([^/]+)\/pull\/(\d+)/);
 	if (prMatch) {
 		return {
 			owner: prMatch[1],
 			repo: prMatch[2],
 			number: parseInt(prMatch[3]),
-			type: 'pr'
+			type: 'pr',
 		};
 	}
 
@@ -612,7 +682,7 @@ export function extractGitHubDetails(url: string): { owner: string; repo: string
 			owner: issueMatch[1],
 			repo: issueMatch[2],
 			number: parseInt(issueMatch[3]),
-			type: 'issue'
+			type: 'issue',
 		};
 	}
 
@@ -620,14 +690,22 @@ export function extractGitHubDetails(url: string): { owner: string; repo: string
 }
 
 // Function to fetch PR data from GitHub API
-export async function fetchPullRequest(owner: string, repo: string, number: number): Promise<GitHubPullRequest> {
+export async function fetchPullRequest(
+	owner: string,
+	repo: string,
+	number: number
+): Promise<GitHubPullRequest> {
 	return githubRequest<GitHubPullRequest>(`/repos/${owner}/${repo}/pulls/${number}`);
 }
 
 // Function to fetch issue data from GitHub API
-export async function fetchIssue(owner: string, repo: string, number: number): Promise<GitHubIssue> {
+export async function fetchIssue(
+	owner: string,
+	repo: string,
+	number: number
+): Promise<GitHubIssue> {
 	const issue = await githubRequest<GitHubIssue>(`/repos/${owner}/${repo}/issues/${number}`);
-	
+
 	// Add repository info since the API doesn't include it
 	const repoData = await githubRequest<any>(`/repos/${owner}/${repo}`);
 	return {
@@ -636,14 +714,14 @@ export async function fetchIssue(owner: string, repo: string, number: number): P
 			name: repoData.name,
 			full_name: repoData.full_name,
 			html_url: repoData.html_url,
-			owner: repoData.owner
-		}
+			owner: repoData.owner,
+		},
 	};
 }
 
 // Function to process and normalize contribution data
 export function processContribution(
-	data: GitHubPullRequest | GitHubIssue, 
+	data: GitHubPullRequest | GitHubIssue,
 	type: 'pr' | 'issue',
 	customDescription?: string,
 	customLabels?: string[]
@@ -653,13 +731,9 @@ export function processContribution(
 	const issue = data as GitHubIssue;
 
 	const repoInfo = isPR ? pr.base.repo : issue.repository;
-	const state = isPR 
-		? (pr.merged_at ? 'merged' : pr.state) 
-		: issue.state;
-	
-	const dateCompleted = isPR 
-		? (pr.merged_at || pr.closed_at) 
-		: issue.closed_at;
+	const state = isPR ? (pr.merged_at ? 'merged' : pr.state) : issue.state;
+
+	const dateCompleted = isPR ? pr.merged_at || pr.closed_at : issue.closed_at;
 
 	return {
 		id: data.id,
@@ -672,16 +746,16 @@ export function processContribution(
 		state,
 		dateCompleted,
 		dateCreated: data.created_at,
-		labels: data.labels.map(label => label.name),
+		labels: data.labels.map((label) => label.name),
 		description: customDescription,
-		customLabels
+		customLabels,
 	};
 }
 
 // Main function to fetch and process a contribution
 export async function fetchContribution(
-	url: string, 
-	customDescription?: string, 
+	url: string,
+	customDescription?: string,
 	customLabels?: string[]
 ): Promise<ProcessedContribution | null> {
 	try {

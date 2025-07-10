@@ -6,6 +6,7 @@ import CallToAction from '@components/CallToAction.astro';
 import ProjectListSmall from '@components/projects/ProjectListSmall.astro';
 import ContributionCard from '@components/contributions/ContributionCard.astro';
 import { backHomeMenu } from '@src/consts';
+import { Icon } from 'astro-icon/components';
 import { site } from '@src/consts';
 import { topContributions } from '@src/data/top-contributions';
 import { processContributions } from '@utils/contributions';
@@ -72,8 +73,9 @@ const otherProcessedContributions = allProcessedContributions.filter((contrib) =
 
 		<!-- Open Source Projects Section -->
 		<div class="w-full max-w-6xl">
-			<h3 class="text-gray-800 dark:text-gray-200 mb-8 text-center text-2xl font-bold">
-				🚀 Open Source Projects
+			<h3 class="text-gray-800 dark:text-gray-200 mb-8 text-center text-2xl font-bold flex items-center justify-center gap-2">
+				<Icon name="carbon:rocket" class="text-blue-500 h-6 w-6" />
+				Open Source Projects
 			</h3>
 			<ProjectListSmall collectionName="open-source" />
 			<ProjectListSmall collectionName="more-open-source" />
