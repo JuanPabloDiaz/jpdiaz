@@ -13,6 +13,29 @@ const { contribution, showDescription = true, isTopContribution = false } = Astr
 function getTypeIcon(type: string) {
 	return type === 'pr' ? '🔀' : '❗';
 }
+
+function formatDate(dateString: string) {
+	if (!dateString) return '';
+	return new Date(dateString).toLocaleDateString('en-US', {
+		year: 'numeric',
+		month: 'short',
+		day: 'numeric',
+	});
+}
+
+function getLanguageColor(language: string) {
+	const colors = {
+		JavaScript: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
+		TypeScript: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
+		React: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200',
+		Vue: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
+		JSON: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200',
+		Markdown: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
+		Python: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
+		Java: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',
+	};
+	return colors[language] || 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200';
+}
 ---
 
 <main class="group w-full p-4 md:w-1/2 lg:w-1/3">
@@ -33,13 +56,25 @@ function getTypeIcon(type: string) {
 		}
 
 		<article class="relative flex w-10/12 flex-grow flex-col pr-2">
-			<!-- Title with type icon -->
+			<!-- Title (Subject of PR/Issue) -->
 			<h3
 				class="text-md transform font-medium text-black/90 transition-all duration-300 ease-in-out group-hover:translate-y-[-100%] group-hover:opacity-0 lg:text-lg"
 			>
 				<span class="mr-2 text-lg">{getTypeIcon(contribution.type)}</span>
 				{contribution.title}
 			</h3>
+
+			<!-- Repository name as link -->
+			<div class="mb-1">
+				<a
+					href={contribution.repoUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-xs font-medium transition-colors"
+				>
+					{contribution.repoFullName}
+				</a>
+			</div>
 
 			<!-- Description on hover -->
 			{
@@ -50,19 +85,35 @@ function getTypeIcon(type: string) {
 				)
 			}
 
-			<!-- Tags and Repository info -->
-			<div class="mb-1 mt-auto flex w-full items-center justify-between">
+			<!-- Date, Language, and Tags at bottom -->
+			<div class="mb-1 mt-auto">
+				<!-- Date and Language row -->
 				<div
-					class="transform transition-all duration-300 ease-in-out group-hover:translate-y-[100%] group-hover:opacity-0"
+					class="mb-1 flex transform items-center justify-between transition-all duration-300 ease-in-out group-hover:translate-y-[100%] group-hover:opacity-0"
 				>
-					<Tags tags={contribution.customLabels || contribution.labels.slice(0, 3)} />
+					{
+						contribution.dateCompleted && (
+							<span class="text-gray-500 dark:text-gray-400 text-xs">
+								{formatDate(contribution.dateCompleted)}
+							</span>
+						)
+					}
+					{
+						contribution.language && (
+							<span
+								class={`rounded-full px-2 py-0.5 text-xs font-medium ${getLanguageColor(contribution.language)}`}
+							>
+								{contribution.language}
+							</span>
+						)
+					}
 				</div>
+
+				<!-- Tags row -->
 				<div
 					class="transform transition-all duration-300 ease-in-out group-hover:translate-y-[100%] group-hover:opacity-0"
 				>
-					<span class="text-blue-600 dark:text-blue-400 text-xs">
-						{contribution.repoFullName}
-					</span>
+					<Tags tags={contribution.customLabels || contribution.labels.slice(0, 2)} />
 				</div>
 			</div>
 		</article>
