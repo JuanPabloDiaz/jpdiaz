@@ -4,9 +4,10 @@ import type { ProcessedContribution } from '@utils/contributions.ts';
 interface Props {
 	contribution: ProcessedContribution;
 	showDescription?: boolean;
+	isTopContribution?: boolean;
 }
 
-const { contribution, showDescription = true } = Astro.props;
+const { contribution, showDescription = true, isTopContribution = false } = Astro.props;
 
 function getStateColor(state: string) {
 	switch (state) {
@@ -37,8 +38,19 @@ function formatDate(dateString: string) {
 <div class="group w-full p-4 md:w-1/2 lg:w-1/3">
 	<article
 		data-testid="contribution-card"
-		class="dark:bg-gray-900/95 dark:hover:bg-gray-900 relative flex h-36 overflow-hidden rounded-xl bg-white/95 p-4 shadow-lg transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-white hover:shadow-xl"
+		class={`dark:bg-gray-900/95 dark:hover:bg-gray-900 relative flex h-36 overflow-hidden rounded-xl bg-white/95 p-4 shadow-lg transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-white hover:shadow-xl ${
+			isTopContribution
+				? 'ring-2 ring-gradient-to-r ring-orange-400 dark:ring-orange-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-900 shadow-orange-200 dark:shadow-orange-800'
+				: ''
+		}`}
 	>
+		{
+			isTopContribution && (
+				<div class="from-orange-500 to-red-500 absolute -right-2 -top-2 z-10 rotate-12 transform rounded-full bg-gradient-to-r px-3 py-1 text-xs font-bold text-white shadow-lg">
+					⭐ TOP
+				</div>
+			)
+		}
 		<div class="flex w-full flex-col">
 			<!-- Header -->
 			<div class="mb-2 flex items-start justify-between">

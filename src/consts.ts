@@ -35,7 +35,6 @@ export const backHomeMenu = [
 export const homePageMenu = [
 	{ title: 'About', path: '#top' },
 	{ title: 'Projects', path: '#projects' },
-	{ title: 'Contributions', path: '#top-contributions' },
 	{ title: 'Open-Source', path: '#oss' },
 	{ title: 'Testimonials', path: '#testimonials' },
 	{ title: 'Blog', path: '/blog' },

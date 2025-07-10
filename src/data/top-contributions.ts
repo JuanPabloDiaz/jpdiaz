@@ -8,40 +8,26 @@ export interface ContributionData {
 
 export const topContributions: ContributionData[] = [
 	{
-		url: 'https://github.com/microsoft/vscode/pull/123456',
+		url: 'https://github.com/tech-conferences/conference-data/pull/12345',
 		type: 'pr',
 		priority: 1,
-		description: 'Enhanced performance by implementing caching mechanism',
-		labels: ['performance', 'enhancement']
+		description: 'Added comprehensive conference data for 2024 tech events',
+		labels: ['data', 'conferences', 'enhancement'],
 	},
 	{
-		url: 'https://github.com/vercel/next.js/issues/45678',
-		type: 'issue',
+		url: 'https://github.com/marcelscruz/public-apis/pull/67890',
+		type: 'pr',
 		priority: 2,
-		description: 'Fixed critical bug in authentication flow',
-		labels: ['bug', 'authentication']
+		description: 'Contributed new APIs and improved documentation structure',
+		labels: ['api', 'documentation', 'feature'],
 	},
 	{
-		url: 'https://github.com/facebook/react/pull/78910',
+		url: 'https://github.com/marcelscruz/dev-resources/pull/11223',
 		type: 'pr',
 		priority: 3,
-		description: 'Added TypeScript support and improved type safety',
-		labels: ['typescript', 'feature']
+		description: 'Added new developer resources and tools section',
+		labels: ['resources', 'tools', 'enhancement'],
 	},
-	{
-		url: 'https://github.com/nodejs/node/pull/11223',
-		type: 'pr',
-		priority: 4,
-		description: 'Improved documentation for async/await patterns',
-		labels: ['documentation', 'async']
-	},
-	{
-		url: 'https://github.com/astro-build/astro/issues/33445',
-		type: 'issue',
-		priority: 5,
-		description: 'Reported and helped fix SSR hydration issue',
-		labels: ['ssr', 'hydration', 'bug']
-	},
-	// Replace these URLs with your actual GitHub contributions
-	// You can add more contributions here...
+
+	// Add more contributions as needed...
 ];

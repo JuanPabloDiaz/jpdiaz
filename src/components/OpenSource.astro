@@ -2,23 +2,56 @@
 import SubTitle from '@components/ui/SubTitle.astro';
 import Link from '@components/ui/Link.astro';
 import ProjectListSmall from '@components/projects/ProjectListSmall.astro';
+import ContributionCard from '@components/contributions/ContributionCard.astro';
+import { topContributions } from '@src/data/top-contributions';
+import { processContributions } from '@utils/contributions';
+
+// Process the contributions data
+const processedContributions = processContributions(topContributions);
 ---
 
 <div class="h-10" id="oss"></div>
 
-<section
-	data-testid="openSource"
-	class="mb-20 flex flex-col items-center justify-center md:mb-0 md:h-screen"
->
+<section data-testid="openSource" class="mb-20 flex flex-col items-center justify-center md:mb-0">
 	<SubTitle text="Open Source" />
-	<p class="text-gray-500 text-center lg:w-1/2">
-		I love to contribute to OSS. Here are a few projects that I have worked on.
+	<p class="text-gray-500 mb-8text-center lg:w-1/2">
+		I love to contribute to OSS. Here are my top contributions and projects that I have worked on.
 	</p>
-	<ProjectListSmall collectionName="open-source" />
-	<Link
-		text="View more Contributions"
-		ariaLabel="View more Contributions to Open Source"
-		href="./oss"
-		arrow
-	/>
+
+	<!-- Top Contributions Section -->
+	{
+		processedContributions.length > 0 && (
+			<div class="mb-8 w-full max-w-6xl">
+				<h3 class="text-gray-800 dark:text-gray-200 mb-8 text-center text-2xl font-bold">
+					🏆 Top Contributions
+				</h3>
+				<div class="flex flex-wrap justify-center">
+					{processedContributions.slice(0, 6).map((contribution) => (
+						<ContributionCard
+							contribution={contribution}
+							showDescription={true}
+							isTopContribution={true}
+						/>
+					))}
+				</div>
+			</div>
+		)
+	}
+
+	<!-- Open Source Projects Section -->
+	<div class="w-full max-w-6xl">
+		<h3 class="text-gray-800 dark:text-gray-200 mb-8 text-center text-2xl font-bold">
+			🚀 Open Source Projects
+		</h3>
+		<ProjectListSmall collectionName="open-source" />
+	</div>
+
+	<div class="mt-8">
+		<Link
+			text="View all Open Source contributions"
+			ariaLabel="View more Open Source contributions"
+			href="./oss"
+			arrow
+		/>
+	</div>
 </section>
