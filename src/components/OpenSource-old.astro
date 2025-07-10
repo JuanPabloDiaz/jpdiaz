@@ -1,0 +1,24 @@
+---
+import SubTitle from '@components/ui/SubTitle.astro';
+import Link from '@components/ui/Link.astro';
+import ProjectListSmall from '@components/projects/ProjectListSmall.astro';
+---
+
+<div class="h-10" id="oss"></div>
+
+<section
+	data-testid="openSource"
+	class="mb-20 flex flex-col items-center justify-center md:mb-0 md:h-screen"
+>
+	<SubTitle text="Open Source" />
+	<p class="text-gray-500 text-center lg:w-1/2">
+		I love to contribute to OSS. Here are a few projects that I have worked on.
+	</p>
+	<ProjectListSmall collectionName="open-source" />
+	<Link
+		text="View more Contributions"
+		ariaLabel="View more Contributions to Open Source"
+		href="./oss"
+		arrow
+	/>
+</section>

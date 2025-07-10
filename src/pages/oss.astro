@@ -4,20 +4,85 @@ import SubTitle from '@components/ui/SubTitle.astro';
 import Navbar from '@components/Navbar.astro';
 import CallToAction from '@components/CallToAction.astro';
 import ProjectListSmall from '@components/projects/ProjectListSmall.astro';
+import ContributionCard from '@components/contributions/ContributionCard.astro';
 import { backHomeMenu } from '@src/consts';
+import { Icon } from 'astro-icon/components';
 import { site } from '@src/consts';
+import { topContributions } from '@src/data/top-contributions';
+import { processContributions } from '@utils/contributions';
+
+// Process all contributions data for the full OSS page
+const allProcessedContributions = processContributions(topContributions);
+// Separate top contributions from the rest
+const topProcessedContributions = allProcessedContributions.filter((contrib) => {
+	const originalData = topContributions.find((original) => original.url === contrib.url);
+	return originalData?.top === true;
+});
+const otherProcessedContributions = allProcessedContributions.filter((contrib) => {
+	const originalData = topContributions.find((original) => original.url === contrib.url);
+	return originalData?.top !== true;
+});
 ---
 
-<Layout metaTitle={`More Open Source | ${site.author}`} includeSidebar={false}>
+<Layout metaTitle={`Open Source | ${site.author}`} includeSidebar={false}>
 	<Navbar menu={backHomeMenu} button="Home" />
 	<main
-		class="mb-10 flex flex-col items-center justify-center text-black dark:text-white md:mb-0 md:h-screen lg:h-auto"
+		class="mb-10 flex flex-col items-center justify-center text-black dark:text-white md:mb-0 lg:min-h-screen"
 	>
-		<SubTitle text="Open Source Projects" />
-		<p class="text-black dark:text-white">
-			Here are some additional open-source projects that I have contributed to.
+		<SubTitle text="Open Source" />
+		<p class="mb-12 text-center text-black dark:text-white lg:w-1/2">
+			Here are all my open-source contributions and projects that I have worked on.
 		</p>
-		<ProjectListSmall collectionName="more-open-source" />
+
+		<!-- Top Contributions Section -->
+		{
+			topProcessedContributions.length > 0 && (
+				<div class="mb-16 w-full max-w-6xl">
+					<h3 class="text-gray-800 dark:text-gray-200 mb-8 text-center text-2xl font-bold">
+						Code Contributions
+					</h3>
+					<div class="flex flex-wrap justify-center">
+						{topProcessedContributions.map((contribution) => (
+							<ContributionCard
+								contribution={contribution}
+								showDescription={true}
+								isTopContribution={true}
+							/>
+						))}
+					</div>
+				</div>
+			)
+		}
+
+		<!-- Other Contributions Section -->
+		{
+			otherProcessedContributions.length > 0 && (
+				<div class="mb-16 w-full max-w-6xl">
+					<div class="flex flex-wrap justify-center">
+						{otherProcessedContributions.map((contribution) => (
+							<ContributionCard
+								contribution={contribution}
+								showDescription={true}
+								isTopContribution={false}
+							/>
+						))}
+					</div>
+				</div>
+			)
+		}
+
+		<!-- Open Source Projects Section -->
+		<div class="w-full max-w-6xl">
+			<h3
+				class="text-gray-800 dark:text-gray-200 mb-8 flex items-center justify-center gap-2 text-center text-2xl font-bold"
+			>
+				<Icon name="carbon:rocket" class="text-blue-500 h-6 w-6" />
+				Open Source Projects
+			</h3>
+			<ProjectListSmall collectionName="open-source" />
+			<ProjectListSmall collectionName="more-open-source" />
+		</div>
+
 		<div class="mt-20"><CallToAction social line button /></div>
 	</main>
 </Layout>
