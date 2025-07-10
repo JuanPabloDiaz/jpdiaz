@@ -20,14 +20,14 @@ function getTypeIcon(type: string) {
 		data-testid="contribution-card"
 		class={`relative flex h-28 overflow-hidden rounded-xl bg-white/95 p-2 shadow-lg transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-white hover:shadow-xl ${
 			isTopContribution
-				? 'ring-2 ring-orange-400 dark:ring-orange-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-900'
+				? 'ring-2 ring-orange ring-offset-2 ring-offset-white dark:ring-offset-gray-900'
 				: ''
 		}`}
 	>
 		{
 			isTopContribution && (
-				<div class="from-orange-500 to-red-500 absolute -right-2 -top-2 z-10 rotate-12 transform rounded-full bg-gradient-to-r px-3 py-1 text-xs font-bold text-white shadow-lg">
-					⭐ TOP
+				<div class="dark:border-gray-900 absolute -top-0 right-2 z-10 inline-flex h-6 w-8 items-center justify-center rounded-full border-2 border-white bg-orange px-4 text-xs font-bold text-black dark:text-white">
+					TOP
 				</div>
 			)
 		}
