@@ -28,8 +28,8 @@ const processedContributions = allProcessedContributions.filter((contrib) => {
 	{
 		processedContributions.length > 0 && (
 			<div class="mb-16 w-full max-w-6xl">
-				<h3 class="text-gray-800 dark:text-gray-200 mb-8 text-center text-2xl font-bold flex items-center justify-center gap-2">
-					<Icon name="carbon:trophy" class="h-6 w-6 text-yellow-500" />
+				<h3 class="text-gray-800 dark:text-gray-200 mb-8 flex items-center justify-center gap-2 text-center text-2xl font-bold">
+					<Icon name="carbon:trophy" class="text-yellow-500 h-6 w-6" />
 					Top Contributions
 				</h3>
 				<div class="flex flex-wrap justify-center">
@@ -47,8 +47,10 @@ const processedContributions = allProcessedContributions.filter((contrib) => {
 
 	<!-- Open Source Projects Section -->
 	<div class="w-full max-w-6xl">
-		<h3 class="text-gray-800 dark:text-gray-200 mb-8 text-center text-2xl font-bold flex items-center justify-center gap-2">
-			<Icon name="carbon:rocket" class="h-6 w-6 text-blue-500" />
+		<h3
+			class="text-gray-800 dark:text-gray-200 mb-8 flex items-center justify-center gap-2 text-center text-2xl font-bold"
+		>
+			<Icon name="carbon:rocket" class="text-blue-500 h-6 w-6" />
 			Open Source Projects
 		</h3>
 		<ProjectListSmall collectionName="open-source" />

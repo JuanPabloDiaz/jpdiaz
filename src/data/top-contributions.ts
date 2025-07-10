@@ -3,7 +3,6 @@ export interface ContributionData {
 	type: 'pr' | 'issue';
 	priority: number; // Lower number = higher priority for homepage display
 	description?: string; // Optional custom description
-	labels?: string[]; // Optional custom labels/tags
 	language?: string; // Programming language
 	title?: string; // Custom title for the contribution
 	dateCompleted?: string; // Date when the contribution was completed
@@ -12,72 +11,36 @@ export interface ContributionData {
 
 export const topContributions: ContributionData[] = [
 	{
-		url: 'https://github.com/tech-conferences/conference-data/pull/12345',
+		url: 'https://github.com/tech-conferences/confs.tech/pull/632',
 		type: 'pr',
 		priority: 1,
 		title: 'Add Team page to Confs.tech',
-		description: 'Added comprehensive conference data for 2024 tech events across Latin America',
-		labels: ['data', 'conferences', 'enhancement'],
-		language: 'JSON',
-		dateCompleted: '2024-03-15',
+		description:
+			'Adds a new Team page with Maintainers and Contributors sections, styled and fetching data from GitHub API with local fallback.',
+		language: 'Typescript',
+		dateCompleted: '2024-06-14',
 		top: true,
 	},
 	{
-		url: 'https://github.com/marcelscruz/public-apis/pull/67890',
+		url: 'https://github.com/tech-conferences/confs.tech/pull/1021',
 		type: 'pr',
 		priority: 2,
-		title: 'Add Weather and Crypto APIs with improved docs',
+		title: '6 PRs merged to improve the update the project',
 		description:
-			'Contributed new APIs and improved documentation structure for better developer experience',
-		labels: ['api', 'documentation', 'feature'],
-		language: 'Markdown',
-		dateCompleted: '2024-02-28',
+			'Improves build performance, modernizes dependencies, adds cookie consent, enhances security headers, and updates key components for privacy and UX.',
+		language: 'Typescript',
+		dateCompleted: '2025-07-07',
 		top: true,
 	},
 	{
-		url: 'https://github.com/marcelscruz/dev-resources/pull/11223',
+		url: 'https://github.com/tech-conferences/confs.tech/pull/761',
 		type: 'pr',
 		priority: 3,
-		title: 'Add React and Vue.js learning resources section',
-		description: 'Added new developer resources and tools section for modern frontend frameworks',
-		labels: ['resources', 'tools', 'enhancement'],
-		language: 'TypeScript',
-		dateCompleted: '2024-01-20',
+		title: 'Add Date Range Filter to Conference List UI',
+		description:
+			'Adds date range filtering to the conference list, with styling and UX improvements using react-datepicker, plus minor layout and code tweaks.',
+		language: 'Typescript',
+		dateCompleted: '2025-07-09',
 		top: true,
 	},
-	{
-		url: 'https://github.com/astro-build/astro/issues/33445',
-		type: 'issue',
-		priority: 4,
-		title: 'SSR hydration mismatch in dynamic components',
-		description:
-			'Reported and helped fix SSR hydration issue affecting dynamic component rendering',
-		labels: ['ssr', 'hydration', 'bug'],
-		language: 'JavaScript',
-		dateCompleted: '2023-12-10',
-		top: false,
-	},
-	{
-		url: 'https://github.com/vercel/next.js/pull/44556',
-		type: 'pr',
-		priority: 5,
-		title: 'Improve TypeScript integration for App Router',
-		description: 'Enhanced TypeScript integration and developer experience for the new App Router',
-		labels: ['typescript', 'dx', 'feature'],
-		language: 'TypeScript',
-		dateCompleted: '2023-11-25',
-		top: false,
-	},
-	{
-		url: 'https://github.com/facebook/react/issue/77889',
-		type: 'issue',
-		priority: 6,
-		title: 'Performance bottleneck in useEffect cleanup',
-		description: 'Identified performance bottleneck in component rendering during effect cleanup',
-		labels: ['performance', 'react', 'bug'],
-		language: 'JavaScript',
-		dateCompleted: '2023-10-15',
-		top: false,
-	},
-	// Add more contributions as needed...
 ];

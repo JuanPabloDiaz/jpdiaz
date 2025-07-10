@@ -1,6 +1,7 @@
 ---
 import type { ProcessedContribution } from '@utils/contributions.ts';
 import Tags from '@components/ui/Tags.astro';
+import { Icon } from 'astro-icon/components';
 
 interface Props {
 	contribution: ProcessedContribution;
@@ -46,7 +47,9 @@ function formatDate(dateString: string) {
 			</h3>
 
 			<!-- Repository name (hidden on hover) -->
-			<div class="mb-1 transform transition-all duration-300 ease-in-out group-hover:translate-y-[100%] group-hover:opacity-0">
+			<div
+				class="mb-1 transform transition-all duration-300 ease-in-out group-hover:translate-y-[100%] group-hover:opacity-0"
+			>
 				<span class="text-blue-600 dark:text-blue-600 text-xs font-medium">
 					{contribution.repoFullName}
 				</span>
@@ -76,18 +79,11 @@ function formatDate(dateString: string) {
 					}
 					{
 						contribution.language && (
-							<span class="rounded-full px-2 py-0.5 text-xs font-medium bg-gray-100 text-gray-800">
+							<span class="bg-gray-100 text-gray-800 rounded-full px-2 py-0.5 text-xs font-medium">
 								{contribution.language}
 							</span>
 						)
 					}
-				</div>
-
-				<!-- Tags row -->
-				<div
-					class="transform transition-all duration-300 ease-in-out group-hover:translate-y-[100%] group-hover:opacity-0"
-				>
-					<Tags tags={contribution.customLabels || contribution.labels.slice(0, 2)} />
 				</div>
 			</div>
 		</article>
@@ -97,18 +93,12 @@ function formatDate(dateString: string) {
 			<a
 				href={contribution.url}
 				target="_blank"
+				aria-label="link to project"
+				class="flex h-7 w-7 items-center justify-center rounded-lg bg-orange shadow-sm shadow-black/20 transition-all duration-300 hover:scale-105 hover:bg-opacity-80 hover:shadow-none"
 				rel="noopener noreferrer"
-				class="bg-gray-100 text-gray-600 hover:bg-blue-100 hover:text-blue-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-blue-900 dark:hover:text-blue-400 flex h-8 w-8 items-center justify-center rounded-full transition-all duration-300"
 				title="View Contribution"
 			>
-				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-					<path
-						d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"
-					></path>
-					<path
-						d="M5 5a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2v-1a1 1 0 10-2 0v1H5V7h1a1 1 0 000-2H5z"
-					></path>
-				</svg>
+				<Icon name="majesticons:open" class="h-4 w-4" />
 			</a>
 		</div>
 	</section>
