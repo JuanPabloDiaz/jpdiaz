@@ -16,22 +16,23 @@ const processedContributions = allProcessedContributions.filter((contrib) => {
 });
 ---
 
-<div class="h-10" id="oss"></div>
+<div class="h-12" id="oss"></div>
 
 <section data-testid="openSource" class="mb-20 flex flex-col items-center justify-center md:mb-0">
 	<SubTitle text="Open Source" />
-	<p class="text-gray-500 mb-8 text-center lg:w-1/2">
-		I love to contribute to OSS. Here are my top contributions and projects that I have worked on.
+	<p class="mb-4 text-center lg:w-1/2">
+		I love to contribute to OSS. Here are my top contributions and OSS projects that I have worked
+		on.
 	</p>
 
 	<!-- Top Contributions Section -->
 	{
 		processedContributions.length > 0 && (
-			<div class="mb-16 w-full max-w-6xl">
-				<h3 class="text-gray-800 dark:text-gray-200 mb-8 flex items-center justify-center gap-2 text-center text-2xl font-bold">
-					<Icon name="carbon:trophy" class="text-yellow-500 h-6 w-6" />
+			<div class="mb-6 w-full max-w-6xl">
+				<h6 class="mb-4 flex items-center justify-center gap-2 text-center text-xl font-bold">
+					<Icon name="carbon:trophy" class="h-6 w-6" />
 					Top Contributions
-				</h3>
+				</h6>
 				<div class="flex flex-wrap justify-center">
 					{processedContributions.map((contribution) => (
 						<ContributionCard
@@ -41,22 +42,27 @@ const processedContributions = allProcessedContributions.filter((contrib) => {
 						/>
 					))}
 				</div>
+				<p class="text-center text-xs">
+					Explore my Top Contributions and much more in the Open Source Contributions page
+				</p>
 			</div>
 		)
 	}
 
 	<!-- Open Source Projects Section -->
 	<div class="w-full max-w-6xl">
-		<h3
-			class="text-gray-800 dark:text-gray-200 mb-8 flex items-center justify-center gap-2 text-center text-2xl font-bold"
-		>
-			<Icon name="carbon:rocket" class="text-blue-500 h-6 w-6" />
+		<h6 class="mb-4 flex items-center justify-center gap-2 text-center text-xl font-bold">
+			<Icon name="carbon:rocket" class="h-6 w-6" />
 			Open Source Projects
-		</h3>
+		</h6>
 		<ProjectListSmall collectionName="open-source" />
+		<p class="text-center text-xs">
+			My open source journey includes code contributions, bug fixes, documentation, translations,
+			resource contributions, automations, and more.
+		</p>
 	</div>
 
-	<div class="mt-8">
+	<div class="mt-0">
 		<Link
 			text="View all Open Source contributions"
 			ariaLabel="View all Open Source contributions"
