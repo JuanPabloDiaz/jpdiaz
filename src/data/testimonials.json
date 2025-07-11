@@ -1,5 +1,5 @@
 {
-	"generated_at": "2025-05-27 12:01:34",
+	"generated_at": "2025-07-11 12:40:28",
 	"repositories": [
 		{
 			"repo": "Mteheran/api-colombia",
@@ -50,12 +50,6 @@
 			"repo": "tech-conferences/conference-data",
 			"testimonials": [
 				{
-					"text": "Thanks a lot. Sounds like a good idea.",
-					"author": "cgrail",
-					"date": "May 2024",
-					"url": "https://github.com/tech-conferences/conference-data/issues/6596#issuecomment-2107757214"
-				},
-				{
 					"text": "Thanks, Juan!",
 					"author": "oliverlindberg",
 					"date": "Feb 2025",
@@ -72,6 +66,12 @@
 					"author": "nimzco",
 					"date": "May 2024",
 					"url": "https://github.com/tech-conferences/conference-data/pull/6816#pullrequestreview-2083732347"
+				},
+				{
+					"text": "Thanks a lot. Sounds like a good idea.",
+					"author": "cgrail",
+					"date": "May 2024",
+					"url": "https://github.com/tech-conferences/conference-data/issues/6596#issuecomment-2107757214"
 				}
 			]
 		},
@@ -79,16 +79,16 @@
 			"repo": "tech-conferences/confs.tech",
 			"testimonials": [
 				{
-					"text": "👏🏼 thank you!",
-					"author": "nimzco",
-					"date": "Jan 2025",
-					"url": "https://github.com/tech-conferences/confs.tech/pull/875#issuecomment-2617766614"
-				},
-				{
 					"text": "Thanks a lot",
 					"author": "cgrail",
 					"date": "Jan 2025",
 					"url": "https://github.com/tech-conferences/confs.tech/issues/877#issuecomment-2620095882"
+				},
+				{
+					"text": "👏🏼 thank you!",
+					"author": "nimzco",
+					"date": "Jan 2025",
+					"url": "https://github.com/tech-conferences/confs.tech/pull/875#issuecomment-2617766614"
 				},
 				{
 					"text": "Hey @JuanPabloDiaz ! Love the love you're giving to that team page! \r\nGenerally speaking, I liked the _low key_ team page, but at the same time, it might help us having more contributors in the future :)\r\n\r\n<img width=\"343\" alt=\"image\" src=\"https://github.com/tech-conferences/confs.tech/assets/445045/03984a2c-687f-425a-8200-174bad94f140\">\r\n\r\n😱 @cgrail that's a huge number of contributions!\r\n\r\n> I am getting a bunch of error when running the project locally and I am not sure how to fix it. Please advise.\r\n\r\nWhat's your node version? How are you starting the project?",
@@ -102,12 +102,6 @@
 			"repo": "unitycatalog/unitycatalog-ui",
 			"testimonials": [
 				{
-					"text": "LGTM, thanks @JuanPabloDiaz!",
-					"author": "MrPowers",
-					"date": "Jul 2024",
-					"url": "https://github.com/unitycatalog/unitycatalog-ui/pull/46#pullrequestreview-2201703568"
-				},
-				{
 					"text": "LGTM! Thank you!",
 					"author": "jamieknight-db",
 					"date": "Aug 2024",
@@ -118,6 +112,12 @@
 					"author": "dennyglee",
 					"date": "Aug 2024",
 					"url": "https://github.com/unitycatalog/unitycatalog-ui/pull/60#issuecomment-2265438075"
+				},
+				{
+					"text": "LGTM, thanks @JuanPabloDiaz!",
+					"author": "MrPowers",
+					"date": "Jul 2024",
+					"url": "https://github.com/unitycatalog/unitycatalog-ui/pull/46#pullrequestreview-2201703568"
 				}
 			]
 		},
@@ -171,12 +171,6 @@
 					"author": "dreyfus92",
 					"date": "Apr 2025",
 					"url": "https://github.com/withastro/docs/pull/11419#pullrequestreview-2762837515"
-				},
-				{
-					"text": "@JuanPabloDiaz buen trabajo! Te dejo una sugerencia! 🚀",
-					"author": "drixswe",
-					"date": "Apr 2025",
-					"url": "https://github.com/withastro/docs/pull/11426#pullrequestreview-2760668908"
 				}
 			]
 		}

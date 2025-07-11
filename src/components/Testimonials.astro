@@ -10,8 +10,12 @@ import LinkedInTestimonialCard from '@components/ui/LinkedInTestimonialCard.astr
 import { parseGitHubUrl } from '@utils/urlParser';
 import SubTitle from '@components/ui/SubTitle.astro';
 
-import testimonialsData from '@src/content/testimonials.json';
-import linkedinTestimonialsData from '@src/content/linkedin_testimonials.json';
+import testimonialsData from '@src/data/testimonials.json';
+import linkedinTestimonialsData from '@src/data/linkedin_testimonials.json';
+import manualGithubData from '@src/data/github_manual_testimonials.json';
+
+// Testimonios manuales que puedes editar directamente aquí
+const manualTestimonialsData = manualGithubData;
 
 interface Props {
 	title?: string;
@@ -161,6 +165,7 @@ if (allComments.length === 0 || shouldUseFallbackTestimonials) {
 	// Create a manual collection of testimonials based on the testimonials.json data
 	const manualTestimonials: GitHubIssueComment[] = [];
 
+	// Procesar testimonios automáticos de testimonials.json
 	for (const repoGroup of testimonialsData.repositories) {
 		const repoName = repoGroup.repo;
 		const [owner, repo] = repoName ? repoName.split('/') : ['', ''];
@@ -192,10 +197,80 @@ if (allComments.length === 0 || shouldUseFallbackTestimonials) {
 		}
 	}
 
+	// Procesar testimonios manuales del array en el código
+	for (const repoGroup of manualTestimonialsData) {
+		const repoName = repoGroup.repo;
+		const [owner, repo] = repoName ? repoName.split('/') : ['', ''];
+
+		for (const testimonial of repoGroup.testimonials) {
+			manualTestimonials.push({
+				id: testimonial.url + '_manual', // Agregamos '_manual' para evitar duplicados
+				node_id: '',
+				user: {
+					login: testimonial.author,
+					avatar_url: `https://github.com/${testimonial.author}.png`,
+					id: 0,
+					node_id: '',
+					type: 'User',
+				},
+				created_at: testimonial.date,
+				body: testimonial.text,
+				html_url: testimonial.url,
+				issue_url: testimonial.url,
+				issue: {
+					title: testimonial.text.substring(0, 50) + '...',
+				},
+				repository: {
+					owner: owner,
+					name: repo,
+					full_name: repoName,
+				},
+			});
+		}
+	}
+
 	allComments = manualTestimonials;
-	console.log(`Created ${allComments.length} manual testimonials from testimonials.json`);
+	console.log(`Created ${allComments.length} testimonials (automatic + manual) from JSON files`);
 } else {
 	console.log('Using testimonials fetched from GitHub API:', allComments.length);
+
+	// En modo desarrollo, también agregar los testimonios manuales a los obtenidos de la API
+	const manualTestimonialsFromCode: GitHubIssueComment[] = [];
+
+	for (const repoGroup of manualTestimonialsData) {
+		const repoName = repoGroup.repo;
+		const [owner, repo] = repoName ? repoName.split('/') : ['', ''];
+
+		for (const testimonial of repoGroup.testimonials) {
+			manualTestimonialsFromCode.push({
+				id: testimonial.url + '_manual',
+				node_id: '',
+				user: {
+					login: testimonial.author,
+					avatar_url: `https://github.com/${testimonial.author}.png`,
+					id: 0,
+					node_id: '',
+					type: 'User',
+				},
+				created_at: testimonial.date,
+				body: testimonial.text,
+				html_url: testimonial.url,
+				issue_url: testimonial.url,
+				issue: {
+					title: testimonial.text.substring(0, 50) + '...',
+				},
+				repository: {
+					owner: owner,
+					name: repo,
+					full_name: repoName,
+				},
+			});
+		}
+	}
+
+	// Combinar testimonios de API con manuales
+	allComments = [...allComments, ...manualTestimonialsFromCode];
+	console.log(`Combined ${allComments.length} testimonials (API + manual)`);
 }
 
 // Ordenar los testimonios por fecha (más recientes primero)
