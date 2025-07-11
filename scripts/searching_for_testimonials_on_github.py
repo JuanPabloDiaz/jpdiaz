@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-GitHub Testimonial Finder
+Search for testimonials on repos
 
 This script scans a GitHub repository for comments in PRs, issues, and discussions
 from users other than the repository owner. It focuses on merged PRs and can

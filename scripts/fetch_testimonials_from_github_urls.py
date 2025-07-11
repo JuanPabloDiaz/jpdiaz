@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Script para obtener testimonios de GitHub a partir de una lista de URLs.
-Este script lee una lista de URLs de comentarios de GitHub y genera un archivo JSON
+Este script lee una lista de URLs de GitHub y genera un archivo JSON
 con la información básica (autor, texto, fecha y URL).
 """
 
@@ -9,6 +9,7 @@ import os
 import json
 import re
 import requests
+import time
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -83,36 +84,63 @@ def parse_github_url(url):
 
 def get_comment_data(url_info):
     """Obtiene los datos de un comentario de GitHub."""
-    if url_info["type"] == "pr_comment" or url_info["type"] == "issue_comment":
-        # Para comentarios en PRs e issues
-        api_url = f"https://api.github.com/repos/{url_info['owner']}/{url_info['repo']}/issues/comments/{url_info['comment_id']}"
-        response = requests.get(api_url, headers=HEADERS)
-        if response.status_code == 200:
-            data = response.json()
-            return {
-                "author": data["user"]["login"],
-                "avatar": data["user"]["avatar_url"],
-                "date": data["created_at"],
-                "text": data["body"],
-                "url": data["html_url"]
-            }
+    try:
+        if url_info["type"] == "pr_comment" or url_info["type"] == "issue_comment":
+            # Para comentarios en PRs e issues
+            api_url = f"https://api.github.com/repos/{url_info['owner']}/{url_info['repo']}/issues/comments/{url_info['comment_id']}"
+            response = requests.get(api_url, headers=HEADERS, timeout=30)
+            
+            if response.status_code == 200:
+                data = response.json()
+                if data and "user" in data and data["user"]:
+                    return {
+                        "author": data["user"]["login"],
+                        "avatar": data["user"]["avatar_url"],
+                        "date": data["created_at"],
+                        "text": data["body"],
+                        "url": data["html_url"]
+                    }
+                else:
+                    print(f"  Error: Datos incompletos en la respuesta de la API")
+                    return None
+            else:
+                print(f"  Error: API devolvió código {response.status_code}: {response.text}")
+                return None
 
-    elif url_info["type"] == "pr_review":
-        # Para reviews de PRs
-        api_url = f"https://api.github.com/repos/{url_info['owner']}/{url_info['repo']}/pulls/{url_info['number']}/reviews/{url_info['review_id']}"
-        response = requests.get(api_url, headers=HEADERS)
-        if response.status_code == 200:
-            data = response.json()
-            return {
-                "author": data["user"]["login"],
-                "avatar": data["user"]["avatar_url"],
-                "date": data["submitted_at"],
-                "text": data["body"] or "LGTM 👍", # A veces los reviews aprobados no tienen texto
-                "url": f"https://github.com/{url_info['owner']}/{url_info['repo']}/pull/{url_info['number']}#pullrequestreview-{url_info['review_id']}"
-            }
+        elif url_info["type"] == "pr_review":
+            # Para reviews de PRs
+            api_url = f"https://api.github.com/repos/{url_info['owner']}/{url_info['repo']}/pulls/{url_info['number']}/reviews/{url_info['review_id']}"
+            response = requests.get(api_url, headers=HEADERS, timeout=30)
+            
+            if response.status_code == 200:
+                data = response.json()
+                if data and "user" in data and data["user"]:
+                    return {
+                        "author": data["user"]["login"],
+                        "avatar": data["user"]["avatar_url"],
+                        "date": data["submitted_at"],
+                        "text": data["body"] or "LGTM 👍", # A veces los reviews aprobados no tienen texto
+                        "url": f"https://github.com/{url_info['owner']}/{url_info['repo']}/pull/{url_info['number']}#pullrequestreview-{url_info['review_id']}"
+                    }
+                else:
+                    print(f"  Error: Datos incompletos en la respuesta de la API")
+                    return None
+            else:
+                print(f"  Error: API devolvió código {response.status_code}: {response.text}")
+                return None
 
-    # Si llegamos aquí, algo falló
-    print(f"Error al obtener datos para: {url_info}")
+    except requests.exceptions.RequestException as e:
+        print(f"  Error de red: {e}")
+        return None
+    except KeyError as e:
+        print(f"  Error: Campo faltante en los datos: {e}")
+        return None
+    except Exception as e:
+        print(f"  Error inesperado: {e}")
+        return None
+
+    # Si llegamos aquí, tipo no reconocido
+    print(f"  Error: Tipo de URL no reconocido: {url_info.get('type', 'unknown')}")
     return None
 
 def format_date(date_str):
@@ -163,13 +191,19 @@ def main():
             continue
 
         # Formatear la fecha
+        original_date = comment_data["date"]
         comment_data["date"] = format_date(comment_data["date"])
 
         # Guardar la fecha original para ordenar
         try:
-            date_obj = datetime.fromisoformat(comment_data["date"].replace("Z", "+00:00"))
-            comment_data["date_for_sorting"] = date_obj.timestamp()
-        except (ValueError, TypeError):
+            # Intentar usar la fecha original primero
+            if original_date:
+                date_obj = datetime.fromisoformat(original_date.replace("Z", "+00:00"))
+                comment_data["date_for_sorting"] = date_obj.timestamp()
+            else:
+                comment_data["date_for_sorting"] = datetime.now().timestamp()
+        except (ValueError, TypeError) as e:
+            print(f"  Advertencia: Error al convertir fecha '{original_date}': {e}")
             # Si hay un error al convertir la fecha, usar la fecha actual
             comment_data["date_for_sorting"] = datetime.now().timestamp()
 
@@ -189,6 +223,9 @@ def main():
 
         testimonials_by_repo[repo_key].append(simple_data)
         print(f"  Éxito: {comment_data['author']} - {comment_data['date']}")
+        
+        # Pequeña pausa para evitar rate limiting
+        time.sleep(0.5)
 
     # Ordenar testimonios por fecha (más recientes primero) dentro de cada repositorio
     for repo in testimonials_by_repo:

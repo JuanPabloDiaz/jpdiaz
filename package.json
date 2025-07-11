@@ -22,8 +22,8 @@
 		"clean": "rm -rf node_modules .astro dist yarn.lock .yarn/cache && yarn install",
 		"lighthouse": "npx unlighthouse --site https://jpdiaz.dev",
 		"lighthouse:local": "npx unlighthouse --site http://localhost:4321",
-		"testimonios": "python3 scripts/find_testimonials_github.py",
-		"testimonios:manual": "python3 scripts/fetch_testimonials.py"
+		"search": "python3 scripts/searching_for_testimonials_on_github.py",
+		"testimonios": "python3 scripts/fetch_testimonials_from_github_urls.py"
 	},
 	"engines": {
 		"node": ">=20.3.0"

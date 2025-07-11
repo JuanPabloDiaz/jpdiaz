@@ -1,0 +1,24 @@
+[
+	{
+		"repo": "tech-conferences/confs.tech",
+		"testimonials": [
+			{
+				"text": "Hey @JuanPabloDiaz !\nThat's amazing, thank you so much for your work on the website, that's super cool!",
+				"author": "nimzco",
+				"date": "Jul 2025",
+				"url": "https://github.com/tech-conferences/confs.tech/pull/1021#issuecomment-3049859705"
+			}
+		]
+	},
+	{
+		"repo": "marcelscruz/dev-resources",
+		"testimonials": [
+			{
+				"text": "Thank you for adding these Juan, really great job! 🙏",
+				"author": "marcelscruz",
+				"date": "Jul 2025",
+				"url": "https://github.com/marcelscruz/dev-resources/issues/736#issuecomment-3047963720"
+			}
+		]
+	}
+]
