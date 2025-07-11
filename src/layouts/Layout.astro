@@ -8,6 +8,7 @@ import { SEO } from 'astro-seo';
 import GoogleAnalytics from '@components/GoogleAnalytics.astro';
 import BackToTop from '@components/ui/BackToTop.astro';
 import ThemeInitializer from '@components/ui/ThemeInitializer.astro';
+import PerformanceOptimizer from '@components/ui/PerformanceOptimizer.astro';
 import { site } from '@src/consts';
 
 export interface LayoutProps {
@@ -74,15 +75,21 @@ const effectiveKeywordsString = pageKeywords.join(', ');
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 
-		<!-- The <title> tag is now handled by the SEO component -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Inconsolata:wght@400;700&display=swap"
-			rel="stylesheet"
-		/>
-		<!-- Preloading the Inconsolata font used in H1 (LCP element) -->
-		<!-- Note: This preloads the CSS that then loads the font. For more aggressive preloading, direct .woff2 links would be needed once identified. -->
+		<!-- Preload critical resources -->
+		<!-- No custom fonts - using optimized system fonts for instant rendering -->
+
+		<!-- Preload hero image for LCP optimization -->
+		<link rel="preload" as="image" href="/src/assets/images/juan.jpg" />
+
+		<!-- PWA Manifest -->
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+		<meta name="apple-mobile-web-app-title" content="Juan Díaz" />
+
+		<!-- DNS prefetch for external resources -->
+		<link rel="dns-prefetch" href="https://api.github.com" />
+		<link rel="dns-prefetch" href="https://github.com" />
 		<ThemeInitializer />
 		<!-- The canonical link is now handled by the SEO component -->
 	</head>
@@ -93,5 +100,20 @@ const effectiveKeywordsString = pageKeywords.join(', ');
 		<BackToTop />
 		<Footer />
 		<GoogleAnalytics />
+		<PerformanceOptimizer />
+
+		<!-- Service Worker Registration -->
+		<script>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', async () => {
+					try {
+						const registration = await navigator.serviceWorker.register('/sw.js');
+						console.log('SW registered: ', registration);
+					} catch (registrationError) {
+						console.log('SW registration failed: ', registrationError);
+					}
+				});
+			}
+		</script>
 	</body>
 </html>

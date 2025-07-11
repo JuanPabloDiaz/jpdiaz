@@ -10,6 +10,7 @@
 	"scripts": {
 		"dev": "astro dev",
 		"build": "astro build",
+		"build:optimized": "./build-optimized.sh",
 		"preview": "astro preview",
 		"deploy:cloudflare": "npx wrangler@latest deploy",
 		"preview:cloudflare": "yarn build && npx wrangler@latest dev --local",
@@ -22,6 +23,7 @@
 		"clean": "rm -rf node_modules .astro dist yarn.lock .yarn/cache && yarn install",
 		"lighthouse": "npx unlighthouse --site https://jpdiaz.dev",
 		"lighthouse:local": "npx unlighthouse --site http://localhost:4321",
+		"analyze": "npx vite-bundle-analyzer dist",
 		"testimonios": "python3 scripts/find_testimonials_github.py",
 		"testimonios:manual": "python3 scripts/fetch_testimonials.py"
 	},
@@ -53,6 +55,7 @@
 		"@iconify-json/majesticons": "^1.2.2",
 		"@iconify-json/simple-icons": "^1.2.29",
 		"@playwright/test": "^1.33.0",
+		"@rollup/plugin-terser": "^0.4.4",
 		"@tailwindcss/typography": "^0.5.16",
 		"@types/node": "^22.15.21",
 		"@types/xml2js": "^0.4.14",
@@ -79,11 +82,13 @@
 		"reading-time": "^1.5.0",
 		"remark-directive": "^4.0.0",
 		"tailwindcss": "3",
+		"terser": "^5.43.1",
 		"typescript": "^5.8.3",
 		"unified": "^11.0.5",
 		"unist": "^0.0.1",
 		"unist-util-remove": "^4.0.0",
 		"unist-util-visit": "^5.0.0",
+		"vite-plugin-pwa": "^1.0.1",
 		"xml2js": "^0.6.2"
 	}
 }

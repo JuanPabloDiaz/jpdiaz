@@ -1,0 +1,115 @@
+---
+// Performance optimization component
+// This component handles various performance improvements
+---
+
+<script>
+  // Optimize third-party scripts loading
+  window.addEventListener('load', () => {
+    // Defer non-critical JavaScript execution
+    setTimeout(() => {
+      // Initialize non-critical animations after page load
+      const elementsToAnimate = document.querySelectorAll('[data-animate-on-load]');
+      elementsToAnimate.forEach(el => {
+        el.classList.add('animate-loaded');
+      });
+    }, 100);
+  });
+
+  // Optimize image loading
+  if ('loading' in HTMLImageElement.prototype) {
+    // Browser supports native lazy loading
+    const images = document.querySelectorAll('img[data-src]');
+    images.forEach(img => {
+      img.src = img.dataset.src;
+      img.removeAttribute('data-src');
+    });
+  } else {
+    // Fallback for older browsers
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    const images = document.querySelectorAll('img[data-src]');
+    images.forEach(img => imageObserver.observe(img));
+  }
+
+  // Optimize font loading
+  if ('fonts' in document) {
+    document.fonts.ready.then(() => {
+      document.body.classList.add('fonts-loaded');
+    });
+  }
+
+  // Prefetch resources on hover (for better perceived performance)
+  const prefetchLinks = document.querySelectorAll('a[href^="/"], a[href^="https://jpdiaz.dev"]');
+  prefetchLinks.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      const prefetchLink = document.createElement('link');
+      prefetchLink.rel = 'prefetch';
+      prefetchLink.href = link.href;
+      document.head.appendChild(prefetchLink);
+    }, { once: true });
+  });
+
+  // Optimize scroll performance
+  let ticking = false;
+  
+  function updateScrollElements() {
+    // Handle scroll-dependent elements efficiently
+    const scrollTop = window.pageYOffset;
+    
+    // Update elements that depend on scroll position
+    const parallaxElements = document.querySelectorAll('[data-parallax]');
+    parallaxElements.forEach(el => {
+      const speed = el.dataset.parallax || 0.5;
+      const yPos = -(scrollTop * speed);
+      el.style.transform = `translate3d(0, ${yPos}px, 0)`;
+    });
+    
+    ticking = false;
+  }
+
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(updateScrollElements);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', requestTick, { passive: true });
+</script>
+
+<style>
+  /* Critical CSS for performance */
+  .fonts-loaded {
+    font-display: swap;
+  }
+
+  /* Optimize animations for performance */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Optimize transitions */
+  .animate-loaded {
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  /* Reduce paint complexity */
+  .complex-element {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+</style>

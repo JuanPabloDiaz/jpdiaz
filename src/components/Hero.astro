@@ -71,9 +71,11 @@ const PDF = '/files/2025-SoftwareEngineer-DataEngineerCV.pdf';
 				format="webp"
 				width={450}
 				height={450}
-				quality={70}
+				quality={80}
 				loading="eager"
+				fetchpriority="high"
 				densities={[1.5, 2]}
+				decoding="async"
 			/>
 		</div>
 	</main>

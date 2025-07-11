@@ -62,10 +62,11 @@ const {
 					format="webp"
 					width={400}
 					height={400}
-					quality={70}
+					quality={80}
 					densities={[1.5, 2]}
 					class="h-full w-full object-center transition-all duration-300 ease-in-out group-hover:opacity-10"
 					loading="lazy"
+					decoding="async"
 				/>
 				<div
 					class="absolute inset-0 flex translate-y-4 transform flex-col bg-white/95 p-6 opacity-0 backdrop-blur-lg transition-all duration-300 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 dark:bg-[rgba(17,24,39,0.97)]"

@@ -32,6 +32,8 @@ export default defineConfig({
 		icon(),
 	],
 	site: 'https://jpdiaz.dev/',
+	output: 'static',
+	compressHTML: true,
 	markdown: {
     remarkPlugins: [remarkModifiedTime, resetRemark, remarkDirective /*, remarkAsides({}), remarkCollapse({}), remarkGithubCard({ token: process.env.PUBLIC_GITHUB_TOKEN }), remarkButton(), remarkHtml() */],
     rehypePlugins: [],
@@ -41,6 +43,29 @@ export default defineConfig({
 		},
 	},
 	vite: {
+		build: {
+			cssCodeSplit: true,
+			rollupOptions: {
+				output: {
+					manualChunks: {
+						'swiper': ['swiper'],
+						'fancyapps': ['@fancyapps/ui'],
+						'mathjax': ['mathjax'],
+						'mermaid': ['mermaid'],
+					}
+				}
+			},
+			minify: 'terser',
+			terserOptions: {
+				compress: {
+					drop_console: true,
+					drop_debugger: true,
+				},
+			},
+		},
+		ssr: {
+			noExternal: ['@fancyapps/ui', 'swiper'],
+		},
 		resolve: {
 			alias: {
 				'@src': path.resolve(__dirname, 'src'),

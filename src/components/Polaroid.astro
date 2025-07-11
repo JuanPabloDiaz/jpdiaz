@@ -5,7 +5,15 @@ import { Image } from 'astro:assets';
 ---
 
 <div id="polaroid">
-	<Image src={CERTIFICATION_IMAGES[0]?.src} alt="certification" width={100} height={100} />
+	<Image 
+		src={CERTIFICATION_IMAGES[0]?.src} 
+		alt="certification" 
+		width={100} 
+		height={100}
+		loading="lazy"
+		decoding="async"
+		quality={90}
+	/>
 	<div class="img-container"></div>
 	<label>
 		<span class="left">&#60;</span>

@@ -94,6 +94,9 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString(
 						class="dark:shadow-zinc-800 max-h-[400px] w-full max-w-2xl rounded-lg object-contain"
 						data-fancybox="hero-image"
 						data-caption={title}
+						loading="lazy"
+						decoding="async"
+						quality={85}
 					/>
 				</div>
 			)

@@ -1,5 +1,63 @@
-/* Improve Page speed */
+/* Performance optimizations */
 /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
 img {
-  content-visibility: auto;
+	content-visibility: auto;
+}
+
+/* Prevent layout shifts */
+img:not([width]):not([height]) {
+	height: auto;
+	max-width: 100%;
+}
+
+/* Optimize will-change for animations */
+.hover\:scale-105:hover,
+.hover\:transform:hover {
+	will-change: transform;
+}
+
+/* Remove will-change after animations */
+.hover\:scale-105:not(:hover),
+.hover\:transform:not(:hover) {
+	will-change: auto;
+}
+
+/* System font optimizations - no web fonts for instant rendering */
+html {
+	/* Enhanced typography features for system fonts */
+	font-feature-settings: 'kern' 1;
+	font-variant-ligatures: common-ligatures;
+}
+
+/* Reduce layout thrashing */
+* {
+	box-sizing: border-box;
+}
+
+/* Smooth scrolling performance */
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+/* Optimize swiper container to prevent layout shifts */
+.swiper-container {
+	contain: layout style paint;
+}
+
+/* Prevent cumulative layout shift for navigation */
+.swiper-button-next,
+.swiper-button-prev {
+	contain: layout;
+}
+
+/* Optimized system font rendering */
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	letter-spacing: -0.005em;
+	line-height: 1.6;
 }

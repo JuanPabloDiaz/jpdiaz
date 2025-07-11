@@ -49,7 +49,8 @@ const projectsWithGitHubData = await Promise.all(
 	<SubTitle text="Projects" />
 
 	<div class="projects-swiper-container relative w-full">
-		<div class="swiper projects-swiper">
+		<!-- Reserve space to prevent layout shift -->
+		<div class="swiper projects-swiper min-h-[400px] md:min-h-[500px]">
 			<div class="swiper-wrapper">
 				{
 					projectsWithGitHubData.map((project) => (
@@ -124,7 +125,7 @@ const projectsWithGitHubData = await Promise.all(
 					prevEl: '.swiper-button-prev',
 				},
 				autoplay: {
-					delay: 5000,
+					delay: 6000,
 					disableOnInteraction: false,
 					pauseOnMouseEnter: true,
 				},
@@ -146,8 +147,7 @@ const projectsWithGitHubData = await Promise.all(
 					},
 				},
 				effect: 'slide',
-				speed: 800,
-				preloadImages: true,
+				speed: 600,
 				watchSlidesProgress: true,
 			});
 		});
