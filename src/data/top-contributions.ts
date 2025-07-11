@@ -43,4 +43,58 @@ export const topContributions: ContributionData[] = [
 		dateCompleted: '2025-07-09',
 		top: true,
 	},
+	{
+		url: 'https://github.com/unitycatalog/unitycatalog-ui/pull/69',
+		type: 'pr',
+		priority: 4,
+		title: 'Add ability to edit schema description',
+		description:
+			'Allows users to edit the schema description directly from the UI, improving usability and accessibility.',
+		language: 'Typescript',
+		dateCompleted: '2024-08-22',
+		top: false,
+	},
+	{
+		url: 'https://github.com/tech-conferences/confs.tech/pull/878',
+		type: 'pr',
+		priority: 5,
+		title: 'Update dropdown menu styles',
+		description:
+			'Improves dropdown menu styles for better visibility in dark mode, enhancing user experience across different themes.',
+		language: 'Typescript',
+		dateCompleted: '2025-01-28',
+		top: false,
+	},
+	{
+		url: 'https://github.com/marcelscruz/dev-resources/pull/861',
+		type: 'pr',
+		priority: 6,
+		title: 'Order resources',
+		description: 'Script to extract and alphabetically sort resources in .ts files.',
+		language: 'Javascript',
+		dateCompleted: '2025-07-02',
+		top: false,
+	},
+	{
+		url: 'https://github.com/rupali-codes/LinksHub/pull/2538/files',
+		type: 'pr',
+		priority: 9,
+		title: 'feat: add github action to self-assign the issue',
+		description:
+			'Create a GitHub workflow to self-assign issues by commenting *take*, enhancing issue management and automation.',
+		language: 'GitHub Actions',
+		dateCompleted: '2024-10-19',
+		top: false,
+	},
+	{
+		url: 'https://github.com/tech-conferences/conference-data/pull/7022',
+		type: 'pr',
+		priority: 10,
+		title: 'Add Broken Link Checker',
+		description:
+			'Adds a broken link checker to the project, ensuring all links are valid and up-to-date.',
+		language: 'GitHub Actions',
+		dateCompleted: '2024-07-14',
+		top: false,
+	},
 ];
