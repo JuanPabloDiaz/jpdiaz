@@ -12,32 +12,10 @@ import SubTitle from '@components/ui/SubTitle.astro';
 
 import testimonialsData from '@src/data/testimonials.json';
 import linkedinTestimonialsData from '@src/data/linkedin_testimonials.json';
+import manualGithubData from '@src/data/github_manual_testimonials.json';
 
 // Testimonios manuales que puedes editar directamente aquí
-const manualTestimonialsData = [
-	{
-		repo: 'tech-conferences/confs.tech',
-		testimonials: [
-			{
-				text: "Hey @JuanPabloDiaz !\nThat's amazing, thank you so much for your work on the website, that's super cool!",
-				author: 'nimzco',
-				date: 'Jul 2025',
-				url: 'https://github.com/tech-conferences/confs.tech/pull/1021#issuecomment-3049859705',
-			},
-		],
-	},
-	{
-		repo: 'marcelscruz/dev-resources',
-		testimonials: [
-			{
-				text: 'Thank you for adding these Juan, really great job! 🙏',
-				author: 'marcelscruz',
-				date: 'Jul 2025',
-				url: 'https://github.com/marcelscruz/dev-resources/issues/736#issuecomment-3047963720',
-			},
-		],
-	},
-];
+const manualTestimonialsData = manualGithubData;
 
 interface Props {
 	title?: string;
