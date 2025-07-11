@@ -17,7 +17,7 @@ load_dotenv()
 
 # Configuración
 INPUT_FILE = "scripts/testimonial_urls.txt"
-OUTPUT_FILE = "src/content/testimonials.json"
+OUTPUT_FILE = "src/data/testimonials.json"
 GITHUB_TOKEN = os.environ.get("PUBLIC_GITHUB_TOKEN")
 
 # Headers para la API de GitHub
@@ -33,7 +33,7 @@ def parse_github_url(url):
     issue_comment_pattern = r"https://github\.com/([^/]+)/([^/]+)/issues/(\d+)#issuecomment-(\d+)"
     pr_review_pattern = r"https://github\.com/([^/]+)/([^/]+)/pull/(\d+)#pullrequestreview-(\d+)"
     discussion_comment_pattern = r"https://github\.com/([^/]+)/([^/]+)/discussions/(\d+)#discussioncomment-(\d+)"
-    
+
     # Intentar coincidir con cada patrón
     match = re.match(pr_comment_pattern, url)
     if match:
@@ -45,7 +45,7 @@ def parse_github_url(url):
             "number": pr_number,
             "comment_id": comment_id
         }
-    
+
     match = re.match(issue_comment_pattern, url)
     if match:
         owner, repo, issue_number, comment_id = match.groups()
@@ -56,7 +56,7 @@ def parse_github_url(url):
             "number": issue_number,
             "comment_id": comment_id
         }
-    
+
     match = re.match(pr_review_pattern, url)
     if match:
         owner, repo, pr_number, review_id = match.groups()
@@ -67,7 +67,7 @@ def parse_github_url(url):
             "number": pr_number,
             "review_id": review_id
         }
-    
+
     match = re.match(discussion_comment_pattern, url)
     if match:
         owner, repo, discussion_number, comment_id = match.groups()
@@ -78,7 +78,7 @@ def parse_github_url(url):
             "number": discussion_number,
             "comment_id": comment_id
         }
-    
+
     return None
 
 def get_comment_data(url_info):
@@ -96,7 +96,7 @@ def get_comment_data(url_info):
                 "text": data["body"],
                 "url": data["html_url"]
             }
-    
+
     elif url_info["type"] == "pr_review":
         # Para reviews de PRs
         api_url = f"https://api.github.com/repos/{url_info['owner']}/{url_info['repo']}/pulls/{url_info['number']}/reviews/{url_info['review_id']}"
@@ -110,7 +110,7 @@ def get_comment_data(url_info):
                 "text": data["body"] or "LGTM 👍", # A veces los reviews aprobados no tienen texto
                 "url": f"https://github.com/{url_info['owner']}/{url_info['repo']}/pull/{url_info['number']}#pullrequestreview-{url_info['review_id']}"
             }
-    
+
     # Si llegamos aquí, algo falló
     print(f"Error al obtener datos para: {url_info}")
     return None
@@ -129,11 +129,11 @@ def main():
     print(f"Input file: {INPUT_FILE}")
     print(f"Output file: {OUTPUT_FILE}")
     print("=====================================\n")
-    
+
     if not GITHUB_TOKEN:
         print("Error: No se encontró el token de GitHub. Asegúrate de tener un archivo .env con PUBLIC_GITHUB_TOKEN.")
         return
-    
+
     # Leer las URLs del archivo de entrada
     urls = []
     try:
@@ -145,9 +145,9 @@ def main():
     except FileNotFoundError:
         print(f"Error: No se encontró el archivo {INPUT_FILE}")
         return
-    
+
     print(f"Encontradas {len(urls)} URLs para procesar")
-    
+
     # Procesar cada URL
     testimonials_by_repo = {}
     for url in urls:
@@ -156,15 +156,15 @@ def main():
         if not url_info:
             print(f"  Error: No se pudo analizar la URL: {url}")
             continue
-        
+
         comment_data = get_comment_data(url_info)
         if not comment_data:
             print(f"  Error: No se pudieron obtener los datos del comentario")
             continue
-        
+
         # Formatear la fecha
         comment_data["date"] = format_date(comment_data["date"])
-        
+
         # Guardar la fecha original para ordenar
         try:
             date_obj = datetime.fromisoformat(comment_data["date"].replace("Z", "+00:00"))
@@ -172,7 +172,7 @@ def main():
         except (ValueError, TypeError):
             # Si hay un error al convertir la fecha, usar la fecha actual
             comment_data["date_for_sorting"] = datetime.now().timestamp()
-        
+
         # Crear un objeto simplificado con solo la información necesaria
         simple_data = {
             "text": comment_data["text"],
@@ -181,46 +181,46 @@ def main():
             "url": comment_data["url"],
             "date_for_sorting": comment_data["date_for_sorting"]
         }
-        
+
         # Agrupar por repositorio
         repo_key = f"{url_info['owner']}/{url_info['repo']}"
         if repo_key not in testimonials_by_repo:
             testimonials_by_repo[repo_key] = []
-        
+
         testimonials_by_repo[repo_key].append(simple_data)
         print(f"  Éxito: {comment_data['author']} - {comment_data['date']}")
-    
+
     # Ordenar testimonios por fecha (más recientes primero) dentro de cada repositorio
     for repo in testimonials_by_repo:
         testimonials_by_repo[repo].sort(key=lambda x: x["date_for_sorting"], reverse=True)
         # Eliminar el campo de ordenación que ya no necesitamos
         for item in testimonials_by_repo[repo]:
             del item["date_for_sorting"]
-    
+
     # Crear el resultado final
     result = {
         "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "repositories": []
     }
-    
+
     # Convertir el diccionario a una lista de repositorios
     for repo_name, testimonials in testimonials_by_repo.items():
         result["repositories"].append({
             "repo": repo_name,
             "testimonials": testimonials
         })
-    
+
     # Ordenar repositorios alfabéticamente
     result["repositories"].sort(key=lambda x: x["repo"])
-    
+
     # Guardar los testimonios en el archivo de salida
     if result["repositories"]:
         # Crear el directorio si no existe
         os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
-        
+
         with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
             json.dump(result, f, indent=2, ensure_ascii=False)
-        
+
         total_testimonials = sum(len(repo["testimonials"]) for repo in result["repositories"])
         print(f"\nGuardados {total_testimonials} testimonios de {len(result['repositories'])} repositorios en {OUTPUT_FILE}")
     else:
