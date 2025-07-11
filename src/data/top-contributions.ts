@@ -76,6 +76,28 @@ export const topContributions: ContributionData[] = [
 		top: false,
 	},
 	{
+		url: 'https://github.com/marcelscruz/public-apis/issues/559',
+		type: 'issue',
+		priority: 7,
+		title: 'Enhance PR review with link detection and /db edit warning',
+		description:
+			'Streamline PR reviews by automating two checks: detect new API links in README.md and warn against editing the auto-generated /db folder.',
+		language: 'GitHub Actions',
+		dateCompleted: '2025-07-11',
+		top: false,
+	},
+	{
+		url: 'https://github.com/marcelscruz/dev-resources/issues/870',
+		type: 'issue',
+		priority: 8,
+		title: 'Automate PR comments for new resource links and auto-generated file edits',
+		description:
+			'Streamline PR reviews by automating two checks: detect new resource links and warn against editing the auto-generated files',
+		language: 'GitHub Actions',
+		dateCompleted: '2025-07-11',
+		top: false,
+	},
+	{
 		url: 'https://github.com/rupali-codes/LinksHub/pull/2538/files',
 		type: 'pr',
 		priority: 9,
