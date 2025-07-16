@@ -153,7 +153,7 @@ export const resumeProjects = [
 	},
 	{
 		url: 'https://fav.jpdiaz.dev',
-		label: "Juan's Favorites",
+		label: 'Juan\'s Favorites',
 		description:
 			'A curated collection of my favorite Books, movies, TV shows, Games, artists and podcasts.',
 	},

@@ -69,6 +69,7 @@
 		"globals": "^16.2.0",
 		"hast": "^0.0.2",
 		"hastscript": "^9.0.1",
+		"jiti": "^2.4.2",
 		"mdast": "^2.3.2",
 		"mdast-util-directive": "^3.1.0",
 		"mdast-util-to-string": "^4.0.0",

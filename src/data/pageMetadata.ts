@@ -23,7 +23,7 @@ export const pageMetadata = {
 	oss: {
 		title: 'Open Source Projects | Juan Díaz',
 		description:
-			"Explore Juan Díaz's open source contributions and projects. From React components to Python tools, discover my commitment to the developer community and collaborative coding.",
+			'Explore Juan Díaz\'s open source contributions and projects. From React components to Python tools, discover my commitment to the developer community and collaborative coding.',
 		keywords: [
 			'Juan Diaz open source',
 			'GitHub contributions',
@@ -41,7 +41,7 @@ export const pageMetadata = {
 	resume: {
 		title: 'Resume | Juan Díaz - Full Stack Developer',
 		description:
-			"View Juan Díaz's professional resume. Full stack developer with experience in React, TypeScript, Python, and data engineering. Based in Charlotte, NC and available for opportunities.",
+			'View Juan Díaz\'s professional resume. Full stack developer with experience in React, TypeScript, Python, and data engineering. Based in Charlotte, NC and available for opportunities.',
 		keywords: [
 			'Juan Diaz resume',
 			'Full stack developer resume',
@@ -94,7 +94,7 @@ export const pageMetadata = {
 	blog: {
 		title: 'Blog | Juan Díaz - Tech Insights & Tutorials',
 		description:
-			"Read Juan Díaz's blog featuring technical tutorials, web development insights, programming tips, and thoughts on modern software engineering practices.",
+			'Read Juan Díaz\'s blog featuring technical tutorials, web development insights, programming tips, and thoughts on modern software engineering practices.',
 		keywords: [
 			'Juan Diaz blog',
 			'Web development blog',
@@ -130,7 +130,7 @@ export const pageMetadata = {
 	notFound: {
 		title: '404 - Page Not Found | Juan Díaz',
 		description:
-			"Oops! The page you're looking for doesn't exist. Return to Juan Díaz's portfolio to explore projects, blog posts, and professional information.",
+			'Oops! The page you\'re looking for doesn\'t exist. Return to Juan Díaz\'s portfolio to explore projects, blog posts, and professional information.',
 		keywords: ['404 error', 'Page not found', 'Juan Diaz portfolio', 'Developer portfolio'],
 		ogImage: '/images/desktop-v2.png',
 	},

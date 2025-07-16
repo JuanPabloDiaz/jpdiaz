@@ -8,7 +8,7 @@ const desiredOrder = ['title', 'description', 'pubDate', 'lang', 'tags', 'image'
 
 function formatYamlValue(key, value) {
   if (typeof value === 'string') {
-    return `'${value.replace(/'/g, "''")}'`; // Escapa comillas simples
+    return `'${value.replace(/'/g, '\'\'')}'`; // Escapa comillas simples
   }
   if (key === 'pubDate' && value instanceof Date) {
     return value.toISOString().split('T')[0]; // Solo fecha
