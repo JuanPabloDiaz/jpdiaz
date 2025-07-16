@@ -99,6 +99,94 @@ export const social = [
 	// },
 ];
 
+export const skills = [
+	{ name: 'React' },
+	{ name: 'Next.js' },
+	{ name: 'Astro' },
+	{ name: 'Nuxt.js' },
+	{ name: 'JavaScript' },
+	{ name: 'TypeScript' },
+	{ name: 'Tailwind CSS' },
+	{ name: 'Git' },
+	{ name: 'Python' },
+	{ name: 'SQL' },
+	{ name: 'Spark' },
+	{ name: 'AWS' },
+	{ name: 'Node.js' },
+	{ name: 'Express.js' },
+	{ name: 'MongoDB' },
+	{ name: 'Jekyll' },
+	{ name: 'n8n' },
+	{ name: 'REST APIs' },
+	{ name: 'HTML' },
+	{ name: 'CSS' },
+];
+
+export const resumeProjects = [
+	{
+		url: 'https://freeforgeeks.jpdiaz.dev',
+		label: 'FreeForGeeks',
+		description:
+			'Curated toolbox for building better software. Free resources for all your dev needs.',
+	},
+	{
+		url: 'https://repos.jpdiaz.dev',
+		label: 'Repos',
+		description: 'A collection of over 50+ open source projects that are public on my GitHub repo',
+	},
+	{
+		url: 'https://books.jpdiaz.dev',
+		label: 'Book Store',
+		description: 'A Full Stack Book Store web app using MERN stack.',
+	},
+	{
+		url: 'https://fit.jpdiaz.dev',
+		label: 'Fitness Matrix',
+		description:
+			'A cutting-edge web application that revolutionizes how you visualize and analyze your fitness data. By seamlessly integrating Strava and Hevy APIs.',
+	},
+	{
+		url: 'https://colombia.jpdiaz.dev',
+		label: 'Colombia 360',
+		description:
+			'An interactive web app exploring Colombia via maps, media, and data from api-colombia.com.',
+	},
+	{
+		url: 'https://fav.jpdiaz.dev',
+		label: "Juan's Favorites",
+		description:
+			'A curated collection of my favorite Books, movies, TV shows, Games, artists and podcasts.',
+	},
+	{
+		url: 'https://jpdiaz.dev',
+		label: 'Jpdiaz.dev',
+		description: 'Personal website with portfolio showcase, blog, and professional testimonials.',
+	},
+	{
+		url: 'https://docs.jpdiaz.dev',
+		label: 'Docs.jpdiaz.dev',
+		description:
+			'Delves into the intricacies of my projects, detailing the technologies used, development processes, and challenges tackled. It is a testament to continuous learning and skill development.',
+	},
+	{
+		url: 'https://juanpablodiaz.github.io/freecodecamp_certifications',
+		label: 'FreeCodeCamp Certification Projects',
+		description: 'Contains all the projects I have completed to earn freeCodeCamp certifications.',
+	},
+	{
+		url: 'https://juanpablodiaz.github.io/freecodecamp_certifications',
+		label: 'FreeCodeCamp Collection',
+		description:
+			'Has all the projects I built to earn these certifications: Legacy Front End, Front End Dev Libraries, and Responsive Web Design',
+	},
+	{
+		url: 'https://follow.jpdiaz.dev',
+		label: 'Follow.jpdiaz.dev',
+		description:
+			'Custom link management solution as Linktree alternative. A simple and clean way to display links.',
+	},
+];
+
 export const resumeCertifications = [
 	{
 		url: 'https://credentials.databricks.com/3428c69a-03d0-4598-8429-55786b9d8ddd#acc.G6QlY0p3',

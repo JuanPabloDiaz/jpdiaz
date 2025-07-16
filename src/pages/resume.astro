@@ -5,7 +5,14 @@ import { Icon } from 'astro-icon/components';
 import Button from '@components/ui/Button.astro';
 import Navbar from '@components/Navbar.astro';
 import Polaroid from '@components/Polaroid.astro';
-import { site, resumeCertifications, resumeCourses, resumePageMenu } from '@src/consts';
+import {
+	site,
+	skills,
+	resumeProjects,
+	resumeCertifications,
+	resumeCourses,
+	resumePageMenu,
+} from '@src/consts';
 import { getPageMetadata } from '@data/pageMetadata';
 
 const metadata = getPageMetadata('resume');
@@ -75,21 +82,7 @@ const basicLinkStyle =
 				</div>
 
 				<ul class="mx-6 mb-5 list-disc columns-2 md:columns-5">
-					<li>React</li>
-					<li>Next.js</li>
-					<li>Astro</li>
-					<li>JavaScript</li>
-					<li>TypeScript</li>
-					<li>Tailwind CSS</li>
-					<li>Python</li>
-					<li>SQL</li>
-					<li>AWS</li>
-					<li>Git</li>
-					<li>Node.js</li>
-					<li>Express.js</li>
-					<li>MongoDB</li>
-					<li>HTML</li>
-					<li>CSS</li>
+					{skills.map((skill) => <li>{skill.name}</li>)}
 				</ul>
 			</section>
 
@@ -358,61 +351,17 @@ const basicLinkStyle =
 					subtitle="From Feb. 2023 to Present. ~ Charlotte, NC, USA"
 				>
 					<ul class="ml-6 list-disc">
-						<li>
-							<a href="https://jpdiaz.dev" target="_blank" class={LinkStyle}>Jpdiaz.dev</a> - Personal
-							website with portfolio showcase, blog, and professional testimonials.
-						</li>
-						<li>
-							<a href="https://freeforgeeks.jpdiaz.dev" target="_blank" class={LinkStyle}
-								>FreeForGeeks</a
-							>
-							- Curated toolbox for building better software. Free resources for all your dev needs.
-						</li>
-						<li>
-							<a href="https://books.jpdiaz.dev" target="_blank" class={LinkStyle}>Book Store</a> - A
-							Full Stack Book Store web app using MERN stack.
-						</li>
-						<li>
-							<a href="https://fit.jpdiaz.dev" target="_blank" class={LinkStyle}>Fitness Matrix</a> is
-							a cutting-edge web application that revolutionizes how you visualize and analyze your fitness
-							data. By seamlessly integrating Strava and Hevy APIs.
-						</li>
-						<li>
-							<a href="https://colombia.jpdiaz.dev" target="_blank" class={LinkStyle}
-								>Colombia 360</a
-							>
-							is an interactive web app exploring Colombia via maps, media, and data from api-colombia.com.
-						</li>
-						<li>
-							<a href="https://fav.jpdiaz.dev" target="_blank" class={LinkStyle}>Juan's Favorites</a
-							> is a curated collection of my favorite Books, movies, TV shows, Games, artists and podcasts.
-						</li>
-						<li>
-							<a href="https://docs.jpdiaz.dev" target="_blank" class={LinkStyle}>Docs.jpdiaz.dev</a
-							> delves into the intricacies of my projects, detailing the technologies used, development
-							processes, and challenges tackled. It is a testament to continuous learning and skill development.
-						</li>
-						<li>
-							<a
-								href="https://juanpablodiaz.github.io/freecodecamp_certifications"
-								target="_blank"
-								class={LinkStyle}>FreeCodeCamp Certification Projects</a
-							> contains all the projects I have completed to earn freeCodeCamp certifications.
-						</li>
-						<li>
-							<a
-								href="https://juanpablodiaz.github.io/freecodecamp_certifications"
-								target="_blank"
-								class={LinkStyle}>FreeCodeCamp Collection</a
-							> has all the projects I built to earn these certifications: Legacy Front End, Front End
-							Dev Libraries, and Responsive Web Design
-						</li>
-						<li>
-							<a href="https://follow.jpdiaz.dev" target="_blank" class={LinkStyle}
-								>Follow.jpdiaz.dev</a
-							> Custom link management solution as Linktree alternative. A simple and clean way to display
-							links.
-						</li>
+						{
+							resumeProjects.map((project) => (
+								<li>
+									<a href={project.url} target="_blank" class={LinkStyle}>
+										{project.label}
+									</a>
+									{' - '}
+									{project.description}
+								</li>
+							))
+						}
 					</ul>
 				</TimeLineElement>
 				<TimeLineElement

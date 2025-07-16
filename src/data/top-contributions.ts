@@ -22,25 +22,25 @@ export const topContributions: ContributionData[] = [
 		top: true,
 	},
 	{
-		url: 'https://github.com/tech-conferences/confs.tech/pull/1021',
-		type: 'pr',
-		priority: 2,
-		title: '6 PRs merged to improve and update the project',
-		description:
-			'Improves build performance, modernizes dependencies, adds cookie consent, enhances security headers, and updates key components for privacy and UX.',
-		language: 'Typescript',
-		dateCompleted: '2025-07-07',
-		top: true,
-	},
-	{
 		url: 'https://github.com/tech-conferences/confs.tech/pull/761',
 		type: 'pr',
-		priority: 3,
+		priority: 2,
 		title: 'Add Date Range Filter to Conference List UI',
 		description:
 			'Adds date range filtering to the conference list, with styling and UX improvements using react-datepicker, plus minor layout and code tweaks.',
 		language: 'Typescript',
 		dateCompleted: '2025-07-09',
+		top: true,
+	},
+	{
+		url: 'https://github.com/tech-conferences/confs.tech/pull/1021',
+		type: 'pr',
+		priority: 3,
+		title: '6 PRs merged to improve and update the project',
+		description:
+			'Improves build performance, modernizes dependencies, adds cookie consent, enhances security headers, and updates key components for privacy and UX.',
+		language: 'Typescript',
+		dateCompleted: '2025-07-07',
 		top: true,
 	},
 	{
