@@ -6,7 +6,7 @@
 	"homepage": "https://jpdiaz.dev",
 	"type": "module",
 	"license": "MIT",
-	"packageManager": "yarn@1.22.19",
+	"packageManager": "yarn@4.9.2",
 	"scripts": {
 		"dev": "astro dev",
 		"build": "astro build",
@@ -30,7 +30,7 @@
 	},
 	"dependencies": {
 		"@fancyapps/ui": "^5.0.36",
-		"astro": "^5.12.8",
+		"astro": "5.12.9",
 		"dompurify": "^3.2.5",
 		"fuse.js": "^7.1.0",
 		"gray-matter": "^4.0.3",
@@ -40,8 +40,8 @@
 		"swiper": "^11.2.6"
 	},
 	"devDependencies": {
-		"@astrojs/mdx": "^4.3.0",
-		"@astrojs/sitemap": "^3.4.1",
+		"@astrojs/mdx": "4.3.3",
+		"@astrojs/sitemap": "3.4.2",
 		"@astrojs/tailwind": "^6.0.2",
 		"@astrojs/ts-plugin": "^1.10.4",
 		"@eslint/js": "^9.27.0",
