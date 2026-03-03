@@ -14,10 +14,17 @@ const { text, href, styles, target, ariaLabel, arrow } = Astro.props;
 const targetAttribute = target ? '_blank' : '_self';
 const baseClasses =
 	'flex py-2 transition duration-300 lg:px-3 text-black hover:text-orange dark:text-white dark:hover:text-orange';
+
+// Add base URL to internal links (start with / but not # or http/https)
+const baseUrl = import.meta.env.BASE_URL;
+const isInternalLink = href.startsWith('/') && !href.startsWith('#') && !href.startsWith('http');
+// Ensure proper concatenation with slash
+const normalizedBase = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
+const finalHref = isInternalLink ? `${normalizedBase}${href}` : href;
 ---
 
 <a
-	href={href}
+	href={finalHref}
 	target={targetAttribute}
 	rel="noopener"
 	aria-label={ariaLabel}

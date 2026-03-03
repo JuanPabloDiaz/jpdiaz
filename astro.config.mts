@@ -29,7 +29,8 @@ export default defineConfig({
 		sitemap(),
 		icon(),
 	],
-	site: 'https://jpdiaz.dev/',
+	site: process.env.ASTRO_SITE || 'https://jpdiaz.dev/',
+	base: process.env.ASTRO_BASE || '/',
 	markdown: {
 		remarkPlugins: [
 			remarkModifiedTime,
