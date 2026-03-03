@@ -50,8 +50,8 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build with Astro
         env:
-          ASTRO_SITE: 'https://juanpablodiaz.github.io'
-          ASTRO_BASE: '/jpdiaz'
+          ASTRO_SITE: 'https://jpdiaz.dev'
+          ASTRO_BASE: '/'
         run: pnpm astro build
         working-directory: ${{ env.BUILD_PATH }}
       - name: Upload artifact
