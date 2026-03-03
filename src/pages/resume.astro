@@ -14,10 +14,11 @@ import {
 	resumePageMenu,
 } from '@src/consts';
 import { getPageMetadata } from '@data/pageMetadata';
+import { withBase, paths } from '@utils/pathUtils';
 
 const metadata = getPageMetadata('resume');
 
-const PDF = '/files/2025-SoftwareEngineer-DataEngineerCV.pdf';
+const PDF = withBase(paths.pdf);
 const LinkStyle =
 	'hover:text-black dark:hover:text-white text-orange transition duration-300 dark:text-orange hover:underline hover:underline-offset-4';
 const basicLinkStyle =
@@ -129,7 +130,7 @@ const basicLinkStyle =
 						title="Information Technologies - Web Technologies (A.A.S)"
 						subtitle="Jan 2017 to Dec 2020, Charlotte NC"
 						comments="GPA: 3.7 | Central Piedmont Community College"
-						url="./certification/IT-WebTechnologies(AAS).jpg"
+						url={withBase('/certification/IT-WebTechnologies(AAS).jpg')}
 					/>
 					<!-- <TimeLineElement
 					title="Title Name"
@@ -156,7 +157,11 @@ const basicLinkStyle =
 							cert // Use imported resumeCertifications
 						) => (
 							<li class={cert.isWide ? 'col-span-3 hidden md:block' : ''}>
-								<a href={cert.url} class={`group ${basicLinkStyle}`} target="_blank">
+								<a
+									href={cert.url.startsWith('http') ? cert.url : withBase(cert.url)}
+									class={`group ${basicLinkStyle}`}
+									target="_blank"
+								>
 									<p class="underline-offset-4 hover:underline">{cert.title}</p>
 									<span class="ml-2 hidden text-xs opacity-50 group-hover:block">
 										● {cert.year}

@@ -9,6 +9,7 @@ import GoogleAnalytics from '@components/GoogleAnalytics.astro';
 import BackToTop from '@components/ui/BackToTop.astro';
 import ThemeInitializer from '@components/ui/ThemeInitializer.astro';
 import { site } from '@src/consts';
+import { withBase } from '@utils/pathUtils';
 
 export interface LayoutProps {
 	metaTitle?: string;
@@ -36,8 +37,12 @@ const {
 	pageKeywords = site.keywords,
 } = Astro.props as LayoutProps;
 
+// Add base path to relative OG images
+const ogImageWithBase = ogImage && !ogImage.startsWith('http') ? withBase(ogImage) : ogImage;
 const effectiveOgImageUrl =
-	ogImage && ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro.site).toString();
+	ogImageWithBase && ogImageWithBase.startsWith('http')
+		? ogImageWithBase
+		: new URL(ogImageWithBase || '', Astro.site).toString();
 const effectiveKeywordsString = pageKeywords.join(', ');
 ---
 

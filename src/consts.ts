@@ -244,7 +244,7 @@ export const resumeCertifications = [
 		year: '2022',
 	},
 	{
-		url: './certification/IT-AplicationSoftwareFundamentals.jpg',
+		url: '/certification/IT-AplicationSoftwareFundamentals.jpg',
 		title: 'IT in Application Software Fundamentals',
 		year: '2020',
 		isWide: false,

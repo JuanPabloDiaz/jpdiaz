@@ -5,8 +5,9 @@ import { Image } from 'astro:assets';
 import juanImage from '@assets/images/juan.jpg';
 import { site } from '@src/consts';
 import Typewriter from 'astro-typewriter';
+import { withBase, paths } from '@utils/pathUtils';
 
-const PDF = '/files/2025-SoftwareEngineer-DataEngineerCV.pdf';
+const PDF = withBase(paths.pdf);
 ---
 
 <section data-testid="hero" id="hero" class="mb-0 mt-0 h-auto text-center md:mb-24">
