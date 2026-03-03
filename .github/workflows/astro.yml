@@ -35,15 +35,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install pnpm
+        run: npm install -g pnpm
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'pnpm'
-      - name: Enable Corepack
-        run: corepack enable
-      - name: Install pnpm
-        run: corepack prepare pnpm@9 --activate
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
         working-directory: ${{ env.BUILD_PATH }}
