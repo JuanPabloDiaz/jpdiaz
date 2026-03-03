@@ -15,45 +15,45 @@ This is a personal portfolio website built with Astro, featuring a blog, project
 ### Development
 
 ```bash
-yarn dev                    # Start dev server on http://localhost:5173
-yarn build                  # Build for production
-yarn preview                # Preview production build
+pnpm dev                    # Start dev server on http://localhost:5173
+pnpm build                  # Build for production
+pnpm preview                # Preview production build
 ```
 
 ### Code Quality
 
 ```bash
-yarn format                 # Format code with Prettier (Astro, MD, JSON)
-yarn lint                   # Lint JavaScript/TypeScript/Astro files
-yarn lint:fix               # Auto-fix linting issues
-yarn check                  # Run both lint and format check
+pnpm format                 # Format code with Prettier (Astro, MD, JSON)
+pnpm lint                   # Lint JavaScript/TypeScript/Astro files
+pnpm lint:fix               # Auto-fix linting issues
+pnpm check                  # Run both lint and format check
 ```
 
 ### Testing
 
 ```bash
-yarn test                   # Run Playwright tests (requires dev server running)
+pnpm test                   # Run Playwright tests (requires dev server running)
 ```
 
 ### Performance
 
 ```bash
-yarn lighthouse             # Run Lighthouse on production site
-yarn lighthouse:local       # Run Lighthouse on local dev server (port 4321)
+pnpm lighthouse             # Run Lighthouse on production site
+pnpm lighthouse:local       # Run Lighthouse on local dev server (port 4321)
 ```
 
 ### Deployment
 
 ```bash
-yarn deploy:cloudflare      # Deploy to Cloudflare Workers
-yarn preview:cloudflare     # Build and preview Cloudflare deployment locally
+pnpm deploy:cloudflare      # Deploy to Cloudflare Workers
+pnpm preview:cloudflare     # Build and preview Cloudflare deployment locally
 ```
 
 ### Testimonials (Python Scripts)
 
 ```bash
-yarn search                 # Search for testimonials on GitHub
-yarn testimonios            # Fetch testimonials from GitHub URLs
+pnpm search                 # Search for testimonials on GitHub
+pnpm testimonios            # Fetch testimonials from GitHub URLs
 ```
 
 ## Architecture
