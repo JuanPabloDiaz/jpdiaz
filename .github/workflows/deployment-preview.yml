@@ -1,4 +1,4 @@
-name: Preview Deployment
+name: Deployment Preview
 
 on:
   pull_request:
@@ -36,8 +36,8 @@ jobs:
       - name: Build with Astro
         run: |
           pnpm astro build \
-            --site "${{ vars.SITE_URL }}" \
-            --base "/pr-preview-${{ github.event.pull_request.number }}"
+            --site "https://juanpablodiaz.github.io" \
+            --base "/jpdiaz/pr-preview-${{ github.event.pull_request.number }}"
         working-directory: ${{ env.BUILD_PATH }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
