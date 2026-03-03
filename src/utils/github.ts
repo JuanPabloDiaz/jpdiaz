@@ -220,7 +220,7 @@ async function githubRequest<T>(
 			case 401:
 				errorMessage += ' - Unauthorized: Invalid or expired GitHub token';
 				break;
-			case 403:
+			case 403: {
 				const rateLimitRemaining = response.headers.get('X-RateLimit-Remaining');
 				const rateLimitReset = response.headers.get('X-RateLimit-Reset');
 				if (rateLimitRemaining === '0') {
@@ -232,6 +232,7 @@ async function githubRequest<T>(
 					errorMessage += ' - Forbidden: Check token permissions or repository access';
 				}
 				break;
+			}
 			case 404:
 				errorMessage += ' - Not Found: Repository or resource does not exist';
 				break;
@@ -248,7 +249,7 @@ async function githubRequest<T>(
 					errorMessage += ` - ${parsedError.message}`;
 				}
 			}
-		} catch (e) {
+		} catch (_e) {
 			// Ignore parsing errors
 		}
 

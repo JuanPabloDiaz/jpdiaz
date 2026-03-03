@@ -98,11 +98,12 @@ if (!isProd) {
 								number as number
 							);
 							break;
-						default:
+						default: {
 							const errorMsg = `Unsupported comment type: ${commentType} for URL: ${testimonial.url}`;
 							console.error(errorMsg);
 							errors.push(errorMsg);
 							continue;
+						}
 					}
 
 					console.log('Fetched comments:', sourceComments ? sourceComments.length : 0);
