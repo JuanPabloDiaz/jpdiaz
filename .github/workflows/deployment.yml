@@ -51,8 +51,8 @@ jobs:
       - name: Build with Astro
         run: |
           pnpm astro build \
-            --site "${{ steps.pages.outputs.origin }}" \
-            --base "${{ steps.pages.outputs.base_path }}"
+            --site "https://juanpablodiaz.github.io" \
+            --base "/jpdiaz"
         working-directory: ${{ env.BUILD_PATH }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
