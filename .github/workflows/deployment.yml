@@ -49,10 +49,10 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
       - name: Build with Astro
-        run: |
-          pnpm astro build \
-            --site "https://juanpablodiaz.github.io" \
-            --base "/jpdiaz"
+        env:
+          ASTRO_SITE: 'https://juanpablodiaz.github.io'
+          ASTRO_BASE: '/jpdiaz'
+        run: pnpm astro build
         working-directory: ${{ env.BUILD_PATH }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

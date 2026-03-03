@@ -24,6 +24,11 @@ const lang = Astro.url.pathname.startsWith('/es/') ? 'es' : 'en';
 const langToggleUrl =
 	lang === 'es' ? Astro.url.pathname.replace('/es/', '/') : `/es${Astro.url.pathname}`;
 
+// Ensure baseUrl ends with a slash for proper path concatenation
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+	? import.meta.env.BASE_URL
+	: `${import.meta.env.BASE_URL}/`;
+
 const {
 	metaTitle = site.author + ' | Portfolio',
 	metaDescription = site.description,
@@ -71,8 +76,8 @@ const effectiveKeywordsString = pageKeywords.join(', ');
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="icon" type="image/x-icon" href={`${baseUrl}favicon.ico`} />
+		<link rel="icon" type="image/png" href={`${baseUrl}favicon.png`} />
 
 		<!-- The <title> tag is now handled by the SEO component -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />

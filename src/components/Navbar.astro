@@ -9,6 +9,10 @@ import MenuClose from '@components/icons/MenuClose.astro';
 import '@styles/navbar.css';
 
 const { menu, button } = Astro.props;
+// Normalize baseUrl to not end with slash for consistent concatenation
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+	? import.meta.env.BASE_URL.slice(0, -1)
+	: import.meta.env.BASE_URL;
 ---
 
 <header class="sticky top-0 z-50 w-full transition-all duration-300" id="navbar">
@@ -20,7 +24,11 @@ const { menu, button } = Astro.props;
 						style="secondary"
 						size="sm"
 						name={button || 'Resume'}
-						href={button === 'Resume' ? '/resume' : button === 'Home' ? '/' : `/${button}`}
+						href={button === 'Resume'
+							? `${baseUrl}/resume`
+							: button === 'Home'
+								? baseUrl === '' ? '/' : baseUrl
+								: `${baseUrl}/${button}`}
 						class="flex items-center justify-center md:w-20"
 					>
 						{button === 'Home' ? <Home class="h-5 w-5" /> : button || 'Resume'}
