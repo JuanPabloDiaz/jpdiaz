@@ -15,7 +15,7 @@ const creationDate = new Date(comment.created_at).toLocaleDateString('en-US', {
 });
 
 // Extraer el nombre del repositorio de la URL
-const repoRegex = /github\.com\/([^\/]+\/[^\/]+)/;
+const repoRegex = /github\.com\/([^/]+\/[^/]+)/;
 const repoMatch = comment.html_url.match(repoRegex);
 const repoFullName = repoMatch ? repoMatch[1] : 'Unknown Repository';
 ---
