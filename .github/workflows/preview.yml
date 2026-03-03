@@ -1,0 +1,75 @@
+name: Preview Deployment
+
+on:
+  pull_request:
+    branches: ['main']
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'preview-${{ github.event.pull_request.number }}'
+  cancel-in-progress: true
+
+env:
+  BUILD_PATH: '.'
+
+jobs:
+  build:
+    name: Build Preview
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - name: Enable Corepack
+        run: corepack enable
+      - name: Install pnpm
+        run: corepack prepare pnpm@9 --activate
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        working-directory: ${{ env.BUILD_PATH }}
+      - name: Build with Astro
+        run: |
+          pnpm astro build \
+            --site "${{ vars.SITE_URL }}" \
+            --base "/pr-preview-${{ github.event.pull_request.number }}"
+        working-directory: ${{ env.BUILD_PATH }}
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.BUILD_PATH }}/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy Preview
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Create PR Comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const previewUrl = '${{ steps.deployment.outputs.page_url }}';
+            const prNumber = '${{ github.event.pull_request.number }}';
+
+            const body = `## 🚀 Preview Deployment Ready!
+
+            **Preview URL:** ${previewUrl}
+
+            *This preview will be automatically updated when new commits are pushed to this PR.*`;
+
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body: body
+            });
