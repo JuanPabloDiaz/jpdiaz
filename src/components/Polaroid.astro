@@ -5,7 +5,12 @@ import { Image } from 'astro:assets';
 ---
 
 <div id="polaroid">
-	<Image src={withBase(CERTIFICATION_IMAGES[0]?.src || '')} alt="certification" width={100} height={100} />
+	<Image
+		src={withBase(CERTIFICATION_IMAGES[0]?.src || '')}
+		alt="certification"
+		width={100}
+		height={100}
+	/>
 	<div class="img-container"></div>
 	<label>
 		<span class="left">&#60;</span>

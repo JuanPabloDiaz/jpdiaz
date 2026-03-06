@@ -24,7 +24,9 @@ function formatDate(dateString: string) {
 	<section
 		data-testid="contribution-card"
 		class={`relative flex h-28 overflow-hidden rounded-xl bg-white/95 p-2 shadow-lg backdrop-blur-md transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-white/80 hover:shadow-xl dark:bg-[rgba(17,24,39,0.9)] dark:hover:bg-[rgba(17,24,39,0.9)] ${
-			isTopContribution ? 'ring-2 ring-orange ring-offset-2 ring-offset-white dark:ring-offset-zinc-900' : ''
+			isTopContribution
+				? 'ring-2 ring-orange ring-offset-2 ring-offset-white dark:ring-offset-zinc-900'
+				: ''
 		}`}
 	>
 		<article class="relative flex w-10/12 flex-grow flex-col pr-2">
@@ -40,7 +42,10 @@ function formatDate(dateString: string) {
 			<div
 				class="mb-1 min-h-[16px] transform transition-all duration-300 ease-in-out group-hover:translate-y-[100%] group-hover:opacity-0"
 			>
-				<span class="block truncate text-xs font-medium text-black dark:text-white/90" title={contribution.repoFullName}>
+				<span
+					class="block truncate text-xs font-medium text-black dark:text-white/90"
+					title={contribution.repoFullName}
+				>
 					{contribution.repoFullName}
 				</span>
 			</div>
@@ -48,7 +53,7 @@ function formatDate(dateString: string) {
 			<!-- Description on hover -->
 			{
 				showDescription && contribution.description && (
-					<p class="absolute left-2 top-2 w-[85%] max-h-20 translate-y-full overflow-hidden text-sm leading-5 text-black/80 opacity-0 transition-all duration-300 ease-in-out [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:4] group-hover:translate-y-0 group-hover:opacity-100 dark:text-white/80">
+					<p class="absolute left-2 top-2 max-h-20 w-[85%] translate-y-full overflow-hidden text-sm leading-5 text-black/80 opacity-0 transition-all duration-300 ease-in-out [-webkit-box-orient:vertical] [-webkit-line-clamp:4] [display:-webkit-box] group-hover:translate-y-0 group-hover:opacity-100 dark:text-white/80">
 						{contribution.description}
 					</p>
 				)
