@@ -37,6 +37,10 @@ interface GitHubCommitData {
 	count: number;
 }
 
+const githubRequestCache = new Map<string, Promise<unknown>>();
+const repoDataCache = new Map<string, Promise<GitHubRepoData | null>>();
+const commitDataCache = new Map<string, Promise<GitHubCommitData | null>>();
+
 interface GitHubUserData {
 	repoCount: number;
 }
@@ -196,66 +200,94 @@ async function githubRequest<T>(
 	endpoint: string,
 	acceptHeader: string = 'application/vnd.github.v3+json'
 ): Promise<T> {
-	const githubToken = import.meta.env.PUBLIC_GITHUB_TOKEN;
+	const githubToken = import.meta.env.GITHUB_TOKEN || import.meta.env.PUBLIC_GITHUB_TOKEN;
 
 	if (!githubToken) {
 		throw new Error(
-			'GitHub token is not available. Please check your PUBLIC_GITHUB_TOKEN environment variable.'
+			'GitHub token is not available. Please check your GITHUB_TOKEN environment variable.'
 		);
 	}
 
-	const response = await fetch(`${GITHUB_API_BASE_URL}${endpoint}`, {
-		headers: {
-			Accept: acceptHeader,
-			Authorization: `Bearer ${githubToken}`, // Updated to use Bearer token format
-			'User-Agent': 'jpdiaz-portfolio', // Add User-Agent header
-		},
+	const cacheKey = `${endpoint}::${acceptHeader}`;
+	const cachedRequest = githubRequestCache.get(cacheKey);
+	if (cachedRequest) {
+		return cachedRequest as Promise<T>;
+	}
+
+	const requestPromise = (async (): Promise<T> => {
+		const response = await fetch(`${GITHUB_API_BASE_URL}${endpoint}`, {
+			headers: {
+				Accept: acceptHeader,
+				Authorization: `Bearer ${githubToken}`,
+				'User-Agent': 'jpdiaz-portfolio',
+			},
+		});
+
+		if (!response.ok) {
+			let errorMessage = `GitHub API responded with status code: ${response.status}`;
+
+			switch (response.status) {
+				case 401:
+					errorMessage += ' - Unauthorized: Invalid or expired GitHub token';
+					break;
+				case 403: {
+					const rateLimitRemaining = response.headers.get('X-RateLimit-Remaining');
+					const rateLimitReset = response.headers.get('X-RateLimit-Reset');
+					if (rateLimitRemaining === '0') {
+						const resetTime = rateLimitReset
+							? new Date(parseInt(rateLimitReset) * 1000).toLocaleString()
+							: 'unknown';
+						errorMessage += ` - Rate limit exceeded. Resets at: ${resetTime}`;
+					} else {
+						errorMessage += ' - Forbidden: Check token permissions or repository access';
+					}
+					break;
+				}
+				case 404:
+					errorMessage += ' - Not Found: Repository or resource does not exist';
+					break;
+				default:
+					errorMessage += ` - ${response.statusText}`;
+			}
+
+			try {
+				const errorBody = await response.text();
+				if (errorBody) {
+					const parsedError = JSON.parse(errorBody);
+					if (parsedError.message) {
+						errorMessage += ` - ${parsedError.message}`;
+					}
+				}
+			} catch {
+				// Ignore parsing errors
+			}
+
+			throw new Error(errorMessage);
+		}
+
+		return response.json();
+	})().catch((error) => {
+		githubRequestCache.delete(cacheKey);
+		throw error;
 	});
 
-	if (!response.ok) {
-		let errorMessage = `GitHub API responded with status code: ${response.status}`;
+	githubRequestCache.set(cacheKey, requestPromise);
+	return requestPromise;
+}
 
-		// Add more specific error information
-		switch (response.status) {
-			case 401:
-				errorMessage += ' - Unauthorized: Invalid or expired GitHub token';
-				break;
-			case 403: {
-				const rateLimitRemaining = response.headers.get('X-RateLimit-Remaining');
-				const rateLimitReset = response.headers.get('X-RateLimit-Reset');
-				if (rateLimitRemaining === '0') {
-					const resetTime = rateLimitReset
-						? new Date(parseInt(rateLimitReset) * 1000).toLocaleString()
-						: 'unknown';
-					errorMessage += ` - Rate limit exceeded. Resets at: ${resetTime}`;
-				} else {
-					errorMessage += ' - Forbidden: Check token permissions or repository access';
-				}
-				break;
-			}
-			case 404:
-				errorMessage += ' - Not Found: Repository or resource does not exist';
-				break;
-			default:
-				errorMessage += ` - ${response.statusText}`;
-		}
+function isValidGitHubRepoUrl(url: string): boolean {
+	if (!url || url === '#') return false;
+	return /github\.com\/[^/]+\/[^/]+/.test(url);
+}
 
-		// Try to get error details from response body
-		try {
-			const errorBody = await response.text();
-			if (errorBody) {
-				const parsedError = JSON.parse(errorBody);
-				if (parsedError.message) {
-					errorMessage += ` - ${parsedError.message}`;
-				}
-			}
-		} catch (_e) {
-			// Ignore parsing errors
-		}
+function getServerGitHubToken(): string | null {
+	return import.meta.env.GITHUB_TOKEN || import.meta.env.PUBLIC_GITHUB_TOKEN || null;
+}
 
-		throw new Error(errorMessage);
-	}
-	return response.json();
+if (import.meta.env.PUBLIC_GITHUB_TOKEN && !import.meta.env.GITHUB_TOKEN) {
+	console.warn(
+		'[github] Using PUBLIC_GITHUB_TOKEN as fallback. Move to GITHUB_TOKEN to avoid exposing secrets.'
+	);
 }
 
 // Helper function to make authenticated GitHub GraphQL API requests
@@ -263,7 +295,7 @@ async function githubGraphQLRequest<T>(
 	query: string,
 	variables: Record<string, any>
 ): Promise<T | null> {
-	const githubToken = import.meta.env.PUBLIC_GITHUB_TOKEN;
+	const githubToken = getServerGitHubToken();
 	if (!githubToken) {
 		console.error('GitHub token is not available. Cannot make GraphQL request.');
 		return null;
@@ -378,6 +410,11 @@ export async function getGitHubDiscussionComments(
 
 // Get repository data including stars, forks, languages, etc.
 export async function getGitHubRepoData(repoUrl: string): Promise<GitHubRepoData | null> {
+	if (!isValidGitHubRepoUrl(repoUrl)) return null;
+	const cachedRepoData = repoDataCache.get(repoUrl);
+	if (cachedRepoData) return cachedRepoData;
+
+	const repoDataPromise = (async (): Promise<GitHubRepoData | null> => {
 	try {
 		const repoDetails = getRepoDetails(repoUrl);
 		if (!repoDetails) return null;
@@ -402,6 +439,9 @@ export async function getGitHubRepoData(repoUrl: string): Promise<GitHubRepoData
 		console.error('Error fetching GitHub data:', error);
 		return null;
 	}
+	})();
+	repoDataCache.set(repoUrl, repoDataPromise);
+	return repoDataPromise;
 }
 
 // Interface for the raw structure of Issue comments from GitHub API when requesting HTML
@@ -576,6 +616,12 @@ export async function getGitHubCommits(
 	repoUrl: string,
 	author: string
 ): Promise<GitHubCommitData | null> {
+	if (!isValidGitHubRepoUrl(repoUrl) || !author) return null;
+	const cacheKey = `${repoUrl}::${author}`;
+	const cachedCommitData = commitDataCache.get(cacheKey);
+	if (cachedCommitData) return cachedCommitData;
+
+	const commitDataPromise = (async (): Promise<GitHubCommitData | null> => {
 	try {
 		const repoDetails = getRepoDetails(repoUrl);
 		if (!repoDetails) {
@@ -648,6 +694,9 @@ export async function getGitHubCommits(
 		// Return null instead of throwing to allow graceful degradation
 		return null;
 	}
+	})();
+	commitDataCache.set(cacheKey, commitDataPromise);
+	return commitDataPromise;
 }
 
 // Get user data including repository count

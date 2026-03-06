@@ -12,13 +12,15 @@ const { github_url, small = false } = Astro.props;
 let starsCount = '0';
 
 // Fetch repository data including stars
-try {
-	const repoData = await getGitHubRepoData(github_url);
-	if (repoData) {
-		starsCount = repoData.stars.toString();
+if (github_url && github_url !== '#') {
+	try {
+		const repoData = await getGitHubRepoData(github_url);
+		if (repoData) {
+			starsCount = repoData.stars.toString();
+		}
+	} catch (error) {
+		console.debug(`Cannot show number of stars ${github_url}: ${error.message}`);
 	}
-} catch (error) {
-	console.debug(`Cannot show number of stars ${github_url}: ${error.message}`);
 }
 
 const numericStarsCount = parseInt(starsCount);
@@ -28,7 +30,6 @@ const formattedStarsCount =
 		: starsCount;
 
 const starUrl = github_url + '/stargazers';
-const forkUrl = github_url + '/fork';
 
 // Classes for different sizes
 const containerClass = small
@@ -37,8 +38,8 @@ const containerClass = small
 const buttonClass = small
 	? 'inline-flex items-center gap-1 px-2 py-1 rounded bg-orange shadow-sm shadow-black/20 transition-all duration-300 hover:bg-opacity-80 hover:shadow-none hover:scale-105'
 	: 'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-orange shadow-sm shadow-black/20 transition-all duration-300 hover:bg-opacity-80 hover:shadow-none hover:scale-105';
-const iconClass = small ? 'h-3 w-3 text-white' : 'h-4 w-4 text-white';
-const textClass = small ? 'text-xs font-medium text-white' : 'text-sm font-medium text-white';
+const iconClass = small ? 'h-3 w-3 text-black' : 'h-4 w-4 text-white';
+const textClass = small ? 'text-xs font-medium text-black' : 'text-sm font-medium text-white';
 ---
 
 {
