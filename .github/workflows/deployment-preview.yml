@@ -6,8 +6,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
   issues: write
   pull-requests: write
 
@@ -37,23 +35,21 @@ jobs:
         working-directory: ${{ env.BUILD_PATH }}
       - name: Build with Astro
         env:
-          ASTRO_SITE: 'https://juanpablodiaz.github.io'
-          ASTRO_BASE: '/jpdiaz/pr-preview-${{ github.event.pull_request.number }}'
+          ASTRO_SITE: 'https://jpdiaz.dev'
+          ASTRO_BASE: '/'
         run: pnpm astro build
         working-directory: ${{ env.BUILD_PATH }}
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
+          name: pr-preview-dist-${{ github.event.pull_request.number }}
           path: ${{ env.BUILD_PATH }}/dist
 
-  deploy:
+  notify:
     needs: build
     runs-on: ubuntu-latest
-    name: Deploy Preview
+    name: Notify Preview Build
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
       - name: Create PR Comment
         if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
         continue-on-error: true
@@ -61,14 +57,17 @@ jobs:
         with:
           github-token: ${{ github.token }}
           script: |
-            const previewUrl = '${{ steps.deployment.outputs.page_url }}';
             const prNumber = Number('${{ github.event.pull_request.number }}');
+            const runUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
 
-            const body = `## 🚀 Preview Deployment Ready!
+            const body = `## ✅ Preview Build Ready
 
-            **Preview URL:** ${previewUrl}
+            This PR build was generated successfully and uploaded as a workflow artifact.
+            Download it from this run:
 
-            *This preview will be automatically updated when new commits are pushed to this PR.*`;
+            ${runUrl}
+
+            _No GitHub Pages deployment is performed from pull_request workflows (to avoid affecting production)._`;
 
             await github.rest.issues.createComment({
              owner: context.repo.owner,
