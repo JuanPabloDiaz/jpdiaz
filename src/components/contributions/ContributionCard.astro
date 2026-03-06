@@ -24,13 +24,13 @@ function formatDate(dateString: string) {
 <main class="group w-full p-4 md:w-1/2 lg:w-1/3">
 	<section
 		data-testid="contribution-card"
-		class={`relative flex h-28 overflow-hidden rounded-xl bg-white/95 p-2 shadow-lg transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-white hover:shadow-xl ${
-			isTopContribution ? 'ring-2 ring-orange ring-offset-2 ring-offset-white' : ''
+		class={`relative flex h-28 overflow-hidden rounded-xl bg-white/95 p-2 shadow-lg backdrop-blur-md transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-white/80 hover:shadow-xl dark:bg-[rgba(17,24,39,0.9)] dark:hover:bg-[rgba(17,24,39,0.9)] ${
+			isTopContribution ? 'ring-2 ring-orange ring-offset-2 ring-offset-white dark:ring-offset-zinc-900' : ''
 		}`}
 	>
 		{
 			isTopContribution && (
-				<div class="absolute -top-0 right-2 z-10 inline-flex h-6 w-8 items-center justify-center rounded-full border-2 border-orange bg-orange px-4 text-xs font-bold text-black dark:text-white">
+				<div class="absolute -top-0 right-2 z-10 inline-flex h-6 w-8 items-center justify-center rounded-full border-2 border-orange bg-orange px-4 text-xs font-bold text-black">
 					PR
 				</div>
 			)
@@ -39,7 +39,7 @@ function formatDate(dateString: string) {
 		<article class="relative flex w-10/12 flex-grow flex-col pr-2">
 			<!-- Title (Subject of PR/Issue) -->
 			<h3
-				class="text-md transform font-medium text-black/90 transition-all duration-300 ease-in-out group-hover:translate-y-[-100%] group-hover:opacity-0 lg:text-lg"
+				class="text-md transform font-medium text-black/90 transition-all duration-300 ease-in-out group-hover:translate-y-[-100%] group-hover:opacity-0 dark:text-white/90 lg:text-lg"
 			>
 				{contribution.title}
 			</h3>
@@ -48,7 +48,7 @@ function formatDate(dateString: string) {
 			<div
 				class="mb-1 transform transition-all duration-300 ease-in-out group-hover:translate-y-[100%] group-hover:opacity-0"
 			>
-				<span class="text-xs font-medium text-black">
+				<span class="text-xs font-medium text-black dark:text-white/90">
 					{contribution.repoFullName}
 				</span>
 			</div>
@@ -56,7 +56,7 @@ function formatDate(dateString: string) {
 			<!-- Description on hover -->
 			{
 				showDescription && contribution.description && (
-					<p class="absolute left-2 top-2 w-[85%] translate-y-full transform text-sm text-black/80 opacity-0 transition-all duration-300 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
+					<p class="absolute left-2 top-2 w-[85%] translate-y-full transform text-sm text-black/80 opacity-0 transition-all duration-300 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 dark:text-white/80">
 						{contribution.description}
 					</p>
 				)
@@ -70,12 +70,14 @@ function formatDate(dateString: string) {
 				>
 					{
 						contribution.dateCompleted && (
-							<span class="text-xs text-black">{formatDate(contribution.dateCompleted)}</span>
+							<span class="text-xs text-black dark:text-white/80"
+								>{formatDate(contribution.dateCompleted)}</span
+							>
 						)
 					}
 					{
 						contribution.language && (
-							<span class="bg-gray-100 rounded-full px-2 py-0.5 text-xs font-medium text-black">
+							<span class="bg-gray-100 dark:bg-gray-800 rounded-full px-2 py-0.5 text-xs font-medium text-black dark:text-white/80">
 								{contribution.language}
 							</span>
 						)
@@ -90,7 +92,7 @@ function formatDate(dateString: string) {
 				href={contribution.url}
 				target="_blank"
 				aria-label="link to project"
-				class="flex h-7 w-7 items-center justify-center rounded-lg bg-orange shadow-sm shadow-black/20 transition-all duration-300 hover:scale-105 hover:bg-opacity-80 hover:shadow-none"
+				class="flex h-7 w-7 items-center justify-center rounded-lg bg-orange text-black shadow-sm shadow-black/20 transition-all duration-300 hover:scale-105 hover:bg-opacity-80 hover:shadow-none"
 				rel="noopener noreferrer"
 				title="View Contribution"
 			>
