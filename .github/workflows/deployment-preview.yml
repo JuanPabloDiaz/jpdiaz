@@ -8,6 +8,8 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  issues: write
+  pull-requests: write
 
 concurrency:
   group: 'preview-${{ github.event.pull_request.number }}'
@@ -53,11 +55,14 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
       - name: Create PR Comment
+        if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
+        continue-on-error: true
         uses: actions/github-script@v7
         with:
+          github-token: ${{ github.token }}
           script: |
             const previewUrl = '${{ steps.deployment.outputs.page_url }}';
-            const prNumber = '${{ github.event.pull_request.number }}';
+            const prNumber = Number('${{ github.event.pull_request.number }}');
 
             const body = `## 🚀 Preview Deployment Ready!
 
@@ -65,9 +70,9 @@ jobs:
 
             *This preview will be automatically updated when new commits are pushed to this PR.*`;
 
-            github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: prNumber,
-              body: body
+            await github.rest.issues.createComment({
+             owner: context.repo.owner,
+             repo: context.repo.repo,
+             issue_number: prNumber,
+             body,
             });
