@@ -13,9 +13,11 @@ const isMoreProjectsPage = currentPath.includes('/more-projects');
 const labelText = isMoreProjectsPage ? 'commits' : 'contributions';
 
 let contributionsCount = 0;
-const commitData = await getGitHubCommits(github_url, site.githubUsername);
-if (commitData) {
-	contributionsCount = commitData.count;
+if (github_url && github_url !== '#') {
+	const commitData = await getGitHubCommits(github_url, site.githubUsername);
+	if (commitData) {
+		contributionsCount = commitData.count;
+	}
 }
 
 const contributionUrl = `${github_url}/commits?author=${site.githubUsername}`;
